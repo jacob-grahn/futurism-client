@@ -1,0 +1,131 @@
+.card-en h1 {
+	color: $ent;
+}
+.card-mc h1 {
+	color: $machine;
+}
+.card-el h1 {
+	color: $elite;
+}
+.card-ze h1 {
+	color: $zealot;
+}
+
+.card-list .card-holder {
+	float: left;
+}
+
+.card-list .card {
+	cursor: pointer;
+}
+
+.card {
+  position: relative;
+  width: 260px;
+  height: 372px;
+  background-color: white;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding: 0px;
+	margin: 15px;
+	@include border-radius(4px);
+	@include box-shadow(2px, 2px, 7px, rgba(0,0,0,.8));
+}
+.card-medium {
+	width: 130px;
+	height: 186px;
+	margin: 12px;
+	@include border-radius(2px);
+}
+.card-small {
+	width: 65px;
+	height: 93px;
+	margin: 12px;
+	@include border-radius(1px);
+}
+
+
+.card h1 {
+  margin: 0 5px 5px 0;
+  text-align: center;
+}
+.card-medium h1 {
+	font-size: 18px;
+}
+
+
+.card ul {
+  margin: 10px 0;
+  padding: 0 5px;
+  font-weight: bold;
+  list-style: circle inside;
+}
+.card-medium ul {
+	font-weight: normal;
+	font-size: 14px;
+	margin: 0;
+}
+
+
+.card-image-holder {
+  width: 260px;
+  height: 180px;
+  background-color: black;
+	position: relative;
+	overflow: hidden;
+}
+.card-medium .card-image-holder {
+	width: 130px;
+	height: 90px;
+}
+.card-small .card-image-holder {
+	width: 65px;
+	height: 45px;
+}
+
+
+.card-story {
+  margin: 0 15px 5px 15px;
+	font-style: italic;
+	text-align: center;
+}
+.card-medium .card-story {
+	display: none;
+}
+
+
+.card-stats {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  background-color: white;
+  z-index: 50;
+  font-weight: bold;
+}
+.card-medium .card-stats {
+	right: 6px;
+	bottom: 2px;
+}
+
+
+.card-pride {
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+  background-color: white;
+  z-index: 50;
+  font-weight: bold;
+}
+.card-medium .card-pride {
+	left: 6px;
+	bottom: 2px;
+}
+
+
+.card .abilities {
+	text-align: center;
+	list-style: none;
+}
+.card-large .abilities {
+	font-size: 18px;
+}

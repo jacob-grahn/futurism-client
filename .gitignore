@@ -1,0 +1,8 @@
+node_modules
+dist
+.tmp
+.sass-cache
+.idea
+client/src/bower_components
+server/config/env.js
+Error.log

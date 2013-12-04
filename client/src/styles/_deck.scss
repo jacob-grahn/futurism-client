@@ -1,0 +1,92 @@
+.deck {
+	cursor: pointer;
+}
+
+.deck-image-holder {
+	overflow: hidden;
+	position: relative;
+	background-color: black;
+}
+
+.deck-image-holder img {
+	position: relative;
+}
+
+.deck-image-1, .deck-image-2, .deck-image-3 {
+	overflow: hidden;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+
+
+/* large */
+.deck {
+	width: 260px;
+}
+.deck-large .deck-image-holder {
+	width: 260px;
+	height: 180px;
+}
+.deck-large .deck-image-2 {
+	left: 86px;
+}
+.deck-large .deck-image-3 {
+	left: 173px;
+}
+.deck-large .deck-image-2 img {
+	left: -86px;
+}
+.deck-large .deck-image-3 img {
+	left: -173px;
+}
+
+/* medium */
+.deck-medium {
+	width: 130px;
+}
+.deck-medium h1 {
+	padding-top: 0px;
+	margin-top: 0px;
+	font-size: 18px;
+	color: $light-contrast;
+}
+.deck-medium .deck-image-holder {
+	width: 130px;
+	height: 90px;
+}
+.deck-medium .deck-image-2 {
+	left: 43px;
+}
+.deck-medium .deck-image-3 {
+	left: 86px;
+}
+.deck-medium .deck-image-2 img {
+	left: -43px;
+}
+.deck-medium .deck-image-3 img {
+	left: -86px;
+}
+
+/* small */
+.deck-small {
+	width: 65px;
+}
+.deck-small .deck-image-holder {
+	width: 65px;
+	height: 45px;
+}
+.deck-small .deck-image-2 {
+	left: 22px;
+}
+.deck-small .deck-image-3 {
+	left: 43px;
+}
+.deck-small .deck-image-2 img {
+	left: -22px;
+}
+.deck-small .deck-image-3 img {
+	left: -43px;
+}
+

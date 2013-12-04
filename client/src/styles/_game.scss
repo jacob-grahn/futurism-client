@@ -1,0 +1,37 @@
+$outline: rgba(82, 79, 73, .75);
+
+.player-field {
+	//background-color: lightgrey;
+	margin: 130px auto 80px auto;
+	width: 620px;
+}
+
+.player-field-column {
+	//background-color: grey;
+	float: left;
+}
+
+.target {
+	//background-color: darkgrey;
+	width: 130px;
+	height: 186px;
+	margin: 12px;
+	margin-top: -130px;
+	border-bottom: 2px solid $outline;
+}
+
+.player-field .player-field-column>:first-child {
+	border: 2px solid $outline;
+	background-color: rgba(0, 4, 10, .1);
+}
+
+
+
+/*.target-empty {
+	visibility: hidden;
+}
+
+
+.player-field .player-field-column>:first-child {
+	visibility: visible;
+}*/

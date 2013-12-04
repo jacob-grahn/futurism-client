@@ -1,0 +1,26 @@
+#lobby-panel .nav-tabs > li > a {
+	font-family: "aw-conqueror-carved";
+	color: $light-blend;
+	font-size: 24px;
+	/*font-size: 36px;*/
+}
+
+#lobby-starters h1 {
+	color: $light-contrast;
+}
+
+#lobby-starters ul > li {
+	margin: 10px 0px;
+}
+
+#lobby-matchups h1 {
+	color: $light-contrast;
+}
+
+.matchup h3 {
+	margin: 10px 0;
+}
+
+.matchup-members {
+	margin: 10px 0;
+}

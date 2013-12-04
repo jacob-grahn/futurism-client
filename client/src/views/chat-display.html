@@ -1,0 +1,17 @@
+<div class="chat">
+	<ul class="chat-log">
+		<li ng-repeat="msg in chat.msgs">
+			<div username name="{{msg.user.name}}" id="{{msg.user._id}}" site="{{msg.user.site}}" group="{{msg.user.group}}"></div>
+			<span class="chat-text"> {{msg.txt}}</span>
+		</li>
+	</ul>
+
+	<form submit="sendMessage()">
+		<div class="input-group">
+			<input class="form-control" type="text" ng-model="typedMessage" placeholder="type to chat">
+		<span class="input-group-btn">
+			<button class='btn btn-default' type="submit" ng-click="sendMessage()">Say</button>
+		</span>
+		</div>
+	</form>
+</div>

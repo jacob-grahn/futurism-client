@@ -1,0 +1,166 @@
+<!doctype html>
+
+<head>
+	<title>Futurism</title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<base href="/">
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+	<!-- typekit font -->
+	<script type="text/javascript" src="//use.typekit.net/rca3kqg.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+	<!--[if lt IE 9]>
+	<script src="bower_components/es5-shim/es5-shim.js"></script>
+	<script src="bower_components/json3/lib/json3.min.js"></script>
+	<![endif]-->
+
+	<!-- build:js scripts/futurism-shared.js -->
+	<script src="cardFns.js"></script>
+	<script src="deckFns.js"></script>
+	<script src="factions.js"></script>
+	<script src="fns.js"></script>
+	<script src="groups.js"></script>
+	<!-- endbuild -->
+
+	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+	<script>
+		(function (i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function () {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+					m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+		ga('create', 'UA-22388845-3', 'onmodulus.net');
+		ga('send', 'pageview');
+	</script>
+
+	<!-- livereload script -->
+	<script type="text/javascript">
+		document.write('<script src="http://'
+				+ (location.host || 'localhost').split(':')[0]
+				+ ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>')
+	</script>
+
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- endbuild -->
+</head>
+
+
+<body ng-app="futurism" class="">
+
+	<!-- navbar -->
+	<nav ng-controller="navBarCtrl" ng-hide="path=='/title'" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Futurism</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<ul class="nav navbar-nav">
+				<li ng-class="{active: path=='/deck-builder'}"><a ng-href="/deck-builder">Deck Builder</a></li>
+				<li ng-class="{active: path=='/card-builder'}"><a ng-href="/card-builder">Card Builder</a></li>
+				<li ng-class="{active: path=='/lobby'}"><a ng-href="/lobby">Lobby</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+						<div username name="{{account.userName}}" id="{{account.userId}}" site="{{account.site}}" group="{{account.group}}"></div>
+						<b class="caret"></b>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">My Stats</a></li>
+						<li><a href="#">Messages</a></li>
+						<li><a href="#">Link PR2</a></li>
+						<li><a href="#">Link F@H</a></li>
+						<li><a ng-href="/">Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</nav>
+
+
+	<!-- Add your site or application content here -->
+	<div class="container" ng-view></div>
+
+	<!-- libraries -->
+	<script src="bower_components/async/lib/async.js"></script>
+	<script src="bower_components/jquery/jquery.js"></script>
+	<script src="bower_components/underscore/underscore.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/socket.io-client/dist/socket.io.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+	<!-- build:js scripts/modules.js -->
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<!-- endbuild -->
+
+	<!-- build:js({.tmp,app}) scripts/futurism.js -->
+	<script src="scripts/futurism.js"></script>
+
+	<script src="scripts/controllers/CardBuilder.js"></script>
+	<script src="scripts/controllers/CardSelector.js"></script>
+	<script src="scripts/controllers/DeckBuilder.js"></script>
+	<script src="scripts/controllers/DeckSelector.js"></script>
+	<script src="scripts/controllers/Error.js"></script>
+	<script src="scripts/controllers/Game.js"></script>
+	<script src="scripts/controllers/GamePreDeck.js"></script>
+	<script src="scripts/controllers/Lobby.js"></script>
+	<script src="scripts/controllers/NavBar.js"></script>
+	<script src="scripts/controllers/Title.js"></script>
+
+	<script src="scripts/directives/cardDisplay.js"></script>
+	<script src="scripts/directives/chatDisplay.js"></script>
+	<script src="scripts/directives/deckDisplay.js"></script>
+	<script src="scripts/directives/imageupload.js"></script>
+	<script src="scripts/directives/loggingInAlert.js"></script>
+	<script src="scripts/directives/username.js"></script>
+
+	<script src="scripts/filters/truthyFields.js"></script>
+
+	<script src="scripts/services/cardInProgress.js"></script>
+	<script src="scripts/services/dataUrlToBlob.js"></script>
+
+	<script src="scripts/services/resources/CardResource.js"></script>
+	<script src="scripts/services/resources/DeckResource.js"></script>
+
+	<script src="scripts/services/session/account.js"></script>
+	<script src="scripts/services/session/autoLogin.js"></script>
+	<script src="scripts/services/session/http-auth-interceptor.js"></script>
+	<script src="scripts/services/session/session.js"></script>
+	<script src="scripts/services/session/tokenInterceptor.js"></script>
+
+	<script src="scripts/services/async.js"></script>
+	<script src="scripts/services/Chat.js"></script>
+	<script src="scripts/services/deckInProgress.js"></script>
+	<script src="scripts/services/matchups.js"></script>
+	<script src="scripts/services/maths.js"></script>
+	<script src="scripts/services/shared.js"></script>
+	<script src="scripts/services/socket.js"></script>
+	<script src="scripts/services/staticContentUrl.js"></script>
+	<script src="scripts/services/websites.js"></script>
+	<!-- endbuild -->
+
+
+</body>
+</html>

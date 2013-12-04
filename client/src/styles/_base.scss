@@ -1,0 +1,25 @@
+$iconSpritePath: "../images/glyphicons-halflings.png";
+$iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
+
+$light-contrast: #FF403C;
+$dark-contrast: #991715;
+$highlight: #FEFF56;
+$light-blend: #13578A;
+$dark-blend: #234259;
+
+$ent: green;
+$machine: #234259;
+$elite: #7000d0;
+$zealot: #991715;
+
+$brand-primary:         $dark-blend;
+$brand-success:         $highlight;
+$brand-warning:         $light-contrast;
+$brand-danger:          $dark-contrast;
+$brand-info:            $light-blend;
+
+/*$navbar-inverse-link-active-color: $highlight;
+$navbar-inverse-brand-color: $highlight;*/
+
+@import "bootstrap-sass/lib/bootstrap.scss";
+@import "mixins.scss";
