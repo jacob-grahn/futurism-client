@@ -60,7 +60,7 @@
 <body ng-app="futurism" class="">
 
 	<!-- navbar -->
-	<div ng-include="'views/navbar.html'"></div>
+	<ng-include src="'views/navbar.html'"></ng-include>
 
 	<!-- main content -->
 	<div class="container" ng-view></div>
@@ -68,7 +68,7 @@
 	<!-- libraries -->
 	<script src="bower_components/async/lib/async.js"></script>
 	<script src="bower_components/jquery/jquery.js"></script>
-	<script src="bower_components/underscore/underscore.js"></script>
+	<script src="bower_components/lodash/dist/lodash.js"></script>
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/socket.io-client/dist/socket.io.js"></script>
 	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
@@ -117,6 +117,7 @@
 	<script src="scripts/services/async.js"></script>
 	<script src="scripts/services/Chat.js"></script>
 	<script src="scripts/services/deckInProgress.js"></script>
+	<script src="scripts/services/lodash.js"></script>
 	<script src="scripts/services/matchups.js"></script>
 	<script src="scripts/services/maths.js"></script>
 	<script src="scripts/services/shared.js"></script>
