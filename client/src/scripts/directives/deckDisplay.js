@@ -3,7 +3,8 @@ angular.module('futurism')
 		'use strict';
 
 		return {
-			restrict: 'A',
+			restrict: 'E',
+			replace: true,
 
 			template:
 				'<div class="deck deck-{{size}}">' +
@@ -12,13 +13,12 @@ angular.module('futurism')
 					'<div class="deck-image-2"><img ng-src="{{displayUrls[1]}}"/></div>' +
 					'<div class="deck-image-3"><img ng-src="{{displayUrls[2]}}"/></div>' +
 					'</div>' +
-					'<h1>{{deck.name}}</h1>' +
-					'<h1 class="pride">Pride: {{pride}}</h1>' +
+					'<h1 class="deck-name">{{deck.name}}</h1>' +
+					'<h1 class="deck-pride">pride: {{deck.pride}}</h1>' +
 				'</div>',
 
 			link: function (scope, elem, attrs) {
 				scope.size = attrs.size || 'large';
-				scope.pride = shared.deckFns.calcPride(scope.deck);
 
 				var deck = scope.deck;
 				var cards = deck.cards;

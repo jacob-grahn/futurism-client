@@ -1,5 +1,28 @@
 .deck {
+	overflow: hidden;
+}
+
+.deck-list li {
+	float: left;
+	margin: 10px;
+}
+
+.deck-active {
 	cursor: pointer;
+}
+
+.deck-inactive {
+	opacity: 0.4;
+}
+
+.deck-name {
+	white-space: nowrap;
+	padding-top: 4px;
+}
+
+.deck-pride {
+	position: relative;
+	top: -10px;
 }
 
 .deck-image-holder {
