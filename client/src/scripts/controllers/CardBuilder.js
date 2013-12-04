@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('CardBuilderCtrl', ['$scope', 'shared', 'cardInProgress', 'dataUrlToBlob', 'CardResource', 'lodash', function($scope, shared, cardInProgress, dataUrlToBlob, CardResource, _) {
+	.controller('CardBuilderCtrl', function($scope, shared, cardInProgress, dataUrlToBlob, CardResource, _) {
 		'use strict';
 
 		var factions = shared.factions;
@@ -97,4 +97,4 @@ angular.module('futurism')
 			}
 		});
 
-	}]);
+	});

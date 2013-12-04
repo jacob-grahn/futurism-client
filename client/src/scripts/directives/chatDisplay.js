@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('chatDisplay', ['Chat', function(Chat) {
+	.directive('chatDisplay', function(Chat) {
 		'use strict';
 
 		return {
@@ -29,4 +29,4 @@ angular.module('futurism')
 			}
 		};
 
-	}]);
+	});

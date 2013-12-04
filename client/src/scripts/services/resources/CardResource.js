@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('CardResource', ['$resource', function($resource) {
+	.factory('CardResource', function($resource) {
 		'use strict';
 
 		var CardResource = $resource('/api/cards', {}, {
@@ -23,4 +23,4 @@ angular.module('futurism')
 		});
 
 		return CardResource;
-	}]);
+	});

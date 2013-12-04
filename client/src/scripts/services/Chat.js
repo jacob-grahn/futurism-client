@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('Chat', ['socket', '$rootScope', function(socket, $rootScope) {
+	.factory('Chat', function(socket, $rootScope) {
 		'use strict';
 
 		/**
@@ -106,4 +106,4 @@ angular.module('futurism')
 
 		return Chat;
 
-	}]);
+	});

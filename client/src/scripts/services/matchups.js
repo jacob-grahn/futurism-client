@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('matchups', ['socket', '$rootScope', 'shared', '$location', 'account', 'lodash', function(socket, $rootScope, shared, $location, account, _) {
+	.factory('matchups', function(socket, $rootScope, shared, $location, account, _) {
 		'use strict';
 
 		var lobbyName = 'brutus';
@@ -200,4 +200,4 @@ angular.module('futurism')
 			clear: clear,
 			list: matchups
 		};
-	}]);
+	});

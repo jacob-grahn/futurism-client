@@ -1,4 +1,4 @@
 angular.module('futurism')
-	.controller('TitleCtrl', [function() {
+	.controller('TitleCtrl', function() {
 		'use strict';
-	}]);
+	});

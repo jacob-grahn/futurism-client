@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('deckDisplay', ['staticContentUrl', 'lodash', function(staticContentUrl, _) {
+	.directive('deckDisplay', function(staticContentUrl, _) {
 		'use strict';
 
 		return {
@@ -41,4 +41,4 @@ angular.module('futurism')
 			}
 		};
 
-	}]);
+	});

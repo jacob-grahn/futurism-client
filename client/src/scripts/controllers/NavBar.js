@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('navBarCtrl', ['$scope', 'account', function($scope, account) {
+	.controller('navBarCtrl', function($scope, account) {
 		'use strict';
 
 		$scope.path = '';
@@ -13,4 +13,4 @@ angular.module('futurism')
 				$scope.path = '/';
 			}
 		});
-	}]);
+	});

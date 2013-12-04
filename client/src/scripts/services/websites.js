@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('websites', ['$http', function($http) {
+	.factory('websites', function($http) {
 		'use strict';
 
 
@@ -71,4 +71,4 @@ angular.module('futurism')
 			lookup: lookup
 		};
 
-	}]);
+	});

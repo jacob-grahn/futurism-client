@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('GameCtrl', ['$scope','$routeParams', function($scope, $routeParams) {
+	.controller('GameCtrl', function($scope, $routeParams) {
 		'use strict';
 
 		$scope.gameId = $routeParams.gameId;
@@ -31,4 +31,4 @@ angular.module('futurism')
 			}
 		];
 
-	}]);
+	});

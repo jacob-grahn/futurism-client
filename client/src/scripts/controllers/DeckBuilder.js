@@ -1,6 +1,5 @@
 angular.module('futurism')
-	.controller('DeckBuilderCtrl', ['$scope', 'CardResource', 'DeckResource', 'deckInProgress', 'shared', 'lodash',
-	function($scope, CardResource, DeckResource, deckInProgress, shared, _) {
+	.controller('DeckBuilderCtrl', function($scope, CardResource, DeckResource, deckInProgress, shared, _) {
 		'use strict';
 
 		var deck = deckInProgress.deck;
@@ -64,4 +63,4 @@ angular.module('futurism')
 				}
 			});
 		};
-	}]);
+	});

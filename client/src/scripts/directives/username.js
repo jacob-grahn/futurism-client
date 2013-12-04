@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('username', [function() {
+	.directive('username', function() {
 		'use strict';
 
 		return {
@@ -19,4 +19,4 @@ angular.module('futurism')
 				'</a>'
 		};
 
-	}]);
+	});

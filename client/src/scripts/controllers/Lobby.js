@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('LobbyCtrl', ['$scope', 'matchups', function($scope, matchups) {
+	.controller('LobbyCtrl', function($scope, matchups) {
 		'use strict';
 
 		$scope.lobbyName = 'brutus';
@@ -10,4 +10,4 @@ angular.module('futurism')
 		$scope.$on('$destroy', function() {
 			matchups.unsubscribe();
 		});
-	}]);
+	});

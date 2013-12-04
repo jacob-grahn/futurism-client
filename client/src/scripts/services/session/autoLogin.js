@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('autoLogin', ['$location', '$rootScope', 'authService', 'session', function($location, $rootScope, authService, session) {
+	.factory('autoLogin', function($location, $rootScope, authService, session) {
 		'use strict';
 
 		var _removeListener;
@@ -32,4 +32,4 @@ angular.module('futurism')
 			deactivate: deactivate
 		};
 
-	}]);
+	});

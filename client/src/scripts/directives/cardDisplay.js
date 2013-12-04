@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('cardDisplay', ['shared', 'staticContentUrl', function(shared, staticContentUrl) {
+	.directive('cardDisplay', function(shared, staticContentUrl) {
 		'use strict';
 
 		var cardFns = shared.cardFns;
@@ -35,4 +35,4 @@ angular.module('futurism')
 			}
 		};
 
-	}]);
+	});

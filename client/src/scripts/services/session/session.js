@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('session', ['$http', '$location', 'async', 'websites', 'account', function($http, $location, async, websites, account) {
+	.factory('session', function($http, $location, async, websites, account) {
 		'use strict';
 
 
@@ -108,4 +108,4 @@ angular.module('futurism')
 			getToken: getToken
 		};
 
-	}]);
+	});

@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('socket', ['session', 'lodash', 'io', function(session, _, io) {
+	.factory('socket', function(session, _, io) {
 		'use strict';
 
 		var socket = io.connect('http://localhost:9000');
@@ -55,4 +55,4 @@ angular.module('futurism')
 
 		return socket;
 
-	}]);
+	});
