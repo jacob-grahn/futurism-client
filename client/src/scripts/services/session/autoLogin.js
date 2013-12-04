@@ -30,6 +30,6 @@ angular.module('futurism')
 		return {
 			activate: activate,
 			deactivate: deactivate
-		}
+		};
 
 	}]);

@@ -1,6 +1,4 @@
 angular.module('futurism')
-	.controller('TitleCtrl', ['session', function(session) {
+	.controller('TitleCtrl', [function() {
 		'use strict';
-
-
 	}]);

@@ -1,5 +1,6 @@
 angular.module('futurism')
 	.factory('CardResource', ['$resource', function($resource) {
+		'use strict';
 
 		var CardResource = $resource('/api/cards', {}, {
 

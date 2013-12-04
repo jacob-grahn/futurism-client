@@ -1,6 +1,6 @@
 angular.module('futurism')
-	.controller('DeckBuilderCtrl', ['$scope', 'CardResource', 'DeckResource', 'deckInProgress', 'shared',
-	function($scope, CardResource, DeckResource, deckInProgress, shared) {
+	.controller('DeckBuilderCtrl', ['$scope', 'CardResource', 'DeckResource', 'deckInProgress', 'shared', 'lodash',
+	function($scope, CardResource, DeckResource, deckInProgress, shared, _) {
 		'use strict';
 
 		var deck = deckInProgress.deck;
@@ -42,17 +42,25 @@ angular.module('futurism')
 
 		$scope.sortDeck = function() {
 			deck.cards.sort(function(a, b) {
+
+				//sort pride descending
 				if(a.pride !== b.pride) {
 					return b.pride - a.pride;
 				}
 				else {
+
+					//sort name descending
 					var nameA = a.name.toLowerCase();
 					var nameB = b.name.toLowerCase();
-					if (nameA < nameB) //sort string ascending
+					if (nameA < nameB) {
 						return -1;
-					if (nameA > nameB)
+					}
+					if (nameA > nameB) {
 						return 1;
-					return 0; //default return value (no sorting)
+					}
+
+					//default return value (no sorting)
+					return 0;
 				}
 			});
 		};

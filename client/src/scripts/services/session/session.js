@@ -8,7 +8,7 @@ angular.module('futurism')
 
 
 		var getToken = function() {
-			if(!token && typeof Storage !== "undefined") {
+			if(!token && typeof Storage !== 'undefined') {
 				token = account.token = sessionStorage.getItem('token');
 			}
 			return token;
@@ -18,7 +18,7 @@ angular.module('futurism')
 
 		var setToken = function(tkn) {
 			token = account.token = tkn;
-			if(typeof Storage !== "undefined") {
+			if(typeof Storage !== 'undefined') {
 				sessionStorage.setItem('token', tkn);
 			}
 		};
@@ -55,7 +55,7 @@ angular.module('futurism')
 			setToken(null);
 			$http
 				.delete('/api/token')
-				.success(function(data) {callback(null, data)})
+				.success(function(data) {callback(null, data);})
 				.error(callback);
 		};
 

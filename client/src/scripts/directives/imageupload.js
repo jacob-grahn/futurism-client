@@ -1,9 +1,10 @@
+/* jshint loopfunc: true */
 //from https://github.com/Mischi/angularjs-imageupload-directive
 // I added a bit to zoom the image up and prevent bars of cropping
 
 angular.module('imageupload', [])
 	.directive('image', ['$q', function($q) {
-		'use strict'
+		'use strict';
 
 		var URL = window.URL || window.webkitURL;
 
@@ -20,7 +21,7 @@ angular.module('imageupload', [])
 			}
 
 			return resizeArea;
-		}
+		};
 
 		var resizeImage = function (origImage, options) {
 			var maxHeight = options.resizeMaxHeight || 300;
@@ -60,7 +61,7 @@ angular.module('imageupload', [])
 			//draw image on canvas
 			canvas.width = maxWidth;
 			canvas.height = maxHeight;
-			var ctx = canvas.getContext("2d");
+			var ctx = canvas.getContext('2d');
 			ctx.drawImage(origImage, offsetX, offsetY, drawWidth, drawHeight);
 
 			// get the data from canvas as 70% jpg (or specified type).
@@ -95,7 +96,7 @@ angular.module('imageupload', [])
 				resizeQuality: '@',
 				resizeType: '@'
 			},
-			link: function postLink(scope, element, attrs, ctrl) {
+			link: function postLink(scope, element, attrs) {
 
 				var doResizing = function(imageResult, callback) {
 					createImage(imageResult.url, function(image) {
@@ -110,18 +111,21 @@ angular.module('imageupload', [])
 
 				var applyScope = function(imageResult) {
 					scope.$apply(function() {
-						if(attrs.multiple)
+						if(attrs.multiple) {
 							scope.image.push(imageResult);
-						else
+						}
+						else {
 							scope.image = imageResult;
+						}
 					});
 				};
 
 
 				element.bind('change', function (evt) {
 					//when multiple always return an array of images
-					if(attrs.multiple)
+					if(attrs.multiple) {
 						scope.image = [];
+					}
 
 					var files = evt.target.files;
 					for(var i = 0; i < files.length; i++) {

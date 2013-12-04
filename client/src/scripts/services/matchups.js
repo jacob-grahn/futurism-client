@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('matchups', ['socket', '$rootScope', 'shared', '$location', 'account', function(socket, $rootScope, shared, $location, account) {
+	.factory('matchups', ['socket', '$rootScope', 'shared', '$location', 'account', 'lodash', function(socket, $rootScope, shared, $location, account, _) {
 		'use strict';
 
 		var lobbyName = 'brutus';
@@ -136,7 +136,7 @@ angular.module('futurism')
 			$rootScope.$apply(function() {
 				var matchup = idToMatchup(data.id);
 				matchup.users.push(data.user);
-			})
+			});
 		});
 
 
@@ -199,5 +199,5 @@ angular.module('futurism')
 			unsubscribe: unsubscribe,
 			clear: clear,
 			list: matchups
-		}
+		};
 	}]);

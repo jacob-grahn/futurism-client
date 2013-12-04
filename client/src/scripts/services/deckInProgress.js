@@ -7,5 +7,5 @@ angular.module('futurism')
 
 		return {
 			deck: deck
-		}
+		};
 	}]);

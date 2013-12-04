@@ -1,9 +1,11 @@
 angular.module('futurism')
 	.controller('navBarCtrl', ['$scope', 'account', function($scope, account) {
+		'use strict';
+
 		$scope.path = '';
 		$scope.account = account;
 
-		$scope.$on('$routeChangeSuccess', function(event, current, previous) {
+		$scope.$on('$routeChangeSuccess', function(event, current) {
 			if(current.$$route) {
 				$scope.path = current.$$route.originalPath;
 			}

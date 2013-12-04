@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('socket', ['session', function(session) {
+	.factory('socket', ['session', 'lodash', 'io', function(session, _, io) {
 		'use strict';
 
 		var socket = io.connect('http://localhost:9000');
@@ -28,7 +28,7 @@ angular.module('futurism')
 			ready = false;
 		});
 
-		socket.on('auth', function (data) {
+		socket.on('auth', function () {
 			sendAuth();
 		});
 
@@ -37,7 +37,7 @@ angular.module('futurism')
 			_.delay(sendAuth, 3000);
 		});
 
-		socket.on('ready', function(data) {
+		socket.on('ready', function() {
 			console.log('rec ready');
 			ready = true;
 			flushBuffer();

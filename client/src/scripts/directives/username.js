@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('username', ['websites', function(websites) {
+	.directive('username', [function() {
 		'use strict';
 
 		return {

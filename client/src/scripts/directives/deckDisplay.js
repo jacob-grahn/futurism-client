@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('deckDisplay', ['staticContentUrl', 'shared', function(staticContentUrl, shared) {
+	.directive('deckDisplay', ['staticContentUrl', 'lodash', function(staticContentUrl, _) {
 		'use strict';
 
 		return {
@@ -36,9 +36,9 @@ angular.module('futurism')
 					else {
 						cardId = card._id;
 					}
-					return staticContentUrl + '/images/cards/' + scope.size + '_' + cardId + '.jpg'
+					return staticContentUrl + '/images/cards/' + scope.size + '_' + cardId + '.jpg';
 				});
 			}
-		}
+		};
 
 	}]);

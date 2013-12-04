@@ -7,7 +7,7 @@ angular.module('futurism')
 		matchups.subscribe();
 		$scope.matchups = matchups;
 
-		$scope.$on("$destroy", function() {
+		$scope.$on('$destroy', function() {
 			matchups.unsubscribe();
 		});
 	}]);

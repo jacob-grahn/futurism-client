@@ -1,6 +1,8 @@
 angular.module('futurism')
 	.factory('staticContentUrl', function() {
-		var urlBase = location.href.substring(0, location.href.lastIndexOf("/")+1);
+		'use strict';
+
+		var urlBase = location.href.substring(0, location.href.lastIndexOf('/')+1);
 		var staticContentUrl;
 
 		if(urlBase.indexOf('production') !== -1) {

@@ -10,9 +10,9 @@ angular.module('futurism')
 			},
 			templateUrl: 'views/chat-display.html',
 
-			link: function (scope, elem, attrs) {
+			link: function (scope) {
 
-				var chat = Chat(scope.room);
+				var chat = new Chat(scope.room);
 				chat.subscribe();
 				scope.chat = chat;
 
@@ -27,6 +27,6 @@ angular.module('futurism')
 					chat.unsubscribe();
 				});
 			}
-		}
+		};
 
 	}]);

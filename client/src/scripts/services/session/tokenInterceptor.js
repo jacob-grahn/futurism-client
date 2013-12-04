@@ -1,14 +1,19 @@
-angular.module('futurism')
+(function() {
+	'use strict';
 
-	.factory('tokenInterceptor', ['account', function(account) {
-		return {
-			request: function(config) {
-				config.headers['Session-Token'] = account.token;
-				return config;
-			}
-		}
-	}])
+	angular.module('futurism')
 
-	.config(['$httpProvider', function($httpProvider) {
-		$httpProvider.interceptors.push('tokenInterceptor');
-	}]);
+		.factory('tokenInterceptor', ['account', function(account) {
+			return {
+				request: function(config) {
+					config.headers['Session-Token'] = account.token;
+					return config;
+				}
+			};
+		}])
+
+		.config(['$httpProvider', function($httpProvider) {
+			$httpProvider.interceptors.push('tokenInterceptor');
+		}]);
+
+}());

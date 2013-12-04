@@ -17,6 +17,6 @@ angular.module('futurism')
 			});
 
 			return filtered;
-		}
+		};
 
 	});

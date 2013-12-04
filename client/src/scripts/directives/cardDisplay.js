@@ -33,6 +33,6 @@ angular.module('futurism')
 					card.imageUrl = (staticContentUrl + '/images/cards/' + scope.size + '_' + cardId + '.jpg?' + card.version);
 				}
 			}
-		}
+		};
 
 	}]);
