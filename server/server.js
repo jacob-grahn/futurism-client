@@ -37,6 +37,9 @@
 
 	//--- serve static files (more middleware, technically)
 	if(process.env.NODE_ENV === 'development') {
+		expr.use(require('connect-livereload')({
+			port: 35729
+		}));
 		expr.use('/', express.static('./client/src'));
 		expr.use('/', express.static('./.tmp'));
 		expr.use('/', express.static('./shared'));
