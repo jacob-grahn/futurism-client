@@ -20,7 +20,10 @@ module.exports = function(io) {
 
 	function init(err, socket) {
 		if(err) {
-			return socket.emit('authFail', err);
+			if(socket) {
+				return socket.emit('authFail', err);
+			}
+			return 'no socket';
 		}
 
 		socket.on('subscribe', function(roomName) {
