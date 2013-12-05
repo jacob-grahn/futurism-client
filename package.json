@@ -3,7 +3,7 @@
   "description": "multiplayer card game",
   "version": "0.0.4",
   "private": false,
-  "main": "server.js",
+  "main": "server/server.js",
   "scripts": {
     "start": "node server",
     "test": "grunt test"
