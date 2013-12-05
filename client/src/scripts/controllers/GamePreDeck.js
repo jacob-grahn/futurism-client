@@ -7,8 +7,20 @@ angular.module('futurism')
 
 
 		$scope.select = function(deck) {
-			socket.emit('selectDeck', {gameId: $routeParams.gameId, deckId: deck._id});
-			$location.url('/game/' + $routeParams.gameId);
+			if(deck.pride <= $scope.maxPride) {
+				socket.emit('selectDeck', {gameId: $routeParams.gameId, deckId: deck._id});
+			}
 		};
+
+		socket.on('selectDeckStatus', function(data) {
+			console.log('rec selectDeckStatus', data);
+			if(!data.error) {
+				$location.url('/game/' + $routeParams.gameId);
+			}
+		});
+
+		$scope.$on('$destroy', function() {
+			socket.removeAllListeners('selectDeckStatus');
+		});
 
 	});

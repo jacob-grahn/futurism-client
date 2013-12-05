@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('lodash', function() {
+	.factory('_', function() {
 		'use strict';
 		return window._;
 	});
