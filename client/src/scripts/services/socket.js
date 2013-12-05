@@ -2,7 +2,7 @@ angular.module('futurism')
 	.factory('socket', function(session, _, io) {
 		'use strict';
 
-		var socket = io.connect('http://localhost:9000');
+		var socket = io.connect();
 		var buffer = [];
 		var ready = false;
 
