@@ -45,7 +45,7 @@
 		expr.use('/', express.static('./shared'));
 	}
 	else {
-		expr.use('/', express.static('./client/dist'));
+		expr.use('/', express.static('../client/dist'));
 	}
 
 

@@ -62,7 +62,7 @@ function() {
 				}
 
 				if(process.env.NODE_ENV === 'staging') {
-					if(!params.beta) {
+					if(!verifiedData.beta) {
 						return callback('You must be a member of our Beta Testers to access this.');
 					}
 				}
