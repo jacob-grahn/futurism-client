@@ -5,6 +5,7 @@ angular.module('futurism')
 
 		var sitesToTry = ['j', 'g'];
 		var token = '';
+		var tempCredentials;
 
 
 		var getToken = function() {
@@ -25,11 +26,12 @@ angular.module('futurism')
 
 
 		var create = function(callback) {
-			async.waterfall([
+			async.series([
 				_checkLogins,
 				_authorizeLogin
 			],
-			function(error, data) {
+			function(error, arr) {
+				var data = arr[1];
 				if(error) {
 					return callback(error);
 				}
@@ -44,9 +46,7 @@ angular.module('futurism')
 
 				setToken(data.token);
 
-				if(callback) {
-					return callback(null, data);
-				}
+				return callback(null, data);
 			});
 		};
 
@@ -75,18 +75,19 @@ angular.module('futurism')
 				return lookupFn(checkResult);
 			};
 
-			var checkResult = function(error, tempCredentials) {
+			var checkResult = function(error, tempCred) {
 				if(error) {
 					return checkNext();
 				}
-				return callback(null, tempCredentials);
+				tempCredentials = tempCred;
+				return callback(null);
 			};
 
 			checkNext();
 		};
 
 
-		var _authorizeLogin = function(tempCredentials, callback) {
+		var _authorizeLogin = function(callback) {
 			var strCred = encodeURIComponent(JSON.stringify(tempCredentials));
 			$http
 				.get('/api/token?user='+strCred)

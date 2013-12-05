@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('ErrorCtrl', function($scope) {
+	.controller('ErrorCtrl', function($scope, errorHandler) {
 		'use strict';
-		$scope.error = 'I am afraid there has been an error of some sort.';
+		$scope.error = errorHandler.getLastError();
 	});
