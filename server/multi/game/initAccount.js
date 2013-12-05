@@ -63,6 +63,7 @@
 		delete account.gameId;
 		delete account.hand;
 		delete account.graveyard;
+		delete account.deck;
 	};
 
 

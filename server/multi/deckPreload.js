@@ -16,10 +16,14 @@
 	 */
 	DeckPreload.initSocket = function(socket) {
 		socket.on('selectDeck', function(data) {
-			var dp = lookup.idToValue(data.gameId);
-			if(dp) {
-				dp.selectDeck(data.deckId);
-			}
+			socket.get('account', function(err, account) {
+				DeckPreload.selectDeck(account, data.gameId, data.deckId, function(err) {
+					if(err) {
+						return socket.emit('selectDeckStatus', {error: err, status: 'fail'});
+					}
+					return socket.emit('selectDeckStatus', {status: 'success'});
+				});
+			});
 		});
 	};
 
@@ -45,7 +49,7 @@
 	DeckPreload.selectDeck = function(account, gameId, deckId, cb) {
 
 		if(account.deck) {
-			return cb('a deck was already loaded for you');
+			return cb('a deck was already loaded for you: '+ JSON.stringify(account.deck));
 		}
 
 		DeckGoose
@@ -136,6 +140,7 @@
 		 * Give people 30 seconds to pick a deck before leaving them behind
 		 * @type {*}
 		 */
+		console.log('deckPreload will time out in '+rules.prepTime);
 		var forceStartTimeout = setTimeout(next, rules.prepTime*1000);
 
 

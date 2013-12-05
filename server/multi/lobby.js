@@ -4,10 +4,12 @@
 	var sharedFns = require('../../shared/fns');
 	var fns = require('../fns/fns');
 	var Game = require('./game/game');
+	var DeckPreload = require('./deckPreload');
 	var Chat = require('./chat');
 	var broadcast = require('./broadcast');
 	var Lookup = require('../fns/lookup');
 	var _ = require('lodash');
+	var defaultRules = require('./game/defaultRules');
 
 	var nextId = 1;
 	var lobbyLookup = Lookup();
@@ -37,7 +39,11 @@
 		 * @returns {{users: Array, rules: object, id: number}}
 		 */
 		var createMatchup = function(account, rules) {
-			var matchup = {users:[], rules: rules, id:nextId++};
+			var matchup = {
+				users: [],
+				rules: _.defaults(rules, defaultRules),
+				id: nextId++
+			};
 			matchups.store(matchup.id, matchup);
 			broadcast(roomName, 'createMatchup', matchup);
 			joinMatchup(account, matchup.id);
@@ -102,8 +108,15 @@
 		 */
 		var startMatchup = function(matchup) {
 			var gameId = fns.createRandomString(12);
-			new Game(matchup.users, matchup.rules, gameId);
+
 			Chat.safeCreate('chat-' + gameId);
+
+			console.log('starting deck preload', gameId, matchup.users, matchup.rules);
+			DeckPreload.startGroup(gameId, matchup.users, matchup.rules, function(err, accounts) {
+				console.log('starting game', accounts, matchup.rules, gameId);
+				new Game(accounts, matchup.rules, gameId);
+			});
+
 			broadcast(roomName, 'startMatchup', {id: matchup.id, gameId: gameId});
 			matchups.deleteId(matchup.id);
 		};
@@ -185,7 +198,7 @@
 				if(err) {
 					return err;
 				}
-				Lobby.leaveAll(account);
+				return Lobby.leaveAll(account);
 			});
 		});
 	};

@@ -15,7 +15,6 @@
 
 	/**
 	 *
-	 * @param io
 	 * @param {[object]} accounts
 	 * @param {object} rules
 	 * @param {string} gameId

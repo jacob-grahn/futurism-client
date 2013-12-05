@@ -13,9 +13,10 @@ angular.module('futurism')
 		};
 
 		socket.on('selectDeckStatus', function(data) {
-			console.log('rec selectDeckStatus', data);
-			if(!data.error) {
-				$location.url('/game/' + $routeParams.gameId);
+			if(data.status === 'success') {
+				$scope.$apply(function() {
+					$location.url('/game/' + $routeParams.gameId);
+				});
 			}
 		});
 

@@ -104,18 +104,19 @@ angular.module('futurism')
 			_.each(matchup.users, function(user) {
 				console.log(user, account);
 				if(+user._id === +account.userId) { // + casts to number
-					return gotoGamePage(gameId);
+					return gotoGamePage(gameId, matchup.rules.pride);
 				}
 			});
 		};
 
 
 		/**
-		 * Change url to yada/game/gameId
+		 * Change url
 		 * @param {string} gameId
+		 * @param {number} maxPride
 		 */
-		var gotoGamePage = function(gameId) {
-			$location.url('/game-pre-deck/'+gameId+'/'+59);
+		var gotoGamePage = function(gameId, maxPride) {
+			$location.url('/game-pre-deck/'+gameId+'/'+maxPride);
 		};
 
 
