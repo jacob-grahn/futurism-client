@@ -2,7 +2,7 @@
 
 angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', 'ngResource', 'ui.bootstrap'])
 
-	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+	.config(function($routeProvider, $locationProvider) {
 		$routeProvider.
 			when('/title', {templateUrl: 'views/title.html', controller: 'TitleCtrl'}).
 			when('/error', {templateUrl: 'views/error.html', controller: 'ErrorCtrl'}).
@@ -16,9 +16,9 @@ angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', '
 			otherwise({redirectTo: '/title'});
 
 		$locationProvider.html5Mode(true).hashPrefix('#');
-	}])
+	})
 
-	.run(['autoLogin', 'session', function(autoLogin, session) {
+	.run(function(autoLogin, session) {
 		autoLogin.activate();
 		session.create();
-	}]);
+	});

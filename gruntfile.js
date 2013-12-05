@@ -381,7 +381,9 @@ module.exports = function (grunt) {
 		// Run the node server in server/test-server.js
 		develop: {
 			server: {
-				file: '<%= yeoman.server %>/test-server.js'
+				file: '<%= yeoman.server %>/test-server.js',
+				env: {NODE_ENV: 'production'},
+				nodeArgs: ['--debug']
 			}
 		},
 
@@ -413,9 +415,9 @@ module.exports = function (grunt) {
 
 
 	grunt.registerTask('serve', function (target) {
-		/*if (target === 'dist') {
-			return grunt.task.run(['build', 'connect:dist:keepalive']);
-		}*/
+		if (target === 'dist') {
+			return grunt.task.run(['build', 'develop']);
+		}
 
 		grunt.task.run([
 			'clean:server',
