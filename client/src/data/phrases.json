@@ -206,6 +206,7 @@
 			"en": "people",
 			"ko": "사람들",
 			"ct": "meow"
+			"sv": "personer"
 		}
 	},
 
@@ -220,46 +221,55 @@
 			"en": "Toggle Navigation",
 			"ko": "토글",
 			"ct": "meow"
+			"sv": "Växla Navigation"
 		},
 		"futurism": {
 			"en": "Futurism",
 			"ko": "미래의 배",
 			"ct": "MEOW"
+			"sv": "Futurism"
 		},
 		"deckBuilder": {
 			"en": "Deck Builder",
 			"ko": "갑판",
 			"ct": "meow"
+			"sv": "Deck byggare"
 		},
 		"cardBuilder": {
 			"en": "Card Builder",
 			"ko": "카드",
 			"ct": "meow"
+			"sv": "Kort Byggare"
 		},
 		"lobby": {
 			"en": "Lobby",
 			"ko": "로비",
 			"ct": "mewoww"
-		},
+			"sv": "Lobby"
+		}, 
 		"stats": {
 			"en": "My Stats",
 			"ko": "통계",
 			"ct": "meow"
+			"sv": "Min Statistik"
 		},
 		"messages": {
 			"en": "Messages",
 			"ko": "메시지",
 			"ct": "meow"
+			"sv": "Meddelanden"
 		},
 		"logout": {
 			"en": "Logout",
 			"ko": "로그 아웃",
 			"ct": "meow"
+			"sv": "Logga ut"
 		},
 		"language": {
 			"en": "Language",
 			"ko": "언어",
 			"ct": "mewoowo"
+			"sv": "Språk"
 		}
 	},
 
@@ -273,11 +283,13 @@
 				"en": "Ent",
 				"ko": "엔트",
 				"ct": "mewoowo"
+				"sv": "Ent"
 			},
 			"desc": {
 				"en": "Seeking a bond with nature, the Ents tinkered with their own dna. A wild group of nomads, they say you'll never meet the same Ent twice.",
 				"ko": "자연과의 결합을 추구, 엔트는 자신의 DNA를 만지작 거렸다. 유목민의 야생 그룹, 그들은 당신이 두 번 같은 엔트을 충족하지 못할거야 말한다.",
 				"ct": "mewoowo"
+				"sv": "Söker en obligation med naturen, enterna mixtrar med sin egen dna. En vild grupp av nomader, de säger att du aldrig kommer att möta samma Ent två gånger."
 			}
 		},
 
@@ -286,12 +298,14 @@
 				"en": "Machine",
 				"ko": "기계",
 				"ct": "mewoowo"
+				"sv": "maskin"
 			},
 			"desc": {
 				"en": "The relentless pursuit of knowledge lead some to improve their minds with metal. They have become far more than humans ever were, and far less.",
 				"ko": "지식의 끊임없는 추구는 금속으로 그들의 마음을 개선하는 데 도움이되는 몇 가지를했다. 그들은 인간이 이제까지했던 것보다 훨씬 더, 훨씬 덜되고있다.",
 				"ct": "mewoowo"
-			}
+				"sv": "Den obevekliga strävan efter kunskap leder några att förbättra sina sinnen med metall. De har blivit mycket mer än människan någonsin var, och långt mindre."
+			}"
 		},
 
 		"el": {
@@ -299,11 +313,13 @@
 				"en": "Elite",
 				"ko": "엘리트",
 				"ct": "mewoowo"
+				"sv": "Elit"
 			},
 			"desc": {
 				"en": "Taking delight in the pleasures of this world, Elites have dominated the wealthy ruling class. A beautiful people, as long as you don't dig too deep.",
 				"ko": "이 세상의 쾌락의 기쁨을 촬영, 엘리트는 부유 한 지배 계급을 지배했다. 만큼 당신이 너무 깊이 파고하지 않는 아름다운 사람들.",
 				"ct": "mewoowo"
+				"sv": "Med glädje i njutning av denna värld, har eliter dominerat den förmögna härskande klassen.Vackra människor, så länge du inte gräver för djupt."
 			}
 		},
 
@@ -312,11 +328,13 @@
 				"en": "Zealot",
 				"ko": "열광 자",
 				"ct": "mewoowo"
+				"sv": "Zealot"
 			},
 			"desc": {
 				"en": "Always certain of the truth, Zealots are more than willing to fight for it. The fires of constant war have honed their military skills to perfection.",
 				"ko": "진리를 항상 일정, 질럿 그것을 위해 싸울 의도보다는 좀더. 지속적인 전쟁의 불이 완벽하게 자신의 군사 기술을 연마했다.",
 				"ct": "mewoowo"
+				"sv": "Alltid säker på sanningen, zeloterna är mer än villiga att kämpa för det. Bränderna i konstanta krig har finslipat sina militära färdigheter till perfektion."
 			}
 		}
 	},
@@ -331,11 +349,13 @@
 				"en": "Healing",
 				"ko": "치료",
 				"ct": "mewoowo"
+				"sv": "Helande"
 			},
 			"desc": {
 				"en": "Target card gains 1 health.",
 				"ko": "대상 카드는 1 건강을 얻는다.",
 				"ct": "mewoowo"
+				"sv": "Det valda kortet får ett liv"
 			}
 		},
 
@@ -344,11 +364,13 @@
 				"en": "weed trees",
 				"ko": "잡초 나무",
 				"ct": "mewoowo"
+				"sv": "ogrästräd"
 			},
 			"desc": {
 				"en": "A 1/1 tree is created",
 				"ko": "1 / 1 나무가 만들어집니다",
 				"ct": "mewoowo"
+				"sv": "Ett 1/1 träd är skapat" 
 			}
 		},
 
@@ -357,11 +379,13 @@
 				"en": "abomination",
 				"ko": "가증스러운 행위",
 				"ct": "mewoowo"
+				"sv": "avskyvärdighet"
 			},
 			"desc": {
 				"en": "Merge this unit with another.",
 				"ko": "서로 기기를 병합합니다.",
 				"ct": "mewoowo"
+				"sv": "Slå ihop den här enheten med en annan"
 			}
 		},
 
@@ -370,11 +394,13 @@
 				"en": "secretions",
 				"ko": "분비물",
 				"ct": "mewoowo"
+				"sv": "utsöndring"
 			},
 			"desc": {
 				"en": "Target enemy can not attack next turn.",
 				"ko": "적군은 다음 턴을 공격 할 수 없다.",
 				"ct": "mewoowo"
+				"sv": "Den valda enheten kan inte attackera nästa omgång"
 			}
 		},
 
@@ -383,11 +409,13 @@
 				"en": "clone",
 				"ko": "복제",
 				"ct": "mewoowo"
+				"sv": "klon"
 			},
 			"desc": {
 				"en": "Sacrifice this unit to produce a duplicate of another unit.",
 				"ko": "다른 장치의 복제본을 생성하기 위해이 장치를 제물로 바친다.",
 				"ct": "mewoowo"
+				"sv": "Offra den här enheten för att producera en kopia av en annan enhet."
 			}
 		},
 
@@ -396,11 +424,13 @@
 				"en": "bees!",
 				"ko": "꿀벌!",
 				"ct": "mewoowo"
+				"sv": "Bin!"
 			},
 			"desc": {
 				"en": "All enemies in target column loose 1 health.",
 				"ko": "목표 컬럼에있는 모든 적을 1 건강 느슨한.",
 				"ct": "mewoowo"
+				"sv": "Alla fiender i en siktad kolumn tappar ett liv."
 			}
 		},
 
@@ -409,11 +439,13 @@
 				"en": "rebuild",
 				"ko": "다시",
 				"ct": "mewoowo"
+				"sv": "buyg om"
 			},
 			"desc": {
 				"en": "Resurrect a dead machine.",
 				"ko": "죽은 기계를 부활.",
 				"ct": "mewoowo"
+				"sv": "Återuppta en död maskin."
 			}
 		},
 
@@ -427,6 +459,7 @@
 				"en": "All damage that would be dealt to target unit is reduced by 1 for a turn.",
 				"ko": "단위를 대상으로 처리 될 수있는 모든 피해는 차례를 1로 줄일 수있다.",
 				"ct": "mewoowo"
+				"sv": "All skada som skulle ha blivit handlat till enheten är nedsatt till en för en omgång.
 			}
 		},
 
@@ -435,11 +468,13 @@
 				"en": "precise",
 				"ko": "정확한",
 				"ct": "mewoowo"
+				"sv": "exakt"
 			},
 			"desc": {
 				"en": "Attack an enemy of your choice regardless of defensive formations.",
 				"ko": "에 관계없이 방어 형성의 선택의 적을 공격한다.",
 				"ct": "mewoowo"
+				"sv": "Attackera en fiende av ditt val oavsett´av defensiva former"
 			}
 		},
 
@@ -448,11 +483,13 @@
 				"en": "strategist",
 				"ko": "전략가",
 				"ct": "mewoowo"
+				"sv": "strateg"
 			},
 			"desc": {
 				"en": "Ally can perform an extra action this turn",
 				"ko": "앨리 추가 조치에게이 턴을 수행 할 수 있습니다",
 				"ct": "mewoowo"
+				"sv": "Allierade kan utföra en extra åtgärd den här omgången"
 			}
 		},
 
@@ -461,11 +498,13 @@
 				"en": "networking",
 				"ko": "네트워킹",
 				"ct": "mewoowo"
+				"sv": "nätverk"
 			},
 			"desc": {
 				"en": "Gain an allies abilities.",
 				"ko": "동맹의 능력을 얻을 수 있습니다.",
 				"ct": "mewoowo"
+				"sv": "Få en allierads förmågor"
 			}
 		},
 
@@ -474,11 +513,13 @@
 				"en": "transformer",
 				"ko": "변압기",
 				"ct": "mewoowo"
+				"sv": "transformerare"
 			},
 			"desc": {
 				"en": "Swap health and attack.",
 				"ko": "건강과 공격을 교환합니다.",
 				"ct": "mewoowo"
+				"sv": "Byt liv och attack"
 			}
 		},
 
@@ -488,11 +529,13 @@
 				"en": "seduction",
 				"ko": "유혹",
 				"ct": "mewoowo"
+				"sv": "lockelse"
 			},
 			"desc": {
 				"en": "Convert an enemy to your side if their health is 1.",
 				"ko": "자신의 건강이 1이면 옆으로 적을 변환합니다.",
 				"ct": "mewoowo"
+				"sv": "Konvertera en fiende till din sida om dens liv är ett"
 			}
 		},
 
@@ -502,11 +545,13 @@
 				"en": "assassin",
 				"ko": "암살자",
 				"ct": "mewoowo"
+				"sv": "mördare"
 			},
 			"desc": {
 				"en": "Attack without taking damage.",
 				"ko": "피해를하지 않고 공격한다.",
 				"ct": "mewoowo"
+				"sv": "Attackera utan att ta skada"
 			}
 		},
 
@@ -515,11 +560,13 @@
 				"en": "delegate",
 				"ko": "대리자",
 				"ct": "mewoowo"
+				"sv": "sända"
 			},
 			"desc": {
 				"en": "Trade this unit with another unit in your hand.",
 				"ko": "당신의 손에있는 다른 장치와이 장치를 무역.",
 				"ct": "mewoowo"
+				"sv": "Byt det här kortet med en annan enhet i din hand"
 			}
 		},
 
@@ -528,11 +575,13 @@
 				"en":"poison",
 				"ko": "독",
 				"ct": "mewoowo"
+			        "sv": "gift"
 			},
 			"desc": {
 				"en": "Target enemy loses 1 health per turn.",
 				"ko": "대상 적 턴에 1 건강을 푼다.",
 				"ct": "mewoowo"
+				"sv": "Den valda fienden förlorar ett liv per omgång"
 			}
 		},
 
@@ -541,11 +590,13 @@
 				"en": "bag 'em",
 				"ko": "잡기",
 				"ct": "mewoowo"
+				"sv": "Säcka dem"
 			},
 			"desc": {
 				"en": "Target card is returned to its owner's hand.",
 				"ko": "대상 카드는 그것의 소유자의 손에 반환됩니다.",
 				"ct": "mewoowo"
+				"sv": "Kortet du valde är tillbakadraget till ägarens hand"
 			}
 		},
 
@@ -554,11 +605,13 @@
 				"en":  "siphon",
 				"ko": "사이펀",
 				"ct": "mewoowo"
+				"sv": "sifon"
 			},
 			"desc": {
 				"en":  "Steal 1 health from a card of your choice.",
 				"ko": "당신의 선택의 카드에서 1 건강을 훔치는.",
 				"ct": "mewoowo"
+				"sv": "Stjäl ett liv från ett kort av ditt val"
 			}
 		},
 
@@ -567,11 +620,13 @@
 				"en": "male",
 				"ko": "남성",
 				"ct": "mewoowo"
+				"sv": "man"
 			},
 			"desc": {
 				"en": "Can reproduce with females.",
 				"ko": "여성으로 재현 할 수 있습니다.",
 				"ct": "mewoowo"
+				"sv": "Kan ompruduceras med kvinnor"
 			}
 		},
 
@@ -580,11 +635,13 @@
 				"en": "female",
 				"ko": "여성",
 				"ct": "mewoowo"
+				"sv": "kvinna"
 			},
 			"desc": {
 				"en": "Can reproduce with males.",
 				"ko": "남성으로 재현 할 수 있습니다.",
 				"ct": "mewoowo"
+				"sv": "Kan omproduceras med män"
 			}
 		},
 
@@ -593,11 +650,13 @@
 				"en": "battle cry",
 				"ko": "함성",
 				"ct": "mewoowo"
+				"sv": "krigs gråt"
 			},
 			"desc": {
 				"en": "Target unit gains 2 attack for the turn.",
 				"ko": "대상 장치는 회전 2 공격을 얻는다.",
 				"ct": "mewoowo"
+				"sv": "Att träffa en enhet ger två attacker för omgången" 
 			}
 		},
 
@@ -606,11 +665,13 @@
 				"en": "determined",
 				"ko": "결정된",
 				"ct": "mewoowo"
+				"sv": "avgjord"
 			},
 			"desc": {
 				"en": "Sacrifice this card to deal double damage.",
 				"ko": "더블 데미지를이 카드를 제물로 바친다.",
 				"ct": "mewoowo"
+				"sv": "Offra det här kortet för att handla dubbel skada"
 			}
 		},
 
@@ -619,11 +680,13 @@
 				"en": "heroic sacrifice",
 				"ko": "영웅적인 희생",
 				"ct": "mewoowo"
+				"sv": "hjältligt offer"
 			},
 			"desc": {
 				"en": "All enemy attacks must target this card for one turn.",
 				"ko": "모든 적의 공격 한 턴에이 카드를 대상으로해야합니다.",
 				"ct": "mewoowo"
+				"sv": "Alla fienders attacker måste sikta på det här kortet för en omgång"
 			}
 		},
 
@@ -632,11 +695,13 @@
 				"en": "super serum",
 				"ko": "슈퍼 혈청",
 				"ct": "mewoowo"
+				"sv": "superserum"
 			},
 			"desc": {
 				"en": "Available health points are converted into attack points",
 				"ko": "가능한 건강 포인트는 공격 포인트로 변환",
 				"ct": "mewoowo"
+				"sv": "Tillgänliga livpoäng är konverterade till attackpoäng"
 			}
 		}
 	}
