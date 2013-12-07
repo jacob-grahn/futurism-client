@@ -6,21 +6,25 @@
 			"en": "FUTURISM",
 			"ko": "미래의 배",
 			"ct": "meow"
+		        "sv": "Futusrism" 
 		},
 		"login": {
 			"en": "LOGIN",
 			"ko": "놀이",
 			"ct": "meow"
+		        "sv": "Logga in"
 		},
 		"credits": {
 			"en": "CREDITS",
 			"ko": "인정함",
 			"ct": "meow"
+		        "sv": "medverkande"
 		},
 		"instructions": {
 			"en": "EDU-VIDS",
 			"ko": "명령",
 			"ct": "meow"
+			"sv": "edu filmer"
 		}
 	},
 
@@ -31,51 +35,62 @@
 			"en": "Save n Load",
 			"ko": "저장",
 			"ct": "meow"
-		},
+		        "sv": "Spara och Ladda
+	 	},
 		"nameIt": {
 			"en": "Name It",
 			"ko": "이름",
 			"ct": "meow"
+		        "sv": "Namnge det"
 		},
 		"imageUpload": {
 			"en": "Image Upload",
 			"ko": "영상",
 			"ct": "meow"
-		},
+                        "sv": "Bilduppladdning"		
+  		},
 		"factionAbilities": {
 			"en": "Faction Abilities",
 			"ko": "능력",
 			"ct": "meow"
+			"sv": "fraktionsförmågor"
+			
 		},
 		"save": {
 			"en": "Save",
 			"ko": "저장",
 			"ct": "meow"
+			"sv": "Spara"
 		},
 		"load": {
 			"en": "Load",
 			"ko": "하중",
 			"ct": "meow"
+			"sv": "Ladda"
 		},
 		"new": {
 			"en": "New",
 			"ko": "새로운",
 			"ct": "meow"
+			"sv": "Ny
 		},
 		"delete": {
 			"en": "Delete",
 			"ko": "삭제",
 			"ct": "meow"
+			"sv": "Ta bort"
 		},
 		"attack": {
 			"en": "Attack",
 			"ko": "공격",
 			"ct": "meow"
+			"sv": "Attackera"
 		},
 		"health": {
 			"en": "Health",
 			"ko": "건강",
 			"ct": "meow"
+			"sv": "Liv"
 		}
 	},
 
@@ -87,11 +102,13 @@
 			"en": "say",
 			"ko": "말하다",
 			"ct": "meow"
+			"sv": "säg"
 		},
 		"placeholder": {
 			"en": "type to chat",
 			"ko": "말을 입력",
 			"ct": "meow"
+			"sv": "skriv för att chatta"
 		}
 	},
 
@@ -102,41 +119,49 @@
 			"en": "Save n Load",
 			"ko": "저장",
 			"ct": "meow"
+			"sv": "Spara och Ladda"
 		},
 		"save": {
 			"en": "Save",
 			"ko": "저장",
 			"ct": "meow"
+			"sv": "Spara"
 		},
 		"load": {
 			"en": "Load",
 			"ko": "하중",
 			"ct": "meow"
+		        "sv": "Ladda
 		},
 		"new": {
 			"en": "New",
 			"ko": "새로운",
 			"ct": "meow"
+			"sv": "Ny"
 		},
 		"delete": {
 			"en": "Delete",
 			"ko": "삭제",
 			"ct": "meow"
+			"sv": "Ta bort"
 		},
 		"nameIt": {
 			"en": "Name It",
 			"ko": "이름",
 			"ct": "meow"
+			"sv": "Namnge det"
 		},
 		"cards": {
 			"en": "Cards",
 			"ko": "카드",
 			"ct": "meow"
+			"sv": "Kort"
 		},
 		"deckPride": {
 			"en": "Deck Pride",
 			"ko": "자존심",
 			"ct": "meow"
+			"sv": "Deck Stolthet"
 		}
 	},
 
@@ -149,6 +174,7 @@
 			"en": "Error",
 			"ko": "오류",
 			"ct": "meow"
+			"sv": "Error"
 		}
 	},
 
@@ -160,6 +186,7 @@
 			"en": "Max Pride",
 			"ko": "자존심",
 			"ct": "meow"
+			"sv": "Max Stolthet"
 		}
 	},
 
@@ -171,21 +198,26 @@
 			"en": "player",
 			"ko": "플레이어",
 			"ct": "meow"
+			"sv": "spelare"
 		},
 		"pride": {
 			"en": "pride",
 			"ko": "자존심",
 			"ct": "meow"
+			"sv": "stolthet"
 		},
 		"custom": {
 			"en": "custom",
 			"ko": "관습",
 			"ct": "meow"
+			"sv": "Anpassad"
 		},
 		"join": {
 			"en": "join",
 			"ko": "가입",
 			"ct": "meow"
+			"sv": "gå med"
+			
 		},
 		"start": {
 			"en": "start",
