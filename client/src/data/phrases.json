@@ -160,6 +160,7 @@
 			"en": "Max Pride",
 			"ko": "자존심",
 			"ct": "meow"
+			"sv": "Max stolthet
 		}
 	},
 
@@ -171,36 +172,43 @@
 			"en": "player",
 			"ko": "플레이어",
 			"ct": "meow"
+			"sv": "spelare"
 		},
 		"pride": {
 			"en": "pride",
 			"ko": "자존심",
 			"ct": "meow"
+			"sv": "Stolthet"
 		},
 		"custom": {
 			"en": "custom",
 			"ko": "관습",
 			"ct": "meow"
+			"sv": "Anpassad"
 		},
 		"join": {
 			"en": "join",
 			"ko": "가입",
 			"ct": "meow"
+			"sv": "gå med"
 		},
 		"start": {
 			"en": "start",
 			"ko": "스타트",
 			"ct": "meow"
+			"sv": "starta"
 		},
 		"chat": {
 			"en": "chat",
 			"ko": "이야기",
 			"ct": "meow"
+			"sv": "chatt"
 		},
 		"guild": {
 			"en": "guild",
 			"ko": "대가족",
 			"ct": "meow"
+			"sv": "guild"
 		},
 		"people": {
 			"en": "people",
