@@ -3,43 +3,43 @@
 	<tabset>
 
 		<!-- chat -->
-		<tab heading="Chat">
+		<tab heading="{{lang.lobby.chat}}">
 			<div class="panel-body">
 				<chat-display room="chat-{{lobbyName}}"></chat-display>
 			</div>
 		</tab>
 
 		<!-- guild -->
-		<tab heading="Guild">Static content</tab>
+		<tab heading="{{lang.lobby.guild}}">Static content</tab>
 
 		<!-- people -->
-		<tab heading="People">Static content</tab>
+		<tab heading="{{lang.lobby.people}}">Static content</tab>
 	</tabset>
 
 
 </div>
 
 <div id="lobby-starters" class="col-sm-3">
-	<h1>Start</h1>
+	<h1>{{lang.lobby.start}}</h1>
 	<ul>
-		<li><button class='btn btn-default' ng-click="matchups.create({players: 2, pride: 20})">2 player/20 pride</button></li>
-		<li><button class='btn btn-default' ng-click="matchups.create({players: 2, pride: 40})">2 player/40 pride</button></li>
-		<li><button class='btn btn-default' ng-click="matchups.create({players: 2, pride: 60})">2 player/60 pride</button></li>
-		<li><button class='btn btn-default' ng-click="matchups.create({players: 4, pride: 60})">Custom</button></li>
+		<li><button class='btn btn-default' ng-click="matchups.create({players: 2, pride: 20})">2 {{lang.lobby.player}}/20 {{lang.lobby.pride}}</button></li>
+		<li><button class='btn btn-default' ng-click="matchups.create({players: 2, pride: 40})">2 {{lang.lobby.player}}/40 {{lang.lobby.pride}}</button></li>
+		<li><button class='btn btn-default' ng-click="matchups.create({players: 2, pride: 60})">2 {{lang.lobby.player}}/60 {{lang.lobby.pride}}</button></li>
+		<li><button class='btn btn-default' ng-click="matchups.create({players: 4, pride: 60})">{{lang.lobby.custom}}</button></li>
 	</ul>
 </div>
 
 <div id="lobby-matchups" class="col-sm-4">
-	<h1>Join</h1>
+	<h1>{{lang.lobby.join}}</h1>
 	<ul class="list-group">
 		<li class="list-group-item matchup" ng-repeat="matchup in matchups.list" ng-click="matchups.join(matchup.id)">
-			<h3>{{matchup.rules.players}} player/{{matchup.rules.pride}} pride</h3>
+			<h3>{{matchup.rules.players}} {{lang.lobby.player}}/{{matchup.rules.pride}} {{lang.lobby.pride}}</h3>
 			<ul class="matchup-members">
 				<li ng-repeat="user in matchup.users">
 					<div username name="{{user.name}}" id="{{user._id}}" site="{{user.site}}" group="{{user.group}}"></div>
 				</li>
 			</ul>
-			<button class='btn btn-default'>Join</button>
+			<button class='btn btn-default'>{{lang.lobby.join}}</button>
 		</li>
 	</ul>
 </div>

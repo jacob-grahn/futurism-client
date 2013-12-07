@@ -8,9 +8,9 @@
 
 	<form submit="sendMessage()">
 		<div class="input-group">
-			<input class="form-control" type="text" ng-model="typedMessage" placeholder="type to chat">
+			<input class="form-control" type="text" ng-model="typedMessage" placeholder="{{lang.chat.placeholder}}">
 		<span class="input-group-btn">
-			<button class='btn btn-default' type="submit" ng-click="sendMessage()">Say</button>
+			<button class='btn btn-default' type="submit" ng-click="sendMessage()">{{lang.chat.say}}</button>
 		</span>
 		</div>
 	</form>

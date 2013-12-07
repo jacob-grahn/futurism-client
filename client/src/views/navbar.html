@@ -3,20 +3,20 @@
 	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-			<span class="sr-only">Toggle navigation</span>
+			<span class="sr-only">{{lang.nav.toggle}}</span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-		<a class="navbar-brand" href="#">Futurism</a>
+		<a class="navbar-brand" href="#">{{lang.nav.futurism}}</a>
 	</div>
 
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav">
-			<li ng-class="{active: path=='/deck-builder'}"><a ng-href="/deck-builder">Deck Builder</a></li>
-			<li ng-class="{active: path=='/card-builder'}"><a ng-href="/card-builder">Card Builder</a></li>
-			<li ng-class="{active: path=='/lobby'}"><a ng-href="/lobby">Lobby</a></li>
+			<li ng-class="{active: path=='/deck-builder'}"><a ng-href="/deck-builder">{{lang.nav.deckBuilder}}</a></li>
+			<li ng-class="{active: path=='/card-builder'}"><a ng-href="/card-builder">{{lang.nav.cardBuilder}}</a></li>
+			<li ng-class="{active: path=='/lobby'}"><a ng-href="/lobby">{{lang.nav.lobby}}</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown">
@@ -25,11 +25,9 @@
 					<b class="caret"></b>
 				</a>
 				<ul class="dropdown-menu">
-					<li><a href="#">My Stats</a></li>
-					<li><a href="#">Messages</a></li>
-					<li><a href="#">Link PR2</a></li>
-					<li><a href="#">Link F@H</a></li>
-					<li><a ng-href="/">Logout</a></li>
+					<li><a href="#">{{lang.nav.stats}}</a></li>
+					<li><a href="#">{{lang.nav.messages}}</a></li>
+					<li><a ng-href="/">{{lang.nav.logout}}</a></li>
 				</ul>
 			</li>
 		</ul>

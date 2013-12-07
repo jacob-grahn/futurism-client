@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('chatDisplay', function(Chat) {
+	.directive('chatDisplay', function(Chat, lang) {
 		'use strict';
 
 		return {
@@ -15,6 +15,7 @@ angular.module('futurism')
 				var chat = new Chat(scope.room);
 				chat.subscribe();
 				scope.chat = chat;
+				scope.lang = lang;
 
 				scope.sendMessage = function() {
 					if(scope.typedMessage) {

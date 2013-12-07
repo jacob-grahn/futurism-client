@@ -1,0 +1,179 @@
+{
+
+
+	"title": {
+		"gameName": {
+			"en": "FUTURISM"
+		},
+		"login": {
+			"en": "LOGIN",
+			"ko": "놀이"
+		},
+		"credits": {
+			"en": "CREDITS",
+			"ko": "인정함"
+		},
+		"instructions": {
+			"en": "EDU-VIDS",
+			"ko": "명령"
+		}
+	},
+
+
+
+	"cardBuilder": {
+		"saveAndLoad": {
+			"en": "Save n Load"
+		},
+		"nameIt": {
+			"en": "Name It"
+		},
+		"imageUpload": {
+			"en": "Image Upload"
+		},
+		"factionAbilities": {
+			"en": "Faction Abilities"
+		},
+		"save": {
+			"en": "Save"
+		},
+		"load": {
+			"en": "Load"
+		},
+		"new": {
+			"en": "New"
+		},
+		"delete": {
+			"en": "Delete"
+		},
+		"attack": {
+			"en": "Attack"
+		},
+		"health": {
+			"en": "Health"
+		}
+	},
+
+
+
+
+	"chat": {
+		"say": {
+			"en": "say"
+		},
+		"placeholder": {
+			"en": "type to chat"
+		}
+	},
+
+
+
+	"deckBuilder": {
+		"saveAndLoad": {
+			"en": "Save n Load"
+		},
+		"save": {
+			"en": "Save"
+		},
+		"load": {
+			"en": "Load"
+		},
+		"new": {
+			"en": "New"
+		},
+		"delete": {
+			"en": "Delete"
+		},
+		"nameIt": {
+			"en": "Name It"
+		},
+		"cards": {
+			"en": "Cards"
+		},
+		"deckPride": {
+			"en": "Deck Pride"
+		}
+	},
+
+
+
+
+
+	"errorPage": {
+		"error": {
+			"en": "Error"
+		}
+	},
+
+
+
+
+	"preDeck": {
+		"maxPride": {
+			"en": "Max Pride"
+		}
+	},
+
+
+
+
+	"lobby": {
+		"player": {
+			"en": "player"
+		},
+		"pride": {
+			"en": "pride"
+		},
+		"custom": {
+			"en": "custom"
+		},
+		"join": {
+			"en": "join"
+		},
+		"start": {
+			"en": "start"
+		},
+		"chat": {
+			"en": "chat"
+		},
+		"guild": {
+			"en": "guild"
+		},
+		"people": {
+			"en": "people"
+		}
+	},
+
+
+
+
+
+
+
+	"nav": {
+		"toggle": {
+			"en": "Toggle Navigation"
+		},
+		"futurism": {
+			"en": "Futurism"
+		},
+		"deckBuilder": {
+			"en": "Deck Builder"
+		},
+		"cardBuilder": {
+			"en": "Card Builder"
+		},
+		"lobby": {
+			"en": "Lobby"
+		},
+		"stats": {
+			"en": "My Stats"
+		},
+		"messages": {
+			"en": "Messages"
+		},
+		"logout": {
+			"en": "Logout"
+		}
+	}
+}

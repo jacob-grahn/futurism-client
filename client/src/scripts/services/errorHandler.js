@@ -4,15 +4,14 @@ angular.module('futurism')
 
 		var message = '';
 
-		var handleError = function(str) {
-			console.log('errorHandler', str);
+		var handle = function(str) {
 			message = str;
 			$location.url('/error');
 		};
 
 		var callback = function(err) {
 			if(err) {
-				handleError(err);
+				handle(err);
 			}
 		};
 
@@ -20,9 +19,14 @@ angular.module('futurism')
 			return message;
 		};
 
+		var reset = function() {
+			message = null;
+		};
+
 		return {
 			getLastError: getLastError,
-			handleError: handleError,
-			callback: callback
+			handle: handle,
+			callback: callback,
+			reset: reset
 		};
 	});

@@ -18,7 +18,8 @@ angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', '
 		$locationProvider.html5Mode(true).hashPrefix('#');
 	})
 
-	.run(function(autoLogin, session, errorHandler) {
+	.run(function(autoLogin, session, errorHandler, $rootScope, lang) {
 		autoLogin.activate();
 		session.create(errorHandler.callback);
+		$rootScope.lang = lang;
 	});

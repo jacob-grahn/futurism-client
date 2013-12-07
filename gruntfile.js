@@ -40,9 +40,12 @@ module.exports = function (grunt) {
 				tasks: ['develop', 'wait'],
 				options: {nospawn: true}
 			},
+			data: {
+				files: ['{.tmp,<%= yeoman.app %>}/data/*'],
+			},
 			js: {
 				files: ['{.tmp,<%= yeoman.app %>}/scripts/**/*.js'],
-				tasks: ['newer:jshint:all']
+				//tasks: ['newer:jshint:all']
 			},
 			jsTest: {
 				files: ['test/spec/{,*/}*.js'],

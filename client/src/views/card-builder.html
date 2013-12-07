@@ -4,28 +4,28 @@
 		<form role="form">
 
 			<div class="form-group">
-				<h1>Save n Load</h1>
-				<button class='btn btn-default' type="submit" ng-click="saveCard()">Save</button>
-				<a ng-href="/card-selector"><button class='btn btn-default'>Load</button></a>
-				<button class='btn btn-default' type="submit" ng-click="applyDefaults()">New</button>
-				<button ng-show="card.id" class='btn btn-default' type="submit" ng-click="deleteCard()">Delete</button>
+				<h1>{{lang.cardBuilder.saveAndLoad}}</h1>
+				<button class='btn btn-default' type="submit" ng-click="saveCard()">{{lang.cardBuilder.save}}</button>
+				<a ng-href="/card-selector"><button class='btn btn-default'>{{lang.cardBuilder.load}}</button></a>
+				<button class='btn btn-default' type="submit" ng-click="applyDefaults()">{{lang.cardBuilder.new}}</button>
+				<button ng-show="card.id" class='btn btn-default' type="submit" ng-click="deleteCard()">{{lang.cardBuilder.delete}}</button>
 			</div>
 
 			<div class="form-group">
-				<h1>Name It</h1>
+				<h1>{{lang.cardBuilder.nameIt}}</h1>
 				<input class="form-control" type="text" ng-model="card.name" placeholder="Name">
 				<textarea class="form-control" rows="1" ng-model="card.story" placeholder="Description"></textarea>
-				<label class="control-label"><input class="form-control" type="text" maxlength="1" size="3" ng-model="card.attack" /> attack</label>
-				<label class="control-label"><input class="form-control" type="text" maxlength="1" size="3" ng-model="card.health" /> health</label>
+				<label class="control-label"><input class="form-control" type="text" maxlength="1" size="3" ng-model="card.attack" /> {{lang.cardBuilder.attack}}</label>
+				<label class="control-label"><input class="form-control" type="text" maxlength="1" size="3" ng-model="card.health" /> {{lang.cardBuilder.health}}</label>
 			</div>
 
 			<div class="form-group">
-				<h1>Image Upload</h1>
+				<h1>{{lang.cardBuilder.imageUpload}}</h1>
 				<input type="file" accept="image/*" image="uppedImage" resize-max-width="260" resize-max-height="180" resize-quality="0.9" resize-type="image/jpg"/>
 			</div>
 
 			<div class="form-group">
-				<h1>Faction Abilities</h1>
+				<h1>{{lang.cardBuilder.factionAbilities}}</h1>
 				<p><select ng-model="card.faction" ng-options="value.id as value.name for (key, value) in factions.factionLookup"></select></p>
 				<p class="faction-desc">{{factions.factionLookup[card.faction].desc}}</p>
 				<ul class="checkbox" id="faction-checkboxes">

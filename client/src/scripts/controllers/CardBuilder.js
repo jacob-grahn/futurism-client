@@ -5,7 +5,6 @@ angular.module('futurism')
 		var factions = shared.factions;
 		var cardFns = shared.cardFns;
 
-
 		var objToArr = function(obj) {
 			var arr = [];
 			_.each(obj, function(value, abilityId) {
@@ -43,7 +42,6 @@ angular.module('futurism')
 
 			$scope.card.$save({},
 				function(value, responseHeaders) {
-					console.log('I assume this is a callback', value, responseHeaders);
 					$scope.uppedImage = null;
 				},
 				function(httpResponse) {
