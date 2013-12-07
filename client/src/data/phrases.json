@@ -117,26 +117,31 @@
 			"en": "New",
 			"ko": "새로운",
 			"ct": "meow"
+			"sv": "Nytt"
 		},
 		"delete": {
 			"en": "Delete",
 			"ko": "삭제",
 			"ct": "meow"
+			"sv": "Ta bort"
 		},
 		"nameIt": {
 			"en": "Name It",
 			"ko": "이름",
 			"ct": "meow"
+			"sv": "Namnge det"
 		},
 		"cards": {
 			"en": "Cards",
 			"ko": "카드",
 			"ct": "meow"
+			"sv": "Kort"
 		},
 		"deckPride": {
 			"en": "Deck Pride",
 			"ko": "자존심",
 			"ct": "meow"
+			"sv": "Deckstolthet"
 		}
 	},
 
@@ -149,6 +154,7 @@
 			"en": "Error",
 			"ko": "오류",
 			"ct": "meow"
+			"sv": "Error"
 		}
 	},
 
