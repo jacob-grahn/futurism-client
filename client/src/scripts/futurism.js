@@ -13,6 +13,7 @@ angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', '
 			when('/lobby', {templateUrl: 'views/lobby.html', controller: 'LobbyCtrl'}).
 			when('/game/:gameId', {templateUrl: 'views/game.html', controller: 'GameCtrl'}).
 			when('/game-pre-deck/:gameId/:maxPride', {templateUrl: 'views/game-pre-deck.html', controller: 'GamePreDeckCtrl'}).
+			when('/language', {templateUrl: 'views/language.html', controller: 'LanguageCtrl'}).
 			otherwise({redirectTo: '/title'});
 
 		$locationProvider.html5Mode(true).hashPrefix('#');

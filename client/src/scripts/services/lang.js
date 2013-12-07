@@ -6,8 +6,6 @@
 		var lang = {};
 		var phrases = {};
 
-		lang.languages = ['en', 'ko'];
-
 		lang.setLang = function(str) {
 			_.each(phrases, function(phraseGroup, groupKey) {
 				_.each(phraseGroup, function(phrase, phraseKey) {

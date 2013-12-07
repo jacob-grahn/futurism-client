@@ -3,19 +3,24 @@
 
 	"title": {
 		"gameName": {
-			"en": "FUTURISM"
+			"en": "FUTURISM",
+			"ko": "미래의 배",
+			"ct": "meow"
 		},
 		"login": {
 			"en": "LOGIN",
-			"ko": "놀이"
+			"ko": "놀이",
+			"ct": "meow"
 		},
 		"credits": {
 			"en": "CREDITS",
-			"ko": "인정함"
+			"ko": "인정함",
+			"ct": "meow"
 		},
 		"instructions": {
 			"en": "EDU-VIDS",
-			"ko": "명령"
+			"ko": "명령",
+			"ct": "meow"
 		}
 	},
 
@@ -23,34 +28,45 @@
 
 	"cardBuilder": {
 		"saveAndLoad": {
-			"en": "Save n Load"
+			"en": "Save n Load",
+			"ko": "jeojang",
+			"ct": "meow"
 		},
 		"nameIt": {
-			"en": "Name It"
+			"en": "Name It",
+			"ct": "meow"
 		},
 		"imageUpload": {
-			"en": "Image Upload"
+			"en": "Image Upload",
+			"ct": "meow"
 		},
 		"factionAbilities": {
-			"en": "Faction Abilities"
+			"en": "Faction Abilities",
+			"ct": "meow"
 		},
 		"save": {
-			"en": "Save"
+			"en": "Save",
+			"ct": "meow"
 		},
 		"load": {
-			"en": "Load"
+			"en": "Load",
+			"ct": "meow"
 		},
 		"new": {
-			"en": "New"
+			"en": "New",
+			"ct": "meow"
 		},
 		"delete": {
-			"en": "Delete"
+			"en": "Delete",
+			"ct": "meow"
 		},
 		"attack": {
-			"en": "Attack"
+			"en": "Attack",
+			"ct": "meow"
 		},
 		"health": {
-			"en": "Health"
+			"en": "Health",
+			"ct": "meow"
 		}
 	},
 
@@ -59,10 +75,12 @@
 
 	"chat": {
 		"say": {
-			"en": "say"
+			"en": "say",
+			"ct": "meow"
 		},
 		"placeholder": {
-			"en": "type to chat"
+			"en": "type to chat",
+			"ct": "meow"
 		}
 	},
 
@@ -70,28 +88,36 @@
 
 	"deckBuilder": {
 		"saveAndLoad": {
-			"en": "Save n Load"
+			"en": "Save n Load",
+			"ct": "meow"
 		},
 		"save": {
-			"en": "Save"
+			"en": "Save",
+			"ct": "meow"
 		},
 		"load": {
-			"en": "Load"
+			"en": "Load",
+			"ct": "meow"
 		},
 		"new": {
-			"en": "New"
+			"en": "New",
+			"ct": "meow"
 		},
 		"delete": {
-			"en": "Delete"
+			"en": "Delete",
+			"ct": "meow"
 		},
 		"nameIt": {
-			"en": "Name It"
+			"en": "Name It",
+			"ct": "meow"
 		},
 		"cards": {
-			"en": "Cards"
+			"en": "Cards",
+			"ct": "meow"
 		},
 		"deckPride": {
-			"en": "Deck Pride"
+			"en": "Deck Pride",
+			"ct": "meow"
 		}
 	},
 
@@ -101,7 +127,8 @@
 
 	"errorPage": {
 		"error": {
-			"en": "Error"
+			"en": "Error",
+			"ct": "meow"
 		}
 	},
 
@@ -110,7 +137,8 @@
 
 	"preDeck": {
 		"maxPride": {
-			"en": "Max Pride"
+			"en": "Max Pride",
+			"ct": "meow"
 		}
 	},
 
@@ -119,28 +147,36 @@
 
 	"lobby": {
 		"player": {
-			"en": "player"
+			"en": "player",
+			"ct": "meow"
 		},
 		"pride": {
-			"en": "pride"
+			"en": "pride",
+			"ct": "meow"
 		},
 		"custom": {
-			"en": "custom"
+			"en": "custom",
+			"ct": "meow"
 		},
 		"join": {
-			"en": "join"
+			"en": "join",
+			"ct": "meow"
 		},
 		"start": {
-			"en": "start"
+			"en": "start",
+			"ct": "meow"
 		},
 		"chat": {
-			"en": "chat"
+			"en": "chat",
+			"ct": "meow"
 		},
 		"guild": {
-			"en": "guild"
+			"en": "guild",
+			"ct": "meow"
 		},
 		"people": {
-			"en": "people"
+			"en": "people",
+			"ct": "meow"
 		}
 	},
 
@@ -152,28 +188,40 @@
 
 	"nav": {
 		"toggle": {
-			"en": "Toggle Navigation"
+			"en": "Toggle Navigation",
+			"ct": "meow"
 		},
 		"futurism": {
-			"en": "Futurism"
+			"en": "Futurism",
+			"ct": "meow"
 		},
 		"deckBuilder": {
-			"en": "Deck Builder"
+			"en": "Deck Builder",
+			"ct": "meow"
 		},
 		"cardBuilder": {
-			"en": "Card Builder"
+			"en": "Card Builder",
+			"ct": "meow"
 		},
 		"lobby": {
-			"en": "Lobby"
+			"en": "Lobby",
+			"ct": "meow"
 		},
 		"stats": {
-			"en": "My Stats"
+			"en": "My Stats",
+			"ct": "meow"
 		},
 		"messages": {
-			"en": "Messages"
+			"en": "Messages",
+			"ct": "meow"
 		},
 		"logout": {
-			"en": "Logout"
+			"en": "Logout",
+			"ct": "meow"
+		},
+		"language": {
+			"en": "Language",
+			"ct": "mewoowo"
 		}
 	}
 }
