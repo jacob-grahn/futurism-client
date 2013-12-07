@@ -9,8 +9,9 @@
 		var copyNest = function(dest, source, str) {
 			_.each(source, function(val, key) {
 				if(typeof(val) === 'object') {
-					if(val[str] || val['en'] || val['ko']) {
-						dest[key] = val[str] || val['en'];
+					var ch = val[str] || val['en'] || val['ko']; //shoud match any language...
+					if(typeof ch === 'string') {
+						dest[key] = ch;
 					}
 					else {
 						dest[key] = {};

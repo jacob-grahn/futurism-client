@@ -26,12 +26,12 @@
 
 			<div class="form-group">
 				<h1>{{lang.cardBuilder.factionAbilities}}</h1>
-				<p><select ng-model="card.faction" ng-options="value.id as value.name for (key, value) in factions.factionLookup"></select></p>
-				<p class="faction-desc">{{factions.factionLookup[card.faction].desc}}</p>
+				<p><select ng-model="card.faction" ng-options="value.id as lang.factions[key].name for (key, value) in factions.factionLookup"></select></p>
+				<p class="faction-desc">{{lang.factions[card.faction].desc}}</p>
 				<ul class="checkbox" id="faction-checkboxes">
 					<li ng-repeat="ability in factions.factionLookup[card.faction].abilities">
-						<label><input type="checkbox" ng-model="abilityObj[ability.id]"> {{ability.name}}</label>
-						<p>{{ability.desc}}</p>
+						<label><input type="checkbox" ng-model="abilityObj[ability.id]"> {{lang.abilities[ability.id].name}}</label>
+						<p>{{lang.abilities[ability.id].desc}}</p>
 					</li>
 				</ul>
 			</div>

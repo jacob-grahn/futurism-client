@@ -15,7 +15,7 @@ angular.module('futurism')
 					'</div>' +
 					'<h1>{{card.name}}</h1>' +
 					'<ul class="abilities">' +
-						'<li ng-repeat="abilityId in card.abilities">- {{factions.abilityLookup[abilityId].name}} -</li>' +
+						'<li ng-repeat="abilityId in card.abilities">- {{lang.abilities[abilityId].name}} -</li>' +
 					'</ul>' +
 					'<div class="card-story">{{card.story}}</div>' +
 					'<div class="card-stats">{{card.attack}}/{{card.health}}</div>' +
