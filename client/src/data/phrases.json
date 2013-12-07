@@ -5,22 +5,26 @@
 		"gameName": {
 			"en": "FUTURISM",
 			"ko": "미래의 배",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "FUTURISME"
 		},
 		"login": {
 			"en": "LOGIN",
 			"ko": "놀이",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "CONNEXION"
 		},
 		"credits": {
 			"en": "CREDITS",
 			"ko": "인정함",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "CRÉDITS"
 		},
 		"instructions": {
 			"en": "EDU-VIDS",
 			"ko": "명령",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "TUTORIELS"
 		}
 	},
 
@@ -30,52 +34,62 @@
 		"saveAndLoad": {
 			"en": "Save n Load",
 			"ko": "저장",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Sauvegarder et charger"
 		},
 		"nameIt": {
 			"en": "Name It",
 			"ko": "이름",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Nommer"
 		},
 		"imageUpload": {
 			"en": "Image Upload",
 			"ko": "영상",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Charger une image"
 		},
 		"factionAbilities": {
 			"en": "Faction Abilities",
 			"ko": "능력",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Habiletés de la classe"
 		},
 		"save": {
 			"en": "Save",
 			"ko": "저장",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Sauvegarder"
 		},
 		"load": {
 			"en": "Load",
 			"ko": "하중",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Charger"
 		},
 		"new": {
 			"en": "New",
 			"ko": "새로운",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Nouvelle"
 		},
 		"delete": {
 			"en": "Delete",
 			"ko": "삭제",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Supprimer"
 		},
 		"attack": {
 			"en": "Attack",
 			"ko": "공격",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Attaque"
 		},
 		"health": {
 			"en": "Health",
 			"ko": "건강",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Santé"
 		}
 	},
 
@@ -86,12 +100,14 @@
 		"say": {
 			"en": "say",
 			"ko": "말하다",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Envoyer"
 		},
 		"placeholder": {
 			"en": "type to chat",
 			"ko": "말을 입력",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Taper pour bavarder"
 		}
 	},
 
@@ -101,42 +117,50 @@
 		"saveAndLoad": {
 			"en": "Save n Load",
 			"ko": "저장",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Sauvegarder et charger"
 		},
 		"save": {
 			"en": "Save",
 			"ko": "저장",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Sauvegarder"
 		},
 		"load": {
 			"en": "Load",
 			"ko": "하중",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Charger"
 		},
 		"new": {
 			"en": "New",
 			"ko": "새로운",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Nouveau"
 		},
 		"delete": {
 			"en": "Delete",
 			"ko": "삭제",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Supprimer"
 		},
 		"nameIt": {
 			"en": "Name It",
 			"ko": "이름",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Nommer"
 		},
 		"cards": {
 			"en": "Cards",
 			"ko": "카드",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Cartes"
 		},
 		"deckPride": {
 			"en": "Deck Pride",
 			"ko": "자존심",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Valeur du paquet"
 		}
 	},
 
@@ -148,7 +172,8 @@
 		"error": {
 			"en": "Error",
 			"ko": "오류",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Erreur"
 		}
 	},
 
@@ -159,7 +184,8 @@
 		"maxPride": {
 			"en": "Max Pride",
 			"ko": "자존심",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Valeur maximale"
 		}
 	},
 
@@ -170,42 +196,50 @@
 		"player": {
 			"en": "player",
 			"ko": "플레이어",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Joueur"
 		},
 		"pride": {
 			"en": "pride",
 			"ko": "자존심",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Valeur"
 		},
 		"custom": {
 			"en": "custom",
 			"ko": "관습",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Personnaliser"
 		},
 		"join": {
 			"en": "join",
 			"ko": "가입",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Joindre"
 		},
 		"start": {
 			"en": "start",
 			"ko": "스타트",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Commencer"
 		},
 		"chat": {
 			"en": "chat",
 			"ko": "이야기",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Bavarder"
 		},
 		"guild": {
 			"en": "guild",
 			"ko": "대가족",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Guilde"
 		},
 		"people": {
 			"en": "people",
 			"ko": "사람들",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Joueurs"
 		}
 	},
 
@@ -219,27 +253,32 @@
 		"toggle": {
 			"en": "Toggle Navigation",
 			"ko": "토글",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Activer la navigation"
 		},
 		"futurism": {
 			"en": "Futurism",
 			"ko": "미래의 배",
-			"ct": "MEOW"
+			"ct": "MEOW",
+			"fr": "Futurisme"
 		},
 		"deckBuilder": {
 			"en": "Deck Builder",
 			"ko": "갑판",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Créateur de paquet"
 		},
 		"cardBuilder": {
 			"en": "Card Builder",
 			"ko": "카드",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Créateur de carte"
 		},
 		"lobby": {
 			"en": "Lobby",
 			"ko": "로비",
-			"ct": "mewoww"
+			"ct": "mewoww",
+			"fr": "Hall"
 		},
 		"stats": {
 			"en": "My Stats",
@@ -249,17 +288,20 @@
 		"messages": {
 			"en": "Messages",
 			"ko": "메시지",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Messages"
 		},
 		"logout": {
 			"en": "Logout",
 			"ko": "로그 아웃",
-			"ct": "meow"
+			"ct": "meow",
+			"fr": "Déconnexion"
 		},
 		"language": {
 			"en": "Language",
 			"ko": "언어",
-			"ct": "mewoowo"
+			"ct": "mewoowo",
+			"fr": "Langue"
 		}
 	},
 
@@ -272,12 +314,14 @@
 			"name": {
 				"en": "Ent",
 				"ko": "엔트",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Ent"
 			},
 			"desc": {
 				"en": "Seeking a bond with nature, the Ents tinkered with their own dna. A wild group of nomads, they say you'll never meet the same Ent twice.",
 				"ko": "자연과의 결합을 추구, 엔트는 자신의 DNA를 만지작 거렸다. 유목민의 야생 그룹, 그들은 당신이 두 번 같은 엔트을 충족하지 못할거야 말한다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Cherchant un lien avec la nature, les Ents ont fabriqué leur propre ADN. Sauvage groupe de nomades, on dit que vous ne rencontrerez jamais deux fois le même Ent."
 			}
 		},
 
@@ -285,12 +329,14 @@
 			"name": {
 				"en": "Machine",
 				"ko": "기계",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Machine"
 			},
 			"desc": {
 				"en": "The relentless pursuit of knowledge lead some to improve their minds with metal. They have become far more than humans ever were, and far less.",
 				"ko": "지식의 끊임없는 추구는 금속으로 그들의 마음을 개선하는 데 도움이되는 몇 가지를했다. 그들은 인간이 이제까지했던 것보다 훨씬 더, 훨씬 덜되고있다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "L'incessante poursuite de la connaissance en a mené certains à améliorer leurs esprits grâce au métal. Ils sont devenus bien plus que ce que les humains ont jamais été, et bien moins."
 			}
 		},
 
@@ -298,12 +344,14 @@
 			"name": {
 				"en": "Elite",
 				"ko": "엘리트",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Élite"
 			},
 			"desc": {
 				"en": "Taking delight in the pleasures of this world, Elites have dominated the wealthy ruling class. A beautiful people, as long as you don't dig too deep.",
 				"ko": "이 세상의 쾌락의 기쁨을 촬영, 엘리트는 부유 한 지배 계급을 지배했다. 만큼 당신이 너무 깊이 파고하지 않는 아름다운 사람들.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Trouvant leur bonheur dans les petits plaisir de ce monde, les Élites ont dominé la classe riche dominante. De belles gens, tant que vous ne creusez pas trop loin."
 			}
 		},
 
@@ -311,12 +359,14 @@
 			"name": {
 				"en": "Zealot",
 				"ko": "열광 자",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Fanatique"
 			},
 			"desc": {
 				"en": "Always certain of the truth, Zealots are more than willing to fight for it. The fires of constant war have honed their military skills to perfection.",
 				"ko": "진리를 항상 일정, 질럿 그것을 위해 싸울 의도보다는 좀더. 지속적인 전쟁의 불이 완벽하게 자신의 군사 기술을 연마했다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Toujours certains de détenir la vérité, les Fanatiques sont plus que déterminés à se battre pour elle. Les feux constants de la guerre ont aiguisé leurs compétences militaires à la perfection."
 			}
 		}
 	},
@@ -330,12 +380,14 @@
 			"name": {
 				"en": "Healing",
 				"ko": "치료",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Guérir"
 			},
 			"desc": {
 				"en": "Target card gains 1 health.",
 				"ko": "대상 카드는 1 건강을 얻는다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "La carte cible reçoit 1 point de santé."
 			}
 		},
 
@@ -343,12 +395,14 @@
 			"name": {
 				"en": "weed trees",
 				"ko": "잡초 나무",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Mauvaises herbes"
 			},
 			"desc": {
 				"en": "A 1/1 tree is created",
 				"ko": "1 / 1 나무가 만들어집니다",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Un arbre 1/1 est créé."
 			}
 		},
 
@@ -356,12 +410,14 @@
 			"name": {
 				"en": "abomination",
 				"ko": "가증스러운 행위",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Abomination"
 			},
 			"desc": {
 				"en": "Merge this unit with another.",
 				"ko": "서로 기기를 병합합니다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Fusionner cette carte avec une autre."
 			}
 		},
 
@@ -369,12 +425,14 @@
 			"name": {
 				"en": "secretions",
 				"ko": "분비물",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Sécrétions"
 			},
 			"desc": {
 				"en": "Target enemy can not attack next turn.",
 				"ko": "적군은 다음 턴을 공격 할 수 없다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "La cible ennemie ne peut attaquer au prochain tour."
 			}
 		},
 
@@ -382,12 +440,14 @@
 			"name": {
 				"en": "clone",
 				"ko": "복제",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Clone"
 			},
 			"desc": {
 				"en": "Sacrifice this unit to produce a duplicate of another unit.",
 				"ko": "다른 장치의 복제본을 생성하기 위해이 장치를 제물로 바친다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Sacrifier cette carte pour produire une copie d'une autre carte."
 			}
 		},
 
@@ -395,12 +455,14 @@
 			"name": {
 				"en": "bees!",
 				"ko": "꿀벌!",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Abeilles"
 			},
 			"desc": {
 				"en": "All enemies in target column loose 1 health.",
 				"ko": "목표 컬럼에있는 모든 적을 1 건강 느슨한.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Tous les ennemis de la colonne ciblée perdent 1 point de santé."
 			}
 		},
 
@@ -408,12 +470,14 @@
 			"name": {
 				"en": "rebuild",
 				"ko": "다시",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Reconstruire"
 			},
 			"desc": {
 				"en": "Resurrect a dead machine.",
 				"ko": "죽은 기계를 부활.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Ressusciter une machine morte."
 			}
 		},
 
@@ -421,12 +485,14 @@
 			"name": {
 				"en": "t-shield",
 				"ko": "T-쉴드",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Bouclier-T"
 			},
 			"desc": {
 				"en": "All damage that would be dealt to target unit is reduced by 1 for a turn.",
 				"ko": "단위를 대상으로 처리 될 수있는 모든 피해는 차례를 1로 줄일 수있다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Tous les dégâts que subiraient la cible au prochain tour sont réduits de 1."
 			}
 		},
 
@@ -434,12 +500,14 @@
 			"name": {
 				"en": "precise",
 				"ko": "정확한",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Précision"
 			},
 			"desc": {
 				"en": "Attack an enemy of your choice regardless of defensive formations.",
 				"ko": "에 관계없이 방어 형성의 선택의 적을 공격한다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Attaquer l'ennemi de votre choix peu importe les défenses en place."
 			}
 		},
 
@@ -447,12 +515,14 @@
 			"name": {
 				"en": "strategist",
 				"ko": "전략가",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Stratège"
 			},
 			"desc": {
 				"en": "Ally can perform an extra action this turn",
 				"ko": "앨리 추가 조치에게이 턴을 수행 할 수 있습니다",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Un allié peut utiliser une action de plus pour ce tour."
 			}
 		},
 
@@ -460,12 +530,14 @@
 			"name": {
 				"en": "networking",
 				"ko": "네트워킹",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Réseautage"
 			},
 			"desc": {
 				"en": "Gain an allies abilities.",
 				"ko": "동맹의 능력을 얻을 수 있습니다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Gagner les habiletés d'un allié."
 			}
 		},
 
@@ -473,12 +545,14 @@
 			"name": {
 				"en": "transformer",
 				"ko": "변압기",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Transformeur"
 			},
 			"desc": {
 				"en": "Swap health and attack.",
 				"ko": "건강과 공격을 교환합니다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Échanger les points de santé et d'attaque."
 			}
 		},
 
@@ -487,12 +561,14 @@
 			"name": {
 				"en": "seduction",
 				"ko": "유혹",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Séduction"
 			},
 			"desc": {
 				"en": "Convert an enemy to your side if their health is 1.",
 				"ko": "자신의 건강이 1이면 옆으로 적을 변환합니다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Convertir un ennemi de votre côté si son niveau de santé est de 1."
 			}
 		},
 
@@ -501,12 +577,14 @@
 			"name": {
 				"en": "assassin",
 				"ko": "암살자",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Assassin"
 			},
 			"desc": {
 				"en": "Attack without taking damage.",
 				"ko": "피해를하지 않고 공격한다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Attaque sans subir de dégâts."
 			}
 		},
 
@@ -514,12 +592,14 @@
 			"name": {
 				"en": "delegate",
 				"ko": "대리자",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Délégué"
 			},
 			"desc": {
 				"en": "Trade this unit with another unit in your hand.",
 				"ko": "당신의 손에있는 다른 장치와이 장치를 무역.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Échanger cette carte pour une autre dans votre paquet."
 			}
 		},
 
@@ -527,12 +607,14 @@
 			"name": {
 				"en":"poison",
 				"ko": "독",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Poison"
 			},
 			"desc": {
 				"en": "Target enemy loses 1 health per turn.",
 				"ko": "대상 적 턴에 1 건강을 푼다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "La cible ennemie perd 1 point de santé par tour."
 			}
 		},
 
@@ -540,12 +622,14 @@
 			"name": {
 				"en": "bag 'em",
 				"ko": "잡기",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Empaqueter"
 			},
 			"desc": {
 				"en": "Target card is returned to its owner's hand.",
 				"ko": "대상 카드는 그것의 소유자의 손에 반환됩니다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "La carte cible retourne dans le paquet de son propriétaire."
 			}
 		},
 
@@ -553,12 +637,14 @@
 			"name": {
 				"en":  "siphon",
 				"ko": "사이펀",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Siphon"
 			},
 			"desc": {
 				"en":  "Steal 1 health from a card of your choice.",
 				"ko": "당신의 선택의 카드에서 1 건강을 훔치는.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Voler 1 point de santé à la carte de votre choix"
 			}
 		},
 
@@ -566,12 +652,14 @@
 			"name": {
 				"en": "male",
 				"ko": "남성",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Mâle"
 			},
 			"desc": {
 				"en": "Can reproduce with females.",
 				"ko": "여성으로 재현 할 수 있습니다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Peut se reproduire avec les cartes femelles."
 			}
 		},
 
@@ -579,12 +667,14 @@
 			"name": {
 				"en": "female",
 				"ko": "여성",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Femelle"
 			},
 			"desc": {
 				"en": "Can reproduce with males.",
 				"ko": "남성으로 재현 할 수 있습니다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Peut se reproduire avec les cartes mâles"
 			}
 		},
 
@@ -592,12 +682,14 @@
 			"name": {
 				"en": "battle cry",
 				"ko": "함성",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Cri de guerre"
 			},
 			"desc": {
 				"en": "Target unit gains 2 attack for the turn.",
 				"ko": "대상 장치는 회전 2 공격을 얻는다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "La carte cible gagne 2 points d'attaque pour ce tour."
 			}
 		},
 
@@ -605,12 +697,14 @@
 			"name": {
 				"en": "determined",
 				"ko": "결정된",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Déterminé"
 			},
 			"desc": {
 				"en": "Sacrifice this card to deal double damage.",
 				"ko": "더블 데미지를이 카드를 제물로 바친다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Sacrifier cette carte pour infliger le double de dégâts."
 			}
 		},
 
@@ -618,12 +712,14 @@
 			"name": {
 				"en": "heroic sacrifice",
 				"ko": "영웅적인 희생",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Sacrifice héroïque"
 			},
 			"desc": {
 				"en": "All enemy attacks must target this card for one turn.",
 				"ko": "모든 적의 공격 한 턴에이 카드를 대상으로해야합니다.",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Tous les ennemis doivent cibler cette carte pour un tour."
 			}
 		},
 
@@ -631,12 +727,14 @@
 			"name": {
 				"en": "super serum",
 				"ko": "슈퍼 혈청",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Super-sérum"
 			},
 			"desc": {
 				"en": "Available health points are converted into attack points",
 				"ko": "가능한 건강 포인트는 공격 포인트로 변환",
-				"ct": "mewoowo"
+				"ct": "mewoowo",
+				"fr": "Les points de santé disponible sont convertis en points d'attaque."
 			}
 		}
 	}
