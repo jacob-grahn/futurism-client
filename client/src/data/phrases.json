@@ -6,21 +6,25 @@
 			"en": "FUTURISM",
 			"ko": "미래의 배",
 			"ct": "meow"
+			"sv": "Futurism"
 		},
 		"login": {
 			"en": "LOGIN",
 			"ko": "놀이",
 			"ct": "meow"
+			"sv": "Logga in"
 		},
 		"credits": {
 			"en": "CREDITS",
 			"ko": "인정함",
 			"ct": "meow"
+			"sv": "Medverkande"
 		},
 		"instructions": {
 			"en": "EDU-VIDS",
 			"ko": "명령",
 			"ct": "meow"
+			"sv": "Instruktioner"
 		}
 	},
 
@@ -31,51 +35,61 @@
 			"en": "Save n Load",
 			"ko": "저장",
 			"ct": "meow"
+			"sv": "Spara och Ladda"
 		},
 		"nameIt": {
 			"en": "Name It",
 			"ko": "이름",
 			"ct": "meow"
+			"sv": "Namnge det"
 		},
 		"imageUpload": {
 			"en": "Image Upload",
 			"ko": "영상",
 			"ct": "meow"
+			"sv": "bilduppladdning"
 		},
 		"factionAbilities": {
 			"en": "Faction Abilities",
 			"ko": "능력",
 			"ct": "meow"
+			"sv": "Fraktionsförmågor"
 		},
 		"save": {
 			"en": "Save",
 			"ko": "저장",
 			"ct": "meow"
+			"sv": "Spara"
 		},
 		"load": {
 			"en": "Load",
 			"ko": "하중",
 			"ct": "meow"
+			"sv": "Ladda"
 		},
 		"new": {
 			"en": "New",
 			"ko": "새로운",
 			"ct": "meow"
+			"sv": "Nytt"
 		},
 		"delete": {
 			"en": "Delete",
 			"ko": "삭제",
 			"ct": "meow"
+			"sv": "Ta bort"
 		},
 		"attack": {
 			"en": "Attack",
 			"ko": "공격",
 			"ct": "meow"
+			"sv": "Attackera"
 		},
 		"health": {
 			"en": "Health",
 			"ko": "건강",
 			"ct": "meow"
+			"sv": "Liv"
 		}
 	},
 
@@ -87,11 +101,13 @@
 			"en": "say",
 			"ko": "말하다",
 			"ct": "meow"
+			"sv": "säg"
 		},
 		"placeholder": {
 			"en": "type to chat",
 			"ko": "말을 입력",
 			"ct": "meow"
+			"sv": "skriv för att chatta"
 		}
 	},
 
@@ -102,16 +118,19 @@
 			"en": "Save n Load",
 			"ko": "저장",
 			"ct": "meow"
+			"sv": "Spara och Ladda"
 		},
 		"save": {
 			"en": "Save",
 			"ko": "저장",
 			"ct": "meow"
+			"sv": "Spara"
 		},
 		"load": {
 			"en": "Load",
 			"ko": "하중",
 			"ct": "meow"
+			"sv": "Ladda"
 		},
 		"new": {
 			"en": "New",
