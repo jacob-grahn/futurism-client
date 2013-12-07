@@ -36,6 +36,16 @@ describe('service: lang', function() {
 					"one": {
 						"en": "one",
 						"ko": "hana"
+					},
+					"very": {
+						"very": {
+							"nested": {
+								"value": {
+									"en": "poop",
+									"ko": "dul"
+								}
+							}
+						}
 					}
 				}
 			});
@@ -60,6 +70,11 @@ describe('service: lang', function() {
 		expect(lang.title.play).toBe('play');
 		expect(lang.title.credits).toBe(undefined);
 		expect(lang.cardBuilder.one).toBe('one');
+	});
+
+
+	it('should copy deeply nested values', function() {
+		expect(lang.cardBuilder.very.very.nested.value).toBe('poop');
 	});
 
 

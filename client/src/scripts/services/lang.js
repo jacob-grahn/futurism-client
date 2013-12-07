@@ -6,13 +6,22 @@
 		var lang = {};
 		var phrases = {};
 
-		lang.setLang = function(str) {
-			_.each(phrases, function(phraseGroup, groupKey) {
-				_.each(phraseGroup, function(phrase, phraseKey) {
-					lang[groupKey] = lang[groupKey] || {};
-					lang[groupKey][phraseKey] = phrases[groupKey][phraseKey][str] || phrases[groupKey][phraseKey].en;
-				});
+		var copyNest = function(dest, source, str) {
+			_.each(source, function(val, key) {
+				if(typeof(val) === 'object') {
+					if(val[str] || val['en'] || val['ko']) {
+						dest[key] = val[str] || val['en'];
+					}
+					else {
+						dest[key] = {};
+						copyNest(dest[key], val, str);
+					}
+				}
 			});
+		};
+
+		lang.setLang = function(str) {
+			copyNest(lang, phrases, str);
 		};
 
 		$http.get('data/phrases.json')
