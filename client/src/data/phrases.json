@@ -7,7 +7,8 @@
     "PI": "Pirate",
     "es": "Español",
     "ne": "Dutch",
-    "lt": "Lithuanian"
+    "lt": "Lithuanian",
+    "sv": "Svenska"
   },
   "translators": {
     "en": "",
@@ -17,7 +18,8 @@
     "fr": "Omegaguineapig, JV-TRUC",
     "ne": "larsyuipo",
     "PI": "esp-eon",
-    "lt": "zebriukas"
+    "lt": "zebriukas",
+    "sv": "jonswe"
   },
   "title": {
     "gameName": {
@@ -204,7 +206,8 @@
       "fr": "Nouveau",
       "PI": "Plunder new booty",
       "lt": "Naujas",
-      "ne": "Nieuw"
+      "ne": "Nieuw",
+      "sv": "Nytt"
     },
     "delete": {
       "en": "Delete",
@@ -212,7 +215,8 @@
       "ct": "meow",
       "fr": "Supprimer",
       "PI": "Toss booty overboard",
-      "ne": "Verwijderen"
+      "ne": "Verwijderen",
+      "sv": "Ta bort"
     },
     "nameIt": {
       "en": "Name It",
@@ -221,7 +225,8 @@
       "fr": "Nommer",
       "PI": "Name yar booty",
       "lt": "Pavadinimas",
-      "ne": "Geef een naam"
+      "ne": "Geef een naam",
+      "sv": "Namnge det"
     },
     "cards": {
       "en": "Cards",
@@ -230,7 +235,8 @@
       "fr": "Cartes",
       "PI": "Maps",
       "lt": "Kortos",
-      "ne": "Kaarten"
+      "ne": "Kaarten",
+      "sv": "Kort"
     },
     "deckPride": {
       "en": "Deck Pride",
@@ -239,7 +245,8 @@
       "fr": "Valeur du paquet",
       "PI": "Map value",
       "lt": "Kaladės pasididžiavimas",
-      "ne": "Deck Trots"
+      "ne": "Deck Trots",
+      "sv": "Deckstolthet"
     }
   },
   "errorPage": {
@@ -250,7 +257,8 @@
       "fr": "Erreur",
       "PI": "Y'arr!",
       "lt": "Klaida!",
-      "ne": "Error"
+      "ne": "Error",
+      "sv": "Error"
     }
   },
   "preDeck": {
@@ -331,7 +339,7 @@
     "people": {
       "en": "people",
       "ko": "사람들",
-      "ct": "mensen",
+      "ct": "meow",
       "fr": "Joueurs",
       "PI": "deckhands",
       "lt": "žmonės"
@@ -341,7 +349,7 @@
     "toggle": {
       "en": "Toggle Navigation",
       "ko": "토글",
-      "ct": "Navigatie aanzetten",
+      "ct": "meow",
       "fr": "Activer la navigation",
       "PI": "Toggle Map",
       "lt": "Navigacijos Perjungimas"
@@ -349,7 +357,7 @@
     "futurism": {
       "en": "Futurism",
       "ko": "미래의 배",
-      "ct": "Futurism",
+      "ct": "MEOW",
       "fr": "Futurisme",
       "PI": "Day after Tomorrow",
       "lt": "Futurism"
@@ -357,7 +365,7 @@
     "deckBuilder": {
       "en": "Deck Builder",
       "ko": "갑판",
-      "ct": "Deck maker",
+      "ct": "meow",
       "fr": "Créateur de paquet",
       "PI": "Mapbook binder",
       "lt": "Kaladės Dėliojimas"
@@ -365,7 +373,7 @@
     "cardBuilder": {
       "en": "Card Builder",
       "ko": "카드",
-      "ct": "Kaart maker",
+      "ct": "meow",
       "fr": "Créateur de carte",
       "PI": "Map drawer",
       "lt": "Kortų kūrimas"
@@ -373,7 +381,7 @@
     "lobby": {
       "en": "Lobby",
       "ko": "로비",
-      "ct": "Lobby",
+      "ct": "mewoww",
       "fr": "Hall",
       "PI": "Tavern",
       "lt": "Fojė"
@@ -381,7 +389,7 @@
     "stats": {
       "en": "My Stats",
       "ko": "통계",
-      "ct": "Mijn status",
+      "ct": "meow",
       "fr": "Ma Statistiques",
       "PI": "Pirate-ness",
       "lt": "Mano statusai"
@@ -389,7 +397,7 @@
     "messages": {
       "en": "Messages",
       "ko": "메시지",
-      "ct": "Berichten",
+      "ct": "meow",
       "fr": "Messages",
       "PI": "Messages in bottles",
       "lt": "Žinutės"
@@ -397,7 +405,7 @@
     "logout": {
       "en": "Logout",
       "ko": "로그 아웃",
-      "ct": "Uitloggen",
+      "ct": "meow",
       "fr": "Déconnexion",
       "PI": "Walk the plank",
       "lt": "Atsijungti"
@@ -405,7 +413,7 @@
     "language": {
       "en": "Language",
       "ko": "언어",
-      "ct": "Taal",
+      "ct": "mewoowo",
       "fr": "Langue",
       "PI": "Dialect",
       "lt": "Kalba"
