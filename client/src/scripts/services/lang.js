@@ -4,7 +4,7 @@
 	angular.module('futurism').factory('lang', function($http, _, errorHandler) {
 
 		var lang = {};
-		var phrases = {};
+		lang.phrases = {};
 
 
 		/**
@@ -50,7 +50,7 @@
 		 * @param {string} languageId
 		 */
 		lang.setLang = function(languageId) {
-			copyPhrases(lang, phrases, languageId);
+			copyPhrases(lang, lang.phrases, languageId);
 		};
 
 
@@ -59,7 +59,7 @@
 		 */
 		$http.get('data/phrases.json')
 			.success(function(phraseData) {
-				phrases = phraseData;
+				lang.phrases = phraseData;
 				lang.setLang('en');
 			})
 			.error(function() {

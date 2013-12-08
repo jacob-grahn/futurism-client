@@ -1,5 +1,12 @@
 {
 
+	"languageName": {
+		"en": "English",
+		"ko": "한국어",
+		"ct": "Meoww",
+		"es": "Español"
+	},
+
 
 	"title": {
 		"gameName": {
