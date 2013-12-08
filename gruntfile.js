@@ -41,10 +41,10 @@ module.exports = function (grunt) {
 				options: {nospawn: true}
 			},
 			data: {
-				files: ['{.tmp,<%= yeoman.app %>}/data/*'],
+				files: ['{.tmp,<%= yeoman.app %>}/data/*']
 			},
 			js: {
-				files: ['{.tmp,<%= yeoman.app %>}/scripts/**/*.js'],
+				files: ['{.tmp,<%= yeoman.app %>}/scripts/**/*.js']
 				//tasks: ['newer:jshint:all']
 			},
 			jsTest: {
@@ -308,7 +308,8 @@ module.exports = function (grunt) {
 						'.htaccess',
 						'bower_components/**/*',
 						'images/{,*/}*.{webp}',
-						'fonts/*'
+						'fonts/*',
+						'data/*'
 					]
 				}, {
 					expand: true,

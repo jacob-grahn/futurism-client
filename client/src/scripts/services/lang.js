@@ -6,25 +6,57 @@
 		var lang = {};
 		var phrases = {};
 
-		var copyNest = function(dest, source, str) {
+
+		/**
+		 * Similar to a recursive shallow copy, except a specific language is selected out
+		 * {en: 'bla', fr: 'ble'} would be copied as 'ble' if the languageId was 'fr'
+		 * @param {object} dest
+		 * @param {object} source
+		 * @param {string} languageId
+		 */
+		var copyPhrases = function(dest, source, languageId) {
 			_.each(source, function(val, key) {
 				if(typeof(val) === 'object') {
-					var ch = val[str] || val['en'] || val['ko']; //shoud match any language...
-					if(typeof ch === 'string') {
-						dest[key] = ch;
+					if(lang.isPhraseObj(val)) {
+						dest[key] = val[languageId] || val['en'];
 					}
 					else {
 						dest[key] = {};
-						copyNest(dest[key], val, str);
+						copyPhrases(dest[key], val, languageId);
 					}
 				}
 			});
 		};
 
-		lang.setLang = function(str) {
-			copyNest(lang, phrases, str);
+
+		/**
+		 * Returns true if an object contains a string
+		 * @param {*} value
+		 * @returns {boolean}
+		 */
+		lang.isPhraseObj = function(value) {
+			var isPhrase = false;
+			_.each(value, function(prop) {
+				if(typeof prop === 'string') {
+					isPhrase = true;
+				}
+			});
+			return isPhrase;
 		};
 
+
+		/**
+		 * Set the display language
+		 * @param {string} languageId
+		 */
+		lang.setLang = function(languageId) {
+			copyPhrases(lang, phrases, languageId);
+		};
+
+
+		/**
+		 * Load in the phrases.json file
+		 */
 		$http.get('data/phrases.json')
 			.success(function(phraseData) {
 				phrases = phraseData;
@@ -33,6 +65,7 @@
 			.error(function() {
 				errorHandler.handleError('Could not load language file.');
 			});
+
 
 		return lang;
 

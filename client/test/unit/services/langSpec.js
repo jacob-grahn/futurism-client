@@ -11,6 +11,11 @@ describe('service: lang', function() {
 		//load the module
 		module('futurism');
 
+		//mock session so we don't get an unexpected and unrelated http request
+		angular.mock.module("futurism", function ($provide) {
+			$provide.value('session', window.sessionMock);
+		});
+
 		//inject
 		inject(function($httpBackend, _lang_) {
 			http = $httpBackend;
@@ -63,6 +68,12 @@ describe('service: lang', function() {
 	it('should request phrases', function() {
 		http.verifyNoOutstandingExpectation();
 		http.verifyNoOutstandingRequest();
+	});
+
+
+	it('should determine weather an object contains phrases', function() {
+		expect(lang.isPhraseObj({en: 'bla bla'})).toBe(true);
+		expect(lang.isPhraseObj({en: {en:'bla bla'}})).toBe(false);
 	});
 
 
