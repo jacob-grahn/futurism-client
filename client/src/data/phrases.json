@@ -6,21 +6,25 @@
 			"en": "FUTURISM",
 			"ko": "미래의 배",
 			"ct": "meow"
+			"PI": "Day after Tomorrow"
 		},
 		"login": {
 			"en": "LOGIN",
 			"ko": "놀이",
 			"ct": "meow"
+			"PI": "Sail the seven seas!"
 		},
 		"credits": {
 			"en": "CREDITS",
 			"ko": "인정함",
 			"ct": "meow"
+			"PI": "Captain's Logs"
 		},
 		"instructions": {
 			"en": "EDU-VIDS",
 			"ko": "명령",
 			"ct": "meow"
+			"PI": "Davy Jones' Locker"
 		}
 	},
 
@@ -31,51 +35,61 @@
 			"en": "Save n Load",
 			"ko": "저장",
 			"ct": "meow"
+			"PI": "Treasure Map"
 		},
 		"nameIt": {
 			"en": "Name It",
 			"ko": "이름",
 			"ct": "meow"
+			"PI": "Name yar booty"
 		},
 		"imageUpload": {
 			"en": "Image Upload",
 			"ko": "영상",
 			"ct": "meow"
+			"PI": "Enscribe yar map"
 		},
 		"factionAbilities": {
 			"en": "Faction Abilities",
 			"ko": "능력",
 			"ct": "meow"
+			"PI": "Munitions"
 		},
 		"save": {
 			"en": "Save",
 			"ko": "저장",
 			"ct": "meow"
+			"PI": "Bury"
 		},
 		"load": {
 			"en": "Load",
 			"ko": "하중",
 			"ct": "meow"
+			"PI": "Dig up booty"
 		},
 		"new": {
 			"en": "New",
 			"ko": "새로운",
 			"ct": "meow"
+			"PI": "Plunder new Booty"
 		},
 		"delete": {
 			"en": "Delete",
 			"ko": "삭제",
 			"ct": "meow"
+			"PI": "Toss overboard"
 		},
 		"attack": {
 			"en": "Attack",
 			"ko": "공격",
 			"ct": "meow"
+			"PI": "Number o' Cannons"
 		},
 		"health": {
 			"en": "Health",
 			"ko": "건강",
 			"ct": "meow"
+			"PI": "Rum"
 		}
 	},
 
@@ -87,11 +101,13 @@
 			"en": "say",
 			"ko": "말하다",
 			"ct": "meow"
+			"PI": "Belch"
 		},
 		"placeholder": {
 			"en": "type to chat",
 			"ko": "말을 입력",
 			"ct": "meow"
+			"PI": "Open ye mouth"
 		}
 	},
 
@@ -102,41 +118,49 @@
 			"en": "Save n Load",
 			"ko": "저장",
 			"ct": "meow"
+			"PI": "Check Maps"
 		},
 		"save": {
 			"en": "Save",
 			"ko": "저장",
 			"ct": "meow"
+			"PI": "Bury"
 		},
 		"load": {
 			"en": "Load",
 			"ko": "하중",
 			"ct": "meow"
+			"PI": "Dig up booty"
 		},
 		"new": {
 			"en": "New",
 			"ko": "새로운",
 			"ct": "meow"
+			"PI": "Plunder new booty"
 		},
 		"delete": {
 			"en": "Delete",
 			"ko": "삭제",
 			"ct": "meow"
+			"PI": "Toss booty overboard"
 		},
 		"nameIt": {
 			"en": "Name It",
 			"ko": "이름",
 			"ct": "meow"
+			"PI": "Name yar booty"
 		},
 		"cards": {
 			"en": "Cards",
 			"ko": "카드",
 			"ct": "meow"
+			"PI": "Maps"
 		},
 		"deckPride": {
 			"en": "Deck Pride",
 			"ko": "자존심",
 			"ct": "meow"
+			"PI": "Map value"
 		}
 	},
 
@@ -149,6 +173,7 @@
 			"en": "Error",
 			"ko": "오류",
 			"ct": "meow"
+			"PI": "Y'arr!"
 		}
 	},
 
@@ -160,6 +185,7 @@
 			"en": "Max Pride",
 			"ko": "자존심",
 			"ct": "meow"
+			"PI": "Max Rum"
 		}
 	},
 
@@ -171,41 +197,49 @@
 			"en": "player",
 			"ko": "플레이어",
 			"ct": "meow"
+			"PI": "Sailor"
 		},
 		"pride": {
 			"en": "pride",
 			"ko": "자존심",
 			"ct": "meow"
+			"PI": "Rum"
 		},
 		"custom": {
 			"en": "custom",
 			"ko": "관습",
 			"ct": "meow"
+			"PI": "Blank map"
 		},
 		"join": {
 			"en": "join",
 			"ko": "가입",
 			"ct": "meow"
+			"PI": "Board
 		},
 		"start": {
 			"en": "start",
 			"ko": "스타트",
 			"ct": "meow"
+			"PI": "Set sail"
 		},
 		"chat": {
 			"en": "chat",
 			"ko": "이야기",
 			"ct": "meow"
+			"PI": "Belch"
 		},
 		"guild": {
 			"en": "guild",
 			"ko": "대가족",
 			"ct": "meow"
+			"PI": "crew"
 		},
 		"people": {
 			"en": "people",
 			"ko": "사람들",
 			"ct": "meow"
+			"PI": "deckhands"
 		}
 	},
 
@@ -220,46 +254,55 @@
 			"en": "Toggle Navigation",
 			"ko": "토글",
 			"ct": "meow"
+			"PI": "Toggle Map"
 		},
 		"futurism": {
 			"en": "Futurism",
 			"ko": "미래의 배",
 			"ct": "MEOW"
+			"PI": "Day after Tomorrow"
 		},
 		"deckBuilder": {
 			"en": "Deck Builder",
 			"ko": "갑판",
 			"ct": "meow"
+			"PI": "Mapbook binder"
 		},
 		"cardBuilder": {
 			"en": "Card Builder",
 			"ko": "카드",
 			"ct": "meow"
+			"PI": "Map drawer:
 		},
 		"lobby": {
 			"en": "Lobby",
 			"ko": "로비",
 			"ct": "mewoww"
+			"PI": "Tavern"
 		},
 		"stats": {
 			"en": "My Stats",
 			"ko": "통계",
 			"ct": "meow"
+			"PI": "Pirate-ness"
 		},
 		"messages": {
 			"en": "Messages",
 			"ko": "메시지",
 			"ct": "meow"
+			"PI": "Messages in bottles"
 		},
 		"logout": {
 			"en": "Logout",
 			"ko": "로그 아웃",
 			"ct": "meow"
+			"PI": "Walk the plank"
 		},
 		"language": {
 			"en": "Language",
 			"ko": "언어",
 			"ct": "mewoowo"
+			"PI": "Dialect"
 		}
 	},
 
@@ -273,11 +316,13 @@
 				"en": "Ent",
 				"ko": "엔트",
 				"ct": "mewoowo"
+				"PI": "Swashbuckler"
 			},
 			"desc": {
 				"en": "Seeking a bond with nature, the Ents tinkered with their own dna. A wild group of nomads, they say you'll never meet the same Ent twice.",
 				"ko": "자연과의 결합을 추구, 엔트는 자신의 DNA를 만지작 거렸다. 유목민의 야생 그룹, 그들은 당신이 두 번 같은 엔트을 충족하지 못할거야 말한다.",
 				"ct": "mewoowo"
+				"PI": "Yarr, the race o' the krakens are a strange one. They were once but a cult, until Davy Jones cursed them to dwell in the sea."
 			}
 		},
 
@@ -286,11 +331,13 @@
 				"en": "Machine",
 				"ko": "기계",
 				"ct": "mewoowo"
+				"PI": "Inventors"
 			},
 			"desc": {
 				"en": "The relentless pursuit of knowledge lead some to improve their minds with metal. They have become far more than humans ever were, and far less.",
 				"ko": "지식의 끊임없는 추구는 금속으로 그들의 마음을 개선하는 데 도움이되는 몇 가지를했다. 그들은 인간이 이제까지했던 것보다 훨씬 더, 훨씬 덜되고있다.",
 				"ct": "mewoowo"
+				"PI": "Tha inventors are a lively bunch, ever in the pursuit of rum and knowledge. They know how to make good cannons"
 			}
 		},
 
@@ -299,11 +346,13 @@
 				"en": "Elite",
 				"ko": "엘리트",
 				"ct": "mewoowo"
+				"PI": "Swashbucklers"
 			},
 			"desc": {
 				"en": "Taking delight in the pleasures of this world, Elites have dominated the wealthy ruling class. A beautiful people, as long as you don't dig too deep.",
 				"ko": "이 세상의 쾌락의 기쁨을 촬영, 엘리트는 부유 한 지배 계급을 지배했다. 만큼 당신이 너무 깊이 파고하지 않는 아름다운 사람들.",
 				"ct": "mewoowo"
+				"PI": "The swashbucklers are the men o' the sea, always about on a ship. They are superb at boardin' other ships. "
 			}
 		},
 
@@ -312,11 +361,13 @@
 				"en": "Zealot",
 				"ko": "열광 자",
 				"ct": "mewoowo"
+				"PI": "Priest"
 			},
 			"desc": {
 				"en": "Always certain of the truth, Zealots are more than willing to fight for it. The fires of constant war have honed their military skills to perfection.",
 				"ko": "진리를 항상 일정, 질럿 그것을 위해 싸울 의도보다는 좀더. 지속적인 전쟁의 불이 완벽하게 자신의 군사 기술을 연마했다.",
 				"ct": "mewoowo"
+				"PI": "The priests are a pirate's bain, preaching' what be right and what be wrong. Filthy landlubbers."
 			}
 		}
 	},
@@ -331,11 +382,13 @@
 				"en": "Healing",
 				"ko": "치료",
 				"ct": "mewoowo"
+				"PI": "Rum drinker"
 			},
 			"desc": {
 				"en": "Target card gains 1 health.",
 				"ko": "대상 카드는 1 건강을 얻는다.",
 				"ct": "mewoowo"
+				"PI": "Target pirate drinks 1 bottle o' rum"
 			}
 		},
 
@@ -344,11 +397,13 @@
 				"en": "weed trees",
 				"ko": "잡초 나무",
 				"ct": "mewoowo"
+				"PI": "Seaweed"
 			},
 			"desc": {
 				"en": "A 1/1 tree is created",
 				"ko": "1 / 1 나무가 만들어집니다",
 				"ct": "mewoowo"
+				"PI": "A 1/1 seaweed drifts into the field"
 			}
 		},
 
@@ -357,11 +412,13 @@
 				"en": "abomination",
 				"ko": "가증스러운 행위",
 				"ct": "mewoowo"
+				"PI": "unspeakable"
 			},
 			"desc": {
 				"en": "Merge this unit with another.",
 				"ko": "서로 기기를 병합합니다.",
 				"ct": "mewoowo"
+				"PI": "Bury two treasures together
 			}
 		},
 
@@ -370,11 +427,13 @@
 				"en": "secretions",
 				"ko": "분비물",
 				"ct": "mewoowo"
+				"PI": "Leaky ship"
 			},
 			"desc": {
 				"en": "Target enemy can not attack next turn.",
 				"ko": "적군은 다음 턴을 공격 할 수 없다.",
 				"ct": "mewoowo"
+				"PI": "Target boat is busy fixin' leaks until next turn"
 			}
 		},
 
@@ -383,11 +442,13 @@
 				"en": "clone",
 				"ko": "복제",
 				"ct": "mewoowo"
+				"PI": "throw overboard"
 			},
 			"desc": {
 				"en": "Sacrifice this unit to produce a duplicate of another unit.",
 				"ko": "다른 장치의 복제본을 생성하기 위해이 장치를 제물로 바친다.",
 				"ct": "mewoowo"
+				"PI": "Throw this unit overboard so ye can get another pirate."
 			}
 		},
 
@@ -396,11 +457,13 @@
 				"en": "bees!",
 				"ko": "꿀벌!",
 				"ct": "mewoowo"
+				"PI": "Abeeminations"
 			},
 			"desc": {
 				"en": "All enemies in target column loose 1 health.",
 				"ko": "목표 컬럼에있는 모든 적을 1 건강 느슨한.",
 				"ct": "mewoowo"
+				"PI": "All enemy ships in target column drop 1 rum."
 			}
 		},
 
@@ -409,11 +472,13 @@
 				"en": "rebuild",
 				"ko": "다시",
 				"ct": "mewoowo"
+				"PI": "rebuild"
 			},
 			"desc": {
 				"en": "Resurrect a dead machine.",
 				"ko": "죽은 기계를 부활.",
 				"ct": "mewoowo"
+				"PI": "Repair a sunk ship to bring it back"
 			}
 		},
 
@@ -422,11 +487,13 @@
 				"en": "t-shield",
 				"ko": "T-쉴드",
 				"ct": "mewoowo"
+				"PI": "Fog"
 			},
 			"desc": {
 				"en": "All damage that would be dealt to target unit is reduced by 1 for a turn.",
 				"ko": "단위를 대상으로 처리 될 수있는 모든 피해는 차례를 1로 줄일 수있다.",
 				"ct": "mewoowo"
+				"PI": "Target ship receives one less cannonball per attack for 1 turn"
 			}
 		},
 
@@ -435,11 +502,13 @@
 				"en": "precise",
 				"ko": "정확한",
 				"ct": "mewoowo"
+				"PI": "spyglass"
 			},
 			"desc": {
 				"en": "Attack an enemy of your choice regardless of defensive formations.",
 				"ko": "에 관계없이 방어 형성의 선택의 적을 공격한다.",
 				"ct": "mewoowo"
+				"PI": "Fire upon an enemy of your choice, no matter where they be."
 			}
 		},
 
@@ -448,11 +517,13 @@
 				"en": "strategist",
 				"ko": "전략가",
 				"ct": "mewoowo"
+				"PI": "captain"
 			},
 			"desc": {
 				"en": "Ally can perform an extra action this turn",
 				"ko": "앨리 추가 조치에게이 턴을 수행 할 수 있습니다",
 				"ct": "mewoowo"
+				"PI": "Unit gets more orders this turn"
 			}
 		},
 
@@ -461,11 +532,14 @@
 				"en": "networking",
 				"ko": "네트워킹",
 				"ct": "mewoowo"
+				"PI": "smuggling"
 			},
 			"desc": {
 				"en": "Gain an allies abilities.",
 				"ko": "동맹의 능력을 얻을 수 있습니다.",
 				"ct": "mewoowo"
+				"PI": "Gain cargo from an ally."
+				
 			}
 		},
 
@@ -474,11 +548,13 @@
 				"en": "transformer",
 				"ko": "변압기",
 				"ct": "mewoowo"
+				"PI": "illusionist"
 			},
 			"desc": {
 				"en": "Swap health and attack.",
 				"ko": "건강과 공격을 교환합니다.",
 				"ct": "mewoowo"
+				"PI": "Swap rum and cannons"
 			}
 		},
 
@@ -488,11 +564,13 @@
 				"en": "seduction",
 				"ko": "유혹",
 				"ct": "mewoowo"
+				"PI": "board"
 			},
 			"desc": {
 				"en": "Convert an enemy to your side if their health is 1.",
 				"ko": "자신의 건강이 1이면 옆으로 적을 변환합니다.",
 				"ct": "mewoowo"
+				"PI": "Convert an enemy crew to yer side if they have only 1 rum."
 			}
 		},
 
@@ -502,11 +580,13 @@
 				"en": "assassin",
 				"ko": "암살자",
 				"ct": "mewoowo"
+				"PI": "frigate"
 			},
 			"desc": {
 				"en": "Attack without taking damage.",
 				"ko": "피해를하지 않고 공격한다.",
 				"ct": "mewoowo"
+				"PI": "Attack without reciving fire."
 			}
 		},
 
@@ -515,24 +595,28 @@
 				"en": "delegate",
 				"ko": "대리자",
 				"ct": "mewoowo"
+				"PI": "delegate"
 			},
 			"desc": {
 				"en": "Trade this unit with another unit in your hand.",
 				"ko": "당신의 손에있는 다른 장치와이 장치를 무역.",
 				"ct": "mewoowo"
+				"PI": "Swap this unit wit one o' yer others."
 			}
 		},
 
 		"posn": {
 			"name": {
-				"en":"poison",
+				"en": "poison",
 				"ko": "독",
 				"ct": "mewoowo"
+				"PI": "scurvy"
 			},
 			"desc": {
 				"en": "Target enemy loses 1 health per turn.",
 				"ko": "대상 적 턴에 1 건강을 푼다.",
 				"ct": "mewoowo"
+				"PI": "Target ship loses 1 rum per turn."
 			}
 		},
 
@@ -541,24 +625,28 @@
 				"en": "bag 'em",
 				"ko": "잡기",
 				"ct": "mewoowo"
+				"PI": "prevailing wind"
 			},
 			"desc": {
 				"en": "Target card is returned to its owner's hand.",
 				"ko": "대상 카드는 그것의 소유자의 손에 반환됩니다.",
 				"ct": "mewoowo"
+				"PI": "Target ship is blown back to port."
 			}
 		},
 
 		"siph": {
 			"name": {
-				"en":  "siphon",
+				"en": "siphon",
 				"ko": "사이펀",
 				"ct": "mewoowo"
+				"PI": "siphon"
 			},
 			"desc": {
-				"en":  "Steal 1 health from a card of your choice.",
+				"en": "Steal 1 health from a card of your choice.",
 				"ko": "당신의 선택의 카드에서 1 건강을 훔치는.",
 				"ct": "mewoowo"
+				"PI": "Drain 1 rum from a ship o' yer choosin'."
 			}
 		},
 
@@ -567,11 +655,13 @@
 				"en": "male",
 				"ko": "남성",
 				"ct": "mewoowo"
+				"PI": "Man"
 			},
 			"desc": {
 				"en": "Can reproduce with females.",
 				"ko": "여성으로 재현 할 수 있습니다.",
 				"ct": "mewoowo"
+				"PI": "Can make wee ones with women."
 			}
 		},
 
@@ -580,11 +670,13 @@
 				"en": "female",
 				"ko": "여성",
 				"ct": "mewoowo"
+				"PI": "woman"
 			},
 			"desc": {
 				"en": "Can reproduce with males.",
 				"ko": "남성으로 재현 할 수 있습니다.",
 				"ct": "mewoowo"
+				"PI": "Can make wee ones with men."
 			}
 		},
 
@@ -593,11 +685,13 @@
 				"en": "battle cry",
 				"ko": "함성",
 				"ct": "mewoowo"
+				"PI": "Yarr!"
 			},
 			"desc": {
 				"en": "Target unit gains 2 attack for the turn.",
 				"ko": "대상 장치는 회전 2 공격을 얻는다.",
 				"ct": "mewoowo"
+				"PI": "Ship is enthralled and fires 2 more cannons for the turn."
 			}
 		},
 
@@ -606,11 +700,13 @@
 				"en": "determined",
 				"ko": "결정된",
 				"ct": "mewoowo"
+				"PI": "ram"
 			},
 			"desc": {
 				"en": "Sacrifice this card to deal double damage.",
 				"ko": "더블 데미지를이 카드를 제물로 바친다.",
 				"ct": "mewoowo"
+				"PI": "Ram another ship to do double damage (destroys own ship)"
 			}
 		},
 
@@ -619,11 +715,13 @@
 				"en": "heroic sacrifice",
 				"ko": "영웅적인 희생",
 				"ct": "mewoowo"
+				"PI": "raise flags"
 			},
 			"desc": {
 				"en": "All enemy attacks must target this card for one turn.",
 				"ko": "모든 적의 공격 한 턴에이 카드를 대상으로해야합니다.",
 				"ct": "mewoowo"
+				"PI": "All enemies that fire must attack this ship for one turn."
 			}
 		},
 
@@ -632,11 +730,13 @@
 				"en": "super serum",
 				"ko": "슈퍼 혈청",
 				"ct": "mewoowo"
+				"PI": "super rum"
 			},
 			"desc": {
 				"en": "Available health points are converted into attack points",
 				"ko": "가능한 건강 포인트는 공격 포인트로 변환",
 				"ct": "mewoowo"
+				"PI": "Available rum is converted into cannon munitions."
 			}
 		}
 	}
