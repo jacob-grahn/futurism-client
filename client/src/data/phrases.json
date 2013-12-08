@@ -14,7 +14,7 @@
     "en": "",
     "ko": "",
     "ct": "Katy Purry",
-    "es": "",
+    "es": "aaaaaa123456789",
     "fr": "Omegaguineapig, JV-TRUC",
     "ne": "larsyuipo",
     "PI": "esp-eon",
@@ -30,7 +30,8 @@
       "PI": "Day after Tomorrow",
       "lt": "FUTURISM",
       "ne": "FUTURISM",
-      "sv": "Futurism"
+      "sv": "Futurism",
+      "es": "FUTURISMO"
     },
     "login": {
       "en": "LOGIN",
@@ -40,7 +41,8 @@
       "PI": "Sail the seven seas!",
       "lt": "PRISIJUNGIMAS",
       "ne": "LOG IN",
-      "sv": "Logga in"
+      "sv": "Logga in",
+      "es": "Ingresar"
     },
     "credits": {
       "en": "CREDITS",
@@ -50,7 +52,8 @@
       "PI": "Captain's Logs",
       "lt": "KŪRĖJAI",
       "ne": "CREDITS",
-      "sv": "Medverkande"
+      "sv": "Medverkande",
+      "es": "Créditos"
     },
     "instructions": {
       "en": "EDU-VIDS",
@@ -60,7 +63,8 @@
       "PI": "Davy Jones' Locker",
       "lt": "INSTRUKCIJOS",
       "ne": "Instructiefilmpjes",
-      "sv": "Instruktioner"
+      "sv": "Instruktioner",
+      "es": "Videos educativos"
     }
   },
   "cardBuilder": {
@@ -72,7 +76,8 @@
       "PI": "Treasure Map",
       "lt": "Išsaugojimas ir Užkrovimas",
       "ne": "Opslaan en Laden",
-      "sv": "Spara och Ladda"
+      "sv": "Spara och Ladda",
+      "es": "Guardar y cargar"
     },
     "nameIt": {
       "en": "Name It",
@@ -82,7 +87,8 @@
       "PI": "Name yar booty",
       "lt": "Pavadinimas",
       "ne": "Geef een Naam",
-      "sv": "Namnge det"
+      "sv": "Namnge det",
+      "es": "Nombrar"
     },
     "imageUpload": {
       "en": "Image Upload",
@@ -92,7 +98,8 @@
       "PI": "Enscribe yar map",
       "lt": "Paveikslėlio įkelimas",
       "ne": "Upload een Plaatje",
-      "sv": "bilduppladdning"
+      "sv": "bilduppladdning",
+      "es": "Cargar imagen"
     },
     "factionAbilities": {
       "en": "Faction Abilities",
@@ -102,7 +109,8 @@
       "PI": "Munitions",
       "lt": "Frakcijų sugebėjimai",
       "ne": "Factie Vaardigheden ",
-      "sv": "Fraktionsförmågor"
+      "sv": "Fraktionsförmågor",
+      "es": "Habilidades de la facción"
     },
     "save": {
       "en": "Save",
@@ -112,7 +120,8 @@
       "PI": "Bury",
       "lt": "Išsaugoti",
       "ne": "Opslaan",
-      "sv": "Spara"
+      "sv": "Spara",
+      "es": "Guardar"
     },
     "load": {
       "en": "Load",
@@ -122,7 +131,8 @@
       "PI": "Dig up booty",
       "lt": "Užkrauti",
       "ne": "Laden",
-      "sv": "Ladda"
+      "sv": "Ladda",
+      "es": "Cargar"
     },
     "new": {
       "en": "New",
@@ -132,7 +142,8 @@
       "PI": "Plunder new Booty",
       "lt": "Naujas",
       "ne": "Nieuw",
-      "sv": "Nytt"
+      "sv": "Nytt",
+      "es": "Nueva"
     },
     "delete": {
       "en": "Delete",
@@ -142,7 +153,8 @@
       "PI": "Toss overboard",
       "lt": "Ištrinti",
       "ne": "Verwijderen",
-      "sv": "Ta bort"
+      "sv": "Ta bort",
+      "es": "Eliminar"
     },
     "attack": {
       "en": "Attack",
@@ -152,7 +164,8 @@
       "PI": "Number o' Cannons",
       "lt": "Stiprumas",
       "ne": "Kracht",
-      "sv": "Attackera"
+      "sv": "Attackera",
+      "es": "Ataque"
     },
     "health": {
       "en": "Health",
@@ -162,7 +175,8 @@
       "PI": "Rum",
       "lt": "Gyvybės",
       "ne": "Levens",
-      "sv": "Liv"
+      "sv": "Liv",
+      "es": "Vida"
     }
   },
   "chat": {
@@ -174,7 +188,8 @@
       "PI": "Belch",
       "lt": "sakyk",
       "ne": "Zeggen",
-      "sv": "säg"
+      "sv": "säg",
+      "es": "Enviar"
     },
     "placeholder": {
       "en": "type to chat",
@@ -184,7 +199,8 @@
       "PI": "Open ye mouth",
       "lt": "Rašykite kad šnekėtumete",
       "ne": "Type iets in de chat",
-      "sv": "skriv för att chatta"
+      "sv": "skriv för att chatta",
+      "es": "Escribe para conversar"
     }
   },
   "deckBuilder": {
@@ -196,7 +212,8 @@
       "PI": "Check Maps",
       "lt": "Išsaugojimas ir Užkrovimas",
       "ne": "Opslaan en Laden",
-      "sv": "Spara och Ladda"
+      "sv": "Spara och Ladda",
+      "es": "Guardar y cargar"
     },
     "save": {
       "en": "Save",
@@ -206,7 +223,8 @@
       "PI": "Bury",
       "lt": "Išsaugoti",
       "ne": "Opslaan",
-      "sv": "Spara"
+      "sv": "Spara",
+      "es": "Guardar"
     },
     "load": {
       "en": "Load",
@@ -216,7 +234,8 @@
       "PI": "Dig up booty",
       "lt": "Užkrauti",
       "ne": "Laden",
-      "sv": "Ladda"
+      "sv": "Ladda",
+      "es": "Cargar"
     },
     "new": {
       "en": "New",
@@ -226,7 +245,8 @@
       "PI": "Plunder new booty",
       "lt": "Naujas",
       "ne": "Nieuw",
-      "sv": "Nytt"
+      "sv": "Nytt",
+      "es": "Nuevo"
     },
     "delete": {
       "en": "Delete",
@@ -235,7 +255,8 @@
       "fr": "Supprimer",
       "PI": "Toss booty overboard",
       "ne": "Verwijderen",
-      "sv": "Ta bort"
+      "sv": "Ta bort",
+      "es": "Eliminar"
     },
     "nameIt": {
       "en": "Name It",
@@ -245,7 +266,8 @@
       "PI": "Name yar booty",
       "lt": "Pavadinimas",
       "ne": "Geef een naam",
-      "sv": "Namnge det"
+      "sv": "Namnge det",
+      "es": "Nombrar"
     },
     "cards": {
       "en": "Cards",
@@ -255,7 +277,8 @@
       "PI": "Maps",
       "lt": "Kortos",
       "ne": "Kaarten",
-      "sv": "Kort"
+      "sv": "Kort",
+      "es": "Cartas"
     },
     "deckPride": {
       "en": "Deck Pride",
@@ -265,7 +288,8 @@
       "PI": "Map value",
       "lt": "Kaladės pasididžiavimas",
       "ne": "Deck Trots",
-      "sv": "Deckstolthet"
+      "sv": "Deckstolthet",
+      "es": "Orgullo del mazo"
     }
   },
   "errorPage": {
@@ -277,7 +301,8 @@
       "PI": "Y'arr!",
       "lt": "Klaida!",
       "ne": "Error",
-      "sv": "Error"
+      "sv": "Error",
+      "es": "Error"
     }
   },
   "preDeck": {
@@ -289,7 +314,8 @@
       "PI": "Max Rum",
       "lt": "Maksimali garbė",
       "ne": "Maximale trots",
-      "sv": "Max stolthet"
+      "sv": "Max stolthet",
+      "es": "Máximo orgullo"
     }
   },
   "lobby": {
@@ -301,7 +327,8 @@
       "PI": "Sailor",
       "lt": "žaidėjas",
       "ne": "Speler",
-      "sv": "spelare"
+      "sv": "spelare",
+      "es": "jugadores"
     },
     "pride": {
       "en": "pride",
@@ -311,7 +338,8 @@
       "PI": "Rum",
       "lt": "garbė",
       "ne": "trots",
-      "sv": "Stolthet"
+      "sv": "Stolthet",
+      "es": "orgullo"
     },
     "custom": {
       "en": "custom",
@@ -321,7 +349,8 @@
       "PI": "Blank map",
       "lt": "redaguojamas",
       "ne": "eigen",
-      "sv": "Anpassad"
+      "sv": "Anpassad",
+      "es": "personalizado"
     },
     "join": {
       "en": "join",
@@ -331,7 +360,8 @@
       "PI": "Board",
       "lt": "prisijungti",
       "ne": "meedoen",
-      "sv": "gå med"
+      "sv": "gå med",
+      "es": "unirse"
     },
     "start": {
       "en": "start",
@@ -341,7 +371,8 @@
       "PI": "Set sail",
       "lt": "pradėti",
       "ne": "start",
-      "sv": "starta"
+      "sv": "starta",
+      "es": "Iniciar"
     },
     "chat": {
       "en": "chat",
@@ -351,7 +382,8 @@
       "PI": "Belch",
       "lt": "pokalbiai",
       "ne": "chat",
-      "sv": "chatt"
+      "sv": "chatt",
+      "es": "chat"
     },
     "guild": {
       "en": "guild",
@@ -361,7 +393,8 @@
       "PI": "crew",
       "lt": "komanda",
       "ne": "gilde",
-      "sv": "guild"
+      "sv": "guild",
+      "es": "gremio"
     },
     "people": {
       "en": "people",
@@ -370,7 +403,8 @@
       "fr": "Joueurs",
       "PI": "deckhands",
       "lt": "žmonės",
-      "sv": "personer"
+      "sv": "personer",
+      "es": "personas"
     }
   },
   "nav": {
@@ -381,7 +415,8 @@
       "fr": "Activer la navigation",
       "PI": "Toggle Map",
       "lt": "Navigacijos Perjungimas",
-      "sv": "Växla Navigation"
+      "sv": "Växla Navigation",
+      "es": "Habilitar barra de navegación"
     },
     "futurism": {
       "en": "Futurism",
@@ -390,7 +425,8 @@
       "fr": "Futurisme",
       "PI": "Day after Tomorrow",
       "lt": "Futurism",
-      "sv": "Futurism"
+      "sv": "Futurism",
+      "es": "Futurismo"
     },
     "deckBuilder": {
       "en": "Deck Builder",
@@ -399,7 +435,8 @@
       "fr": "Créateur de paquet",
       "PI": "Mapbook binder",
       "lt": "Kaladės Dėliojimas",
-      "sv": "Deck byggare"
+      "sv": "Deck byggare",
+      "es": "Constructor de mazos"
     },
     "cardBuilder": {
       "en": "Card Builder",
@@ -408,7 +445,8 @@
       "fr": "Créateur de carte",
       "PI": "Map drawer",
       "lt": "Kortų kūrimas",
-      "sv": "Kort Byggare"
+      "sv": "Kort Byggare",
+      "es": "Constructor de cartas"
     },
     "lobby": {
       "en": "Lobby",
@@ -417,7 +455,8 @@
       "fr": "Hall",
       "PI": "Tavern",
       "lt": "Fojė",
-      "sv": "Lobby"
+      "sv": "Lobby",
+      "es": "Lobby"
     },
     "stats": {
       "en": "My Stats",
@@ -426,7 +465,8 @@
       "fr": "Ma Statistiques",
       "PI": "Pirate-ness",
       "lt": "Mano statusai",
-      "sv": "Min Statistik"
+      "sv": "Min Statistik",
+      "es": "Mis estadísticas"
     },
     "messages": {
       "en": "Messages",
@@ -435,7 +475,8 @@
       "fr": "Messages",
       "PI": "Messages in bottles",
       "lt": "Žinutės",
-      "sv": "Meddelanden"
+      "sv": "Meddelanden",
+      "es": "Mensajes"
     },
     "logout": {
       "en": "Logout",
@@ -444,7 +485,8 @@
       "fr": "Déconnexion",
       "PI": "Walk the plank",
       "lt": "Atsijungti",
-      "sv": "Logga ut"
+      "sv": "Logga ut",
+      "es": "Cerrar sesión"
     },
     "language": {
       "en": "Language",
@@ -453,7 +495,8 @@
       "fr": "Langue",
       "PI": "Dialect",
       "lt": "Kalba",
-      "sv": "Språk"
+      "sv": "Språk",
+      "es": "Idioma"
     }
   },
   "factions": {
@@ -466,7 +509,8 @@
         "PI": "Swashbuckler",
         "lt": "Entai",
         "ne": "Ent",
-        "sv": "Ent"
+        "sv": "Ent",
+        "es": "Ent"
       },
       "desc": {
         "en": "Seeking a bond with nature, the Ents tinkered with their own dna. A wild group of nomads, they say you'll never meet the same Ent twice.",
@@ -476,7 +520,8 @@
         "PI": "Yarr, the race o' the krakens are a strange one. They were once but a cult, until Davy Jones cursed them to dwell in the sea.",
         "lt": "Siekdami ryšio su gamta, Entai pakeitė savo DNR. Laukiniai klajokliai sako kad niekada nesutiki to pačio Ento dukart.",
         "ne": "In hun zoektocht naar een band met de natuur hebben de Enten aan hun eigen DNA gesleuteld. Ze zijn een wilde groep nomaden, en ze zeggen dat je dezelfde Ent nooit tweemaal zult tegenkomen.",
-        "sv": "Söker en obligation med naturen, enterna mixtrar med sin egen dna. En vild grupp av nomader, de säger att du aldrig kommer att möta samma Ent två gånger."
+        "sv": "Söker en obligation med naturen, enterna mixtrar med sin egen dna. En vild grupp av nomader, de säger att du aldrig kommer att möta samma Ent två gånger.",
+        "es": "En la búsqueda de un lazo con la naturaleza, los Ents alteraron su propio ADN. Son un grupo salvaje de nómades, y dicen que nunca verás al mismo Ent dos veces."
       }
     },
     "mc": {
@@ -488,7 +533,8 @@
         "PI": "Inventors",
         "lt": "Robot-Humanoidai",
         "ne": "Machine",
-        "sv": "maskin"
+        "sv": "maskin",
+        "es": "Máquina"
       },
       "desc": {
         "en": "The relentless pursuit of knowledge lead some to improve their minds with metal. They have become far more than humans ever were, and far less.",
@@ -498,7 +544,8 @@
         "PI": "Tha inventors are a lively bunch, ever in the pursuit of rum and knowledge. They know how to make good cannons",
         "lt": "Amžinas žinių siekimas, privedė prie minčių suliejimo su metalu. Jie tapo galingesniais bei išmintigesniais nei žmonės kada buvo.",
         "ne": "De onophoudelijke speurtocht naar kennis leidde ertoe dat sommigen hun geest hebben verbeterd met metaal. Ze zijn veel meer dan mensen ooit waren, maar ook veel minder.",
-        "sv": "Den obevekliga strävan efter kunskap leder några att förbättra sina sinnen med metall. De har blivit mycket mer än människan någonsin var, och långt mindre."
+        "sv": "Den obevekliga strävan efter kunskap leder några att förbättra sina sinnen med metall. De har blivit mycket mer än människan någonsin var, och långt mindre.",
+        "es": "La búsqueda incansable del conocimiento llevó a algunos a mejorar sus mentes con metal. Se han convertido en mucho más que lo que los humanos nunca llegaron a ser, y en mucho menos."
       }
     },
     "el": {
@@ -510,7 +557,8 @@
         "PI": "Swashbucklers",
         "lt": "Elitas",
         "ne": "Elite",
-        "sv": "Elit"
+        "sv": "Elit",
+        "es": "Élite"
       },
       "desc": {
         "en": "Taking delight in the pleasures of this world, Elites have dominated the wealthy ruling class. A beautiful people, as long as you don't dig too deep.",
@@ -520,7 +568,8 @@
         "PI": "The swashbucklers are the men o' the sea, always about on a ship. They are superb at boardin' other ships. ",
         "lt": "Mėgaudamiesi pagundų malonumu, Elitai dominavo turtingujų klasę.",
         "ne": "De Elite zoekt hun genoegdoening in het genot van de wereld. Ze domineren de rijke aristocratie. Een mooi volk, zolang je niet te diep kijkt.",
-        "sv": "Med glädje i njutning av denna värld, har eliter dominerat den förmögna härskande klassen.Vackra människor, så länge du inte gräver för djupt."
+        "sv": "Med glädje i njutning av denna värld, har eliter dominerat den förmögna härskande klassen.Vackra människor, så länge du inte gräver för djupt.",
+        "es": "Disfrutando de los placeres de este mundo, los Élites han dominado la clase rica y dominante. Personas hermosas, siempre y cuando no hurgues muy profundo en ellas."
       }
     },
     "ze": {
@@ -532,7 +581,8 @@
         "PI": "Priest",
         "lt": "Fanatikai",
         "ne": "ijveraar",
-        "sv": "Zealot"
+        "sv": "Zealot",
+        "es": "Fanático"
       },
       "desc": {
         "en": "Always certain of the truth, Zealots are more than willing to fight for it. The fires of constant war have honed their military skills to perfection.",
@@ -542,7 +592,8 @@
         "PI": "The priests are a pirate's bain, preaching' what be right and what be wrong. Filthy landlubbers.",
         "lt": "Visada įsitikine savąja tiesa, Fanatikai yra itin pasiryžę kovoti vardan jos. Amžinas karas jų kariuomenę ištobulino iki tobulumo.",
         "ne": "Zeloten zijn altijd zeker van de waarheid, en meer dan bereid ervoor te vechten. De vuren van hun constante oorlog hebben hun militaire vaardigheid tot perfectie aangescherpt.",
-        "sv": "Alltid säker på sanningen, zeloterna är mer än villiga att kämpa för det. Bränderna i konstanta krig har finslipat sina militära färdigheter till perfektion."
+        "sv": "Alltid säker på sanningen, zeloterna är mer än villiga att kämpa för det. Bränderna i konstanta krig har finslipat sina militära färdigheter till perfektion.",
+        "es": "Siempre seguros de la verdad, los Fanáticos están más que dispuestos a luchar por ella. Las llamas de la guerra constante han hecho que sus habilidades militares alcancen la perfección."
       }
     }
   },
@@ -556,7 +607,8 @@
         "PI": "Rum drinker",
         "lt": "Gydimas",
         "ne": "Helen",
-        "sv": "Helande"
+        "sv": "Helande",
+        "es": "Curación"
       },
       "desc": {
         "en": "Target card gains 1 health.",
@@ -566,7 +618,8 @@
         "PI": "Target pirate drinks 1 bottle o' rum",
         "lt": "Pasirinkta korta pagydoma 1 tašku.",
         "ne": "Doel krijgt 1 leven erbij.",
-        "sv": "Det valda kortet får ett liv"
+        "sv": "Det valda kortet får ett liv",
+        "es": "La carta objetivo gana 1 de vida."
       }
     },
     "tree": {
@@ -578,7 +631,8 @@
         "PI": "Seaweed",
         "lt": "Žoliniai medžiai",
         "ne": "onkruid bomen",
-        "sv": "ogrästräd"
+        "sv": "ogrästräd",
+        "es": "árboles de hierbas"
       },
       "desc": {
         "en": "A 1/1 tree is created",
@@ -588,7 +642,8 @@
         "PI": "A 1/1 seaweed drifts into the field",
         "lt": "Sukuria 1/1 medį.",
         "ne": "Er wordt een 1/1 boom gemaakt.",
-        "sv": "Ett 1/1 träd är skapat"
+        "sv": "Ett 1/1 träd är skapat",
+        "es": "Un árbol 1/1 es creado"
       }
     },
     "abom": {
@@ -600,7 +655,8 @@
         "PI": "unspeakable",
         "lt": "Sutapatinimas",
         "ne": "verschrikking",
-        "sv": "avskyvärdighet"
+        "sv": "avskyvärdighet",
+        "es": "abominación"
       },
       "desc": {
         "en": "Merge this unit with another.",
@@ -610,7 +666,8 @@
         "PI": "Bury two treasures together",
         "lt": "Sujungia dvejus padarus",
         "ne": "Versmelt deze kaart met een andere kaart.",
-        "sv": "Slå ihop den här enheten med en annan"
+        "sv": "Slå ihop den här enheten med en annan",
+        "es": "Esta unidad se combina con otra."
       }
     },
     "secr": {
@@ -622,7 +679,8 @@
         "PI": "Leaky ship",
         "lt": "Atskyrimas",
         "ne": "uitscheiding",
-        "sv": "utsöndring"
+        "sv": "utsöndring",
+        "es": "secreciones"
       },
       "desc": {
         "en": "Target enemy can not attack next turn.",
@@ -632,7 +690,8 @@
         "PI": "Target boat is busy fixin' leaks until next turn",
         "lt": "Uždraudžia priešininko padarui pulti vienam ėjimui.",
         "ne": "Het doel kan de volgende beurt niet aanvallen.",
-        "sv": "Den valda enheten kan inte attackera nästa omgång"
+        "sv": "Den valda enheten kan inte attackera nästa omgång",
+        "es": "El enemigo objetivo no puede atacar el próximo turno."
       }
     },
     "clne": {
@@ -644,7 +703,8 @@
         "PI": "throw overboard",
         "lt": "Klonas",
         "ne": "kloon",
-        "sv": "klon"
+        "sv": "klon",
+        "es": "clonar"
       },
       "desc": {
         "en": "Sacrifice this unit to produce a duplicate of another unit.",
@@ -654,7 +714,8 @@
         "PI": "Throw this unit overboard so ye can get another pirate.",
         "lt": "Vieno padaro paukojimas, vardan kito padaro klono sukūrimo.",
         "ne": "Offer deze kaart op om een replica van een andere kaart te maken.",
-        "sv": "Offra den här enheten för att producera en kopia av en annan enhet."
+        "sv": "Offra den här enheten för att producera en kopia av en annan enhet.",
+        "es": "Sacrifica esta unidad para producir una copia de otra."
       }
     },
     "bees": {
@@ -666,7 +727,8 @@
         "PI": "Abeeminations",
         "lt": "Bitės!",
         "ne": " bijen",
-        "sv": "Bin!"
+        "sv": "Bin!",
+        "es": "¡abejas!"
       },
       "desc": {
         "en": "All enemies in target column loose 1 health.",
@@ -676,7 +738,8 @@
         "PI": "All enemy ships in target column drop 1 rum.",
         "lt": "Visi priešininkai vertikaliai nuo puolamo padaro praranda 1 gyvybės tašką.",
         "ne": "Alle vijanden verliezen 1 leven.",
-        "sv": "Alla fiender i en siktad kolumn tappar ett liv."
+        "sv": "Alla fiender i en siktad kolumn tappar ett liv.",
+        "es": "Toos los enemigos en la columna objetivo pierden 1 de vida."
       }
     },
     "rbld": {
@@ -688,7 +751,8 @@
         "PI": "rebuild",
         "lt": "Atstatymas",
         "ne": "herbouwen",
-        "sv": "buyg om"
+        "sv": "buyg om",
+        "es": "reconstruir"
       },
       "desc": {
         "en": "Resurrect a dead machine.",
@@ -698,7 +762,8 @@
         "PI": "Repair a sunk ship to bring it back",
         "lt": "Prikelia mirusią mašiną.",
         "ne": "Breng een dode machine weer tot leven.",
-        "sv": "Återuppta en död maskin."
+        "sv": "Återuppta en död maskin.",
+        "es": "Revive una máquina muerta."
       }
     },
     "shld": {
@@ -709,7 +774,8 @@
         "fr": "Bouclier-T",
         "PI": "Fog",
         "lt": "T-Skydas",
-        "ne": "t-schild"
+        "ne": "t-schild",
+        "es": "Escudo T"
       },
       "desc": {
         "en": "All damage that would be dealt to target unit is reduced by 1 for a turn.",
@@ -719,7 +785,8 @@
         "PI": "Target ship receives one less cannonball per attack for 1 turn",
         "lt": "Vieną ėjima, visa padaryta žala yra sumažinta 1 tašku.",
         "ne": "Alle schade die zou worden toegebracht aan het doel wordt verminderd met 1 voor een beurt.",
-        "sv": "All skada som skulle ha blivit handlat till enheten är nedsatt till en för en omgång."
+        "sv": "All skada som skulle ha blivit handlat till enheten är nedsatt till en för en omgång.",
+        "es": "Todo el daño que la unidad objetivo fuera a recibir se reduce en 1 por un turno."
       }
     },
     "prci": {
@@ -731,7 +798,8 @@
         "PI": "spyglass",
         "lt": "Taiklumas",
         "ne": "nauwkeurig",
-        "sv": "exakt"
+        "sv": "exakt",
+        "es": "preciso"
       },
       "desc": {
         "en": "Attack an enemy of your choice regardless of defensive formations.",
@@ -741,7 +809,8 @@
         "PI": "Fire upon an enemy of your choice, no matter where they be.",
         "lt": "Užpuola priešininką neatsižvelgiant į gynybos formaciją.",
         "ne": "Val een vijand van je keuze aan, ongeacht de verdedigingsformatie.",
-        "sv": "Attackera en fiende av ditt val oavsett´av defensiva former"
+        "sv": "Attackera en fiende av ditt val oavsett´av defensiva former",
+        "es": "Ataca un enemigo a tu elección sin importar las formaciones defensivas."
       }
     },
     "strt": {
@@ -753,7 +822,8 @@
         "PI": "captain",
         "lt": "Strategistas",
         "ne": "strateeg",
-        "sv": "strateg"
+        "sv": "strateg",
+        "es": "estratega"
       },
       "desc": {
         "en": "Ally can perform an extra action this turn",
@@ -763,7 +833,8 @@
         "PI": "Unit gets more orders this turn",
         "lt": "Papildomas veiksmas šio ėjimo metu.",
         "ne": "De bondgenoot kan deze beurt een extra actie uitvoeren",
-        "sv": "Allierade kan utföra en extra åtgärd den här omgången"
+        "sv": "Allierade kan utföra en extra åtgärd den här omgången",
+        "es": "Un aliado puede realizar una acción más en este turno"
       }
     },
     "netw": {
@@ -775,7 +846,8 @@
         "PI": "smuggling",
         "lt": "Tinklas",
         "ne": "netwerk",
-        "sv": "nätverk"
+        "sv": "nätverk",
+        "es": "conexiones"
       },
       "desc": {
         "en": "Gain an allies abilities.",
@@ -785,7 +857,8 @@
         "PI": "Gain cargo from an ally.",
         "lt": "Draugiško padaro sugebėjimų įgavimas",
         "ne": "Krijg de vaardigheden van een andere speler.",
-        "sv": "Få en allierads förmågor"
+        "sv": "Få en allierads förmågor",
+        "es": "Obtiene las habilidades de un aliado."
       }
     },
     "tran": {
@@ -797,7 +870,8 @@
         "PI": "illusionist",
         "lt": "Apkeitimas",
         "ne": "transformer",
-        "sv": "transformerare"
+        "sv": "transformerare",
+        "es": "transformista"
       },
       "desc": {
         "en": "Swap health and attack.",
@@ -807,7 +881,8 @@
         "PI": "Swap rum and cannons",
         "lt": "Apkeičia puolimo ir gyvybių taškus.",
         "ne": "Wissel levens en kracht om.",
-        "sv": "Byt liv och attack"
+        "sv": "Byt liv och attack",
+        "es": "Intercambia ataque y vida."
       }
     },
     "sduc": {
@@ -819,7 +894,8 @@
         "PI": "board",
         "lt": "Suviliojimas",
         "ne": "verleiding",
-        "sv": "lockelse"
+        "sv": "lockelse",
+        "es": "seducción"
       },
       "desc": {
         "en": "Convert an enemy to your side if their health is 1.",
@@ -829,7 +905,8 @@
         "PI": "Convert an enemy crew to yer side if they have only 1 rum.",
         "lt": "Pervilioja priešininko padarą turinti tik 1 gyvybės tašką, į tavo pusę.",
         "ne": "Haal een vijand naar jouw kant als ze 1 leven overhebben.",
-        "sv": "Konvertera en fiende till din sida om dens liv är ett"
+        "sv": "Konvertera en fiende till din sida om dens liv är ett",
+        "es": "Convierte un enemigo a tu bando si su vida es 1."
       }
     },
     "assn": {
@@ -841,7 +918,8 @@
         "PI": "frigate",
         "lt": "Žmogžudys",
         "ne": "assassijn",
-        "sv": "mördare"
+        "sv": "mördare",
+        "es": "asesino"
       },
       "desc": {
         "en": "Attack without taking damage.",
@@ -851,7 +929,8 @@
         "PI": "Attack without reciving fire.",
         "lt": "Puoldamas nepraranda gyvybės taškų.",
         "ne": "Val aan zonder zelf schaden te ondervinden.",
-        "sv": "Attackera utan att ta skada"
+        "sv": "Attackera utan att ta skada",
+        "es": "Ataca sin recibir daño."
       }
     },
     "delg": {
@@ -863,7 +942,8 @@
         "PI": "delegate",
         "lt": "Įgaliojimas",
         "ne": "afgevaardige",
-        "sv": "sända"
+        "sv": "sända",
+        "es": "delegar"
       },
       "desc": {
         "en": "Trade this unit with another unit in your hand.",
@@ -873,7 +953,8 @@
         "PI": "Swap this unit wit one o' yer others.",
         "lt": "Apkeičia šį padarą su kitu esančiu tavo rankoje.",
         "ne": "Ruil deze kaart om met een kaart in je hand.",
-        "sv": "Byt det här kortet med en annan enhet i din hand"
+        "sv": "Byt det här kortet med en annan enhet i din hand",
+        "es": "Intercambia esta unidad con otra de tu mano."
       }
     },
     "posn": {
@@ -885,7 +966,8 @@
         "PI": "scurvy",
         "lt": "Nuodai",
         "ne": "vergif",
-        "sv": "gift"
+        "sv": "gift",
+        "es": "veneno"
       },
       "desc": {
         "en": "Target enemy loses 1 health per turn.",
@@ -895,7 +977,8 @@
         "PI": "Target ship loses 1 rum per turn.",
         "lt": "Priešinko padaras praranda 1 gyvybės tašką kiekvieną ėjimą.",
         "ne": "Het vijandelijke doel verliest 1 leven per beurt.",
-        "sv": "Den valda fienden förlorar ett liv per omgång"
+        "sv": "Den valda fienden förlorar ett liv per omgång",
+        "es": "El enemigo objetivo pierde 1 de vida por turno."
       }
     },
     "bagm": {
@@ -907,7 +990,8 @@
         "PI": "prevailing wind",
         "lt": "Sugražinimas",
         "ne": "wegstoppen",
-        "sv": "Säcka dem"
+        "sv": "Säcka dem",
+        "es": "embolsar"
       },
       "desc": {
         "en": "Target card is returned to its owner's hand.",
@@ -917,7 +1001,8 @@
         "PI": "Target ship is blown back to port.",
         "lt": "Sugražina priešininko padarą į rankas.",
         "ne": "Het doel gaat terug naar de hand van de eigenaar.",
-        "sv": "Kortet du valde är tillbakadraget till ägarens hand"
+        "sv": "Kortet du valde är tillbakadraget till ägarens hand",
+        "es": "La carta objetivo retorna a la mano de su dueño."
       }
     },
     "siph": {
@@ -929,7 +1014,8 @@
         "PI": "siphon",
         "lt": "Vampyrizmas",
         "ne": "dief",
-        "sv": "sifon"
+        "sv": "sifon",
+        "es": "sifón"
       },
       "desc": {
         "en": "Steal 1 health from a card of your choice.",
@@ -939,7 +1025,8 @@
         "PI": "Drain 1 rum from a ship o' yer choosin'.",
         "lt": "Pavogia vieną gyvybės tašką iš pasirinktos kortos.",
         "ne": "Steel 1 leven van een kaard van je keuze.",
-        "sv": "Stjäl ett liv från ett kort av ditt val"
+        "sv": "Stjäl ett liv från ett kort av ditt val",
+        "es": "Roba 1 de vida de una carta a tu elección."
       }
     },
     "male": {
@@ -951,7 +1038,8 @@
         "PI": "Man",
         "lt": "Vyras",
         "ne": "mannelijk",
-        "sv": "man"
+        "sv": "man",
+        "es": "macho"
       },
       "desc": {
         "en": "Can reproduce with females.",
@@ -961,7 +1049,8 @@
         "PI": "Can make wee ones with women.",
         "lt": "Gali daugintis su motėrimis.",
         "ne": "Kan reproduceren met een vrouwelijke kaard.",
-        "sv": "Kan ompruduceras med kvinnor"
+        "sv": "Kan ompruduceras med kvinnor",
+        "es": "Puede reproducirse con hembras."
       }
     },
     "feml": {
@@ -973,7 +1062,8 @@
         "PI": "woman",
         "lt": "Moteris",
         "ne": "vrouwelijk",
-        "sv": "kvinna"
+        "sv": "kvinna",
+        "es": "hembra"
       },
       "desc": {
         "en": "Can reproduce with males.",
@@ -983,7 +1073,8 @@
         "PI": "Can make wee ones with men.",
         "lt": "Gali daugintis su vyrais.",
         "ne": "Kan reproduceren met een mannelijke kaard.",
-        "sv": "Kan omproduceras med män"
+        "sv": "Kan omproduceras med män",
+        "es": "Puede reproducirse con machos."
       }
     },
     "btle": {
@@ -995,7 +1086,8 @@
         "PI": "Yarr!",
         "lt": "Mūšio giesmė",
         "ne": "Strijdkreet",
-        "sv": "krigs gråt"
+        "sv": "krigs gråt",
+        "es": "Grito de batalla"
       },
       "desc": {
         "en": "Target unit gains 2 attack for the turn.",
@@ -1005,7 +1097,8 @@
         "PI": "Ship is enthralled and fires 2 more cannons for the turn.",
         "lt": "Padaras įgauna 2 atako taškus šiam ėjimui.",
         "ne": "Het doel krijgt twee kracht voor deze beurt.",
-        "sv": "Att träffa en enhet ger två attacker för omgången"
+        "sv": "Att träffa en enhet ger två attacker för omgången",
+        "es": "La unidad objetivo gana 2 de ataque por este turno."
       }
     },
     "detr": {
@@ -1017,7 +1110,8 @@
         "PI": "ram",
         "lt": "Pasiaukojimas",
         "ne": "vastberaden",
-        "sv": "avgjord"
+        "sv": "avgjord",
+        "es": "determinado"
       },
       "desc": {
         "en": "Sacrifice this card to deal double damage.",
@@ -1027,7 +1121,8 @@
         "PI": "Ram another ship to do double damage (destroys own ship)",
         "lt": "Padaro pasiaukojimas idin padaryt dvigubą žalą priešininkui.",
         "ne": "Offer deze kaart op om dubbele schade toe te brengen.",
-        "sv": "Offra det här kortet för att handla dubbel skada"
+        "sv": "Offra det här kortet för att handla dubbel skada",
+        "es": "Sacrifica esta carta para realizar doble daño."
       }
     },
     "hero": {
@@ -1039,7 +1134,8 @@
         "PI": "raise flags",
         "lt": "Didviriškas pasiaukojimas",
         "ne": "Heldhaftig offer",
-        "sv": "hjältligt offer"
+        "sv": "hjältligt offer",
+        "es": "sacrificio heroico"
       },
       "desc": {
         "en": "All enemy attacks must target this card for one turn.",
@@ -1049,7 +1145,8 @@
         "PI": "All enemies that fire must attack this ship for one turn.",
         "lt": "Kito ėjimo metu, visi priešininkų padarai galės pulti tik šį padarą.",
         "ne": "Alle vijanden moeten de volgende beurt deze kaart aanvallen.",
-        "sv": "Alla fienders attacker måste sikta på det här kortet för en omgång"
+        "sv": "Alla fienders attacker måste sikta på det här kortet för en omgång",
+        "es": "Todos los ataques enemigos deben tener a esta carta como objetivo por un turno."
       }
     },
     "serm": {
@@ -1061,7 +1158,8 @@
         "PI": "super rum",
         "lt": "Stiprybės serumas",
         "ne": "super serum",
-        "sv": "superserum"
+        "sv": "superserum",
+        "es": "súper suero"
       },
       "desc": {
         "en": "Available health points are converted into attack points",
@@ -1071,7 +1169,8 @@
         "PI": "Available rum is converted into cannon munitions.",
         "lt": "Konvertuoja gyvybės taškus į puolimo.",
         "ne": "Alle beschikbare levens worden omgezet in kracht.",
-        "sv": "Tillgänliga livpoäng är konverterade till attackpoäng"
+        "sv": "Tillgänliga livpoäng är konverterade till attackpoäng",
+        "es": "Los puntos de vida disponibles se convierten en puntos de ataque."
       }
     }
   }
