@@ -25,8 +25,22 @@
 		var activeAccount;
 		var table = new Table(accounts);
 
+
+		/**
+		 * initialize everyone's account
+		 */
 		_.each(accounts, function(account) {
 			initAccount(account, rules, gameId);
+		});
+
+
+		/**
+		 * Sort players by their deck pride. Lowest pride goes first
+		 * Shuffle accounts first so that equal pride players will be randomized
+		 */
+		_.shuffle(accounts);
+		accounts.sort(function(a, b) {
+			return a.deck.pride - b.deck.pride;
 		});
 
 
@@ -97,8 +111,8 @@
 		 */
 		var drawCards = function() {
 			_.each(accounts, function(account) {
-				while(account.hand.length < rules.handSize && account.deck.length > 0) {
-					account.hand.push(account.deck.pop());
+				while(account.hand.length < rules.handSize && account.cards.length > 0) {
+					account.hand.push(account.cards.pop());
 				}
 			});
 		};
@@ -109,7 +123,7 @@
 		 */
 		var shuffleDecks = function() {
 			_.each(accounts, function(account) {
-				account.deck = _.shuffle(account.deck);
+				account.cards = _.shuffle(account.cards);
 			});
 		};
 

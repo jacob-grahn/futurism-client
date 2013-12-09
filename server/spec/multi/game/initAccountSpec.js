@@ -3,7 +3,12 @@ describe('initAccount', function() {
 	var initAccount = require('../../../multi/game/initAccount');
 
 	it('should set up an account for a game', function() {
-		var account = {};
+		var account = {
+			deck: {
+				cards: [],
+				pride: 0
+			}
+		};
 		var rules = {
 			columnCount: 5,
 			rowCount: 2

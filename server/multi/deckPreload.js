@@ -49,7 +49,7 @@
 	DeckPreload.selectDeck = function(account, gameId, deckId, cb) {
 
 		if(account.deck) {
-			return cb('a deck was already loaded for you: '+ JSON.stringify(account.deck));
+			return cb('a deck was already loaded for you');
 		}
 
 		DeckGoose
@@ -82,7 +82,7 @@
 					return cb('you do not own this deck');
 				}
 
-				account.deck = deck.cards;
+				account.deck = deck;
 				dp.nextIfDone();
 				return cb(null, deck);
 			});

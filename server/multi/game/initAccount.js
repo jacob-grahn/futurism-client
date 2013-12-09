@@ -18,6 +18,7 @@
 		clearAccount(account);
 		initColumns(account, rules);
 		initPrideProgress(account, rules);
+		account.cards = _.cloneDeep(account.deck.cards);
 		account.gameId = gameId;
 		account.hand = [];
 		account.graveyard = [];
@@ -63,7 +64,7 @@
 		delete account.gameId;
 		delete account.hand;
 		delete account.graveyard;
-		delete account.deck;
+		delete account.cards;
 	};
 
 

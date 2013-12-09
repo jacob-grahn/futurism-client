@@ -16,12 +16,18 @@ describe('game', function() {
 		lastMessage = '';
 		account1 = {
 			_id: 1,
-			deck: [{}, {}],
+			deck: {
+				pride: 8,
+				cards: [{}, {}]
+			},
 			hand: []
 		};
 		account2 = {
 			_id: 2,
-			deck: [{}, {}],
+			deck: {
+				pride: 10,
+				cards: [{}, {}]
+			},
 			hand: []
 		};
 		accounts = [account1, account2];
@@ -34,6 +40,21 @@ describe('game', function() {
 			game.remove();
 			game = null;
 		}
+	});
+
+
+	it('should sort players by their deck pride, lowest first', function() {
+		account1.deck.pride = 13;
+		account2.deck.pride = 10;
+		new Game(accounts, rules, gameId);
+		expect(accounts[0]._id).toBe(account2._id);
+		expect(accounts[1]._id).toBe(account1._id);
+
+		account1.deck.pride = 5;
+		account2.deck.pride = 7;
+		new Game(accounts, rules, gameId);
+		expect(accounts[0]._id).toBe(account1._id);
+		expect(accounts[1]._id).toBe(account2._id);
 	});
 
 
@@ -67,17 +88,20 @@ describe('game', function() {
 
 	it("should transfer cards from player's decks to their hands", function() {
 		rules.handSize = 3;
-		account1.deck = [{},{},{},{},{}];
+		account1.deck = {
+			cards: [{},{},{},{},{}],
+			pride: 5
+		};
 
 		game = new Game(accounts, rules, gameId);
-		expect(account1.deck.length).toBe(2);
+		expect(account1.cards.length).toBe(2);
 		expect(account1.hand.length).toBe(3);
-		expect(account2.deck.length).toBe(0);
+		expect(account2.cards.length).toBe(0);
 		expect(account2.hand.length).toBe(2);
 
 		account1.hand.pop();
 		game.drawCards();
-		expect(account1.deck.length).toBe(1);
+		expect(account1.cards.length).toBe(1);
 		expect(account1.hand.length).toBe(3);
 	});
 });
