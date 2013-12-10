@@ -51,7 +51,7 @@ angular.module('futurism')
 
 
 		$scope.deleteCard = function() {
-			CardResource.delete({id:$scope.card.id});
+			CardResource.delete({cardId: $scope.card._id});
 			$scope.applyDefaults();
 		};
 
