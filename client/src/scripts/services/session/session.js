@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('session', function($http, $location, async, websites, account) {
+	.factory('session', function($http, $location, websites, account) {
 		'use strict';
 
 
@@ -26,27 +26,29 @@ angular.module('futurism')
 
 
 		var create = function(callback) {
-			async.series([
-				_checkLogins,
-				_authorizeLogin
-			],
-			function(error, arr) {
-				var data = arr[1];
-				if(error) {
-					return callback(error);
+
+			_checkLogins(function(err) {
+				if(err) {
+					return callback(err);
 				}
 
-				account.loggedIn = true;
-				account.userName = data.user_name;
-				account.userId = data.user_id;
-				account.avatar = data.avatar;
-				account.site = data.site;
-				account.token = data.token;
-				account.group = data.group;
+				_authorizeLogin(function(err, data) {
+					if(err) {
+						return callback(err);
+					}
 
-				setToken(data.token);
+					account.loggedIn = true;
+					account.userName = data.user_name;
+					account.userId = data.user_id;
+					account.avatar = data.avatar;
+					account.site = data.site;
+					account.token = data.token;
+					account.group = data.group;
 
-				return callback(null, data);
+					setToken(data.token);
+
+					return callback(null, data);
+				})
 			});
 		};
 
