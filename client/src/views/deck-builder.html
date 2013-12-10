@@ -1,6 +1,6 @@
 <div id="deck-builder" class="row">
 
-	<div id="deck-settings" class="col-sm-5 side-panel">
+	<div id="deck-settings" class="col-sm-5 panel panel-default">
 		<form role="form">
 
 			<div class="form-group">
@@ -8,7 +8,7 @@
 				<busy-button on-click="saveDeck()" label="{{lang.deckBuilder.save}}"></busy-button>
 				<a ng-href="/deck-selector"><button class='btn btn-default'>{{lang.deckBuilder.load}}</button></a>
 				<button class='btn btn-default' type="submit" ng-click="deck.applyDefaults()">{{lang.deckBuilder.new}}</button>
-				<button ng-show="card.id" class='btn btn-default' type="submit" ng-click="delete()">{{lang.deckBuilder.delete}}</button>
+				<button ng-show="deck._id" class='btn btn-default' type="submit" ng-click="delete()">{{lang.deckBuilder.delete}}</button>
 			</div>
 
 			<div class="form-group">

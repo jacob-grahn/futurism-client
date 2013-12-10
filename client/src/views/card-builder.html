@@ -1,6 +1,6 @@
 <div id="card-edit" class="row">
 
-	<div id="card-settings" class="col-sm-5 side-panel">
+	<div id="card-settings" class="col-sm-5 panel panel-default">
 		<form role="form">
 
 			<div class="form-group">
@@ -8,7 +8,7 @@
 				<busy-button on-click="saveCard()" label="{{lang.cardBuilder.save}}"></busy-button>
 				<a ng-href="/card-selector"><button class='btn btn-default'>{{lang.cardBuilder.load}}</button></a>
 				<button class='btn btn-default' type="submit" ng-click="applyDefaults()">{{lang.cardBuilder.new}}</button>
-				<button ng-show="card.id" class='btn btn-default' type="submit" ng-click="deleteCard()">{{lang.cardBuilder.delete}}</button>
+				<button ng-show="card._id" class='btn btn-default' type="submit" ng-click="deleteCard()">{{lang.cardBuilder.delete}}</button>
 			</div>
 
 			<div class="form-group">
