@@ -1,6 +1,6 @@
 <h1 class="inverse">{{lang.preDeck.maxPride}}: {{maxPride}}</h1>
 <ul class="deck-list">
 	<li ng-repeat="deck in decks | orderBy:'pride':true">
-		<deck-display ng-click="select(deck)" size="medium" ng-class="{'deck-active': deck.pride <= maxPride, 'deck-inactive': deck.pride > maxPride}"></deck-display>
+		<deck-display ng-click="select(deck)" size="medium" active="{{isAvailable(deck)}}"></deck-display>
 	</li>
 </ul>

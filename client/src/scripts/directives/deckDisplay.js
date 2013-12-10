@@ -7,7 +7,7 @@ angular.module('futurism')
 			replace: true,
 
 			template:
-				'<div class="deck deck-{{size}}">' +
+				'<div class="deck deck-{{size}} deck-{{active}}">' +
 					'<div class="deck-image-holder">' +
 					'<div class="deck-image-1"><img ng-src="{{displayUrls[0]}}"/></div>' +
 					'<div class="deck-image-2"><img ng-src="{{displayUrls[1]}}"/></div>' +
@@ -19,6 +19,7 @@ angular.module('futurism')
 
 			link: function (scope, elem, attrs) {
 				scope.size = attrs.size || 'large';
+				scope.active = attrs.active || 'active';
 
 				var deck = scope.deck;
 				var cards = deck.cards;
