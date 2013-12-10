@@ -10,11 +10,11 @@
 	 * @body {string} [cardId] the card to be deleted
 	 */
 	module.exports = function(req, res) {
-		var cardId = req.body.cardId;
+		var cardId = req.body.cardId || req.body.id || req.body._id;
 		var userId = req.session.userId;
 
 		var query = {_id: cardId, userId: userId};
-		if(req.account.group === groups.MOD || req.account.group === groups.ADMIN) {
+		if(req.user.group === groups.MOD || req.user.group === groups.ADMIN) {
 			query = {_id: cardId};
 		}
 

@@ -23,6 +23,7 @@
 			card.story = '';
 			card.faction = 'en';
 			card.id = null;
+			card._id = null;
 			card.imageUrl = null;
 			card.hasImage = false;
 			return(card);

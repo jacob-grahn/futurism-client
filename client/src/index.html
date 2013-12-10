@@ -50,7 +50,7 @@
 	<ng-include src="'views/navbar.html'"></ng-include>
 
 	<!-- main content -->
-	<div class="container" ng-view></div>
+	<div id="main-container" class="container" ng-view></div>
 
 	<!-- libraries -->
 	<script src="bower_components/async/lib/async.js"></script>
@@ -59,6 +59,7 @@
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/socket.io-client/dist/socket.io.js"></script>
 	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="bower_components/bootstrap-sass/js/collapse.js"></script>
 
 	<!-- build:js scripts/modules.js -->
 	<script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -88,6 +89,7 @@
 	<script src="scripts/controllers/NavBar.js"></script>
 	<script src="scripts/controllers/Title.js"></script>
 
+	<script src="scripts/directives/busyButton.js"></script>
 	<script src="scripts/directives/cardDisplay.js"></script>
 	<script src="scripts/directives/chatDisplay.js"></script>
 	<script src="scripts/directives/deckDisplay.js"></script>
@@ -98,7 +100,6 @@
 
 	<script src="scripts/services/libraries/io.js"></script>
 	<script src="scripts/services/libraries/_.js"></script>
-	<script src="scripts/services/libraries/async.js"></script>
 
 	<script src="scripts/services/resources/CardResource.js"></script>
 	<script src="scripts/services/resources/DeckResource.js"></script>

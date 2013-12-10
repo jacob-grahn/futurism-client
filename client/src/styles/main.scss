@@ -12,36 +12,37 @@
 
 html, body {
   margin: 20px;
+  height: 100%;
 }
 
 body {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-	background-image: url("/images/futurism-bg-1920x1080.jpg");
-	background-repeat: no-repeat;
-	background-color: #000000;
-	background-attachment:fixed;
-	background-position:center;
- 	margin: 0 0 0 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-image: url("/images/futurism-bg-1920x1080.jpg");
+  background-repeat: no-repeat;
+  background-color: #000000;
+  background-attachment: fixed;
+  background-position: center;
+  margin: 0 0 0 0;
   padding: 50px 0 0 0;
   color: $dark-blend;
 }
 
 h1 {
-	font-family: "aw-conqueror-carved";
-	color: $light-blend;
+  font-family: "aw-conqueror-carved";
+  color: $light-blend;
 }
 
 h1.inverse {
-	color: $light-contrast;
+  color: $light-contrast;
 }
 
 ul {
-	list-style: none;
-	padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .username {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .nav, .pagination, .carousel a { cursor: pointer; }
@@ -58,8 +59,8 @@ ul {
   z-index: 9999;
 }
 
-.container {
-  /*background-color: white;*/
+#main-container {
+  min-height: 100%;
 }
 
 .absolute-center {
@@ -68,8 +69,8 @@ ul {
   top: 0; left: 0; bottom: 0; right: 0;
 }
 
-.side-panel {
-	background-color: rgba(255, 255, 255, 0.9);
-	@include box-shadow(2px, 2px, 7px, rgba(0, 0, 0, 0.7));
-	height: 100%;
+.panel-default {
+  background-color: rgba(255, 255, 255, 0.9);
+  @include box-shadow(2px, 2px, 7px, rgba(0, 0, 0, 0.7));
+  //height: 100%;
 }

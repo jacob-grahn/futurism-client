@@ -10,7 +10,7 @@
 	 * @body {string} deckId
 	 */
 	module.exports = function(req, res) {
-		var deckId = req.body.deckId;
+		var deckId = req.body.deckId || req.body.id || req.body._id;
 		var userId = req.session.userId;
 		Deck.findOneAndRemove({_id: deckId, userId: userId}, function(err, result) {
 			return res.apiOut(err, result);

@@ -12,6 +12,15 @@ angular.module('futurism')
 			}
 		};
 
+		$scope.isAvailable = function(deck) {
+			if(deck.pride <= $scope.maxPride) {
+				return 'active';
+			}
+			else {
+				return 'inactive';
+			}
+		};
+
 		socket.on('selectDeckStatus', function(data) {
 			if(data.status === 'success') {
 				$scope.$apply(function() {

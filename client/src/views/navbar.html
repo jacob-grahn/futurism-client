@@ -14,9 +14,9 @@
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse navbar-ex1-collapse">
 		<ul class="nav navbar-nav">
-			<li ng-class="{active: path=='/deck-builder'}"><a ng-href="/deck-builder">{{lang.nav.deckBuilder}}</a></li>
-			<li ng-class="{active: path=='/card-builder'}"><a ng-href="/card-builder">{{lang.nav.cardBuilder}}</a></li>
-			<li ng-class="{active: path=='/lobby'}"><a ng-href="/lobby">{{lang.nav.lobby}}</a></li>
+			<li ng-class="{active: atDeckBuilder()}"><a ng-href="/deck-builder">{{lang.nav.deckBuilder}}</a></li>
+			<li ng-class="{active: atCardBuilder()'}"><a ng-href="/card-builder">{{lang.nav.cardBuilder}}</a></li>
+			<li ng-class="{active: atLobby()}"><a ng-href="/lobby">{{lang.nav.lobby}}</a></li>
 		</ul>
 		<ul class="nav navbar-nav navbar-right">
 			<li class="dropdown">
