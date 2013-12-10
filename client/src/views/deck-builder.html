@@ -8,7 +8,7 @@
 				<busy-button on-click="saveDeck()" label="{{lang.deckBuilder.save}}"></busy-button>
 				<a ng-href="/deck-selector"><button class='btn btn-default'>{{lang.deckBuilder.load}}</button></a>
 				<button class='btn btn-default' type="submit" ng-click="deck.applyDefaults()">{{lang.deckBuilder.new}}</button>
-				<button ng-show="deck._id" class='btn btn-default' type="submit" ng-click="delete()">{{lang.deckBuilder.delete}}</button>
+				<button ng-show="deck._id" class='btn btn-default' type="submit" ng-click="deleteDeck()">{{lang.deckBuilder.delete}}</button>
 			</div>
 
 			<div class="form-group">

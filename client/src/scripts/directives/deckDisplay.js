@@ -25,6 +25,10 @@ angular.module('futurism')
 				var cards = deck.cards;
 				var displayIds = [];
 
+				if(cards.length === 0) {
+					return null;
+				}
+
 				displayIds[0] = cards[0];
 				displayIds[1] = cards[Math.round((cards.length-1)/2)];
 				displayIds[2] = cards[cards.length-1];

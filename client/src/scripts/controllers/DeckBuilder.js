@@ -21,8 +21,17 @@ angular.module('futurism')
 				pride: shared.deckFns.calcPride(deck)
 			};
 			
-			var deck2 = DeckResource.save(params);
-			return deck2.$promise;
+			var promise = DeckResource.save(params, function(storedDeck) {
+				deck._id = storedDeck._id;
+			}).$promise;
+
+			return promise;
+		};
+
+
+		$scope.deleteDeck = function() {
+			DeckResource.delete({deckId: $scope.deck._id});
+			shared.deckFns.applyDefaults($scope.deck);
 		};
 
 
