@@ -1,11 +1,11 @@
-<div id="lobby-panel" class="col-sm-5 panel panel-default">
+<div id="lobby-panel" class="col-sm-5 panel panel-default" match-screen-height ng-transclude subtract="100" resize-element=".auto-size">
 
 	<tabset>
 
 		<!-- chat -->
 		<tab heading="{{lang.lobby.chat}}">
 			<div class="panel-body">
-				<chat-display room="chat-{{lobbyName}}"></chat-display>
+				<chat-display id="lobby-chat" room="chat-{{lobbyName}}"></chat-display>
 			</div>
 		</tab>
 

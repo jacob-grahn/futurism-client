@@ -2,6 +2,7 @@
 @import "card";
 @import "card-builder";
 @import "card-selector";
+@import "chat";
 @import "deck";
 @import "deck-selector";
 @import "game";
@@ -12,7 +13,6 @@
 
 html, body {
   margin: 20px;
-  height: 100%;
 }
 
 body {
@@ -60,7 +60,7 @@ ul {
 }
 
 #main-container {
-  min-height: 100%;
+  //min-height: 100%;
 }
 
 .absolute-center {

@@ -1,5 +1,5 @@
 <div class="chat">
-	<ul class="chat-log">
+	<ul class="chat-log auto-size">
 		<li ng-repeat="msg in chat.msgs">
 			<div username name="{{msg.user.name}}" id="{{msg.user._id}}" site="{{msg.user.site}}" group="{{msg.user.group}}"></div>
 			<span class="chat-text"> {{msg.txt}}</span>
