@@ -5,7 +5,7 @@
 
 			<div class="form-group">
 				<h1>{{lang.cardBuilder.saveAndLoad}}</h1>
-				<button class='btn btn-default' type="submit" ng-click="saveCard()">{{lang.cardBuilder.save}}</button>
+				<busy-button on-click="saveCard()" label="{{lang.cardBuilder.save}}"></busy-button>
 				<a ng-href="/card-selector"><button class='btn btn-default'>{{lang.cardBuilder.load}}</button></a>
 				<button class='btn btn-default' type="submit" ng-click="applyDefaults()">{{lang.cardBuilder.new}}</button>
 				<button ng-show="card.id" class='btn btn-default' type="submit" ng-click="deleteCard()">{{lang.cardBuilder.delete}}</button>

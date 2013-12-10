@@ -40,14 +40,13 @@ angular.module('futurism')
 				$scope.card.image = null;
 			}
 
-			$scope.card.$save({},
+			var promise = $scope.card.$save({},
 				function(value, responseHeaders) {
 					$scope.uppedImage = null;
-				},
-				function(httpResponse) {
-					console.log('There was an error', httpResponse);
 				}
 			);
+
+			return promise;
 		};
 
 

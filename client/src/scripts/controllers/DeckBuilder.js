@@ -8,8 +8,9 @@ angular.module('futurism')
 		$scope.deckFns = shared.deckFns;
 
 
-		$scope.save = function() {
+		$scope.saveDeck = function() {
 			var cardIds = [];
+			var deck = $scope.deck;
 			_.each(deck.cards, function(card) {
 				cardIds.push(card._id);
 			});
@@ -20,7 +21,8 @@ angular.module('futurism')
 				pride: shared.deckFns.calcPride(deck)
 			};
 			
-			DeckResource.save(params);
+			var deck2 = DeckResource.save(params);
+			return deck2.$promise;
 		};
 
 
