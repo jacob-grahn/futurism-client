@@ -1,10 +1,10 @@
 angular.module('futurism')
-	.controller('navBarCtrl', function($scope, account, lang) {
+	.controller('navBarCtrl', function($scope, account) {
 		'use strict';
 
 		$scope.path = '';
 		$scope.account = account;
-		$scope.lang = lang;
+
 
 		$scope.$on('$routeChangeSuccess', function(event, current) {
 			if(current.$$route) {
@@ -12,6 +12,31 @@ angular.module('futurism')
 			}
 			else {
 				$scope.path = '/';
+			}
+		});
+
+
+		$scope.atDeckBuilder = function() {
+			return $scope.path === '/deck-builder';
+		};
+
+
+		$scope.atCardBuilder = function() {
+			return $scope.path === '/card-builder';
+		};
+
+
+		$scope.atLobby = function() {
+			return $scope.path === '/lobby';
+		};
+
+
+		/**
+		 * Close the responsive navbar when a link is clicked
+		 */
+		$(document).on('click','.navbar-collapse.in',function(e) {
+			if( $(e.target).is('a') ) {
+				$(this).collapse('hide');
 			}
 		});
 	});
