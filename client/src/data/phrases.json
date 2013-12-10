@@ -1,774 +1,1177 @@
 {
-
-
-        "title": {
-                "gameName": {
-                        "en": "FUTURISM",
-                        "ko": "미래의 배",
-                        "ct": "meow",
-                        "ne": "FUTURISM"
-                },
-                "login": {
-                        "en": "LOGIN",
-                        "ko": "놀이",
-                        "ct": "meow",
-                        "ne": "LOG IN"
-                },
-                "credits": {
-                        "en": "CREDITS",
-                        "ko": "인정함",
-                        "ct": "meow",
-                        "ne": "CREDITS"
-
-                },
-                "instructions": {
-                        "en": "EDU-VIDS",
-                        "ko": "명령",
-                        "ct": "meow",
-                        "ne": "Instructiefilmpjes"
-
-                }
-        },
-
-
-
-        "cardBuilder": {
-                "saveAndLoad": {
-                        "en": "Save n Load",
-                        "ko": "저장",
-                        "ct": "meow",
-                        "ne": "Opslaan en Laden"
-
-                },
-                "nameIt": {
-                        "en": "Name It",
-                        "ko": "이름",
-                        "ct": "meow",
-                        "ne": "Geef een Naam"
-
-                },
-                "imageUpload": {
-                        "en": "Image Upload",
-                        "ko": "영상",
-                        "ct": "meow",
-                        "ne": "Upload een Plaatje"
-
-                },
-                "factionAbilities": {
-                        "en": "Faction Abilities",
-                        "ko": "능력",
-                        "ct": "meow",
-                        "ne": "Factie Vaardigheden "
-
-                },
-                "save": {
-                        "en": "Save",
-                        "ko": "저장",
-                        "ct": "meow",
-                        "ne": "Opslaan"
-
-                },
-                "load": {
-                        "en": "Load",
-                        "ko": "하중",
-                        "ct": "meow",
-                        "ne": "Laden"
-
-                },
-                "new": {
-                        "en": "New",
-                        "ko": "새로운",
-                        "ct": "meow",
-                        "ne": "Nieuw"
-
-                },
-                "delete": {
-                        "en": "Delete",
-                        "ko": "삭제",
-                        "ct": "meow",
-                        "ne": "Verwijderen"
-
-                },
-                "attack": {
-                        "en": "Attack",
-                        "ko": "공격",
-                        "ct": "meow",
-                        "ne": "Kracht"
-
-                },
-                "health": {
-                        "en": "Health",
-                        "ko": "건강",
-                        "ct": "meow",
-                       "ne": "Levens"
-
-                }
-        },
-
-
-
-
-        "chat": {
-                "say": {
-                        "en": "say",
-                        "ko": "말하다",
-                        "ct": "meow",
-                        "ne": "Zeggen"
-
-                },
-                "placeholder": {
-                        "en": "type to chat",
-                        "ko": "말을 입력",
-                        "ct": "meow",
-                        "ne": "Type iets in de chat"
-
-                }
-        },
-
-
-
-        "deckBuilder": {
-                "saveAndLoad": {
-                        "en": "Save n Load",
-                        "ko": "저장",
-                        "ct": "meow",
-                        "ne": "Opslaan en Laden"
-
-                },
-                "save": {
-                        "en": "Save",
-                        "ko": "저장",
-                        "ct": "meow",
-                        "ne": "Opslaan"
-
-                },
-                "load": {
-                        "en": "Load",
-                        "ko": "하중",
-                        "ct": "meow",
-                        "ne": "Laden"
-
-                },
-                "new": {
-                        "en": "New",
-                        "ko": "새로운",
-                        "ct": "meow",
-                        "ne": "Nieuw"
-
-                },
-                "delete": {
-                        "en": "Delete",
-                        "ko": "삭제",
-                        "ct": "meow",
-                        "ne": "Verwijderen"
-
-                },
-                "nameIt": {
-                        "en": "Name It",
-                        "ko": "이름",
-                        "ct": "meow",
-                        "ne": "Geef een naam"
-
-                },
-                "cards": {
-                        "en": "Cards",
-                        "ko": "카드",
-                        "ct": "meow",
-                        "ne": "Kaarten"
-
-                },
-                "deckPride": {
-                        "en": "Deck Pride",
-                        "ko": "자존심",
-                        "ct": "meow",
-                        "ne": "Deck Trots"
-
-                }
-        },
-
-
-
-
-
-        "errorPage": {
-                "error": {
-                        "en": "Error",
-                        "ko": "오류",
-                        "ct": "meow",
-                        "ne": "Error"
-
-                }
-        },
-
-
-
-
-        "preDeck": {
-                "maxPride": {
-                        "en": "Max Pride",
-                        "ko": "자존심",
-                        "ct": "meow",
-                        "ne": "Maximale trots"
-
-                }
-        },
-
-
-
-
-        "lobby": {
-                "player": {
-                        "en": "player",
-                        "ko": "플레이어",
-                        "ct": "meow",
-                        "ne": "Speler"
-
-                },
-                "pride": {
-                        "en": "pride",
-                        "ko": "자존심",
-                        "ct": "meow",
-                        "ne": "trots"
-
-                },
-                "custom": {
-                        "en": "custom",
-                        "ko": "관습",
-                        "ct": "meow",
-                        "ne": "eigen"
-
-                },
-                "join": {
-                        "en": "join",
-                        "ko": "가입",
-                        "ct": "meow",
-                        "ne": "meedoen"
-
-                },
-                "start": {
-                        "en": "start",
-                        "ko": "스타트",
-                        "ct": "meow",
-                        "ne": "start"
-
-                },
-                "chat": {
-                        "en": "chat",
-                        "ko": "이야기",
-                        "ct": "meow",
-                        "ne": "chat"
-
-                },
-                "guild": {
-                        "en": "guild",
-                        "ko": "대가족",
-                        "ct": "meow",
-                        "ne": "gilde"
-
-                },
-                "people": {
-                        "en": "people",
-                        "ko": "사람들",
-                        "ct": "mensen"
-                }
-        },
-
-
-
-
-
-
-
-        "nav": {
-                "toggle": {
-                        "en": "Toggle Navigation",
-                        "ko": "토글",
-                        "ct": "Navigatie aanzetten"
-                },
-                "futurism": {
-                        "en": "Futurism",
-                        "ko": "미래의 배",
-                        "ct": "Futurism"
-                },
-                "deckBuilder": {
-                        "en": "Deck Builder",
-                        "ko": "갑판",
-                        "ct": "Deck maker"
-                },
-                "cardBuilder": {
-                        "en": "Card Builder",
-                        "ko": "카드",
-                        "ct": "Kaart maker"
-                },
-                "lobby": {
-                        "en": "Lobby",
-                        "ko": "로비",
-                        "ct": "Lobby"
-                },
-                "stats": {
-                        "en": "My Stats",
-                        "ko": "통계",
-                        "ct": "Mijn status"
-                },
-                "messages": {
-                        "en": "Messages",
-                        "ko": "메시지",
-                        "ct": "Berichten"
-                },
-                "logout": {
-                        "en": "Logout",
-                        "ko": "로그 아웃",
-                        "ct": "Uitloggen"
-                },
-                "language": {
-                        "en": "Language",
-                        "ko": "언어",
-                        "ct": "Taal"
-                }
-        },
-
-
-
-
-        "factions": {
-
-                "en": {
-                        "name": {
-                                "en": "Ent",
-                                "ko": "엔트",
-                                "ct": "mewoowo",
-                                "ne": "Ent"
-
-                        },
-                        "desc": {
-                                "en": "Seeking a bond with nature, the Ents tinkered with their own dna. A wild group of nomads, they say you'll never meet the same Ent twice.",
-                                "ko": "자연과의 결합을 추구, 엔트는 자신의 DNA를 만지작 거렸다. 유목민의 야생 그룹, 그들은 당신이 두 번 같은 엔트을 충족하지 못할거야 말한다.",
-                                "ct": "mewoowo",
-                                "ne": "In hun zoektocht naar een band met de natuur hebben de Enten aan hun eigen DNA gesleuteld. Ze zijn een wilde groep nomaden, en ze zeggen dat je dezelfde Ent nooit tweemaal zult tegenkomen."
-
-                        }
-                },
-
-                "mc": {
-                        "name": {
-                                "en": "Machine",
-                                "ko": "기계",
-                                "ct": "mewoowo",
-                                "ne": "Machine"
-                        },
-                        "desc": {
-                                "en": "The relentless pursuit of knowledge lead some to improve their minds with metal. They have become far more than humans ever were, and far less.",
-                                "ko": "지식의 끊임없는 추구는 금속으로 그들의 마음을 개선하는 데 도움이되는 몇 가지를했다. 그들은 인간이 이제까지했던 것보다 훨씬 더, 훨씬 덜되고있다.",
-                                "ct": "mewoowo",
-                                "ne": "De onophoudelijke speurtocht naar kennis leidde ertoe dat sommigen hun geest hebben verbeterd met metaal. Ze zijn veel meer dan mensen ooit waren, maar ook veel minder."
-
-                        }
-                },
-
-                "el": {
-                        "name": {
-                                "en": "Elite",
-                                "ko": "엘리트",
-                                "ct": "mewoowo",
-                                "ne": "Elite"
-                        },
-                        "desc": {
-                                "en": "Taking delight in the pleasures of this world, Elites have dominated the wealthy ruling class. A beautiful people, as long as you don't dig too deep.",
-                                "ko": "이 세상의 쾌락의 기쁨을 촬영, 엘리트는 부유 한 지배 계급을 지배했다. 만큼 당신이 너무 깊이 파고하지 않는 아름다운 사람들.",
-                                "ct": "mewoowo",
-                                "ne": "De Elite zoekt hun genoegdoening in het genot van de wereld. Ze domineren de rijke aristocratie. Een mooi volk, zolang je niet te diep kijkt."
-                        }
-                },
-
-                "ze": {
-                        "name": {
-                                "en": "Zealot",
-                                "ko": "열광 자",
-                                "ct": "mewoowo",
-                                "ne": "ijveraar"
-                        },
-                        "desc": {
-                                "en": "Always certain of the truth, Zealots are more than willing to fight for it. The fires of constant war have honed their military skills to perfection.",
-                                "ko": "진리를 항상 일정, 질럿 그것을 위해 싸울 의도보다는 좀더. 지속적인 전쟁의 불이 완벽하게 자신의 군사 기술을 연마했다.",
-                                "ct": "mewoowo",
-                                "ne": "Zeloten zijn altijd zeker van de waarheid, en meer dan bereid ervoor te vechten. De vuren van hun constante oorlog hebben hun militaire vaardigheid tot perfectie aangescherpt."
-                        }
-                }
-        },
-
-
-
-
-        "abilities": {
-
-                "heal": {
-                        "name": {
-                                "en": "Healing",
-                                "ko": "치료",
-                                "ct": "mewoowo",
-                                "ne": "Helen"
-                        },
-                        "desc": {
-                                "en": "Target card gains 1 health.",
-                                "ko": "대상 카드는 1 건강을 얻는다.",
-                                "ct": "mewoowo",
-                                "ne": "Doel krijgt 1 leven erbij."
-                        }
-                },
-
-                "tree": {
-                        "name": {
-                                "en": "weed trees",
-                                "ko": "잡초 나무",
-                                "ct": "mewoowo",
-                                "ne": "onkruid bomen"
-                        },
-                        "desc": {
-                                "en": "A 1/1 tree is created",
-                                "ko": "1 / 1 나무가 만들어집니다",
-                                "ct": "mewoowo",
-                                "ne": "Er wordt een 1/1 boom gemaakt."
-                        }
-                },
-
-                "abom": {
-                        "name": {
-                                "en": "abomination",
-                                "ko": "가증스러운 행위",
-                                "ct": "mewoowo",
-                                "ne": "verschrikking"
-                        },
-                        "desc": {
-                                "en": "Merge this unit with another.",
-                                "ko": "서로 기기를 병합합니다.",
-                                "ct": "mewoowo",
-                                "ne": "Versmelt deze kaart met een andere kaart."
-
-                        }
-                },
-
-                "secr": {
-                        "name": {
-                                "en": "secretions",
-                                "ko": "분비물",
-                                "ct": "mewoowo",
-                                "ne": "uitscheiding"
-                        },
-                        "desc": {
-                                "en": "Target enemy can not attack next turn.",
-                                "ko": "적군은 다음 턴을 공격 할 수 없다.",
-                                "ct": "mewoowo",
-                                "ne": "Het doel kan de volgende beurt niet aanvallen."
-
-                        }
-                },
-
-                "clne": {
-                        "name": {
-                                "en": "clone",
-                                "ko": "복제",
-                                "ct": "mewoowo",
-                                "ne": "kloon"
-
-                        },
-                        "desc": {
-                                "en": "Sacrifice this unit to produce a duplicate of another unit.",
-                                "ko": "다른 장치의 복제본을 생성하기 위해이 장치를 제물로 바친다.",
-                                "ct": "mewoowo",
-                                "ne": "Offer deze kaart op om een replica van een andere kaart te maken."
-
-                        }
-                },
-
-                "bees": {
-                        "name": {
-                                "en": "bees!",
-                                "ko": "꿀벌!",
-                                "ct": "mewoowo",
-                                "ne": " bijen"
-                        },
-                        "desc": {
-                                "en": "All enemies in target column loose 1 health.",
-                                "ko": "목표 컬럼에있는 모든 적을 1 건강 느슨한.",
-                                "ct": "mewoowo",
-                                "ne": "Alle vijanden verliezen 1 leven."
-                        }
-                },
-
-                "rbld": {
-                        "name": {
-                                "en": "rebuild",
-                                "ko": "다시",
-                                "ct": "mewoowo",
-                                "ne": "herbouwen"
-
-                        },
-                        "desc": {
-                                "en": "Resurrect a dead machine.",
-                                "ko": "죽은 기계를 부활.",
-                                "ct": "mewoowo",
-                                "ne": "Breng een dode machine weer tot leven."
-
-                        }
-                },
-
-                "shld": {
-                        "name": {
-                                "en": "t-shield",
-                                "ko": "T-쉴드",
-                                "ct": "mewoowo",
-                                "ne": "t-schild"
-                        },
-                        "desc": {
-                                "en": "All damage that would be dealt to target unit is reduced by 1 for a turn.",
-                                "ko": "단위를 대상으로 처리 될 수있는 모든 피해는 차례를 1로 줄일 수있다.",
-                                "ct": "mewoowo",
-                                "ne": "Alle schade die zou worden toegebracht aan het doel wordt verminderd met 1 voor een beurt."
-                        }
-                },
-
-                "prci": {
-                        "name": {
-                                "en": "precise",
-                                "ko": "정확한",
-                                "ct": "mewoowo",
-                                "ne": "nauwkeurig"
-                        },
-                        "desc": {
-                                "en": "Attack an enemy of your choice regardless of defensive formations.",
-                                "ko": "에 관계없이 방어 형성의 선택의 적을 공격한다.",
-                                "ct": "mewoowo",
-                                "ne": "Val een vijand van je keuze aan, ongeacht de verdedigingsformatie."
-                        }
-                },
-
-                "strt": {
-                        "name": {
-                                "en": "strategist",
-                                "ko": "전략가",
-                                "ct": "mewoowo",
-                                "ne": "strateeg"
-
-                        },
-                        "desc": {
-                                "en": "Ally can perform an extra action this turn",
-                                "ko": "앨리 추가 조치에게이 턴을 수행 할 수 있습니다",
-                                "ct": "mewoowo",
-                                "ne": "De bondgenoot kan deze beurt een extra actie uitvoeren"
-
-                        }
-                },
-
-                "netw": {
-                        "name": {
-                                "en": "networking",
-                                "ko": "네트워킹",
-                                "ct": "mewoowo",
-                                "ne": "netwerk"
-                        },
-                        "desc": {
-                                "en": "Gain an allies abilities.",
-                                "ko": "동맹의 능력을 얻을 수 있습니다.",
-                                "ct": "mewoowo",
-                                "ne": "Krijg de vaardigheden van een andere speler."
-                        }
-                },
-
-                "tran": {
-                        "name": {
-                                "en": "transformer",
-                                "ko": "변압기",
-                                "ct": "mewoowo",
-                                "ne": "transformer"
-                        },
-                        "desc": {
-                                "en": "Swap health and attack.",
-                                "ko": "건강과 공격을 교환합니다.",
-                                "ct": "mewoowo",
-                                "ne": "Wissel levens en kracht om."
-                        }
-                },
-
-
-                "sduc": {
-                        "name": {
-                                "en": "seduction",
-                                "ko": "유혹",
-                                "ct": "mewoowo",
-                                "ne": "verleiding"
-                        },
-                        "desc": {
-                                "en": "Convert an enemy to your side if their health is 1.",
-                                "ko": "자신의 건강이 1이면 옆으로 적을 변환합니다.",
-                                "ct": "mewoowo",
-                                "ne": "Haal een vijand naar jouw kant als ze 1 leven overhebben."
-                        }
-                },
-
-
-                "assn": {
-                        "name": {
-                                "en": "assassin",
-                                "ko": "암살자",
-                                "ct": "mewoowo",
-                                "ne": "assassijn"
-                        },
-                        "desc": {
-                                "en": "Attack without taking damage.",
-                                "ko": "피해를하지 않고 공격한다.",
-                                "ct": "mewoowo",
-                                "ne": "Val aan zonder zelf schaden te ondervinden."
-                        }
-                },
-
-                "delg": {
-                        "name": {
-                                "en": "delegate",
-                                "ko": "대리자",
-                                "ct": "mewoowo",
-                                "ne": "afgevaardige"
-                        },
-                        "desc": {
-                                "en": "Trade this unit with another unit in your hand.",
-                                "ko": "당신의 손에있는 다른 장치와이 장치를 무역.",
-                                "ct": "mewoowo",
-                                "ne": "Ruil deze kaart om met een kaart in je hand."
-                        }
-                },
-
-                "posn": {
-                        "name": {
-                                "en":"poison",
-                                "ko": "독",
-                                "ct": "mewoowo",
-                                "ne": "vergif"
-                        },
-                        "desc": {
-                                "en": "Target enemy loses 1 health per turn.",
-                                "ko": "대상 적 턴에 1 건강을 푼다.",
-                                "ct": "mewoowo",
-                                "ne": "Het vijandelijke doel verliest 1 leven per beurt."
-                        }
-                },
-
-                "bagm": {
-                        "name": {
-                                "en": "bag 'em",
-                                "ko": "잡기",
-                                "ct": "mewoowo",
-                                "ne": "wegstoppen"
-                        },
-                        "desc": {
-                                "en": "Target card is returned to its owner's hand.",
-                                "ko": "대상 카드는 그것의 소유자의 손에 반환됩니다.",
-                                "ct": "mewoowo",
-                                "ne": "Het doel gaat terug naar de hand van de eigenaar."
-                        }
-                },
-
-                "siph": {
-                        "name": {
-                                "en":  "siphon",
-                                "ko": "사이펀",
-                                "ct": "mewoowo",
-                                "ne": "dief"
-                        },
-                        "desc": {
-                                "en":  "Steal 1 health from a card of your choice.",
-                                "ko": "당신의 선택의 카드에서 1 건강을 훔치는.",
-                                "ct": "mewoowo",
-                                "ne": "Steel 1 leven van een kaard van je keuze."
-                        }
-                },
-
-                "male": {
-                        "name": {
-                                "en": "male",
-                                "ko": "남성",
-                                "ct": "mewoowo",
-                                "ne": "mannelijk"
-                        },
-                        "desc": {
-                                "en": "Can reproduce with females.",
-                                "ko": "여성으로 재현 할 수 있습니다.",
-                                "ct": "mewoowo",
-                                "ne": "Kan reproduceren met een vrouwelijke kaard."
-                        }
-                },
-
-                "feml": {
-                        "name": {
-                                "en": "female",
-                                "ko": "여성",
-                                "ct": "mewoowo",
-                                "ne": "vrouwelijk"
-                        },
-                        "desc": {
-                                "en": "Can reproduce with males.",
-                                "ko": "남성으로 재현 할 수 있습니다.",
-                                "ct": "mewoowo",
-                                "ne": "Kan reproduceren met een mannelijke kaard."
-                        }
-                },
-
-                "btle"        : {
-                        "name": {
-                                "en": "battle cry",
-                                "ko": "함성",
-                                "ct": "mewoowo",
-                                "ne": "Strijdkreet"
-                        },
-                        "desc": {
-                                "en": "Target unit gains 2 attack for the turn.",
-                                "ko": "대상 장치는 회전 2 공격을 얻는다.",
-                                "ct": "mewoowo",
-                                "ne": "Het doel krijgt twee kracht voor deze beurt."
-                        }
-                },
-
-                "detr"        : {
-                        "name": {
-                                "en": "determined",
-                                "ko": "결정된",
-                                "ct": "mewoowo",
-                                "ne": "vastberaden"
-                        },
-                        "desc": {
-                                "en": "Sacrifice this card to deal double damage.",
-                                "ko": "더블 데미지를이 카드를 제물로 바친다.",
-                                "ct": "mewoowo",
-                                "ne": "Offer deze kaart op om dubbele schade toe te brengen."
-                        }
-                },
-
-                "hero": {
-                        "name": {
-                                "en": "heroic sacrifice",
-                                "ko": "영웅적인 희생",
-                                "ct": "mewoowo",
-                                "ne": "Heldhaftig offer"
-                        },
-                        "desc": {
-                                "en": "All enemy attacks must target this card for one turn.",
-                                "ko": "모든 적의 공격 한 턴에이 카드를 대상으로해야합니다.",
-                                "ct": "mewoowo",
-                                "ne": "Alle vijanden moeten de volgende beurt deze kaart aanvallen."
-                        }
-                },
-
-                "serm": {
-                        "name": {
-                                "en": "super serum",
-                                "ko": "슈퍼 혈청",
-                                "ct": "mewoowo",
-                                "ne": "super serum"
-                        },
-                        "desc": {
-                                "en": "Available health points are converted into attack points",
-                                "ko": "가능한 건강 포인트는 공격 포인트로 변환",
-                                "ct": "mewoowo",
-                                "ne": "Alle beschikbare levens worden omgezet in kracht."
-                        }
-                }
-        }
+  "languageName": {
+    "en": "English",
+    "ko": "한국어",
+    "ct": "Meoww",
+    "fr": "Français!",
+    "PI": "Pirate",
+    "es": "Español",
+    "ne": "Dutch",
+    "lt": "Lithuanian",
+    "sv": "Svenska"
+  },
+  "translators": {
+    "en": "",
+    "ko": "",
+    "ct": "Katy Purry",
+    "es": "aaaaaa123456789",
+    "fr": "Omegaguineapig, JV-TRUC",
+    "ne": "larsyuipo",
+    "PI": "esp-eon",
+    "lt": "zebriukas",
+    "sv": "jonswe"
+  },
+  "title": {
+    "gameName": {
+      "en": "FUTURISM",
+      "ko": "미래의 배",
+      "ct": "meow",
+      "fr": "FUTURISME",
+      "PI": "Day after Tomorrow",
+      "lt": "FUTURISM",
+      "ne": "FUTURISM",
+      "sv": "Futurism",
+      "es": "FUTURISMO"
+    },
+    "login": {
+      "en": "LOGIN",
+      "ko": "놀이",
+      "ct": "meow",
+      "fr": "CONNEXION",
+      "PI": "Sail the seven seas!",
+      "lt": "PRISIJUNGIMAS",
+      "ne": "LOG IN",
+      "sv": "Logga in",
+      "es": "Ingresar"
+    },
+    "credits": {
+      "en": "CREDITS",
+      "ko": "인정함",
+      "ct": "meow",
+      "fr": "CRÉDITS",
+      "PI": "Captain's Logs",
+      "lt": "KŪRĖJAI",
+      "ne": "CREDITS",
+      "sv": "Medverkande",
+      "es": "Créditos"
+    },
+    "instructions": {
+      "en": "EDU-VIDS",
+      "ko": "명령",
+      "ct": "meow",
+      "fr": "TUTORIELS",
+      "PI": "Davy Jones' Locker",
+      "lt": "INSTRUKCIJOS",
+      "ne": "Instructiefilmpjes",
+      "sv": "Instruktioner",
+      "es": "Videos educativos"
+    }
+  },
+  "cardBuilder": {
+    "saveAndLoad": {
+      "en": "Save n Load",
+      "ko": "저장",
+      "ct": "meow",
+      "fr": "Sauvegarder et charger",
+      "PI": "Treasure Map",
+      "lt": "Išsaugojimas ir Užkrovimas",
+      "ne": "Opslaan en Laden",
+      "sv": "Spara och Ladda",
+      "es": "Guardar y cargar"
+    },
+    "nameIt": {
+      "en": "Name It",
+      "ko": "이름",
+      "ct": "meow",
+      "fr": "Nommer",
+      "PI": "Name yar booty",
+      "lt": "Pavadinimas",
+      "ne": "Geef een Naam",
+      "sv": "Namnge det",
+      "es": "Nombrar"
+    },
+    "imageUpload": {
+      "en": "Image Upload",
+      "ko": "영상",
+      "ct": "meow",
+      "fr": "Charger une image",
+      "PI": "Enscribe yar map",
+      "lt": "Paveikslėlio įkelimas",
+      "ne": "Upload een Plaatje",
+      "sv": "bilduppladdning",
+      "es": "Cargar imagen"
+    },
+    "factionAbilities": {
+      "en": "Faction Abilities",
+      "ko": "능력",
+      "ct": "meow",
+      "fr": "Habiletés de la classe",
+      "PI": "Munitions",
+      "lt": "Frakcijų sugebėjimai",
+      "ne": "Factie Vaardigheden ",
+      "sv": "Fraktionsförmågor",
+      "es": "Habilidades de la facción"
+    },
+    "save": {
+      "en": "Save",
+      "ko": "저장",
+      "ct": "meow",
+      "fr": "Sauvegarder",
+      "PI": "Bury",
+      "lt": "Išsaugoti",
+      "ne": "Opslaan",
+      "sv": "Spara",
+      "es": "Guardar"
+    },
+    "load": {
+      "en": "Load",
+      "ko": "하중",
+      "ct": "meow",
+      "fr": "Charger",
+      "PI": "Dig up booty",
+      "lt": "Užkrauti",
+      "ne": "Laden",
+      "sv": "Ladda",
+      "es": "Cargar"
+    },
+    "new": {
+      "en": "New",
+      "ko": "새로운",
+      "ct": "meow",
+      "fr": "Nouvelle",
+      "PI": "Plunder new Booty",
+      "lt": "Naujas",
+      "ne": "Nieuw",
+      "sv": "Nytt",
+      "es": "Nueva"
+    },
+    "delete": {
+      "en": "Delete",
+      "ko": "삭제",
+      "ct": "meow",
+      "fr": "Supprimer",
+      "PI": "Toss overboard",
+      "lt": "Ištrinti",
+      "ne": "Verwijderen",
+      "sv": "Ta bort",
+      "es": "Eliminar"
+    },
+    "attack": {
+      "en": "Attack",
+      "ko": "공격",
+      "ct": "meow",
+      "fr": "Attaque",
+      "PI": "Number o' Cannons",
+      "lt": "Stiprumas",
+      "ne": "Kracht",
+      "sv": "Attackera",
+      "es": "Ataque"
+    },
+    "health": {
+      "en": "Health",
+      "ko": "건강",
+      "ct": "meow",
+      "fr": "Santé",
+      "PI": "Rum",
+      "lt": "Gyvybės",
+      "ne": "Levens",
+      "sv": "Liv",
+      "es": "Vida"
+    }
+  },
+  "chat": {
+    "say": {
+      "en": "say",
+      "ko": "말하다",
+      "ct": "meow",
+      "fr": "Envoyer",
+      "PI": "Belch",
+      "lt": "sakyk",
+      "ne": "Zeggen",
+      "sv": "säg",
+      "es": "Enviar"
+    },
+    "placeholder": {
+      "en": "type to chat",
+      "ko": "말을 입력",
+      "ct": "meow",
+      "fr": "Taper pour bavarder",
+      "PI": "Open ye mouth",
+      "lt": "Rašykite kad šnekėtumete",
+      "ne": "Type iets in de chat",
+      "sv": "skriv för att chatta",
+      "es": "Escribe para conversar"
+    }
+  },
+  "deckBuilder": {
+    "saveAndLoad": {
+      "en": "Save n Load",
+      "ko": "저장",
+      "ct": "meow",
+      "fr": "Sauvegarder et charger",
+      "PI": "Check Maps",
+      "lt": "Išsaugojimas ir Užkrovimas",
+      "ne": "Opslaan en Laden",
+      "sv": "Spara och Ladda",
+      "es": "Guardar y cargar"
+    },
+    "save": {
+      "en": "Save",
+      "ko": "저장",
+      "ct": "meow",
+      "fr": "Sauvegarder",
+      "PI": "Bury",
+      "lt": "Išsaugoti",
+      "ne": "Opslaan",
+      "sv": "Spara",
+      "es": "Guardar"
+    },
+    "load": {
+      "en": "Load",
+      "ko": "하중",
+      "ct": "meow",
+      "fr": "Charger",
+      "PI": "Dig up booty",
+      "lt": "Užkrauti",
+      "ne": "Laden",
+      "sv": "Ladda",
+      "es": "Cargar"
+    },
+    "new": {
+      "en": "New",
+      "ko": "새로운",
+      "ct": "meow",
+      "fr": "Nouveau",
+      "PI": "Plunder new booty",
+      "lt": "Naujas",
+      "ne": "Nieuw",
+      "sv": "Nytt",
+      "es": "Nuevo"
+    },
+    "delete": {
+      "en": "Delete",
+      "ko": "삭제",
+      "ct": "meow",
+      "fr": "Supprimer",
+      "PI": "Toss booty overboard",
+      "ne": "Verwijderen",
+      "sv": "Ta bort",
+      "es": "Eliminar"
+    },
+    "nameIt": {
+      "en": "Name It",
+      "ko": "이름",
+      "ct": "meow",
+      "fr": "Nommer",
+      "PI": "Name yar booty",
+      "lt": "Pavadinimas",
+      "ne": "Geef een naam",
+      "sv": "Namnge det",
+      "es": "Nombrar"
+    },
+    "cards": {
+      "en": "Cards",
+      "ko": "카드",
+      "ct": "meow",
+      "fr": "Cartes",
+      "PI": "Maps",
+      "lt": "Kortos",
+      "ne": "Kaarten",
+      "sv": "Kort",
+      "es": "Cartas"
+    },
+    "deckPride": {
+      "en": "Deck Pride",
+      "ko": "자존심",
+      "ct": "meow",
+      "fr": "Valeur du paquet",
+      "PI": "Map value",
+      "lt": "Kaladės pasididžiavimas",
+      "ne": "Deck Trots",
+      "sv": "Deckstolthet",
+      "es": "Orgullo del mazo"
+    }
+  },
+  "errorPage": {
+    "error": {
+      "en": "Error",
+      "ko": "오류",
+      "ct": "meow",
+      "fr": "Erreur",
+      "PI": "Y'arr!",
+      "lt": "Klaida!",
+      "ne": "Error",
+      "sv": "Error",
+      "es": "Error"
+    }
+  },
+  "preDeck": {
+    "maxPride": {
+      "en": "Max Pride",
+      "ko": "자존심",
+      "ct": "meow",
+      "fr": "Valeur maximale",
+      "PI": "Max Rum",
+      "lt": "Maksimali garbė",
+      "ne": "Maximale trots",
+      "sv": "Max stolthet",
+      "es": "Máximo orgullo"
+    }
+  },
+  "lobby": {
+    "player": {
+      "en": "player",
+      "ko": "플레이어",
+      "ct": "meow",
+      "fr": "Joueur",
+      "PI": "Sailor",
+      "lt": "žaidėjas",
+      "ne": "Speler",
+      "sv": "spelare",
+      "es": "jugadores"
+    },
+    "pride": {
+      "en": "pride",
+      "ko": "자존심",
+      "ct": "meow",
+      "fr": "Valeur",
+      "PI": "Rum",
+      "lt": "garbė",
+      "ne": "trots",
+      "sv": "Stolthet",
+      "es": "orgullo"
+    },
+    "custom": {
+      "en": "custom",
+      "ko": "관습",
+      "ct": "meow",
+      "fr": "Personnaliser",
+      "PI": "Blank map",
+      "lt": "redaguojamas",
+      "ne": "eigen",
+      "sv": "Anpassad",
+      "es": "personalizado"
+    },
+    "join": {
+      "en": "join",
+      "ko": "가입",
+      "ct": "meow",
+      "fr": "Joindre",
+      "PI": "Board",
+      "lt": "prisijungti",
+      "ne": "meedoen",
+      "sv": "gå med",
+      "es": "unirse"
+    },
+    "start": {
+      "en": "start",
+      "ko": "스타트",
+      "ct": "meow",
+      "fr": "Commencer",
+      "PI": "Set sail",
+      "lt": "pradėti",
+      "ne": "start",
+      "sv": "starta",
+      "es": "Iniciar"
+    },
+    "chat": {
+      "en": "chat",
+      "ko": "이야기",
+      "ct": "meow",
+      "fr": "Bavarder",
+      "PI": "Belch",
+      "lt": "pokalbiai",
+      "ne": "chat",
+      "sv": "chatt",
+      "es": "chat"
+    },
+    "guild": {
+      "en": "guild",
+      "ko": "대가족",
+      "ct": "meow",
+      "fr": "Guilde",
+      "PI": "crew",
+      "lt": "komanda",
+      "ne": "gilde",
+      "sv": "guild",
+      "es": "gremio"
+    },
+    "people": {
+      "en": "people",
+      "ko": "사람들",
+      "ct": "mensen",
+      "fr": "Joueurs",
+      "PI": "deckhands",
+      "lt": "žmonės",
+      "sv": "personer",
+      "es": "personas"
+    }
+  },
+  "nav": {
+    "toggle": {
+      "en": "Toggle Navigation",
+      "ko": "토글",
+      "ct": "Navigatie aanzetten",
+      "fr": "Activer la navigation",
+      "PI": "Toggle Map",
+      "lt": "Navigacijos Perjungimas",
+      "sv": "Växla Navigation",
+      "es": "Habilitar barra de navegación"
+    },
+    "futurism": {
+      "en": "Futurism",
+      "ko": "미래의 배",
+      "ct": "Futurism",
+      "fr": "Futurisme",
+      "PI": "Day after Tomorrow",
+      "lt": "Futurism",
+      "sv": "Futurism",
+      "es": "Futurismo"
+    },
+    "deckBuilder": {
+      "en": "Deck Builder",
+      "ko": "갑판",
+      "ct": "Deck maker",
+      "fr": "Créateur de paquet",
+      "PI": "Mapbook binder",
+      "lt": "Kaladės Dėliojimas",
+      "sv": "Deck byggare",
+      "es": "Constructor de mazos"
+    },
+    "cardBuilder": {
+      "en": "Card Builder",
+      "ko": "카드",
+      "ct": "Kaart maker",
+      "fr": "Créateur de carte",
+      "PI": "Map drawer",
+      "lt": "Kortų kūrimas",
+      "sv": "Kort Byggare",
+      "es": "Constructor de cartas"
+    },
+    "lobby": {
+      "en": "Lobby",
+      "ko": "로비",
+      "ct": "Lobby",
+      "fr": "Hall",
+      "PI": "Tavern",
+      "lt": "Fojė",
+      "sv": "Lobby",
+      "es": "Lobby"
+    },
+    "stats": {
+      "en": "My Stats",
+      "ko": "통계",
+      "ct": "Mijn status",
+      "fr": "Ma Statistiques",
+      "PI": "Pirate-ness",
+      "lt": "Mano statusai",
+      "sv": "Min Statistik",
+      "es": "Mis estadísticas"
+    },
+    "messages": {
+      "en": "Messages",
+      "ko": "메시지",
+      "ct": "Berichten",
+      "fr": "Messages",
+      "PI": "Messages in bottles",
+      "lt": "Žinutės",
+      "sv": "Meddelanden",
+      "es": "Mensajes"
+    },
+    "logout": {
+      "en": "Logout",
+      "ko": "로그 아웃",
+      "ct": "Uitloggen",
+      "fr": "Déconnexion",
+      "PI": "Walk the plank",
+      "lt": "Atsijungti",
+      "sv": "Logga ut",
+      "es": "Cerrar sesión"
+    },
+    "language": {
+      "en": "Language",
+      "ko": "언어",
+      "ct": "Taal",
+      "fr": "Langue",
+      "PI": "Dialect",
+      "lt": "Kalba",
+      "sv": "Språk",
+      "es": "Idioma"
+    }
+  },
+  "factions": {
+    "en": {
+      "name": {
+        "en": "Ent",
+        "ko": "엔트",
+        "ct": "mewoowo",
+        "fr": "Ent",
+        "PI": "Swashbuckler",
+        "lt": "Entai",
+        "ne": "Ent",
+        "sv": "Ent",
+        "es": "Ent"
+      },
+      "desc": {
+        "en": "Seeking a bond with nature, the Ents tinkered with their own dna. A wild group of nomads, they say you'll never meet the same Ent twice.",
+        "ko": "자연과의 결합을 추구, 엔트는 자신의 DNA를 만지작 거렸다. 유목민의 야생 그룹, 그들은 당신이 두 번 같은 엔트을 충족하지 못할거야 말한다.",
+        "ct": "mewoowo",
+        "fr": "Cherchant un lien avec la nature, les Ents ont fabriqué leur propre ADN. Sauvage groupe de nomades, on dit que vous ne rencontrerez jamais deux fois le même Ent.",
+        "PI": "Yarr, the race o' the krakens are a strange one. They were once but a cult, until Davy Jones cursed them to dwell in the sea.",
+        "lt": "Siekdami ryšio su gamta, Entai pakeitė savo DNR. Laukiniai klajokliai sako kad niekada nesutiki to pačio Ento dukart.",
+        "ne": "In hun zoektocht naar een band met de natuur hebben de Enten aan hun eigen DNA gesleuteld. Ze zijn een wilde groep nomaden, en ze zeggen dat je dezelfde Ent nooit tweemaal zult tegenkomen.",
+        "sv": "Söker en obligation med naturen, enterna mixtrar med sin egen dna. En vild grupp av nomader, de säger att du aldrig kommer att möta samma Ent två gånger.",
+        "es": "En la búsqueda de un lazo con la naturaleza, los Ents alteraron su propio ADN. Son un grupo salvaje de nómades, y dicen que nunca verás al mismo Ent dos veces."
+      }
+    },
+    "mc": {
+      "name": {
+        "en": "Machine",
+        "ko": "기계",
+        "ct": "mewoowo",
+        "fr": "Machine",
+        "PI": "Inventors",
+        "lt": "Robot-Humanoidai",
+        "ne": "Machine",
+        "sv": "maskin",
+        "es": "Máquina"
+      },
+      "desc": {
+        "en": "The relentless pursuit of knowledge lead some to improve their minds with metal. They have become far more than humans ever were, and far less.",
+        "ko": "지식의 끊임없는 추구는 금속으로 그들의 마음을 개선하는 데 도움이되는 몇 가지를했다. 그들은 인간이 이제까지했던 것보다 훨씬 더, 훨씬 덜되고있다.",
+        "ct": "mewoowo",
+        "fr": "L'incessante poursuite de la connaissance en a mené certains à améliorer leurs esprits grâce au métal. Ils sont devenus bien plus que ce que les humains ont jamais été, et bien moins.",
+        "PI": "Tha inventors are a lively bunch, ever in the pursuit of rum and knowledge. They know how to make good cannons",
+        "lt": "Amžinas žinių siekimas, privedė prie minčių suliejimo su metalu. Jie tapo galingesniais bei išmintigesniais nei žmonės kada buvo.",
+        "ne": "De onophoudelijke speurtocht naar kennis leidde ertoe dat sommigen hun geest hebben verbeterd met metaal. Ze zijn veel meer dan mensen ooit waren, maar ook veel minder.",
+        "sv": "Den obevekliga strävan efter kunskap leder några att förbättra sina sinnen med metall. De har blivit mycket mer än människan någonsin var, och långt mindre.",
+        "es": "La búsqueda incansable del conocimiento llevó a algunos a mejorar sus mentes con metal. Se han convertido en mucho más que lo que los humanos nunca llegaron a ser, y en mucho menos."
+      }
+    },
+    "el": {
+      "name": {
+        "en": "Elite",
+        "ko": "엘리트",
+        "ct": "mewoowo",
+        "fr": "Élite",
+        "PI": "Swashbucklers",
+        "lt": "Elitas",
+        "ne": "Elite",
+        "sv": "Elit",
+        "es": "Élite"
+      },
+      "desc": {
+        "en": "Taking delight in the pleasures of this world, Elites have dominated the wealthy ruling class. A beautiful people, as long as you don't dig too deep.",
+        "ko": "이 세상의 쾌락의 기쁨을 촬영, 엘리트는 부유 한 지배 계급을 지배했다. 만큼 당신이 너무 깊이 파고하지 않는 아름다운 사람들.",
+        "ct": "mewoowo",
+        "fr": "Trouvant leur bonheur dans les petits plaisir de ce monde, les Élites ont dominé la classe riche dominante. De belles gens, tant que vous ne creusez pas trop loin.",
+        "PI": "The swashbucklers are the men o' the sea, always about on a ship. They are superb at boardin' other ships. ",
+        "lt": "Mėgaudamiesi pagundų malonumu, Elitai dominavo turtingujų klasę.",
+        "ne": "De Elite zoekt hun genoegdoening in het genot van de wereld. Ze domineren de rijke aristocratie. Een mooi volk, zolang je niet te diep kijkt.",
+        "sv": "Med glädje i njutning av denna värld, har eliter dominerat den förmögna härskande klassen.Vackra människor, så länge du inte gräver för djupt.",
+        "es": "Disfrutando de los placeres de este mundo, los Élites han dominado la clase rica y dominante. Personas hermosas, siempre y cuando no hurgues muy profundo en ellas."
+      }
+    },
+    "ze": {
+      "name": {
+        "en": "Zealot",
+        "ko": "열광 자",
+        "ct": "mewoowo",
+        "fr": "Fanatique",
+        "PI": "Priest",
+        "lt": "Fanatikai",
+        "ne": "ijveraar",
+        "sv": "Zealot",
+        "es": "Fanático"
+      },
+      "desc": {
+        "en": "Always certain of the truth, Zealots are more than willing to fight for it. The fires of constant war have honed their military skills to perfection.",
+        "ko": "진리를 항상 일정, 질럿 그것을 위해 싸울 의도보다는 좀더. 지속적인 전쟁의 불이 완벽하게 자신의 군사 기술을 연마했다.",
+        "ct": "mewoowo",
+        "fr": "Toujours certains de détenir la vérité, les Fanatiques sont plus que déterminés à se battre pour elle. Les feux constants de la guerre ont aiguisé leurs compétences militaires à la perfection.",
+        "PI": "The priests are a pirate's bain, preaching' what be right and what be wrong. Filthy landlubbers.",
+        "lt": "Visada įsitikine savąja tiesa, Fanatikai yra itin pasiryžę kovoti vardan jos. Amžinas karas jų kariuomenę ištobulino iki tobulumo.",
+        "ne": "Zeloten zijn altijd zeker van de waarheid, en meer dan bereid ervoor te vechten. De vuren van hun constante oorlog hebben hun militaire vaardigheid tot perfectie aangescherpt.",
+        "sv": "Alltid säker på sanningen, zeloterna är mer än villiga att kämpa för det. Bränderna i konstanta krig har finslipat sina militära färdigheter till perfektion.",
+        "es": "Siempre seguros de la verdad, los Fanáticos están más que dispuestos a luchar por ella. Las llamas de la guerra constante han hecho que sus habilidades militares alcancen la perfección."
+      }
+    }
+  },
+  "abilities": {
+    "heal": {
+      "name": {
+        "en": "Healing",
+        "ko": "치료",
+        "ct": "mewoowo",
+        "fr": "Guérir",
+        "PI": "Rum drinker",
+        "lt": "Gydimas",
+        "ne": "Helen",
+        "sv": "Helande",
+        "es": "Curación"
+      },
+      "desc": {
+        "en": "Target card gains 1 health.",
+        "ko": "대상 카드는 1 건강을 얻는다.",
+        "ct": "mewoowo",
+        "fr": "La carte cible reçoit 1 point de santé.",
+        "PI": "Target pirate drinks 1 bottle o' rum",
+        "lt": "Pasirinkta korta pagydoma 1 tašku.",
+        "ne": "Doel krijgt 1 leven erbij.",
+        "sv": "Det valda kortet får ett liv",
+        "es": "La carta objetivo gana 1 de vida."
+      }
+    },
+    "tree": {
+      "name": {
+        "en": "weed trees",
+        "ko": "잡초 나무",
+        "ct": "mewoowo",
+        "fr": "Mauvaises herbes",
+        "PI": "Seaweed",
+        "lt": "Žoliniai medžiai",
+        "ne": "onkruid bomen",
+        "sv": "ogrästräd",
+        "es": "árboles de hierbas"
+      },
+      "desc": {
+        "en": "A 1/1 tree is created",
+        "ko": "1 / 1 나무가 만들어집니다",
+        "ct": "mewoowo",
+        "fr": "Un arbre 1/1 est créé.",
+        "PI": "A 1/1 seaweed drifts into the field",
+        "lt": "Sukuria 1/1 medį.",
+        "ne": "Er wordt een 1/1 boom gemaakt.",
+        "sv": "Ett 1/1 träd är skapat",
+        "es": "Un árbol 1/1 es creado"
+      }
+    },
+    "abom": {
+      "name": {
+        "en": "abomination",
+        "ko": "가증스러운 행위",
+        "ct": "mewoowo",
+        "fr": "Abomination",
+        "PI": "unspeakable",
+        "lt": "Sutapatinimas",
+        "ne": "verschrikking",
+        "sv": "avskyvärdighet",
+        "es": "abominación"
+      },
+      "desc": {
+        "en": "Merge this unit with another.",
+        "ko": "서로 기기를 병합합니다.",
+        "ct": "mewoowo",
+        "fr": "Fusionner cette carte avec une autre.",
+        "PI": "Bury two treasures together",
+        "lt": "Sujungia dvejus padarus",
+        "ne": "Versmelt deze kaart met een andere kaart.",
+        "sv": "Slå ihop den här enheten med en annan",
+        "es": "Esta unidad se combina con otra."
+      }
+    },
+    "secr": {
+      "name": {
+        "en": "secretions",
+        "ko": "분비물",
+        "ct": "mewoowo",
+        "fr": "Sécrétions",
+        "PI": "Leaky ship",
+        "lt": "Atskyrimas",
+        "ne": "uitscheiding",
+        "sv": "utsöndring",
+        "es": "secreciones"
+      },
+      "desc": {
+        "en": "Target enemy can not attack next turn.",
+        "ko": "적군은 다음 턴을 공격 할 수 없다.",
+        "ct": "mewoowo",
+        "fr": "La cible ennemie ne peut attaquer au prochain tour.",
+        "PI": "Target boat is busy fixin' leaks until next turn",
+        "lt": "Uždraudžia priešininko padarui pulti vienam ėjimui.",
+        "ne": "Het doel kan de volgende beurt niet aanvallen.",
+        "sv": "Den valda enheten kan inte attackera nästa omgång",
+        "es": "El enemigo objetivo no puede atacar el próximo turno."
+      }
+    },
+    "clne": {
+      "name": {
+        "en": "clone",
+        "ko": "복제",
+        "ct": "mewoowo",
+        "fr": "Clone",
+        "PI": "throw overboard",
+        "lt": "Klonas",
+        "ne": "kloon",
+        "sv": "klon",
+        "es": "clonar"
+      },
+      "desc": {
+        "en": "Sacrifice this unit to produce a duplicate of another unit.",
+        "ko": "다른 장치의 복제본을 생성하기 위해이 장치를 제물로 바친다.",
+        "ct": "mewoowo",
+        "fr": "Sacrifier cette carte pour produire une copie d'une autre carte.",
+        "PI": "Throw this unit overboard so ye can get another pirate.",
+        "lt": "Vieno padaro paukojimas, vardan kito padaro klono sukūrimo.",
+        "ne": "Offer deze kaart op om een replica van een andere kaart te maken.",
+        "sv": "Offra den här enheten för att producera en kopia av en annan enhet.",
+        "es": "Sacrifica esta unidad para producir una copia de otra."
+      }
+    },
+    "bees": {
+      "name": {
+        "en": "bees!",
+        "ko": "꿀벌!",
+        "ct": "mewoowo",
+        "fr": "Abeilles",
+        "PI": "Abeeminations",
+        "lt": "Bitės!",
+        "ne": " bijen",
+        "sv": "Bin!",
+        "es": "¡abejas!"
+      },
+      "desc": {
+        "en": "All enemies in target column loose 1 health.",
+        "ko": "목표 컬럼에있는 모든 적을 1 건강 느슨한.",
+        "ct": "mewoowo",
+        "fr": "Tous les ennemis de la colonne ciblée perdent 1 point de santé.",
+        "PI": "All enemy ships in target column drop 1 rum.",
+        "lt": "Visi priešininkai vertikaliai nuo puolamo padaro praranda 1 gyvybės tašką.",
+        "ne": "Alle vijanden verliezen 1 leven.",
+        "sv": "Alla fiender i en siktad kolumn tappar ett liv.",
+        "es": "Toos los enemigos en la columna objetivo pierden 1 de vida."
+      }
+    },
+    "rbld": {
+      "name": {
+        "en": "rebuild",
+        "ko": "다시",
+        "ct": "mewoowo",
+        "fr": "Reconstruire",
+        "PI": "rebuild",
+        "lt": "Atstatymas",
+        "ne": "herbouwen",
+        "sv": "buyg om",
+        "es": "reconstruir"
+      },
+      "desc": {
+        "en": "Resurrect a dead machine.",
+        "ko": "죽은 기계를 부활.",
+        "ct": "mewoowo",
+        "fr": "Ressusciter une machine morte.",
+        "PI": "Repair a sunk ship to bring it back",
+        "lt": "Prikelia mirusią mašiną.",
+        "ne": "Breng een dode machine weer tot leven.",
+        "sv": "Återuppta en död maskin.",
+        "es": "Revive una máquina muerta."
+      }
+    },
+    "shld": {
+      "name": {
+        "en": "t-shield",
+        "ko": "T-쉴드",
+        "ct": "mewoowo",
+        "fr": "Bouclier-T",
+        "PI": "Fog",
+        "lt": "T-Skydas",
+        "ne": "t-schild",
+        "es": "Escudo T"
+      },
+      "desc": {
+        "en": "All damage that would be dealt to target unit is reduced by 1 for a turn.",
+        "ko": "단위를 대상으로 처리 될 수있는 모든 피해는 차례를 1로 줄일 수있다.",
+        "ct": "mewoowo",
+        "fr": "Tous les dégâts que subiraient la cible au prochain tour sont réduits de 1.",
+        "PI": "Target ship receives one less cannonball per attack for 1 turn",
+        "lt": "Vieną ėjima, visa padaryta žala yra sumažinta 1 tašku.",
+        "ne": "Alle schade die zou worden toegebracht aan het doel wordt verminderd met 1 voor een beurt.",
+        "sv": "All skada som skulle ha blivit handlat till enheten är nedsatt till en för en omgång.",
+        "es": "Todo el daño que la unidad objetivo fuera a recibir se reduce en 1 por un turno."
+      }
+    },
+    "prci": {
+      "name": {
+        "en": "precise",
+        "ko": "정확한",
+        "ct": "mewoowo",
+        "fr": "Précision",
+        "PI": "spyglass",
+        "lt": "Taiklumas",
+        "ne": "nauwkeurig",
+        "sv": "exakt",
+        "es": "preciso"
+      },
+      "desc": {
+        "en": "Attack an enemy of your choice regardless of defensive formations.",
+        "ko": "에 관계없이 방어 형성의 선택의 적을 공격한다.",
+        "ct": "mewoowo",
+        "fr": "Attaquer l'ennemi de votre choix peu importe les défenses en place.",
+        "PI": "Fire upon an enemy of your choice, no matter where they be.",
+        "lt": "Užpuola priešininką neatsižvelgiant į gynybos formaciją.",
+        "ne": "Val een vijand van je keuze aan, ongeacht de verdedigingsformatie.",
+        "sv": "Attackera en fiende av ditt val oavsett´av defensiva former",
+        "es": "Ataca un enemigo a tu elección sin importar las formaciones defensivas."
+      }
+    },
+    "strt": {
+      "name": {
+        "en": "strategist",
+        "ko": "전략가",
+        "ct": "mewoowo",
+        "fr": "Stratège",
+        "PI": "captain",
+        "lt": "Strategistas",
+        "ne": "strateeg",
+        "sv": "strateg",
+        "es": "estratega"
+      },
+      "desc": {
+        "en": "Ally can perform an extra action this turn",
+        "ko": "앨리 추가 조치에게이 턴을 수행 할 수 있습니다",
+        "ct": "mewoowo",
+        "fr": "Un allié peut utiliser une action de plus pour ce tour.",
+        "PI": "Unit gets more orders this turn",
+        "lt": "Papildomas veiksmas šio ėjimo metu.",
+        "ne": "De bondgenoot kan deze beurt een extra actie uitvoeren",
+        "sv": "Allierade kan utföra en extra åtgärd den här omgången",
+        "es": "Un aliado puede realizar una acción más en este turno"
+      }
+    },
+    "netw": {
+      "name": {
+        "en": "networking",
+        "ko": "네트워킹",
+        "ct": "mewoowo",
+        "fr": "Réseautage",
+        "PI": "smuggling",
+        "lt": "Tinklas",
+        "ne": "netwerk",
+        "sv": "nätverk",
+        "es": "conexiones"
+      },
+      "desc": {
+        "en": "Gain an allies abilities.",
+        "ko": "동맹의 능력을 얻을 수 있습니다.",
+        "ct": "mewoowo",
+        "fr": "Gagner les habiletés d'un allié.",
+        "PI": "Gain cargo from an ally.",
+        "lt": "Draugiško padaro sugebėjimų įgavimas",
+        "ne": "Krijg de vaardigheden van een andere speler.",
+        "sv": "Få en allierads förmågor",
+        "es": "Obtiene las habilidades de un aliado."
+      }
+    },
+    "tran": {
+      "name": {
+        "en": "transformer",
+        "ko": "변압기",
+        "ct": "mewoowo",
+        "fr": "Transformeur",
+        "PI": "illusionist",
+        "lt": "Apkeitimas",
+        "ne": "transformer",
+        "sv": "transformerare",
+        "es": "transformista"
+      },
+      "desc": {
+        "en": "Swap health and attack.",
+        "ko": "건강과 공격을 교환합니다.",
+        "ct": "mewoowo",
+        "fr": "Échanger les points de santé et d'attaque.",
+        "PI": "Swap rum and cannons",
+        "lt": "Apkeičia puolimo ir gyvybių taškus.",
+        "ne": "Wissel levens en kracht om.",
+        "sv": "Byt liv och attack",
+        "es": "Intercambia ataque y vida."
+      }
+    },
+    "sduc": {
+      "name": {
+        "en": "seduction",
+        "ko": "유혹",
+        "ct": "mewoowo",
+        "fr": "Séduction",
+        "PI": "board",
+        "lt": "Suviliojimas",
+        "ne": "verleiding",
+        "sv": "lockelse",
+        "es": "seducción"
+      },
+      "desc": {
+        "en": "Convert an enemy to your side if their health is 1.",
+        "ko": "자신의 건강이 1이면 옆으로 적을 변환합니다.",
+        "ct": "mewoowo",
+        "fr": "Convertir un ennemi de votre côté si son niveau de santé est de 1.",
+        "PI": "Convert an enemy crew to yer side if they have only 1 rum.",
+        "lt": "Pervilioja priešininko padarą turinti tik 1 gyvybės tašką, į tavo pusę.",
+        "ne": "Haal een vijand naar jouw kant als ze 1 leven overhebben.",
+        "sv": "Konvertera en fiende till din sida om dens liv är ett",
+        "es": "Convierte un enemigo a tu bando si su vida es 1."
+      }
+    },
+    "assn": {
+      "name": {
+        "en": "assassin",
+        "ko": "암살자",
+        "ct": "mewoowo",
+        "fr": "Assassin",
+        "PI": "frigate",
+        "lt": "Žmogžudys",
+        "ne": "assassijn",
+        "sv": "mördare",
+        "es": "asesino"
+      },
+      "desc": {
+        "en": "Attack without taking damage.",
+        "ko": "피해를하지 않고 공격한다.",
+        "ct": "mewoowo",
+        "fr": "Attaque sans subir de dégâts.",
+        "PI": "Attack without reciving fire.",
+        "lt": "Puoldamas nepraranda gyvybės taškų.",
+        "ne": "Val aan zonder zelf schaden te ondervinden.",
+        "sv": "Attackera utan att ta skada",
+        "es": "Ataca sin recibir daño."
+      }
+    },
+    "delg": {
+      "name": {
+        "en": "delegate",
+        "ko": "대리자",
+        "ct": "mewoowo",
+        "fr": "Délégué",
+        "PI": "delegate",
+        "lt": "Įgaliojimas",
+        "ne": "afgevaardige",
+        "sv": "sända",
+        "es": "delegar"
+      },
+      "desc": {
+        "en": "Trade this unit with another unit in your hand.",
+        "ko": "당신의 손에있는 다른 장치와이 장치를 무역.",
+        "ct": "mewoowo",
+        "fr": "Échanger cette carte pour une autre dans votre paquet.",
+        "PI": "Swap this unit wit one o' yer others.",
+        "lt": "Apkeičia šį padarą su kitu esančiu tavo rankoje.",
+        "ne": "Ruil deze kaart om met een kaart in je hand.",
+        "sv": "Byt det här kortet med en annan enhet i din hand",
+        "es": "Intercambia esta unidad con otra de tu mano."
+      }
+    },
+    "posn": {
+      "name": {
+        "en": "poison",
+        "ko": "독",
+        "ct": "mewoowo",
+        "fr": "Poison",
+        "PI": "scurvy",
+        "lt": "Nuodai",
+        "ne": "vergif",
+        "sv": "gift",
+        "es": "veneno"
+      },
+      "desc": {
+        "en": "Target enemy loses 1 health per turn.",
+        "ko": "대상 적 턴에 1 건강을 푼다.",
+        "ct": "mewoowo",
+        "fr": "La cible ennemie perd 1 point de santé par tour.",
+        "PI": "Target ship loses 1 rum per turn.",
+        "lt": "Priešinko padaras praranda 1 gyvybės tašką kiekvieną ėjimą.",
+        "ne": "Het vijandelijke doel verliest 1 leven per beurt.",
+        "sv": "Den valda fienden förlorar ett liv per omgång",
+        "es": "El enemigo objetivo pierde 1 de vida por turno."
+      }
+    },
+    "bagm": {
+      "name": {
+        "en": "bag 'em",
+        "ko": "잡기",
+        "ct": "mewoowo",
+        "fr": "Empaqueter",
+        "PI": "prevailing wind",
+        "lt": "Sugražinimas",
+        "ne": "wegstoppen",
+        "sv": "Säcka dem",
+        "es": "embolsar"
+      },
+      "desc": {
+        "en": "Target card is returned to its owner's hand.",
+        "ko": "대상 카드는 그것의 소유자의 손에 반환됩니다.",
+        "ct": "mewoowo",
+        "fr": "La carte cible retourne dans le paquet de son propriétaire.",
+        "PI": "Target ship is blown back to port.",
+        "lt": "Sugražina priešininko padarą į rankas.",
+        "ne": "Het doel gaat terug naar de hand van de eigenaar.",
+        "sv": "Kortet du valde är tillbakadraget till ägarens hand",
+        "es": "La carta objetivo retorna a la mano de su dueño."
+      }
+    },
+    "siph": {
+      "name": {
+        "en": "siphon",
+        "ko": "사이펀",
+        "ct": "mewoowo",
+        "fr": "Siphon",
+        "PI": "siphon",
+        "lt": "Vampyrizmas",
+        "ne": "dief",
+        "sv": "sifon",
+        "es": "sifón"
+      },
+      "desc": {
+        "en": "Steal 1 health from a card of your choice.",
+        "ko": "당신의 선택의 카드에서 1 건강을 훔치는.",
+        "ct": "mewoowo",
+        "fr": "Voler 1 point de santé à la carte de votre choix",
+        "PI": "Drain 1 rum from a ship o' yer choosin'.",
+        "lt": "Pavogia vieną gyvybės tašką iš pasirinktos kortos.",
+        "ne": "Steel 1 leven van een kaard van je keuze.",
+        "sv": "Stjäl ett liv från ett kort av ditt val",
+        "es": "Roba 1 de vida de una carta a tu elección."
+      }
+    },
+    "male": {
+      "name": {
+        "en": "male",
+        "ko": "남성",
+        "ct": "mewoowo",
+        "fr": "Mâle",
+        "PI": "Man",
+        "lt": "Vyras",
+        "ne": "mannelijk",
+        "sv": "man",
+        "es": "macho"
+      },
+      "desc": {
+        "en": "Can reproduce with females.",
+        "ko": "여성으로 재현 할 수 있습니다.",
+        "ct": "mewoowo",
+        "fr": "Peut se reproduire avec les cartes femelles.",
+        "PI": "Can make wee ones with women.",
+        "lt": "Gali daugintis su motėrimis.",
+        "ne": "Kan reproduceren met een vrouwelijke kaard.",
+        "sv": "Kan ompruduceras med kvinnor",
+        "es": "Puede reproducirse con hembras."
+      }
+    },
+    "feml": {
+      "name": {
+        "en": "female",
+        "ko": "여성",
+        "ct": "mewoowo",
+        "fr": "Femelle",
+        "PI": "woman",
+        "lt": "Moteris",
+        "ne": "vrouwelijk",
+        "sv": "kvinna",
+        "es": "hembra"
+      },
+      "desc": {
+        "en": "Can reproduce with males.",
+        "ko": "남성으로 재현 할 수 있습니다.",
+        "ct": "mewoowo",
+        "fr": "Peut se reproduire avec les cartes mâles",
+        "PI": "Can make wee ones with men.",
+        "lt": "Gali daugintis su vyrais.",
+        "ne": "Kan reproduceren met een mannelijke kaard.",
+        "sv": "Kan omproduceras med män",
+        "es": "Puede reproducirse con machos."
+      }
+    },
+    "btle": {
+      "name": {
+        "en": "battle cry",
+        "ko": "함성",
+        "ct": "mewoowo",
+        "fr": "Cri de guerre",
+        "PI": "Yarr!",
+        "lt": "Mūšio giesmė",
+        "ne": "Strijdkreet",
+        "sv": "krigs gråt",
+        "es": "Grito de batalla"
+      },
+      "desc": {
+        "en": "Target unit gains 2 attack for the turn.",
+        "ko": "대상 장치는 회전 2 공격을 얻는다.",
+        "ct": "mewoowo",
+        "fr": "La carte cible gagne 2 points d'attaque pour ce tour.",
+        "PI": "Ship is enthralled and fires 2 more cannons for the turn.",
+        "lt": "Padaras įgauna 2 atako taškus šiam ėjimui.",
+        "ne": "Het doel krijgt twee kracht voor deze beurt.",
+        "sv": "Att träffa en enhet ger två attacker för omgången",
+        "es": "La unidad objetivo gana 2 de ataque por este turno."
+      }
+    },
+    "detr": {
+      "name": {
+        "en": "determined",
+        "ko": "결정된",
+        "ct": "mewoowo",
+        "fr": "Déterminé",
+        "PI": "ram",
+        "lt": "Pasiaukojimas",
+        "ne": "vastberaden",
+        "sv": "avgjord",
+        "es": "determinado"
+      },
+      "desc": {
+        "en": "Sacrifice this card to deal double damage.",
+        "ko": "더블 데미지를이 카드를 제물로 바친다.",
+        "ct": "mewoowo",
+        "fr": "Sacrifier cette carte pour infliger le double de dégâts.",
+        "PI": "Ram another ship to do double damage (destroys own ship)",
+        "lt": "Padaro pasiaukojimas idin padaryt dvigubą žalą priešininkui.",
+        "ne": "Offer deze kaart op om dubbele schade toe te brengen.",
+        "sv": "Offra det här kortet för att handla dubbel skada",
+        "es": "Sacrifica esta carta para realizar doble daño."
+      }
+    },
+    "hero": {
+      "name": {
+        "en": "heroic sacrifice",
+        "ko": "영웅적인 희생",
+        "ct": "mewoowo",
+        "fr": "Sacrifice héroïque",
+        "PI": "raise flags",
+        "lt": "Didviriškas pasiaukojimas",
+        "ne": "Heldhaftig offer",
+        "sv": "hjältligt offer",
+        "es": "sacrificio heroico"
+      },
+      "desc": {
+        "en": "All enemy attacks must target this card for one turn.",
+        "ko": "모든 적의 공격 한 턴에이 카드를 대상으로해야합니다.",
+        "ct": "mewoowo",
+        "fr": "Tous les ennemis doivent cibler cette carte pour un tour.",
+        "PI": "All enemies that fire must attack this ship for one turn.",
+        "lt": "Kito ėjimo metu, visi priešininkų padarai galės pulti tik šį padarą.",
+        "ne": "Alle vijanden moeten de volgende beurt deze kaart aanvallen.",
+        "sv": "Alla fienders attacker måste sikta på det här kortet för en omgång",
+        "es": "Todos los ataques enemigos deben tener a esta carta como objetivo por un turno."
+      }
+    },
+    "serm": {
+      "name": {
+        "en": "super serum",
+        "ko": "슈퍼 혈청",
+        "ct": "mewoowo",
+        "fr": "Super-sérum",
+        "PI": "super rum",
+        "lt": "Stiprybės serumas",
+        "ne": "super serum",
+        "sv": "superserum",
+        "es": "súper suero"
+      },
+      "desc": {
+        "en": "Available health points are converted into attack points",
+        "ko": "가능한 건강 포인트는 공격 포인트로 변환",
+        "ct": "mewoowo",
+        "fr": "Les points de santé disponible sont convertis en points d'attaque.",
+        "PI": "Available rum is converted into cannon munitions.",
+        "lt": "Konvertuoja gyvybės taškus į puolimo.",
+        "ne": "Alle beschikbare levens worden omgezet in kracht.",
+        "sv": "Tillgänliga livpoäng är konverterade till attackpoäng",
+        "es": "Los puntos de vida disponibles se convierten en puntos de ataque."
+      }
+    }
+  }
 }
