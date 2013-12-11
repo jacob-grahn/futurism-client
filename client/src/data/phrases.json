@@ -266,7 +266,7 @@
       "ct": "meow",
       "fr": "Supprimer",
       "PI": "Toss booty overboard",
-      "lt": "Ištrinti,
+      "lt": "Ištrinti",
       "ne": "Verwijderen",
       "sv": "Ta bort",
       "es": "Eliminar"
@@ -405,19 +405,23 @@
     },
 		"futures": {
 			"en": "futures",
-			"lt": "Ateitis"
+			"lt": "Ateitis",
+			"sv": "framtid"
 		},
 		"shortGame": {
 			"en": "Skirmish",
-			"lt": "Susiremimas"
+			"lt": "Susiremimas",
+			"sv": "Skärmytslig"
 		},
 		"mediumGame": {
 			"en": "Battle",
-			"lt": "Kova"
+			"lt": "Kova",
+			"sv": "Slag"
 		},
 		"longGame": {
 			"en": "War",
-			"lt": "Karas"
+			"lt": "Karas",
+			"sv": "Krig"
 		},
 		"customGame": {
 			"en": "Custom",
