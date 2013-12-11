@@ -15,6 +15,7 @@ angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', '
 			when('/game-pre-deck/:gameId/:maxPride', {templateUrl: 'views/game-pre-deck.html', controller: 'GamePreDeckCtrl'}).
 			when('/language', {templateUrl: 'views/language.html', controller: 'LanguageCtrl'}).
 			when('/future-shift', {templateUrl: 'views/future-shift.html', controller: 'FutureShiftCtrl'}).
+			when('/guild', {templateUrl: 'views/guild.html', controller: 'GuildCtrl'}).
 			otherwise({redirectTo: '/title'});
 
 		$locationProvider.html5Mode(true).hashPrefix('#');

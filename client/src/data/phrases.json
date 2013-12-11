@@ -403,17 +403,6 @@
       "sv": "chatt",
       "es": "chat"
     },
-    "guild": {
-      "en": "guild",
-      "ko": "대가족",
-      "ct": "meow",
-      "fr": "Guilde",
-      "PI": "crew",
-      "lt": "komanda",
-      "ne": "gilde",
-      "sv": "guild",
-      "es": "gremio"
-    },
     "people": {
       "en": "people",
       "ko": "사람들",
@@ -520,6 +509,17 @@
     },
 		"futureShift": {
 			"en": "Future Shift"
+		},
+		"guild": {
+			"en": "Guild",
+			"ko": "대가족",
+			"ct": "Meow",
+			"fr": "Guilde",
+			"PI": "Crew",
+			"lt": "Komanda",
+			"ne": "Gilde",
+			"sv": "Guild",
+			"es": "Gremio"
 		}
   },
   "factions": {

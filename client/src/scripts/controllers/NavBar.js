@@ -36,6 +36,11 @@ angular.module('futurism')
 		};
 
 
+		$scope.addGuild = function() {
+			return $scope.path === '/guild';
+		};
+
+
 		/**
 		 * Close the responsive navbar when a link is clicked
 		 */
