@@ -9,7 +9,7 @@
     "PI": "Pirate",
     "es": "Español",
     "ne": "Dutch",
-    "lt": "Lithuanian",
+    "lt": "Lietuvių",
     "sv": "Svenska"
   },
 
@@ -170,7 +170,7 @@
       "ct": "meow",
       "fr": "Attaque",
       "PI": "Number o' Cannons",
-      "lt": "Stiprumas",
+      "lt": "Atakos taškai",
       "ne": "Kracht",
       "sv": "Attackera",
       "es": "Ataque"
@@ -181,7 +181,7 @@
       "ct": "meow",
       "fr": "Santé",
       "PI": "Rum",
-      "lt": "Gyvybės",
+      "lt": "Gyvybės taškai",
       "ne": "Levens",
       "sv": "Liv",
       "es": "Vida"
@@ -196,7 +196,7 @@
       "ct": "meow",
       "fr": "Envoyer",
       "PI": "Belch",
-      "lt": "sakyk",
+      "lt": "Sakyk",
       "ne": "Zeggen",
       "sv": "säg",
       "es": "Enviar"
@@ -266,6 +266,7 @@
       "ct": "meow",
       "fr": "Supprimer",
       "PI": "Toss booty overboard",
+      "lt": "Ištrinti,
       "ne": "Verwijderen",
       "sv": "Ta bort",
       "es": "Eliminar"
@@ -298,7 +299,7 @@
       "ct": "meow",
       "fr": "Valeur du paquet",
       "PI": "Map value",
-      "lt": "Kaladės pasididžiavimas",
+      "lt": "Kaladės vertė",
       "ne": "Deck Trots",
       "sv": "Deckstolthet",
       "es": "Orgullo del mazo"
@@ -328,7 +329,7 @@
       "ct": "meow",
       "fr": "Valeur maximale",
       "PI": "Max Rum",
-      "lt": "Maksimali garbė",
+      "lt": "Maksimali vertė",
       "ne": "Maximale trots",
       "sv": "Max stolthet",
       "es": "Máximo orgullo"
@@ -343,7 +344,7 @@
       "ct": "meow",
       "fr": "Joueur",
       "PI": "Sailor",
-      "lt": "žaidėjas",
+      "lt": "Žaidėjas",
       "ne": "Speler",
       "sv": "spelare",
       "es": "jugadores"
@@ -354,7 +355,7 @@
       "ct": "meow",
       "fr": "Valeur",
       "PI": "Rum",
-      "lt": "garbė",
+      "lt": "Vertė",
       "ne": "trots",
       "sv": "Stolthet",
       "es": "orgullo"
@@ -365,7 +366,7 @@
       "ct": "meow",
       "fr": "Joindre",
       "PI": "Board",
-      "lt": "prisijungti",
+      "lt": "Prisijungti",
       "ne": "meedoen",
       "sv": "gå med",
       "es": "unirse"
@@ -376,7 +377,7 @@
       "ct": "meow",
       "fr": "Commencer",
       "PI": "Set sail",
-      "lt": "pradėti",
+      "lt": "Pradėti",
       "ne": "start",
       "sv": "starta",
       "es": "Iniciar"
@@ -387,7 +388,7 @@
       "ct": "meow",
       "fr": "Bavarder",
       "PI": "Belch",
-      "lt": "pokalbiai",
+      "lt": "Pokalbiai",
       "ne": "chat",
       "sv": "chatt",
       "es": "chat"
@@ -398,21 +399,25 @@
       "ct": "mensen",
       "fr": "Joueurs",
       "PI": "deckhands",
-      "lt": "žmonės",
+      "lt": "Žaidėjai",
       "sv": "personer",
       "es": "personas"
     },
 		"futures": {
-			"en": "futures"
+			"en": "futures",
+			"lt": "Ateitis"
 		},
 		"shortGame": {
-			"en": "Skirmish"
+			"en": "Skirmish",
+			"lt": "Susiremimas"
 		},
 		"mediumGame": {
-			"en": "Battle"
+			"en": "Battle",
+			"lt": "Kova"
 		},
 		"longGame": {
-			"en": "War"
+			"en": "War",
+			"lt": "Karas"
 		},
 		"customGame": {
 			"en": "Custom",
@@ -420,7 +425,7 @@
 			"ct": "Meow",
 			"fr": "Personnaliser",
 			"PI": "Blank map",
-			"lt": "Redaguojamas",
+			"lt": "Personalizuota kova",
 			"ne": "Eigen",
 			"sv": "Anpassad",
 			"es": "Personalizado"
@@ -520,7 +525,8 @@
       "es": "Idioma"
     },
 		"futures": {
-			"en": "Futures"
+			"en": "Futures",
+			"lt": "Ateitis"
 		},
 		"guild": {
 			"en": "Guild",
@@ -528,7 +534,7 @@
 			"ct": "Meow",
 			"fr": "Guilde",
 			"PI": "Crew",
-			"lt": "Komanda",
+			"lt": "Gildija",
 			"ne": "Gilde",
 			"sv": "Guild",
 			"es": "Gremio"
