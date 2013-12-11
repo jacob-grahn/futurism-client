@@ -21,7 +21,7 @@
     "es": "aaaaaa123456789",
     "fr": "Omegaguineapig, JV-TRUC",
     "ne": "larsyuipo",
-    "PI": "esp-eon",
+    "PI": "Arcanity",
     "lt": "zebriukas",
     "sv": "jonswe"
   },
@@ -396,7 +396,8 @@
     "people": {
       "en": "people",
       "ko": "사람들",
-      "ct": "mensen",
+      "ne": "mensen",
+			"ct": "meow",
       "fr": "Joueurs",
       "PI": "deckhands",
       "lt": "Žaidėjai",
@@ -406,21 +407,25 @@
 		"futures": {
 			"en": "futures",
 			"lt": "Ateitis",
+			"ct": "meow",
 			"sv": "framtid"
 		},
 		"shortGame": {
 			"en": "Skirmish",
 			"lt": "Susiremimas",
+			"ct": "meow",
 			"sv": "Skärmytslig"
 		},
 		"mediumGame": {
 			"en": "Battle",
 			"lt": "Kova",
+			"ct": "meow",
 			"sv": "Slag"
 		},
 		"longGame": {
 			"en": "War",
 			"lt": "Karas",
+			"ct": "meow",
 			"sv": "Krig"
 		},
 		"customGame": {
@@ -441,7 +446,8 @@
     "toggle": {
       "en": "Toggle Navigation",
       "ko": "토글",
-      "ct": "Navigatie aanzetten",
+			"ct": "meow",
+      "ne": "Navigatie aanzetten",
       "fr": "Activer la navigation",
       "PI": "Toggle Map",
       "lt": "Navigacijos Perjungimas",
@@ -451,7 +457,8 @@
     "futurism": {
       "en": "Futurism",
       "ko": "미래의 배",
-      "ct": "Futurism",
+			"ct": "meow",
+      "ne": "Futurism",
       "fr": "Futurisme",
       "PI": "Day after Tomorrow",
       "lt": "Futurism",
@@ -461,7 +468,8 @@
     "deckBuilder": {
       "en": "Deck Builder",
       "ko": "갑판",
-      "ct": "Deck maker",
+			"ct": "meow",
+      "ne": "Deck maker",
       "fr": "Créateur de paquet",
       "PI": "Mapbook binder",
       "lt": "Kaladės Dėliojimas",
@@ -471,7 +479,8 @@
     "cardBuilder": {
       "en": "Card Builder",
       "ko": "카드",
-      "ct": "Kaart maker",
+			"ct": "meow",
+      "ne": "Kaart maker",
       "fr": "Créateur de carte",
       "PI": "Map drawer",
       "lt": "Kortų kūrimas",
@@ -481,7 +490,8 @@
     "lobby": {
       "en": "Lobby",
       "ko": "로비",
-      "ct": "Lobby",
+			"ct": "meow",
+      "ne": "Lobby",
       "fr": "Hall",
       "PI": "Tavern",
       "lt": "Fojė",
@@ -491,7 +501,8 @@
     "stats": {
       "en": "My Stats",
       "ko": "통계",
-      "ct": "Mijn status",
+			"ct": "meow",
+      "ne": "Mijn status",
       "fr": "Ma Statistiques",
       "PI": "Pirate-ness",
       "lt": "Mano statusai",
@@ -501,7 +512,8 @@
     "messages": {
       "en": "Messages",
       "ko": "메시지",
-      "ct": "Berichten",
+			"ct": "meow",
+      "ne": "Berichten",
       "fr": "Messages",
       "PI": "Messages in bottles",
       "lt": "Žinutės",
@@ -511,7 +523,8 @@
     "logout": {
       "en": "Logout",
       "ko": "로그 아웃",
-      "ct": "Uitloggen",
+			"ct": "meow",
+      "ne": "Uitloggen",
       "fr": "Déconnexion",
       "PI": "Walk the plank",
       "lt": "Atsijungti",
@@ -521,7 +534,8 @@
     "language": {
       "en": "Language",
       "ko": "언어",
-      "ct": "Taal",
+			"ct": "meow",
+      "ne": "Taal",
       "fr": "Langue",
       "PI": "Dialect",
       "lt": "Kalba",
@@ -530,6 +544,7 @@
     },
 		"futures": {
 			"en": "Futures",
+			"ct": "meow",
 			"lt": "Ateitis"
 		},
 		"guild": {
