@@ -403,19 +403,19 @@
       "es": "personas"
     },
 		"futures": {
-			"en": "futures"
+			"en": "futures",
 			"sv": "framtid"
 		},
 		"shortGame": {
-			"en": "Skirmish"
+			"en": "Skirmish",
 			"sv": "Skärmytslig"
 		},
 		"mediumGame": {
-			"en": "Battle"
+			"en": "Battle",
 			"sv": "Slag"
 		},
 		"longGame": {
-			"en": "War"
+			"en": "War",
 			"sv": "Krig"
 		},
 		"customGame": {
