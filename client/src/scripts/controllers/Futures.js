@@ -1,4 +1,4 @@
 angular.module('futurism')
-	.controller('FutureShiftCtrl', function($scope) {
+	.controller('FuturesCtrl', function($scope) {
 		$scope.hi = 'hi';
 	});

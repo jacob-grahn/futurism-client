@@ -31,8 +31,8 @@ angular.module('futurism')
 		};
 
 
-		$scope.atFutureShift = function() {
-			return $scope.path === '/future-shift';
+		$scope.atFutures = function() {
+			return $scope.path === '/futures';
 		};
 
 

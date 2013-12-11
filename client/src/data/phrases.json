@@ -338,7 +338,7 @@
 
   "lobby": {
     "player": {
-      "en": "player",
+      "en": "players",
       "ko": "플레이어",
       "ct": "meow",
       "fr": "Joueur",
@@ -519,8 +519,8 @@
       "sv": "Språk",
       "es": "Idioma"
     },
-		"futureShift": {
-			"en": "Future Shift"
+		"futures": {
+			"en": "Futures"
 		},
 		"guild": {
 			"en": "Guild",
