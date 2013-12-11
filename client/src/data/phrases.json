@@ -359,17 +359,6 @@
       "sv": "Stolthet",
       "es": "orgullo"
     },
-    "custom": {
-      "en": "custom",
-      "ko": "관습",
-      "ct": "meow",
-      "fr": "Personnaliser",
-      "PI": "Blank map",
-      "lt": "redaguojamas",
-      "ne": "eigen",
-      "sv": "Anpassad",
-      "es": "personalizado"
-    },
     "join": {
       "en": "join",
       "ko": "가입",
@@ -412,7 +401,30 @@
       "lt": "žmonės",
       "sv": "personer",
       "es": "personas"
-    }
+    },
+		"futures": {
+			"en": "futures"
+		},
+		"shortGame": {
+			"en": "Skirmish"
+		},
+		"mediumGame": {
+			"en": "Battle"
+		},
+		"longGame": {
+			"en": "War"
+		},
+		"customGame": {
+			"en": "Custom",
+			"ko": "관습",
+			"ct": "Meow",
+			"fr": "Personnaliser",
+			"PI": "Blank map",
+			"lt": "Redaguojamas",
+			"ne": "Eigen",
+			"sv": "Anpassad",
+			"es": "Personalizado"
+		}
   },
 
 
@@ -522,6 +534,8 @@
 			"es": "Gremio"
 		}
   },
+
+
   "factions": {
     "en": {
       "name": {
@@ -620,6 +634,8 @@
       }
     }
   },
+
+
   "abilities": {
     "heal": {
       "name": {
