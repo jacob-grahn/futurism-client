@@ -404,15 +404,19 @@
     },
 		"futures": {
 			"en": "futures"
+			"sv": "framtid"
 		},
 		"shortGame": {
 			"en": "Skirmish"
+			"sv": "Skärmytslig"
 		},
 		"mediumGame": {
 			"en": "Battle"
+			"sv": "Slag"
 		},
 		"longGame": {
 			"en": "War"
+			"sv": "Krig"
 		},
 		"customGame": {
 			"en": "Custom",
