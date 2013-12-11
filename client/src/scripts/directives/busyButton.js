@@ -10,7 +10,6 @@ angular.module('futurism')
 			},
 			template: '<button class="btn btn-default" type="submit" ng-click="startClick()" ng-disabled="{{!!promise}}">{{label}}</button>',
 			link: function(scope, element, attr) {
-				scope.promise;
 				scope.defaultLabel = attr.label || 'Save';
 				scope.label = scope.defaultLabel;
 				scope.startClick = function() {

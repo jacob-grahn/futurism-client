@@ -1,5 +1,6 @@
 angular.module('futurism')
 	.directive('matchScreenHeight', function($, window, $timeout) {
+		'use strict';
 
 		return {
 
@@ -56,7 +57,7 @@ angular.module('futurism')
 					}
 					else {
 						var target = elem.find(scope.resizeElement);
-						var diff = elem.height() - target.height()
+						var diff = elem.height() - target.height();
 						target.css({
 							'height': (height - subtract - diff)
 						});
@@ -70,7 +71,7 @@ angular.module('futurism')
 				 * $timeout is a quirky trick to do this
 				 */
 				$timeout(function() {
-					$timeout(resizeHandler)
+					$timeout(resizeHandler);
 				});
 
 
@@ -81,6 +82,6 @@ angular.module('futurism')
 					jWindow.off('resize', resizeHandler);
 				});
 			}
-		}
+		};
 
 	});

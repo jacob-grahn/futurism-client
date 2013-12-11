@@ -40,11 +40,9 @@ angular.module('futurism')
 				$scope.card.image = null;
 			}
 
-			var promise = $scope.card.$save({},
-				function(value, responseHeaders) {
-					$scope.uppedImage = null;
-				}
-			);
+			var promise = $scope.card.$save({}, function() {
+				$scope.uppedImage = null;
+			});
 
 			return promise;
 		};

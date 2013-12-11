@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('navBarCtrl', function($scope, account) {
+	.controller('navBarCtrl', function($scope, account, $) {
 		'use strict';
 
 		$scope.path = '';

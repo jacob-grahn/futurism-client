@@ -18,7 +18,7 @@
 			_.each(source, function(val, key) {
 				if(typeof(val) === 'object') {
 					if(lang.isPhraseObj(val)) {
-						dest[key] = val[languageId] || val['en'];
+						dest[key] = val[languageId] || val.en;
 					}
 					else {
 						dest[key] = {};

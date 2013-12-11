@@ -48,7 +48,7 @@ angular.module('futurism')
 					setToken(data.token);
 
 					return callback(null, data);
-				})
+				});
 			});
 		};
 
