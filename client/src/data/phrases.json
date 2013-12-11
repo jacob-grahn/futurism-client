@@ -9,7 +9,8 @@
     "PI": "Pirate",
     "es": "Español",
     "ne": "Dutch",
-    "lt": "Lietuvių",
+    "lt": "Lithuanian",
+    "it": "Italiano",
     "sv": "Svenska"
   },
 
@@ -23,6 +24,7 @@
     "ne": "larsyuipo",
     "PI": "esp-eon",
     "lt": "zebriukas",
+    "it": "DforDerpdetta",
     "sv": "jonswe"
   },
 
@@ -37,6 +39,7 @@
       "lt": "FUTURISM",
       "ne": "FUTURISM",
       "sv": "Futurism",
+      "it": "Futurismo",
       "es": "FUTURISMO"
     },
     "login": {
@@ -48,6 +51,7 @@
       "lt": "PRISIJUNGIMAS",
       "ne": "LOG IN",
       "sv": "Logga in",
+      "it": "Entra",
       "es": "Ingresar"
     },
     "credits": {
@@ -59,6 +63,7 @@
       "lt": "KŪRĖJAI",
       "ne": "CREDITS",
       "sv": "Medverkande",
+      "it": "Ringraziamenti",
       "es": "Créditos"
     },
     "instructions": {
@@ -70,6 +75,7 @@
       "lt": "INSTRUKCIJOS",
       "ne": "Instructiefilmpjes",
       "sv": "Instruktioner",
+      "it": "Istruzioni",
       "es": "Videos educativos"
     }
   },
@@ -85,6 +91,7 @@
       "lt": "Išsaugojimas ir Užkrovimas",
       "ne": "Opslaan en Laden",
       "sv": "Spara och Ladda",
+      "it": "Salva e Carica",
       "es": "Guardar y cargar"
     },
     "nameIt": {
@@ -96,6 +103,7 @@
       "lt": "Pavadinimas",
       "ne": "Geef een Naam",
       "sv": "Namnge det",
+      "it": "Nominala",
       "es": "Nombrar"
     },
     "imageUpload": {
@@ -107,6 +115,7 @@
       "lt": "Paveikslėlio įkelimas",
       "ne": "Upload een Plaatje",
       "sv": "bilduppladdning",
+      "it": "Carica un'immagine",
       "es": "Cargar imagen"
     },
     "factionAbilities": {
@@ -118,6 +127,7 @@
       "lt": "Frakcijų sugebėjimai",
       "ne": "Factie Vaardigheden ",
       "sv": "Fraktionsförmågor",
+      "it": "Abilità della fazione",
       "es": "Habilidades de la facción"
     },
     "save": {
@@ -129,6 +139,7 @@
       "lt": "Išsaugoti",
       "ne": "Opslaan",
       "sv": "Spara",
+      "it": "Salva",
       "es": "Guardar"
     },
     "load": {
@@ -140,6 +151,7 @@
       "lt": "Užkrauti",
       "ne": "Laden",
       "sv": "Ladda",
+      "it": "Carica",
       "es": "Cargar"
     },
     "new": {
@@ -151,6 +163,7 @@
       "lt": "Naujas",
       "ne": "Nieuw",
       "sv": "Nytt",
+      "it": "Nuova",
       "es": "Nueva"
     },
     "delete": {
@@ -162,6 +175,7 @@
       "lt": "Ištrinti",
       "ne": "Verwijderen",
       "sv": "Ta bort",
+      "it": "Elimina",
       "es": "Eliminar"
     },
     "attack": {
@@ -170,9 +184,10 @@
       "ct": "meow",
       "fr": "Attaque",
       "PI": "Number o' Cannons",
-      "lt": "Atakos taškai",
+      "lt": "Stiprumas",
       "ne": "Kracht",
       "sv": "Attackera",
+      "it": "Attacca",
       "es": "Ataque"
     },
     "health": {
@@ -181,9 +196,10 @@
       "ct": "meow",
       "fr": "Santé",
       "PI": "Rum",
-      "lt": "Gyvybės taškai",
+      "lt": "Gyvybės",
       "ne": "Levens",
       "sv": "Liv",
+      "it": "Salute",
       "es": "Vida"
     }
   },
@@ -196,9 +212,10 @@
       "ct": "meow",
       "fr": "Envoyer",
       "PI": "Belch",
-      "lt": "Sakyk",
+      "lt": "sakyk",
       "ne": "Zeggen",
       "sv": "säg",
+      "it": "Invia",
       "es": "Enviar"
     },
     "placeholder": {
@@ -210,6 +227,7 @@
       "lt": "Rašykite kad šnekėtumete",
       "ne": "Type iets in de chat",
       "sv": "skriv för att chatta",
+      "it": "Scrivi per mandare messaggi",
       "es": "Escribe para conversar"
     }
   },
@@ -225,6 +243,7 @@
       "lt": "Išsaugojimas ir Užkrovimas",
       "ne": "Opslaan en Laden",
       "sv": "Spara och Ladda",
+      "it": "Salva e Carica",
       "es": "Guardar y cargar"
     },
     "save": {
@@ -236,6 +255,7 @@
       "lt": "Išsaugoti",
       "ne": "Opslaan",
       "sv": "Spara",
+      "it": "Salva",
       "es": "Guardar"
     },
     "load": {
@@ -247,6 +267,7 @@
       "lt": "Užkrauti",
       "ne": "Laden",
       "sv": "Ladda",
+      "it": "Carica",
       "es": "Cargar"
     },
     "new": {
@@ -258,6 +279,7 @@
       "lt": "Naujas",
       "ne": "Nieuw",
       "sv": "Nytt",
+      "it": "Nuova",
       "es": "Nuevo"
     },
     "delete": {
@@ -266,9 +288,9 @@
       "ct": "meow",
       "fr": "Supprimer",
       "PI": "Toss booty overboard",
-      "lt": "Ištrinti,
       "ne": "Verwijderen",
       "sv": "Ta bort",
+      "it": "Elimina",
       "es": "Eliminar"
     },
     "nameIt": {
@@ -280,6 +302,7 @@
       "lt": "Pavadinimas",
       "ne": "Geef een naam",
       "sv": "Namnge det",
+      "it": "Nominalo",
       "es": "Nombrar"
     },
     "cards": {
@@ -291,6 +314,7 @@
       "lt": "Kortos",
       "ne": "Kaarten",
       "sv": "Kort",
+      "it": "Carte",
       "es": "Cartas"
     },
     "deckPride": {
@@ -299,9 +323,10 @@
       "ct": "meow",
       "fr": "Valeur du paquet",
       "PI": "Map value",
-      "lt": "Kaladės vertė",
+      "lt": "Kaladės pasididžiavimas",
       "ne": "Deck Trots",
       "sv": "Deckstolthet",
+      "it": "Valore del mazzo",
       "es": "Orgullo del mazo"
     }
   },
@@ -317,6 +342,7 @@
       "lt": "Klaida!",
       "ne": "Error",
       "sv": "Error",
+      "it": "Errore!",
       "es": "Error"
     }
   },
@@ -329,9 +355,10 @@
       "ct": "meow",
       "fr": "Valeur maximale",
       "PI": "Max Rum",
-      "lt": "Maksimali vertė",
+      "lt": "Maksimali garbė",
       "ne": "Maximale trots",
       "sv": "Max stolthet",
+      "it": "Valore massimo",
       "es": "Máximo orgullo"
     }
   },
@@ -344,9 +371,10 @@
       "ct": "meow",
       "fr": "Joueur",
       "PI": "Sailor",
-      "lt": "Žaidėjas",
+      "lt": "žaidėjas",
       "ne": "Speler",
       "sv": "spelare",
+      "it": "Giocatori",
       "es": "jugadores"
     },
     "pride": {
@@ -355,9 +383,10 @@
       "ct": "meow",
       "fr": "Valeur",
       "PI": "Rum",
-      "lt": "Vertė",
+      "lt": "garbė",
       "ne": "trots",
       "sv": "Stolthet",
+      "it": "Valore",
       "es": "orgullo"
     },
     "join": {
@@ -366,9 +395,10 @@
       "ct": "meow",
       "fr": "Joindre",
       "PI": "Board",
-      "lt": "Prisijungti",
+      "lt": "prisijungti",
       "ne": "meedoen",
       "sv": "gå med",
+      "it": "unisciti",
       "es": "unirse"
     },
     "start": {
@@ -377,9 +407,10 @@
       "ct": "meow",
       "fr": "Commencer",
       "PI": "Set sail",
-      "lt": "Pradėti",
+      "lt": "pradėti",
       "ne": "start",
       "sv": "starta",
+      "it": "inizia",
       "es": "Iniciar"
     },
     "chat": {
@@ -388,9 +419,10 @@
       "ct": "meow",
       "fr": "Bavarder",
       "PI": "Belch",
-      "lt": "Pokalbiai",
+      "lt": "pokalbiai",
       "ne": "chat",
       "sv": "chatt",
+      "it": "chat",
       "es": "chat"
     },
     "people": {
@@ -399,25 +431,22 @@
       "ct": "mensen",
       "fr": "Joueurs",
       "PI": "deckhands",
-      "lt": "Žaidėjai",
+      "lt": "žmonės",
       "sv": "personer",
+      "it": "persone",
       "es": "personas"
     },
 		"futures": {
-			"en": "futures",
-			"lt": "Ateitis"
+			"en": "futures"
 		},
 		"shortGame": {
-			"en": "Skirmish",
-			"lt": "Susiremimas"
+			"en": "Skirmish"
 		},
 		"mediumGame": {
-			"en": "Battle",
-			"lt": "Kova"
+			"en": "Battle"
 		},
 		"longGame": {
-			"en": "War",
-			"lt": "Karas"
+			"en": "War"
 		},
 		"customGame": {
 			"en": "Custom",
@@ -425,9 +454,10 @@
 			"ct": "Meow",
 			"fr": "Personnaliser",
 			"PI": "Blank map",
-			"lt": "Personalizuota kova",
+			"lt": "Redaguojamas",
 			"ne": "Eigen",
 			"sv": "Anpassad",
+			"it": "Personalizzato",
 			"es": "Personalizado"
 		}
   },
@@ -442,6 +472,7 @@
       "PI": "Toggle Map",
       "lt": "Navigacijos Perjungimas",
       "sv": "Växla Navigation",
+      "it": "Abilita la navigazione",
       "es": "Habilitar barra de navegación"
     },
     "futurism": {
@@ -452,6 +483,7 @@
       "PI": "Day after Tomorrow",
       "lt": "Futurism",
       "sv": "Futurism",
+      "it": "Futurismo",
       "es": "Futurismo"
     },
     "deckBuilder": {
@@ -462,6 +494,7 @@
       "PI": "Mapbook binder",
       "lt": "Kaladės Dėliojimas",
       "sv": "Deck byggare",
+      "it": "Creatore dei mazzi",
       "es": "Constructor de mazos"
     },
     "cardBuilder": {
@@ -472,6 +505,7 @@
       "PI": "Map drawer",
       "lt": "Kortų kūrimas",
       "sv": "Kort Byggare",
+      "it": "Creatore delle carte",
       "es": "Constructor de cartas"
     },
     "lobby": {
@@ -482,6 +516,7 @@
       "PI": "Tavern",
       "lt": "Fojė",
       "sv": "Lobby",
+      "it": "Lobby",
       "es": "Lobby"
     },
     "stats": {
@@ -492,6 +527,7 @@
       "PI": "Pirate-ness",
       "lt": "Mano statusai",
       "sv": "Min Statistik",
+      "it": "Le mie statistiche",
       "es": "Mis estadísticas"
     },
     "messages": {
@@ -502,6 +538,7 @@
       "PI": "Messages in bottles",
       "lt": "Žinutės",
       "sv": "Meddelanden",
+      "it": "Messaggi",
       "es": "Mensajes"
     },
     "logout": {
@@ -512,6 +549,7 @@
       "PI": "Walk the plank",
       "lt": "Atsijungti",
       "sv": "Logga ut",
+      "it": "Esci",
       "es": "Cerrar sesión"
     },
     "language": {
@@ -522,11 +560,11 @@
       "PI": "Dialect",
       "lt": "Kalba",
       "sv": "Språk",
+      "it": "Lingua",
       "es": "Idioma"
     },
 		"futures": {
-			"en": "Futures",
-			"lt": "Ateitis"
+			"en": "Futures"
 		},
 		"guild": {
 			"en": "Guild",
@@ -534,9 +572,10 @@
 			"ct": "Meow",
 			"fr": "Guilde",
 			"PI": "Crew",
-			"lt": "Gildija",
+			"lt": "Komanda",
 			"ne": "Gilde",
 			"sv": "Guild",
+			"it": "Gilda",
 			"es": "Gremio"
 		}
   },
@@ -553,6 +592,7 @@
         "lt": "Entai",
         "ne": "Ent",
         "sv": "Ent",
+        "it": "Ent",
         "es": "Ent"
       },
       "desc": {
@@ -564,6 +604,7 @@
         "lt": "Siekdami ryšio su gamta, Entai pakeitė savo DNR. Laukiniai klajokliai sako kad niekada nesutiki to pačio Ento dukart.",
         "ne": "In hun zoektocht naar een band met de natuur hebben de Enten aan hun eigen DNA gesleuteld. Ze zijn een wilde groep nomaden, en ze zeggen dat je dezelfde Ent nooit tweemaal zult tegenkomen.",
         "sv": "Söker en obligation med naturen, enterna mixtrar med sin egen dna. En vild grupp av nomader, de säger att du aldrig kommer att möta samma Ent två gånger.",
+        "it": "Cercando un legame con la natura, gli Ent hanno modificato il loro DNA. Sono un gruppo di nomadi, e si dice che non si può vedere un Ent più di due volte.",
         "es": "En la búsqueda de un lazo con la naturaleza, los Ents alteraron su propio ADN. Son un grupo salvaje de nómades, y dicen que nunca verás al mismo Ent dos veces."
       }
     },
@@ -577,6 +618,7 @@
         "lt": "Robot-Humanoidai",
         "ne": "Machine",
         "sv": "maskin",
+        "it": "Macchina",
         "es": "Máquina"
       },
       "desc": {
@@ -588,6 +630,7 @@
         "lt": "Amžinas žinių siekimas, privedė prie minčių suliejimo su metalu. Jie tapo galingesniais bei išmintigesniais nei žmonės kada buvo.",
         "ne": "De onophoudelijke speurtocht naar kennis leidde ertoe dat sommigen hun geest hebben verbeterd met metaal. Ze zijn veel meer dan mensen ooit waren, maar ook veel minder.",
         "sv": "Den obevekliga strävan efter kunskap leder några att förbättra sina sinnen med metall. De har blivit mycket mer än människan någonsin var, och långt mindre.",
+        "it": "L'incessabile ricerca di conoscenza ha portato alcuni a migliorare i loro cervelli con il metallo. Ora sono diventati molto più di come siano sempre stati gli umani, e molto di meno."
         "es": "La búsqueda incansable del conocimiento llevó a algunos a mejorar sus mentes con metal. Se han convertido en mucho más que lo que los humanos nunca llegaron a ser, y en mucho menos."
       }
     },
@@ -601,6 +644,7 @@
         "lt": "Elitas",
         "ne": "Elite",
         "sv": "Elit",
+        "it": "Elite".
         "es": "Élite"
       },
       "desc": {
@@ -612,6 +656,7 @@
         "lt": "Mėgaudamiesi pagundų malonumu, Elitai dominavo turtingujų klasę.",
         "ne": "De Elite zoekt hun genoegdoening in het genot van de wereld. Ze domineren de rijke aristocratie. Een mooi volk, zolang je niet te diep kijkt.",
         "sv": "Med glädje i njutning av denna värld, har eliter dominerat den förmögna härskande klassen.Vackra människor, så länge du inte gräver för djupt.",
+        "it": "Deliziando i piaceri di questo mondo, gli Elite hanno dominato la ricca classe dirigente. Sono persone bellissime, fino a quando non scavi troppo in profondità.",
         "es": "Disfrutando de los placeres de este mundo, los Élites han dominado la clase rica y dominante. Personas hermosas, siempre y cuando no hurgues muy profundo en ellas."
       }
     },
