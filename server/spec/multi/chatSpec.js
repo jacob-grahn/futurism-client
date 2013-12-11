@@ -1,25 +1,21 @@
 describe('lobby', function() {
 
 	var Chat = require('../../multi/chat');
+	var broadcast = require('../../multi/broadcast');
 
 	var lastMessage = '';
-	var ioMock = {
-		sockets: {
-			in: function(roomName) {
-				return {
-					emit: function(eventName) {
-						lastMessage = roomName + ':' + eventName;
-					}
-				}
-			}
-		}
-	};
-
-	Chat.init(ioMock);
 
 
 	beforeEach(function() {
 		Chat.clear();
+	});
+
+
+	it('should limit messages to 100 chars', function() {
+		var room = new Chat('room');
+		var txt = '!!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!!'; //something like 120 characters
+		room.add({}, txt);
+		expect(broadcast.lastMessage.data.txt.length).toBe(100);
 	});
 
 
@@ -42,7 +38,7 @@ describe('lobby', function() {
 	it('should prune old messages', function() {
 		var room = new Chat('batman');
 		for(var i=0; i<25; i++) {
-			room.add({name:'feilix'}, i);
+			room.add({name:'feilix'}, 'str'+i);
 		}
 		expect(room.getHistory().length).toBe(20);
 	});

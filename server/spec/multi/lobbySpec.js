@@ -55,7 +55,7 @@ describe('lobby', function() {
 		var matchup = lobby.createMatchup(user1, {players:3, pride:50});
 		lobby.joinMatchup(user2, matchup.id);
 		lobby.joinMatchup(user3, matchup.id);
-		expect(broadcast.lastMessage).toContain(':startMatchup:')
+		expect(broadcast.lastMessage.event).toBe('startMatchup');
 	});
 
 });

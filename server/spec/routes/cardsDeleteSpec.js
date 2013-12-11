@@ -43,7 +43,7 @@ describe('cards-delete', function() {
 			session: {
 				userId: 1
 			},
-			account: {
+			user: {
 				group: groups.USER
 			},
 			body: {
@@ -63,7 +63,7 @@ describe('cards-delete', function() {
 			session: {
 				userId: 2
 			},
-			account: {
+			user: {
 				group: groups.USER
 			},
 			body: {
@@ -83,7 +83,7 @@ describe('cards-delete', function() {
 			session: {
 				userId: 5
 			},
-			account: {
+			user: {
 				group: groups.MOD
 			},
 			body: {

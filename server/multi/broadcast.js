@@ -8,14 +8,18 @@
 			io.sockets.in(room).emit(event, data);
 		}
 		else {
-			broadcast.lastMessage = room + ':' + event + ':' + JSON.stringify(data);
+			broadcast.lastMessage = {
+				room: room,
+				event: event,
+				data: data
+			};
 		}
 	};
+
 
 	broadcast.setIo = function(socketIo) {
 		io = socketIo;
 	};
-
 
 
 	module.exports = broadcast;

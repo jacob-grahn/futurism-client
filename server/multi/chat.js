@@ -21,6 +21,7 @@
 		 * @param txt
 		 */
 		var add = function(user, txt) {
+			txt = txt.substr(0, 100);
 			var msg = {user: _.pick(user, 'name', '_id', 'site', 'group'), txt: txt, roomName: roomName};
 			msgs.push(msg);
 			recentMsgs.push(msg);
@@ -80,12 +81,6 @@
 
 
 	Chat.rooms = {};
-
-
-	Chat.init = function(io) {
-		Chat.io = io;
-		return(Chat);
-	};
 
 
 	Chat.getChat = function(roomName) {
