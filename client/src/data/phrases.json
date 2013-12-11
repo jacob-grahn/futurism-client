@@ -1,4 +1,6 @@
 {
+
+
   "languageName": {
     "en": "English",
     "ko": "한국어",
@@ -10,6 +12,8 @@
     "lt": "Lithuanian",
     "sv": "Svenska"
   },
+
+
   "translators": {
     "en": "",
     "ko": "",
@@ -21,6 +25,8 @@
     "lt": "zebriukas",
     "sv": "jonswe"
   },
+
+
   "title": {
     "gameName": {
       "en": "FUTURISM",
@@ -67,6 +73,8 @@
       "es": "Videos educativos"
     }
   },
+
+
   "cardBuilder": {
     "saveAndLoad": {
       "en": "Save n Load",
@@ -179,6 +187,8 @@
       "es": "Vida"
     }
   },
+
+
   "chat": {
     "say": {
       "en": "say",
@@ -203,6 +213,8 @@
       "es": "Escribe para conversar"
     }
   },
+
+
   "deckBuilder": {
     "saveAndLoad": {
       "en": "Save n Load",
@@ -292,6 +304,8 @@
       "es": "Orgullo del mazo"
     }
   },
+
+
   "errorPage": {
     "error": {
       "en": "Error",
@@ -305,6 +319,8 @@
       "es": "Error"
     }
   },
+
+
   "preDeck": {
     "maxPride": {
       "en": "Max Pride",
@@ -318,6 +334,8 @@
       "es": "Máximo orgullo"
     }
   },
+
+
   "lobby": {
     "player": {
       "en": "player",
@@ -407,6 +425,8 @@
       "es": "personas"
     }
   },
+
+
   "nav": {
     "toggle": {
       "en": "Toggle Navigation",
@@ -497,7 +517,10 @@
       "lt": "Kalba",
       "sv": "Språk",
       "es": "Idioma"
-    }
+    },
+		"futureShift": {
+			"en": "Future Shift"
+		}
   },
   "factions": {
     "en": {

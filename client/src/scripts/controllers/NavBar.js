@@ -17,17 +17,22 @@ angular.module('futurism')
 
 
 		$scope.atDeckBuilder = function() {
-			return $scope.path === '/deck-builder';
+			return $scope.path === '/deck-builder' || $scope.path === '/deck-selector';
 		};
 
 
 		$scope.atCardBuilder = function() {
-			return $scope.path === '/card-builder';
+			return $scope.path === '/card-builder' || $scope.path === '/card-selector';
 		};
 
 
 		$scope.atLobby = function() {
 			return $scope.path === '/lobby';
+		};
+
+
+		$scope.atFutureShift = function() {
+			return $scope.path === '/future-shift';
 		};
 
 
