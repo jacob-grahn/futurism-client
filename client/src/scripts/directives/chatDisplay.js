@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('chatDisplay', function(Chat, lang) {
+	.directive('chatDisplay', function(Chat, lang, window, $) {
 		'use strict';
 
 		return {
@@ -13,7 +13,6 @@ angular.module('futurism')
 			link: function (scope, elem) {
 
 				var chat = new Chat(scope.room);
-				var lastScrollTop;
 
 				chat.subscribe();
 				scope.chat = chat;
@@ -22,17 +21,7 @@ angular.module('futurism')
 
 				var scrollToBottom = function() {
 					var log = elem.find('.chat-log');
-					var scrollTop = log[0].scrollTop;
 					var scrollHeight = log[0].scrollHeight - log.height() + 50;
-
-					console.log(scrollTop, scrollHeight);
-
-					if(lastScrollTop >= scrollTop) {
-						console.log('force scroll');
-						log[0].scrollTop -= 15;
-					}
-
-					lastScrollTop = scrollTop;
 
 					log.clearQueue();
 					log.animate({scrollTop: scrollHeight}, 250);
@@ -47,12 +36,20 @@ angular.module('futurism')
 				};
 
 
-				scope.$watch('chat.getReceivedCount()', function() {
+				scope.$watch('chat.getReceivedCount()', function(oldCount, newCount) {
+					if(newCount >= chat.maxMsgs) {
+						var log = elem.find('.chat-log');
+						log[0].scrollTop -= 15;
+					}
 					scrollToBottom();
 				});
 
 
+				$(window).on('resize', scrollToBottom);
+
+
 				scope.$on('$destroy', function() {
+					$(window).off('resize', scrollToBottom);
 					chat.unsubscribe();
 				});
 			}

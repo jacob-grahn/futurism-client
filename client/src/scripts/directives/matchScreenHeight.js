@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('matchScreenHeight', function($, window) {
+	.directive('matchScreenHeight', function($, window, $timeout) {
 
 		return {
 
@@ -50,18 +50,28 @@ angular.module('futurism')
 					var subtract = scope.subtract || 0;
 
 					if(!scope.resizeElement) {
-						elem.height(height - subtract);
+						elem.css({
+							'height': (height - subtract)
+						});
 					}
 					else {
 						var target = elem.find(scope.resizeElement);
-						var elemHeight = elem.height();
-						var targetHeight = target.height();
-						var diff = elemHeight - targetHeight;
-						target.height(height - subtract - diff);
+						var diff = elem.height() - target.height()
+						target.css({
+							'height': (height - subtract - diff)
+						});
 					}
 				};
 				jWindow.on('resize', resizeHandler);
-				resizeHandler();
+
+
+				/**
+				 * call resizeHandler after the template has rendered
+				 * $timeout is a quirky trick to do this
+				 */
+				$timeout(function() {
+					$timeout(resizeHandler)
+				});
 
 
 				/**
@@ -70,7 +80,6 @@ angular.module('futurism')
 				scope.$on('$destroy', function() {
 					jWindow.off('resize', resizeHandler);
 				});
-
 			}
 		}
 

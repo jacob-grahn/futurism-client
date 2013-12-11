@@ -10,7 +10,7 @@ angular.module('futurism')
 		 */
 		var Chat = function(roomName) {
 			var msgs = [];
-			var maxMsgs = 25;
+			var maxMsgs = 35;
 			var receivedCount = 0;
 
 
@@ -103,7 +103,8 @@ angular.module('futurism')
 				unsubscribe: unsubscribe,
 				msgs: msgs,
 				send: send,
-				getReceivedCount: function(){ return receivedCount; }
+				getReceivedCount: function(){ return receivedCount; },
+				maxMsgs: maxMsgs
 			};
 		};
 
