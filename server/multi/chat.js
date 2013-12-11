@@ -3,6 +3,7 @@
 
 	var _ = require('lodash');
 	var broadcast = require('./broadcast');
+	var sanitize = require('validator').sanitize;
 
 
 	/**
@@ -22,6 +23,7 @@
 		 */
 		var add = function(user, txt) {
 			txt = txt.substr(0, 100);
+			txt = sanitize(txt).xss();
 			var msg = {user: _.pick(user, 'name', '_id', 'site', 'group'), txt: txt, roomName: roomName};
 			msgs.push(msg);
 			recentMsgs.push(msg);

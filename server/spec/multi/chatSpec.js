@@ -11,6 +11,13 @@ describe('lobby', function() {
 	});
 
 
+	it('should filter xss attacks', function() {
+		var room = new Chat('room');
+		room.add({}, '<SCRIPT SRC=http://ha.ckers.org/xss.js></SCRIPT>');
+		expect(broadcast.lastMessage.data.txt).toBe('[removed][removed]');
+	});
+
+
 	it('should limit messages to 100 chars', function() {
 		var room = new Chat('room');
 		var txt = '!!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!! !!!!!!!!!!'; //something like 120 characters
