@@ -3,7 +3,7 @@
     "en": "English",
     "ko": "한국어",
     "ct": "Meoww",
-    "fr": "Français!",
+    "fr": "Français",
     "PI": "Pirate",
     "es": "Español",
     "ne": "Dutch",
@@ -17,7 +17,7 @@
     "ko": "",
     "ct": "Katy Purry",
     "es": "aaaaaa123456789",
-    "fr": "Omegaguineapig, JV-TRUC",
+    "fr": "JV-TRUC",
     "ne": "larsyuipo",
     "PI": "esp-eon",
     "lt": "zebriukas",
@@ -458,25 +458,29 @@
       "en": "futures",
       "lt": "Ateitis",
       "ct": "meow",
-      "sv": "framtid"
+      "sv": "framtid",
+      "fr": "Futurs"
     },
     "shortGame": {
       "en": "Skirmish",
       "lt": "Susiremimas",
       "ct": "meow",
-      "sv": "Skärmytslig"
+      "sv": "Skärmytslig",
+      "fr": "Escarmouche"
     },
     "mediumGame": {
       "en": "Battle",
       "lt": "Kova",
       "ct": "meow",
-      "sv": "Slag"
+      "sv": "Slag",
+      "fr": "Bataille"
     },
     "longGame": {
       "en": "War",
       "lt": "Karas",
       "ct": "meow",
-      "sv": "Krig"
+      "sv": "Krig",
+      "fr": "Guerre"
     },
     "customGame": {
       "en": "Custom",
@@ -636,7 +640,8 @@
     "futures": {
       "en": "Futures",
       "ct": "meow",
-      "lt": "Ateitis"
+      "lt": "Ateitis",
+      "fr": "Futurs"
     },
     "guild": {
       "en": "Guild",
@@ -1118,7 +1123,7 @@
         "en": "Attack without taking damage.",
         "ko": "피해를하지 않고 공격한다.",
         "ct": "mewoowo",
-        "fr": "Attaque sans subir de dégâts.",
+        "fr": "Attaquer sans subir de dégâts.",
         "PI": "Attack without reciving fire.",
         "lt": "Puoldamas nepraranda gyvybės taškų.",
         "ne": "Val aan zonder zelf schaden te ondervinden.",
