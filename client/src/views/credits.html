@@ -1,0 +1,13 @@
+<div id="credits" class="inverse">
+
+	<h1>Translators</h1>
+	<ul>
+		<li ng-repeat="(languageId, translator) in lang.phrases.translators">{{lang.phrases.languageName[languageId]}}: {{translator}}</li>
+	</ul>
+
+	<h1>Services and Software</h1>
+	<ul>
+		<li ng-repeat="service in services">{{service}}</li>
+	</ul>
+
+</div>

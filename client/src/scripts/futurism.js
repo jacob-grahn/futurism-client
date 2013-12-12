@@ -16,6 +16,7 @@ angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', '
 			when('/language', {templateUrl: 'views/language.html', controller: 'LanguageCtrl'}).
 			when('/futures', {templateUrl: 'views/futures.html', controller: 'FuturesCtrl'}).
 			when('/guild', {templateUrl: 'views/guild.html', controller: 'GuildCtrl'}).
+			when('/credits', {templateUrl: 'views/credits.html', controller: 'CreditsCtrl'}).
 			otherwise({redirectTo: '/title'});
 
 		$locationProvider.html5Mode(true).hashPrefix('#');
