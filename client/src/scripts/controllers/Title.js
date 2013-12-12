@@ -1,5 +1,4 @@
 angular.module('futurism')
-	.controller('TitleCtrl', function($scope, lang) {
+	.controller('TitleCtrl', function() {
 		'use strict';
-		$scope.lang = lang;
 	});

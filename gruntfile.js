@@ -241,6 +241,7 @@ module.exports = function (grunt) {
 			}
 		},
 
+
 		// Allow the use of non-minsafe AngularJS files. Automatically makes it
 		// minsafe compatible so Uglify does not destroy the ng references
 		ngmin: {
@@ -254,12 +255,14 @@ module.exports = function (grunt) {
 			}
 		},
 
+
 		// Replace Google CDN references
 		cdnify: {
 			dist: {
 				html: ['<%= yeoman.dist %>/*.html']
 			}
 		},
+
 
 		// Copies remaining files to places other tasks can use
 		copy: {
@@ -294,6 +297,7 @@ module.exports = function (grunt) {
 			}
 		},
 
+
 		// Run some tasks in parallel to speed up the build process
 		concurrent: {
 			server: [
@@ -313,31 +317,6 @@ module.exports = function (grunt) {
 			]
 		},
 
-		// By default, your `index.html`'s <!-- Usemin block --> will take care of
-		// minification. These next options are pre-configured if you do not wish
-		// to use the Usemin blocks.
-		// cssmin: {
-		//   dist: {
-		//     files: {
-		//       '<%= yeoman.dist %>/styles/main.css': [
-		//         '.tmp/styles/{,*/}*.css',
-		//         '<%= yeoman.app %>/styles/{,*/}*.css'
-		//       ]
-		//     }
-		//   }
-		// },
-		// uglify: {
-		//   dist: {
-		//     files: {
-		//       '<%= yeoman.dist %>/scripts/scripts.js': [
-		//         '<%= yeoman.dist %>/scripts/scripts.js'
-		//       ]
-		//     }
-		//   }
-		// },
-		// concat: {
-		//   dist: {}
-		// },
 
 		// Test settings
 		karma: {
@@ -379,7 +358,21 @@ module.exports = function (grunt) {
 				console.log('gamble');
 				return Math.random() < 0.05 ? false : true;
 			}
+		},
+
+
+		// e2e test runner
+		protractor: {
+			options: {
+				configFile: "protractor.conf.js",
+				keepAlive: true, // If false, the grunt process stops when the test fails.
+				noColor: false, // If true, protractor will not use colors in its output.
+				args: {
+					// Arguments passed to the command
+				}
+			}
 		}
+
 	});
 
 

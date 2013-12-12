@@ -6,3 +6,4 @@ dist
 client/src/bower_components
 server/config/env.js
 Error.log
+protractor.conf.js

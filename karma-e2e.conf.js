@@ -4,7 +4,7 @@
 module.exports = function(config) {
   config.set({
     // base path, that will be used to resolve files and exclude
-    basePath: 'client),
+    basePath: 'client/',
 
     // testing framework to use (jasmine/mocha/qunit/...)
     frameworks: ['ng-scenario'],
@@ -37,7 +37,7 @@ module.exports = function(config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers: ['Chrome'],
+    browsers: ['Firefox'],
 
 
     // Continuous Integration mode
