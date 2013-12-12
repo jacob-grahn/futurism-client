@@ -163,7 +163,7 @@
       "ko": "새로운",
       "ct": "meow",
       "fr": "Nouvelle",
-      "PI": "Plunder new Booty",
+      "PI": "Plunder new booty",
       "lt": "Naujas",
       "ne": "Nieuw",
       "sv": "Nytt",
@@ -460,6 +460,7 @@
       "ct": "meow",
       "sv": "framtid",
       "fr": "Futurs"
+      "PI": "Days after tomorrow"
     },
     "shortGame": {
       "en": "Skirmish",
@@ -467,6 +468,7 @@
       "ct": "meow",
       "sv": "Skärmytslig",
       "fr": "Escarmouche"
+      "PI": "Skirmish"
     },
     "mediumGame": {
       "en": "Battle",
@@ -474,6 +476,7 @@
       "ct": "meow",
       "sv": "Slag",
       "fr": "Bataille"
+      "PI": "Raid"
     },
     "longGame": {
       "en": "War",
@@ -481,6 +484,7 @@
       "ct": "meow",
       "sv": "Krig",
       "fr": "Guerre"
+      "PI": "War"
     },
     "customGame": {
       "en": "Custom",
@@ -630,7 +634,7 @@
       "ct": "Taal",
       "ne": "Taal",
       "fr": "Langue",
-      "PI": "Dialect",
+      "PI": "Tongues",
       "lt": "Kalba",
       "sv": "Språk",
       "es": "Idioma",
@@ -642,6 +646,7 @@
       "ct": "meow",
       "lt": "Ateitis",
       "fr": "Futurs"
+      "PI": "Days after tomorrow"
     },
     "guild": {
       "en": "Guild",
