@@ -26,7 +26,6 @@ angular.module('futurism')
 
 
 		var create = function(callback) {
-
 			_checkLogins(function(err) {
 				if(err) {
 					return callback(err);

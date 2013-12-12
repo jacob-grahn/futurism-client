@@ -17,6 +17,7 @@ angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', '
 			when('/instructions', {templateUrl: 'views/instructions.html', controller: 'InstructionsCtrl'}).
 			when('/language', {templateUrl: 'views/language.html', controller: 'LanguageCtrl'}).
 			when('/lobby', {templateUrl: 'views/lobby.html', controller: 'LobbyCtrl'}).
+			when('/login', {templateUrl: 'views/login.html', controller: 'LoginCtrl'}).
 			when('/title', {templateUrl: 'views/title.html', controller: 'TitleCtrl'}).
 			otherwise({redirectTo: '/title'});
 
