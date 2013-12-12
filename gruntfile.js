@@ -40,6 +40,12 @@ module.exports = function (grunt) {
 				tasks: ['develop', 'wait'],
 				options: {nospawn: true}
 			},
+			server_test: {
+				files: [
+					'server/**/*.js'
+				],
+				tasks: ['jasmine_node']
+			},
 			data: {
 				files: ['{.tmp,<%= yeoman.app %>}/data/*']
 			},
@@ -47,7 +53,7 @@ module.exports = function (grunt) {
 				files: ['{.tmp,<%= yeoman.app %>}/scripts/**/*.js']
 				//tasks: ['newer:jshint:all']
 			},
-			jsTest: {
+			clientTest: {
 				files: ['test/spec/{,*/}*.js'],
 				tasks: ['newer:jshint:test', 'karma']
 			},
@@ -391,10 +397,12 @@ module.exports = function (grunt) {
 		]);
 	});
 
+
 	grunt.registerTask('server', function () {
 		grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
 		grunt.task.run(['serve']);
 	});
+
 
 	grunt.registerTask('test', [
 		'clean:server',
@@ -403,6 +411,13 @@ module.exports = function (grunt) {
 		'jasmine_node',
 		'karma'
 	]);
+
+
+	grunt.registerTask('watch-server-tests', [
+		'jasmine_node',
+		'watch:server_test'
+	]);
+
 
 	grunt.registerTask('build', [
 		'clean:dist',
@@ -418,6 +433,7 @@ module.exports = function (grunt) {
 		'rev',
 		'usemin'
 	]);
+
 
 	grunt.registerTask('default', [
 		'newer:jshint',
