@@ -100,6 +100,14 @@
 
 
 		/**
+		 * Delete whatever decks the accounts may already have loaded
+		 */
+		_.each(accounts, function(account) {
+			delete account.deck;
+		});
+
+
+		/**
 		 * Call next if every account has loaded a deck
 		 */
 		var nextIfDone = function() {
@@ -140,7 +148,6 @@
 		 * Give people 30 seconds to pick a deck before leaving them behind
 		 * @type {*}
 		 */
-		console.log('deckPreload will time out in '+rules.prepTime);
 		var forceStartTimeout = setTimeout(next, rules.prepTime*1000);
 
 

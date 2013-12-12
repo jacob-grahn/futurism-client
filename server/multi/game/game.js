@@ -27,6 +27,14 @@
 
 
 		/**
+		 * just exist if no players are here
+		 */
+		if(accounts.length === 0) {
+			return false;
+		}
+
+
+		/**
 		 * initialize everyone's account
 		 */
 		_.each(accounts, function(account) {
@@ -77,8 +85,8 @@
 			var accountIndex = (turn+1) % (accounts.length);
 			var account = accounts[accountIndex];
 			activeAccount = account;
-			emit('sys', account.name+'\'s turn');
-			emit('gameStatus', getStatus());
+			emit('turn', _.pick(account, '_id', 'name'));
+			//emit('gameStatus', getStatus());
 		};
 
 

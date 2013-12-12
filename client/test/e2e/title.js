@@ -23,15 +23,13 @@ describe('title', function() {
 
 
 	it('login button should go to login or lobby', function() {
-
 		var title = new Title();
 		title.loginBt.click();
-		expect(ptor.getCurrentUrl()).toBe('http://localhost:9000/lobby');
+		expect(ptor.getCurrentUrl()).toContain('/lobby');
 	});
 
 
 	it('instructions should to go instructions', function() {
-
 		var title = new Title();
 		title.instructionsBt.click();
 		expect(ptor.getCurrentUrl()).toContain('/instructions');
@@ -39,7 +37,6 @@ describe('title', function() {
 
 
 	it('credits should go to credits', function() {
-		
 		var title = new Title();
 		title.creditsBt.click();
 		expect(ptor.getCurrentUrl()).toContain('/credits');

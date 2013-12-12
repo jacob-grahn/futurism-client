@@ -43,7 +43,6 @@ module.exports = function(io) {
 	var getRecentBans = function() {
 		var params = {pass: process.env.GAMEHUB_KEY, game: 'futurism', procedure: 'get_recent_bans', params: JSON.stringify([])};
 		request.post({url: 'http://gamehub.jiggmin.com/call.php', form: params}, function(err, response, body) {
-			console.log('get recent bans', err, body);
 			if(err) {
 				return err;
 			}

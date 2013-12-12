@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('GamePreDeckCtrl', function($scope, $location, $routeParams, DeckResource, socket) {
+	.controller('GamePreDeckCtrl', function($scope, $location, $routeParams, DeckResource, socket, errorHandler) {
 		'use strict';
 
 		$scope.decks = DeckResource.query(function(){});
@@ -26,6 +26,9 @@ angular.module('futurism')
 				$scope.$apply(function() {
 					$location.url('/game/' + $routeParams.gameId);
 				});
+			}
+			else {
+				errorHandler.handle(data.error);
 			}
 		});
 

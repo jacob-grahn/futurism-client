@@ -68,7 +68,7 @@
 			if(matchup) {
 				account.matchupId = matchupId;
 				matchup.users.push(account);
-				broadcast(roomName, 'joinMatchup', {id: matchup.id, user:account});
+				broadcast(roomName, 'joinMatchup', {id: matchup.id, user: _.pick(account, '_id', 'name', 'site', 'group')});
 
 				if(matchup.users.length >= matchup.rules.players) {
 					startMatchup(matchup);
@@ -111,9 +111,9 @@
 
 			Chat.safeCreate('chat-' + gameId);
 
-			console.log('starting deck preload', gameId, matchup.users, matchup.rules);
+			console.log('starting deck preload', gameId);
 			DeckPreload.startGroup(gameId, matchup.users, matchup.rules, function(err, accounts) {
-				console.log('starting game', accounts, matchup.rules, gameId);
+				console.log('starting game', gameId);
 				new Game(accounts, matchup.rules, gameId);
 			});
 
@@ -219,7 +219,7 @@
 	 * shortcut to turn a socket into an account, lookup the requested lobby, then call a function on that lobby
 	 * @param socket
 	 * @param data
-	 * @param fnName
+	 * @param callback
 	 */
 	Lobby.pass = function(socket, data, callback) {
 		var lobby = lobbyLookup.idToValue(data.lobbyName);

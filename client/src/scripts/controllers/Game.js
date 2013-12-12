@@ -1,34 +1,25 @@
 angular.module('futurism')
-	.controller('GameCtrl', function($scope, $routeParams) {
+	.controller('GameCtrl', function($scope, $routeParams, socket) {
 		'use strict';
 
 		$scope.gameId = $routeParams.gameId;
 		$scope.columnCount = 4;
 		$scope.rowCount = 3;
+		$scope.status = {};
 
-		$scope.players = [
-			{
-				name: 'me',
-				team: 0,
-				friend: true,
-				columns: [
-					[{}, {}, {}],
-					[{}, {}, {}],
-					[{}, {}, {}],
-					[{}, {}, {}]
-				]
-			},
-			{
-				name: 'you',
-				team: 1,
-				friend: false,
-				columns: [
-					[{card:true}, {card:true}, {card:true}],
-					[{}, {}, {}],
-					[{card:true}, {card:true}, {}],
-					[{card:true}, {}, {}]
-				]
-			}
-		];
+
+		socket.on('gameStatus', function(data) {
+			console.log('gameStatus', data);
+			$scope.status = data;
+		});
+
+
+		socket.authEmit('subscribe', $scope.gameId);
+		socket.authEmit('gameStatus', $scope.gameId);
+
+
+		$scope.$on('$destroy', function() {
+			socket.authEmit('unsubscribe', $scope.gameId);
+		});
 
 	});

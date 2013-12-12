@@ -20,10 +20,8 @@
 		initPrideProgress(account, rules);
 		account.cards = _.cloneDeep(account.deck.cards);
 		account.gameId = gameId;
-		account.hand = [];
+		account.hand = [makeAccountCard(account)];
 		account.graveyard = [];
-		account.accountCard = makeAccountCard(account);
-		account.playedSelf = false;
 	};
 
 
