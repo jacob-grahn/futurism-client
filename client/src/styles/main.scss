@@ -33,8 +33,12 @@ h1 {
   color: $light-blend;
 }
 
-h1.inverse {
+h1.inverse, .inverse h1 {
   color: $light-contrast;
+}
+
+.inverse {
+	color: white;
 }
 
 ul {
