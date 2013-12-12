@@ -1,7 +1,8 @@
 describe('title', function() {
 
-	var Title = function() {
+	var ptor = protractor.getInstance();
 
+	var Title = function() {
 		this.gameName = element(by.binding('lang.title.gameName'));
 		this.loginBt = element(by.binding('lang.title.login'));
 		this.instructionsBt = element(by.binding('lang.title.instructions'));
@@ -21,8 +22,8 @@ describe('title', function() {
 	});
 
 
-	it('login button should go to lobby', function() {
-		var ptor = protractor.getInstance();
+	it('login button should go to login or lobby', function() {
+
 		var title = new Title();
 		title.loginBt.click();
 		expect(ptor.getCurrentUrl()).toBe('http://localhost:9000/lobby');
@@ -30,18 +31,18 @@ describe('title', function() {
 
 
 	it('instructions should to go instructions', function() {
-		var ptor = protractor.getInstance();
+
 		var title = new Title();
 		title.instructionsBt.click();
-		expect(ptor.getCurrentUrl()).toBe('http://localhost:9000/instructions');
+		expect(ptor.getCurrentUrl()).toContain('/instructions');
 	});
 
 
 	it('credits should go to credits', function() {
-		var ptor = protractor.getInstance();
+		
 		var title = new Title();
 		title.creditsBt.click();
-		expect(ptor.getCurrentUrl()).toBe('http://localhost:9000/credits');
+		expect(ptor.getCurrentUrl()).toContain('/credits');
 	});
 
 });
