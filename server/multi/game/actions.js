@@ -97,7 +97,7 @@
 		secr: {
 			targets: [filters.enemy, filters.front],
 			use: function(target) {
-				target.card.tired++;
+				target.card.moves--;
 			}
 		},
 
@@ -187,7 +187,7 @@
 		strt: {
 			targets: [filters.friend, filters.full],
 			use: function(target) {
-				target.card.tired--;
+				target.card.moves++;
 			}
 		},
 
