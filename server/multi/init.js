@@ -5,7 +5,7 @@ module.exports = function(io) {
 	var Lobby = require('./lobby');
 	var Chat = require('./chat');
 	var gamehub = require('./gamehub')(io);
-	var deckPreload = require('./deckPreload');
+	var deckPreload = require('./game/loadup');
 	var broadcast = require('./broadcast');
 
 	var lobby = Lobby('brutus');
@@ -45,7 +45,7 @@ module.exports = function(io) {
 
 		Lobby.initSocket(socket);
 		Chat.initSocket(socket);
-		deckPreload.initSocket(socket);
+		loadup.initSocket(socket);
 
 		socket.emit('ready');
 	}

@@ -331,20 +331,6 @@ describe('filters', function() {
 	];
 
 
-	// add targets to columns
-	/*(function (targets) {
-		var column = [];
-		for(var i=0; i<targets.length; i++) {
-			var target = targets[i];
-			target.column = column;
-			column.push(target);
-			if(column.length === 3) {
-				column = [];
-			}
-		}
-	}(targets));*/
-
-
 	it('should find empty targets', function() {
 		var emptyTargets = filters.empty(targets);
 		var results = _.map(emptyTargets, function(target) {

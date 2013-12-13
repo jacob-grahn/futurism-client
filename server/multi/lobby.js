@@ -4,7 +4,7 @@
 	var sharedFns = require('../../shared/fns');
 	var fns = require('../fns/fns');
 	var Game = require('./game/game');
-	var DeckPreload = require('./deckPreload');
+	var DeckPreload = require('./game/loadup');
 	var Chat = require('./chat');
 	var broadcast = require('./broadcast');
 	var Lookup = require('../fns/lookup');

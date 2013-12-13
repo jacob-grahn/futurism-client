@@ -350,7 +350,7 @@ module.exports = function (grunt) {
 			matchall: false,
 			captureExceptions: true,
 			extensions: 'js',
-			specNameMatcher: 'Spec',
+			specNameMatcher: 'oadupSpec',
 			projectRoot: '<%= yeoman.server %>/spec'
 		},
 
@@ -415,6 +415,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('watch-server-tests', [
 		'jasmine_node',
+		'wait',
 		'watch:server_test'
 	]);
 

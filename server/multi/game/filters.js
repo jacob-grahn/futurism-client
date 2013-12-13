@@ -3,8 +3,6 @@
 
 	var _ = require('lodash');
 	var filters = {};
-	var mapWidth = 4;
-	var mapHeight = 3;
 
 
 	filters.empty = function(targets, me) {

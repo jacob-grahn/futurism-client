@@ -4,7 +4,7 @@
 	var _ = require('lodash');
 
 
-	var generateTargets = function(columns, rows, playerId, teamId) {
+	var generateTargets = function(columns, rows, playerId, team) {
 		var targets = [];
 		for(var i=0; i<columns; i++) {
 			targets[i] = [];
@@ -13,7 +13,7 @@
 					row: j,
 					column: i,
 					playerId: playerId,
-					teamId: teamId
+					team: team
 				}
 			}
 		}
@@ -28,7 +28,7 @@
 
 		_.each(players, function(player) {
 			self.areas[player._id] = {
-				targets: generateTargets(rules.columns, rules.rows, player._id, player.teamId)
+				targets: generateTargets(rules.columns, rules.rows, player._id, player.team)
 			}
 		});
 

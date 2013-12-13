@@ -6,7 +6,7 @@
 	var factions = require('../../../shared/factions');
 	var defaultRules = require('./defaultRules');
 	var gameLookup = require('./gameLookup');
-	var initAccount = require('./initAccount');
+	var initAccount = require('./initAccounts');
 	var Table = require('./table');
 	var broadcast = require('../broadcast');
 
@@ -38,7 +38,7 @@
 		 * initialize everyone's account
 		 */
 		_.each(accounts, function(account) {
-			initAccount(account, rules, gameId);
+			initAccounts(account, rules, gameId);
 		});
 
 

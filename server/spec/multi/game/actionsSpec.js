@@ -17,37 +17,32 @@ describe('game/actions', function() {
 			areas: {
 				'1': {
 					targets: [
-						[{row:0,column:0,playerId:1,teamId:1}, {row:0,column:1,playerId:1,teamId:1}, {row:0,column:2,playerId:1,teamId:1}, {row:0,column:3,playerId:1,teamId:1}],
-						[{row:1,column:0,playerId:1,teamId:1}, {row:1,column:1,playerId:1,teamId:1}, {row:1,column:2,playerId:1,teamId:1}, {row:1,column:3,playerId:1,teamId:1}],
-						[{row:2,column:0,playerId:1,teamId:1}, {row:2,column:1,playerId:1,teamId:1}, {row:2,column:2,playerId:1,teamId:1}, {row:2,column:3,playerId:1,teamId:1}]
+						[{row:0,column:0,playerId:1,team:1}, {row:0,column:1,playerId:1,team:1}, {row:0,column:2,playerId:1,team:1}, {row:0,column:3,playerId:1,team:1}],
+						[{row:1,column:0,playerId:1,team:1}, {row:1,column:1,playerId:1,team:1}, {row:1,column:2,playerId:1,team:1}, {row:1,column:3,playerId:1,team:1}],
+						[{row:2,column:0,playerId:1,team:1}, {row:2,column:1,playerId:1,team:1}, {row:2,column:2,playerId:1,team:1}, {row:2,column:3,playerId:1,team:1}]
 					]
 				},
 				'2': {
 					targets: [
-						[{row:0,column:0,playerId:2,teamId:2}, {row:0,column:1,playerId:2,teamId:2}, {row:0,column:2,playerId:2,teamId:2}, {row:0,column:3,playerId:2,teamId:2}],
-						[{row:1,column:0,playerId:2,teamId:2}, {row:1,column:1,playerId:2,teamId:2}, {row:1,column:2,playerId:2,teamId:2}, {row:1,column:3,playerId:2,teamId:2}],
-						[{row:2,column:0,playerId:2,teamId:2}, {row:2,column:1,playerId:2,teamId:2}, {row:2,column:2,playerId:2,teamId:2}, {row:2,column:3,playerId:2,teamId:2}]
+						[{row:0,column:0,playerId:2,team:2}, {row:0,column:1,playerId:2,team:2}, {row:0,column:2,playerId:2,team:2}, {row:0,column:3,playerId:2,team:2}],
+						[{row:1,column:0,playerId:2,team:2}, {row:1,column:1,playerId:2,team:2}, {row:1,column:2,playerId:2,team:2}, {row:1,column:3,playerId:2,team:2}],
+						[{row:2,column:0,playerId:2,team:2}, {row:2,column:1,playerId:2,team:2}, {row:2,column:2,playerId:2,team:2}, {row:2,column:3,playerId:2,team:2}]
 					]
 				},
 				'3': {
 					targets: [
-						[{row:0,column:0,playerId:3,teamId:2}, {row:0,column:1,playerId:3,teamId:2}, {row:0,column:2,playerId:3,teamId:2}, {row:0,column:3,playerId:3,teamId:2}],
-						[{row:1,column:0,playerId:3,teamId:2}, {row:1,column:1,playerId:3,teamId:2}, {row:1,column:2,playerId:3,teamId:2}, {row:1,column:3,playerId:3,teamId:2}],
-						[{row:2,column:0,playerId:3,teamId:2}, {row:2,column:1,playerId:3,teamId:2}, {row:2,column:2,playerId:3,teamId:2}, {row:2,column:3,playerId:3,teamId:2}]
+						[{row:0,column:0,playerId:3,team:2}, {row:0,column:1,playerId:3,team:2}, {row:0,column:2,playerId:3,team:2}, {row:0,column:3,playerId:3,team:2}],
+						[{row:1,column:0,playerId:3,team:2}, {row:1,column:1,playerId:3,team:2}, {row:1,column:2,playerId:3,team:2}, {row:1,column:3,playerId:3,team:2}],
+						[{row:2,column:0,playerId:3,team:2}, {row:2,column:1,playerId:3,team:2}, {row:2,column:2,playerId:3,team:2}, {row:2,column:3,playerId:3,team:2}]
 					]
 				}
 			}
 		};
 
 
-		/*board.getTarget = function(playerId, row, column) {
-			return board.areas[playerId].targets[row][column];
-		};*/
-
-
 		player1 = {
 			_id: 1,
-			teamId: 1,
+			team: 1,
 			hand: [],
 			graveyard: [],
 			cards: [],
@@ -57,7 +52,7 @@ describe('game/actions', function() {
 
 		player2 = {
 			_id: 2,
-			teamId: 2,
+			team: 2,
 			hand: [],
 			graveyard: [],
 			cards: [],
@@ -67,7 +62,7 @@ describe('game/actions', function() {
 
 		player3 = {
 			_id: 3,
-			teamId: 2,
+			team: 2,
 			hand: [],
 			graveyard: [],
 			cards: [],

@@ -8,7 +8,7 @@
 	var Player = function(account) {
 		var self = this;
 		self._id = account._id;
-		self.teamId = self._id;
+		self.team = self._id;
 		self.name = account.name;
 		self.site = account.site;
 		self.hand = [];

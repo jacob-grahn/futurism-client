@@ -7,17 +7,17 @@ describe('game/board', function() {
 	beforeEach(function() {
 		player1 = {
 			_id: 1,
-			teamId: 1
+			team: 1
 		};
 
 		player2 = {
 			_id: 2,
-			teamId: 2
+			team: 2
 		};
 
 		player3 = {
 			_id: 3,
-			teamId: 2
+			team: 2
 		};
 
 		rules = {
@@ -49,11 +49,11 @@ describe('game/board', function() {
 	});
 
 
-	it('should store playerId and teamId in targets', function() {
+	it('should store playerId and team in targets', function() {
 		var board = new Board([player1, player2, player3], rules);
 		expect(board.target(1,0,0).playerId).toBe(1);
-		expect(board.target(2,0,0).teamId).toBe(2);
-		expect(board.target(3,0,0).teamId).toBe(2);
+		expect(board.target(2,0,0).team).toBe(2);
+		expect(board.target(3,0,0).team).toBe(2);
 	});
 
 
