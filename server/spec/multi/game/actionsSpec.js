@@ -1,75 +1,135 @@
-describe('filters', function() {
+describe('game/actions', function() {
 	'use strict';
 
 	var _ = require('lodash');
 	var actions = require('../../../multi/game/actions.js');
-	var target;
-	var srcTarget;
-	var emptyTarget;
+	var board, player1, player2, player3, weakCard, strongCard;
 
-
-	var user1 = {
-		_id: 1,
-		hand: [],
-		graveyard: [],
-		cardsToPlay: 0
-	};
-
-	var user2 = {
-		_id: 2,
-		hand: [],
-		graveyard: [],
-		cardsToPlay: 0
+	var target = function(playerId, row, column) {
+		return board.areas[playerId].targets[column][row];
 	};
 
 
 	beforeEach(function() {
-		target = {
-			account: user1,
-			columnNum: 0,
-			rowNum: 0,
-			card: {
-				name: 'Bertha',
-				_id: 1,
-				abilities: ['zzzz', 'blah'],
-				health: 2,
-				attack: 3,
-				tired: 0,
-				shield: 0,
-				poison: 0,
-				attackBuf: 0
+
+		board = {
+			future: 0,
+			areas: {
+				'1': {
+					targets: [
+						[{row:0,column:0,playerId:1,teamId:1}, {row:0,column:1,playerId:1,teamId:1}, {row:0,column:2,playerId:1,teamId:1}, {row:0,column:3,playerId:1,teamId:1}],
+						[{row:1,column:0,playerId:1,teamId:1}, {row:1,column:1,playerId:1,teamId:1}, {row:1,column:2,playerId:1,teamId:1}, {row:1,column:3,playerId:1,teamId:1}],
+						[{row:2,column:0,playerId:1,teamId:1}, {row:2,column:1,playerId:1,teamId:1}, {row:2,column:2,playerId:1,teamId:1}, {row:2,column:3,playerId:1,teamId:1}]
+					]
+				},
+				'2': {
+					targets: [
+						[{row:0,column:0,playerId:2,teamId:2}, {row:0,column:1,playerId:2,teamId:2}, {row:0,column:2,playerId:2,teamId:2}, {row:0,column:3,playerId:2,teamId:2}],
+						[{row:1,column:0,playerId:2,teamId:2}, {row:1,column:1,playerId:2,teamId:2}, {row:1,column:2,playerId:2,teamId:2}, {row:1,column:3,playerId:2,teamId:2}],
+						[{row:2,column:0,playerId:2,teamId:2}, {row:2,column:1,playerId:2,teamId:2}, {row:2,column:2,playerId:2,teamId:2}, {row:2,column:3,playerId:2,teamId:2}]
+					]
+				},
+				'3': {
+					targets: [
+						[{row:0,column:0,playerId:3,teamId:2}, {row:0,column:1,playerId:3,teamId:2}, {row:0,column:2,playerId:3,teamId:2}, {row:0,column:3,playerId:3,teamId:2}],
+						[{row:1,column:0,playerId:3,teamId:2}, {row:1,column:1,playerId:3,teamId:2}, {row:1,column:2,playerId:3,teamId:2}, {row:1,column:3,playerId:3,teamId:2}],
+						[{row:2,column:0,playerId:3,teamId:2}, {row:2,column:1,playerId:3,teamId:2}, {row:2,column:2,playerId:3,teamId:2}, {row:2,column:3,playerId:3,teamId:2}]
+					]
+				}
 			}
-		};
-		srcTarget = {
-			account: user2,
-			columnNum: 0,
-			rowNum: 1,
-			card: {
-				name: 'Sulu',
-				_id: 1,
-				abilities: ['piza', 'zzzz'],
-				health: 3,
-				attack: 1,
-				tired: 0,
-				shield: 0,
-				poison: 0,
-				attackBuf: 0
-			}
-		};
-		emptyTarget = {
-			card: null
 		};
 
-		var column = [target, srcTarget, emptyTarget];
-		target.column = column;
-		srcTarget.column = column;
-		emptyTarget.column = column;
-		user1.columns = [_.clone(column)];
-		user2.columns = [_.clone(column)];
-		user1.hand = [];
-		user2.hand = [];
-		user1.graveyard = user2.graveyard = [];
-		user1.cardsToPlay = user2.cardsToPlay = 0;
+
+		/*board.getTarget = function(playerId, row, column) {
+			return board.areas[playerId].targets[row][column];
+		};*/
+
+
+		player1 = {
+			_id: 1,
+			teamId: 1,
+			hand: [],
+			graveyard: [],
+			cards: [],
+			pride: 0
+		};
+
+
+		player2 = {
+			_id: 2,
+			teamId: 2,
+			hand: [],
+			graveyard: [],
+			cards: [],
+			pride: 0
+		};
+
+
+		player3 = {
+			_id: 3,
+			teamId: 2,
+			hand: [],
+			graveyard: [],
+			cards: [],
+			pride: 0
+		};
+
+
+		weakCard = {
+			_id: 'cssf',
+			attack: 1,
+			health: 1,
+			abilities: ['abom', 'tree'],
+			tired: 0,
+			shield: 0,
+			pride: 1,
+			hero: 0,
+			attackBuf: 0
+		};
+
+
+		strongCard = {
+			_id: 'bloop',
+			attack: 9,
+			health: 9,
+			abilities: ['prci'],
+			tired: 0,
+			shield: 0,
+			pride: 9,
+			hero: 0,
+			attackBuf: 0
+		};
+	});
+
+
+
+
+
+	//////////////////////////////////////////////////////////////////////////////////
+	// global
+	//////////////////////////////////////////////////////////////////////////////////
+
+	it('attack should trade blows with another card', function() {
+		target(1,0,0).card = strongCard;
+		target(2,0,0).card = weakCard;
+		actions.attk.use(target(1,0,0), target(2,0,0));
+		expect(target(1,0,0).card.health).toBe(8);
+		expect(target(2,0,0).card.health).toBe(-8);
+	});
+
+
+	it('move should move a card to an empty owned target', function() {
+		target(1,0,0).card = strongCard;
+		actions.move.use(target(1,0,0), target(1,1,1));
+		expect(target(1,0,0).card).toBeFalsy();
+		expect(target(1,1,1).card).toBe(strongCard);
+	});
+
+
+	it('rally should generate pride fot that cards owner', function() {
+		target(1,0,0).card = strongCard;
+		actions.rlly.use(target(1,0,0), player1);
+		expect(player1.pride).toBe(1);
 	});
 
 
@@ -77,147 +137,171 @@ describe('filters', function() {
 	// ent
 	//////////////////////////////////////////////////////////////////////////////////
 
-
 	it('heal should increase health', function() {
-		actions.heal.use(target);
-		expect(target.card.health).toBe(3);
+		target(1,0,0).card = strongCard;
+		actions.heal.use(target(1,0,0));
+		expect(target(1,0,0).card.health).toBe(10);
 	});
 
 
 	it('tree should grow a tree', function() {
-		actions.tree.use(target);
-		expect(target.card.title).toBe('TREE');
+		actions.tree.use(target(1,0,0));
+		expect(target(1,0,0).card.title).toBe('TREE');
 	});
 
 
 	it('abom should join two cards together', function() {
-		actions.abom.use(target, srcTarget);
-		expect(target.card).toBe(null);
-		expect(srcTarget.card.health).toBe(5);
-		expect(srcTarget.card.attack).toBe(4);
-		expect(srcTarget.card.abilities).toContain('zzzz', 'blah', 'piza')
+		target(1,0,0).card = strongCard;
+		target(1,3,0).card = weakCard;
+		actions.abom.use(target(1,0,0), target(1,3,0));
+		expect(target(1,3,0).card).toBeFalsy();
+		expect(target(1,0,0).card.health).toBe(10);
+		expect(target(1,0,0).card.attack).toBe(10);
+		expect(target(1,0,0).card.abilities).toContain('abom', 'tree', 'prci')
 	});
 
 
 	it('secr should mark a card as tired', function() {
-		actions.secr.use(target);
-		expect(target.card.tired).toBe(1);
+		target(1,0,0).card = weakCard;
+		actions.secr.use(target(1,0,0));
+		expect(target(1,0,0).card.tired).toBe(1);
 	});
 
 
 	it('clne should clone another card', function() {
-		actions.clne.use(target, srcTarget);
-		expect(target.card.abilities).toEqual(srcTarget.card.abilities);
-		expect(target.card.attack).toEqual(srcTarget.card.attack);
-		expect(srcTarget.card.health).toEqual(3);
+		target(1,0,0).card = weakCard;
+		target(1,1,0).card = strongCard;
+		actions.clne.use(target(1,0,0), target(1,1,0));
+		expect(target(1,0,0).card.abilities).toEqual(strongCard.abilities);
+		expect(target(1,0,0).card.attack).toEqual(strongCard.health);
+		expect(target(1,0,0).card.health).toEqual(1);
 	});
 
 
-	it('bees should hurt entire column', function() {
-		actions.bees.use(target);
-		expect(target.card.health).toBe(1);
-		expect(srcTarget.card.health).toBe(2);
+	it('bees should hurt all targets passed in', function() {
+		target(1,0,0).card = weakCard;
+		target(1,0,2).card = strongCard;
+		actions.bees.use(target(1,0,0), target(1,0,1), target(1,0,2));
+		expect(target(1,0,0).card.health).toBe(0);
+		expect(target(1,0,2).card.health).toBe(8);
 	});
+
 
 	////////////////////////////////////////////////////////////////////////////////////////////
 	// machine
 	////////////////////////////////////////////////////////////////////////////////////////////
 
-	it('rbld should return a dead to play with 1 health', function() {
-		var card = {
-			name: 'somecard'
-		};
-		user1.graveyard.push(card);
-		var target = {
-			account: user1,
-			card: user1.graveyard[0]
-		};
-		var target2 = {
-			account: user2,
-			columnNum: 0,
-			rowNum: 0
-		};
-		actions.rbld.use(target, null, target2);
-		expect(user1.graveyard.length).toBe(0);
-		expect(user2.columns[0][0]).toBe(card);
+	it('rbld should return a dead card to play with 1 health', function() {
+		weakCard.health = 0;
+		player1.graveyard.push(weakCard);
+
+		actions.rbld.use(target(1,0,0), player1.graveyard, weakCard._id);
+
+		expect(player1.graveyard.length).toBe(0);
+		expect(target(1,0,0).card).toBe(weakCard);
+		expect(target(1,0,0).card.health).toBe(1);
 	});
 
+
 	it('shld should protect a card for a turn', function() {
-		actions.shld.use(target);
-		expect(target.card.shield).toEqual(1);
+		target(1,0,0).card = weakCard;
+		actions.shld.use(target(1,0,0));
+		expect(target(1,0,0).card.shield).toEqual(1);
 	});
 
 
 	it('prci should decrease health', function() {
-		actions.prci.use(target, srcTarget);
-		expect(target.card.health).toBe(1);
+		target(1,0,0).card = weakCard;
+		target(2,0,0).card = strongCard;
+		actions.prci.use(target(1,0,0), target(2,0,0));
+		expect(target(2,0,0).card.health).toBe(8);
+		expect(target(1,0,0).card.health).toBe(-8);
 	});
 
 
-	it('strt should git a card another turn', function() {
-		actions.strt.use(target);
-		expect(target.card.tired).toBe(-1);
+	it('strt should give a card another turn', function() {
+		target(1,0,0).card = weakCard;
+		actions.strt.use(target(1,0,0));
+		expect(target(1,0,0).card.tired).toBe(-1);
 	});
 
 
 	it('netw should copy another targets abilities', function() {
-		actions.netw.use(target, srcTarget);
-		expect(srcTarget.card.abilities).toContain('zzzz', 'blah', 'piza');
+		target(1,0,0).card = weakCard;
+		target(1,1,0).card = strongCard;
+		actions.netw.use(target(1,0,0), target(1,1,0));
+		expect(target(1,0,0).card.abilities).toEqual(['abom', 'tree', 'prci']);
 	});
 
 
 	it('tran should switch health and attack', function() {
-		actions.tran.use(target);
-		expect(target.card.attack).toBe(2);
-		expect(target.card.health).toBe(3);
+		var transCard = {
+			attack: 5,
+			health: 1,
+		};
+		target(1,0,0).card = transCard;
+		actions.tran.use(target(1,0,0));
+		expect(target(1,0,0).card.attack).toBe(1);
+		expect(target(1,0,0).card.health).toBe(5);
 	});
+
 
 	///////////////////////////////////////////////////////////////////////////////////////////
 	// elite
 	///////////////////////////////////////////////////////////////////////////////////////////
 
 	it('sduc should pull into your control', function() {
-		srcTarget.columnNum = 0;
-		srcTarget.rowNum = 0;
-		actions.sduc.use(target, null, srcTarget);
-		expect(user1.columns[0][0]).toBe(null);
-		expect(user2.columns[0][0]).toBe(target.card);
+		target(2,0,0).card = weakCard;
+		actions.sduc.use(target(2,0,0), target(1,0,0));
+		expect(target(2,0,0).card).toBeFalsy();
+		expect(target(1,0,0).card).toBe(weakCard);
 	});
 
 
 	it('assn should attack a card without reprocussions', function() {
-		actions.assn.use(target, srcTarget);
-		expect(target.card.health).toBe(1);
+		target(1,0,0).card = weakCard;
+		target(2,0,0).card = strongCard;
+		actions.assn.use(target(1,0,0), target(2,0,0));
+		expect(target(1,0,0).card.health).toBe(1);
+		expect(target(2,0,0).card.health).toBe(8);
 	});
 
 
-	it('delg should return a card to your hand and allow you to play another', function() {
-		actions.delg.use(target);
-		expect(user1.hand[0]).toBe(target.card);
-		expect(user1.cardsToPlay).toBe(1);
-		expect(user1.columns[0][0]).toBe(null);
+	it('delg should return a card to your hand and reimburse its pride cost', function() {
+		target(1,0,0).card = weakCard;
+		actions.delg.use(target(1,0,0), player1);
+		expect(player1.hand[0]).toBe(weakCard);
+		expect(player1.pride).toBe(1);
+		expect(target(1,0,0).card).toBeFalsy();
 	});
 
 
 	it('posn should damage a card every turn', function() {
-		actions.posn.use(target);
-		expect(target.card.poison).toBe(1);
-		actions.posn.use(target);
-		expect(target.card.poison).toBe(2);
+		var card = {
+			poison: 0
+		}
+		target(1,0,0).card = card;
+		actions.posn.use(target(1,0,0));
+		expect(card.poison).toBe(1);
+		actions.posn.use(target(1,0,0));
+		expect(card.poison).toBe(2);
 	});
 
 
 	it('bagm should return a card to its owners hand', function() {
-		actions.bagm.use(target);
-		expect(user1.hand[0]).toBe(target.card);
-		expect(user1.columns[0][0]).toBe(null);
+		target(1,0,0).card = strongCard;
+		actions.bagm.use(target(1,0,0), player1);
+		expect(player1.hand[0]).toBe(strongCard);
+		expect(target(1,0,0).card).toBeFalsy();
 	});
 
 
 	it('siph should suck health from one card and give it to another', function() {
-		actions.siph.use(target, srcTarget);
-		expect(target.card.health).toBe(1);
-		expect(srcTarget.card.health).toBe(4);
+		target(1,0,0).card = strongCard;
+		target(2,0,0).card = weakCard;
+		actions.siph.use(target(1,0,0), target(2,0,0));
+		expect(target(1,0,0).card.health).toBe(10);
+		expect(target(2,0,0).card.health).toBe(0);
 	});
 
 
@@ -226,37 +310,61 @@ describe('filters', function() {
 	/////////////////////////////////////////////////////////////////////////////////////////
 
 	it('male should hit up the ladies', function() {
-		actions.male.use(target);
-		expect(user1.hand[0].name).toBe('WAR BABY');
-		expect(user1.cardsToPlay).toBe(1);
+		target(1,0,0).card = strongCard;
+		actions.male.use(target(1,0,0), target(1,0,1));
+		expect(target(1,0,1).card.name).toBe('WAR BABY');
 	});
+
 
 	it('feml should hit up the manlies', function() {
-		actions.feml.use(target);
-		expect(user1.hand[0].name).toBe('WAR BABY');
-		expect(user1.cardsToPlay).toBe(1);
+		target(1,0,0).card = strongCard;
+		actions.feml.use(target(1,0,0), target(1,0,1));
+		expect(target(1,0,1).card.name).toBe('WAR BABY');
 	});
+
+
+	it('grow should bring a baby to adulthood', function() {
+		target(1,0,0).card = strongCard;
+		actions.feml.use(target(1,0,0), target(1,0,1));
+		actions.grow.use(target(1,0,1));
+		expect(target(1,0,1).card).toEqual(strongCard);
+	});
+
 
 	it('btle should buff a cards attack', function() {
-		actions.btle.use(target);
-		expect(target.card.attackBuf).toBe(2);
+		var card = {
+			attackBuf: 0
+		};
+		target(1,0,0).card = card;
+		actions.btle.use(target(1,0,0));
+		expect(card.attackBuf).toBe(2);
 	});
 
-	it('detr should doulbe attack while assuring defeat', function() {
-		actions.detr.use(target, srcTarget);
-		expect(target.card.health).toBe(0);
-		expect(srcTarget.card.health).toBe(0);
+
+	it('detr should take out any enemy while assuring defeat', function() {
+		target(1,0,0).card = weakCard;
+		target(2,0,0).card = strongCard;
+		actions.detr.use(target(1,0,0), target(2,0,0));
+		expect(target(1,0,0).card.health).toBe(0);
+		expect(target(2,0,0).card.health).toBe(0);
 	});
+
 
 	it('hero should mark a card as the only available target', function() {
-		actions.hero.use(target);
-		expect(user1.hero).toBe(target.card);
+		var card = {
+			hero: 0,
+		}
+		target(1,0,0).card = card;
+		actions.hero.use(target(1,0,0));
+		expect(card.hero).toBe(1);
 	});
 
-	it('serm should turn health into attack', function() {
-		actions.serm.use(target);
-		expect(target.card.attack).toBe(4);
-		expect(target.card.health).toBe(1);
+
+	it('serm should turn 1 health into 2 attack', function() {
+		target(1,0,0).card = strongCard;
+		actions.serm.use(target(1,0,0));
+		expect(strongCard.attack).toBe(11);
+		expect(strongCard.health).toBe(8);
 	});
 
 

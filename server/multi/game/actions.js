@@ -23,6 +23,30 @@
 			}
 		},
 
+
+		/**
+		 * Move: move a card from one place to another
+		 */
+		move: {
+			targets: [filters.owned, filters.empty],
+			use: function(target1, target2) {
+				target2.card = target1.card;
+				target1.card = null;
+			}
+		},
+
+
+		/**
+		 * Rally: generate pride
+		 */
+		rlly: {
+			targets: null,
+			use: function(target, player) {
+				player.pride++;
+			}
+		},
+
+
 		/////////////////////////////////////////////////////////////////////////////////////////
 		// ent
 		/////////////////////////////////////////////////////////////////////////////////////////
@@ -57,7 +81,7 @@
 		 */
 		abom: {
 			targets: [filters.friend, filters.full],
-			use: function(target, src) {
+			use: function(src, target) {
 				var tCard = target.card;
 				var sCard = src.card;
 				sCard.health += tCard.health;
@@ -82,7 +106,7 @@
 		 */
 		clne: {
 			targets: [filters.friend, filters.full],
-			use: function(target, src) {
+			use: function(src, target) {
 				src.card.abilities = _.clone(target.card.abilities);
 				src.card.attack = target.card.attack;
 				src.card.name = target.card.name;
@@ -95,9 +119,9 @@
 		bees: {
 			targets: [filters.enemy, filters.front],
 			use: function(target) {
-				_.each(target.column, function(t) {
-					if(t.card) {
-						t.card.health--;
+				_.each(arguments, function(target) {
+					if(target.card) {
+						target.card.health--;
 					}
 				});
 			}
@@ -114,10 +138,25 @@
 		rbld: {
 			targets: null,
 			targets2: [filters.friend, filters.open],
-			use: function(target, src, target2) {
-				fns.removeFromArray(target.account.graveyard, target.card);
-				target.card.health = 1;
-				target2.account.columns[target2.columnNum][target2.rowNum] = target.card;
+			use: function(target, graveyard, cardId) {
+
+				//find the card
+				var card = null;
+				_.each(graveyard, function(deadCard) {
+					if(deadCard._id === cardId) {
+						card = deadCard;
+					}
+				});
+				if(!card) {
+					return false;
+				}
+
+				//remove the card from the graveyard
+				fns.removeFromArray(graveyard, card);
+
+				//add the card back into the game
+				card.health = 1;
+				target.card = card;
 			}
 		},
 
@@ -136,7 +175,7 @@
 		 */
 		prci: {
 			targets: [filters.enemy, filters.full],
-			use: function(target, src) {
+			use: function(src, target) {
 				target.card.health -= src.card.attack;
 				src.card.health -= target.card.attack;
 			}
@@ -157,7 +196,7 @@
 		 */
 		netw: {
 			targets: [filters.friend, filters.full],
-			use: function(target, src) {
+			use: function(src, target) {
 				src.card.abilities = _.uniq(src.card.abilities.concat(target.card.abilities));
 			}
 		},
@@ -185,10 +224,9 @@
 		sduc: {
 			targets: [filters.enemy, filters.front],
 			targets2: [filters.friend, filters.empty],
-			use: function(target, src, target2) {
-				target.account.columns[target.columnNum][target.rowNum] = null;
-				target2.account.columns[target2.columnNum][target2.rowNum] = target.card;
-				//src.account.hand.push(target.card);
+			use: function(target, target2) {
+				target2.card = target.card;
+				target.card = null;
 			}
 		},
 
@@ -197,7 +235,7 @@
 		 */
 		assn: {
 			targets: [filters.enemy, filters.front],
-			use: function(target, src) {
+			use: function(src, target) {
 				target.card.health -= src.card.attack;
 			}
 		},
@@ -207,10 +245,11 @@
 		 */
 		delg: {
 			targets: null,
-			use: function(target) {
-				target.account.columns[target.columnNum][target.rowNum] = null;
-				target.account.hand.push(target.card);
-				target.account.cardsToPlay++;
+			use: function(target, player) {
+				var card = target.card;
+				target.card = null;
+				player.pride += card.pride;
+				player.hand.push(card);
 			}
 		},
 
@@ -229,9 +268,10 @@
 		 */
 		bagm: {
 			targets: [filters.enemy, filters.front],
-			use: function(target) {
-				target.account.columns[target.columnNum][target.rowNum] = null;
-				target.account.hand.push(target.card);
+			use: function(target, player) {
+				var card = target.card;
+				target.card = null;
+				player.hand.push(card);
 			}
 		},
 
@@ -240,7 +280,7 @@
 		 */
 		siph: {
 			targets: [filters.enemy, filters.front],
-			use: function(target, src) {
+			use: function(src, target) {
 				target.card.health--;
 				src.card.health++;
 			}
@@ -256,14 +296,14 @@
 		 */
 		male: {
 			targets: [filters.friend, filters.female],
-			use: function(target) {
-				target.account.hand.push({
+			use: function(target1, target2) {
+				target2.card = {
 					name: 'WAR BABY',
 					attack: 1,
 					health: 1,
-					abilities: ['grow']
-				});
-				target.account.cardsToPlay++;
+					abilities: ['grow'],
+					parent: _.clone(target1.card)
+				};
 			}
 		},
 
@@ -272,19 +312,29 @@
 		 */
 		feml: {
 			targets: [filters.friend, filters.male],
-			use: function(target) {
-				target.account.hand.push({
+			use: function(target1, target2) {
+				target2.card = {
 					name: 'WAR BABY',
 					attack: 1,
 					health: 1,
-					abilities: ['grow']
-				});
-				target.account.cardsToPlay++;
+					abilities: ['grow'],
+					parent: _.clone(target1.card)
+				};
 			}
 		},
 
 		/**
-		 * Battlecry: Target unit gains 1 attack for the turn.
+		 * Grow: turn a WAR BABY into its parent
+		 */
+		grow: {
+			targets: null,
+			use: function(target) {
+				target.card = target.card.parent;
+			}
+		},
+
+		/**
+		 * Battlecry: Target unit gains 2 attack for the turn.
 		 */
 		btle: {
 			targets: [filters.friend, filters.filled],
@@ -294,13 +344,13 @@
 		},
 
 		/**
-		 * Determined: Sacrifice this card to deal double damage.
+		 * Determined: Sacrifice this card to defeat any enemy
 		 */
 		detr: {
 			targets: [filters.enemy, filters.front],
-			use: function(target, src) {
+			use: function(src, target) {
 				src.card.health = 0;
-				target.card.health -= src.card.attack * 2;
+				target.card.health = 0;
 			}
 		},
 
@@ -310,7 +360,7 @@
 		hero: {
 			targets: false,
 			use: function(target) {
-				target.account.hero = target.card;
+				target.card.hero++;
 			}
 		},
 
@@ -320,9 +370,8 @@
 		serm: {
 			targets: false,
 			use: function(target) {
-				var gain = target.card.health - 1;
-				target.card.health -= gain;
-				target.card.attack += gain;
+				target.card.health -= 1;
+				target.card.attack += 2;
 			}
 		}
 
