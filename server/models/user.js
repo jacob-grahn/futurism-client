@@ -31,10 +31,10 @@ var UserSchema = new mongoose.Schema({
 		min: 0,
 		default: 0
 	},
-	rank: {
+	fractures: {
 		type: Number,
 		min: 0,
-		default: 0
+		default: 5
 	},
 	updated: {
 		type: Date,

@@ -3,7 +3,7 @@
 
 	var _ = require('lodash');
 	var async = require('async');
-	var Elo = require('elo');
+	var Elo = require('../../fns/elo');
 	var UserGoose = require('../../models/user');
 	var Player = require('./player');
 
@@ -58,12 +58,15 @@
 	 * @param {function} callback
 	 */
 	var saveUsers = function(users, callback) {
+		if(users.length === 0) {
+			return callback(null);
+		}
 		async.map(users, saveUser, callback);
 	};
 
 
 	/**
-	 * Copy data from players to users
+	 * Copy data from users to players
 	 * @param {array.<Player>} players - data coming from a finished game
 	 * @param {array.<UserGoose>} users - data from mongo
 	 */
@@ -75,29 +78,52 @@
 
 		_.each(players, function(player) {
 			var user = lookup[player._id];
-			user.team = player.team;
-			user.oldElo = user.elo;
-			user.oldFame = user.fame;
-			user.oldFractures = user.fractures;
+			if(user) {
+				player.elo = player.oldElo = user.elo;
+				player.fame = player.oldFame = user.fame;
+				player.fractures = player.oldFractures = user.fractures;
+			}
+		});
+	};
+
+
+	/**
+	 * Copy updated data from users to players
+	 * @param players
+	 * @param users
+	 */
+	var mergeChanges = function(players, users) {
+		var lookup = {};
+		_.each(users, function(user) {
+			lookup[user._id] = user;
+		});
+
+		_.each(players, function(player) {
+			var user = lookup[player._id];
+			if(user) {
+				user.elo = player.elo;
+				user.game = player.fame;
+				user.fractures = player.fractures;
+			}
 		});
 	};
 
 
 	/**
 	 * Calculate new elo ratings for all players from this game
-	 * @param {array.<UserGoose>} users
+	 * @param {array.<Player>} players
 	 * @param {number} winningTeam
 	 */
-	var calcNewElo = function(users, winningTeam) {
+	var calcNewElo = function(players, winningTeam) {
 		var wElo = [];
 		var lElo = [];
 
-		_.each(users, function(user) {
-			if(user.team === winningTeam) {
-				wElo.push(user.elo);
+		_.each(players, function(player) {
+			if(player.team === winningTeam) {
+				wElo.push(player.elo);
 			}
 			else {
-				lElo.push(user.elo);
+				lElo.push(player.elo);
 			}
 		});
 
@@ -106,15 +132,15 @@
 
 		var results = Elo.calcChange(avWinElo, avLosElo, 1, 0);
 
-		_.each(users, function(user) {
-			if(user.team === winningTeam) {
-				if(user.elo < results.a) {
-					user.elo += (results.a-user.elo) / wElo.length;
+		_.each(players, function(player) {
+			if(player.team === winningTeam) {
+				if(player.elo < results.a) {
+					player.elo += (results.a-player.elo) / wElo.length;
 				}
 			}
 			else {
-				if(user.elo > results.b) {
-					user.elo += (results.b-user.elo) / lElo.length;
+				if(player.elo > results.b) {
+					player.elo += (results.b-player.elo) / lElo.length;
 				}
 			}
 		});
@@ -123,16 +149,16 @@
 
 	/**
 	 * Everyone gains some fame, winners gain more
-	 * @param {array.<UserGoose>} users
-	 * @param {string} winningTeam
+	 * @param {array.<Player>} players
+	 * @param {number} winningTeam
 	 */
-	var calcFame = function(users, winningTeam) {
-		_.each(users, function(user) {
-			if(user.team === winningTeam) {
-				user.fame += user.elo - user.oldElo + 5;
+	var calcFame = function(players, winningTeam) {
+		_.each(players, function(player) {
+			if(player.team === winningTeam) {
+				player.fame += player.elo - player.oldElo + module.exports.BASE_FAME_GAIN;
 			}
 			else {
-				user.fame += 5;
+				player.fame += module.exports.BASE_FAME_GAIN;
 			}
 		});
 	};
@@ -140,15 +166,15 @@
 
 	/**
 	 * Winners get a Time Fracture if this was a prize match
-	 * @param {array.<UserGoose>} users
-	 * @param {string} winningTeam
+	 * @param {array.<Player>} players
+	 * @param {number} winningTeam
 	 * @param {bool} prize
 	 */
-	var calcFractures = function(users, winningTeam, prize) {
-		if(prize) { //if this was a prize match
-			_.each(users, function(user) {
-				if(user.team === winningTeam) {
-					user.fractures++;
+	var calcFractures = function(players, winningTeam, prize) {
+		if(prize) {
+			_.each(players, function(player) {
+				if(player.team === winningTeam) {
+					player.fractures++;
 				};
 			});
 		}
@@ -158,8 +184,15 @@
 	module.exports = {
 
 		/**
+		 * The minimum amount of fame gained from completing a match
+		 */
+		BASE_FAME_GAIN: 5,
+
+
+		/**
+		 * Load user data from mongo
 		 * Calculate elo changes and prizes
-		 * Save those updates to mongo
+		 * Save updated data to mongo
 		 * @param {array.<Player>} players
 		 * @param {number} winningTeam
 		 * @param {bool} prize
@@ -172,10 +205,12 @@
 					return callback(err);
 				}
 
+				users = _.compact(users);
 				mergeData(players, users);
-				calcNewElo(users, winningTeam);
-				calcFame(users, winningTeam);
-				calcFractures(users, winningTeam, prize);
+				calcNewElo(players, winningTeam);
+				calcFame(players, winningTeam);
+				calcFractures(players, winningTeam, prize);
+				mergeChanges(players, users);
 
 				saveUsers(users, function(err) {
 					if(err) {
