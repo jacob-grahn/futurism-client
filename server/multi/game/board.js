@@ -35,6 +35,29 @@
 		self.target = function(playerId, column, row) {
 			return self.areas[playerId].targets[column][row];
 		};
+
+		self.allTargets = function() {
+			var all = [];
+			_.each(self.areas, function(area) {
+				_.each(area.targets, function(column) {
+					_.each(column, function(target) {
+						all.push(target);
+					});
+				});
+			});
+			return all;
+		};
+
+		self.playerTargets = function(playerId) {
+			var area = self.areas[playerId];
+			var all = [];
+			_.each(area.targets, function(column) {
+				_.each(column, function(target) {
+					all.push(target);
+				});
+			});
+			return all;
+		};
 	};
 
 

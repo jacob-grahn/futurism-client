@@ -56,4 +56,16 @@ describe('game/board', function() {
 		expect(board.target(3,0,0).teamId).toBe(2);
 	});
 
+
+	it('should return all targets in one long array', function() {
+		var board = new Board([player1, player2, player3], rules);
+		expect(board.allTargets().length).toBe(30);
+	});
+
+
+	it('should return all targets in an area', function() {
+		var board = new Board([player1, player2, player3], rules);
+		expect(board.playerTargets(2).length).toBe(10);
+	})
+
 });
