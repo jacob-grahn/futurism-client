@@ -21,8 +21,7 @@
 	 */
 	module.exports = function(accounts, rules, gameId) {
 		_.defaults(rules, defaultRules);
-		var turn = 0;
-		var activeAccount;
+
 		var table = new Table(accounts);
 
 
