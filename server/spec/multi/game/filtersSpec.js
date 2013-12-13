@@ -48,22 +48,22 @@ describe('filters', function() {
 		// player 1, column 0
 		{
 			targetId: 0,
-			rowNum: 0,
-			columnNum: 0,
+			row: 0,
+			column: 0,
 			account: player1,
 			card: femaleCard
 		},
 		{
 			targetId: 1,
-			rowNum: 1,
-			columnNum: 0,
+			row: 1,
+			column: 0,
 			account: player1,
 			card: basicCard
 		},
 		{
 			targetId: 2,
-			rowNum: 2,
-			columnNum: 0,
+			row: 2,
+			column: 0,
 			account: player1,
 			card: femaleCard
 		},
@@ -71,22 +71,22 @@ describe('filters', function() {
 		// player 1, column 1
 		{
 			targetId: 3,
-			rowNum: 0,
-			columnNum: 1,
+			row: 0,
+			column: 1,
 			account: player1,
 			card: null
 		},
 		{
 			targetId: 4,
-			rowNum: 1,
-			columnNum: 1,
+			row: 1,
+			column: 1,
 			account: player1,
 			card: null
 		},
 		{
 			targetId: 5,
-			rowNum: 2,
-			columnNum: 1,
+			row: 2,
+			column: 1,
 			account: player1,
 			card: null
 		},
@@ -94,22 +94,22 @@ describe('filters', function() {
 		// player 1, column 2
 		{
 			targetId: 6,
-			rowNum: 0,
-			columnNum: 2,
+			row: 0,
+			column: 2,
 			account: player1,
 			card: maleCard
 		},
 		{
 			targetId: 7,
-			rowNum: 1,
-			columnNum: 2,
+			row: 1,
+			column: 2,
 			account: player1,
 			card: basicCard
 		},
 		{
 			targetId: 8,
-			rowNum: 2,
-			columnNum: 2,
+			row: 2,
+			column: 2,
 			account: player1,
 			card: null
 		},
@@ -117,22 +117,22 @@ describe('filters', function() {
 		// player 1, column 3
 		{
 			targetId: 9,
-			rowNum: 0,
-			columnNum: 3,
+			row: 0,
+			column: 3,
 			account: player1,
 			card: null
 		},
 		{
 			targetId: 10,
-			rowNum: 1,
-			columnNum: 3,
+			row: 1,
+			column: 3,
 			account: player1,
 			card: null
 		},
 		{
 			targetId: 11,
-			rowNum: 2,
-			columnNum: 3,
+			row: 2,
+			column: 3,
 			account: player1,
 			card: null
 		},
@@ -144,22 +144,22 @@ describe('filters', function() {
 		// player 2, column 0
 		{
 			targetId: 12,
-			rowNum: 0,
-			columnNum: 0,
+			row: 0,
+			column: 0,
 			account: player2,
 			card: null
 		},
 		{
 			targetId: 13,
-			rowNum: 1,
-			columnNum: 0,
+			row: 1,
+			column: 0,
 			account: player2,
 			card: null
 		},
 		{
 			targetId: 14,
-			rowNum: 2,
-			columnNum: 0,
+			row: 2,
+			column: 0,
 			account: player2,
 			card: null
 		},
@@ -167,22 +167,22 @@ describe('filters', function() {
 		// player 2, column 1
 		{
 			targetId: 15,
-			rowNum: 0,
-			columnNum: 1,
+			row: 0,
+			column: 1,
 			account: player2,
 			card: null
 		},
 		{
 			targetId: 16,
-			rowNum: 1,
-			columnNum: 1,
+			row: 1,
+			column: 1,
 			account: player2,
 			card: null
 		},
 		{
 			targetId: 17,
-			rowNum: 2,
-			columnNum: 1,
+			row: 2,
+			column: 1,
 			account: player2,
 			card: null
 		},
@@ -190,22 +190,22 @@ describe('filters', function() {
 		// player 2, column 2
 		{
 			targetId: 18,
-			rowNum: 0,
-			columnNum: 2,
+			row: 0,
+			column: 2,
 			account: player2,
 			card: null
 		},
 		{
 			targetId: 19,
-			rowNum: 1,
-			columnNum: 2,
+			row: 1,
+			column: 2,
 			account: player2,
 			card: null
 		},
 		{
 			targetId: 20,
-			rowNum: 2,
-			columnNum: 2,
+			row: 2,
+			column: 2,
 			account: player2,
 			card: null
 		},
@@ -213,22 +213,22 @@ describe('filters', function() {
 		// player 2, column 3
 		{
 			targetId: 21,
-			rowNum: 0,
-			columnNum: 3,
+			row: 0,
+			column: 3,
 			account: player2,
 			card: maleCard
 		},
 		{
 			targetId: 22,
-			rowNum: 1,
-			columnNum: 3,
+			row: 1,
+			column: 3,
 			account: player2,
 			card: null
 		},
 		{
 			targetId: 23,
-			rowNum: 2,
-			columnNum: 3,
+			row: 2,
+			column: 3,
 			account: player2,
 			card: null
 		},
@@ -240,22 +240,22 @@ describe('filters', function() {
 		// player 3, column 0
 		{
 			targetId: 24,
-			rowNum: 0,
-			columnNum: 0,
+			row: 0,
+			column: 0,
 			account: player3,
 			card: null
 		},
 		{
 			targetId: 25,
-			rowNum: 1,
-			columnNum: 0,
+			row: 1,
+			column: 0,
 			account: player3,
 			card: null
 		},
 		{
 			targetId: 26,
-			rowNum: 2,
-			columnNum: 0,
+			row: 2,
+			column: 0,
 			account: player3,
 			card: null
 		},
@@ -263,22 +263,22 @@ describe('filters', function() {
 		// player 3, column 1
 		{
 			targetId: 27,
-			rowNum: 0,
-			columnNum: 1,
+			row: 0,
+			column: 1,
 			account: player3,
 			card: null
 		},
 		{
 			targetId: 28,
-			rowNum: 1,
-			columnNum: 1,
+			row: 1,
+			column: 1,
 			account: player3,
 			card: null
 		},
 		{
 			targetId: 29,
-			rowNum: 2,
-			columnNum: 1,
+			row: 2,
+			column: 1,
 			account: player3,
 			card: null
 		},
@@ -286,22 +286,22 @@ describe('filters', function() {
 		// player 3, column 2
 		{
 			targetId: 30,
-			rowNum: 0,
-			columnNum: 2,
+			row: 0,
+			column: 2,
 			account: player3,
 			card: null
 		},
 		{
 			targetId: 31,
-			rowNum: 1,
-			columnNum: 2,
+			row: 1,
+			column: 2,
 			account: player3,
 			card: null
 		},
 		{
 			targetId: 32,
-			rowNum: 2,
-			columnNum: 2,
+			row: 2,
+			column: 2,
 			account: player3,
 			card: null
 		},
@@ -309,22 +309,22 @@ describe('filters', function() {
 		// player 3, column 3
 		{
 			targetId: 33,
-			rowNum: 0,
-			columnNum: 3,
+			row: 0,
+			column: 3,
 			account: player3,
 			card: maleCard
 		},
 		{
 			targetId: 34,
-			rowNum: 1,
-			columnNum: 3,
+			row: 1,
+			column: 3,
 			account: player3,
 			card: null
 		},
 		{
 			targetId: 35,
-			rowNum: 2,
-			columnNum: 3,
+			row: 2,
+			column: 3,
 			account: player3,
 			card: null
 		}
@@ -332,7 +332,7 @@ describe('filters', function() {
 
 
 	// add targets to columns
-	(function (targets) {
+	/*(function (targets) {
 		var column = [];
 		for(var i=0; i<targets.length; i++) {
 			var target = targets[i];
@@ -342,7 +342,7 @@ describe('filters', function() {
 				column = [];
 			}
 		}
-	}(targets));
+	}(targets));*/
 
 
 	it('should find empty targets', function() {
@@ -362,13 +362,6 @@ describe('filters', function() {
 	});
 
 
-	it('should find targets that have with a space in front of them', function() {
-		var spaceTargets = filters.spaceAhead(targets);
-		expect(spaceTargets).toContain(targets[24]);
-		expect(spaceTargets).not.toContain(targets[2]);
-	});
-
-
 	it('should find targets owned by you or an ally', function() {
 		var friendTargets = filters.friend(targets, player1);
 		expect(friendTargets).toContain(targets[0]);
@@ -385,13 +378,11 @@ describe('filters', function() {
 	});
 
 
-	it('should find cards that are on the frontlines', function() {
+	it('should find cards that are at the front', function() {
 		var frontTargets = filters.front(targets);
 		expect(frontTargets).toContain(targets[2]);
-		expect(frontTargets).toContain(targets[33]);
-		expect(frontTargets).not.toContain(targets[1]);
-		expect(frontTargets).not.toContain(targets[30]);
-		expect(frontTargets).not.toContain(targets[34]);
+		expect(frontTargets).toContain(targets[11]);
+		expect(frontTargets).not.toContain(targets[16]);
 	});
 
 

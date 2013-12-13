@@ -1,4 +1,4 @@
-module.exports = function() {
+(function() {
 	'use strict';
 
 	var _ = require('lodash');
@@ -21,13 +21,6 @@ module.exports = function() {
 	};
 
 
-	filters.spaceAhead = function(targets, me) {
-		return _.filter(targets, function(target) {
-			return target.rowNum < mapHeight-1;
-		});
-	};
-
-
 	filters.friend = function(targets, me) {
 		return _.filter(targets, function(target) {
 			return target.account.team === me.team;
@@ -42,22 +35,24 @@ module.exports = function() {
 	};
 
 
+	// should probably run after filters.full
 	filters.front = function(targets, me) {
-		return _.filter(targets, function(target) {
-			if(!target.card) {
-				return false;
+		// find the highest row value in each column
+		var fronts = {};
+		_.each(targets, function(target) {
+			if(!fronts[target.column] || fronts[target.column].row < target.row) {
+				fronts[target.column] = target;
 			}
-			if(target.rowNum === mapHeight-1) {
-				return true;
-			}
-			for(var i=(target.rowNum+1); i<mapHeight; i++) {
-				var higherTarget = target.column[i];
-				if(higherTarget && higherTarget.card) {
-					return false;
-				}
-			};
-			return true;
 		});
+
+		// convert to an array
+		var ret = [];
+		_.each(fronts, function(front) {
+			ret.push(front);
+		});
+
+		//
+		return ret;
 	};
 
 
@@ -82,7 +77,6 @@ module.exports = function() {
 	};
 
 
-	return filters;
+	module.exports = filters;
 
-
-}();
+}());
