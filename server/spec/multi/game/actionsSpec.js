@@ -80,7 +80,7 @@ describe('game/actions', function() {
 			attack: 1,
 			health: 1,
 			abilities: ['abom', 'tree'],
-			tired: 0,
+			moves: 1,
 			shield: 0,
 			pride: 1,
 			hero: 0,
@@ -93,7 +93,7 @@ describe('game/actions', function() {
 			attack: 9,
 			health: 9,
 			abilities: ['prci'],
-			tired: 0,
+			moves: 1,
 			shield: 0,
 			pride: 9,
 			hero: 0,
@@ -164,7 +164,7 @@ describe('game/actions', function() {
 	it('secr should mark a card as tired', function() {
 		target(1,0,0).card = weakCard;
 		actions.secr.use(target(1,0,0));
-		expect(target(1,0,0).card.tired).toBe(1);
+		expect(target(1,0,0).card.moves).toBe(0);
 	});
 
 
@@ -222,7 +222,7 @@ describe('game/actions', function() {
 	it('strt should give a card another turn', function() {
 		target(1,0,0).card = weakCard;
 		actions.strt.use(target(1,0,0));
-		expect(target(1,0,0).card.tired).toBe(-1);
+		expect(target(1,0,0).card.moves).toBe(2);
 	});
 
 
