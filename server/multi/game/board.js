@@ -21,6 +21,14 @@
 	};
 
 
+	/**
+	 *
+	 * @param {array.<Player>} players
+	 * @param {object} rules
+	 *	@param {number} rules.columns
+	 *	@param {number} rules.rows
+	 * @constructor
+	 */
 	var Board = function(players, rules) {
 		var self = this;
 		self.future = 'normal';
