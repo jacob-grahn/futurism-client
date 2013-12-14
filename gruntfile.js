@@ -350,7 +350,7 @@ module.exports = function (grunt) {
 			matchall: false,
 			captureExceptions: true,
 			extensions: 'js',
-			specNameMatcher: 'rizeCalculatorSpec',
+			specNameMatcher: 'urnTickerSpec',
 			projectRoot: '<%= yeoman.server %>/spec'
 		},
 

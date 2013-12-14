@@ -67,18 +67,6 @@ describe('game', function() {
 	});
 
 
-	it('should move to the next player when a turn is ended', function() {
-		game = new Game(accounts, rules, gameId);
-		expect(game.getStatus().activeAccountId).toBe(account1._id);
-
-		game.endTurn(account1);
-		expect(game.getStatus().activeAccountId).toBe(account2._id);
-
-		game.endTurn(account2);
-		expect(game.getStatus().activeAccountId).toBe(account1._id);
-	});
-
-
 	it('should do nothing if the wrong player tries to end the turn', function() {
 		game = new Game(accounts, rules, gameId);
 		game.endTurn(account2);
