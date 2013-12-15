@@ -350,7 +350,7 @@ module.exports = function (grunt) {
 			matchall: false,
 			captureExceptions: true,
 			extensions: 'js',
-			specNameMatcher: 'ictoryConditionSpec',
+			specNameMatcher: 'Spec',
 			projectRoot: '<%= yeoman.server %>/spec'
 		},
 

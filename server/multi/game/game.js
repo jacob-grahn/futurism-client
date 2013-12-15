@@ -4,13 +4,18 @@
 	var _ = require('lodash');
 	var fns = require('../../fns/fns');
 	var factions = require('../../../shared/factions');
-	var defaultRules = require('./defaultRules');
-	var gameLookup = require('./gameLookup');
-	var initAccount = require('./initAccounts');
-	var Table = require('./table');
 	var broadcast = require('../broadcast');
-
-	var games = {};
+	var actions = require('./actions');
+	var Board = require('./board');
+	var defaultRules = require('./defaultRules');
+	var effects = require('./effects');
+	var filters = require('./filters');
+	var gameLookup = require('./gameLookup');
+	var initAccounts = require('./initAccounts');
+	var Loadup = require('./loadup');
+	var prizeCalculator = require('./prizeCalculator');
+	var TurnTicker = require('./turnTicker');
+	var victoryCondition = require('./victoryCondition');
 
 
 	/**
@@ -20,9 +25,11 @@
 	 * @param {string} gameId
 	 */
 	module.exports = function(accounts, rules, gameId) {
-		_.defaults(rules, defaultRules);
+		/*var board = new Board(players, rules.columns, rules.rows);
+		var loadup = new Loadup();
+		var turnTicker = new TurnTicker();
 
-		var table = new Table(accounts);
+		_.defaults(rules, defaultRules);*/
 
 
 		/**

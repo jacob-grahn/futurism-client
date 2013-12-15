@@ -43,7 +43,7 @@ describe('game', function() {
 	});
 
 
-	it('should sort players by their deck pride, lowest first', function() {
+	/*it('should sort players by their deck pride, lowest first', function() {
 		account1.deck.pride = 13;
 		account2.deck.pride = 10;
 		new Game(accounts, rules, gameId);
@@ -91,5 +91,5 @@ describe('game', function() {
 		game.drawCards();
 		expect(account1.cards.length).toBe(1);
 		expect(account1.hand.length).toBe(3);
-	});
+	});*/
 });

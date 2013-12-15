@@ -108,14 +108,9 @@
 		 */
 		var startMatchup = function(matchup) {
 			var gameId = fns.createRandomString(12);
+			//new Game(matchup.accounts, matchup.rules, gameId);
 
 			Chat.safeCreate('chat-' + gameId);
-
-			console.log('starting deck preload', gameId);
-			DeckPreload.startGroup(gameId, matchup.users, matchup.rules, function(err, accounts) {
-				console.log('starting game', gameId);
-				new Game(accounts, matchup.rules, gameId);
-			});
 
 			broadcast(roomName, 'startMatchup', {id: matchup.id, gameId: gameId});
 			matchups.deleteId(matchup.id);

@@ -9,7 +9,6 @@ describe('deckPreload', function() {
 	var Loadup = require('../../../multi/game/loadup');
 	var Player = require('../../../multi/game/player');
 
-	var gameId;
 	var player1;
 	var player2;
 	var players;
@@ -20,7 +19,6 @@ describe('deckPreload', function() {
 		player1 = new Player({_id:1});
 		player2 = new Player({_id:2});
 		rules = {pride: 10};
-		gameId = '35';
 		players = [player1, player2];
 
 		DeckGoose.create({_id:'1-deck', userId:1, name:'lotr', cards:['1-card','2-card']}, function(err, deck){
@@ -37,15 +35,14 @@ describe('deckPreload', function() {
 
 	afterEach(function() {
 		mockgoose.reset();
-		Loadup.clear();
 	});
 
 
 	it("should not to be able to load someone else's deck", function(done) {
-		Loadup.startGroup(gameId, players, rules, function(err, loadedplayers) {});
+		var loadup = new Loadup(players, rules, function(err, loadedplayers) {});
 
 		var deckId = '2-deck';
-		Loadup.selectDeck(player1, gameId, deckId, function(err, deck) {
+		loadup.selectDeck(player1, deckId, function(err, deck) {
 			expect(err).toBe('you do not own this deck');
 			done();
 		});
@@ -53,14 +50,14 @@ describe('deckPreload', function() {
 
 
 	it('should not to be able to load more than one deck', function(done) {
-		Loadup.startGroup(gameId, players, rules, function(err, loadedplayers) {});
+		var loadup = new Loadup(players, rules, function(err, loadedplayers) {});
 
 		var deckId = '1-deck';
-		Loadup.selectDeck(player1, gameId, deckId, function(err, deck) {
+		loadup.selectDeck(player1, deckId, function(err, deck) {
 			expect(err).toBe(null);
 			expect(deck).toBeTruthy();
 
-			Loadup.selectDeck(player1, gameId, deckId, function(err, deck) {
+			loadup.selectDeck(player1, deckId, function(err, deck) {
 				expect(err).toBe('a deck was already loaded for you');
 				done();
 			});
@@ -68,40 +65,30 @@ describe('deckPreload', function() {
 	});
 
 
-	it('not to be able to load a deck with more pride than is allowed by the rules', function(done) {
+	it('should not be able to load a deck with more pride than is allowed by the rules', function(done) {
 		rules.pride = -5;
-		Loadup.startGroup(gameId, players, rules, function(err, loadedplayers) {});
+		var loadup = new Loadup( players, rules, function(err, loadedplayers) {});
 
 		var deckId = '1-deck';
-		Loadup.selectDeck(player1, gameId, deckId, function(err, deck) {
+		loadup.selectDeck(player1, deckId, function(err, deck) {
 			expect(err).toBe('this deck is too prideful');
 			done();
 		});
 	});
 
 
-	it('not to be able to load a deck without starting a group load first', function(done) {
-		var deckId = '1-deck';
-		gameId = 'sdflaj';
-		Loadup.selectDeck(player1, gameId, deckId, function(err, deck) {
-			expect(err).toBe('invalid preload gameId');
-			done();
-		});
-	});
-
-
 	it('everyone loading their deck to trigger the callback', function(done) {
-		Loadup.startGroup(gameId, players, rules, function(err, loadedplayers) {
+		var loadup = new Loadup(players, rules, function(err, loadedplayers) {
 			expect(err).toBeNull();
 			expect(loadedplayers.length).toBe(2);
 			expect(player1.cards).not.toBeNull();
 			done();
 		});
 
-		Loadup.selectDeck(player1, gameId, '1-deck', function(err, deck) {
+		loadup.selectDeck(player1, '1-deck', function(err, deck) {
 			expect(err).toBeNull();
 		});
-		Loadup.selectDeck(player2, gameId, '2-deck', function(err, deck) {
+		loadup.selectDeck(player2, '2-deck', function(err, deck) {
 			expect(err).toBeNull();
 		});
 	});
@@ -109,8 +96,7 @@ describe('deckPreload', function() {
 
 	it('deck loading to timeout', function(done) {
 		rules.prepTime = .1;
-
-		Loadup.startGroup(gameId, players, rules, function(err, loadedplayers) {
+		var loadup = new Loadup(players, rules, function(err, loadedplayers) {
 			expect(err).toBeNull();
 			expect(loadedplayers.length).toBe(2);
 			done();
