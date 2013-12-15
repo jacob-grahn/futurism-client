@@ -6,22 +6,24 @@
 
 	module.exports = {
 
-		commanderRules: function(players, board) {
-			var survivingTeams = [];
-			_.each(players, function(player) {
-				var targets = board.playerTargets(player._id);
-				_.each(targets, function(target) {
-					if(target.card && target.card.commander) {
-						survivingTeams.push(player.team);
-					}
+		commanderRules: function(players, board, turn) {
+			if(turn > players.length) {
+				var survivingTeams = [];
+				_.each(players, function(player) {
+					var targets = board.playerTargets(player._id);
+					_.each(targets, function(target) {
+						if(target.card && target.card.commander) {
+							survivingTeams.push(player.team);
+						}
+					});
 				});
-			});
-			survivingTeams = _.uniq(survivingTeams);
+				survivingTeams = _.uniq(survivingTeams);
 
-			if(survivingTeams.length === 1) {
-				return {winner: true, team: survivingTeams[0]};
+				if(survivingTeams.length === 1) {
+					return {winner: true, team: survivingTeams[0]};
+				}
+				return {winner: false}
 			}
-			return {winner: false}
 		}
 
 

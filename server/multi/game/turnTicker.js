@@ -9,7 +9,15 @@
 		var startTime;
 		var turn = 0;
 
-		self.activePlayers = [];
+
+		/**
+		 * set active to false on all players
+		 */
+		var deactivatePlayers = function() {
+			_.each(players, function(player) {
+				player.active = false;
+			});
+		};
 
 
 		/**
@@ -31,7 +39,7 @@
 			startTime = +new Date();
 			var index = (turn+1) % (players.length);
 			var player = players[index];
-			self.activePlayers.push(player);
+			player.active = true;
 
 			clearInterval(intervalId);
 			intervalId = setTimeout(self.endTurn, timePerTurn);
@@ -42,12 +50,11 @@
 		 * Clean up after a turn
 		 */
 		self.endTurn = function() {
+			deactivatePlayers();
 			clearInterval(intervalId);
 			self.activePlayers = [];
 			if(callback) {
-				var cb = callback;
-				callback = null;
-				cb(self.getElapsed());
+				callback(self.getElapsed());
 			}
 		};
 

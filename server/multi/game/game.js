@@ -25,15 +25,15 @@
 	 * @param {string} gameId
 	 */
 	module.exports = function(accounts, rules, gameId) {
-		/*var board = new Board(players, rules.columns, rules.rows);
-		var loadup = new Loadup();
-		var turnTicker = new TurnTicker();
 
-		_.defaults(rules, defaultRules);*/
+		/**
+		 * apply default rules
+		 */
+		_.defaults(rules, defaultRules);
 
 
 		/**
-		 * just exist if no players are here
+		 * just exit if no players are here
 		 */
 		if(accounts.length === 0) {
 			return false;
@@ -43,30 +43,79 @@
 		/**
 		 * initialize everyone's account
 		 */
-		_.each(accounts, function(account) {
-			initAccounts(account, rules, gameId);
+		var players = initAccounts(accounts, gameId);
+
+
+		/**
+		 * preload decks and futures
+		 */
+		var loadup = new Loadup(players, rules, function() {
+
+
+			/**
+			 * sort players by deck rank
+			 */
+			sortPlayers(players);
+
+
+			/**
+			 * create the board
+			 */
+			var board = new Board(players, rules.columns, rules.rows);
+
+
+			/**
+			 * start the turn ticker
+			 */
+			var turnTicker = new TurnTicker(players, rules.timePerTurn);
+			turnTicker.nextTurn(function() {
+
+
+				/**
+				 * check for victory
+				 */
+				checkVictory();
+			});
 		});
+
+
+		/**
+		 *
+		 */
+		var checkVictory = function() {
+			result = victoryCondition.commanderRules(players, board, turnTicker.turn);
+			if(result.winner) {
+				turnTicker.stop();
+				prizeCalculator.run(players, winningTeam, prize, function(err) {
+
+				});
+			}
+		};
 
 
 		/**
 		 * Sort players by their deck pride. Lowest pride goes first
-		 * Shuffle accounts first so that equal pride players will be randomized
+		 * Shuffle first so that equal pride players will be randomized
 		 */
-		_.shuffle(accounts);
-		accounts.sort(function(a, b) {
-			return a.deck.pride - b.deck.pride;
-		});
+		var sortPlayers = function(players) {
+			_.shuffle(players);
+			players.sort(function(a, b) {
+				return a.deck.pride - b.deck.pride;
+			});
+			return players;
+		};
 
 
 		/**
-		 * Creates a snapshot of everything in this game
-		 * @returns {{accounts: [], turn: number, activeAccountId: number}}
+		 * Returns a snapshot of everything in this game
 		 */
 		var getStatus = function() {
+			var playersPub = _.map(players, function(player) {
+				return _.pick(player, '_id', 'team', 'name', 'site', 'pride', 'active');
+			});
 			return {
-				accounts: accounts,
-				turn: turn,
-				activeAccountId: activeAccount._id
+				players: playersPub,
+				turn: turnTicker.turn
 			};
 		};
 
