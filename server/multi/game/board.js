@@ -24,19 +24,18 @@
 	/**
 	 *
 	 * @param {array.<Player>} players
-	 * @param {object} rules
-	 *	@param {number} rules.columns
-	 *	@param {number} rules.rows
+	 * @param {number} columns
+	 * @param {number} rows
 	 * @constructor
 	 */
-	var Board = function(players, rules) {
+	var Board = function(players, columns, rows) {
 		var self = this;
 		self.future = 'normal';
 		self.areas = {};
 
 		_.each(players, function(player) {
 			self.areas[player._id] = {
-				targets: generateTargets(rules.columns, rules.rows, player._id, player.team)
+				targets: generateTargets(columns, rows, player._id, player.team)
 			}
 		});
 

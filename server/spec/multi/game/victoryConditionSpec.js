@@ -14,9 +14,8 @@ describe('game/victoryCondition', function() {
 
 		it('should return no winner if there is not yet a winner', function() {
 			var players = [{_id:1, team:1},{_id:2, team:2}];
-			var rules = {columns: 2, rows: 2};
 
-			var board = new Board(players, rules);
+			var board = new Board(players, 2, 2);
 			board.target(1,0,0).card = {commander: true};
 			board.target(2,0,0).card = {commander: true};
 
@@ -31,9 +30,8 @@ describe('game/victoryCondition', function() {
 				{_id:3, team:2},
 				{_id:4, team:2}
 			];
-			var rules = {columns: 2, rows: 2};
 
-			var board = new Board(players, rules);
+			var board = new Board(players, 2, 2);
 			board.target(1,0,0).card = {commander: true};
 			board.target(2,0,0).card = {commander: false};
 			board.target(4,0,0).card = {commander: false};
