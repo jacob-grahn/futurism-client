@@ -16,7 +16,6 @@
 		self.cards = [];
 		self.futures = [];
 		self.pride = 0;
-		self.active = false;
 	};
 
 	module.exports = Player;
