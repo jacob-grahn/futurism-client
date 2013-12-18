@@ -4,29 +4,30 @@ describe('game/turnTicker', function() {
 
 
 	it('should move to the next player when a turn is ended', function() {
+		var player1 = {_id:1};
+		var player2 = {_id:2};
+		var tt = new TurnTicker([player1, player2], 100);
 
-		var tt = new TurnTicker([{_id:1}, {_id:2}], 100);
+		tt.endTurn();
+		expect(tt.isTheirTurn(player1)).toBe(true);
+		expect(tt.isTheirTurn(player2)).toBe(false);
 
-		tt.nextTurn();
-		expect(tt.activePlayers[0]._id).toBe(1);
+		tt.endTurn();
+		expect(tt.isTheirTurn(player1)).toBe(false);
+		expect(tt.isTheirTurn(player2)).toBe(true);
 
-		tt.nextTurn();
-		expect(tt.activePlayers[0]._id).toBe(2);
-
-		tt.nextTurn();
-		expect(tt.activePlayers[0]._id).toBe(1);
+		tt.endTurn();
+		expect(tt.isTheirTurn(player1)).toBe(true);
+		expect(tt.isTheirTurn(player2)).toBe(false);
 	});
 
 
 	it('should time out a turn', function(done) {
-		var tt = new TurnTicker([{_id:1}, {_id:2}], 1);
-
-		tt.nextTurn(function(elapsed) {
-			expect(tt.activePlayers.length).toBe(0);
+		var player1 = {_id:1};
+		var player2 = {_id:2};
+		var tt = new TurnTicker([player1, player2], 1, function(elapsed) {
 			expect(elapsed).toBeTruthy();
 			done();
 		});
-
-		expect(tt.activePlayers.length).toBe(1);
 	});
 });

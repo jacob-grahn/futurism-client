@@ -4,60 +4,38 @@
 	var _ = require('lodash');
 
 
-	var TurnTicker = function(players, timePerTurn) {
+	/**
+	 * Keep track of who's turn it is
+	 * mark players with active = true when it is their turn
+	 * put a time limit on turn durations
+	 * @param {array.<Player>} players
+	 * @param {number} timePerTurn
+	 * @param {function} callback
+	 * @constructor
+	 */
+	var TurnTicker = function(players, timePerTurn, callback) {
 		var self = this;
 		var intervalId;
-		var callback;
 		var startTime;
 		var turn = 0;
+		var running = false;
+		var turnOwners = [];
 
 
 		/**
-		 * set active to false on all players
+		 * Start turn progression
 		 */
-		var deactivatePlayers = function() {
-			_.each(players, function(player) {
-				player.active = false;
-			});
+		self.start = function() {
+			running = true;
+			nextTurn();
 		};
 
 
 		/**
-		 * Move a turn to the next player in line
-		 * @param {function} [cb] callback - to be called when this turn is over
+		 * Pause turn progression
 		 */
-		self.nextTurn = function(cb) {
-			self.endTurn();
-			callback = cb;
-			turn++;
-			self.startTurn();
-		};
-
-
-		/**
-		 * Mark a player as active, and start a timer
-		 */
-		self.startTurn = function() {
-			startTime = +new Date();
-			var index = (turn+1) % (players.length);
-			var player = players[index];
-			player.active = true;
-
-			clearInterval(intervalId);
-			intervalId = setTimeout(self.endTurn, timePerTurn);
-		};
-
-
-		/**
-		 * Clean up after a turn
-		 */
-		self.endTurn = function() {
-			deactivatePlayers();
-			clearInterval(intervalId);
-			self.activePlayers = [];
-			if(callback) {
-				callback(self.getElapsed());
-			}
+		self.stop = function() {
+			running = false;
 		};
 
 
@@ -68,6 +46,58 @@
 		self.getElapsed = function() {
 			return (+new Date()) - startTime;
 		};
+
+
+		/**
+		 * Called when a turn is completed
+		 */
+		self.endTurn = function() {
+			turnOwners = [];
+			clearTimeout(intervalId);
+			if(running) {
+				if(callback) {
+					callback(self.getElapsed());
+				}
+				nextTurn();
+			}
+		};
+
+
+		/**
+		 * Test if it is a players turn
+		 * @param player
+		 * @returns {boolean}
+		 */
+		self.isTheirTurn = function(player) {
+			return (turnOwners.indexOf(player) !== -1);
+		};
+
+
+		/**
+		 * Move a turn to the next player in line
+		 */
+		var nextTurn = function() {
+			turn++;
+			startTime = +new Date();
+			fillTurnOwners();
+			intervalId = setTimeout(self.endTurn, timePerTurn);
+		};
+
+
+		/**
+		 * set active to true if it is a players turn
+		 */
+		var fillTurnOwners = function() {
+			var index = turn % (players.length);
+			var player = players[index];
+			turnOwners = [player];
+		};
+
+
+		/**
+		 * auto start for easiness
+		 */
+		self.start();
 	};
 
 
