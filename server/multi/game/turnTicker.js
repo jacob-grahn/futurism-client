@@ -1,6 +1,8 @@
 (function() {
 	'use strict';
 
+	var _ = require('lodash');
+
 
 	var TurnTicker = function(players, timePerTurn) {
 		var self = this;
