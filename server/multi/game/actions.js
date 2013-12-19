@@ -43,8 +43,8 @@
 		 */
 		rlly: {
 			restrict: false,
-			use: function(target, player) {
-				player.pride++;
+			use: function(src) {
+				src.player.pride++;
 			},
 			free: true
 		},
@@ -59,8 +59,8 @@
 		 */
 		heal: {
 			restrict: [filters.friend, filters.full],
-			use: function(target) {
-				target.card.health++;
+			use: function(src) {
+				src.card.health++;
 			}
 		},
 
@@ -69,7 +69,7 @@
 		 */
 		tree: {
 			restrict: [filters.friend, filters.spaceAhead],
-			use: function(target) {
+			use: function(src, target) {
 				target.card = {
 					title: 'TREE',
 					desc: 'Make way for the TREE parade!',
@@ -99,7 +99,7 @@
 		 */
 		secr: {
 			restrict: [filters.enemy, filters.front],
-			use: function(target) {
+			use: function(src, target) {
 				target.card.moves--;
 			}
 		},
@@ -121,7 +121,7 @@
 		 */
 		bees: {
 			restrict: [filters.enemy, filters.front],
-			use: function(target) {
+			use: function(src, target) {
 				_.each(arguments, function(target) {
 					if(target.card) {
 						target.card.health--;
@@ -141,7 +141,7 @@
 		rbld: {
 			restrict: false,
 			restrict2: [filters.friend, filters.open],
-			use: function(target, graveyard, cardId) {
+			use: function(src, target, graveyard, cardId) {
 
 				//find the card
 				var card = null;
@@ -168,7 +168,7 @@
 		 */
 		shld: {
 			restrict: [filters.friend, filters.full],
-			use: function(target) {
+			use: function(src, target) {
 				target.card.shield++;
 			}
 		},
@@ -189,7 +189,7 @@
 		 */
 		strt: {
 			restrict: [filters.friend, filters.full],
-			use: function(target) {
+			use: function(src, target) {
 				target.card.moves++;
 			}
 		},
@@ -209,11 +209,11 @@
 		 */
 		tran: {
 			restrict: false,
-			use: function(target) {
-				var attack = target.card.attack;
-				var health = target.card.health;
-				target.card.health = attack;
-				target.card.attack = health;
+			use: function(src) {
+				var attack = src.card.attack;
+				var health = src.card.health;
+				src.card.health = attack;
+				src.card.attack = health;
 			}
 		},
 
@@ -227,7 +227,7 @@
 		sduc: {
 			restrict: [filters.enemy, filters.front],
 			restrict2: [filters.friend, filters.empty],
-			use: function(target, target2) {
+			use: function(src, target, target2) {
 				target2.card = target.card;
 				target.card = null;
 			}
@@ -244,15 +244,15 @@
 		},
 
 		/**
-		 * Delegate: Trade this unit with another unit in your hand.
+		 * Delegate: Return this unit to your hand
 		 */
 		delg: {
 			restrict: false,
-			use: function(target, player) {
-				var card = target.card;
-				target.card = null;
-				player.pride += card.pride;
-				player.hand.push(card);
+			use: function(src) {
+				var card = src.card;
+				src.card = null;
+				src.player.pride += card.pride;
+				src.player.hand.push(card);
 			}
 		},
 
@@ -261,7 +261,7 @@
 		 */
 		posn: {
 			restrict: [filters.enemy, filters.front],
-			use: function(target) {
+			use: function(src, target) {
 				target.card.poison += 1;
 			}
 		},
@@ -271,10 +271,10 @@
 		 */
 		bagm: {
 			restrict: [filters.enemy, filters.front],
-			use: function(target, player) {
+			use: function(src, target) {
 				var card = target.card;
 				target.card = null;
-				player.hand.push(card);
+				target.player.hand.push(card);
 			}
 		},
 
@@ -284,8 +284,8 @@
 		siph: {
 			restrict: [filters.enemy, filters.front],
 			use: function(src, target) {
-				target.card.health--;
 				src.card.health++;
+				target.card.health--;
 			}
 		},
 
@@ -332,8 +332,8 @@
 		 */
 		grow: {
 			restrict: false,
-			use: function(target) {
-				target.card = target.card.parent;
+			use: function(src) {
+				src.card = src.card.parent;
 			}
 		},
 
@@ -342,8 +342,8 @@
 		 */
 		btle: {
 			restrict: [filters.friend, filters.filled],
-			use: function(target) {
-				target.card.attackBuf += 2;
+			use: function(src) {
+				src.card.attackBuf += 2;
 			}
 		},
 
@@ -363,8 +363,8 @@
 		 */
 		hero: {
 			restrict: false,
-			use: function(target) {
-				target.card.hero++;
+			use: function(src) {
+				src.card.hero++;
 			}
 		},
 
@@ -373,9 +373,9 @@
 		 */
 		serm: {
 			restrict: false,
-			use: function(target) {
-				target.card.health -= 1;
-				target.card.attack += 2;
+			use: function(src) {
+				src.card.health -= 1;
+				src.card.attack += 2;
 			}
 		}
 
