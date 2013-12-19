@@ -205,7 +205,7 @@
       "PI": "Rum",
       "lt": "Gyvybių taškai",
       "ne": "Levens",
-      "sv": "Liv",
+      "sv": "Hälsa",
       "es": "Vida",
       "no": "Helse",
       "it": "Salute"
@@ -465,7 +465,7 @@
       "en": "Skirmish",
       "lt": "Susiremimas",
       "ct": "meow",
-      "sv": "Skärmytslig",
+      "sv": "Skirmish",
       "fr": "Escarmouche"
     },
     "mediumGame": {
@@ -514,7 +514,7 @@
       "PI": "crew",
       "lt": "Gildija",
       "ne": "gilde",
-      "sv": "guild",
+      "sv": "klan",
       "es": "gremio",
       "no": "klan"
     }
@@ -554,7 +554,7 @@
       "fr": "Créateur de paquet",
       "PI": "Mapbook binder",
       "lt": "Kaladės Dėliojimas",
-      "sv": "Deck byggare",
+      "sv": "Deckbyggare",
       "es": "Constructor de mazos",
       "no": "Kortstokk Bygger",
       "it": "Creatore dei mazzi"
@@ -567,7 +567,7 @@
       "fr": "Créateur de carte",
       "PI": "Map drawer",
       "lt": "Kortų kūrimas",
-      "sv": "Kort Byggare",
+      "sv": "Korbyggare",
       "es": "Constructor de cartas",
       "no": "Kort Bygger",
       "it": "Creatore delle carte"
@@ -642,6 +642,7 @@
       "ct": "meow",
       "lt": "Ateitys",
       "fr": "Futurs"
+      "sv": "Framitid"
     },
     "guild": {
       "en": "Guild",
@@ -651,7 +652,7 @@
       "PI": "Crew",
       "lt": "Gildija",
       "ne": "Gilde",
-      "sv": "Guild",
+      "sv": "Klan",
       "es": "Gremio",
       "it": "Gilda"
     }
@@ -679,7 +680,7 @@
         "PI": "Yarr, the race o' the krakens are a strange one. They were once but a cult, until Davy Jones cursed them to dwell in the sea.",
         "lt": "Siekdamai maksimalaus ryšio su gamta, Entai modifikavo savo DNR. Pasak legendų niekada nesutiks dviejų visiškai vienodų Entų.",
         "ne": "In hun zoektocht naar een band met de natuur hebben de Enten aan hun eigen DNA gesleuteld. Ze zijn een wilde groep nomaden, en ze zeggen dat je dezelfde Ent nooit tweemaal zult tegenkomen.",
-        "sv": "Söker en obligation med naturen, enterna mixtrar med sin egen dna. En vild grupp av nomader, de säger att du aldrig kommer att möta samma Ent två gånger.",
+        "sv": "Sökande efter en obligation med naturen,och enterna mixtrar med sin egen dna. En vild grupp av nomader, de säger att du aldrig kommer att möta samma Ent två gånger.",
         "es": "En la búsqueda de un lazo con la naturaleza, los Ents alteraron su propio ADN. Son un grupo salvaje de nómades, y dicen que nunca verás al mismo Ent dos veces.",
         "no": "Søkende etter et bond med naturen, tuklet Entene med deres eget DNA. En vill gruppe nomader, det sies at du aldri møter den samme Enten to ganger.",
         "it": "Cercando un legame con la natura, gli Ent hanno modificato il loro DNA. Sono un gruppo di nomadi, e si dice che non si può vedere un Ent più di due volte."
@@ -694,7 +695,7 @@
         "PI": "Inventors",
         "lt": "Kiborgai",
         "ne": "Machine",
-        "sv": "maskin",
+        "sv": "Maskin",
         "es": "Máquina",
         "no": "Maskin",
         "it": "Macchina"
@@ -790,7 +791,7 @@
         "PI": "Target pirate drinks 1 bottle o' rum",
         "lt": "Pasirinkta korta gaun  1 gyvybės tašką.",
         "ne": "Doel krijgt 1 leven erbij.",
-        "sv": "Det valda kortet får ett liv",
+        "sv": "Det valda kortet får ett hälsopoäng",
         "es": "La carta objetivo gana 1 de vida.",
         "no": "Målsatt kort får ett helsepoeng."
       }
@@ -856,7 +857,7 @@
         "PI": "Leaky ship",
         "lt": "Atskyrimas",
         "ne": "uitscheiding",
-        "sv": "utsöndring",
+        "sv": "sekretaioner",
         "es": "secreciones",
         "no": "sekresjoner"
       },
@@ -920,7 +921,7 @@
         "PI": "All enemy ships in target column drop 1 rum.",
         "lt": "Visi priešininkai vertikaliai nuo puolamo padaro praranda 1 gyvybės tašką.",
         "ne": "Alle vijanden verliezen 1 leven.",
-        "sv": "Alla fiender i en siktad kolumn tappar ett liv.",
+        "sv": "Alla fiender i en siktad kolumn tappar ett hälsopoäng.",
         "es": "Toos los enemigos en la columna objetivo pierden 1 de vida.",
         "no": "Alle fiender i målsatt kolonne mister ett helsepoeng"
       }
@@ -934,7 +935,7 @@
         "PI": "rebuild",
         "lt": "Atstatymas",
         "ne": "herbouwen",
-        "sv": "buyg om",
+        "sv": "omkonstruera",
         "es": "reconstruir",
         "no": "rekonstruer"
       },
@@ -946,7 +947,7 @@
         "PI": "Repair a sunk ship to bring it back",
         "lt": "Prikelia mirusią mašiną.",
         "ne": "Breng een dode machine weer tot leven.",
-        "sv": "Återuppta en död maskin.",
+        "sv": "Återuppliva en död maskin.",
         "es": "Revive una máquina muerta.",
         "no": "Gjenoppliv en død maskin."
       }
@@ -962,6 +963,7 @@
         "ne": "t-schild",
         "es": "Escudo T",
         "no": "t-skjold"
+        "sv": "T-sköld"
       },
       "desc": {
         "en": "All damage that would be dealt to target unit is reduced by 1 for a turn.",
@@ -985,7 +987,7 @@
         "PI": "spyglass",
         "lt": "Taiklumas",
         "ne": "nauwkeurig",
-        "sv": "exakt",
+        "sv": "presis",
         "es": "preciso",
         "no": "presis"
       },
@@ -1063,7 +1065,7 @@
         "PI": "illusionist",
         "lt": "Apkeitimas",
         "ne": "transformer",
-        "sv": "transformerare",
+        "sv": "transformator",
         "es": "transformista",
         "no": "transformator"
       },
@@ -1075,7 +1077,7 @@
         "PI": "Swap rum and cannons",
         "lt": "Apkeičia puolimo ir gyvybių taškus.",
         "ne": "Wissel levens en kracht om.",
-        "sv": "Byt liv och attack",
+        "sv": "Byt hälsa och attack",
         "es": "Intercambia ataque y vida.",
         "no": "Bytt helse og angrip."
       }
@@ -1101,7 +1103,7 @@
         "PI": "Convert an enemy crew to yer side if they have only 1 rum.",
         "lt": "Pervilioja priešininko padarą turinti tik 1 gyvybės tašką, į tavo pusę.",
         "ne": "Haal een vijand naar jouw kant als ze 1 leven overhebben.",
-        "sv": "Konvertera en fiende till din sida om dens liv är ett",
+        "sv": "Konvertera en fiende till din sida om dens hälsa är ett",
         "es": "Convierte un enemigo a tu bando si su vida es 1.",
         "no": "Konverter en fiende til din side dersom deres helse er 1."
       }
@@ -1179,7 +1181,7 @@
         "PI": "Target ship loses 1 rum per turn.",
         "lt": "Priešinko padaras praranda 1 gyvybės tašką kiekvieną ėjimą.",
         "ne": "Het vijandelijke doel verliest 1 leven per beurt.",
-        "sv": "Den valda fienden förlorar ett liv per omgång",
+        "sv": "Den valda fienden förlorar ett hälsopoäng per omgång",
         "es": "El enemigo objetivo pierde 1 de vida por turno.",
         "no": "Målsatt fiende mister ett helsepoeng per runde."
       }
@@ -1231,7 +1233,7 @@
         "PI": "Drain 1 rum from a ship o' yer choosin'.",
         "lt": "Pavogia vieną gyvybės tašką iš pasirinktos kortos.",
         "ne": "Steel 1 leven van een kaard van je keuze.",
-        "sv": "Stjäl ett liv från ett kort av ditt val",
+        "sv": "Stjäl ett hälsopoäng från ett kort av ditt val",
         "es": "Roba 1 de vida de una carta a tu elección.",
         "no": "Stjel ett helsepoeng fra et valgfritt kort."
       }
@@ -1387,7 +1389,7 @@
         "PI": "Available rum is converted into cannon munitions.",
         "lt": "Konvertuoja gyvybės taškus į puolimo.",
         "ne": "Alle beschikbare levens worden omgezet in kracht.",
-        "sv": "Tillgänliga livpoäng är konverterade till attackpoäng",
+        "sv": "Tillgänliga hälsopoäng är konverterade till attackpoäng",
         "es": "Los puntos de vida disponibles se convierten en puntos de ataque.",
         "no": "Tilgjengelige helsepoeng er konvertert til angrepspoeng"
       }
