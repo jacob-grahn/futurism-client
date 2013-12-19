@@ -16,7 +16,10 @@
 		 * Attack: trade blows with another card
 		 */
 		attk: {
-			restrict: [filters.enemy, filters.front],
+			restrict: [
+				[filters.owned],
+				[filters.enemy, filters.front]
+			],
 			use: function(src, target) {
 				target.card.health -= src.card.attack;
 				src.card.health -= target.card.attack;
@@ -29,7 +32,10 @@
 		 * Move: move a card from one place to another
 		 */
 		move: {
-			restrict: [filters.owned, filters.empty],
+			restrict: [
+				[filters.owned],
+				[filters.owned, filters.empty]
+			],
 			use: function(src, target) {
 				target.card = src.card;
 				src.card = null;
@@ -42,7 +48,9 @@
 		 * Rally: generate pride
 		 */
 		rlly: {
-			restrict: false,
+			restrict: [
+				false
+			],
 			use: function(src) {
 				src.player.pride++;
 			},
@@ -58,9 +66,12 @@
 		 * Heal: Target card gains 1 health.
 		 */
 		heal: {
-			restrict: [filters.friend, filters.full],
-			use: function(src) {
-				src.card.health++;
+			restrict: [
+				[filters.owned],
+				[filters.friend, filters.full]
+			],
+			use: function(src, target) {
+				target.card.health++;
 			}
 		},
 
@@ -68,7 +79,10 @@
 		 * Tree Sprout: A 1/1 tree is created.
 		 */
 		tree: {
-			restrict: [filters.friend, filters.spaceAhead],
+			restrict: [
+				[filters.owned],
+				[filters.friend, filters.empty]
+			],
 			use: function(src, target) {
 				target.card = {
 					title: 'TREE',
@@ -83,7 +97,10 @@
 		 * Abomination: Merge this unit with another.
 		 */
 		abom: {
-			restrict: [filters.friend, filters.full],
+			restrict: [
+				[filters.owned],
+				[filters.friend, filters.full]
+			],
 			use: function(src, target) {
 				var tCard = target.card;
 				var sCard = src.card;
@@ -98,7 +115,10 @@
 		 * Secretions: Target enemy can not attack next turn.
 		 */
 		secr: {
-			restrict: [filters.enemy, filters.front],
+			restrict: [
+				[filters.owned],
+				[filters.enemy, filters.front]
+			],
 			use: function(src, target) {
 				target.card.moves--;
 			}
@@ -108,7 +128,10 @@
 		 * Clone: Sacrifice this unit to produce a duplicate of another unit.
 		 */
 		clne: {
-			restrict: [filters.friend, filters.full],
+			restrict: [
+				[filters.owned],
+				[filters.friend, filters.full]
+			],
 			use: function(src, target) {
 				src.card.abilities = _.clone(target.card.abilities);
 				src.card.attack = target.card.attack;
@@ -120,7 +143,10 @@
 		 * Bees: All enemies in target column loose 1 health.
 		 */
 		bees: {
-			restrict: [filters.enemy, filters.front],
+			restrict: [
+				[filters.owned],
+				[filters.enemy, filters.front]
+			],
 			use: function(src, target) {
 				_.each(arguments, function(target) {
 					if(target.card) {
@@ -139,8 +165,11 @@
 		 * Rebuild: Resurrect a dead machine with 1 health.
 		 */
 		rbld: {
-			restrict: false,
-			restrict2: [filters.friend, filters.open],
+			restrict: [
+				[filters.owned],
+				[filters.friend, filters.open],
+				false
+			],
 			use: function(src, target, graveyard, cardId) {
 
 				//find the card
@@ -167,7 +196,10 @@
 		 * Shield: All damage that would be dealt to target card is reduced by 1 for a turn.
 		 */
 		shld: {
-			restrict: [filters.friend, filters.full],
+			restrict: [
+				[filters.owned],
+				[filters.friend, filters.full]
+			],
 			use: function(src, target) {
 				target.card.shield++;
 			}
@@ -177,7 +209,10 @@
 		 * Presicion: Attack an enemy of your choice regardless of defensive formations.
 		 */
 		prci: {
-			restrict: [filters.enemy, filters.full],
+			restrict: [
+				[filters.owned],
+				[filters.enemy, filters.full]
+			],
 			use: function(src, target) {
 				target.card.health -= src.card.attack;
 				src.card.health -= target.card.attack;
@@ -188,7 +223,10 @@
 		 * Strategist: Ally can perform an extra action this turn
 		 */
 		strt: {
-			restrict: [filters.friend, filters.full],
+			restrict: [
+				[filters.owned],
+				[filters.friend, filters.full]
+			],
 			use: function(src, target) {
 				target.card.moves++;
 			}
@@ -198,7 +236,10 @@
 		 * Network: Gain an allies abilities.
 		 */
 		netw: {
-			restrict: [filters.friend, filters.full],
+			restrict: [
+				[filters.owned],
+				[filters.friend, filters.full]
+			],
 			use: function(src, target) {
 				src.card.abilities = _.uniq(src.card.abilities.concat(target.card.abilities));
 			}
@@ -208,7 +249,9 @@
 		 * Transform: Swap health and attack.
 		 */
 		tran: {
-			restrict: false,
+			restrict: [
+				[filters.owned]
+			],
 			use: function(src) {
 				var attack = src.card.attack;
 				var health = src.card.health;
@@ -225,8 +268,11 @@
 		 * Seduction: Convert an enemy to your side if their health is 1.
 		 */
 		sduc: {
-			restrict: [filters.enemy, filters.front],
-			restrict2: [filters.friend, filters.empty],
+			restrict: [
+				[filters.owned],
+				[filters.enemy, filters.front],
+				[filters.friend, filters.empty]
+			],
 			use: function(src, target, target2) {
 				target2.card = target.card;
 				target.card = null;
@@ -237,7 +283,10 @@
 		 * Assassin: Attack without taking damage.
 		 */
 		assn: {
-			restrict: [filters.enemy, filters.front],
+			restrict: [
+				[filters.owned],
+				[filters.enemy, filters.front]
+			],
 			use: function(src, target) {
 				target.card.health -= src.card.attack;
 			}
@@ -247,7 +296,9 @@
 		 * Delegate: Return this unit to your hand
 		 */
 		delg: {
-			restrict: false,
+			restrict: [
+				[filters.owned]
+			],
 			use: function(src) {
 				var card = src.card;
 				src.card = null;
@@ -260,7 +311,10 @@
 		 * Poison: Target enemy looses 1 health per turn.
 		 */
 		posn: {
-			restrict: [filters.enemy, filters.front],
+			restrict: [
+				[filters.owned],
+				[filters.enemy, filters.front]
+			],
 			use: function(src, target) {
 				target.card.poison += 1;
 			}
@@ -270,7 +324,10 @@
 		 * Bag'em: Target card is returned to its owners hand.
 		 */
 		bagm: {
-			restrict: [filters.enemy, filters.front],
+			restrict: [
+				[filters.owned],
+				[filters.enemy, filters.front]
+			],
 			use: function(src, target) {
 				var card = target.card;
 				target.card = null;
@@ -282,7 +339,10 @@
 		 * Siphon: Steal 1 health from a card of your choice.
 		 */
 		siph: {
-			restrict: [filters.enemy, filters.front],
+			restrict: [
+				[filters.owned],
+				[filters.enemy, filters.front]
+			],
 			use: function(src, target) {
 				src.card.health++;
 				target.card.health--;
@@ -297,8 +357,11 @@
 		 * Male: Can reproduce with females.
 		 */
 		male: {
-			restrict: [filters.friend, filters.female],
-			restrict2: [filters.owned, filters.empty],
+			restrict: [
+				[filters.owned],
+				[filters.friend, filters.female],
+				[filters.owned, filters.empty]
+			],
 			use: function(src, target1, target2) {
 				target2.card = {
 					name: 'WAR BABY',
@@ -314,8 +377,11 @@
 		 * Female: Can reproduce with males.
 		 */
 		feml: {
-			restrict: [filters.friend, filters.male],
-			restrict2: [filters.owned, filters.empty],
+			restrict: [
+				[filters.owned],
+				[filters.friend, filters.male],
+				[filters.owned, filters.empty]
+			],
 			use: function(src, target1, target2) {
 				target2.card = {
 					name: 'WAR BABY',
@@ -331,7 +397,9 @@
 		 * Grow: turn a WAR BABY into its parent
 		 */
 		grow: {
-			restrict: false,
+			restrict: [
+				[filters.owned]
+			],
 			use: function(src) {
 				src.card = src.card.parent;
 			}
@@ -341,7 +409,10 @@
 		 * Battlecry: Target unit gains 2 attack for the turn.
 		 */
 		btle: {
-			restrict: [filters.friend, filters.filled],
+			restrict: [
+				[filters.owned],
+				[filters.friend, filters.full]
+			],
 			use: function(src) {
 				src.card.attackBuf += 2;
 			}
@@ -351,7 +422,10 @@
 		 * Determined: Sacrifice this card to defeat any enemy
 		 */
 		detr: {
-			restrict: [filters.enemy, filters.front],
+			restrict: [
+				[filters.owned],
+				[filters.enemy, filters.front]
+			],
 			use: function(src, target) {
 				src.card.health = 0;
 				target.card.health = 0;
@@ -362,7 +436,9 @@
 		 * Sacrifice: All enemy attacks must target this card for one turn.
 		 */
 		hero: {
-			restrict: false,
+			restrict: [
+				[filters.owned]
+			],
 			use: function(src) {
 				src.card.hero++;
 			}
@@ -372,7 +448,9 @@
 		 * Super Serum: Available health points are converted into attack points.
 		 */
 		serm: {
-			restrict: false,
+			restrict: [
+				[filters.owned]
+			],
 			use: function(src) {
 				src.card.health -= 1;
 				src.card.attack += 2;
