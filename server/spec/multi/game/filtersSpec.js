@@ -50,21 +50,21 @@ describe('filters', function() {
 			targetId: 0,
 			row: 0,
 			column: 0,
-			account: player1,
+			player: player1,
 			card: femaleCard
 		},
 		{
 			targetId: 1,
 			row: 1,
 			column: 0,
-			account: player1,
+			player: player1,
 			card: basicCard
 		},
 		{
 			targetId: 2,
 			row: 2,
 			column: 0,
-			account: player1,
+			player: player1,
 			card: femaleCard
 		},
 
@@ -73,21 +73,21 @@ describe('filters', function() {
 			targetId: 3,
 			row: 0,
 			column: 1,
-			account: player1,
+			player: player1,
 			card: null
 		},
 		{
 			targetId: 4,
 			row: 1,
 			column: 1,
-			account: player1,
+			player: player1,
 			card: null
 		},
 		{
 			targetId: 5,
 			row: 2,
 			column: 1,
-			account: player1,
+			player: player1,
 			card: null
 		},
 
@@ -96,21 +96,21 @@ describe('filters', function() {
 			targetId: 6,
 			row: 0,
 			column: 2,
-			account: player1,
+			player: player1,
 			card: maleCard
 		},
 		{
 			targetId: 7,
 			row: 1,
 			column: 2,
-			account: player1,
+			player: player1,
 			card: basicCard
 		},
 		{
 			targetId: 8,
 			row: 2,
 			column: 2,
-			account: player1,
+			player: player1,
 			card: null
 		},
 
@@ -119,21 +119,21 @@ describe('filters', function() {
 			targetId: 9,
 			row: 0,
 			column: 3,
-			account: player1,
+			player: player1,
 			card: null
 		},
 		{
 			targetId: 10,
 			row: 1,
 			column: 3,
-			account: player1,
+			player: player1,
 			card: null
 		},
 		{
 			targetId: 11,
 			row: 2,
 			column: 3,
-			account: player1,
+			player: player1,
 			card: null
 		},
 
@@ -146,21 +146,21 @@ describe('filters', function() {
 			targetId: 12,
 			row: 0,
 			column: 0,
-			account: player2,
+			player: player2,
 			card: null
 		},
 		{
 			targetId: 13,
 			row: 1,
 			column: 0,
-			account: player2,
+			player: player2,
 			card: null
 		},
 		{
 			targetId: 14,
 			row: 2,
 			column: 0,
-			account: player2,
+			player: player2,
 			card: null
 		},
 
@@ -169,21 +169,21 @@ describe('filters', function() {
 			targetId: 15,
 			row: 0,
 			column: 1,
-			account: player2,
+			player: player2,
 			card: null
 		},
 		{
 			targetId: 16,
 			row: 1,
 			column: 1,
-			account: player2,
+			player: player2,
 			card: null
 		},
 		{
 			targetId: 17,
 			row: 2,
 			column: 1,
-			account: player2,
+			player: player2,
 			card: null
 		},
 
@@ -192,21 +192,21 @@ describe('filters', function() {
 			targetId: 18,
 			row: 0,
 			column: 2,
-			account: player2,
+			player: player2,
 			card: null
 		},
 		{
 			targetId: 19,
 			row: 1,
 			column: 2,
-			account: player2,
+			player: player2,
 			card: null
 		},
 		{
 			targetId: 20,
 			row: 2,
 			column: 2,
-			account: player2,
+			player: player2,
 			card: null
 		},
 
@@ -215,21 +215,21 @@ describe('filters', function() {
 			targetId: 21,
 			row: 0,
 			column: 3,
-			account: player2,
+			player: player2,
 			card: maleCard
 		},
 		{
 			targetId: 22,
 			row: 1,
 			column: 3,
-			account: player2,
+			player: player2,
 			card: null
 		},
 		{
 			targetId: 23,
 			row: 2,
 			column: 3,
-			account: player2,
+			player: player2,
 			card: null
 		},
 
@@ -242,21 +242,21 @@ describe('filters', function() {
 			targetId: 24,
 			row: 0,
 			column: 0,
-			account: player3,
+			player: player3,
 			card: null
 		},
 		{
 			targetId: 25,
 			row: 1,
 			column: 0,
-			account: player3,
+			player: player3,
 			card: null
 		},
 		{
 			targetId: 26,
 			row: 2,
 			column: 0,
-			account: player3,
+			player: player3,
 			card: null
 		},
 
@@ -265,21 +265,21 @@ describe('filters', function() {
 			targetId: 27,
 			row: 0,
 			column: 1,
-			account: player3,
+			player: player3,
 			card: null
 		},
 		{
 			targetId: 28,
 			row: 1,
 			column: 1,
-			account: player3,
+			player: player3,
 			card: null
 		},
 		{
 			targetId: 29,
 			row: 2,
 			column: 1,
-			account: player3,
+			player: player3,
 			card: null
 		},
 
@@ -288,21 +288,21 @@ describe('filters', function() {
 			targetId: 30,
 			row: 0,
 			column: 2,
-			account: player3,
+			player: player3,
 			card: null
 		},
 		{
 			targetId: 31,
 			row: 1,
 			column: 2,
-			account: player3,
+			player: player3,
 			card: null
 		},
 		{
 			targetId: 32,
 			row: 2,
 			column: 2,
-			account: player3,
+			player: player3,
 			card: null
 		},
 
@@ -311,21 +311,21 @@ describe('filters', function() {
 			targetId: 33,
 			row: 0,
 			column: 3,
-			account: player3,
+			player: player3,
 			card: maleCard
 		},
 		{
 			targetId: 34,
 			row: 1,
 			column: 3,
-			account: player3,
+			player: player3,
 			card: null
 		},
 		{
 			targetId: 35,
 			row: 2,
 			column: 3,
-			account: player3,
+			player: player3,
 			card: null
 		}
 	];

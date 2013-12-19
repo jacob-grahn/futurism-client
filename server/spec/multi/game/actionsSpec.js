@@ -306,23 +306,26 @@ describe('game/actions', function() {
 
 	it('male should hit up the ladies', function() {
 		target(1,0,0).card = strongCard;
-		actions.male.use(target(1,0,0), target(1,0,1));
+		target(1,1,0).card = weakCard;
+		actions.male.use(target(1,0,0), target(1,1,0), target(1,0,1));
 		expect(target(1,0,1).card.name).toBe('WAR BABY');
 	});
 
 
 	it('feml should hit up the manlies', function() {
 		target(1,0,0).card = strongCard;
-		actions.feml.use(target(1,0,0), target(1,0,1));
+		target(1,1,0).card = weakCard;
+		actions.feml.use(target(1,0,0), target(1,1,0), target(1,0,1));
 		expect(target(1,0,1).card.name).toBe('WAR BABY');
 	});
 
 
 	it('grow should bring a baby to adulthood', function() {
-		target(1,0,0).card = strongCard;
-		actions.feml.use(target(1,0,0), target(1,0,1));
-		actions.grow.use(target(1,0,1));
-		expect(target(1,0,1).card).toEqual(strongCard);
+		target(1,0,0).card = {
+			parent: strongCard
+		};
+		actions.grow.use(target(1,0,0));
+		expect(target(1,0,0).card).toEqual(strongCard);
 	});
 
 

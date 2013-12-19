@@ -21,14 +21,14 @@
 
 	filters.friend = function(targets, me) {
 		return _.filter(targets, function(target) {
-			return target.account.team === me.team;
+			return target.player.team === me.team;
 		});
 	};
 
 
 	filters.enemy = function(targets, me) {
 		return _.filter(targets, function(target) {
-			return target.account.team !== me.team;
+			return target.player.team !== me.team;
 		});
 	};
 
@@ -70,7 +70,7 @@
 
 	filters.owned = function(targets, me) {
 		return _.filter(targets, function(target) {
-			return target.account._id === me._id;
+			return target.player._id === me._id;
 		});
 	};
 

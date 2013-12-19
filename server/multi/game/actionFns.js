@@ -6,102 +6,101 @@
 
 	module.exports = {
 
+
 		/**
 		 * Perform an action
-		 * @param {object} account
+		 * @param {object} board
+		 * @param {object} players
+		 * @param {object} player
 		 * @param {string} actionStr
-		 * @param {number} srcTargetId
-		 * @param {[number]} targetIds
+		 * @param {Array} targets
 		 */
-		var doAction = function(account, actionStr, targetIds, srcTargetId) {
-			var src = idToTarget(srcTargetId);
+		doAction: function(board, player, actionStr, targets) {
+			if(targets.length === 0) {
+				return 'no targets';
+			}
+
+			var srcPos = targets[0];
+			var src = board.targetPos(srcPos);
 			var action = actions[actionStr];
 
 			if(!src) {
-				return 'invalid target id';
+				return 'invalid target position';
 			}
-			if(actionStr !== 'move' && actionStr !== 'attk' && src.card.abilities.indexOf(actionStr) === -1) {
-				return 'card does not have this ability';
+			if(!src.card) {
+				return 'no card at src target';
 			}
 			if(!action) {
 				return 'action not found';
 			}
-			if(account._id !== src.account._id) {
+			if(action.free || src.card.abilities.indexOf(actionStr) === -1) {
+				return 'card does not have this ability';
+			}
+			if(player !== src.player) {
 				return 'this is not your card';
 			}
-			if(!isValidAction(account, action, targetIds, srcTargetId)) {
-				return 'that target is not allowed';
+			if(!module.exports.isValidAction(board, player, action, targets.slice(1))) {
+				return 'target is not allowed';
 			}
 
-			var target1 = idToTarget(targetIds[0]);
-			var target2 = idToTarget(targetIds[1]);
-			action.use(target1, src, target2);
-
-			targets = getAllTargets(accounts);
+			if(targets.length === 1) {
+				action.use(src);
+			}
+			if(targets.length === 2) {
+				action.use(src, board.targetPos(targets[1]));
+			}
+			if(targets.length === 3) {
+				action.use(src, board.targetPos(targets[1]), board.targetPos(targets[2]));
+			}
 
 			return 'success';
-		};
+		},
 
 
-	/**
-	 * Checks if an action's targets are allowed
-	 * @param {object} account
-	 * @param {object} action
-	 * @param {number} srcTargetId
-	 * @param {[number]} targetIds
-	 * @returns {boolean} result
-	 */
-	var isValidAction = function(account, action, targetIds, srcTargetId) {
-		var valid = true;
-		_.each(targetIds, function(targetId, index) {
-			var target = idToTarget(targetId);
-			var validTargets;
+		/**
+		 * Checks if an action's targets are allowed
+		 * @param {object} board
+		 * @param {object} player
+		 * @param {object} action
+		 * @param {Array} targets
+		 * @returns {boolean} result
+		 */
+		isValidAction: function(board, player, action, targets) {
+			var valid = true;
+			_.each(targets, function(targetPos, index) {
+				var target = board.targetPos(targetPos);
+				var validTargets;
 
-			var filterStr = 'targets';
-			if(index > 0) {
-				filterStr += (index+1);
-			}
-			var filters = action[filterStr];
+				var filterStr = 'restrict';
+				if(index > 0) {
+					filterStr += (index+1);
+				}
+				var filters = action[filterStr];
 
-			if(filters === null) {
-				validTargets = [srcTargetId];
-			}
-			else if(filters === undefined) {
-				validTargets = targets;
-			}
-			else {
-				validTargets = useFilters(filters, account);
-			}
-
-			if(validTargets.indexOf(target) === -1) {
-				valid = false;
-			}
-			/*console.log('action', action);
-			 console.log('filters', filterStr, filters);
-			 console.log('validTargets', validTargets);
-			 console.log('---');
-			 console.log('target', target);
-			 console.log('000');
-			 console.log('valid', valid);*/
-		});
-		return valid;
-	};
+				if(filters) {
+					validTargets = module.exports.useFilters(filters, player, board.allTargets());
+					if(validTargets.indexOf(target) === -1) {
+						valid = false;
+					}
+				}
+			});
+			return valid;
+		},
 
 
-	/**
-	 * Find all targets that an ability can be used on
-	 * @param {array} filters
-	 * @param {object} account
-	 */
-	var useFilters = function(filters, account) {
-		var filtered = _.clone(targets);
-		//console.log('filtered', filtered);
-		_.each(filters, function(filter) {
-			filtered = filter(filtered, account);
-			//console.log('filtered', filtered);
-		});
-		return filtered;
-	};
+		/**
+		 * Find all targets that an ability can be used on
+		 * @param {array} filters
+		 * @param {object} player
+		 * @param {array} targets
+		 */
+		useFilters: function(filters, player, targets) {
+			var filtered = _.clone(targets);
+			_.each(filters, function(filter) {
+				filtered = filter(filtered, player);
+			});
+			return filtered;
+		}
 
 	};
 

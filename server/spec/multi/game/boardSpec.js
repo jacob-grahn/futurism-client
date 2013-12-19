@@ -47,11 +47,10 @@ describe('game/board', function() {
 	});
 
 
-	it('should store playerId and team in targets', function() {
+	it('should store player in targets', function() {
 		var board = new Board([player1, player2, player3], columns, rows);
-		expect(board.target(1,0,0).playerId).toBe(1);
-		expect(board.target(2,0,0).team).toBe(2);
-		expect(board.target(3,0,0).team).toBe(2);
+		expect(board.target(1,0,0).player).toBe(player1);
+		expect(board.target(3,0,0).player).toBe(player3);
 	});
 
 

@@ -11,7 +11,6 @@
 				matchPlayer = player;
 			}
 		});
-		console.log(id, players, matchPlayer);
 		return matchPlayer;
 	};
 

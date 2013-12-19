@@ -1,86 +1,94 @@
-describe('table', function() {
+describe('actionFns', function() {
 
-	var user1 = {
-		_id: 1,
-		name: 'Philly',
-		team: 1,
-		columns: [[null,null,null],[null,null,null],[null,null,null],[null,null,null]]
-	};
-	//targetId: 3
-	user1.columns[1][0] = {
-		name: 'Big Bertha',
-		abilities: ['bees'],
-		health: 15,
-		attack: 6
-	};
-
-	var user2 = {
-		_id: 2,
-		name: 'Sue Grafton',
-		team: 2,
-		columns: [[null,null,null],[null,null,null],[null,null,null],[null,null,null]]
-	};
-	//targetId: 12
-	user2.columns[0][0] = {
-		name: 'Wolyump',
-		abilities: ['heal'],
-		health: 4,
-		attack: 2
-	};
-	//targetId: 13
-	user2.columns[0][1] = {
-		name: 'raptor',
-		abilities: ['sduc'],
-		health: 1,
-		attack: 9
-	};
-
-
-
-	var table;
+	var actionFns = require('../../../multi/game/actionFns');
+	var Board = require('../../../multi/game/board');
+	var board, player1, player2;
 
 
 	beforeEach(function() {
-		table = require('../../../multi/game/table')([user1, user2]);
+		player1 = {
+			_id: 1,
+			name: 'Philly',
+			team: 1
+		};
+		player2 = {
+			_id: 2,
+			name: 'Sue Grafton',
+			team: 2
+		};
+
+		var columns = 2;
+		var rows = 2;
+		board = new Board([player1, player2], columns, rows);
 	});
 
 
 	it('should perform a valid action', function() {
-		var result = table.doAction(user2, 'heal', [12], 12);
+		board.target(1,0,0).card = {
+			abilities: ['heal'],
+			health: 3
+		};
+		var result = actionFns.doAction(board, player1, 'heal', [{playerId:1, row:0, column:0}]);
 		expect(result).toBe('success');
-		expect(user2.columns[0][0].health).toBe(5);
+		expect(board.target(1,0,0).card.health).toBe(4);
 	});
 
 
 	it('should not perform an action on an invalid target', function() {
-		var result = table.doAction(user1, 'attk', [0], 0);
+		var result = actionFns.doAction(board, player1, 'heal', [{playerId:1, row:0, column:0}]);
 		expect(result).not.toBe('success');
 	});
 
 
 	it('should not let you use a card you do not own', function() {
-		var result = table.doAction(user1, 'attk', [13], 12);
-		expect(result).toBe('this is not your card');
+		board.target(2,0,0).card = {
+			abilities: ['heal'],
+			health: 3
+		};
+		var result = actionFns.doAction(board, player1, 'heal', [{playerId:2, row:0, column:0}]);
+		expect(result).toContain('not your card');
 	});
 
 
 	it('should not let you use an ability the card does not have', function() {
-		var result = table.doAction(user2, 'sduc', [3], 12);
+		board.target(2,0,0).card = {
+			abilities: ['sduc', 'mooo']
+		};
+		var result = actionFns.doAction(board, player1, 'attk', [{playerId:2, row:0, column:0}, {playerId:1, row:0, column:0}]);
 		expect(result).toBe('card does not have this ability');
 	});
 
 
 	it('should perform multi-step validations', function() {
-		var result = table.doAction(user2, 'sduc', [3,14], 13);
+		board.target(1,0,0).card = {
+			abilities: ['male']
+		};
+		board.target(1,0,1).card = {
+			abilities: ['feml']
+		};
+		var result = actionFns.doAction(board, player1, 'male', [
+			{playerId:1, column:0, row:0}, //male
+			{playerId:1, column:0, row:1}, //female
+			{playerId:1, column:1, row:0} //empty slot for child
+		]);
 		expect(result).toBe('success');
+		expect(board.target(1,1,0).card.name).toBe('WAR BABY');
 	});
 
 
 	it('should fail bad multi-step validations', function() {
-		var result = table.doAction(user2, 'sduc', [3,1], 13);
-		expect(result).toBe('that target is not allowed');
+		board.target(1,0,0).card = {
+			abilities: ['male']
+		};
+		board.target(1,0,1).card = {
+			abilities: ['feml']
+		};
+		var result = actionFns.doAction(board, player1, 'feml', [
+			{playerId:1, column:0, row:1}, //male
+			{playerId:1, column:0, row:0}, //female
+			{playerId:2, column:1, row:0} //enemy territory, should fail here
+		]);
+		expect(result).toBe('target is not allowed');
 	});
-
-
 
 });
