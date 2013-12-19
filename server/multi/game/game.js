@@ -25,6 +25,10 @@
 	 * @param {string} gameId
 	 */
 	module.exports = function(accounts, rules, gameId) {
+		var self = this;
+		var board;
+		self.gameId = gameId;
+
 
 		/**
 		 * apply default rules
@@ -53,44 +57,48 @@
 
 
 			/**
-			 * sort players by deck rank
+			 * get ready to play
 			 */
 			sortPlayers(players);
+			shuffleDecks();
+			drawCards();
 
 
 			/**
 			 * create the board
 			 */
-			var board = new Board(players, rules.columns, rules.rows);
+			board = new Board(players, rules.columns, rules.rows);
 
 
 			/**
 			 * start the turn ticker
 			 */
-			var turnTicker = new TurnTicker(players, rules.timePerTurn);
-			turnTicker.nextTurn(function() {
+			var turnTicker = new TurnTicker(players, rules.timePerTurn, function() {
+
+
+				/**
+				 * refill hands
+				 */
+				drawCards();
 
 
 				/**
 				 * check for victory
 				 */
-				checkVictory();
+				result = victoryCondition.commanderRules(players, board, turnTicker.turn);
+				if(result.winner) {
+					turnTicker.stop();
+					prizeCalculator.run(players, result.team, false, function(err) {
+
+
+						/**
+						 * That's it, we're done
+						 */
+						self.remove();
+					});
+				}
 			});
 		});
-
-
-		/**
-		 *
-		 */
-		var checkVictory = function() {
-			result = victoryCondition.commanderRules(players, board, turnTicker.turn);
-			if(result.winner) {
-				turnTicker.stop();
-				prizeCalculator.run(players, winningTeam, prize, function(err) {
-
-				});
-			}
-		};
 
 
 		/**
@@ -109,7 +117,7 @@
 		/**
 		 * Returns a snapshot of everything in this game
 		 */
-		var getStatus = function() {
+		self.getStatus = function() {
 			var playersPub = _.map(players, function(player) {
 				return _.pick(player, '_id', 'team', 'name', 'site', 'pride', 'active');
 			});
@@ -124,24 +132,10 @@
 		 * End a player's turn
 		 * @param account
 		 */
-		var endTurn = function(account) {
+		self.endTurn = function(account) {
 			if(account._id === activeAccount._id) {
 				nextTurn();
 			}
-		};
-
-
-		/**
-		 * Start a turn for the next player in line
-		 */
-		var nextTurn = function() {
-			drawCards();
-			turn++;
-			var accountIndex = (turn+1) % (accounts.length);
-			var account = accounts[accountIndex];
-			activeAccount = account;
-			emit('turn', _.pick(account, '_id', 'name'));
-			//emit('gameStatus', getStatus());
 		};
 
 
@@ -160,9 +154,8 @@
 		 * @param account
 		 * @param actionStr
 		 * @param targetIds
-		 * @param srcTargetId
 		 */
-		var doAction = function(account, actionStr, targetIds, srcTargetId) {
+		self.doAction = function(account, actionStr, targetIds, srcTargetId) {
 			if(account._id === activeAccount._id) {
 				table.doAction(account, actionStr, targetIds, srcTargetId);
 			}
@@ -194,68 +187,28 @@
 		/**
 		 * remove an account from this game
 		 */
-		var quit = function(removingAccount) {
-			endTurn(removingAccount);
-			accounts = _.filter(accounts, function(memberAccount) {
-				return memberAccount._id !== removingAccount._id;
-			});
-			table.setAccounts(accounts);
-			removeIfEmpty();
-		};
+		self.quit = function(removingAccount) {
 
-
-		/**
-		 * call remove() if there are no accounts left in this game
-		 */
-		var removeIfEmpty = function() {
-			if(accounts.length === 0) {
-				remove();
-			}
 		};
 
 
 		/**
 		 * Clean up for removal
 		 */
-		var remove = function() {
-			_.each(accounts, function(account) {
-				delete account.gameId;
-				delete account.columns;
-				delete account.hand;
-			});
-			delete games[gameId];
-
-			if(table) {
-				table.reset();
+		self.remove = function() {
+			accounts = null;
+			if(board) {
+				board.remove();
+				board = null;
 			}
+			gameLookup.deleteId(gameId);
 		};
 
 
 		/**
-		 * Kick the game off
+		 * Store this game so it can be accessed from gameInterface.js
 		 */
-		shuffleDecks();
-		drawCards();
-		nextTurn();
-
-
-		/**
-		 * Public interface
-		 */
-		var face = {
-			gameId: gameId,
-			startedAt: new Date(),
-			getStatus: getStatus,
-			drawCards: drawCards,
-			endTurn: endTurn,
-			remove: remove,
-			doAction: doAction,
-			quit: quit
-		};
-
-		gameLookup.store(gameId, face);
-
-		return face;
+		gameLookup.store(gameId, self);
 	};
 
 }());

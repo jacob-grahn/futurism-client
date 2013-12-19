@@ -17,7 +17,7 @@
 		 */
 		attk: {
 			targets: [filters.enemy, filters.front],
-			use: function(target, src) {
+			use: function(src, target) {
 				target.card.health -= src.card.attack;
 				src.card.health -= target.card.attack;
 			}
@@ -29,9 +29,9 @@
 		 */
 		move: {
 			targets: [filters.owned, filters.empty],
-			use: function(target1, target2) {
-				target2.card = target1.card;
-				target1.card = null;
+			use: function(src, target) {
+				target.card = src.card;
+				src.card = null;
 			}
 		},
 

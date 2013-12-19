@@ -33,15 +33,18 @@
 		self.future = 'normal';
 		self.areas = {};
 
+
 		_.each(players, function(player) {
 			self.areas[player._id] = {
 				targets: generateTargets(columns, rows, player._id, player.team)
 			}
 		});
 
+
 		self.target = function(playerId, column, row) {
 			return self.areas[playerId].targets[column][row];
 		};
+
 
 		self.allTargets = function() {
 			var all = [];
@@ -55,6 +58,7 @@
 			return all;
 		};
 
+
 		self.playerTargets = function(playerId) {
 			var area = self.areas[playerId];
 			var all = [];
@@ -65,6 +69,11 @@
 			});
 			return all;
 		};
+
+
+		self.remove = function() {
+			self.areas = null;
+		}
 	};
 
 
