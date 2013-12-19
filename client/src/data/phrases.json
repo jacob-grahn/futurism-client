@@ -459,7 +459,7 @@
       "lt": "Ateitis",
       "ct": "meow",
       "sv": "framtid",
-      "fr": "Futurs"
+      "fr": "Futurs",
       "pi": "Days after tomorrow"
     },
     "shortGame": {
@@ -467,7 +467,7 @@
       "lt": "Susiremimas",
       "ct": "meow",
       "sv": "Skärmytslig",
-      "fr": "Escarmouche"
+      "fr": "Escarmouche",
       "pi": "Skirmish"
     },
     "mediumGame": {
@@ -475,7 +475,7 @@
       "lt": "Kova",
       "ct": "meow",
       "sv": "Slag",
-      "fr": "Bataille"
+      "fr": "Bataille",
       "pi": "Raid"
     },
     "longGame": {
@@ -483,7 +483,7 @@
       "lt": "Karas",
       "ct": "meow",
       "sv": "Krig",
-      "fr": "Guerre"
+      "fr": "Guerre",
       "pi": "War"
     },
     "customGame": {
@@ -645,7 +645,7 @@
       "en": "Futures",
       "ct": "meow",
       "lt": "Ateitis",
-      "fr": "Futurs"
+      "fr": "Futurs",
       "pi": "Days after tomorrow"
     },
     "guild": {
