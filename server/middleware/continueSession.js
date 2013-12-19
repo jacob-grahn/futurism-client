@@ -13,7 +13,7 @@
 		}
 
 		var token = req.headers['session-token'];
-		mongoSession.get(token, function(err, result) {
+		session.get(token, function(err, result) {
 			if(!err && result) {
 				req.session = result;
 			}

@@ -87,7 +87,7 @@ function() {
 			//--- start the session
 			function(callback) {
 				var v = verifiedData;
-				mongoSession.make({userId: v.user_id}, callback);
+				session.make({userId: v.user_id}, callback);
 			}
 		],
 

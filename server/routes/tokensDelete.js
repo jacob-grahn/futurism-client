@@ -14,7 +14,7 @@
 		}
 
 		var token = req.body.token;
-		mongoSession.destroy(token, function(err, result) {
+		session.destroy(token, function(err, result) {
 			return res.apiOut(err, result);
 		})
 	};
