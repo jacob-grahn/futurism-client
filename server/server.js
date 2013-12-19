@@ -9,7 +9,7 @@
 	var checkAuth = require('./middleware/checkAuth');
 	var checkMod = require('./middleware/checkMod');
 	var output = require('./middleware/output');
-	var session = require('./fns/session');
+	var session = require('./fns/mongoSession');
 	var expr = express();
 	var httpServer = require('http').createServer(expr);
 	var io = require('socket.io').listen(httpServer);
@@ -18,13 +18,13 @@
 	//--- mongoose connect
 	require('./fns/fndSave'); //extends mongoose
 	var mongoose = require('mongoose');
-	var mongoAddr = require('./fns/connect/mongoConnect').getConnectAddr();
+	var mongoAddr = require('./fns/mongoConnect').getConnectAddr();
 	mongoose.connect(mongoAddr);
 
 
 	//--- redis connect
-	var redisCache = require('./fns/connect/redisCache');
-	session.setRedis(redisCache.store);
+	var redisCache = require('./fns/redisCache');
+	mongoSession.setRedis(redisCache.store);
 
 
 	//--- middleware

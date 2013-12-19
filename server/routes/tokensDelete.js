@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	var session = require('../fns/session');
+	var session = require('../fns/mongoSession');
 
 
 	/**
@@ -14,7 +14,7 @@
 		}
 
 		var token = req.body.token;
-		session.destroy(token, function(err, result) {
+		mongoSession.destroy(token, function(err, result) {
 			return res.apiOut(err, result);
 		})
 	};

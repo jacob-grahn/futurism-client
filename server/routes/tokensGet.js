@@ -9,7 +9,7 @@ function() {
 
 	var request = require('request');
 	var fns = require('../fns/fns');
-	var session = require('../fns/session');
+	var session = require('../fns/mongoSession');
 	var fndSave = require('../fns/fndSave');
 	var async = require('async');
 	var User = require('../models/user');
@@ -87,7 +87,7 @@ function() {
 			//--- start the session
 			function(callback) {
 				var v = verifiedData;
-				session.make({userId: v.user_id}, callback);
+				mongoSession.make({userId: v.user_id}, callback);
 			}
 		],
 

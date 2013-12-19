@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	var redis = require('../fns/connect/redisCache').store;
+	var redis = require('../fns/redisCache').store;
 
 	module.exports = function(req, res) {
 
@@ -28,7 +28,7 @@
 			var collection;
 			async.waterfall([
 				function(callback) {
-					require('../fns/connect/mongoConnect').connect(callback);
+					require('../fns/mongoConnect').connect(callback);
 				},
 				function(db, callback) {
 					collection = db.collection('testdb');
@@ -47,7 +47,7 @@
 
 
 		var s3Test = function(callback) {
-			var s3 = require('../fns/connect/s3Connect')();
+			var s3 = require('../fns/s3Connect')();
 			async.series([
 				function(callback) {
 					s3.putObject({Key: 'test/file', Body: 'pass!', ContentType:'text/plain'}, callback);

@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	var session = require('../fns/session');
+	var session = require('../fns/mongoSession');
 
 
 	module.exports = function(req, res, next) {
@@ -13,7 +13,7 @@
 		}
 
 		var token = req.headers['session-token'];
-		session.get(token, function(err, result) {
+		mongoSession.get(token, function(err, result) {
 			if(!err && result) {
 				req.session = result;
 			}

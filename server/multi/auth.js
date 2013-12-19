@@ -1,4 +1,4 @@
-var session = require('../fns/session');
+var session = require('../fns/mongoSession');
 var revalidateLogin = require('../fns/revalidateLogin');
 var _ = require('lodash');
 
@@ -12,7 +12,7 @@ module.exports = function() {
 
 			socket.on('auth', function(data) {
 
-				session.get(data.token, function(err, sess) {
+				mongoSession.get(data.token, function(err, sess) {
 					if(err) {
 						return callback(err);
 					}
