@@ -6,12 +6,12 @@
 
 	/**
 	 * Create a 2d array filled with target objects
+	 * @param {Player} player
 	 * @param {number} columns
 	 * @param {number} rows
-	 * @param {Player} player
 	 * @returns {Array}
 	 */
-	var generateTargets = function(columns, rows, player) {
+	var generateTargets = function(player, columns, rows) {
 		var targets = [];
 		for(var i=0; i<columns; i++) {
 			targets[i] = [];
@@ -28,8 +28,8 @@
 
 
 	/**
-	 *
-	 * @param {array.<Player>} players
+	 * A representation of cards that are in play
+	 * @param {Array} players
 	 * @param {number} columns
 	 * @param {number} rows
 	 * @constructor
@@ -40,23 +40,42 @@
 		self.areas = {};
 
 
+		/**
+		 * generate a play area for each player
+		 */
 		_.each(players, function(player) {
 			self.areas[player._id] = {
-				targets: generateTargets(columns, rows, player)
+				targets: generateTargets(player, columns, rows)
 			}
 		});
 
 
+		/**
+		 * Return target found at pos
+		 * @param {number} playerId
+		 * @param {number} column
+		 * @param {number} row
+		 * @returns {*}
+		 */
 		self.target = function(playerId, column, row) {
 			return self.areas[playerId].targets[column][row];
 		};
 
 
+		/**
+		 * Return target found at pos
+		 * @param pos
+		 * @returns {*}
+		 */
 		self.targetPos = function(pos) {
 			return self.target(pos.playerId, pos.column, pos.row);
 		};
 
 
+		/**
+		 * Create a 1d array of all targets
+		 * @returns {Array} targets
+		 */
 		self.allTargets = function() {
 			var all = [];
 			_.each(self.areas, function(area) {
@@ -70,6 +89,11 @@
 		};
 
 
+		/**
+		 * Create a 1d array of all targets owned by a player
+		 * @param {number} playerId
+		 * @returns {Array} targets
+		 */
 		self.playerTargets = function(playerId) {
 			var area = self.areas[playerId];
 			var all = [];
@@ -82,6 +106,9 @@
 		};
 
 
+		/**
+		 * clean up references
+		 */
 		self.remove = function() {
 			self.areas = null;
 		}

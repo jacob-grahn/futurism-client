@@ -13,14 +13,14 @@
 		 * @param {object} players
 		 * @param {object} player
 		 * @param {string} actionStr
-		 * @param {Array} targets
+		 * @param {Array} targetPositions
 		 */
-		doAction: function(board, player, actionStr, targets) {
-			if(targets.length === 0) {
+		doAction: function(board, player, actionStr, targetPositions) {
+			if(targetPositions.length === 0) {
 				return 'no targets';
 			}
 
-			var srcPos = targets[0];
+			var srcPos = targetPositions[0];
 			var src = board.targetPos(srcPos);
 			var action = actions[actionStr];
 
@@ -39,18 +39,18 @@
 			if(player !== src.player) {
 				return 'this is not your card';
 			}
-			if(!module.exports.isValidAction(board, player, action, targets)) {
+			if(!module.exports.isValidAction(board, player, action, targetPositions)) {
 				return 'target is not allowed';
 			}
 
-			if(targets.length === 1) {
+			if(targetPositions.length === 1) {
 				action.use(src);
 			}
-			if(targets.length === 2) {
-				action.use(src, board.targetPos(targets[1]));
+			if(targetPositions.length === 2) {
+				action.use(src, board.targetPos(targetPositions[1]));
 			}
-			if(targets.length === 3) {
-				action.use(src, board.targetPos(targets[1]), board.targetPos(targets[2]));
+			if(targetPositions.length === 3) {
+				action.use(src, board.targetPos(targetPositions[1]), board.targetPos(targetPositions[2]));
 			}
 
 			return 'success';
@@ -62,12 +62,12 @@
 		 * @param {object} board
 		 * @param {object} player
 		 * @param {object} action
-		 * @param {Array} targets
+		 * @param {Array} targetPositions
 		 * @returns {boolean} result
 		 */
-		isValidAction: function(board, player, action, targets) {
+		isValidAction: function(board, player, action, targetPositions) {
 			var valid = true;
-			_.each(targets, function(targetPos, index) {
+			_.each(targetPositions, function(targetPos, index) {
 				var target = board.targetPos(targetPos);
 				var filters = action.restrict[index];
 

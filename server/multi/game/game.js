@@ -5,6 +5,7 @@
 	var fns = require('../../fns/fns');
 	var factions = require('../../../shared/factions');
 	var broadcast = require('../broadcast');
+	var actionFns = require('./actionFns');
 	var actions = require('./actions');
 	var Board = require('./board');
 	var defaultRules = require('./defaultRules');
@@ -19,15 +20,14 @@
 
 
 	/**
-	 *
+	 * preload decks, then loop through player turns until someone wins
 	 * @param {[object]} accounts
 	 * @param {object} rules
 	 * @param {string} gameId
 	 */
 	module.exports = function(accounts, rules, gameId) {
 		var self = this;
-		var board;
-		self.gameId = gameId;
+		self.state = 'loadup';
 
 
 		/**
@@ -40,61 +40,70 @@
 		 * just exit if no players are here
 		 */
 		if(accounts.length === 0) {
-			return false;
+			return;
 		}
 
 
 		/**
-		 * initialize everyone's account
+		 * initialize everybody's account
 		 */
-		var players = initAccounts(accounts, gameId);
+		self.players = initAccounts(accounts, gameId);
+
+
+		/**
+		 * create the board
+		 */
+		self.board = new Board(players, rules.columns, rules.rows);
+
+
+		/**
+		 * create the turn ticker
+		 */
+		self.turnTicker = new TurnTicker(players, rules.timePerTurn);
 
 
 		/**
 		 * preload decks and futures
 		 */
-		var loadup = new Loadup(players, rules, function() {
+		self.loadup = new Loadup(players, rules, function() {
 
 
 			/**
 			 * get ready to play
 			 */
-			sortPlayers(players);
-			shuffleDecks();
-			drawCards();
-
-
-			/**
-			 * create the board
-			 */
-			board = new Board(players, rules.columns, rules.rows);
+			self.sortPlayers(self.players);
+			self.shuffleDecks(self.players);
+			self.drawCards(self.players, rules.handSize);
+			self.state = 'running';
 
 
 			/**
 			 * start the turn ticker
 			 */
-			var turnTicker = new TurnTicker(players, rules.timePerTurn, function() {
+			self.turnTicker.start(function() {
 
 
 				/**
 				 * refill hands
 				 */
-				drawCards();
+				self.drawCards(players, rules.handSize);
 
 
 				/**
 				 * check for victory
 				 */
-				result = victoryCondition.commanderRules(players, board, turnTicker.turn);
+				result = victoryCondition.commanderRules(self.players, self.board, self.turnTicker.turn);
 				if(result.winner) {
-					turnTicker.stop();
-					prizeCalculator.run(players, result.team, false, function(err) {
+					self.state = 'awarding';
+					self.turnTicker.stop();
 
+					prizeCalculator.run(self.players, result.team, false, function() {
 
 						/**
 						 * That's it, we're done
 						 */
 						self.remove();
+
 					});
 				}
 			});
@@ -102,93 +111,79 @@
 
 
 		/**
-		 * Sort players by their deck pride. Lowest pride goes first
-		 * Shuffle first so that equal pride players will be randomized
-		 */
-		var sortPlayers = function(players) {
-			_.shuffle(players);
-			players.sort(function(a, b) {
-				return a.deck.pride - b.deck.pride;
-			});
-			return players;
-		};
-
-
-		/**
 		 * Returns a snapshot of everything in this game
 		 */
 		self.getStatus = function() {
-			var playersPub = _.map(players, function(player) {
+			var status = {};
+
+			status.players = _.map(self.players, function(player) {
 				return _.pick(player, '_id', 'team', 'name', 'site', 'pride', 'active');
 			});
-			return {
-				players: playersPub,
-				turn: turnTicker.turn
+
+			status.turnOwners = _.map(self.turnTicker.turnOwners, function(player) {
+				return player._id;
+			});
+
+			status.board = {
+				future: self.board.future,
+				targets: _.map(self.board.allTargets(), function(target) {
+					return {
+						column: target.column,
+						row: target.row,
+						card: target.card,
+						playerId: target.player._id
+					}
+				})
 			};
+
+			status.turn = self.turnTicker.turn;
+			status.state = self.state;
+
+			return status;
 		};
 
 
 		/**
 		 * End a player's turn
-		 * @param account
+		 * @param player
 		 */
-		self.endTurn = function(account) {
-			if(account._id === activeAccount._id) {
-				nextTurn();
+		self.endTurn = function(player) {
+			if(self.onTurn(player)) {
+				self.turnTicker.endTurn();
 			}
 		};
 
 
 		/**
-		 *
+		 * Returns true if player is a turn owner
+		 * @param player
+		 * @returns {boolean}
+		 */
+		self.onTurn = function(player) {
+			return self.turnTicker.turnOwners.indexOf(player) !== -1;
+		};
+
+
+		/**
+		 * broadcast to subscribers
 		 * @param {string} event
 		 * @param {*} data
 		 */
-		var emit = function(event, data) {
+		self.emit = function(event, data) {
 			broadcast(gameId, event, data);
 		};
 
 
 		/**
 		 * If it is the accounts turn, pass the action on to the table
-		 * @param account
+		 * @param player
 		 * @param actionStr
-		 * @param targetIds
+		 * @param targetPositions
 		 */
-		self.doAction = function(account, actionStr, targetIds, srcTargetId) {
-			if(account._id === activeAccount._id) {
-				table.doAction(account, actionStr, targetIds, srcTargetId);
+		self.doAction = function(player, actionStr, targetPositions) {
+			if(self.onTurn(player)) {
+				actionFns.doAction(self.board, player, actionStr, targetPositions);
 			}
-		};
-
-
-		/**
-		 * fill all player's hands if they still have cards in their deck
-		 */
-		var drawCards = function() {
-			_.each(accounts, function(account) {
-				while(account.hand.length < rules.handSize && account.cards.length > 0) {
-					account.hand.push(account.cards.pop());
-				}
-			});
-		};
-
-
-		/**
-		 * Shuffle all the decks!
-		 */
-		var shuffleDecks = function() {
-			_.each(accounts, function(account) {
-				account.cards = _.shuffle(account.cards);
-			});
-		};
-
-
-		/**
-		 * remove an account from this game
-		 */
-		self.quit = function(removingAccount) {
-
 		};
 
 
@@ -196,12 +191,22 @@
 		 * Clean up for removal
 		 */
 		self.remove = function() {
+			self.state = 'removed';
 			accounts = null;
-			if(board) {
-				board.remove();
-				board = null;
-			}
+			self.board.remove();
+			self.turnTicker.stop();
 			gameLookup.deleteId(gameId);
+		};
+
+
+		/**
+		 * forfeit a player from the game
+		 */
+		self.forfeit = function(board, player) {
+			player.cards = [];
+			player.hand = [];
+			player.graveyard = [];
+			board.areas[player._id].targets = [];
 		};
 
 

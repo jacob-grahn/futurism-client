@@ -7,6 +7,7 @@ describe('game/turnTicker', function() {
 		var player1 = {_id:1};
 		var player2 = {_id:2};
 		var tt = new TurnTicker([player1, player2], 100);
+		tt.start();
 
 		tt.endTurn();
 		expect(tt.isTheirTurn(player1)).toBe(true);
@@ -25,7 +26,8 @@ describe('game/turnTicker', function() {
 	it('should time out a turn', function(done) {
 		var player1 = {_id:1};
 		var player2 = {_id:2};
-		var tt = new TurnTicker([player1, player2], 1, function(elapsed) {
+		var tt = new TurnTicker([player1, player2], 1);
+		tt.start(function(elapsed) {
 			expect(elapsed).toBeTruthy();
 			done();
 		});

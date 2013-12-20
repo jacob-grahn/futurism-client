@@ -10,22 +10,24 @@
 	 * put a time limit on turn durations
 	 * @param {array.<Player>} players
 	 * @param {number} timePerTurn
-	 * @param {function} callback
 	 * @constructor
 	 */
-	var TurnTicker = function(players, timePerTurn, callback) {
+	var TurnTicker = function(players, timePerTurn) {
 		var self = this;
 		var intervalId;
 		var startTime;
 		var turn = 0;
 		var running = false;
 		var turnOwners = [];
+		var callback;
 
 
 		/**
 		 * Start turn progression
+		 * @param {function} [cb]
 		 */
-		self.start = function() {
+		self.start = function(cb) {
+			callback = cb;
 			running = true;
 			nextTurn();
 		};
@@ -36,6 +38,8 @@
 		 */
 		self.stop = function() {
 			running = false;
+			callback = null;
+			clearTimeout(intervalId);
 		};
 
 
@@ -93,11 +97,6 @@
 			turnOwners = [player];
 		};
 
-
-		/**
-		 * auto start for easiness
-		 */
-		self.start();
 	};
 
 

@@ -3,43 +3,18 @@ describe('game', function() {
 
 	var Game = require('../../../multi/game/game');
 
-	var lastMessage;
-	var game;
-	var account1;
-	var account2;
-	var accounts;
-	var rules;
-	var gameId = '123';
 
+	it('should play through a simple game', function() {
+		var accounts = [
+			{_id:1, name:'phil'},
+			{_id:2, name:'paulina'}
+		];
+		var rules = {};
+		var gameId = 'game1';
 
-	beforeEach(function() {
-		lastMessage = '';
-		account1 = {
-			_id: 1,
-			deck: {
-				pride: 8,
-				cards: [{}, {}]
-			},
-			hand: []
-		};
-		account2 = {
-			_id: 2,
-			deck: {
-				pride: 10,
-				cards: [{}, {}]
-			},
-			hand: []
-		};
-		accounts = [account1, account2];
-		rules = {};
-	});
+		var game = new Game(accounts, rules, gameId);
 
-
-	afterEach(function() {
-		if(game) {
-			game.remove();
-			game = null;
-		}
+		expect(game.getStatus().state).toBe('loadup');
 	});
 
 

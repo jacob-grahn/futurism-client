@@ -50,7 +50,9 @@
 					var response = callback(data, game, player);
 
 					//return the response to the socket
-					socket.emit(eventName, response);
+					if(response) {
+						socket.emit(eventName, response);
+					}
 				});
 			});
 		};
@@ -60,7 +62,9 @@
 		 * Send in a deck selection
 		 */
 		socket.onPlayer('selectDeck', function(data, game, player) {
-			return game.selectDeck(player, data.deckId);
+			game.loadup.selectDeck(player, data.deckId, function(err) {
+				socket.emitError(err);
+			});
 		});
 
 
