@@ -39,7 +39,7 @@
 			if(player !== src.player) {
 				return 'this is not your card';
 			}
-			if(!module.exports.isValidAction(board, player, action, targets.slice(1))) {
+			if(!module.exports.isValidAction(board, player, action, targets)) {
 				return 'target is not allowed';
 			}
 
@@ -69,17 +69,11 @@
 			var valid = true;
 			_.each(targets, function(targetPos, index) {
 				var target = board.targetPos(targetPos);
-				var validTargets;
-
-				var filterStr = 'restrict';
-				if(index > 0) {
-					filterStr += (index+1);
-				}
-				var filters = action[filterStr];
+				var filters = action.restrict[index];
 
 				if(filters) {
-					validTargets = module.exports.useFilters(filters, player, board.allTargets());
-					if(validTargets.indexOf(target) === -1) {
+					var validTargets = module.exports.useFilters(filters, player, [target]);
+					if(validTargets.length === 0) {
 						valid = false;
 					}
 				}
@@ -92,7 +86,7 @@
 		 * Find all targets that an ability can be used on
 		 * @param {array} filters
 		 * @param {object} player
-		 * @param {array} targets
+		 * @param {Array} targets
 		 */
 		useFilters: function(filters, player, targets) {
 			var filtered = _.clone(targets);

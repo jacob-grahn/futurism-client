@@ -17,7 +17,6 @@
 		self.make = function(data, callback) {
 			var token = self.createToken();
 			self.set(token, data, function(err, result) {
-				console.log('mongoSession::make', err, result);
 				if(err) {
 					return callback(err);
 				}
@@ -51,7 +50,6 @@
 		 */
 		self.get = function(token, callback) {
 			SessionGoose.findById(token, function(err, result) {
-				console.log('mongoSession::get', token, err, result);
 				if(err) {
 					return callback(err);
 				}

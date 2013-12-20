@@ -2,7 +2,8 @@ describe('game/actions', function() {
 	'use strict';
 
 	var _ = require('lodash');
-	var actions = require('../../../multi/game/actions.js');
+	var actions = require('../../../multi/game/actions');
+	var factions = require('../../../../shared/factions');
 	var board, player1, player2, player3, weakCard, strongCard;
 
 	var target = function(playerId, row, column) {
@@ -11,34 +12,6 @@ describe('game/actions', function() {
 
 
 	beforeEach(function() {
-
-		board = {
-			future: 0,
-			areas: {
-				'1': {
-					targets: [
-						[{row:0,column:0,playerId:1,team:1}, {row:0,column:1,playerId:1,team:1}, {row:0,column:2,playerId:1,team:1}, {row:0,column:3,playerId:1,team:1}],
-						[{row:1,column:0,playerId:1,team:1}, {row:1,column:1,playerId:1,team:1}, {row:1,column:2,playerId:1,team:1}, {row:1,column:3,playerId:1,team:1}],
-						[{row:2,column:0,playerId:1,team:1}, {row:2,column:1,playerId:1,team:1}, {row:2,column:2,playerId:1,team:1}, {row:2,column:3,playerId:1,team:1}]
-					]
-				},
-				'2': {
-					targets: [
-						[{row:0,column:0,playerId:2,team:2}, {row:0,column:1,playerId:2,team:2}, {row:0,column:2,playerId:2,team:2}, {row:0,column:3,playerId:2,team:2}],
-						[{row:1,column:0,playerId:2,team:2}, {row:1,column:1,playerId:2,team:2}, {row:1,column:2,playerId:2,team:2}, {row:1,column:3,playerId:2,team:2}],
-						[{row:2,column:0,playerId:2,team:2}, {row:2,column:1,playerId:2,team:2}, {row:2,column:2,playerId:2,team:2}, {row:2,column:3,playerId:2,team:2}]
-					]
-				},
-				'3': {
-					targets: [
-						[{row:0,column:0,playerId:3,team:2}, {row:0,column:1,playerId:3,team:2}, {row:0,column:2,playerId:3,team:2}, {row:0,column:3,playerId:3,team:2}],
-						[{row:1,column:0,playerId:3,team:2}, {row:1,column:1,playerId:3,team:2}, {row:1,column:2,playerId:3,team:2}, {row:1,column:3,playerId:3,team:2}],
-						[{row:2,column:0,playerId:3,team:2}, {row:2,column:1,playerId:3,team:2}, {row:2,column:2,playerId:3,team:2}, {row:2,column:3,playerId:3,team:2}]
-					]
-				}
-			}
-		};
-
 
 		player1 = {
 			_id: 1,
@@ -94,6 +67,34 @@ describe('game/actions', function() {
 			hero: 0,
 			attackBuf: 0
 		};
+
+
+		board = {
+			future: 0,
+			areas: {
+				'1': {
+					targets: [
+						[{row:0,column:0,player:player1,team:1}, {row:0,column:1,player:player1,team:1}, {row:0,column:2,player:player1,team:1}, {row:0,column:3,player:player1,team:1}],
+						[{row:1,column:0,player:player1,team:1}, {row:1,column:1,player:player1,team:1}, {row:1,column:2,player:player1,team:1}, {row:1,column:3,player:player1,team:1}],
+						[{row:2,column:0,player:player1,team:1}, {row:2,column:1,player:player1,team:1}, {row:2,column:2,player:player1,team:1}, {row:2,column:3,player:player1,team:1}]
+					]
+				},
+				'2': {
+					targets: [
+						[{row:0,column:0,player:player2,team:2}, {row:0,column:1,player:player2,team:2}, {row:0,column:2,player:player2,team:2}, {row:0,column:3,player:player2,team:2}],
+						[{row:1,column:0,player:player2,team:2}, {row:1,column:1,player:player2,team:2}, {row:1,column:2,player:player2,team:2}, {row:1,column:3,player:player2,team:2}],
+						[{row:2,column:0,player:player2,team:2}, {row:2,column:1,player:player2,team:2}, {row:2,column:2,player:player2,team:2}, {row:2,column:3,player:player2,team:2}]
+					]
+				},
+				'3': {
+					targets: [
+						[{row:0,column:0,player:player3,team:2}, {row:0,column:1,player:player3,team:2}, {row:0,column:2,player:player3,team:2}, {row:0,column:3,player:player3,team:2}],
+						[{row:1,column:0,player:player3,team:2}, {row:1,column:1,player:player3,team:2}, {row:1,column:2,player:player3,team:2}, {row:1,column:3,player:player3,team:2}],
+						[{row:2,column:0,player:player3,team:2}, {row:2,column:1,player:player3,team:2}, {row:2,column:2,player:player3,team:2}, {row:2,column:3,player:player3,team:2}]
+					]
+				}
+			}
+		};
 	});
 
 
@@ -134,14 +135,15 @@ describe('game/actions', function() {
 
 	it('heal should increase health', function() {
 		target(1,0,0).card = strongCard;
-		actions.heal.use(target(1,0,0));
-		expect(target(1,0,0).card.health).toBe(10);
+		target(1,1,0).card = weakCard;
+		actions.heal.use(target(1,0,0), target(1,1,0));
+		expect(target(1,1,0).card.health).toBe(2);
 	});
 
 
 	it('tree should grow a tree', function() {
-		actions.tree.use(target(1,0,0));
-		expect(target(1,0,0).card.title).toBe('TREE');
+		actions.tree.use(target(1,0,0), target(1,1,0));
+		expect(target(1,1,0).card.title).toBe('TREE');
 	});
 
 
@@ -157,9 +159,11 @@ describe('game/actions', function() {
 
 
 	it('secr should mark a card as tired', function() {
+		strongCard.moves = 1;
 		target(1,0,0).card = weakCard;
-		actions.secr.use(target(1,0,0));
-		expect(target(1,0,0).card.moves).toBe(0);
+		target(2,0,0).card = strongCard;
+		actions.secr.use(target(1,0,0), target(2,0,0));
+		expect(target(2,0,0).card.moves).toBe(0);
 	});
 
 
@@ -187,13 +191,19 @@ describe('game/actions', function() {
 	////////////////////////////////////////////////////////////////////////////////////////////
 
 	it('rbld should return a dead card to play with 1 health', function() {
-		weakCard.health = 0;
-		player1.graveyard.push(weakCard);
+		var machine = {
+			name: 'Ratched',
+			faction: factions.machine.id,
+			health: 0
+		}
+		player1.graveyard.push(machine);
 
-		actions.rbld.use(target(1,0,0), player1.graveyard, weakCard._id);
+		target(1,1,0).card = strongCard;
+
+		actions.rbld.use(target(1,1,0), target(1,0,0));
 
 		expect(player1.graveyard.length).toBe(0);
-		expect(target(1,0,0).card).toBe(weakCard);
+		expect(target(1,0,0).card).toBe(machine);
 		expect(target(1,0,0).card.health).toBe(1);
 	});
 
@@ -215,8 +225,9 @@ describe('game/actions', function() {
 
 
 	it('strt should give a card another turn', function() {
+		target(1,1,0).card = strongCard;
 		target(1,0,0).card = weakCard;
-		actions.strt.use(target(1,0,0));
+		actions.strt.use(target(1,1,0), target(1,0,0));
 		expect(target(1,0,0).card.moves).toBe(2);
 	});
 
@@ -246,8 +257,9 @@ describe('game/actions', function() {
 	///////////////////////////////////////////////////////////////////////////////////////////
 
 	it('sduc should pull into your control', function() {
+		target(1,1,0).card = strongCard;
 		target(2,0,0).card = weakCard;
-		actions.sduc.use(target(2,0,0), target(1,0,0));
+		actions.sduc.use(target(1,1,0), target(2,0,0), target(1,0,0));
 		expect(target(2,0,0).card).toBeFalsy();
 		expect(target(1,0,0).card).toBe(weakCard);
 	});
@@ -275,17 +287,19 @@ describe('game/actions', function() {
 		var card = {
 			poison: 0
 		}
-		target(1,0,0).card = card;
-		actions.posn.use(target(1,0,0));
+		target(1,0,0).card = strongCard;
+		target(2,0,0).card = card;
+		actions.posn.use(target(1,0,0), target(2,0,0));
 		expect(card.poison).toBe(1);
-		actions.posn.use(target(1,0,0));
+		actions.posn.use(target(1,0,0), target(2,0,0));
 		expect(card.poison).toBe(2);
 	});
 
 
 	it('bagm should return a card to its owners hand', function() {
+		target(1,1,0).card = weakCard;
 		target(1,0,0).card = strongCard;
-		actions.bagm.use(target(1,0,0), player1);
+		actions.bagm.use(target(1,1,0), target(1,0,0));
 		expect(player1.hand[0]).toBe(strongCard);
 		expect(target(1,0,0).card).toBeFalsy();
 	});

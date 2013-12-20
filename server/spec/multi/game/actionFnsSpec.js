@@ -28,14 +28,14 @@ describe('actionFns', function() {
 			abilities: ['heal'],
 			health: 3
 		};
-		var result = actionFns.doAction(board, player1, 'heal', [{playerId:1, row:0, column:0}]);
+		var result = actionFns.doAction(board, player1, 'heal', [{playerId:1, column:0, row:0}, {playerId:1, column:0, row:0}]);
 		expect(result).toBe('success');
 		expect(board.target(1,0,0).card.health).toBe(4);
 	});
 
 
 	it('should not perform an action on an invalid target', function() {
-		var result = actionFns.doAction(board, player1, 'heal', [{playerId:1, row:0, column:0}]);
+		var result = actionFns.doAction(board, player1, 'heal', [{playerId:1, column:0, row:0}]);
 		expect(result).not.toBe('success');
 	});
 
@@ -45,7 +45,7 @@ describe('actionFns', function() {
 			abilities: ['heal'],
 			health: 3
 		};
-		var result = actionFns.doAction(board, player1, 'heal', [{playerId:2, row:0, column:0}]);
+		var result = actionFns.doAction(board, player1, 'heal', [{playerId:2, column:0, row:0}]);
 		expect(result).toContain('not your card');
 	});
 
@@ -54,7 +54,7 @@ describe('actionFns', function() {
 		board.target(2,0,0).card = {
 			abilities: ['sduc', 'mooo']
 		};
-		var result = actionFns.doAction(board, player1, 'attk', [{playerId:2, row:0, column:0}, {playerId:1, row:0, column:0}]);
+		var result = actionFns.doAction(board, player1, 'attk', [{playerId:2, column:0, row:0}, {playerId:1, column:0, row:0}]);
 		expect(result).toBe('card does not have this ability');
 	});
 

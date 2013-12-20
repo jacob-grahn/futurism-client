@@ -4,6 +4,7 @@
 	var filters = require('./filters');
 	var _ = require('lodash');
 	var fns = require('../../fns/fns');
+	var factions = require('../../../shared/factions');
 
 
 	module.exports = {
@@ -167,15 +168,14 @@
 		rbld: {
 			restrict: [
 				[filters.owned],
-				[filters.friend, filters.open],
-				false
+				[filters.friend, filters.open]
 			],
-			use: function(src, target, graveyard, cardId) {
+			use: function(src, target) {
 
-				//find the card
+				//find the most recent dead machine
 				var card = null;
-				_.each(graveyard, function(deadCard) {
-					if(deadCard._id === cardId) {
+				_.each(target.player.graveyard, function(deadCard) {
+					if(deadCard.faction === factions.machine.id) {
 						card = deadCard;
 					}
 				});
@@ -184,7 +184,7 @@
 				}
 
 				//remove the card from the graveyard
-				fns.removeFromArray(graveyard, card);
+				fns.removeFromArray(target.player.graveyard, card);
 
 				//add the card back into the game
 				card.health = 1;
@@ -197,11 +197,10 @@
 		 */
 		shld: {
 			restrict: [
-				[filters.owned],
-				[filters.friend, filters.full]
+				[filters.owned]
 			],
-			use: function(src, target) {
-				target.card.shield++;
+			use: function(src) {
+				src.card.shield++;
 			}
 		},
 
