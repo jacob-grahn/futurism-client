@@ -110,6 +110,32 @@
 		});
 
 
+		self.playCard = function(player, cid, column, row) {
+			var foundMatch = false;
+			_.each(player.hand, function(card) {
+				if(card.cid === cid) {
+					foundMatch = true;
+					var target = self.board.target(player._id, column, row);
+					if(target.player !== player) {
+						return 'this card must be placed on a target you own';
+					}
+					if(target.card) {
+						return 'there is already a card here';
+					}
+					if(card.pride <= player.pride) {
+						return 'you do not have enough pride to play this card';
+					}
+					player.pride -= card.pride;
+					target.card = card;
+				}
+			});
+
+			if(!foundMatch) {
+				return 'that card is not in your hand';
+			}
+		};
+
+
 		/**
 		 * Find a player using their id
 		 * @param {number} id
@@ -164,19 +190,9 @@
 		 * @param player
 		 */
 		self.endTurn = function(player) {
-			if(self.onTurn(player)) {
+			if(self.turnTicker.isTheirTurn(player)) {
 				self.turnTicker.endTurn();
 			}
-		};
-
-
-		/**
-		 * Returns true if player is a turn owner
-		 * @param player
-		 * @returns {boolean}
-		 */
-		self.onTurn = function(player) {
-			return self.turnTicker.turnOwners.indexOf(player) !== -1;
 		};
 
 
@@ -197,7 +213,7 @@
 		 * @param targetPositions
 		 */
 		self.doAction = function(player, actionStr, targetPositions) {
-			if(self.onTurn(player)) {
+			if(self.turnTicker.isTheirTurn(player)) {
 				actionFns.doAction(self.board, player, actionStr, targetPositions);
 			}
 		};
@@ -233,7 +249,7 @@
 		self.sortPlayers = function(players) {
 			_.shuffle(players);
 			players.sort(function(a, b) {
-				return a.pride - b.pride;
+				return a.deckPride - b.deckPride;
 			});
 			return players;
 		};

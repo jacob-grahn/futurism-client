@@ -16,6 +16,7 @@
 		self.cards = [];
 		self.futures = [];
 		self.pride = 0;
+		self.deckPride = 0;
 	};
 
 	module.exports = Player;

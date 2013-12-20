@@ -4,6 +4,7 @@
 	var _ = require('lodash');
 	var DeckGoose = require('../../models/deck');
 	var deckFns = require('../../../shared/deckFns');
+	var nextCid = require('./nextCid');
 
 
 	/**
@@ -26,29 +27,37 @@
 		 */
 		self.selectDeck = function(player, deckId, callback) {
 			DeckGoose
-			.findById(deckId)
-			.populate('cards')
-			.exec(function(err, deck) {
-				if(err) {
-					return callback(err);
-				}
-				if(!deck) {
-					return callback('deck id "'+deckId+'" not found');
-				}
-				if(deckFns.calcPride(deck) > rules.pride) {
-					return callback('this deck is too prideful');
-				}
-				if(player.cards.length > 0) {
-					return callback('a deck was already loaded for you');
-				}
-				if(player._id !== deck.userId) {
-					return callback('you do not own this deck');
-				}
+				.findById(deckId)
+				.populate('cards')
+				.exec(function(err, deck) {
+					if(err) {
+						return callback(err);
+					}
+					if(!deck) {
+						return callback('deck id "'+deckId+'" not found');
+					}
 
-				player.cards = _.cloneDeep(deck.cards);
-				self.nextIfDone();
-				return callback(null, deck);
-			});
+					deck.pride = deckFns.calcPride(deck);
+
+					if(deck.pride > rules.pride) {
+						return callback('this deck is too prideful');
+					}
+					if(player.cards.length > 0) {
+						return callback('a deck was already loaded for you');
+					}
+					if(player._id !== deck.userId) {
+						return callback('you do not own this deck');
+					}
+
+					player.deckProde = deck.pride;
+					player.cards = _.cloneDeep(deck.cards);
+					_.each(player.cards, function(card) {
+						card.cid = nextCid();
+					});
+
+					self.nextIfDone();
+					return callback(null, deck);
+				});
 		};
 
 

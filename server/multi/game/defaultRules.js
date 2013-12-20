@@ -2,8 +2,8 @@
 	'use strict';
 
 	module.exports = {
-		columnCount: 4,
-		rowCount: 3,
+		columns: 4,
+		rows: 3,
 		startingPride: 0,
 		turnDuration: 30,
 		prepTime: 30,

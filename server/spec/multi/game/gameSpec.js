@@ -59,6 +59,15 @@ describe('game', function() {
 							expect(err).toBe(null);
 							expect(game.getStatus().state).toBe('running');
 
+							var r1 = game.playCard(player1, player1.hand[0].cid, 0, 0);
+							expect(r1).toBeFalsy();
+							expect(game.board.target(1,0,0).card.name).toBe('phil');
+
+							game.endTurn(player1);
+							game.endTurn(player2);
+							game.endTurn(player1);
+							expect(game.getStatus().state).toBe('removed');
+
 							done();
 						})
 					})

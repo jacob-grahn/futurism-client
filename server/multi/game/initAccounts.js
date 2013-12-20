@@ -5,6 +5,7 @@
 	var gameLookup = require('./gameLookup');
 	var factions = require('../../../shared/factions');
 	var Player = require('./player');
+	var nextCid = require('./nextCid');
 
 
 	/**
@@ -45,7 +46,8 @@
 			abilities: [],
 			updated: Date.now(),
 			hasImage: true,
-			version: 0
+			version: 0,
+			cid: nextCid()
 		};
 	};
 
