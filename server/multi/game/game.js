@@ -53,19 +53,19 @@
 		/**
 		 * create the board
 		 */
-		self.board = new Board(players, rules.columns, rules.rows);
+		self.board = new Board(self.players, rules.columns, rules.rows);
 
 
 		/**
 		 * create the turn ticker
 		 */
-		self.turnTicker = new TurnTicker(players, rules.timePerTurn);
+		self.turnTicker = new TurnTicker(self.players, rules.timePerTurn);
 
 
 		/**
 		 * preload decks and futures
 		 */
-		self.loadup = new Loadup(players, rules, function() {
+		self.loadup = new Loadup(self.players, rules, function() {
 
 
 			/**
@@ -86,13 +86,13 @@
 				/**
 				 * refill hands
 				 */
-				self.drawCards(players, rules.handSize);
+				self.drawCards(self.players, rules.handSize);
 
 
 				/**
 				 * check for victory
 				 */
-				result = victoryCondition.commanderRules(self.players, self.board, self.turnTicker.turn);
+				var result = victoryCondition.commanderRules(self.players, self.board, self.turnTicker.turn);
 				if(result.winner) {
 					self.state = 'awarding';
 					self.turnTicker.stop();
@@ -108,6 +108,22 @@
 				}
 			});
 		});
+
+
+		/**
+		 * Find a player using their id
+		 * @param {number} id
+		 * @returns {Player} player
+		 */
+		self.idToPlayer = function(id) {
+			var match = null;
+			_.each(self.players, function(player) {
+				if(player._id === id) {
+					match = player;
+				}
+			});
+			return match;
+		};
 
 
 		/**
@@ -207,6 +223,41 @@
 			player.hand = [];
 			player.graveyard = [];
 			board.areas[player._id].targets = [];
+		};
+
+
+		/**
+		 * Sort players by their deck pride. Lowest pride goes first
+		 * Shuffle first so that equal pride players will be randomized
+		 */
+		self.sortPlayers = function(players) {
+			_.shuffle(players);
+			players.sort(function(a, b) {
+				return a.pride - b.pride;
+			});
+			return players;
+		};
+
+
+		/**
+		 * Shuffle all the decks!
+		 */
+		self.shuffleDecks = function(players) {
+			_.each(players, function(player) {
+				player.cards = _.shuffle(player.cards);
+			});
+		};
+
+
+		/**
+		 * fill all player's hands if they still have cards in their deck
+		 */
+		self.drawCards = function(players, handSize) {
+			_.each(players, function(player) {
+				while(player.hand.length < handSize && player.cards.length > 0) {
+					player.hand.push(player.cards.pop());
+				}
+			});
 		};
 
 

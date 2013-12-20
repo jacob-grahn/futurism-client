@@ -2,19 +2,69 @@ describe('game', function() {
 	'use strict';
 
 	var Game = require('../../../multi/game/game');
+	var DeckGoose = require('../../../models/deck');
+	var CardGoose = require('../../../models/card');
 
 
-	it('should play through a simple game', function() {
-		var accounts = [
-			{_id:1, name:'phil'},
-			{_id:2, name:'paulina'}
-		];
-		var rules = {};
-		var gameId = 'game1';
+	it('should play through a simple game', function(done) {
+		DeckGoose.create({
+			_id: 'deck1',
+			name: 'deck1',
+			cards: ['card1'],
+			userId: 1,
+			pride: 17
+		}, function(err) {
+			expect(err).toBe(null);
 
-		var game = new Game(accounts, rules, gameId);
+			DeckGoose.create({
+				_id: 'deck2',
+				name: 'deck2',
+				cards: ['card1'],
+				userId: 2,
+				pride: 17
+			}, function(err) {
+				expect(err).toBe(null);
 
-		expect(game.getStatus().state).toBe('loadup');
+				CardGoose.create({
+					_id: 'card1',
+					name: 'kicker',
+					pride: 1,
+					abilities: [],
+					attack: 5,
+					health: 2,
+					userId: 123
+				}, function(err) {
+					expect(err).toBe(null);
+
+					var accounts = [
+						{_id:1, name:'phil'},
+						{_id:2, name:'paulina'}
+					];
+					var rules = {};
+					var gameId = 'game1';
+
+					var game = new Game(accounts, rules, gameId);
+					expect(game.getStatus().state).toBe('loadup');
+
+					var player1 = game.idToPlayer(1);
+					var player2 = game.idToPlayer(2);
+					expect(player1.name).toBe('phil');
+					expect(player2.name).toBe('paulina');
+
+					game.loadup.selectDeck(player1, 'deck1', function(err) {
+						expect(err).toBe(null);
+						expect(game.getStatus().state).toBe('loadup');
+
+						game.loadup.selectDeck(player2, 'deck2', function(err) {
+							expect(err).toBe(null);
+							expect(game.getStatus().state).toBe('running');
+
+							done();
+						})
+					})
+				});
+			});
+		});
 	});
 
 

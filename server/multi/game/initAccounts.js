@@ -9,17 +9,18 @@
 
 	/**
 	 * Fill an account with the data structure needed to play a match
-	 * @param {object} account
-	 * @param {string} gameId
+	 * @param {Array} accounts
+	 * @param {String} gameId
+	 * @returns {Array.<Player>} players
 	 */
 	var InitAccounts = function(accounts, gameId) {
-		var players = {};
+		var players = [];
 		_.each(accounts, function(account) {
 			clearAccount(account);
 			account.gameId = gameId;
 			var player = new Player(account);
 			player.hand.push(makeAccountCard(account));
-			players[player._id] = player;
+			players.push(player);
 		});
 
 		return players;
