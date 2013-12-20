@@ -102,7 +102,7 @@
 			var user = lookup[player._id];
 			if(user) {
 				user.elo = player.elo;
-				user.game = player.fame;
+				user.fame = player.fame;
 				user.fractures = player.fractures;
 			}
 		});
@@ -160,6 +160,7 @@
 			else {
 				player.fame += module.exports.BASE_FAME_GAIN;
 			}
+			console.log('player fame', player._id, player.fame);
 		});
 	};
 

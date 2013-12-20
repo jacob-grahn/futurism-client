@@ -169,6 +169,7 @@ describe('game/prizeCalculator', function() {
 			UserGoose.findById(196, function(err, doc) {
 				expect(err).toBeFalsy();
 				expect(doc.fractures).toBe(3);
+				expect(doc.fame > 9765).toBe(true);
 				done();
 			});
 		});
