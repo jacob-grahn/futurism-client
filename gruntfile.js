@@ -359,10 +359,6 @@ module.exports = function (grunt) {
 		wait: {
 			options: {
 				delay: 2500
-			},
-			after: function() {
-				console.log('gamble');
-				return Math.random() < 0.05 ? false : true;
 			}
 		},
 
