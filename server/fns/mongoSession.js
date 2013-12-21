@@ -53,6 +53,9 @@
 				if(err) {
 					return callback(err);
 				}
+				if(!result) {
+					return callback('session not found');
+				}
 				return callback(null, result.value);
 			});
 		};

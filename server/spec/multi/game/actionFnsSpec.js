@@ -29,14 +29,14 @@ describe('actionFns', function() {
 			health: 3
 		};
 		var result = actionFns.doAction(board, player1, 'heal', [{playerId:1, column:0, row:0}, {playerId:1, column:0, row:0}]);
-		expect(result).toBe('success');
+		expect(result).toBe('ok');
 		expect(board.target(1,0,0).card.health).toBe(4);
 	});
 
 
 	it('should not perform an action on an invalid target', function() {
 		var result = actionFns.doAction(board, player1, 'heal', [{playerId:1, column:0, row:0}]);
-		expect(result).not.toBe('success');
+		expect(result).not.toBe('ok');
 	});
 
 
@@ -51,11 +51,15 @@ describe('actionFns', function() {
 
 
 	it('should not let you use an ability the card does not have', function() {
-		board.target(2,0,0).card = {
-			abilities: ['sduc', 'mooo']
+		board.target(1,0,0).card = {
+			abilities: [],
+			player: player1
 		};
-		var result = actionFns.doAction(board, player1, 'attk', [{playerId:2, column:0, row:0}, {playerId:1, column:0, row:0}]);
-		expect(result).toBe('card does not have this ability');
+		board.target(2,0,0).card = {
+			player: player2
+		};
+		var result = actionFns.doAction(board, player1, 'rbld', [{playerId:1, column:0, row:0}, {playerId:2, column:0, row:0}]);
+		expect(result).toContain('card does not have the ability');
 	});
 
 
@@ -71,7 +75,7 @@ describe('actionFns', function() {
 			{playerId:1, column:0, row:1}, //female
 			{playerId:1, column:1, row:0} //empty slot for child
 		]);
-		expect(result).toBe('success');
+		expect(result).toBe('ok');
 		expect(board.target(1,1,0).card.name).toBe('WAR BABY');
 	});
 

@@ -7,9 +7,8 @@ describe('game/turnTicker', function() {
 		var player1 = {_id:1};
 		var player2 = {_id:2};
 		var tt = new TurnTicker([player1, player2], 100);
-		tt.start();
 
-		tt.endTurn();
+		tt.start();
 		expect(tt.isTheirTurn(player1)).toBe(true);
 		expect(tt.isTheirTurn(player2)).toBe(false);
 
