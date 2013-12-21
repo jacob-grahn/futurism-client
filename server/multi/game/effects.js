@@ -4,17 +4,6 @@
 	var _ = require('lodash');
 
 
-	var idToPlayer = function(players, id) {
-		var matchPlayer = null;
-		_.each(players, function(player) {
-			if(player._id === id) {
-				matchPlayer = player;
-			}
-		});
-		return matchPlayer;
-	};
-
-
 	/**
 	 * Loop through every target and call iteratorFunc on
 	 * the targets that have a card
@@ -36,15 +25,13 @@
 		/**
 		 * Move all cards with life <= 0 to their owner's graveyard
 		 * @param {[object]} targets
-		 * @param players
 		 */
-		death: function(targets, players) {
+		death: function(targets) {
 			_.each(targets, function(target) {
 				if(target.card && target.card.health <= 0) {
 					var card = target.card;
-					var player = idToPlayer(players, target.playerId);
 					card.health = 0;
-					player.graveyard.push(card);
+					target.player.graveyard.push(card);
 					target.card = null;
 				}
 			});
@@ -83,9 +70,11 @@
 		 */
 		refresh: function(targets) {
 			eachCard(targets, function(card) {
+				console.log('card', card);
 				if(card.moves < 1) {
 					card.moves++;
 				}
+				console.log('moves', card.moves);
 			});
 		}
 	}

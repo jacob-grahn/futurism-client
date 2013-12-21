@@ -49,10 +49,11 @@
 						return callback('you do not own this deck');
 					}
 
-					player.deckProde = deck.pride;
+					player.deckPride = deck.pride;
 					player.cards = _.cloneDeep(deck.cards);
 					_.each(player.cards, function(card) {
 						card.cid = nextCid();
+						card.moves = 0;
 					});
 
 					self.nextIfDone();

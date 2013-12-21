@@ -30,11 +30,14 @@
 			if(!src.card) {
 				return 'no card at src target';
 			}
+			if(src.card.moves <= 0) {
+				return 'this card has no moves';
+			}
 			if(!action) {
 				return 'action not found';
 			}
-			if(action.free || src.card.abilities.indexOf(actionStr) === -1) {
-				return 'card does not have this ability';
+			if(!action.free && src.card.abilities.indexOf(actionStr) === -1) {
+				return 'card does not have the ability "'+actionStr+'".';
 			}
 			if(player !== src.player) {
 				return 'this is not your card';
@@ -42,6 +45,8 @@
 			if(!module.exports.isValidAction(board, player, action, targetPositions)) {
 				return 'target is not allowed';
 			}
+
+			src.card.moves--;
 
 			if(targetPositions.length === 1) {
 				action.use(src);
@@ -53,7 +58,7 @@
 				action.use(src, board.targetPos(targetPositions[1]), board.targetPos(targetPositions[2]));
 			}
 
-			return 'success';
+			return 'ok';
 		},
 
 

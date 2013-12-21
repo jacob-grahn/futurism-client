@@ -79,7 +79,7 @@ describe('game', function() {
 						DeckGoose.create({
 							_id: 'deck2',
 							name: 'deck2',
-							cards: ['card1'],
+							cards: ['card1', 'card1'],
 							userId: 2,
 							pride: 17
 						},
@@ -136,6 +136,8 @@ describe('game', function() {
 		var player2 = game.idToPlayer(2);
 		expect(player1.name).toBe('phil');
 		expect(player2.name).toBe('paulina');
+		expect(player1.pride).toBe(0);
+		expect(player2.pride).toBe(0);
 
 		game.loadup.selectDeck(player1, 'deck1', function(err) {
 			expect(err).toBe(null);
@@ -144,14 +146,26 @@ describe('game', function() {
 			game.loadup.selectDeck(player2, 'deck2', function(err) {
 				expect(err).toBe(null);
 				expect(game.getStatus().state).toBe('running');
+				expect(game.players[0]._id).toBe(1);
+				expect(game.players[1]._id).toBe(2);
 
-				var r1 = game.playCard(player1, player1.hand[0].cid, 0, 0);
-				expect(r1).toBeFalsy();
+				expect( game.playCard(player1, player1.hand[0].cid, 0, 0) ).toBe('ok');
 				expect(game.board.target(1,0,0).card.name).toBe('phil');
+				expect(game.board.target(1,0,0).card.moves).toBe(0);
+				game.endTurn(player1);
 
-				game.endTurn(player1);
+				expect( game.playCard(player2, player2.hand[0].cid, 0, 0) ).toBe('ok');
 				game.endTurn(player2);
+
+				expect(game.board.target(1,0,0).card.moves).toBe(1);
+				expect( game.doAction(player1, 'rlly', [{playerId:1, column:0, row:0}]) ).toBe('ok');
+				expect(game.board.target(1,0,0).card.moves).toBe(0);
+				expect(player1.pride).toBe(1);
 				game.endTurn(player1);
+
+				game.board.target(2,0,0).card.health = -4;
+				game.endTurn(player2);
+
 				expect(game.getStatus().state).toBe('awarding');
 
 				_.delay(function() {

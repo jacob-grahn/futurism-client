@@ -8,33 +8,31 @@ describe('game/effectsSpec', function() {
 
 
 	it('.death should remove cards with health less than or equal to 0 and add them to their owners graveyard', function() {
+		var player1 = {_id:1, graveyard:[]};
+		var player2 = {_id:2, graveyard:[]};
+
 		var targets = [
 			{
 				card: {name: 'bob', health: -3},
-				playerId: 1
+				player: player1
 			},
 			{
 				card: {name: 'sue', health: 0},
-				playerId: 2
+				player: player2
 			},
 			{
 				card: {name: 'wright', health: 1},
-				playerId: 1
+				player: player1
 			}
 		];
 
-		var players = [
-			{_id:1, graveyard:[]},
-			{_id:2, graveyard:[]}
-		];
-
-		effects.death(targets, players);
+		effects.death(targets);
 
 		expect(targets[0].card).toBeFalsy();
 		expect(targets[1].card).toBeFalsy();
 		expect(targets[2].card).toBeTruthy();
-		expect(players[0].graveyard[0].name).toBe('bob');
-		expect(players[1].graveyard[0].name).toBe('sue');
+		expect(player1.graveyard[0].name).toBe('bob');
+		expect(player2.graveyard[0].name).toBe('sue');
 	});
 
 

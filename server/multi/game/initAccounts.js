@@ -35,7 +35,6 @@
 	var makeAccountCard = function(account) {
 		return {
 			_id: 0,
-			canon: false,
 			commander: true,
 			userId: account._id,
 			name: account.name,
@@ -46,8 +45,9 @@
 			abilities: [],
 			updated: Date.now(),
 			hasImage: true,
-			version: 0,
-			cid: nextCid()
+			cid: nextCid(),
+			moves: 0,
+			pride: 0
 		};
 	};
 

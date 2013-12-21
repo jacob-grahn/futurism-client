@@ -16,10 +16,11 @@
 		var self = this;
 		var intervalId;
 		var startTime;
-		var turn = 0;
 		var running = false;
-		var turnOwners = [];
 		var callback;
+
+		self.turn = 0;
+		self.turnOwners = [];
 
 
 		/**
@@ -56,11 +57,11 @@
 		 * Called when a turn is completed
 		 */
 		self.endTurn = function() {
-			turnOwners = [];
+			console.log('turnTicker::endTurn()');
 			clearTimeout(intervalId);
 			if(running) {
 				if(callback) {
-					callback(self.getElapsed());
+					callback(self.getElapsed(), self.turnOwners);
 				}
 				nextTurn();
 			}
@@ -73,7 +74,7 @@
 		 * @returns {boolean}
 		 */
 		self.isTheirTurn = function(player) {
-			return (turnOwners.indexOf(player) !== -1);
+			return (self.turnOwners.indexOf(player) !== -1);
 		};
 
 
@@ -81,7 +82,7 @@
 		 * Move a turn to the next player in line
 		 */
 		var nextTurn = function() {
-			turn++;
+			self.turn++;
 			startTime = +new Date();
 			fillTurnOwners();
 			intervalId = setTimeout(self.endTurn, timePerTurn);
@@ -92,9 +93,10 @@
 		 * set active to true if it is a players turn
 		 */
 		var fillTurnOwners = function() {
-			var index = turn % (players.length);
+			self.turnOwners = [];
+			var index = (self.turn-1) % (players.length);
 			var player = players[index];
-			turnOwners = [player];
+			self.turnOwners = [player];
 		};
 
 	};

@@ -160,7 +160,6 @@
 			else {
 				player.fame += module.exports.BASE_FAME_GAIN;
 			}
-			console.log('player fame', player._id, player.fame);
 		});
 	};
 

@@ -80,13 +80,25 @@
 			/**
 			 * start the turn ticker
 			 */
-			self.turnTicker.start(function() {
+			self.turnTicker.start(function(elapsed, turnOwners) {
+
+				console.log('game::turn end callback', turnOwners);
 
 
 				/**
 				 * refill hands
 				 */
 				self.drawCards(self.players, rules.handSize);
+
+
+				/**
+				 * apply effects
+				 */
+				var turnTargets = self.board.playerTargets(turnOwners[0]._id);
+				effects.poison(turnTargets);
+				effects.deBuf(turnTargets);
+				effects.refresh(turnTargets);
+				effects.death(self.board.allTargets());
 
 
 				/**
@@ -122,8 +134,11 @@
 					if(target.card) {
 						return 'there is already a card here';
 					}
-					if(card.pride <= player.pride) {
+					if(card.pride < player.pride) {
 						return 'you do not have enough pride to play this card';
+					}
+					if(!self.turnTicker.isTheirTurn(player)) {
+						return 'it is not your turn';
 					}
 					player.pride -= card.pride;
 					target.card = card;
@@ -133,6 +148,7 @@
 			if(!foundMatch) {
 				return 'that card is not in your hand';
 			}
+			return 'ok';
 		};
 
 
@@ -188,11 +204,14 @@
 		/**
 		 * End a player's turn
 		 * @param player
+		 * @returns {string}
 		 */
 		self.endTurn = function(player) {
-			if(self.turnTicker.isTheirTurn(player)) {
-				self.turnTicker.endTurn();
+			if(!self.turnTicker.isTheirTurn(player)) {
+				return 'it is not your turn';
 			}
+			self.turnTicker.endTurn();
+			return 'ok';
 		};
 
 
@@ -213,9 +232,10 @@
 		 * @param targetPositions
 		 */
 		self.doAction = function(player, actionStr, targetPositions) {
-			if(self.turnTicker.isTheirTurn(player)) {
-				actionFns.doAction(self.board, player, actionStr, targetPositions);
+			if(!self.turnTicker.isTheirTurn(player)) {
+				return 'it is not your turn';
 			}
+			return actionFns.doAction(self.board, player, actionStr, targetPositions);
 		};
 
 
