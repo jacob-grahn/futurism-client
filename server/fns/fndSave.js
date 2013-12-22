@@ -36,7 +36,7 @@ module.exports = function(Model, data, callback) {
 			if(err) {
 				return callback(err);
 			}
-			return callback(err, document);
+			return callback(null, document);
 		});
 	});
 

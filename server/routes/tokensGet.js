@@ -14,12 +14,14 @@ function() {
 	var async = require('async');
 	var User = require('../models/user');
 	var groups = require('../../shared/groups');
+	var _ = require('lodash');
 
 
 	module.exports = function(req, res) {
 
 		var verifiedData;
-		var body;
+		var body = req.body;
+		var valid;
 
 
 		async.series([
@@ -27,26 +29,19 @@ function() {
 
 			//--- send credentials to GameHub server to verify they are real
 			function(callback) {
-				try {
-					var data = JSON.parse(req.query.user);
-				}
-				catch (e) {
-					return callback(e);
-				}
-
-				data.ip = fns.getIp(req);
-				data.game = 'futurism';
-				data.pass = process.env.GAMEHUB_KEY;
-				data.max_width = 0;
-				data.max_height = 0;
-				if(data.site == 'g') {
-					data.user_id = data.guest_user_id;
-					data.user_name = data.guest_user_name;
+				body.ip = fns.getIp(req);
+				body.game = 'futurism';
+				body.pass = process.env.GAMEHUB_KEY;
+				body.max_width = 0;
+				body.max_height = 0;
+				if(body.site == 'g') {
+					body.user_id = body.guest_user_id;
+					body.user_name = body.guest_user_name;
 				}
 
-				var authUrl = 'http://gamehub.jiggmin.com/login.php?' + fns.objToUrlParams(data);
-				request(authUrl, function(err, resp, bod) {
-					body = bod;
+				var authUrl = 'http://gamehub.jiggmin.com/login.php?' + fns.objToUrlParams(body);
+				request(authUrl, function(err, resp, _valid_) {
+					valid = _valid_;
 					return callback(err);
 				});
 			},
@@ -55,7 +50,7 @@ function() {
 			//--- parse the incoming data from GameHub
 			function(callback) {
 				try {
-					verifiedData = JSON.parse(body);
+					verifiedData = JSON.parse(valid);
 				}
 				catch (e){
 					return callback(e);
@@ -74,11 +69,10 @@ function() {
 			//--- save the user in the db
 			function(callback) {
 				var v = verifiedData;
-				v.group = powerToGroup(v.power);
 				fndSave(User, {
 					_id: v.user_id,
 					name: v.user_name,
-					group: v.group,
+					group: powerToGroup(v.power),
 					site: v.site
 				}, callback);
 			},
@@ -98,8 +92,9 @@ function() {
 				return res.apiOut(err, null);
 			}
 
-			verifiedData.token = results[3].token;
-			return res.apiOut(null, verifiedData);
+			var user = JSON.parse(JSON.stringify(results[2]));
+			user.token = results[3].token;
+			return res.apiOut(null, user);
 		});
 
 

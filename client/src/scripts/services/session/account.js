@@ -4,13 +4,7 @@ angular.module('futurism')
 
 		return {
 			targetSite: 'j',
-			loggedIn: false,
-			site: null,
-			userName: null,
-			userId: null,
-			avatar: null,
-			token: null,
-			group: null
+			loggedIn: false
 		};
 
 	});

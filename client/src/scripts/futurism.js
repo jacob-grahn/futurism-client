@@ -26,6 +26,6 @@ angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', '
 
 	.run(function(autoLogin, session, errorHandler, $rootScope, lang) {
 		autoLogin.activate();
-		session.create(errorHandler.callback);
+		session.renew(errorHandler.callback);
 		$rootScope.lang = lang;
 	});

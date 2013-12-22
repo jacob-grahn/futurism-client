@@ -1,20 +1,70 @@
 angular.module('futurism')
-	.factory('session', function($http, $location, websites, account) {
+	.factory('session', function($http, $location, websites, account, TokenResource) {
 		'use strict';
 
-
+		var self = this;
 		var sitesToTry = ['j', 'g'];
 		var token = '';
 		var tempCredentials;
 
 
-		var getToken = function() {
+		self.makeNew = function(callback) {
+			checkLogins(function(err) {
+				if(err) {
+					return callback(err);
+				}
+
+				authorizeLogin(function(err, data) {
+					if(err) {
+						return callback(err);
+					}
+
+					updateAccount(data);
+					setToken(data.token);
+					return callback(null, data);
+				});
+			});
+		};
+
+
+		self.destroy = function(callback) {
+			setToken(null);
+			$http
+				.delete('/api/token')
+				.success(function(data) {callback(null, data);})
+				.error(callback);
+		};
+
+
+		self.renew = function(callback) {
+			var token = self.getToken();
+
+			if(token) {
+				TokenResource.update({token: token}, function(data) {
+					if(data.error) {
+						return self.makeNew(callback);
+					}
+					updateAccount(data);
+					return callback(null, data);
+				},
+				function(err) {
+					return self.makeNew(callback);
+				});
+			}
+
+			else {
+				return self.makeNew(callback);
+			}
+		};
+
+
+		self.getToken = function() {
 			if(!token && typeof Storage !== 'undefined') {
 				token = account.token = sessionStorage.getItem('token');
 			}
 			return token;
 		};
-		token = getToken();
+		token = self.getToken();
 
 
 		var setToken = function(tkn) {
@@ -25,43 +75,15 @@ angular.module('futurism')
 		};
 
 
-		var create = function(callback) {
-			_checkLogins(function(err) {
-				if(err) {
-					return callback(err);
-				}
-
-				_authorizeLogin(function(err, data) {
-					if(err) {
-						return callback(err);
-					}
-
-					account.loggedIn = true;
-					account.userName = data.user_name;
-					account.userId = data.user_id;
-					account.avatar = data.avatar;
-					account.site = data.site;
-					account.token = data.token;
-					account.group = data.group;
-
-					setToken(data.token);
-
-					return callback(null, data);
-				});
-			});
+		var updateAccount = function(data) {
+			_.assign(account, data);
+			console.log('account', account);
+			console.log('data', data);
+			account.loggedIn = true;
 		};
 
 
-		var destroy = function(callback) {
-			setToken(null);
-			$http
-				.delete('/api/token')
-				.success(function(data) {callback(null, data);})
-				.error(callback);
-		};
-
-
-		var _checkLogins = function(callback) {
+		var checkLogins = function(callback) {
 			var i = 0;
 
 			var checkNext = function() {
@@ -88,26 +110,15 @@ angular.module('futurism')
 		};
 
 
-		var _authorizeLogin = function(callback) {
-			var strCred = encodeURIComponent(JSON.stringify(tempCredentials));
-			$http
-				.get('/api/token?user='+strCred)
-				.success(function(data) {
-					if(data.success) {
-						return callback(null, data);
-					}
-					else {
-						return callback(data.error);
-					}
-				})
-				.error(callback);
+		var authorizeLogin = function(callback) {
+			TokenResource.get(tempCredentials, function(data) {
+				if(data.error) {
+					return callback(data.error);
+				}
+				return callback(null, data);
+			});
 		};
 
 
-		return {
-			create: create,
-			destroy: destroy,
-			getToken: getToken
-		};
-
+		return self;
 	});

@@ -34,10 +34,10 @@ module.exports = function (grunt) {
 				livereload: true
 			},
 			serverTest: {
-				files: [
-					'server/**/*.js'
-				],
-				tasks: ['jasmine_node']
+				//files: [
+				//	'server/**/*.js'
+				//],
+				//tasks: ['jasmine_node']
 			},
 			server: {
 				files: [
