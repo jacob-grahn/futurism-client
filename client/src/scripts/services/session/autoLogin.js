@@ -2,11 +2,24 @@ angular.module('futurism')
 	.factory('autoLogin', function($location, $rootScope, authService, session) {
 		'use strict';
 
-		var _removeListener;
+		var self = this;
+		var removeListener;
 
-		var _loginRequiredHandler = function() {
-			session.create(function(error, result) {
-				console.log('session results', error, result);
+		self.activate = function() {
+			if(!removeListener) {
+				removeListener = $rootScope.$on('event:auth-loginRequired', loginRequiredHandler);
+			}
+		};
+
+		self.deactivate = function() {
+			if(removeListener) {
+				removeListener();
+				removeListener = null;
+			}
+		};
+
+		var loginRequiredHandler = function() {
+			session.makeNew(function(error, result) {
 				if(error) {
 					return $location.path('/error');
 				}
@@ -14,22 +27,5 @@ angular.module('futurism')
 			});
 		};
 
-		var activate = function() {
-			if(!_removeListener) {
-				_removeListener = $rootScope.$on('event:auth-loginRequired', _loginRequiredHandler);
-			}
-		};
-
-		var deactivate = function() {
-			if(_removeListener) {
-				_removeListener();
-				_removeListener = null;
-			}
-		};
-
-		return {
-			activate: activate,
-			deactivate: deactivate
-		};
-
+		return self;
 	});

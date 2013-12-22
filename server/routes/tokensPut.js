@@ -13,7 +13,7 @@
 				res.apiOut(err);
 			}
 			if(!user) {
-				res.apiOut('no user found with that token');
+				res.apiOut({code:200, message:'no user found with that token'});
 			}
 			res.apiOut(null, user);
 		});

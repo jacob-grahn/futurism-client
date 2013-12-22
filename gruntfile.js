@@ -33,12 +33,12 @@ module.exports = function (grunt) {
 			options: {
 				livereload: true
 			},
-			serverTest: {
+			//serverTest: {
 				//files: [
 				//	'server/**/*.js'
 				//],
 				//tasks: ['jasmine_node']
-			},
+			//},
 			server: {
 				files: [
 					'server/fns/**/*.js',
