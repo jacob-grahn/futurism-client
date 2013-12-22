@@ -26,14 +26,13 @@
 	 * Set up a socket's interface after it has authorized
 	 * @param err
 	 * @param socket
+	 * @param user
 	 * @returns {*}
 	 */
 	var onAuthorized = function(err, socket, user) {
+		console.log('onAuthorized', err, user);
 		if(err) {
-			if(socket) {
-				return socket.emitError(err);
-			}
-			return 'no socket';
+			return socket.emit('authFail', err);
 		}
 
 

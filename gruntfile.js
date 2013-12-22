@@ -33,20 +33,25 @@ module.exports = function (grunt) {
 			options: {
 				livereload: true
 			},
-			server: {
+			serverTest: {
 				files: [
 					'server/**/*.js'
 				],
-				tasks: ['develop', 'wait'],
-				options: {spawn: false}
+				tasks: ['jasmine_node']
 			},
-			//server_test: {
-			//	files: [
-			//		'server/**/*.js'
-			//	],
-			//	tasks: [],
-			//	options: {spawn: false}
-			//},
+			server: {
+				files: [
+					'server/fns/**/*.js',
+					'server/middleware/**/*.js',
+					'server/models/**/*.js',
+					'server/multi/**/*.js',
+					'server/routes/**/*.js',
+					'server/server.js',
+					'server/test-server.js'
+				],
+				tasks: ['develop', 'wait'],
+				options: {nospawn: true}
+			},
 			data: {
 				files: ['{.tmp,<%= yeoman.app %>}/data/*']
 			},
@@ -315,10 +320,11 @@ module.exports = function (grunt) {
 
 		// Run unit tests on node server
 		jasmine_node: {
-			forceExit: true,
+			forceExit: false,
 			match: '.',
 			matchall: false,
 			captureExceptions: false,
+			autotest: false,
 			extensions: 'js',
 			specNameMatcher: 'Spec',
 			projectRoot: '<%= yeoman.server %>/spec'
@@ -361,6 +367,7 @@ module.exports = function (grunt) {
 			'clean:server',
 			'concurrent:server',
 			'autoprefixer',
+			'jasmine_node',
 			'develop',
 			'watch'
 		]);
@@ -385,7 +392,7 @@ module.exports = function (grunt) {
 	grunt.registerTask('watch-server-tests', [
 		'jasmine_node',
 		'wait',
-		'watch:server_test'
+		'watch:serverTest'
 	]);
 
 

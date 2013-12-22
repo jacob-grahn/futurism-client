@@ -5,6 +5,7 @@ angular.module('futurism')
 		var socket = io.connect();
 		var buffer = [];
 		var ready = false;
+		var reAuthDelay = 3000;
 
 		var flushBuffer = function() {
 			for(var i=0; i<buffer.length; i++) {
@@ -34,7 +35,8 @@ angular.module('futurism')
 
 		socket.on('authFail', function(data) {
 			console.log('authFail', data);
-			_.delay(sendAuth, 3000);
+			_.delay(sendAuth, reAuthDelay);
+			reAuthDelay += 1000;
 		});
 
 		socket.on('ready', function() {
