@@ -71,8 +71,8 @@ angular.module('futurism')
 				 * $timeout is a quirky trick to do this
 				 */
 				$timeout(function() {
-					$timeout(resizeHandler);
-				});
+					resizeHandler();
+				}, 100);
 
 
 				/**
