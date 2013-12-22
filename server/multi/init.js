@@ -1,31 +1,67 @@
-module.exports = function(io) {
+(function() {
 	'use strict';
 
-	var auth = require('./auth')();
-	var Lobby = require('./lobby');
-	var Chat = require('./chat');
-	var gamehub = require('./gamehub')(io);
-	var deckPreload = require('./game/loadup');
-	var broadcast = require('./broadcast');
-
-	var lobby = Lobby('brutus');
-	Chat.safeCreate('chat-brutus');
-	broadcast.setIo(io);
+	var auth = require('./auth');
+	var _ = require('lodash');
+	var ChatInterface = require('./chatInterface');
+	var LobbyInterface = require('./lobbyInterface');
 
 
-	io.sockets.on('connection', function (socket) {
-		auth.authorizeSocket(socket, init);
-	});
+	module.exports = {
+
+		/**
+		 * Ask new sockets to authorize
+		 */
+		listenForConnections: function(io) {
+			io.sockets.on('connection', function (socket) {
+				auth.authorizeSocket(socket, onAuthorized);
+			});
+		}
+	};
 
 
-	function init(err, socket) {
+
+
+	/**
+	 * Set up a socket's interface after it has authorized
+	 * @param err
+	 * @param socket
+	 * @returns {*}
+	 */
+	var onAuthorized = function(err, socket, user) {
 		if(err) {
 			if(socket) {
-				return socket.emit('authFail', err);
+				return socket.emitError(err);
 			}
 			return 'no socket';
 		}
 
+
+		/**
+		 * Store values for later
+		 */
+		socket.set('account', _.pick(user, '_id', 'name', 'site', 'group'), function (err) {
+			if(err) {
+				return err;
+			}
+
+			socket.set('silencedUntil', user.silencedUntil, function(err) {
+				if(err) {
+					return err;
+				}
+
+				socket.set('_id', user._id, function(err) {
+					if(err) {
+						return err;
+					}
+				})
+			});
+		});
+
+
+		/**
+		 * Subscribe and unsubscribe to rooms
+		 */
 		socket.on('subscribe', function(roomName) {
 			socket.join(roomName);
 		});
@@ -34,19 +70,65 @@ module.exports = function(io) {
 		});
 
 
+		/**
+		 * Return true if silencedUntil > curTime
+		 * @param callback
+		 */
 		socket.isSilenced = function(callback) {
-			socket.get('account', function(err, account) {
+			socket.get('silencedUntil', function(err, silencedUntil) {
 				if(err) {
 					return callback(err);
 				}
-				return callback(null, new Date(account.silencedUntil) > new Date(), account);
+				var isSilenced = new Date(silencedUntil) > new Date();
+				return callback(null, isSilenced);
 			});
 		};
 
-		Lobby.initSocket(socket);
-		Chat.initSocket(socket);
-		loadup.initSocket(socket);
 
+		/**
+		 * Standard way to return errors to the client
+		 * @param message
+		 */
+		socket.emitError = function(message) {
+			console.log('socket error:', message);
+			socket.emit('error', message);
+		};
+
+
+		/**
+		 * Route an event to an account
+		 * @param eventName
+		 * @param callback
+		 */
+		socket.onAccount = function(eventName, callback) {
+			socket.on(eventName, function(data) {
+
+				// get the account
+				socket.get('account', function(err, account) {
+					if(err) {
+						return socket.emitError(err);
+					}
+					if(!account) {
+						return socket.emitError('No account is registered to this connection.');
+					}
+
+					//everything worked
+					callback(data, account);
+				});
+			});
+		};
+
+
+		/**
+		 * Interface with different systems
+		 */
+		LobbyInterface.initSocket(socket);
+		ChatInterface.initSocket(socket);
+
+
+		/**
+		 * let the client know that the server is ready to roll
+		 */
 		socket.emit('ready');
 	}
-};
+}());

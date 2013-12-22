@@ -82,8 +82,6 @@
 			 */
 			self.turnTicker.start(function(elapsed, turnOwners) {
 
-				console.log('game::turn end callback', turnOwners);
-
 
 				/**
 				 * refill hands

@@ -56,7 +56,16 @@
 
 
 	//--- load multi
-	require('./multi/init')(io);
+	var multiInit = require('./multi/init');
+	var gamehub = require('./multi/gamehub');
+	var broadcast = require('./multi/broadcast');
+	var Chat = require('./multi/chat');
+	var Lobby = require('./multi/lobby');
+	multiInit.listenForConnections(io);
+	gamehub.start(io);
+	broadcast.setIo(io);
+	Chat.safeCreate('chat-brutus');
+	Lobby.createRoom('brutus');
 
 
 	//--- last ditch error handler

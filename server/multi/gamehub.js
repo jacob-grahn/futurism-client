@@ -1,4 +1,4 @@
-module.exports = function(io) {
+(function() {
 	'use strict';
 
 	var chat = require('./chat.js');
@@ -6,6 +6,32 @@ module.exports = function(io) {
 	var request = require('request');
 	var fns = require('../fns/fns');
 	var User = require('../models/user');
+
+	var chatInterval, banInterval, io;
+
+
+	module.exports = {
+
+		/**
+		 * Start polling updates to gamehub
+		 * @param socketIo
+		 */
+		start: function(socketIo) {
+			io = socketIo;
+			module.exports.stop();
+			chatInterval = setInterval(recordChats, 5000);
+			banInterval = setInterval(getRecentBans, 2500);
+		},
+
+
+		/**
+		 * stop updating with gamehub
+		 */
+		stop: function() {
+			clearInterval(chatInterval);
+			clearInterval(banInterval);
+		}
+	};
 
 
 	/**
@@ -106,11 +132,4 @@ module.exports = function(io) {
 	};
 
 
-	/**
-	 *
-	 */
-	if(process.env.NODE_ENV !== 'development') {
-		setInterval(recordChats, 5000);
-		setInterval(getRecentBans, 2500);
-	}
-};
+}());

@@ -8,16 +8,6 @@
 
 
 		/**
-		 * Standard way to return errors to the client
-		 * @param message
-		 */
-		socket.emitError = function(message) {
-			console.log('socket error:', message);
-			socket.emit('error', message);
-		};
-
-
-		/**
 		 * Route an event to a player in a game
 		 * @param eventName
 		 * @param callback

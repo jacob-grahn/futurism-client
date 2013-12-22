@@ -38,14 +38,15 @@ module.exports = function (grunt) {
 					'server/**/*.js'
 				],
 				tasks: ['develop', 'wait'],
-				options: {nospawn: true}
+				options: {spawn: false}
 			},
-			server_test: {
-				files: [
-					'server/**/*.js'
-				],
-				tasks: ['jasmine_node']
-			},
+			//server_test: {
+			//	files: [
+			//		'server/**/*.js'
+			//	],
+			//	tasks: [],
+			//	options: {spawn: false}
+			//},
 			data: {
 				files: ['{.tmp,<%= yeoman.app %>}/data/*']
 			},
@@ -127,37 +128,6 @@ module.exports = function (grunt) {
 				}]
 			}
 		},
-
-
-
-
-		// Compiles Sass to CSS and generates necessary files if requested
-		/*compass: {
-		 options: {
-		 sassDir: '<%= yeoman.app %>/styles',
-		 cssDir: '.tmp/styles',
-		 generatedImagesDir: '.tmp/images/generated',
-		 imagesDir: '<%= yeoman.app %>/images',
-		 javascriptsDir: '<%= yeoman.app %>/scripts',
-		 fontsDir: '<%= yeoman.app %>/styles/fonts',
-		 importPath: '<%= yeoman.app %>/bower_components',
-		 httpImagesPath: '/images',
-		 httpGeneratedImagesPath: '/images/generated',
-		 httpFontsPath: '/styles/fonts',
-		 relativeAssets: false,
-		 assetCacheBuster: false
-		 },
-		 dist: {
-		 options: {
-		 generatedImagesDir: '<%= yeoman.dist %>/images/generated'
-		 }
-		 },
-		 server: {
-		 options: {
-		 debugInfo: true
-		 }
-		 }
-		 },*/
 
 
 		// Compile Sass to CSS
@@ -345,10 +315,10 @@ module.exports = function (grunt) {
 
 		// Run unit tests on node server
 		jasmine_node: {
-			forceExit: false,
+			forceExit: true,
 			match: '.',
 			matchall: false,
-			captureExceptions: true,
+			captureExceptions: false,
 			extensions: 'js',
 			specNameMatcher: 'Spec',
 			projectRoot: '<%= yeoman.server %>/spec'
@@ -359,6 +329,9 @@ module.exports = function (grunt) {
 		wait: {
 			options: {
 				delay: 2500
+			},
+			after: function() {
+				return 'wait does not seem to work unless there is an after function';
 			}
 		},
 

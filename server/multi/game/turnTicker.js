@@ -57,7 +57,6 @@
 		 * Called when a turn is completed
 		 */
 		self.endTurn = function() {
-			console.log('turnTicker::endTurn()');
 			clearTimeout(intervalId);
 			if(running) {
 				if(callback) {

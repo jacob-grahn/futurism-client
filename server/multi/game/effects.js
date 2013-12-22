@@ -70,11 +70,9 @@
 		 */
 		refresh: function(targets) {
 			eachCard(targets, function(card) {
-				console.log('card', card);
 				if(card.moves < 1) {
 					card.moves++;
 				}
-				console.log('moves', card.moves);
 			});
 		}
 	}

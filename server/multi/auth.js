@@ -1,18 +1,19 @@
-var session = require('../fns/mongoSession');
-var revalidateLogin = require('../fns/revalidateLogin');
-var _ = require('lodash');
-
-module.exports = function() {
+(function() {
 	'use strict';
 
-	return {
+	var session = require('../fns/mongoSession');
+	var revalidateLogin = require('../fns/revalidateLogin');
+	var _ = require('lodash');
+
+	var Auth = {
 
 		authorizeSocket: function(socket, callback) {
-			socket.emit('auth', {serverVersion: '0.0.4'});
+			socket.emit('auth', {serverVersion: '0.0.5'});
 
 			socket.on('auth', function(data) {
+				socket.removeAllListeners('auth');
 
-				mongoSession.get(data.token, function(err, sess) {
+				session.get(data.token, function(err, sess) {
 					if(err) {
 						return callback(err);
 					}
@@ -25,13 +26,13 @@ module.exports = function() {
 							return callback(err);
 						}
 
-						socket.set('account', _.pick(user, '_id', 'name', 'site', 'group', 'silencedUntil'), function (err) {
-							return callback(err, socket);
-						});
+						callback(null, socket, user);
 					});
 				});
 			});
 		}
-
 	};
-};
+
+	module.exports = Auth;
+
+}());

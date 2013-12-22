@@ -1,31 +1,38 @@
 describe('lobby', function() {
 
 	var broadcast = require('../../multi/broadcast');
-	var lobby = require('../../multi/lobby')('lobby');
+	var Lobby = require('../../multi/lobby');
+
+	var lobby;
 
 
 	beforeEach(function() {
+		lobby = Lobby.createRoom('tester');
+	});
+
+
+	afterEach(function() {
 		lobby.clear();
 	});
 
 
 	it('should create a matchup', function() {
 		var matchup1 = lobby.createMatchup({_id:15}, {maxPride:20});
-		expect(matchup1.users[0]._id).toBe(15);
+		expect(matchup1.accounts[0]._id).toBe(15);
 		expect(matchup1.rules.maxPride).toBe(20);
 
 		var matchup2 = lobby.createMatchup({_id:123}, {maxPride:20});
-		expect(matchup2.users[0]._id).toBe(123);
+		expect(matchup2.accounts[0]._id).toBe(123);
 	});
 
 
 	it('should remove a matchup if everyone leaves', function() {
 		var user = {_id:15};
 		var matchup = lobby.createMatchup(user, {maxPride:20});
-		expect(lobby.matchups.idToMatchup(matchup.id)).toBeTruthy();
+		expect(lobby.matchups.idToValue(matchup.id)).toBeTruthy();
 
 		lobby.leaveMatchup(user);
-		expect(lobby.matchups.idToMatchup(matchup.id)).toBeFalsy();
+		expect(lobby.matchups.idToValue(matchup.id)).toBeFalsy();
 	});
 
 
@@ -43,7 +50,7 @@ describe('lobby', function() {
 		var matchup3 = lobby.createMatchup(user2, {maxPride:70});
 		lobby.joinMatchup(user, matchup3.id);
 		expect(lobby.matchups.toArray().length).toBe(1);
-		expect(lobby.matchups.toArray()[0].users.length).toBe(2);
+		expect(lobby.matchups.toArray()[0].accounts.length).toBe(2);
 	});
 
 

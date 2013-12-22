@@ -9,7 +9,6 @@
 	/**
 	 *
 	 * @param {string} roomName
-	 * @returns {{add: Function, getHistory: Function, roomName: *, drainRecentMsgs: Function, clear: Function}}
 	 * @constructor
 	 */
 	var Chat = function(roomName) {
@@ -95,33 +94,6 @@
 			return {roomName: room.roomName, msgs: room.drainRecentMsgs()};
 		});
 		return recent;
-	};
-
-
-	Chat.initSocket = function(socket) {
-
-		socket.on('chat', function(data) {
-			socket.isSilenced(function(err, silenced, account) {
-				if(err) {
-					return err;
-				}
-				if(silenced) {
-					return socket.emit('silenced', 'you have been silenced');
-				}
-				Chat.safeAdd(account, data.txt, data.roomName);
-			});
-		});
-
-		socket.on('chatHistory', function(roomName) {
-			socket.emit('chatHistory', {
-				roomName: roomName,
-				history: Chat.safeGetHistory(roomName)
-			});
-		});
-
-		socket.on('createChat', function(data) {
-			//Chat.safeCreate(data.roomName);
-		})
 	};
 
 

@@ -81,13 +81,12 @@
 			/**
 			 * Create an array of all stored values
 			 * Keys are ignored
-			 * @returns {array}
+			 * @returns {Array}
 			 */
 			toArray: function() {
-				var arr = _.map(storage, function(value) {
+				return _.map(storage, function(value) {
 					return value;
 				});
-				return arr;
 			}
 		}
 	};
