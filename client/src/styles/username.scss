@@ -1,5 +1,7 @@
-.username {
+@import 'base';
 
+.username {
+	color: $light-blend;
 }
 
 .username .site-icon {
