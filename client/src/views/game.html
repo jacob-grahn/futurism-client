@@ -1,8 +1,9 @@
-<div class="col-sm-3 panel panel-default side-panel">
+<div class="col-sm-3 panel panel-default" match-screen-height ng-transclude subtract="100" resize-element=".auto-size">
 	<div class="panel-body">
 		<chat-display room="chat-{{gameId}}"></chat-display>
 	</div>
 </div>
+
 <div class="col-sm-9">
 	<ul class="table">
 		<li class="col-sm-12" ng-repeat="player in players">
