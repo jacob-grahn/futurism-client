@@ -80,8 +80,8 @@ angular.module('futurism')
 		 * @param userToRemove
 		 */
 		var removeUserFromMatchup = function(matchup, userToRemove) {
-			shared.fns.removeFromArrayFunc(matchup.users, function(user) {
-				return user.userId === userToRemove.userId;
+			shared.fns.removeFromArrayFunc(matchup.accounts, function(user) {
+				return user._id === userToRemove._id;
 			});
 		};
 
@@ -101,9 +101,9 @@ angular.module('futurism')
 		 * If you are in provided matchup, start the game
 		 */
 		var goIfMember = function(matchup, gameId) {
-			_.each(matchup.users, function(user) {
+			_.each(matchup.accounts, function(user) {
 				console.log(user, account);
-				if(+user._id === +account.userId) { // + casts to number
+				if(+user._id === +account._id) { // + casts to number
 					return gotoGamePage(gameId, matchup.rules.pride);
 				}
 			});
@@ -136,7 +136,7 @@ angular.module('futurism')
 		socket.on('joinMatchup', function(data) {
 			$rootScope.$apply(function() {
 				var matchup = idToMatchup(data.id);
-				matchup.users.push(data.user);
+				matchup.accounts.push(data.user);
 			});
 		});
 

@@ -33,7 +33,7 @@
 				<li class="list-group-item matchup" ng-repeat="matchup in matchups.list" ng-click="matchups.join(matchup.id)">
 					<h3>{{matchup.rules.players}} {{lang.lobby.player}} / {{matchup.rules.pride}} {{lang.lobby.pride}} / {{matchup.rules.futures}} {{lang.lobby.futures}}</h3>
 					<ul class="matchup-members">
-						<li ng-repeat="user in matchup.users">
+						<li ng-repeat="user in matchup.accounts">
 							<div username name="{{user.name}}" id="{{user._id}}" site="{{user.site}}" group="{{user.group}}"></div>
 						</li>
 					</ul>
