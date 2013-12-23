@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('GamePreDeckCtrl', function($scope, $location, $routeParams, DeckResource, socket, errorHandler) {
+	.controller('LoadupCtrl', function($scope, $location, $routeParams, DeckResource, socket, errorHandler) {
 		'use strict';
 
 		$scope.decks = DeckResource.query(function(){});
