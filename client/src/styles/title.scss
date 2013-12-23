@@ -1,3 +1,5 @@
+@import 'base';
+
 #title-screen {
   height: 300px;
 }
@@ -19,8 +21,12 @@
 
 #title-buttons a {
   text-decoration: none;
-  color: $highlight;
+  color: $dark-contrast;
   position: relative;
   left: -10px;
 	cursor: pointer;
+}
+
+#title-buttons a:hover {
+	color: darken($dark-contrast, 20);
 }

@@ -1,11 +1,15 @@
 $iconSpritePath: "../images/glyphicons-halflings.png";
 $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
-$light-contrast: #FF403C;
-$dark-contrast: #991715;
-$highlight: #FEFF56;
 $light-blend: #13578A;
 $dark-blend: #234259;
+
+$light-contrast: #FF403C;
+//$dark-contrast: #991715;
+$dark-contrast: desaturate(lighten($light-blend, 50),20);
+
+//$highlight: #FEFF56;
+$highlight: invert($light-blend);
 
 $ent: green;
 $machine: #234259;

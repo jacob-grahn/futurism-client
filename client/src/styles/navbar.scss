@@ -1,0 +1,17 @@
+@import 'base';
+
+$nav-highlight: $dark-contrast;
+
+#main-navbar .navbar-brand {
+	font-family: "aw-conqueror-carved";
+	color: $nav-highlight;
+	font-size: 24px;
+}
+
+#main-navbar .active > a {
+	color: $nav-highlight;
+}
+
+#main-navbar .username {
+	color: $nav-highlight;
+}

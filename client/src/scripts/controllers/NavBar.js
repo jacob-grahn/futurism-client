@@ -36,7 +36,7 @@ angular.module('futurism')
 		};
 
 
-		$scope.addGuild = function() {
+		$scope.atGuild = function() {
 			return $scope.path === '/guild';
 		};
 
