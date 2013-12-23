@@ -5,6 +5,7 @@
 	var _ = require('lodash');
 	var ChatInterface = require('./chatInterface');
 	var LobbyInterface = require('./lobbyInterface');
+	var GameInterface = require('./game/gameInterface');
 
 
 	module.exports = {
@@ -30,7 +31,6 @@
 	 * @returns {*}
 	 */
 	var onAuthorized = function(err, socket, user) {
-		console.log('onAuthorized', err, user);
 		if(err) {
 			return socket.emit('authFail', err);
 		}
@@ -123,6 +123,7 @@
 		 */
 		LobbyInterface.initSocket(socket);
 		ChatInterface.initSocket(socket);
+		GameInterface.initSocket(socket);
 
 
 		/**

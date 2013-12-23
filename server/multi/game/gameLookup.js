@@ -1,13 +1,9 @@
 (function() {
 	'use strict';
 
-	var lookup = require('../../fns/lookup')();
+	var Lookup = require('../../fns/lookup');
+	var lookup = new Lookup();
 
-	/**
-	 * Find a game by its gameId
-	 * @type {*}
-	 */
-	lookup.idToGame = lookup.idToValue;
 
 	/**
 	 * Delete games that are over a certain age
@@ -21,9 +17,10 @@
 		});
 	};
 
+
 	/**
 	 * public interface
-	 * @type {*|exports}
+	 * @type {Lookup}
 	 */
 	module.exports = lookup;
 
