@@ -1,3 +1,5 @@
+@import 'base';
+
 $outline: rgba(82, 79, 73, .75);
 
 .board-area {
@@ -18,3 +20,40 @@ $outline: rgba(82, 79, 73, .75);
 	margin: 0px 12px 12px 12px;
 	border: 1px solid $outline;
 }
+
+.target-selector {
+	background-color: rgba(255, 255, 255, .25);
+	cursor: pointer;
+	width: 65px;
+	height: 93px;
+}
+
+#hand {
+	position: fixed;
+	top: 200px; left: 0;
+	background-color: darken($navbar-inverse-bg, 5);
+	width: 100%;
+	border-top: 1px solid lightgrey;
+	border-bottom: 1px solid lightgrey;
+	padding: 0 30px 0 30px;
+	@include box-shadow(2px, 2px, 7px, rgba(0,0,0,.8));
+}
+
+#hand .card {
+	cursor: pointer;
+}
+
+#hand-content {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 800px;
+}
+
+#hand-content > h1 {
+	color: $light-contrast;
+}
+
+.hand-cards li {
+	float: left;
+}
+

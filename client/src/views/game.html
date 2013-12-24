@@ -8,21 +8,22 @@
 	<li class="row" ng-repeat="area in board.areas">
 		<div class="board-area clearfix">
 			<ul ng-repeat="column in area.targets" class="player-field-column">
-				<li ng-repeat="target in column" ng-class="{'target': true, 'target-full': target.card, 'target-empty': !target.card}">
+				<li ng-repeat="target in column" class="target">
+					<div ng-show="isValidTarget(target)" ng-click="selectTarget(target)" class="target-selector"></div>
 					<div class="target-card"></div>
-					<div class="target-selector"></div>
 				</li>
 			</ul>
 		</div>
 	</li>
 </ul>
 
-<div>
-	<h1>Pride: {{me.pride}}</h1>
-	<ul id="hand">
-		<li class="card-holder" ng-repeat="card in me.hand">
-			hi im a card
-			<card-display size="medium"></card-display>
-		</li>
-	</ul>
+<div ng-show="state.name=='lookingAtHand'" id="hand">
+	<div id="hand-content">
+		<h1>Pride: {{me.pride}}</h1>
+		<ul class="hand-cards row">
+			<li ng-repeat="card in me.hand">
+				<card-display size="medium" ng-click="pickCardFromHand(card)"></card-display>
+			</li>
+		</ul>
+	</div>
 </div>

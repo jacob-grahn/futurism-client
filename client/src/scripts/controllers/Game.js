@@ -6,6 +6,7 @@ angular.module('futurism')
 		$scope.players = {};
 		$scope.me = {};
 		$scope.turnOwners = [];
+		$scope.state = {name: 'waiting'}
 
 
 		socket.authEmit('subscribe', $scope.gameId);
@@ -18,19 +19,53 @@ angular.module('futurism')
 			$scope.turnOwners = data.turnOwners;
 			$scope.board = inflateBoard(data.board);
 			if(isMyTurn()) {
-				socket.authEmit('hand', {gameId: $scope.gameId});
+				startMyTurn();
+			}
+		});
+
+
+		socket.$on('turn', function(turnOwners) {
+			$scope.turnOwners = turnOwners;
+			if(isMyTurn()) {
+				startMyTurn();
 			}
 		});
 
 
 		socket.$on('hand', function(hand) {
 			$scope.me.hand = hand;
+			$scope.state = {name: 'lookingAtHand'};
 		});
 
 
 		$scope.$on('$destroy', function() {
 			socket.authEmit('unsubscribe', $scope.gameId);
 		});
+
+
+		$scope.pickCardFromHand = function() {
+			$scope.state = {name: 'selectingTarget', filters: []};
+		};
+
+
+		$scope.selectTarget = function(target) {
+			socket.authEmit('playCard', {
+				gameId: $scope.gameId,
+				targetPos: _.pick(target, 'playerId', 'column', 'row')
+			});
+			socket.authEmit('endTurn', {gameId: $scope.gameId});
+			$scope.state = {name: 'waiting'};
+		};
+
+
+		$scope.isValidTarget = function(target) {
+			console.log(target);
+			console.log($scope.me._id);
+			if($scope.state.name === 'selectingTarget' && !target.card && target.playerId === $scope.me._id) {
+				return true;
+			}
+			return false;
+		};
 
 
 		var findMe = function(players) {
@@ -44,6 +79,12 @@ angular.module('futurism')
 		};
 
 
+		var startMyTurn = function() {
+			socket.authEmit('hand', {gameId: $scope.gameId});
+			$scope.state = {name: 'waitingForHand'};
+		};
+
+
 		var isMyTurn = function() {
 			return $scope.turnOwners.indexOf($scope.me._id) !== -1;
 		};
@@ -54,7 +95,7 @@ angular.module('futurism')
 			_.each(board.areas, function(area, playerId) {
 				_.each(area.targets, function(column, x) {
 					_.each(column, function(card, y) {
-						area.targets[x][y] = {column:x, row:y, playerId:playerId, card: card};
+						area.targets[x][y] = {column:x, row:y, playerId:Number(playerId), card: card};
 					});
 				});
 			});
