@@ -6,9 +6,13 @@ angular.module('futurism')
 		self.cur = null;
 
 
-		self.addMessage = function(txt, type, interrupt) {
-			var message = {txt: txt, type: type};
-			if(interrupt) {
+		self.addMessage = function(message) {
+			message.txt = message.txt || '';
+			message.type = message.type || 'normal';
+			message.interrupt = message.interrupt || false;
+			message.duration = message.duration || 4000;
+
+			if(message.interrupt) {
 				self.cur = null;
 				messages = [message];
 			}
@@ -22,7 +26,7 @@ angular.module('futurism')
 		self.showNext = function() {
 			if(!self.cur && messages.length > 0) {
 				self.cur = messages.shift();
-				$timeout(self.endShow, 3000);
+				$timeout(self.endShow, self.cur.duration);
 			}
 		};
 

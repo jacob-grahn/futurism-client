@@ -26,7 +26,6 @@
 		 * @returns {null}
 		 */
 		self.selectDeck = function(player, deckId, callback) {
-			console.log('loadup::selectDeck', player, deckId);
 			DeckGoose
 				.findById(deckId)
 				.populate('cards')

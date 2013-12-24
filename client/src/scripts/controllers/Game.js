@@ -14,7 +14,7 @@ angular.module('futurism')
 
 
 		socket.authEmit('subscribe', $scope.gameId);
-		socket.authEmit('gameStatus', $scope.gameId);
+		socket.authEmit('gameStatus', {gameId: $scope.gameId});
 
 
 		$scope.$on('$destroy', function() {

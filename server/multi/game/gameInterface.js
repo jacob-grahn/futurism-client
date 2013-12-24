@@ -123,7 +123,7 @@
 				if(!game) {
 					return socket.emitError('game "'+data.gameId+'" not found.');
 				}
-				return socket.emit('gameStatus', game.getGameStatus());
+				return socket.emit('gameStatus', game.getStatus());
 			});
 		}
 	};

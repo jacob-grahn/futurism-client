@@ -10,7 +10,7 @@ angular.module('futurism')
 		};
 
 		var show = function(str) {
-			messager.addMessage(str, 'error');
+			messager.addMessage({txt: str, type: 'error'});
 		};
 
 		var callback = function(err) {
