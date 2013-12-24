@@ -7,18 +7,6 @@ angular.module('futurism')
 		var ready = false;
 		var reAuthDelay = 3000;
 
-		var flushBuffer = function() {
-			for(var i=0; i<buffer.length; i++) {
-				var event = buffer[i];
-				socket.emit(event.eventName, event.data);
-			}
-			buffer = [];
-		};
-
-		var sendAuth = function() {
-			socket.emit('auth', {token: session.getToken()});
-		};
-
 		socket.on('disconnect',function() {
 			ready = false;
 		});
@@ -53,9 +41,24 @@ angular.module('futurism')
 				socket.emit(eventName, data);
 			}
 			else {
+				console.log('buffer', eventName, data);
 				buffer.push({eventName:eventName, data:data});
 			}
 		};
+
+		var flushBuffer = function() {
+			for(var i=0; i<buffer.length; i++) {
+				var event = buffer[i];
+				console.log('emit', event.eventName, event.data);
+				socket.emit(event.eventName, event.data);
+			}
+			buffer = [];
+		};
+
+		var sendAuth = function() {
+			socket.emit('auth', {token: session.getToken()});
+		};
+
 
 		return socket;
 

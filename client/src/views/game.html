@@ -1,11 +1,11 @@
-<div class="col-sm-3 panel panel-default" match-screen-height ng-transclude subtract="100" resize-element=".auto-size">
+<div class="col-sm-4 panel panel-default" match-screen-height ng-transclude subtract="100" resize-element=".auto-size">
 	<div class="panel-body">
 		<chat-display room="chat-{{gameId}}"></chat-display>
 	</div>
 </div>
 
-<div class="col-sm-9">
-	<ul class="table">
+<div class="col-sm-8">
+	<ul class="board">
 		<li class="col-sm-12" ng-repeat="player in players">
 			<div class="player-field row">
 				<ul ng-repeat="column in player.columns" class="player-field-column">

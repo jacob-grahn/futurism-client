@@ -105,6 +105,31 @@
 
 
 		/**
+		 * Create a deep clone that excludes redundant data
+		 */
+		self.compactClone = function() {
+			var copy = {};
+			copy.future = self.future;
+			copy.areas = {};
+
+			var targets = self.allTargets();
+
+			_.each(targets, function(target) {
+				var id = target.player._id;
+				if(!copy.areas[id]) {
+					copy.areas[id] = {targets: []};
+				}
+				if(!copy.areas[id].targets[target.column]) {
+					copy.areas[id].targets[target.column] = [];
+				}
+				copy.areas[id].targets[target.column][target.row] = target.card;
+			});
+
+			return copy;
+		};
+
+
+		/**
 		 * clean up references
 		 */
 		self.remove = function() {

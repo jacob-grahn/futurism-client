@@ -180,18 +180,7 @@
 				return player._id;
 			});
 
-			status.board = {
-				future: self.board.future,
-				targets: _.map(self.board.allTargets(), function(target) {
-					return {
-						column: target.column,
-						row: target.row,
-						card: target.card,
-						playerId: target.player._id
-					}
-				})
-			};
-
+			status.board = self.board.compactClone();
 			status.turn = self.turnTicker.turn;
 			status.state = self.state;
 

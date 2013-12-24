@@ -9,7 +9,8 @@ angular.module('futurism')
 
 
 		socket.on('gameStatus', function(data) {
-			$scope.status = data;
+			$scope.players = data.players;
+			$scope.board = data.board;
 		});
 
 
