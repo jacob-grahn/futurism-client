@@ -7,6 +7,14 @@ angular.module('futurism')
 		var ready = false;
 		var reAuthDelay = 3000;
 
+		socket.$on = function(event, listener) {
+			socket.on(event, function(data) {
+				$rootScope.$apply(function() {
+					listener(data);
+				});
+			});
+		};
+
 		socket.on('disconnect',function() {
 			ready = false;
 		});
@@ -29,10 +37,8 @@ angular.module('futurism')
 			flushBuffer();
 		});
 
-		socket.on('error', function(message) {
-			$rootScope.$apply(function() {
-				errorHandler.show(message);
-			});
+		socket.$on('error', function(message) {
+			errorHandler.show(message);
 		});
 
 		socket.authEmit = function(eventName, data) {

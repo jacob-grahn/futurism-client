@@ -12,23 +12,19 @@ angular.module('futurism')
 		socket.authEmit('gameStatus', {gameId: $scope.gameId});
 
 
-		socket.on('gameStatus', function(data) {
-			$scope.$apply(function() {
-				$scope.players = data.players;
-				$scope.me = findMe(data.players);
-				$scope.turnOwners = data.turnOwners;
-				$scope.board = inflateBoard(data.board);
-				if(isMyTurn()) {
-					socket.authEmit('hand', {gameId: $scope.gameId});
-				}
-			});
+		socket.$on('gameStatus', function(data) {
+			$scope.players = data.players;
+			$scope.me = findMe(data.players);
+			$scope.turnOwners = data.turnOwners;
+			$scope.board = inflateBoard(data.board);
+			if(isMyTurn()) {
+				socket.authEmit('hand', {gameId: $scope.gameId});
+			}
 		});
 
 
-		socket.on('hand', function(hand) {
-			$scope.$apply(function() {
-				$scope.me.hand = hand;
-			});
+		socket.$on('hand', function(hand) {
+			$scope.me.hand = hand;
 		});
 
 
