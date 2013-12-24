@@ -1,5 +1,6 @@
 <!-- navbar -->
 <nav id="main-navbar" ng-controller="navBarCtrl" ng-hide="path=='/title'" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
 	<!-- Brand and toggle get grouped for better mobile display -->
 	<div class="navbar-header">
 		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -35,4 +36,8 @@
 			</li>
 		</ul>
 	</div><!-- /.navbar-collapse -->
+
+	<div ng-show="messager.cur" class="message-holder">
+		{{messager.cur.txt}}
+	</div>
 </nav>

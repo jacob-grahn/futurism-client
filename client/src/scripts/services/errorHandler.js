@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('errorHandler', function($location) {
+	.factory('errorHandler', function($location, messager) {
 		'use strict';
 
 		var message = '';
@@ -7,6 +7,10 @@ angular.module('futurism')
 		var handle = function(str) {
 			message = str;
 			$location.url('/error');
+		};
+
+		var show = function(str) {
+			messager.addMessage(str, 'error');
 		};
 
 		var callback = function(err) {
@@ -27,6 +31,7 @@ angular.module('futurism')
 			getLastError: getLastError,
 			handle: handle,
 			callback: callback,
-			reset: reset
+			reset: reset,
+			show: show
 		};
 	});

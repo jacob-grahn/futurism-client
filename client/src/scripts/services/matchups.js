@@ -102,7 +102,6 @@ angular.module('futurism')
 		 */
 		var goIfMember = function(matchup, gameId) {
 			_.each(matchup.accounts, function(user) {
-				console.log(user, account);
 				if(+user._id === +account._id) { // + casts to number
 					return gotoGamePage(gameId, matchup.rules.pride);
 				}

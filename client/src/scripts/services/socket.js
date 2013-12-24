@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('socket', function(session, _, io) {
+	.factory('socket', function(session, _, io, errorHandler, $rootScope) {
 		'use strict';
 
 		var socket = io.connect();
@@ -10,14 +10,12 @@ angular.module('futurism')
 		var flushBuffer = function() {
 			for(var i=0; i<buffer.length; i++) {
 				var event = buffer[i];
-				console.log('flush emit', event.eventName, event.data);
 				socket.emit(event.eventName, event.data);
 			}
 			buffer = [];
 		};
 
 		var sendAuth = function() {
-			console.log('sendAuth', session.getToken());
 			socket.emit('auth', {token: session.getToken()});
 		};
 
@@ -34,15 +32,19 @@ angular.module('futurism')
 		});
 
 		socket.on('authFail', function(data) {
-			console.log('authFail', data);
 			_.delay(sendAuth, reAuthDelay);
 			reAuthDelay += 1000;
 		});
 
 		socket.on('ready', function() {
-			console.log('rec ready');
 			ready = true;
 			flushBuffer();
+		});
+
+		socket.on('error', function(message) {
+			$rootScope.$apply(function() {
+				errorHandler.show(message);
+			});
 		});
 
 		socket.authEmit = function(eventName, data) {

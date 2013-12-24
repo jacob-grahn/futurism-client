@@ -45,8 +45,6 @@ angular.module('futurism')
 				var breakHeight = attrs.breakHeight || 300;
 				var resizeElement = attrs.resizeElement;
 
-				console.log('after defaults', breakWidth, breakHeight);
-
 
 				/**
 				 * wrap window with jquery
@@ -68,7 +66,6 @@ angular.module('futurism')
 					else {
 						targetHeight = jWindow.height() - subtractHeight;
 					}
-					console.log(breakWidth, breakHeight, targetHeight);
 
 					// try tp make the html element that height
 					if(!attrs.resizeElement) {

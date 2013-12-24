@@ -1,9 +1,10 @@
 angular.module('futurism')
-	.controller('navBarCtrl', function($scope, account, $) {
+	.controller('navBarCtrl', function($scope, account, $, messager) {
 		'use strict';
 
 		$scope.path = '';
 		$scope.account = account;
+		$scope.messager = messager;
 
 
 		$scope.$on('$routeChangeSuccess', function(event, current) {
