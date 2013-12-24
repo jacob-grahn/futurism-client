@@ -1,9 +1,9 @@
 $outline: rgba(82, 79, 73, .75);
 
-.player-field {
+.board-area {
 	//background-color: lightgrey;
-	margin: 130px auto 80px auto;
-	width: 620px;
+	margin: 0px auto 40px auto;
+	width: 360px;
 }
 
 .player-field-column {
@@ -13,25 +13,8 @@ $outline: rgba(82, 79, 73, .75);
 
 .target {
 	//background-color: darkgrey;
-	width: 130px;
-	height: 186px;
-	margin: 12px;
-	margin-top: -130px;
-	border-bottom: 2px solid $outline;
+	width: 65px;
+	height: 93px;
+	margin: 0px 12px 12px 12px;
+	border: 1px solid $outline;
 }
-
-.player-field .player-field-column>:first-child {
-	border: 2px solid $outline;
-	background-color: rgba(0, 4, 10, .1);
-}
-
-
-
-/*.target-empty {
-	visibility: hidden;
-}
-
-
-.player-field .player-field-column>:first-child {
-	visibility: visible;
-}*/

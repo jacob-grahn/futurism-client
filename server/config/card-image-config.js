@@ -5,7 +5,8 @@ module.exports = {
 				small: "65x45",
 				medium: "130x90",
 				large: "260x180"
-			}
+			},
+			keepNames: true
 		}
 	},
 

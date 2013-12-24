@@ -29,6 +29,11 @@ angular.module('futurism')
 		};
 
 
+		$scope.applyDefaults = function() {
+			shared.deckFns.applyDefaults($scope.deck);
+		};
+
+
 		$scope.deleteDeck = function() {
 			DeckResource.delete({deckId: $scope.deck._id});
 			shared.deckFns.applyDefaults($scope.deck);

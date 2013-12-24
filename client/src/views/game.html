@@ -4,17 +4,21 @@
 	</div>
 </div>
 
-<div class="col-sm-8">
-	<ul class="board">
-		<li class="col-sm-12" ng-repeat="player in players">
-			<div class="player-field row">
-				<ul ng-repeat="column in player.columns" class="player-field-column">
-					<li ng-repeat="target in column" ng-class="{'target': true, 'target-full': target.card, 'target-empty': !target.card}">
-						<div class="target-card"></div>
-						<div class="target-selector"></div>
-					</li>
-				</ul>
-			</div>
-		</li>
-	</ul>
-</div>
+<ul class="board col-sm-8">
+	<li class="row" ng-repeat="area in board.areas">
+		<div class="board-area clearfix">
+			<ul ng-repeat="column in area.targets" class="player-field-column">
+				<li ng-repeat="target in column" ng-class="{'target': true, 'target-full': target.card, 'target-empty': !target.card}">
+					<div class="target-card"></div>
+					<div class="target-selector"></div>
+				</li>
+			</ul>
+		</div>
+	</li>
+</ul>
+
+<ul id="hand">
+	<li class="hand-card">
+		<card></card>
+	</li>
+</ul>

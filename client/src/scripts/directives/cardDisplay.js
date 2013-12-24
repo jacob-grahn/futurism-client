@@ -6,7 +6,7 @@ angular.module('futurism')
 		var factions = shared.factions;
 
 		return {
-			restrict: 'A',
+			restrict: 'E',
 			replace: true,
 			template:
 				'<div class="card card-{{size}} card-{{card.faction}}">' +

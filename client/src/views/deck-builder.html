@@ -7,7 +7,7 @@
 				<h1>{{lang.deckBuilder.saveAndLoad}}</h1>
 				<busy-button on-click="saveDeck()" label="{{lang.deckBuilder.save}}"></busy-button>
 				<a ng-href="/deck-selector"><button class='btn btn-default'>{{lang.deckBuilder.load}}</button></a>
-				<button class='btn btn-default' type="submit" ng-click="deck.applyDefaults()">{{lang.deckBuilder.new}}</button>
+				<button class='btn btn-default' type="submit" ng-click="applyDefaults()">{{lang.deckBuilder.new}}</button>
 				<button ng-show="deck._id" class='btn btn-default' type="submit" ng-click="deleteDeck()">{{lang.deckBuilder.delete}}</button>
 			</div>
 
@@ -21,7 +21,7 @@
 				<span>{{lang.deckBuilder.deckPride}}: {{deckFns.calcPride(deck)}}</span><br>
 				<ul class="card-list">
 					<li class="card-holder" ng-repeat="card in deck.cards">
-						<div ng-click="removeCard(card)" card-display size="small"></div>
+						<card-display ng-click="removeCard(card)" size="small"></card-display>
 					</li>
 				</ul>
 			</div>
@@ -33,7 +33,7 @@
 	<div id="cards" class="col-sm-7">
 		<ul class="card-list">
 			<li class="card-holder" ng-repeat="card in cards">
-				<div ng-click="addCard(card)" card-display size="medium"></div>
+				<card-display ng-click="addCard(card)" size="medium"></card-display>
 			</li>
 		</ul>
 	</div>

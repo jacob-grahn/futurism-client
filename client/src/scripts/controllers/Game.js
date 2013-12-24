@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('GameCtrl', function($scope, $routeParams, socket) {
+	.controller('GameCtrl', function($scope, $routeParams, socket, _) {
 		'use strict';
 
 		$scope.gameId = $routeParams.gameId;
@@ -10,7 +10,7 @@ angular.module('futurism')
 
 		socket.on('gameStatus', function(data) {
 			$scope.players = data.players;
-			$scope.board = data.board;
+			$scope.board = inflateBoard(data.board);
 		});
 
 
@@ -21,5 +21,18 @@ angular.module('futurism')
 		$scope.$on('$destroy', function() {
 			socket.authEmit('unsubscribe', $scope.gameId);
 		});
+
+
+		var inflateBoard = function(minBoard) {
+			var board = _.cloneDeep(minBoard);
+			_.each(board.areas, function(area, playerId) {
+				_.each(area.targets, function(column, x) {
+					_.each(column, function(card, y) {
+						area.targets[x][y] = {column:x, row:y, playerId:playerId, card: card};
+					});
+				});
+			});
+			return board;
+		}
 
 	});

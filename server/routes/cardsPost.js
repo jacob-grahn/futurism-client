@@ -24,7 +24,7 @@
 			imagerConfig = require('../config/card-image-config.js'),
 			imager = new Imager(imagerConfig, 'S3');
 
-		image.saveAs = imageId + '.jpg';
+		image.name = imageId + '.jpg';
 		imager.upload([image], callback, 'cardImage');
 	};
 
