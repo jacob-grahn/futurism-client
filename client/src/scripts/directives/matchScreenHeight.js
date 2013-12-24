@@ -20,10 +20,12 @@ angular.module('futurism')
 			/**
 			 * example: <div match-screen-height subtract="20"></div>
 			 */
-			scope: {
+			/*scope: {
 				subtract: '@',
-				resizeElement: '@'
-			},
+				resizeElement: '@',
+				breakWidth: '@',
+				breakHeight: '@'
+			},*/
 
 
 			/**
@@ -34,6 +36,16 @@ angular.module('futurism')
 			 * @param {object} attrs
 			 */
 			link: function(scope, elem, attrs) {
+
+				/**
+				 * defaults
+				 */
+				var subtractHeight = attrs.subtract || 0;
+				var breakWidth = attrs.breakWidth || 768;
+				var breakHeight = attrs.breakHeight || 300;
+				var resizeElement = attrs.resizeElement;
+
+				console.log('after defaults', breakWidth, breakHeight);
 
 
 				/**
@@ -47,19 +59,28 @@ angular.module('futurism')
 				 * resize elem to match the height of the screen
 				 */
 				var resizeHandler = function() {
-					var height = jWindow.height();
-					var subtract = scope.subtract || 0;
 
-					if(!scope.resizeElement) {
+					// calculate the target height
+					var targetHeight;
+					if(jWindow.width() < breakWidth) {
+						targetHeight = breakHeight;
+					}
+					else {
+						targetHeight = jWindow.height() - subtractHeight;
+					}
+					console.log(breakWidth, breakHeight, targetHeight);
+
+					// try tp make the html element that height
+					if(!attrs.resizeElement) {
 						elem.css({
-							'height': (height - subtract)
+							'height': targetHeight
 						});
 					}
 					else {
-						var target = elem.find(scope.resizeElement);
+						var target = elem.find(resizeElement);
 						var diff = elem.height() - target.height();
 						target.css({
-							'height': (height - subtract - diff)
+							'height': (targetHeight - diff)
 						});
 					}
 				};

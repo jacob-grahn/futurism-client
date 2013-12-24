@@ -6,7 +6,7 @@ describe('gameLookup', function() {
 	it('should store and retrieve games by id', function() {
 		var game = {gameId: '123', value: 'blah'};
 		gameLookup.store(game.gameId, game);
-		expect(gameLookup.idToGame('123')).toBe(game);
+		expect(gameLookup.idToValue('123')).toBe(game);
 	});
 
 
@@ -14,7 +14,7 @@ describe('gameLookup', function() {
 		var game = {gameId: '123', startedAt: new Date() - (60*60*2000)};
 		gameLookup.store(game.gameId, game);
 		gameLookup.purgeOldGames();
-		expect(gameLookup.idToGame('123')).toBe(undefined);
+		expect(gameLookup.idToValue('123')).toBe(undefined);
 	});
 
 
@@ -22,6 +22,6 @@ describe('gameLookup', function() {
 		var game = {gameId: '123', startedAt: new Date()};
 		gameLookup.store(game.gameId, game);
 		gameLookup.purgeOldGames();
-		expect(gameLookup.idToGame('123')).toBe(game);
+		expect(gameLookup.idToValue('123')).toBe(game);
 	});
 });
