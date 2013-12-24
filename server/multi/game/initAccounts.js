@@ -43,7 +43,6 @@
 			health: 10,
 			story: '',
 			abilities: [],
-			updated: Date.now(),
 			hasImage: true,
 			cid: nextCid(),
 			moves: 0,
@@ -58,7 +57,7 @@
 	 */
 	var clearAccount = function(account) {
 		if(account.gameId) {
-			var game = gameLookup.idToGame(account.gameId);
+			var game = gameLookup.idToValue(account.gameId);
 			if(game) {
 				game.quit(account);
 			}

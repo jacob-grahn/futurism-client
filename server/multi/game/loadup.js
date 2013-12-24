@@ -50,10 +50,12 @@
 					}
 
 					player.deckPride = deck.pride;
-					player.cards = _.cloneDeep(deck.cards);
-					_.each(player.cards, function(card) {
+					player.cards = [];
+					_.each(deck.cards, function(card) {
+						var card = _.pick(card, 'faction', 'attack', 'health', 'abilities', 'hasImage', 'name', 'story', 'userId', '_id');
 						card.cid = nextCid();
 						card.moves = 0;
+						player.cards.push(card);
 					});
 
 					self.nextIfDone();

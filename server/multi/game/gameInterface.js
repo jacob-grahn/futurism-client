@@ -103,7 +103,7 @@
 			 * Request a list of cards in your hand
 			 */
 			socket.onPlayer('hand', function(data, game, player) {
-				return socket.emit(player.hand);
+				return player.hand;
 			});
 
 

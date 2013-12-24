@@ -17,8 +17,12 @@
 	</li>
 </ul>
 
-<ul id="hand">
-	<li class="hand-card">
-		<card></card>
-	</li>
-</ul>
+<div>
+	<h1>Pride: {{me.pride}}</h1>
+	<ul id="hand">
+		<li class="card-holder" ng-repeat="card in me.hand">
+			hi im a card
+			<card-display size="medium"></card-display>
+		</li>
+	</ul>
+</div>
