@@ -37,7 +37,7 @@
 		</ul>
 	</div><!-- /.navbar-collapse -->
 
-	<div ng-show="messager.cur" class="message-holder">
-		{{messager.cur.txt}}
+	<div ng-show="messager.cur" class="message-holder slide-down-animation" style="clear:both">
+		{{messager.cur.txt || 'bye!'}}
 	</div>
 </nav>

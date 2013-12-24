@@ -22,7 +22,7 @@ angular.module('futurism')
 		self.showNext = function() {
 			if(!self.cur && messages.length > 0) {
 				self.cur = messages.shift();
-				$timeout(self.endShow, 5000);
+				$timeout(self.endShow, 3000);
 			}
 		};
 

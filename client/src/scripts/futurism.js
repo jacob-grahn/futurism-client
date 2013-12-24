@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', 'ngResource', 'ui.bootstrap'])
+angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', 'ngResource', 'ngAnimate', 'ui.bootstrap'])
 
 	.config(function($routeProvider, $locationProvider) {
 		$routeProvider.
