@@ -129,6 +129,16 @@ describe('game/actions', function() {
 	});
 
 
+	it('entr should put a card into play', function() {
+		var handTarget = {
+			card: strongCard,
+			player: player1
+		}
+		actions.entr.use(handTarget, player1);
+		expect(player1.pride).toBe(-9);
+	});
+
+
 	//////////////////////////////////////////////////////////////////////////////////
 	// ent
 	//////////////////////////////////////////////////////////////////////////////////

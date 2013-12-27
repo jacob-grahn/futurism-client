@@ -5,6 +5,13 @@
 	var filters = {};
 
 
+	filters.affordable = function(targets, me) {
+		return _.filter(targets, function(target) {
+			return target.card.pride <= me.pride;
+		});
+	};
+
+
 	filters.empty = function(targets, me) {
 		return _.filter(targets, function(target) {
 			return !target.card;

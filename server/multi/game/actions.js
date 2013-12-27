@@ -59,6 +59,21 @@
 		},
 
 
+		/**
+		 * Enter: join the game at a pride cost
+		 */
+		entr: {
+			restrict: [
+				[filters.owned],
+				[filters.owned, filters.empty]
+			],
+			use: function(src, target) {
+				src.player.pride -= src.card.pride;
+				target.card = src.card;
+			}
+		},
+
+
 		/////////////////////////////////////////////////////////////////////////////////////////
 		// ent
 		/////////////////////////////////////////////////////////////////////////////////////////

@@ -331,6 +331,28 @@ describe('filters', function() {
 	];
 
 
+	it('should find affordable targets', function() {
+		var targets = [
+			{
+				card: {
+					cid: 0,
+					pride: 8
+				}
+			},
+			{
+				card: {
+					cid: 1,
+					pride: 3
+				}
+			}
+		];
+		player1.pride = 3;
+		var results = filters.affordable(targets, player1);
+		expect(results.length).toBe(1);
+		expect(results[0].card.cid).toBe(1);
+	});
+
+
 	it('should find empty targets', function() {
 		var emptyTargets = filters.empty(targets);
 		var results = _.map(emptyTargets, function(target) {
