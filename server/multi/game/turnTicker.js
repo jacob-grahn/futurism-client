@@ -84,7 +84,7 @@
 			self.turn++;
 			startTime = +new Date();
 			fillTurnOwners();
-			//intervalId = setTimeout(self.endTurn, timePerTurn);
+			intervalId = setTimeout(self.endTurn, timePerTurn);
 		};
 
 
