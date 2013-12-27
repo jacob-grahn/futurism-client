@@ -26,7 +26,7 @@ angular.module('futurism')
 				scope.factions = factions;
 				scope.size = attrs.size || 'large';
 
-				var card = scope.card;
+				var card = scope.card = scope.card || scope.target.card;
 				card.pride = cardFns.calcPride(card);
 				if(card.hasImage) {
 					var cardId = card.id || card._id || card.cardId;

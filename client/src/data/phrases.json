@@ -211,6 +211,11 @@
       "it": "Salute"
     }
   },
+	"game": {
+		"endTurn": {
+			"en": "End Turn"
+		}
+	},
   "chat": {
     "say": {
       "en": "say",

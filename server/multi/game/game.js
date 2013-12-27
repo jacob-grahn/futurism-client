@@ -59,7 +59,7 @@
 		/**
 		 * create the turn ticker
 		 */
-		self.turnTicker = new TurnTicker(self.players, rules.timePerTurn);
+		self.turnTicker = new TurnTicker(self.players, rules.turnDuration);
 
 
 		/**
@@ -75,6 +75,7 @@
 			self.shuffleDecks(self.players);
 			self.drawCards(self.players, rules.handSize);
 			self.state = 'running';
+			self.emit('gameStatus', self.getStatus());
 
 
 			/**
@@ -152,7 +153,9 @@
 			card.moves = 0;
 			player.pride -= card.pride;
 			target.card = card;
+			fns.removeFromArray(player.hand, card);
 
+			self.emit('gameStatus', self.getStatus());
 			return 'ok';
 		};
 

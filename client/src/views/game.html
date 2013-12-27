@@ -10,9 +10,13 @@
 			<ul ng-repeat="column in area.targets" class="player-field-column">
 				<li ng-repeat="target in column" class="target">
 					<div ng-show="isValidTarget(target)" ng-click="selectTarget(target)" class="target-selector"></div>
-					<div class="target-card"></div>
+					<div ng-if="target.card" class="target-card">
+						<card-display size="small"></card-display>
+					</div>
 				</li>
 			</ul>
+			<button class='btn btn-default' ng-click="endTurn()">{{lang.game.endTurn}}</button>
+			<!--  ng-if="area==me._id" ng-view="state.name=='thinking'" -->
 		</div>
 	</li>
 </ul>
