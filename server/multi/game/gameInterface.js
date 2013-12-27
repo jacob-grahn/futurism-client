@@ -86,8 +86,8 @@
 			/**
 			 * Send in a card placement
 			 */
-			socket.onPlayer('placeCard', function(data, game, player) {
-				return game.placeCard(player, data.actorId);
+			socket.onPlayer('playCard', function(data, game, player) {
+				return game.playCard(player, data.cid, data.column, data.row);
 			});
 
 

@@ -70,7 +70,8 @@
 			use: function(src, target) {
 				src.player.pride -= src.card.pride;
 				target.card = src.card;
-			}
+			},
+			free: true
 		},
 
 

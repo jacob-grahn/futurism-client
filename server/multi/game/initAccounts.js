@@ -11,14 +11,11 @@
 	/**
 	 * Fill an account with the data structure needed to play a match
 	 * @param {Array} accounts
-	 * @param {String} gameId
 	 * @returns {Array.<Player>} players
 	 */
-	var InitAccounts = function(accounts, gameId) {
+	var InitAccounts = function(accounts) {
 		var players = [];
 		_.each(accounts, function(account) {
-			clearAccount(account);
-			account.gameId = gameId;
 			var player = new Player(account);
 			player.hand.push(makeAccountCard(account));
 			players.push(player);
@@ -48,21 +45,6 @@
 			moves: 0,
 			pride: 0
 		};
-	};
-
-
-	/**
-	 * Return an account to a pre game state
-	 * @param {object} account
-	 */
-	var clearAccount = function(account) {
-		if(account.gameId) {
-			var game = gameLookup.idToValue(account.gameId);
-			if(game) {
-				game.quit(account);
-			}
-		}
-		delete account.gameId;
 	};
 
 

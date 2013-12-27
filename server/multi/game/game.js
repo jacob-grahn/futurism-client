@@ -47,7 +47,7 @@
 		/**
 		 * initialize everybody's account
 		 */
-		self.players = initAccounts(accounts, gameId);
+		self.players = initAccounts(accounts);
 
 
 		/**
@@ -120,33 +120,57 @@
 		});
 
 
+		/**
+		 * Move a card from your hand to the board
+		 * @param {Player} player
+		 * @param {Number} cid
+		 * @param {Number} column
+		 * @param {Number} row
+		 * @returns {string}
+		 */
 		self.playCard = function(player, cid, column, row) {
-			var foundMatch = false;
-			_.each(player.hand, function(card) {
-				if(card.cid === cid) {
-					foundMatch = true;
-					var target = self.board.target(player._id, column, row);
-					if(target.player !== player) {
-						return 'this card must be placed on a target you own';
-					}
-					if(target.card) {
-						return 'there is already a card here';
-					}
-					if(card.pride < player.pride) {
-						return 'you do not have enough pride to play this card';
-					}
-					if(!self.turnTicker.isTheirTurn(player)) {
-						return 'it is not your turn';
-					}
-					player.pride -= card.pride;
-					target.card = card;
-				}
-			});
+			var card = self.findCard(player.hand, cid);
+			var target = self.board.target(player._id, column, row);
 
-			if(!foundMatch) {
+			if(!card) {
 				return 'that card is not in your hand';
 			}
+			if(target.player !== player) {
+				return 'this card must be placed on a target you own';
+			}
+			if(target.card) {
+				return 'there is already a card here';
+			}
+			if(card.pride < player.pride) {
+				return 'you do not have enough pride to play this card';
+			}
+			if(!self.turnTicker.isTheirTurn(player)) {
+				console.log(player, self.turnTicker.turnOwners);
+				return 'it is not your turn';
+			}
+
+			card.moves = 0;
+			player.pride -= card.pride;
+			target.card = card;
+
 			return 'ok';
+		};
+
+
+		/**
+		 * Find a card with the provided cid
+		 * @param cards
+		 * @param cid
+		 * @returns {*}
+		 */
+		self.findCard = function(cards, cid) {
+			var matchCard = null;
+			_.each(cards, function(card) {
+				if(card.cid === cid) {
+					matchCard = card;
+				}
+			});
+			return matchCard;
 		};
 
 
@@ -241,11 +265,11 @@
 		/**
 		 * forfeit a player from the game
 		 */
-		self.forfeit = function(board, player) {
+		self.forfeit = function(player) {
 			player.cards = [];
 			player.hand = [];
 			player.graveyard = [];
-			board.areas[player._id].targets = [];
+			self.board.areas[player._id].targets = [];
 		};
 
 

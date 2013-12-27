@@ -43,17 +43,18 @@ angular.module('futurism')
 		});
 
 
-		$scope.pickCardFromHand = function() {
-			$scope.state = {name: 'selectingTarget', filters: []};
+		$scope.pickCardFromHand = function(card) {
+			$scope.state = {name: 'selectingTarget', filters: [], action:'entr', cid: card.cid};
 		};
 
 
 		$scope.selectTarget = function(target) {
 			socket.authEmit('playCard', {
 				gameId: $scope.gameId,
-				targetPos: _.pick(target, 'playerId', 'column', 'row')
+				column: target.column,
+				row: target.row,
+				cid: $scope.state.cid
 			});
-			socket.authEmit('endTurn', {gameId: $scope.gameId});
 			$scope.state = {name: 'waiting'};
 		};
 
