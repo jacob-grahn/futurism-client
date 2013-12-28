@@ -5,7 +5,7 @@
 </div>
 
 <ul class="board col-sm-8">
-	<li class="row" ng-repeat="area in board.areas">
+	<li class="row" ng-repeat="(userId, area) in board.areas">
 		<div class="board-area clearfix">
 			<ul ng-repeat="column in area.targets" class="player-field-column">
 				<li ng-repeat="target in column" class="target">
@@ -15,8 +15,7 @@
 					</div>
 				</li>
 			</ul>
-			<button class='btn btn-default' ng-click="endTurn()">{{lang.game.endTurn}}</button>
-			<!--  ng-if="area==me._id" ng-view="state.name=='thinking'" -->
+			<button ng-show="userId == me._id && state.name == 'thinking'" class='btn btn-default' ng-click="endTurn()">{{lang.game.endTurn}}</button>
 		</div>
 	</li>
 </ul>
