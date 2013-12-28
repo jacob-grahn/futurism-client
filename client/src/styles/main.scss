@@ -55,6 +55,10 @@ h1.inverse, .inverse h1 {
   padding: 15px;
 }
 
+.panel-segment:nth-child(even) {
+	background-color: white;
+}
+
 .inverse {
 	color: white;
 }

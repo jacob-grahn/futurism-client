@@ -223,6 +223,15 @@
 		},
 		"futures": {
 			"en": "Futures"
+		},
+		"showFutures": {
+			"en": "Show Futures"
+		},
+		"showHand": {
+			"en": "Show Hand"
+		},
+		"forfeit": {
+			"en": "Forfeit"
 		}
 	},
   "chat": {

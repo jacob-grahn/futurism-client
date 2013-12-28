@@ -1,8 +1,11 @@
-<ul class="board col-sm-8">
+<ul class="board col-sm-7 inverse">
 	<li class="row" ng-repeat="(userId, area) in board.areas">
 		<div class="board-area clearfix">
 
-			<button ng-show="userId == me._id && state.name == 'thinking'" class='btn btn-default' ng-click="endTurn()">{{lang.game.endTurn}}</button>
+			<div class="area-title">
+				<h1 class="player-name">{{idToPlayer(userId).name}}</h1>
+				<span class="area-desc">{{lang.game.pride}}: {{idToPlayer(userId).pride}}, {{lang.game.futures}}: {{idToPlayer(userId).futures.length}}</span>
+			</div>
 
 			<ul ng-repeat="column in area.targets" class="player-field-column">
 				<li ng-repeat="target in column" class="target">
@@ -17,15 +20,23 @@
 	</li>
 </ul>
 
-<div class="col-sm-4 panel panel-default" match-screen-height ng-transclude subtract="100" resize-element=".auto-size">
+<div class="col-sm-5 panel panel-default" match-screen-height ng-transclude subtract="100" resize-element=".auto-size">
 	<div class="future-desc panel-segment">
 		<h1>Normal</h1>
 		Nothing is especially fancy about this future.
 	</div>
-	<ul class="players panel-segment">
-		<li ng-repeat="player in players">
-			<username name="{{player.name}}" id="{{player._id}}" site="{{player.site}}" group="{{player.group}}"></username><br/>
-			<span class="desc">{{lang.game.pride}}: {{player.pride}}, {{lang.game.futures}}: {{player.futures.length}}</span>
+	<ul class="game-buttons panel-segment clearfix">
+		<li>
+			<button ng-class="{btn-default: state.name == 'thinking'}" class='btn btn-default' ng-click="showHand()">{{lang.game.showHand}}</button>
+		</li>
+		<li>
+			<button ng-class="state.name == 'waiting'" class='btn btn-default' ng-click="showFutures()">{{lang.game.showFutures}}</button>
+		</li>
+		<li>
+			<button ng-class="state.name == 'thinking'" class='btn btn-default' ng-click="endTurn()">{{lang.game.endTurn}}</button>
+		</li>
+		<li>
+			<button class='btn btn-default' ng-click="forfeit()">{{lang.game.forfeit}}</button>
 		</li>
 	</ul>
 	<chat-display class="panel-segment" room="chat-{{gameId}}"></chat-display>

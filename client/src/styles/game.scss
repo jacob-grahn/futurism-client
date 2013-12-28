@@ -14,6 +14,21 @@ $outline: rgba(82, 79, 73, .75);
 	font-weight: bold;
 }
 
+.game-buttons li {
+	margin: 0 10px 10px 0;
+	float: left;
+}
+
+.area-title {
+	position: relative;
+}
+
+.area-desc {
+	position: absolute;
+	right: 15px;
+	top: 10px;
+}
+
 .board-area {
 	//background-color: lightgrey;
 	margin: 0px auto 20px auto;
