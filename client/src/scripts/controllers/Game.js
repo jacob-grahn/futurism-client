@@ -74,6 +74,11 @@ angular.module('futurism')
 		};
 
 
+		$scope.closeHand = function() {
+			$scope.state = {name: 'thinking'};
+		};
+
+
 		var findMe = function(players) {
 			var me = null;
 			_.each(players, function(player) {

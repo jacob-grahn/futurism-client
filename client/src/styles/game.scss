@@ -43,14 +43,23 @@ $outline: rgba(82, 79, 73, .75);
 	@include box-shadow(2px, 2px, 7px, rgba(0,0,0,.8));
 }
 
+#hand .close-x {
+	position: absolute;
+	right: 10px;
+	top: 7px;
+	cursor: pointer;
+	color: lightgrey;
+}
+
 #hand .card {
 	cursor: pointer;
 }
 
 #hand-content {
+	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-	max-width: 800px;
+	max-width: 750px;
 }
 
 #hand-content > h1 {

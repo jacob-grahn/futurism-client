@@ -22,7 +22,8 @@
 
 <div ng-show="state.name=='lookingAtHand'" id="hand">
 	<div id="hand-content">
-		<h1>Pride: {{me.pride}}</h1>
+		<h1>{{lang.game.pride}}: {{me.pride}}</h1>
+		<a class="close-x" ng-click="closeHand()">{{lang.game.close}} [x]</a>
 		<ul class="hand-cards row">
 			<li ng-repeat="card in me.hand">
 				<card-display size="medium" ng-click="pickCardFromHand(card)"></card-display>

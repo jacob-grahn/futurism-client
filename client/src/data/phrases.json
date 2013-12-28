@@ -214,6 +214,12 @@
 	"game": {
 		"endTurn": {
 			"en": "End Turn"
+		},
+		"pride": {
+			"en": "Pride"
+		},
+		"close": {
+			"en": "close"
 		}
 	},
   "chat": {
