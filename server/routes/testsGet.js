@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	var redis = require('../fns/redisCache').store;
+	//var redis = require('../fns/redisCache').store;
 
 	module.exports = function(req, res) {
 

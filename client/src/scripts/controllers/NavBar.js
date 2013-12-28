@@ -42,6 +42,12 @@ angular.module('futurism')
 		};
 
 
+		$scope.shouldShow = function() {
+			//return $scope.path !== '/title' && $scope.path.indexOf('/game') !== 0;
+			return $scope.path !== '/title';
+		};
+
+
 		/**
 		 * Close the responsive navbar when a link is clicked
 		 */

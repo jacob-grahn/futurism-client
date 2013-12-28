@@ -38,6 +38,23 @@ h1.inverse, .inverse h1 {
   color: $light-contrast;
 }
 
+.panel {
+  padding: 0px;
+}
+
+.panel > h1 {
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.panel > .panel-segment > h1 {
+  margin: 0px 0px 5px -5px;
+}
+
+.panel-segment {
+  padding: 15px;
+}
+
 .inverse {
 	color: white;
 }
