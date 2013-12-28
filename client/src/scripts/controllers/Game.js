@@ -3,7 +3,7 @@ angular.module('futurism')
 		'use strict';
 
 		$scope.gameId = $routeParams.gameId;
-		$scope.players = {};
+		$scope.players = [];
 		$scope.me = {};
 		$scope.turnOwners = [];
 		$scope.state = {name: 'waiting'}
@@ -15,7 +15,7 @@ angular.module('futurism')
 
 		socket.$on('gameStatus', function(data) {
 			$scope.players = data.players;
-			$scope.me = findMe(data.players);
+			$scope.me = findMe();
 			$scope.turnOwners = data.turnOwners;
 			$scope.board = inflateBoard(data.board);
 			if(isMyTurn()) {
@@ -65,8 +65,6 @@ angular.module('futurism')
 
 
 		$scope.isValidTarget = function(target) {
-			console.log(target);
-			console.log($scope.me._id);
 			if($scope.state.name === 'selectingTarget' && !target.card && target.playerId === $scope.me._id) {
 				return true;
 			}
@@ -79,15 +77,25 @@ angular.module('futurism')
 		};
 
 
-		var findMe = function(players) {
-			var me = null;
-			_.each(players, function(player) {
-				if(player._id === account._id) {
-					me = player;
+		$scope.idToPlayer = function(playerId) {
+			playerId = Number(playerId);
+			var playerMatch = null;
+			_.each($scope.players, function(player) {
+				if(player._id === playerId) {
+					playerMatch = player;
 				}
 			});
-			return me;
+			console.log('idToPlayer', playerId, playerMatch);
+			return playerMatch;
 		};
+
+
+
+		var findMe = function() {
+			return $scope.idToPlayer(account._id);
+		};
+
+
 
 
 		var startMyTurn = function() {

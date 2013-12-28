@@ -1,5 +1,15 @@
 <div class="col-sm-4 panel panel-default" match-screen-height ng-transclude subtract="100" resize-element=".auto-size">
 	<div class="panel-body">
+		<h1>Normal</h1>
+		<p>Nothing is especially fancy about this future.</p>
+		<h1>Players</h1>
+		<ul class="players">
+			<li ng-repeat="player in players">
+				<username name="{{player.name}}" id="{{player._id}}" site="{{player.site}}" group="{{player.group}}"></username><br/>
+				<span class="desc">{{lang.game.pride}}: {{player.pride}}, {{lang.game.futures}}: {{player.futures.length}}</span>
+			</li>
+		</ul>
+		<h1>Chat</h1>
 		<chat-display room="chat-{{gameId}}"></chat-display>
 	</div>
 </div>
@@ -7,6 +17,9 @@
 <ul class="board col-sm-8">
 	<li class="row" ng-repeat="(userId, area) in board.areas">
 		<div class="board-area clearfix">
+
+			<button ng-show="userId == me._id && state.name == 'thinking'" class='btn btn-default' ng-click="endTurn()">{{lang.game.endTurn}}</button>
+
 			<ul ng-repeat="column in area.targets" class="player-field-column">
 				<li ng-repeat="target in column" class="target">
 					<div ng-show="isValidTarget(target)" ng-click="selectTarget(target)" class="target-selector"></div>
@@ -15,7 +28,7 @@
 					</div>
 				</li>
 			</ul>
-			<button ng-show="userId == me._id && state.name == 'thinking'" class='btn btn-default' ng-click="endTurn()">{{lang.game.endTurn}}</button>
+
 		</div>
 	</li>
 </ul>

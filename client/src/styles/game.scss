@@ -4,7 +4,7 @@ $outline: rgba(82, 79, 73, .75);
 
 .board-area {
 	//background-color: lightgrey;
-	margin: 0px auto 40px auto;
+	margin: 0px auto 20px auto;
 	width: 360px;
 }
 
@@ -30,6 +30,13 @@ $outline: rgba(82, 79, 73, .75);
 	cursor: pointer;
 	width: 65px;
 	height: 93px;
+}
+
+.players .desc {
+	color: grey;
+	font-size: 12px;
+	position: relative;
+	top: -5px;
 }
 
 #hand {

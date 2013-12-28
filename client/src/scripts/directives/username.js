@@ -3,7 +3,7 @@ angular.module('futurism')
 		'use strict';
 
 		return {
-			restrict: 'A',
+			restrict: 'AE',
 			replace: true,
 			scope: {
 				name: '@',
