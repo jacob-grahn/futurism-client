@@ -2,8 +2,8 @@
 	<li class="row" ng-repeat="(userId, area) in board.areas">
 		<div class="board-area clearfix">
 
-			<div class="area-title">
-				<h1 class="player-name">{{idToPlayer(userId).name}}</h1>
+			<div class="area-header">
+				<h1 class="area-title">{{idToPlayer(userId).name}}</h1>
 				<span class="area-desc">{{lang.game.pride}}: {{idToPlayer(userId).pride}}, {{lang.game.futures}}: {{idToPlayer(userId).futures.length}}</span>
 			</div>
 

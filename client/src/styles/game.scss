@@ -14,19 +14,29 @@ $outline: rgba(82, 79, 73, .75);
 	font-weight: bold;
 }
 
+.panel .game-buttons {
+	padding-bottom: 5px;
+}
+
 .game-buttons li {
 	margin: 0 10px 10px 0;
 	float: left;
 }
 
-.area-title {
+.area-header {
 	position: relative;
+}
+
+.area-title {
+	max-width: 210px;
+	overflow: hidden;
 }
 
 .area-desc {
 	position: absolute;
 	right: 15px;
-	top: 10px;
+	top: 20px;
+	color: lightgrey;
 }
 
 .board-area {

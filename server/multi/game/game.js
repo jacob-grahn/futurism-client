@@ -200,7 +200,7 @@
 			var status = {};
 
 			status.players = _.map(self.players, function(player) {
-				return _.pick(player, '_id', 'team', 'name', 'site', 'pride', 'active');
+				return _.pick(player, '_id', 'team', 'name', 'site', 'pride', 'active', 'futures');
 			});
 
 			status.turnOwners = _.map(self.turnTicker.turnOwners, function(player) {
