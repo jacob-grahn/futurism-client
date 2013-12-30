@@ -1,14 +1,4 @@
-<div id="lobby-panel" class="col-sm-5 panel panel-default" match-screen-height ng-transclude subtract="100" resize-element=".auto-size">
-
-		<h1>{{lang.lobby.chat}}</h1>
-		<div class="panel-body">
-			<chat-display id="lobby-chat" room="chat-{{lobbyName}}"></chat-display>
-		</div>
-
-</div>
-
-
-<div id="lobby-matchups" class="col-sm-7">
+<div id="lobby-matchups" class="col-sm-7 inverse">
 
 	<div class="col-sm-12">
 		<div class="row">
@@ -42,6 +32,17 @@
 			</ul>
 
 		</div>
+	</div>
+
+</div>
+
+
+
+<div id="lobby-panel" class="col-sm-5 panel panel-default" match-screen-height ng-transclude subtract="100" resize-element=".auto-size">
+
+	<div class="panel-segment">
+		<h1>{{lang.lobby.chat}}</h1>
+		<chat-display id="lobby-chat" room="chat-{{lobbyName}}"></chat-display>
 	</div>
 
 </div>
