@@ -7,26 +7,19 @@ angular.module('futurism')
 
 		return {
 			restrict: 'E',
-			replace: true,
-			template:
-				'<div class="card card-{{size}} card-{{card.faction}}">' +
-					'<div class="card-image-holder">' +
-						'<img class="card-image absolute-center" ng-src="{{card.imageUrl}}"/>' +
-					'</div>' +
-					'<h1>{{card.name}}</h1>' +
-					'<ul class="abilities">' +
-						'<li ng-repeat="abilityId in card.abilities">- {{lang.abilities[abilityId].name}} -</li>' +
-					'</ul>' +
-					'<div class="card-story">{{card.story}}</div>' +
-					'<div class="card-stats">{{card.attack}}/{{card.health}}</div>' +
-					'<div class="card-pride">{{card.pride}}</div>' +
-				'</div>',
+			replace: false,
+			templateUrl: 'views/card-display.html',
 
-			link: function (scope, elem, attrs) {
+			scope: {
+				card: '=',
+				size: '@'
+			},
+
+			link: function (scope, elem, params) {
 				scope.factions = factions;
-				scope.size = attrs.size || 'large';
+				scope.size = scope.size || 'large';
 
-				var card = scope.card = scope.card || scope.target.card;
+				var card = scope.card;
 				card.pride = cardFns.calcPride(card);
 				if(card.hasImage) {
 					var cardId = card.id || card._id || card.cardId;
