@@ -214,27 +214,34 @@
 	"game": {
 		"endTurn": {
 			"en": "End Turn",
+			"ct": "meow",
 			"lt": "Užbaigti ėjimą"
 		},
 		"pride": {
 			"en": "Pride",
+			"ct": "meow",
 			"lt": "Vertė"
 		},
 		"close": {
 			"en": "close",
+			"ct": "meow",
 			"lt": "uždaryti"
 		},
 		"futures": {
-			"en": "Futures"
+			"en": "Futures",
+			"ct": "meow"
 		},
 		"showFutures": {
-			"en": "Futures"
+			"en": "Futures",
+			"ct": "meow"
 		},
 		"showHand": {
-			"en": "Hand"
+			"en": "Hand",
+			"ct": "meow"
 		},
 		"forfeit": {
 			"en": "Futures",
+			"ct": "meow",
 			"lt": "Ateities taškai"
 		}
 	},
@@ -472,7 +479,7 @@
       "en": "people",
       "ko": "사람들",
       "ne": "mensen",
-      "ct": "mensen",
+      "ct": "meow",
       "fr": "Joueurs",
       "pi": "deckhands",
       "lt": "Žaidėjai",
@@ -559,7 +566,7 @@
     "toggle": {
       "en": "Toggle Navigation",
       "ko": "토글",
-      "ct": "Navigatie aanzetten",
+      "ct": "meow",
       "ne": "Navigatie aanzetten",
       "fr": "Activer la navigation",
       "pi": "Toggle Map",
@@ -572,7 +579,7 @@
     "futurism": {
       "en": "Futurism",
       "ko": "미래의 배",
-      "ct": "Futurism",
+      "ct": "meow",
       "ne": "Futurism",
       "fr": "Futurisme",
       "pi": "Day after Tomorrow",
@@ -585,7 +592,7 @@
     "deckBuilder": {
       "en": "Deck Builder",
       "ko": "갑판",
-      "ct": "Deck maker",
+      "ct": "meow",
       "ne": "Deck maker",
       "fr": "Créateur de paquet",
       "pi": "Mapbook binder",
@@ -598,7 +605,7 @@
     "cardBuilder": {
       "en": "Card Builder",
       "ko": "카드",
-      "ct": "Kaart maker",
+      "ct": "meow",
       "ne": "Kaart maker",
       "fr": "Créateur de carte",
       "pi": "Map drawer",
@@ -611,7 +618,7 @@
     "lobby": {
       "en": "Lobby",
       "ko": "로비",
-      "ct": "Lobby",
+      "ct": "meow",
       "ne": "Lobby",
       "fr": "Hall",
       "pi": "Tavern",
@@ -624,7 +631,7 @@
     "stats": {
       "en": "My Stats",
       "ko": "통계",
-      "ct": "Mijn status",
+      "ct": "meow",
       "ne": "Mijn status",
       "fr": "Ma Statistiques",
       "pi": "Pirate-ness",
@@ -637,7 +644,7 @@
     "messages": {
       "en": "Messages",
       "ko": "메시지",
-      "ct": "Berichten",
+      "ct": "meow",
       "ne": "Berichten",
       "fr": "Messages",
       "pi": "Messages in bottles",
@@ -650,7 +657,7 @@
     "logout": {
       "en": "Logout",
       "ko": "로그 아웃",
-      "ct": "Uitloggen",
+      "ct": "meow",
       "ne": "Uitloggen",
       "fr": "Déconnexion",
       "pi": "Walk the plank",
@@ -663,7 +670,7 @@
     "language": {
       "en": "Language",
       "ko": "언어",
-      "ct": "Taal",
+      "ct": "meow",
       "ne": "Taal",
       "fr": "Langue",
       "pi": "Tongues",
