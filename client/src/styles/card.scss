@@ -129,3 +129,32 @@
 .card-large .abilities {
 	font-size: 18px;
 }
+
+
+
+.card-magnify {
+	position: relative;
+}
+
+.card-bigger {
+	margin: auto;
+	position: absolute;
+	top: -46px; left: 0; right: 0;
+	width: 130px;
+	height: 186px;
+	pointer-events: none;
+	z-index: 51;
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+	opacity: 1;
+}
+
+.card-bigger.ng-hide {
+	transform: scale(.5, .5);
+	opacity: 0;
+}
+
+.card-bigger.ng-hide-add,
+.card-bigger.ng-hide-remove {
+	display: block !important;
+}

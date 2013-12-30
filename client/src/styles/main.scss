@@ -86,10 +86,6 @@ ul {
   z-index: 9999;
 }
 
-#main-container {
-  //min-height: 100%;
-}
-
 .absolute-center {
   margin: auto;
   position: absolute;
@@ -99,5 +95,4 @@ ul {
 .panel-default {
   background-color: rgba(255, 255, 255, 0.9);
   @include box-shadow(2px, 2px, 7px, rgba(0, 0, 0, 0.7));
-  //height: 100%;
 }

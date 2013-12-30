@@ -22,13 +22,11 @@ angular.module('futurism')
 					var base = elem.find('.card-base .card');
 					base.hover(
 						function() {
-							console.log('mouse over');
 							scope.$apply(function() {
 								scope.hovering = true;
 							});
 						},
 						function() {
-							console.log('mouse away');
 							scope.$apply(function() {
 								scope.hovering = false;
 							});
