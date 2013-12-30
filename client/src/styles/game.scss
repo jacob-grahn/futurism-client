@@ -40,7 +40,6 @@ $outline: rgba(82, 79, 73, .75);
 }
 
 .board-area {
-	//background-color: lightgrey;
 	margin: 0px auto 20px auto;
 	width: 360px;
 }
@@ -50,12 +49,10 @@ $outline: rgba(82, 79, 73, .75);
 }
 
 .player-field-column {
-	//background-color: grey;
 	float: left;
 }
 
 .target {
-	//background-color: darkgrey;
 	width: 65px;
 	height: 93px;
 	margin: 0px 12px 12px 12px;
@@ -78,13 +75,23 @@ $outline: rgba(82, 79, 73, .75);
 
 #hand {
 	position: fixed;
-	top: 200px; left: 0;
+	bottom: 0px; left: 0;
 	background-color: darken($navbar-inverse-bg, 5);
 	width: 100%;
 	border-top: 1px solid lightgrey;
-	border-bottom: 1px solid lightgrey;
 	padding: 0 30px 0 30px;
 	@include box-shadow(2px, 2px, 7px, rgba(0,0,0,.8));
+	-webkit-transition: 0.5s;
+	transition: 0.5s;
+}
+
+#hand.ng-hide {
+	bottom: -300px;
+}
+
+#hand.ng-hide-add,
+#hand.ng-hide-remove {
+	display: block !important;
 }
 
 #hand .close-x {
