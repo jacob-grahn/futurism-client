@@ -20,7 +20,7 @@
     "fr": "JV-TRUC",
     "ne": "larsyuipo",
     "pi": "Arcanity",
-    "lt": "swaganomic",
+    "lt": "zebriukas",
     "sv": "jonswe",
     "nb": "-Shadowfax-",
     "it": "DforDerpdetta"
@@ -213,13 +213,16 @@
   },
 	"game": {
 		"endTurn": {
-			"en": "End Turn"
+			"en": "End Turn",
+			"lt": "Užbaigti ėjimą"
 		},
 		"pride": {
-			"en": "Pride"
+			"en": "Pride",
+			"lt": "Vertė"
 		},
 		"close": {
-			"en": "close"
+			"en": "close",
+			"lt": "uždaryti"
 		},
 		"futures": {
 			"en": "Futures"
@@ -231,7 +234,8 @@
 			"en": "Hand"
 		},
 		"forfeit": {
-			"en": "Forfeit"
+			"en": "Futures",
+			"lt": "Ateities taškai"
 		}
 	},
   "chat": {
