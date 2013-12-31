@@ -60,8 +60,10 @@
 			clearTimeout(intervalId);
 			if(running) {
 				if(callback) {
-					callback(self.getElapsed(), self.turnOwners);
+					var nextTurnOwners = getTurnOwners(self.turn+1);
+					callback(self.getElapsed(), self.turnOwners, nextTurnOwners);
 				}
+				self.turn++;
 				nextTurn();
 			}
 		};
@@ -78,24 +80,31 @@
 
 
 		/**
+		 * fill turnOwners with players who are active this turn
+		 */
+		self.populateTurn = function() {
+			self.turnOwners = getTurnOwners(self.turn);
+		};
+
+
+		/**
 		 * Move a turn to the next player in line
 		 */
 		var nextTurn = function() {
-			self.turn++;
 			startTime = +new Date();
-			fillTurnOwners();
+			self.populateTurn();
 			intervalId = setTimeout(self.endTurn, timePerTurn);
 		};
 
 
 		/**
-		 * set active to true if it is a players turn
+		 * select players based on which turn it is
 		 */
-		var fillTurnOwners = function() {
-			self.turnOwners = [];
-			var index = (self.turn-1) % (players.length);
+		var getTurnOwners = function(turn) {
+			var index = turn % (players.length);
 			var player = players[index];
-			self.turnOwners = [player];
+			var owners = [player];
+			return owners;
 		};
 
 	};

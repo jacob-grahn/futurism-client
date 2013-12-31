@@ -41,7 +41,7 @@ describe('game/turnTicker', function() {
 		var player2 = {_id:2};
 		var tt = new TurnTicker([player1, player2], 30000);
 		tt.start(function(elapsed, turnOwners) {
-			expect(tt.turn).toBe(1);
+			expect(tt.turn).toBe(0);
 			tt.stop();
 			done();
 		});

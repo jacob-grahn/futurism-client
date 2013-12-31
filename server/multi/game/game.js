@@ -75,13 +75,14 @@
 			self.shuffleDecks(self.players);
 			self.drawCards(self.players, rules.handSize);
 			self.state = 'running';
+			self.turnTicker.populateTurn();
 			self.emit('gameStatus', self.getStatus());
 
 
 			/**
 			 * start the turn ticker
 			 */
-			self.turnTicker.start(function(elapsed, turnOwners) {
+			self.turnTicker.start(function(elapsed, turnOwners, nextTurnOwners) {
 
 
 				/**
@@ -114,8 +115,15 @@
 						 * That's it, we're done
 						 */
 						self.remove();
-
 					});
+				}
+
+
+				/**
+				 * tell the clients to move to the next turn
+				 */
+				else {
+					self.emit('turn', nextTurnOwners);
 				}
 			});
 		});

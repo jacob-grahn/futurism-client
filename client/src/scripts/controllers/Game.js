@@ -18,6 +18,7 @@ angular.module('futurism')
 			$scope.me = findMe();
 			$scope.turnOwners = data.turnOwners;
 			$scope.board = inflateBoard(data.board);
+			$scope.state = {name: 'waiting'};
 			if(isMyTurn()) {
 				startMyTurn();
 			}
@@ -85,17 +86,13 @@ angular.module('futurism')
 					playerMatch = player;
 				}
 			});
-			console.log('idToPlayer', playerId, playerMatch);
 			return playerMatch;
 		};
-
 
 
 		var findMe = function() {
 			return $scope.idToPlayer(account._id);
 		};
-
-
 
 
 		var startMyTurn = function() {
