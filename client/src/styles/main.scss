@@ -6,6 +6,7 @@
 @import "credits";
 @import "deck";
 @import "deck-selector";
+@import "futures";
 @import "game";
 @import "lobby";
 @import "navbar";
@@ -32,11 +33,20 @@ body {
 h1 {
   font-family: "aw-conqueror-carved";
   color: $light-blend;
-	margin-top: 15px;
+	margin: 15px 0px 10px -5px;
+}
+
+h3 {
+	font-family: "aw-conqueror-carved";
+	color: $dark-blend;
 }
 
 h1.inverse, .inverse h1 {
   color: $light-contrast;
+}
+
+h3.inverse, .inverse h3 {
+	color: white;
 }
 
 .panel {
@@ -44,11 +54,12 @@ h1.inverse, .inverse h1 {
 }
 
 .panel h1 {
-  margin: 0px 0px 10px -5px;
+  margin-top: 0px;
 }
 
 .panel-segment {
   padding: 15px;
+	padding-left: 20px;
 }
 
 .panel-segment:nth-child(even) {

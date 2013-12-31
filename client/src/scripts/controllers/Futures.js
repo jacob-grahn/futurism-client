@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('FuturesCtrl', function($scope) {
+	.controller('FuturesCtrl', function($scope, shared) {
 		'use strict';
-		$scope.hi = 'hi';
+		$scope.futures = shared.futures;
 	});

@@ -232,17 +232,16 @@
 			"ct": "meow"
 		},
 		"showFutures": {
-			"en": "Futures",
+			"en": "Show Futures",
 			"ct": "meow"
 		},
 		"showHand": {
-			"en": "Hand",
+			"en": "Show Hand",
 			"ct": "meow"
 		},
 		"forfeit": {
-			"en": "Futures",
-			"ct": "meow",
-			"lt": "Ateities taškai"
+			"en": "Forfeit",
+			"ct": "meow"
 		}
 	},
   "chat": {
@@ -1464,5 +1463,90 @@
         "nb": "Tilgjengelige helsepoeng er konvertert til angrepspoeng."
       }
     }
-  }
+  },
+
+
+	"futures": {
+
+		"free": {
+			"name": {
+				"en": "Free Love"
+			},
+			"desc": {
+				"en": "Cards that do not attack gain 1 point of health."
+			}
+		},
+
+		"blod": {
+			"name": {
+				"en": "Blood Fued"
+			},
+			"desc": {
+				"en": "All cards must attack."
+			}
+		},
+
+		"rena": {
+			"name": {
+				"en": "Renaissance"
+			},
+			"desc": {
+				"en": "Players gain an extra 2 pride per turn."
+			}
+		},
+
+		"comm": {
+			"name": {
+				"en": "Communism"
+			},
+			"desc": {
+				"en": "Every action has a 50% chance to fail."
+			}
+		},
+
+		"thdr": {
+			"name": {
+				"en": "Thunderdome"
+			},
+			"desc": {
+				"en": "No new cards can be played."
+			}
+		},
+
+		"anar": {
+			"name": {
+				"en": "Anarchy"
+			},
+			"desc": {
+				"en": "All cards gain the move ability."
+			}
+		},
+
+		"mira": {
+			"name": {
+				"en": "Miracle"
+			},
+			"desc": {
+				"en": "Cards stay alive until their health reaches -10."
+			}
+		},
+
+		"zvir": {
+			"name": {
+				"en": "Z Virus"
+			},
+			"desc": {
+				"en": "Cards that would die become zombies instead."
+			}
+		},
+
+		"arma": {
+			"name": {
+				"en": "Armageddon"
+			},
+			"desc": {
+				"en": "All cards loose 1 health per turn."
+			}
+		}
+	}
 }

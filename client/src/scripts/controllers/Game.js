@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('GameCtrl', function($scope, $routeParams, socket, _, account) {
+	.controller('GameCtrl', function($scope, $routeParams, $location, socket, _, account) {
 		'use strict';
 
 		$scope.gameId = $routeParams.gameId;
@@ -70,13 +70,18 @@ angular.module('futurism')
 			else {
 				$scope.state = {name: 'thinking'};
 			}
-			console.log('done with hand');
 		});
 
 
 		$scope.$on('$destroy', function() {
 			socket.authEmit('unsubscribe', $scope.gameId);
 		});
+
+
+		$scope.forfeit = function() {
+			socket.authEmit('forfeit', {gameId: $scope.gameId});
+			$location.url('/lobby');
+		};
 
 
 		$scope.pickCardFromHand = function(card) {

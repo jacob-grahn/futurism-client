@@ -296,6 +296,7 @@
 			player.hand = [];
 			player.graveyard = [];
 			self.board.areas[player._id].targets = [];
+			self.emit('gameStatus', self.getStatus());
 		};
 
 
