@@ -1,9 +1,8 @@
 angular.module('futurism')
-	.directive('cardDisplay', function(shared, staticContentUrl) {
+	.directive('cardDisplay', function(shared, staticContentUrl, lang) {
 		'use strict';
 
 		var cardFns = shared.cardFns;
-		var factions = shared.factions;
 
 		return {
 			restrict: 'E',
@@ -12,11 +11,12 @@ angular.module('futurism')
 
 			scope: {
 				card: '=',
-				size: '@'
+				size: '@',
+				abilityFn: '&'
 			},
 
 			link: function (scope, elem, params) {
-				scope.factions = factions;
+				scope.lang = lang;
 				scope.size = scope.size || 'large';
 
 				var card = scope.card;

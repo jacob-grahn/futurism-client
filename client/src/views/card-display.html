@@ -4,8 +4,10 @@
 		</div>
 	<h1>{{card.name}}</h1>
 	<ul class="abilities">
-		<li ng-repeat="abilityId in card.abilities">- {{lang.abilities[abilityId].name}} -</li>
-		</ul>
+		<li ng-repeat="abilityId in card.abilities | limitTo:3">
+			<a ng-click="abilityFn(abilityId)">{{lang.abilities[abilityId].name}}</a>
+		</li>
+	</ul>
 	<div class="card-story">{{card.story}}</div>
 	<div class="card-stats">{{card.attack}}/{{card.health}}</div>
 	<div class="card-pride">{{card.pride}}</div>

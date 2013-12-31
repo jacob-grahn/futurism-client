@@ -4,6 +4,9 @@
 	var ent = {
 		id: 'en',
 		abilities: [
+			{id: 'rlly'},
+			{id: 'move'},
+			{id: 'attk'},
 			{id: 'heal'},
 			{id: 'tree'},
 			{id: 'abom'},
@@ -16,6 +19,9 @@
 	var machine = {
 		id: 'mc',
 		abilities: [
+			{id: 'rlly'},
+			{id: 'move'},
+			{id: 'attk'},
 			{id: 'rbld'},
 			{id: 'shld'},
 			{id: 'prci'},
@@ -29,8 +35,10 @@
 	var elite = {
 		id: 'el',
 		abilities: [
-			{id: 'sduc'},
+			{id: 'rlly'},
+			{id: 'move'},
 			{id: 'assn'},
+			{id: 'sduc'},
 			{id: 'delg'},
 			{id: 'posn'},
 			{id: 'bagm'},
@@ -42,6 +50,9 @@
 	var zealot = {
 		id: 'ze',
 		abilities: [
+			{id: 'rlly'},
+			{id: 'move'},
+			{id: 'attk'},
 			{id: 'male'},
 			{id: 'feml'},
 			{id: 'btle'},

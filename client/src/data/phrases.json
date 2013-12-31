@@ -816,9 +816,33 @@
     }
   },
   "abilities": {
+		"rlly": {
+			"name": {
+				"en": "rally"
+			},
+			"desc": {
+				"en": "Produce pride, which can be use to play more cards."
+			}
+		},
+		"attk": {
+			"name": {
+				"en": "attack"
+			},
+			"desc": {
+				"en": "Trade blows with an enemy card."
+			}
+		},
+		"move": {
+			"name": {
+				"en": "move"
+			},
+			"desc": {
+				"en": "Reposition this card."
+			}
+		},
     "heal": {
       "name": {
-        "en": "Healing",
+        "en": "healing",
         "ko": "치료",
         "ct": "mewoowo",
         "fr": "Guérir",
