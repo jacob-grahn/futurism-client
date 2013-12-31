@@ -163,7 +163,11 @@
 			target.card = card;
 			fns.removeFromArray(player.hand, card);
 
-			self.emit('gameStatus', self.getStatus());
+			self.emit('gameUpdate', {
+				targets: [_.pick(target, 'playerId', 'column', 'row', 'card')],
+				players: [_.pick(player, '_id', 'pride')]
+			});
+
 			return 'ok';
 		};
 
@@ -208,7 +212,7 @@
 			var status = {};
 
 			status.players = _.map(self.players, function(player) {
-				return _.pick(player, '_id', 'team', 'name', 'site', 'pride', 'active', 'futures');
+				return _.pick(player, '_id', 'team', 'name', 'site', 'pride', 'futures');
 			});
 
 			status.turnOwners = _.map(self.turnTicker.turnOwners, function(player) {

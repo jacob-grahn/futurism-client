@@ -13,6 +13,9 @@ angular.module('futurism')
 		socket.authEmit('gameStatus', {gameId: $scope.gameId});
 
 
+		/**
+		 * Receive the game state
+		 */
 		socket.$on('gameStatus', function(data) {
 			$scope.players = data.players;
 			$scope.me = findMe();
@@ -25,6 +28,32 @@ angular.module('futurism')
 		});
 
 
+		/**
+		 * Receive a partial game state
+		 */
+		socket.$on('gameUpdate', function(data) {
+			if(data.players) {
+				_.each(data.players, function(updatedPlayer) {
+					var oldPlayer = $scope.idToPlayer(updatedPlayer._id);
+					_.merge(oldPlayer, updatedPlayer);
+				});
+			}
+			console.log('board', $scope.board);
+			console.log('targets', data.targets);
+			if(data.targets) {
+				_.each(data.targets, function(target) {
+					console.log('1', $scope.board);
+					console.log('2', $scope.board.areas);
+					console.log('3', $scope.board.areas[target.playerId]);
+					$scope.board.areas[target.playerId].targets[target.column][target.row] = target;
+				});
+			}
+		});
+
+
+		/**
+		 * Receive a new turn
+		 */
 		socket.$on('turn', function(turnOwners) {
 			$scope.turnOwners = turnOwners;
 			if(isMyTurn()) {
@@ -33,7 +62,11 @@ angular.module('futurism')
 		});
 
 
+		/**
+		 * Receive the cards in your hand
+		 */
 		socket.$on('hand', function(hand) {
+			console.log('got hand', hand);
 			$scope.me.hand = hand;
 			if(hand.length > 0) {
 				$scope.state = {name: 'lookingAtHand'};
@@ -41,6 +74,7 @@ angular.module('futurism')
 			else {
 				$scope.state = {name: 'thinking'};
 			}
+			console.log('done with hand');
 		});
 
 
@@ -75,6 +109,11 @@ angular.module('futurism')
 
 		$scope.closeHand = function() {
 			$scope.state = {name: 'thinking'};
+		};
+
+
+		$scope.endTurn = function() {
+			socket.authEmit('endTurn', {gameId: $scope.gameId});
 		};
 
 

@@ -19,7 +19,8 @@
 				targets[i][j] = {
 					row: j,
 					column: i,
-					player: player
+					player: player,
+					playerId: player._id
 				}
 			}
 		}

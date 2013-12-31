@@ -27,13 +27,13 @@
 	</div>
 	<ul class="game-buttons panel-segment clearfix">
 		<li>
-			<button ng-disabled="state.name!='thinking'" class='btn btn-default' ng-click="showHand()">{{lang.game.showHand}}</button>
+			<button class='btn btn-default' ng-click="showHand()">{{lang.game.showHand}}</button>
 		</li>
 		<li>
-			<button ng-class="state.name == 'waiting'" class='btn btn-default' ng-click="showFutures()">{{lang.game.showFutures}}</button>
+			<button class='btn btn-default' ng-click="showFutures()">{{lang.game.showFutures}}</button>
 		</li>
 		<li>
-			<button ng-class="state.name == 'thinking'" class='btn btn-default' ng-click="endTurn()">{{lang.game.endTurn}}</button>
+			<button class='btn btn-default' ng-click="endTurn()">{{lang.game.endTurn}}</button>
 		</li>
 		<li>
 			<button class='btn btn-default' ng-click="forfeit()">{{lang.game.forfeit}}</button>
