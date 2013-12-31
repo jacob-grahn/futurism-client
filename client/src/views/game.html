@@ -11,7 +11,7 @@
 				<li ng-repeat="target in column" class="target">
 					<div ng-show="isValidTarget(target)" ng-click="selectTarget(target)" class="target-selector"></div>
 					<div ng-if="target.card" class="target-card">
-						<card-display size="small" magnify="medium"></card-display>
+						<card-magnify card="target.card" size="small" magnify="medium"></card-magnify>
 					</div>
 				</li>
 			</ul>
@@ -48,7 +48,7 @@
 		<a class="close-x" ng-click="closeHand()">{{lang.game.close}} [x]</a>
 		<ul class="hand-cards row">
 			<li ng-repeat="card in me.hand">
-				<card-display size="medium" ng-click="pickCardFromHand(card)"></card-display>
+				<card-display card="card" size="medium" ng-click="pickCardFromHand(card)"></card-display>
 			</li>
 		</ul>
 	</div>

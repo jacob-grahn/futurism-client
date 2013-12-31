@@ -1,13 +1,15 @@
-.card-en h1 {
+@import "base";
+
+body .card-en h1 {
 	color: $ent;
 }
-.card-mc h1 {
+body .card-mc h1 {
 	color: $machine;
 }
-.card-el h1 {
+body .card-el h1 {
 	color: $elite;
 }
-.card-ze h1 {
+body .card-ze h1 {
 	color: $zealot;
 }
 
@@ -20,6 +22,7 @@
 }
 
 .card {
+	color: $dark-blend;
   position: relative;
   width: 260px;
   height: 372px;
@@ -99,7 +102,7 @@
   right: 10px;
   bottom: 5px;
   background-color: white;
-  z-index: 50;
+  z-index: 10;
   font-weight: bold;
 }
 .card-medium .card-stats {
@@ -113,7 +116,7 @@
   left: 10px;
   bottom: 5px;
   background-color: white;
-  z-index: 50;
+  z-index: 10;
   font-weight: bold;
 }
 .card-medium .card-pride {
@@ -139,13 +142,13 @@
 .card-bigger {
 	margin: auto;
 	position: absolute;
-	top: -46px; left: 0; right: 0;
+	top: -55px; left: -45px;
 	width: 130px;
 	height: 186px;
-	pointer-events: none;
-	z-index: 51;
-	-webkit-transition: 0.5s;
-	transition: 0.5s;
+	//pointer-events: none;
+	z-index: 11;
+	-webkit-transition: 0.25s;
+	transition: 0.25s;
 	opacity: 1;
 }
 

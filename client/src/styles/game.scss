@@ -73,6 +73,10 @@ $outline: rgba(82, 79, 73, .75);
 	top: -5px;
 }
 
+.card {
+	cursor: pointer;
+}
+
 #hand {
 	position: fixed;
 	bottom: 0px; left: 0;
@@ -83,6 +87,7 @@ $outline: rgba(82, 79, 73, .75);
 	@include box-shadow(2px, 2px, 7px, rgba(0,0,0,.8));
 	-webkit-transition: 0.5s;
 	transition: 0.5s;
+	z-index: 12;
 }
 
 #hand.ng-hide {

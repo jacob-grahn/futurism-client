@@ -18,9 +18,9 @@ angular.module('futurism')
 				scope.magnify = scope.magnify || 'medium';
 				scope.hovering = false;
 
-				$timeout(function() {
-					var base = elem.find('.card-base .card');
-					base.hover(
+				//$timeout(function() {
+					//var base = elem.find('.card-base .card');
+					elem.hover(
 						function() {
 							scope.$apply(function() {
 								scope.hovering = true;
@@ -32,7 +32,7 @@ angular.module('futurism')
 							});
 						}
 					);
-				}, 1000);
+				//}, 1000);
 
 			}
 		};
