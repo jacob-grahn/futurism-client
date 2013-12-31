@@ -10,7 +10,14 @@ angular.module('futurism')
 		socket.$on = function(event, listener) {
 			socket.on(event, function(data) {
 				$rootScope.$apply(function() {
-					listener(data);
+					console.log('ddddddddddddddddddd', data);
+					try {
+						listener(data);
+					}
+					catch(err) {
+						errorHandler.handle(err);
+					}
+					return null;
 				});
 			});
 		};

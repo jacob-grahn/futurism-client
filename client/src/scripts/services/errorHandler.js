@@ -4,8 +4,9 @@ angular.module('futurism')
 
 		var message = '';
 
-		var handle = function(str) {
-			message = str;
+		var handle = function(err) {
+			err.stack = err.stack;
+			message = err;
 			$location.url('/error');
 		};
 
