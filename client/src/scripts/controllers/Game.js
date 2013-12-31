@@ -38,13 +38,8 @@ angular.module('futurism')
 					_.merge(oldPlayer, updatedPlayer);
 				});
 			}
-			console.log('board', $scope.board);
-			console.log('targets', data.targets);
 			if(data.targets) {
 				_.each(data.targets, function(target) {
-					console.log('1', $scope.board);
-					console.log('2', $scope.board.areas);
-					console.log('3', $scope.board.areas[target.playerId]);
 					$scope.board.areas[target.playerId].targets[target.column][target.row] = target;
 				});
 			}
@@ -54,8 +49,9 @@ angular.module('futurism')
 		/**
 		 * Receive a new turn
 		 */
-		socket.$on('turn', function(turnOwners) {
-			$scope.turnOwners = turnOwners;
+		socket.$on('turn', function(data) {
+			$scope.turnStartTime = data.time;
+			$scope.turnOwners = data.turnOwners;
 			if(isMyTurn()) {
 				startMyTurn();
 			}
@@ -117,6 +113,30 @@ angular.module('futurism')
 		};
 
 
+		/**
+		 * Returns true if it is this player's turn
+		 * @param {Number} playerId
+		 * @returns {Boolean}
+		 */
+		$scope.isTheirTurn = function(playerId) {
+			console.log($scope.turnOwners, playerId);
+			return $scope.turnOwners.indexOf(Number(playerId)) !== -1;
+		};
+
+
+		/**
+		 * Returns true if it is your turn
+		 * @returns {boolean}
+		 */
+		var isMyTurn = function() {
+			return $scope.isTheirTurn($scope.me._id);
+		};
+
+
+		/**
+		 * Find a player using their id
+		 * @param playerId
+		 */
 		$scope.idToPlayer = function(playerId) {
 			playerId = Number(playerId);
 			var playerMatch = null;
@@ -139,11 +159,6 @@ angular.module('futurism')
 				socket.authEmit('hand', {gameId: $scope.gameId});
 				$scope.state = {name: 'waitingForHand'};
 			}
-		};
-
-
-		var isMyTurn = function() {
-			return $scope.turnOwners.indexOf($scope.me._id) !== -1;
 		};
 
 

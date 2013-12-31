@@ -82,50 +82,65 @@
 			/**
 			 * start the turn ticker
 			 */
-			self.turnTicker.start(function(elapsed, turnOwners, nextTurnOwners) {
-
-
-				/**
-				 * refill hands
-				 */
-				self.drawCards(self.players, rules.handSize);
-
+			self.turnTicker.start(
 
 				/**
-				 * apply effects
+				 * at the start of every turn
+				 * @param {Number} time
 				 */
-				var turnTargets = self.board.playerTargets(turnOwners[0]._id);
-				effects.poison(turnTargets);
-				effects.deBuf(turnTargets);
-				effects.refresh(turnTargets);
-				effects.death(self.board.allTargets());
+				function(time) {
 
-
-				/**
-				 * check for victory
-				 */
-				var result = victoryCondition.commanderRules(self.players, self.board, self.turnTicker.turn);
-				if(result.winner) {
-					self.state = 'awarding';
-					self.turnTicker.stop();
-
-					prizeCalculator.run(self.players, result.team, false, function() {
-
-						/**
-						 * That's it, we're done
-						 */
-						self.remove();
+					/**
+					 * tell the clients to move to the next turn
+					 */
+					self.emit('turn', {
+						time: time,
+						turnOwners: self.turnTicker.getTurnOwnerIds()
 					});
-				}
+				},
 
 
 				/**
-				 * tell the clients to move to the next turn
+				 * at the end of every turn
+				 * @param {Number} elapsed
 				 */
-				else {
-					self.emit('turn', nextTurnOwners);
+				function(elapsed) {
+
+
+					/**
+					 * refill hands
+					 */
+					self.drawCards(self.players, rules.handSize);
+
+
+					/**
+					 * apply effects
+					 */
+					var turnTargets = self.board.playerTargets(self.turnTicker.turnOwners[0]._id);
+					effects.poison(turnTargets);
+					effects.deBuf(turnTargets);
+					effects.refresh(turnTargets);
+					effects.death(self.board.allTargets());
+
+
+					/**
+					 * check for victory
+					 */
+					var result = victoryCondition.commanderRules(self.players, self.board, self.turnTicker.turn);
+					if(result.winner) {
+						self.state = 'awarding';
+						self.turnTicker.stop();
+
+						prizeCalculator.run(self.players, result.team, false, function() {
+
+							/**
+							 * That's it, we're done
+							 */
+							self.remove();
+						});
+					}
 				}
-			});
+			);
 		});
 
 
@@ -154,7 +169,6 @@
 				return 'you do not have enough pride to play this card';
 			}
 			if(!self.turnTicker.isTheirTurn(player)) {
-				console.log(player, self.turnTicker.turnOwners);
 				return 'it is not your turn';
 			}
 
@@ -215,10 +229,7 @@
 				return _.pick(player, '_id', 'team', 'name', 'site', 'pride', 'futures');
 			});
 
-			status.turnOwners = _.map(self.turnTicker.turnOwners, function(player) {
-				return player._id;
-			});
-
+			status.turnOwners = self.turnTicker.getTurnOwnerIds();
 			status.board = self.board.compactClone();
 			status.turn = self.turnTicker.turn;
 			status.state = self.state;

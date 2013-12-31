@@ -17,7 +17,8 @@
 		var intervalId;
 		var startTime;
 		var running = false;
-		var callback;
+		var beginCallback;
+		var endCallback;
 
 		self.turn = 0;
 		self.turnOwners = [];
@@ -25,10 +26,12 @@
 
 		/**
 		 * Start turn progression
-		 * @param {function} [cb]
+		 * @param {function} [beginCb]
+		 * @param {function} [endCb]
 		 */
-		self.start = function(cb) {
-			callback = cb;
+		self.start = function(beginCb, endCb) {
+			beginCallback = beginCb;
+			endCallback = endCb;
 			running = true;
 			nextTurn();
 		};
@@ -39,7 +42,8 @@
 		 */
 		self.stop = function() {
 			running = false;
-			callback = null;
+			beginCallback = null;
+			endCallback = null;
 			clearTimeout(intervalId);
 		};
 
@@ -59,9 +63,8 @@
 		self.endTurn = function() {
 			clearTimeout(intervalId);
 			if(running) {
-				if(callback) {
-					var nextTurnOwners = getTurnOwners(self.turn+1);
-					callback(self.getElapsed(), self.turnOwners, nextTurnOwners);
+				if(endCallback) {
+					endCallback(self.getElapsed());
 				}
 				self.turn++;
 				nextTurn();
@@ -88,12 +91,25 @@
 
 
 		/**
+		 * Return an array of userIds that are active this turn
+		 */
+		self.getTurnOwnerIds = function() {
+			return _.map(self.turnOwners, function(player) {
+				return player._id;
+			});
+		};
+
+
+		/**
 		 * Move a turn to the next player in line
 		 */
 		var nextTurn = function() {
 			startTime = +new Date();
 			self.populateTurn();
 			intervalId = setTimeout(self.endTurn, timePerTurn);
+			if(beginCallback) {
+				beginCallback(startTime);
+			}
 		};
 
 

@@ -1,10 +1,11 @@
 <ul class="board col-sm-7 inverse">
-	<li class="row" ng-repeat="(userId, area) in board.areas">
+	<li class="row" ng-repeat="(playerId, area) in board.areas">
 		<div class="board-area clearfix">
 
 			<div class="area-header">
-				<h1 class="area-title">{{idToPlayer(userId).name}}</h1>
-				<span class="area-desc">{{lang.game.pride}}: {{idToPlayer(userId).pride}}, {{lang.game.futures}}: {{idToPlayer(userId).futures.length}}</span>
+				<h1 ng-show="isTheirTurn(playerId)" class="active-indicator">*</h1>
+				<h1 class="area-title">{{idToPlayer(playerId).name}}</h1>
+				<span class="area-desc">{{lang.game.pride}}: {{idToPlayer(playerId).pride}}, {{lang.game.futures}}: {{idToPlayer(playerId).futures.length}}</span>
 			</div>
 
 			<ul ng-repeat="column in area.targets" class="player-field-column">

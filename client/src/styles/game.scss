@@ -27,6 +27,12 @@ $outline: rgba(82, 79, 73, .75);
 	position: relative;
 }
 
+.area-header > .active-indicator {
+	position: absolute;
+	top: -15px;
+	left: -25px;
+}
+
 .area-title {
 	max-width: 210px;
 	overflow: hidden;
