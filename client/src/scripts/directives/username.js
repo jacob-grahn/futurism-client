@@ -11,7 +11,7 @@ angular.module('futurism')
 				site: '@',
 				group: '@'
 			},
-			templateUrl: 'views/name.html'
+			templateUrl: 'views/username.html'
 		};
 
 	});

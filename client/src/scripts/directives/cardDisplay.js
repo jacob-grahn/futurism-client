@@ -1,8 +1,6 @@
 angular.module('futurism')
-	.directive('cardDisplay', function(shared, staticContentUrl, lang) {
+	.directive('cardDisplay', function(staticContentUrl, lang) {
 		'use strict';
-
-		var cardFns = shared.cardFns;
 
 		return {
 			restrict: 'E',
@@ -18,13 +16,7 @@ angular.module('futurism')
 			link: function (scope, elem, params) {
 				scope.lang = lang;
 				scope.size = scope.size || 'large';
-
-				var card = scope.card;
-				card.pride = cardFns.calcPride(card);
-				if(card.hasImage) {
-					var cardId = card.id || card._id || card.cardId;
-					card.imageUrl = (staticContentUrl + '/images/cards/' + scope.size + '_' + cardId + '.jpg?' + card.version);
-				}
+				scope.staticContentUrl = staticContentUrl;
 			}
 		};
 
