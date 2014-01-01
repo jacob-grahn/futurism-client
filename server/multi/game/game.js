@@ -6,11 +6,11 @@
 	var factions = require('../../../shared/factions');
 	var broadcast = require('../broadcast');
 	var actionFns = require('./actionFns');
-	var actions = require('./actions');
+	var actions = require('./../../../shared/actions');
 	var Board = require('./board');
 	var defaultRules = require('./defaultRules');
 	var effects = require('./effects');
-	var filters = require('./filters');
+	var filters = require('./../../../shared/filters');
 	var gameLookup = require('./gameLookup');
 	var initAccounts = require('./initAccounts');
 	var Loadup = require('./loadup');

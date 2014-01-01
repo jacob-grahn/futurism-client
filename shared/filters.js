@@ -1,8 +1,19 @@
 (function() {
 	'use strict';
 
-	var _ = require('lodash');
+	var _;
 	var filters = {};
+
+
+	/**
+	 * import
+	 */
+	if(typeof require !== 'undefined') {
+		_ = require('lodash');
+	}
+	else {
+		_ = window._;
+	}
 
 
 	filters.affordable = function(targets, me) {
@@ -82,6 +93,15 @@
 	};
 
 
-	module.exports = filters;
+	/**
+	 * export
+	 */
+	if (typeof module !== 'undefined') {
+		module.exports = filters;
+	}
+	else {
+		window.futurismShared = window.futurismShared || {};
+		window.futurismShared.filters = filters;
+	}
 
 }());

@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	var actions = require('./actions');
+	var actions = require('./../../../shared/actions');
 	var _ = require('lodash');
 
 	module.exports = {

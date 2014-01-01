@@ -1,13 +1,23 @@
 (function() {
 	'use strict';
 
-	var filters = require('./filters');
-	var _ = require('lodash');
-	var fns = require('../../fns/fns');
-	var factions = require('../../../shared/factions');
+	var filters, _;
 
 
-	module.exports = {
+	/**
+	 * import
+	 */
+	if(typeof require !== 'undefined') {
+		filters = require('./filters');
+		_ = require('lodash');
+	}
+	else {
+		filters = window.filters;
+		_ = window._;
+	}
+
+
+	var actions = {
 
 		/////////////////////////////////////////////////////////////////////////////////////////
 		// universal
@@ -191,7 +201,7 @@
 				//find the most recent dead machine
 				var card = null;
 				_.each(target.player.graveyard, function(deadCard) {
-					if(deadCard.faction === factions.machine.id) {
+					if(deadCard.faction === 'mc') {
 						card = deadCard;
 					}
 				});
@@ -200,7 +210,10 @@
 				}
 
 				//remove the card from the graveyard
-				fns.removeFromArray(target.player.graveyard, card);
+				var index = target.player.graveyard.indexOf(card);
+				if(index !== -1) {
+					target.player.graveyard.splice(index, 1);
+				}
 
 				//add the card back into the game
 				card.health = 1;
@@ -475,6 +488,14 @@
 	};
 
 
-
-
+	/**
+	 * export
+	 */
+	if (typeof module !== 'undefined') {
+		module.exports = actions;
+	}
+	else {
+		window.futurismShared = window.futurismShared || {};
+		window.futurismShared.actions = actions;
+	}
 }());
