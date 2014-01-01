@@ -4,6 +4,7 @@
 	var _ = require('lodash');
 	var DeckGoose = require('../../models/deck');
 	var deckFns = require('../../../shared/deckFns');
+	var cardFns = require('../../../shared/cardFns');
 	var nextCid = require('./nextCid');
 
 
@@ -55,6 +56,7 @@
 						var card = _.pick(card, 'faction', 'attack', 'health', 'abilities', 'hasImage', 'name', 'story', 'userId', '_id');
 						card.cid = nextCid();
 						card.moves = 0;
+						card.pride = cardFns.calcPride(card);
 						player.cards.push(card);
 					});
 
