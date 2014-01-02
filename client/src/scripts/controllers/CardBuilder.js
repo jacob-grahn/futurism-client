@@ -88,6 +88,7 @@ angular.module('futurism')
 		$scope.$watch('uppedImage', function() {
 			if($scope.uppedImage) {
 				$scope.card.imageUrl = $scope.uppedImage.resized.dataURL;
+				$scope.card.hasImage = false;
 			}
 		});
 

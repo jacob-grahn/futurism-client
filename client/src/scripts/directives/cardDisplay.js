@@ -13,9 +13,8 @@ angular.module('futurism')
 				actionFn: '&'
 			},
 
-			link: function (scope, elem, params) {
+			link: function (scope) {
 				scope.lang = lang;
-				scope.size = scope.size || 'large';
 				scope.staticContentUrl = staticContentUrl;
 			}
 		};
