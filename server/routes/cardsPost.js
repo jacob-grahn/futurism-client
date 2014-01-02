@@ -25,6 +25,7 @@
 			imager = new Imager(imagerConfig, 'S3');
 
 		image.name = imageId + '.jpg';
+		image.type = 'image/jpg';
 		imager.upload([image], callback, 'cardImage');
 	};
 

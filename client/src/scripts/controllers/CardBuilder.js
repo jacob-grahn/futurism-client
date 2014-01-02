@@ -92,6 +92,4 @@ angular.module('futurism')
 			}
 		});
 
-		console.log('crontroller', $scope.card);
-
 	});
