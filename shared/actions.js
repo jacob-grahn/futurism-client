@@ -1,19 +1,21 @@
 (function() {
 	'use strict';
 
-	var filters, _;
+	var filters, _, fns;
 
 
 	/**
 	 * import
 	 */
 	if(typeof require !== 'undefined') {
-		filters = require('./filters');
 		_ = require('lodash');
+		filters = require('./filters');
+		fns = require('./fns');
 	}
 	else {
-		filters = window.filters;
 		_ = window._;
+		filters = window.futurismShared.filters;
+		fns = window.futurismShared.fns;
 	}
 
 
@@ -29,7 +31,7 @@
 		attk: {
 			restrict: [
 				[filters.owned],
-				[filters.enemy, filters.front]
+				[filters.enemy, filters.full, filters.front]
 			],
 			use: function(src, target) {
 				target.card.health -= src.card.attack;
@@ -78,6 +80,7 @@
 				[filters.owned, filters.empty]
 			],
 			use: function(src, target) {
+				fns.removeFromArray(src.player.hand, src.card);
 				src.player.pride -= src.card.pride;
 				target.card = src.card;
 			},
@@ -313,7 +316,7 @@
 		assn: {
 			restrict: [
 				[filters.owned],
-				[filters.enemy, filters.front]
+				[filters.enemy, filters.full, filters.front]
 			],
 			use: function(src, target) {
 				target.card.health -= src.card.attack;

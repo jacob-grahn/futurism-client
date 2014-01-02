@@ -4,25 +4,24 @@
 	var actions = require('./../../../shared/actions');
 	var _ = require('lodash');
 
-	module.exports = {
+	var actionFns = {
 
 
 		/**
 		 * Perform an action
-		 * @param {object} board
-		 * @param {object} players
+		 * @param {object} game
 		 * @param {object} player
-		 * @param {string} actionStr
+		 * @param {string} actionId
 		 * @param {Array} targetPositions
 		 */
-		doAction: function(board, player, actionStr, targetPositions) {
+		doAction: function(game, player, actionId, targetPositions) {
 			if(targetPositions.length === 0) {
 				return 'no targets';
 			}
 
-			var srcPos = targetPositions[0];
-			var src = board.targetPos(srcPos);
-			var action = actions[actionStr];
+			var targets = actionFns.lookupTargets(game, targetPositions);
+			var src = targets[0];
+			var action = actions[actionId];
 
 			if(!src) {
 				return 'invalid target position';
@@ -36,26 +35,26 @@
 			if(!action) {
 				return 'action not found';
 			}
-			if(!action.free && src.card.abilities.indexOf(actionStr) === -1) {
-				return 'card does not have the ability "'+actionStr+'".';
+			if(!action.free && src.card.abilities.indexOf(actionId) === -1) {
+				return 'card does not have the ability "'+actionId+'".';
 			}
 			if(player !== src.player) {
 				return 'this is not your card';
 			}
-			if(!module.exports.isValidAction(board, player, action, targetPositions)) {
+			if(!actionFns.isValidAction(player, action, targets)) {
 				return 'target is not allowed';
 			}
 
 			src.card.moves--;
 
-			if(targetPositions.length === 1) {
+			if(targets.length === 1) {
 				action.use(src);
 			}
-			if(targetPositions.length === 2) {
-				action.use(src, board.targetPos(targetPositions[1]));
+			if(targets.length === 2) {
+				action.use(src, targets[1]);
 			}
-			if(targetPositions.length === 3) {
-				action.use(src, board.targetPos(targetPositions[1]), board.targetPos(targetPositions[2]));
+			if(targets.length === 3) {
+				action.use(src, targets[1], targets[2]);
 			}
 
 			return 'ok';
@@ -63,17 +62,49 @@
 
 
 		/**
+		 * Convert target positions into targets
+		 * @param game
+		 * @param targetPositions
+		 * @returns {Array}
+		 */
+		lookupTargets: function(game, targetPositions) {
+			var targets = [];
+
+			_.each(targetPositions, function(pos) {
+				var target;
+
+				// if the target is in your hand or graveyard
+				if(typeof pos.cid !== 'undefined') {
+					var player = game.idToPlayer(pos.playerId);
+					var card = game.cidToCard(player.hand, pos.cid) || game.cidToCard(player.graveyard, pos.cid);
+					target = {
+						player: player,
+						card: card
+					}
+				}
+
+				// if the target is a position on the board
+				if(typeof pos.column !== 'undefined') {
+					target = game.board.targetPos(pos);
+				}
+
+				targets.push(target);
+			});
+
+			return targets;
+		},
+
+
+		/**
 		 * Checks if an action's targets are allowed
-		 * @param {object} board
 		 * @param {object} player
 		 * @param {object} action
-		 * @param {Array} targetPositions
+		 * @param {Array} targets
 		 * @returns {boolean} result
 		 */
-		isValidAction: function(board, player, action, targetPositions) {
+		isValidAction: function(player, action, targets) {
 			var valid = true;
-			_.each(targetPositions, function(targetPos, index) {
-				var target = board.targetPos(targetPos);
+			_.each(targets, function(target, index) {
 				var filters = action.restrict[index];
 
 				if(filters) {
@@ -102,5 +133,8 @@
 		}
 
 	};
+
+
+	module.exports = actionFns;
 
 }());

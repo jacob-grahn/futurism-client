@@ -1,12 +1,15 @@
 angular.module('futurism')
-	.controller('GameCtrl', function($scope, $routeParams, $location, socket, _, account) {
+	.controller('GameCtrl', function($scope, $routeParams, $location, socket, _, account, shared, board) {
 		'use strict';
 
+		var actions = shared.actions;
+
+		$scope.board = board;
 		$scope.gameId = $routeParams.gameId;
 		$scope.players = [];
 		$scope.me = {};
 		$scope.turnOwners = [];
-		$scope.state = {name: 'waiting'}
+		$scope.state = {name: 'waiting'};
 
 
 		socket.authEmit('subscribe', $scope.gameId);
@@ -20,7 +23,7 @@ angular.module('futurism')
 			$scope.players = data.players;
 			$scope.me = findMe();
 			$scope.turnOwners = data.turnOwners;
-			$scope.board = inflateBoard(data.board);
+			board.inflateStatus(data.board, $scope.idToPlayer);
 			$scope.state = {name: 'waiting'};
 			if(isMyTurn()) {
 				startMyTurn();
@@ -39,9 +42,7 @@ angular.module('futurism')
 				});
 			}
 			if(data.targets) {
-				_.each(data.targets, function(target) {
-					$scope.board.areas[target.playerId].targets[target.column][target.row] = target;
-				});
+				board.partialUpdate(data.targets, $scope.idToPlayer);
 			}
 		});
 
@@ -62,7 +63,6 @@ angular.module('futurism')
 		 * Receive the cards in your hand
 		 */
 		socket.$on('hand', function(hand) {
-			console.log('got hand', hand);
 			$scope.me.hand = hand;
 			if(hand.length > 0) {
 				$scope.state = {name: 'lookingAtHand'};
@@ -73,36 +73,90 @@ angular.module('futurism')
 		});
 
 
-		$scope.$on('$destroy', function() {
-			socket.authEmit('unsubscribe', $scope.gameId);
-		});
-
-
+		/**
+		 * Remove yourself from the game
+		 */
 		$scope.forfeit = function() {
 			socket.authEmit('forfeit', {gameId: $scope.gameId});
 			$location.url('/lobby');
 		};
 
 
+		/**
+		 * Pick a card from your hand
+		 * @param {Object} card
+		 */
 		$scope.pickCardFromHand = function(card) {
-			$scope.state = {name: 'selectingTarget', filters: [], action:'entr', cid: card.cid};
+			$scope.selectAction('entr', card.cid);
+			$scope.state.targets = [{
+				cid: card.cid,
+				playerId: $scope.me._id
+			}];
 		};
 
 
+		/**
+		 * Choose an action to use
+		 * @param {String} actionId
+		 * @param {Number} cid
+		 */
+		$scope.selectAction = function(actionId, cid) {
+			if(['thinking', 'lookingAtHand'].indexOf($scope.state.name) === -1) {
+				return false;
+			}
+			var action = actions[actionId];
+			var target = board.cidToTarget(cid);
+			$scope.state = {
+				name: 'selectingTarget',
+				actionId: actionId,
+				restrict: action.restrict,
+				targets: [target]
+			};
+			console.log('selectAction', actionId, cid, action, target, $scope.state);
+			checkTargetChain();
+		};
+
+
+		/**
+		 * Choose a target to use an ability on
+		 * @param target
+		 */
 		$scope.selectTarget = function(target) {
-			socket.authEmit('playCard', {
-				gameId: $scope.gameId,
-				column: target.column,
-				row: target.row,
-				cid: $scope.state.cid
-			});
-			$scope.state = {name: 'thinking'};
+			if(!$scope.isValidTarget(target)) {
+				return false;
+			}
+			$scope.state.targets.push(target);
+			checkTargetChain();
+		};
+
+
+		/**
+		 * Send an action with its targets to the server if all targets have been selected
+		 */
+		var checkTargetChain = function() {
+			if($scope.state.targets.length >= $scope.state.restrict.length) {
+				console.log('all targets selected, hurray');
+				socket.authEmit('doAction', {
+					gameId: $scope.gameId,
+					actionId: $scope.state.actionId,
+					targets: $scope.state.targets
+				});
+				$scope.state = {name: 'thinking'};
+			}
+			else {
+				console.log('select a target that fits', $scope.state.restrict[$scope.state.targets.length]);
+			}
 		};
 
 
 		$scope.isValidTarget = function(target) {
-			if($scope.state.name === 'selectingTarget' && !target.card && target.playerId === $scope.me._id) {
-				return true;
+			if($scope.state.name === 'selectingTarget') {
+				var filters = $scope.state.restrict[$scope.state.targets.length];
+				var targets = [target];
+				_.each(filters, function(filter, index) {
+					targets = filter(targets, $scope.me);
+				});
+				return targets.length !== 0;
 			}
 			return false;
 		};
@@ -124,7 +178,6 @@ angular.module('futurism')
 		 * @returns {Boolean}
 		 */
 		$scope.isTheirTurn = function(playerId) {
-			console.log($scope.turnOwners, playerId);
 			return $scope.turnOwners.indexOf(Number(playerId)) !== -1;
 		};
 
@@ -154,6 +207,15 @@ angular.module('futurism')
 		};
 
 
+		/**
+		 * clean up
+		 */
+		$scope.$on('$destroy', function() {
+			socket.authEmit('unsubscribe', $scope.gameId);
+			board.clear();
+		});
+
+
 		var findMe = function() {
 			return $scope.idToPlayer(account._id);
 		};
@@ -165,18 +227,5 @@ angular.module('futurism')
 				$scope.state = {name: 'waitingForHand'};
 			}
 		};
-
-
-		var inflateBoard = function(minBoard) {
-			var board = _.cloneDeep(minBoard);
-			_.each(board.areas, function(area, playerId) {
-				_.each(area.targets, function(column, x) {
-					_.each(column, function(card, y) {
-						area.targets[x][y] = {column:x, row:y, playerId:Number(playerId), card: card};
-					});
-				});
-			});
-			return board;
-		}
 
 	});

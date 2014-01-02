@@ -74,6 +74,18 @@
 					card.moves++;
 				}
 			});
+		},
+
+
+		/**
+		 * Cards in your hand should have one action point
+		 */
+		hand: function(players) {
+			_.each(players, function(player) {
+				_.each(player.hand, function(card) {
+					card.moves = 1;
+				});
+			});
 		}
 	}
 }());

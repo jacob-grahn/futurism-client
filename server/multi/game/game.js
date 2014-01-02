@@ -91,6 +91,12 @@
 				function(time) {
 
 					/**
+					 * refill hands
+					 */
+					self.drawCards(self.players, rules.handSize);
+					effects.hand(self.players);
+
+					/**
 					 * tell the clients to move to the next turn
 					 */
 					self.emit('turn', {
@@ -105,12 +111,6 @@
 				 * @param {Number} elapsed
 				 */
 				function(elapsed) {
-
-
-					/**
-					 * refill hands
-					 */
-					self.drawCards(self.players, rules.handSize);
 
 
 					/**
@@ -145,54 +145,12 @@
 
 
 		/**
-		 * Move a card from your hand to the board
-		 * @param {Player} player
-		 * @param {Number} cid
-		 * @param {Number} column
-		 * @param {Number} row
-		 * @returns {string}
-		 */
-		self.playCard = function(player, cid, column, row) {
-			var card = self.findCard(player.hand, cid);
-			var target = self.board.target(player._id, column, row);
-
-			if(!card) {
-				return 'that card is not in your hand';
-			}
-			if(target.player !== player) {
-				return 'this card must be placed on a target you own';
-			}
-			if(target.card) {
-				return 'there is already a card here';
-			}
-			if(card.pride < player.pride) {
-				return 'you do not have enough pride to play this card';
-			}
-			if(!self.turnTicker.isTheirTurn(player)) {
-				return 'it is not your turn';
-			}
-
-			card.moves = 0;
-			player.pride -= card.pride;
-			target.card = card;
-			fns.removeFromArray(player.hand, card);
-
-			self.emit('gameUpdate', {
-				targets: [_.pick(target, 'playerId', 'column', 'row', 'card')],
-				players: [_.pick(player, '_id', 'pride')]
-			});
-
-			return 'ok';
-		};
-
-
-		/**
 		 * Find a card with the provided cid
 		 * @param cards
 		 * @param cid
 		 * @returns {*}
 		 */
-		self.findCard = function(cards, cid) {
+		self.cidToCard = function(cards, cid) {
 			var matchCard = null;
 			_.each(cards, function(card) {
 				if(card.cid === cid) {
@@ -264,15 +222,43 @@
 
 		/**
 		 * If it is the accounts turn, pass the action on to the table
-		 * @param player
-		 * @param actionStr
-		 * @param targetPositions
+		 * @param {Player} player
+		 * @param {String} actionId
+		 * @param {Array} targetPositions
 		 */
-		self.doAction = function(player, actionStr, targetPositions) {
+		self.doAction = function(player, actionId, targetPositions) {
+
+			// its gotta be your turn
 			if(!self.turnTicker.isTheirTurn(player)) {
 				return 'it is not your turn';
 			}
-			return actionFns.doAction(self.board, player, actionStr, targetPositions);
+
+			// do the action
+			var result = actionFns.doAction(self, player, actionId, targetPositions);
+			if(result !== 'ok') {
+				return result;
+			}
+
+			// create a list of changed players
+			var changedPlayers = [{
+				_id: player._id,
+				pride: player.pride
+			}];
+
+			// create a list of changed targets
+			var fullTargets = actionFns.lookupTargets(self, targetPositions);
+			var changedTargets = [];
+			_.each(fullTargets, function(fullTarget) {
+				if(typeof fullTarget.column !== 'undefined') {
+					changedTargets.push(_.pick(fullTarget, 'playerId', 'column', 'row', 'card'));
+				}
+			});
+
+			// broadcast the changes out
+			self.emit('gameUpdate', {players: changedPlayers, targets: changedTargets});
+
+			//
+			return 'ok';
 		};
 
 

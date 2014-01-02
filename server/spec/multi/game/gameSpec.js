@@ -149,12 +149,47 @@ describe('game', function() {
 				expect(game.players[0]._id).toBe(1);
 				expect(game.players[1]._id).toBe(2);
 
-				expect( game.playCard(player1, player1.hand[0].cid, 0, 0) ).toBe('ok');
+
+				////////////////////////////////////////////////////////
+				// play the commander card for player1's hand
+				////////////////////////////////////////////////////////
+				expect(
+					game.doAction(player1, 'entr', [
+						{
+							playerId: 1,
+							cid: player1.hand[0].cid
+						},
+						{
+							playerId: 1,
+							column: 0,
+							row: 0
+						}
+					])
+				).toBe('ok');
+
 				expect(game.board.target(1,0,0).card.name).toBe('phil');
 				expect(game.board.target(1,0,0).card.moves).toBe(0);
+
 				game.endTurn(player1);
 
-				expect( game.playCard(player2, player2.hand[0].cid, 0, 0) ).toBe('ok');
+
+				/////////////////////////////////////////////////////////
+				// play the commander card from player2's hand
+				/////////////////////////////////////////////////////////
+				expect(
+					game.doAction(player2, 'entr', [
+						{
+							playerId: 2,
+							cid: player2.hand[0].cid
+						},
+						{
+							playerId: 2,
+							column: 0,
+							row: 0
+						}
+					])
+				).toBe('ok');
+
 				game.endTurn(player2);
 
 				expect(game.board.target(1,0,0).card.moves).toBe(1);

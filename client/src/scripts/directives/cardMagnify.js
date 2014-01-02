@@ -10,10 +10,11 @@ angular.module('futurism')
 			scope: {
 				size: '@',
 				magnify: '@',
-				card: '='
+				card: '=',
+				actionFn: '&'
 			},
 
-			link: function (scope, elem, attrs) {
+			link: function (scope, elem) {
 				scope.size = scope.size || 'small';
 				scope.magnify = scope.magnify || 'medium';
 				scope.hovering = false;

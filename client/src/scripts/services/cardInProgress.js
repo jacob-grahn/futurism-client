@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('cardInProgress', ['CardResource', 'shared', function(CardResource, shared) {
+	.factory('cardInProgress', function(CardResource, shared) {
 		'use strict';
 
 		var card = new CardResource();
@@ -8,4 +8,4 @@ angular.module('futurism')
 		return {
 			card: card
 		};
-	}]);
+	});

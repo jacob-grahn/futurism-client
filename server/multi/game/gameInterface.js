@@ -44,11 +44,12 @@
 
 						//everything worked
 						var response = callback(data, game, player);
+						if(!response) {
+							return null;
+						}
 
 						//return the response to the socket
-						if(response) {
-							socket.emit(eventName, response);
-						}
+						return socket.emit(eventName, response);
 					});
 				});
 			};
@@ -70,8 +71,8 @@
 			/**
 			 * Send in a card action
 			 */
-			socket.onPlayer('action', function(data, game, player) {
-				return game.action(player, data.actorId, data.actionId, data.targets);
+			socket.onPlayer('doAction', function(data, game, player) {
+				return game.doAction(player, data.actionId, data.targets);
 			});
 
 
@@ -80,14 +81,6 @@
 			 */
 			socket.onPlayer('endTurn', function(data, game, player) {
 				return game.endTurn(player);
-			});
-
-
-			/**
-			 * Send in a card placement
-			 */
-			socket.onPlayer('playCard', function(data, game, player) {
-				return game.playCard(player, data.cid, data.column, data.row);
 			});
 
 

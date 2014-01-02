@@ -9,7 +9,7 @@
 
 	<ul class="abilities">
 		<li ng-repeat="abilityId in card.abilities | limitTo:3">
-			<a ng-click="abilityFn(abilityId)">{{lang.abilities[abilityId].name}}</a>
+			<a ng-click="actionFn({abilityId: abilityId, cid: card.cid})">{{lang.abilities[abilityId].name}}</a>
 		</li>
 	</ul>
 

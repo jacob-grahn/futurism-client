@@ -2,7 +2,7 @@ describe('actionFns', function() {
 
 	var actionFns = require('../../../multi/game/actionFns');
 	var Board = require('../../../multi/game/board');
-	var board, player1, player2;
+	var game, board, player1, player2;
 
 
 	beforeEach(function() {
@@ -20,6 +20,10 @@ describe('actionFns', function() {
 		var columns = 2;
 		var rows = 2;
 		board = new Board([player1, player2], columns, rows);
+
+		game = {
+			board: board
+		}
 	});
 
 
@@ -28,14 +32,14 @@ describe('actionFns', function() {
 			abilities: ['heal'],
 			health: 3
 		};
-		var result = actionFns.doAction(board, player1, 'heal', [{playerId:1, column:0, row:0}, {playerId:1, column:0, row:0}]);
+		var result = actionFns.doAction(game, player1, 'heal', [{playerId:1, column:0, row:0}, {playerId:1, column:0, row:0}]);
 		expect(result).toBe('ok');
 		expect(board.target(1,0,0).card.health).toBe(4);
 	});
 
 
 	it('should not perform an action on an invalid target', function() {
-		var result = actionFns.doAction(board, player1, 'heal', [{playerId:1, column:0, row:0}]);
+		var result = actionFns.doAction(game, player1, 'heal', [{playerId:1, column:0, row:0}]);
 		expect(result).not.toBe('ok');
 	});
 
@@ -45,7 +49,7 @@ describe('actionFns', function() {
 			abilities: ['heal'],
 			health: 3
 		};
-		var result = actionFns.doAction(board, player1, 'heal', [{playerId:2, column:0, row:0}]);
+		var result = actionFns.doAction(game, player1, 'heal', [{playerId:2, column:0, row:0}]);
 		expect(result).toContain('not your card');
 	});
 
@@ -58,7 +62,7 @@ describe('actionFns', function() {
 		board.target(2,0,0).card = {
 			player: player2
 		};
-		var result = actionFns.doAction(board, player1, 'rbld', [{playerId:1, column:0, row:0}, {playerId:2, column:0, row:0}]);
+		var result = actionFns.doAction(game, player1, 'rbld', [{playerId:1, column:0, row:0}, {playerId:2, column:0, row:0}]);
 		expect(result).toContain('card does not have the ability');
 	});
 
@@ -70,7 +74,7 @@ describe('actionFns', function() {
 		board.target(1,0,1).card = {
 			abilities: ['feml']
 		};
-		var result = actionFns.doAction(board, player1, 'male', [
+		var result = actionFns.doAction(game, player1, 'male', [
 			{playerId:1, column:0, row:0}, //male
 			{playerId:1, column:0, row:1}, //female
 			{playerId:1, column:1, row:0} //empty slot for child
@@ -87,7 +91,7 @@ describe('actionFns', function() {
 		board.target(1,0,1).card = {
 			abilities: ['feml']
 		};
-		var result = actionFns.doAction(board, player1, 'feml', [
+		var result = actionFns.doAction(game, player1, 'feml', [
 			{playerId:1, column:0, row:1}, //male
 			{playerId:1, column:0, row:0}, //female
 			{playerId:2, column:1, row:0} //enemy territory, should fail here

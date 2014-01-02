@@ -10,7 +10,7 @@ angular.module('futurism')
 			scope: {
 				card: '=',
 				size: '@',
-				abilityFn: '&'
+				actionFn: '&'
 			},
 
 			link: function (scope, elem, params) {
