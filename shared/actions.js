@@ -76,7 +76,7 @@
 		 */
 		entr: {
 			restrict: [
-				[filters.owned],
+				[filters.owned, filters.affordable],
 				[filters.owned, filters.empty]
 			],
 			use: function(src, target) {

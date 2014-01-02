@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('GameCtrl', function($scope, $routeParams, $location, socket, _, account, shared, board) {
+	.controller('GameCtrl', function($scope, $routeParams, $location, socket, _, account, shared, board, errorHandler) {
 		'use strict';
 
 		var actions = shared.actions;
@@ -87,6 +87,10 @@ angular.module('futurism')
 		 * @param {Object} card
 		 */
 		$scope.pickCardFromHand = function(card) {
+			if(card.pride > $scope.me.pride) {
+				return false;
+			}
+
 			$scope.selectAction('entr', card.cid);
 			$scope.state.targets = [{
 				cid: card.cid,

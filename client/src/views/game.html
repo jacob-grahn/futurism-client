@@ -49,7 +49,7 @@
 		<a class="close-x" ng-click="closeHand()">{{lang.game.close}} [x]</a>
 		<ul class="hand-cards row">
 			<li ng-repeat="card in me.hand">
-				<card-display card="card" size="medium" ng-click="pickCardFromHand(card)"></card-display>
+				<card-display card="card" size="medium" ng-click="pickCardFromHand(card)" ng-class="{'card-disabled': card.pride > me.pride}"></card-display>
 			</li>
 		</ul>
 	</div>

@@ -133,9 +133,10 @@ describe('game/actions', function() {
 		var handTarget = {
 			card: strongCard,
 			player: player1
-		}
-		actions.entr.use(handTarget, player1);
-		expect(player1.pride).toBe(-9);
+		};
+		player1.pride = 9;
+		actions.entr.use(handTarget, target(1,0,0));
+		expect(player1.pride).toBe(0);
 	});
 
 

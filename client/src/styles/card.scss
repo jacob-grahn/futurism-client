@@ -134,6 +134,12 @@ body .card-ze h1 {
 }
 
 
+.card-disabled > .card {
+	opacity: 0.5;
+	cursor: default;
+}
+
+
 
 .card-magnify {
 	position: relative;
