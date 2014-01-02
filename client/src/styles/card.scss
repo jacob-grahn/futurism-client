@@ -31,6 +31,7 @@ body .card-ze h1 {
   overflow-x: hidden;
   padding: 0px;
 	margin: 15px;
+
 	@include border-radius(4px);
 	@include box-shadow(2px, 2px, 7px, rgba(0,0,0,.8));
 }
@@ -47,8 +48,8 @@ body .card-ze h1 {
 	@include border-radius(1px);
 }
 
-
 .card h1 {
+	white-space: nowrap;
   margin: 0 5px 5px 0;
   text-align: center;
 }
@@ -134,7 +135,7 @@ body .card-ze h1 {
 }
 
 
-.card-disabled > .card {
+.card-disabled .card {
 	opacity: 0.5;
 	cursor: default;
 }
