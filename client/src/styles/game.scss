@@ -63,6 +63,7 @@ $outline: rgba(82, 79, 73, .75);
 	height: 93px;
 	margin: 0px 12px 12px 12px;
 	border: 1px solid $outline;
+	position: relative;
 }
 
 .target-selector {
@@ -70,6 +71,10 @@ $outline: rgba(82, 79, 73, .75);
 	cursor: pointer;
 	width: 65px;
 	height: 93px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 11;
 }
 
 .players .desc {
