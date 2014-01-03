@@ -39,7 +39,7 @@
 			attack: 0,
 			health: 10,
 			story: '',
-			abilities: ['rlly'],
+			abilities: [],
 			hasImage: true,
 			cid: nextCid(),
 			moves: 0,
