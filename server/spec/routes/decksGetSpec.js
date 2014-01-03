@@ -19,7 +19,6 @@ describe('decks-get', function() {
 			},
 			function(err, deck) {
 				if(err) {
-					console.log(err);
 					throw err;
 				}
 
@@ -32,7 +31,6 @@ describe('decks-get', function() {
 					},
 					function(err, deck) {
 						if(err) {
-							console.log('decksGetSpec::beforeEach', err);
 							throw err;
 						}
 						done();

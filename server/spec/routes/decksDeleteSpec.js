@@ -18,7 +18,6 @@ describe('decks-delete', function() {
 		},
 		function(err, deck) {
 			if(err) {
-				console.log('decksDeleteSpec::beforeEach', err);
 				throw err;
 			}
 			done();

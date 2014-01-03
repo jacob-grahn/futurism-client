@@ -3,6 +3,7 @@
 
 	var _ = require('lodash');
 	var fns = require('../../fns/fns');
+	var DiffTracker = require('../../fns/diffTracker');
 	var factions = require('../../../shared/factions');
 	var broadcast = require('../broadcast');
 	var actionFns = require('./actionFns');
@@ -45,21 +46,12 @@
 
 
 		/**
-		 * initialize everybody's account
+		 * initialize variables and helper classes
 		 */
 		self.players = initAccounts(accounts);
-
-
-		/**
-		 * create the board
-		 */
 		self.board = new Board(self.players, rules.columns, rules.rows);
-
-
-		/**
-		 * create the turn ticker
-		 */
 		self.turnTicker = new TurnTicker(self.players, rules.turnDuration);
+		self.diffTracker = new DiffTracker();
 
 
 		/**
@@ -76,7 +68,7 @@
 			self.drawCards(self.players, rules.handSize);
 			self.state = 'running';
 			self.turnTicker.populateTurn();
-			self.emit('gameStatus', self.getStatus());
+			self.broadcastChanges();
 
 
 			/**
@@ -96,11 +88,7 @@
 					self.drawCards(self.players, rules.handSize);
 					effects.hand(self.players);
 					effects.rally(self.turnTicker.turnOwners, self.board);
-					self.emit('gameUpdate', {
-						players: _.map(self.turnTicker.turnOwners, function(player) {
-							return _.pick(player, '_id', 'pride');
-						})
-					});
+					self.broadcastChanges();
 
 
 					/**
@@ -128,6 +116,7 @@
 					effects.deBuf(turnTargets);
 					effects.refresh(turnTargets);
 					effects.death(self.board.allTargets());
+					self.broadcastChanges();
 
 
 					/**
@@ -190,9 +179,9 @@
 		self.getStatus = function() {
 			var status = {};
 
-			status.players = _.map(self.players, function(player) {
+			status.players = _.assign({}, _.map(self.players, function(player) {
 				return _.pick(player, '_id', 'team', 'name', 'site', 'pride', 'futures');
-			});
+			}));
 
 			status.turnOwners = self.turnTicker.getTurnOwnerIds();
 			status.board = self.board.compactClone();
@@ -231,7 +220,9 @@
 		 * broadcast changes as a partial update
 		 */
 		self.broadcastChanges = function() {
-
+			var status = self.getStatus();
+			var changes = self.diffTracker.diff(status);
+			self.emit('gameUpdate', changes);
 		};
 
 
@@ -254,30 +245,11 @@
 				return result;
 			}
 
-			// create a list of changed players
-			var changedPlayers = [_.pick(player, '_id', 'pride')];
-
 			// create a list of changed targets
-			var fullTargets = actionFns.lookupTargets(self, targetPositions);
-			var changedTargets = [];
-			_.each(fullTargets, function(fullTarget) {
-				if(typeof fullTarget.column !== 'undefined') {
-					changedTargets.push(_.pick(fullTarget, 'playerId', 'column', 'row', 'card'));
-				}
-			});
-
-			// broadcast the changes out
-			self.emit('gameUpdate', {players: changedPlayers, targets: changedTargets});
+			self.broadcastChanges();
 
 			//
 			return 'ok';
-		};
-
-
-		self.loopPick = function() {
-			_.map(objs, function(obj) {
-				return _.pick(obj, 'pride');
-			});
 		};
 
 
@@ -301,7 +273,7 @@
 			player.hand = [];
 			player.graveyard = [];
 			self.board.areas[player._id].targets = [];
-			self.emit('gameStatus', self.getStatus());
+			self.broadcastChanges();
 		};
 
 

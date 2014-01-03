@@ -77,8 +77,6 @@ angular.module('futurism')
 
 		var updateAccount = function(data) {
 			_.assign(account, data);
-			console.log('account', account);
-			console.log('data', data);
 			account.loggedIn = true;
 		};
 

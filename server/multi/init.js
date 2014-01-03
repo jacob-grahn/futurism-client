@@ -89,7 +89,6 @@
 		 * @param message
 		 */
 		socket.emitError = function(message) {
-			console.log('socket error:', message);
 			socket.emit('error', message);
 		};
 

@@ -32,5 +32,5 @@ module.exports = {
  //--- elo test
  Elo = new require('./fns/elo');
  var results = Elo.calcChange(ratingA, ratingB, winsA, winsB);
- console.log('A: ' + results.a + ' - ' + 'B: ' + results.b);
+ var str = 'A: ' + results.a + ' - ' + 'B: ' + results.b;
  */

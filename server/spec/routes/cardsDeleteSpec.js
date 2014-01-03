@@ -25,7 +25,6 @@ describe('cards-delete', function() {
 		},
 		function(err, card) {
 			if(err) {
-				console.log(err);
 				throw err;
 			}
 			done();

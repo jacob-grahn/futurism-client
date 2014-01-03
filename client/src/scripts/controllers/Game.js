@@ -23,7 +23,7 @@ angular.module('futurism')
 			$scope.players = data.players;
 			$scope.me = findMe();
 			$scope.turnOwners = data.turnOwners;
-			board.inflateStatus(data.board, $scope.idToPlayer);
+			board.fullUpdate(data.board, $scope.idToPlayer);
 			$scope.state = {name: 'waiting'};
 			if($scope.isMyTurn()) {
 				startMyTurn();
@@ -36,13 +36,10 @@ angular.module('futurism')
 		 */
 		socket.$on('gameUpdate', function(data) {
 			if(data.players) {
-				_.each(data.players, function(updatedPlayer) {
-					var oldPlayer = $scope.idToPlayer(updatedPlayer._id);
-					_.merge(oldPlayer, updatedPlayer);
-				});
+				_.merge($scope.players, data.players);
 			}
-			if(data.targets) {
-				board.partialUpdate(data.targets, $scope.idToPlayer);
+			if(data.board) {
+				board.partialUpdate(data.board, $scope.idToPlayer);
 			}
 		});
 
@@ -113,7 +110,6 @@ angular.module('futurism')
 				restrict: action.restrict,
 				targets: [target]
 			};
-			console.log('selectAction', actionId, cid, action, target, $scope.state);
 			checkTargetChain();
 		};
 
@@ -136,16 +132,12 @@ angular.module('futurism')
 		 */
 		var checkTargetChain = function() {
 			if($scope.state.targets.length >= $scope.state.restrict.length) {
-				console.log('all targets selected, hurray');
 				socket.authEmit('doAction', {
 					gameId: $scope.gameId,
 					actionId: $scope.state.actionId,
 					targets: $scope.state.targets
 				});
 				$scope.state = {name: 'thinking'};
-			}
-			else {
-				console.log('select a target that fits', $scope.state.restrict[$scope.state.targets.length]);
 			}
 		};
 

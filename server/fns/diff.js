@@ -28,31 +28,28 @@
 		// look for values in obj2 that do not match obj1
 		_.each(obj2, function(val, key) {
 
+			if(!obj1) {
+				return obj[key] = _.cloneDeep(obj2[key]);
+			}
+
 			if(typeof val === 'object') {
-
-				if(!obj1) {
-					obj[key] = _.cloneDeep(obj2[key]);
-				}
-
-				else {
-					var subDiff = deepDiff(obj1[key], obj2[key]);
-					if(_.size(subDiff) > 0 || subDiff === null) {
-						obj[key] = subDiff;
-					}
+				var subDiff = deepDiff(obj1[key], obj2[key]);
+				if(_.size(subDiff) > 0 || subDiff === null) {
+					return obj[key] = subDiff;
 				}
 			}
 
 			else {
 				if(obj1[key] !== obj2[key]) {
-					obj[key] = obj2[key];
+					return obj[key] = obj2[key];
 				}
 			}
 		});
 
 		// look for values in obj1 that are not in obj2
 		_.each(obj1, function(val, key) {
-			if(typeof obj2[key] === 'undefined') {
-				obj[key] = null;
+			if(typeof obj1[key] !== 'undefined' && typeof obj2[key] === 'undefined') {
+				return obj[key] = null;
 			}
 		});
 

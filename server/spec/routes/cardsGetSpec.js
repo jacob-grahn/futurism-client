@@ -21,7 +21,6 @@ describe('cards-get', function() {
 			},
 			function(err, card) {
 				if(err) {
-					console.log(err);
 					throw err;
 				}
 
@@ -37,7 +36,6 @@ describe('cards-get', function() {
 					},
 					function(err, card) {
 						if(err) {
-							console.log(err);
 							throw err;
 						}
 						done();

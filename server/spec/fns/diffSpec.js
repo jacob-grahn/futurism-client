@@ -78,4 +78,24 @@ describe('diff', function() {
 		expect(result).toEqual({hats: null});
 	});
 
+
+	it('should diff complex data', function() {
+		var result = diff(
+			{"players":[{"_id":34162,"team":34162,"name":"Fred The Giant Cactus","site":"j","pride":0,"futures":[]},{"_id":389222,"team":389222,"name":"Represent-S4S","site":"g","pride":0,"futures":[]}],"turnOwners":[34162],"board":{"future":"normal","areas":{"34162":{"targets":[[null,null],[null,null],[null,null],[null,null]]},"389222":{"targets":[[null,null],[null,null],[null,null],[null,null]]}}},"turn":0,"state":"running"},
+			{"players":[{"_id":34162,"team":34162,"name":"Fred The Giant Cactus","site":"j","pride":2,"futures":[]},{"_id":389222,"team":389222,"name":"Represent-S4S","site":"g","pride":0,"futures":[]}],"turnOwners":[34162],"board":{"future":"normal","areas":{"34162":{"targets":[[null,null],[null,null],[null,null],[null,null]]},"389222":{"targets":[[null,null],[null,null],[null,null],[null,null]]}}},"turn":0,"state":"running"}
+		);
+
+		expect(result).toEqual({players: [{pride: 2}]});
+	});
+
+
+	it('should handle undefined correctly', function() {
+		var result = diff(
+			{sofa: undefined},
+			{sofa: undefined}
+		);
+
+		expect(result).toEqual({});
+	});
+
 });

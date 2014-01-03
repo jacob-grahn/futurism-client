@@ -3,21 +3,29 @@ angular.module('futurism')
 		'use strict';
 
 		var self = this;
+		self.minBoard;
 		self.areas = {};
 
 
 		/**
-		 * Update specific targets
-		 * @param targets
+		 * Fully set the board state
+		 * @param {Object} minBoard - compact board data
 		 * @param {Function} idToPlayer
 		 */
-		self.partialUpdate = function(targets, idToPlayer) {
-			_.each(targets, function(target) {
-				if(typeof target.column !== 'undefined') {
-					target.player = idToPlayer(target.playerId);
-					self.areas[target.playerId].targets[target.column][target.row] = target;
-				}
-			});
+		self.fullUpdate = function(minBoard, idToPlayer) {
+			self.minBoard = minBoard;
+			self.inflateStatus(self.minBoard, idToPlayer);
+		};
+
+
+		/**
+		 * Update specific targets
+		 * @param {Object} boardDiff - changes to the board
+		 * @param {Function} idToPlayer
+		 */
+		self.partialUpdate = function(boardDiff, idToPlayer) {
+			_.merge(self.minBoard, boardDiff);
+			self.inflateStatus(self.minBoard, idToPlayer);
 		};
 
 
@@ -28,24 +36,35 @@ angular.module('futurism')
 		 */
 		self.inflateStatus = function(minBoard, idToPlayer) {
 			self.clear();
-			self.areas = _.cloneDeep(minBoard.areas);
-			_.each(self.areas, function(area, playerId) {
+			self.areas = {};
+
+			_.each(minBoard.areas, function(minArea, playerId) {
+				var area = {};
+				var targets = [];
 				area.playerId = Number(playerId);
 				area.player = idToPlayer(playerId);
 				area.team = area.player.team;
+				area.targets = targets;
+				self.areas[playerId] = area;
 
-				_.each(area.targets, function(column, x) {
-					_.each(column, function(card, y) {
-						area.targets[x][y] = {
-							column: x,
-							row: y,
-							playerId: area.playerId,
-							player: area.player,
-							card: card
-						};
-					});
+				_.each(minArea.targets, function(card, xy) {
+					var xyArr = xy.split('-');
+					var x = Number(xyArr[0]);
+					var y = Number(xyArr[1]);
+					if(!targets[x]) {
+						targets[x] = [];
+					}
+
+					area.targets[x][y] = {
+						column: x,
+						row: y,
+						playerId: area.playerId,
+						player: area.player,
+						card: card
+					};
 				});
 			});
+
 		};
 
 

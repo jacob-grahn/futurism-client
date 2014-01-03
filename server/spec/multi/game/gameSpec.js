@@ -25,7 +25,6 @@ describe('game', function() {
 		},
 		function(err) {
 			if(err) {
-				console.log(err);
 				throw err;
 			}
 
@@ -41,7 +40,6 @@ describe('game', function() {
 			},
 			function(err) {
 				if(err) {
-					console.log(err);
 					throw err;
 				}
 
@@ -57,7 +55,6 @@ describe('game', function() {
 				},
 				function(err) {
 					if(err) {
-						console.log(err);
 						throw err;
 					}
 
@@ -71,7 +68,6 @@ describe('game', function() {
 					},
 					function(err) {
 						if(err) {
-							console.log(err);
 							throw err;
 						}
 
@@ -85,7 +81,6 @@ describe('game', function() {
 						},
 						function(err) {
 							if(err) {
-								console.log(err);
 								throw err;
 							}
 
@@ -101,7 +96,6 @@ describe('game', function() {
 							},
 							function(err) {
 								if(err) {
-									console.log(err);
 									throw err;
 								}
 

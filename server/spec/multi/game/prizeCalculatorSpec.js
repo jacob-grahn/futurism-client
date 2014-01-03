@@ -22,7 +22,6 @@ describe('game/prizeCalculator', function() {
 		},
 		function(err) {
 			if(err) {
-				console.log(err);
 				throw err;
 			}
 
@@ -38,7 +37,6 @@ describe('game/prizeCalculator', function() {
 			},
 			function(err) {
 				if(err) {
-					console.log(err);
 					throw err;
 				}
 
@@ -54,7 +52,6 @@ describe('game/prizeCalculator', function() {
 				},
 				function(err) {
 					if(err) {
-						console.log(err);
 						throw err;
 					}
 					done();

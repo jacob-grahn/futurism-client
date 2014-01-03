@@ -1,7 +1,3 @@
-process.on('uncaughtException', function(err) {
-	console.log(err);
-});
-
 describe('cards-post', function() {
 
 	var mongoose = require('mongoose');

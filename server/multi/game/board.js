@@ -20,7 +20,8 @@
 					row: j,
 					column: i,
 					player: player,
-					playerId: player._id
+					playerId: player._id,
+					card: null
 				}
 			}
 		}
@@ -118,12 +119,9 @@
 			_.each(targets, function(target) {
 				var id = target.player._id;
 				if(!copy.areas[id]) {
-					copy.areas[id] = {targets: []};
+					copy.areas[id] = {targets: {}};
 				}
-				if(!copy.areas[id].targets[target.column]) {
-					copy.areas[id].targets[target.column] = [];
-				}
-				copy.areas[id].targets[target.column][target.row] = target.card;
+				copy.areas[id].targets[target.column+"-"+target.row] = target.card;
 			});
 
 			return copy;

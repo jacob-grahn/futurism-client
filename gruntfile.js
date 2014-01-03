@@ -398,6 +398,11 @@ module.exports = function (grunt) {
 	]);
 
 
+	grunt.registerTask('server-tests', [
+		'shell:jasmine'
+	]);
+
+
 	grunt.registerTask('build', [
 		'clean:dist',
 		'useminPrepare',
@@ -419,7 +424,4 @@ module.exports = function (grunt) {
 		'test',
 		'build'
 	]);
-
-	grunt.registerTask('just-server', ['develop', 'watch']);
-	grunt.registerTask('unit', ['jasmine_node']);
 };
