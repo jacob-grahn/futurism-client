@@ -1,5 +1,7 @@
 <div class="card card-{{size}} card-{{card.faction}}">
 
+	<div class="greyout"></div>
+
 	<div class="card-image-holder">
 		<img ng-if="card.imageUrl" class="card-image absolute-center" ng-src="{{card.imageUrl}}"/>
 		<img ng-if="card.hasImage" class="card-image absolute-center" ng-src="{{staticContentUrl}}/images/cards/{{size}}_{{card._id}}.jpg?{{card.version}}"/>

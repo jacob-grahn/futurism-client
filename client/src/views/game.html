@@ -12,7 +12,7 @@
 				<li ng-repeat="target in column | inverseFoes:me.team" class="target">
 					<div ng-show="isValidTarget(target)" ng-click="selectTarget(target)" class="target-selector"></div>
 					<div ng-if="target.card" class="target-card">
-						<card-magnify card="target.card" action-fn="selectAction(abilityId, cid)" size="small" magnify="medium"></card-magnify>
+						<card-magnify card="target.card" action-fn="selectAction(abilityId, cid)" size="small" magnify="medium" ng-class="{'card-disabled': target.card.moves <= 0}"></card-magnify>
 					</div>
 				</li>
 			</ul>

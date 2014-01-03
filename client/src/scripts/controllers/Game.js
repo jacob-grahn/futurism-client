@@ -200,6 +200,9 @@ angular.module('futurism')
 		 * @returns {boolean}
 		 */
 		var isMyTurn = function() {
+			if(!$scope.me) {
+				return false;
+			}
 			return $scope.isTheirTurn($scope.me._id);
 		};
 
