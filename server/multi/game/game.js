@@ -228,6 +228,14 @@
 
 
 		/**
+		 * broadcast changes as a partial update
+		 */
+		self.broadcastChanges = function() {
+
+		};
+
+
+		/**
 		 * If it is the accounts turn, pass the action on to the table
 		 * @param {Player} player
 		 * @param {String} actionId

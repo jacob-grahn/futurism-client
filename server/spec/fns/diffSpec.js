@@ -1,6 +1,6 @@
-describe('diffTool', function() {
+describe('diff', function() {
 
-	var diff = require('../../../multi/game/diffTool');
+	var diff = require('../../fns/diff');
 
 
 	it('should diff a shallow object', function() {
@@ -49,13 +49,33 @@ describe('diffTool', function() {
 	});
 
 
-	it('should diff deeply imbedded values', function() {
+	it('should diff deeply embedded values', function() {
 		var result = diff(
 			{targets: {suuz: {arr: [1,2,3]}}},
 			{targets: {suuz: {arr: [1,2,5]}}}
 		);
 
 		expect(result).toEqual({targets: {suuz: {arr: [undefined, undefined, 5]}}});
+	});
+
+
+	it('should diff new arrays of data', function() {
+		var result = diff(
+			{},
+			{pandas: [{'name': 'sally'}, {'name': 'bobo'}]}
+		);
+
+		expect(result).toEqual({pandas: [{'name': 'sally'}, {'name': 'bobo'}]});
+	});
+
+
+	it('should set data as null if it is no longer existent', function() {
+		var result = diff(
+			{hats: 'yes'},
+			{}
+		);
+
+		expect(result).toEqual({hats: null});
 	});
 
 });
