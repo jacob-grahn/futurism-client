@@ -215,33 +215,40 @@
 		"endTurn": {
 			"en": "End Turn",
 			"ct": "meow",
+			"ne": "Eindig Beurt",
 			"lt": "Užbaigti ėjimą"
 		},
 		"pride": {
 			"en": "Pride",
 			"ct": "meow",
+			"ne": "Trots",
 			"lt": "Vertė"
 		},
 		"close": {
 			"en": "close",
 			"ct": "meow",
+			"ne": "Dicht doen",
 			"lt": "uždaryti"
 		},
 		"futures": {
 			"en": "Futures",
-			"ct": "meow"
+			"ct": "meow",
+			"ne": "Futures"
 		},
 		"showFutures": {
 			"en": "Show Futures",
-			"ct": "meow"
+			"ct": "meow",
+			"ne": "Laat Futures zien"
 		},
 		"showHand": {
 			"en": "Show Hand",
-			"ct": "meow"
+			"ct": "meow",
+			"ne": "Laat Hand zien"
 		},
 		"forfeit": {
 			"en": "Forfeit",
-			"ct": "meow"
+			"ct": "meow",
+			"ne": "Verlaten",
 		}
 	},
   "chat": {
@@ -817,26 +824,33 @@
   "abilities": {
 		"rlly": {
 			"name": {
-				"en": "rally"
+				"en": "rally",
+				"ne": "Bijeenkomst"
+			
 			},
 			"desc": {
-				"en": "Produce pride, which can be use to play more cards."
+				"en": "Produce pride, which can be use to play more cards.",
+				"ne": "Produceer de Trots, zodat je meer kaarten kunt gebruiken."
 			}
 		},
 		"attk": {
 			"name": {
-				"en": "attack"
+				"en": "attack",
+				"ne": "aanvallen"
 			},
 			"desc": {
-				"en": "Trade blows with an enemy card."
+				"en": "Trade blows with an enemy card.",
+				"ne": "Ruil tegenslag met een vijands zijn kaart."
 			}
 		},
 		"move": {
 			"name": {
-				"en": "move"
+				"en": "move",
+				"ne": "zet"
 			},
 			"desc": {
-				"en": "Reposition this card."
+				"en": "Reposition this card.",
+				"ne": "Deze kaart een nieuwe positie geven.",
 			}
 		},
     "heal": {
@@ -1470,82 +1484,100 @@
 
 		"free": {
 			"name": {
-				"en": "Free Love"
+				"en": "Free Love",
+				"ne": "Gratis Liefde"
 			},
 			"desc": {
-				"en": "Cards that do not attack gain 1 point of health."
+				"en": "Cards that do not attack gain 1 point of health.",
+				"ne": "Kaarten die niet aanvallen verdienen levens punt."
 			}
 		},
 
 		"blod": {
 			"name": {
-				"en": "Blood Fued"
+				"en": "Blood Fued",
+				"ne": "Bloed vijandschap"
 			},
 			"desc": {
-				"en": "All cards must attack."
+				"en": "All cards must attack.",
+				"ne": "Alle kaarten moeten aanvallen."
 			}
 		},
 
 		"rena": {
 			"name": {
-				"en": "Renaissance"
+				"en": "Renaissance",
+				"ne": "Wedergeboorte"
 			},
 			"desc": {
-				"en": "Players gain an extra 2 pride per turn."
+				"en": "Players gain an extra 2 pride per turn.",
+				"ne": "Spelers verdienen 2 extra trots punten per beurt."
 			}
 		},
 
 		"comm": {
 			"name": {
-				"en": "Communism"
+				"en": "Communism",
+				"ne": "Communist"
 			},
 			"desc": {
-				"en": "Every action has a 50% chance to fail."
+				"en": "Every action has a 50% chance to fail.",
+				"ne": "Elke actie heeft 50% kans om te valen."
 			}
 		},
 
 		"thdr": {
 			"name": {
-				"en": "Thunderdome"
+				"en": "Thunderdome",
+				"ne": "Donderkoepel"
 			},
 			"desc": {
-				"en": "No new cards can be played."
+				"en": "No new cards can be played.",
+				"ne": "Er kan niet met nieuwe kaarten worden gespeeld"
 			}
 		},
 
 		"anar": {
 			"name": {
-				"en": "Anarchy"
+				"en": "Anarchy",
+				"ne": "Anarchie",
 			},
 			"desc": {
-				"en": "All cards gain the move ability."
+				"en": "All cards gain the move ability.",
+				"ne": "Alle kaarten krijgen de verplaats kracht."
 			}
 		},
 
 		"mira": {
 			"name": {
-				"en": "Miracle"
+				"en": "Miracle",
+				"ne": "Wonder"
 			},
 			"desc": {
-				"en": "Cards stay alive until their health reaches -10."
+				"en": "Cards stay alive until their health reaches -10.",
+				"ne": "Kaarten blijven levend todat hun levens -10 halen."
 			}
 		},
 
 		"zvir": {
 			"name": {
-				"en": "Z Virus"
+				"en": "Z Virus",
+				"ne": "Z Virus"
 			},
 			"desc": {
-				"en": "Cards that would die become zombies instead."
+				"en": "Cards that would die become zombies instead.",
+				"ne": "Kaarten die dood zouden gaan, worden zombies."
 			}
 		},
 
 		"arma": {
 			"name": {
-				"en": "Armageddon"
+				"en": "Armageddon",
+				"ne": "Armageddon"
 			},
 			"desc": {
-				"en": "All cards loose 1 health per turn."
+				"en": "All cards loose 1 health per turn.",
+				"ne": "Alle kaarten verliezen 1 leven elke beurt."
 			}
 		}
 	}
