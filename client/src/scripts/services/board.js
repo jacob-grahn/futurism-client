@@ -3,7 +3,7 @@ angular.module('futurism')
 		'use strict';
 
 		var self = this;
-		self.areas = [];
+		self.areas = {};
 
 
 		/**
@@ -30,13 +30,17 @@ angular.module('futurism')
 			self.clear();
 			self.areas = _.cloneDeep(minBoard.areas);
 			_.each(self.areas, function(area, playerId) {
+				area.playerId = Number(playerId);
+				area.player = idToPlayer(playerId);
+				area.team = area.player.team;
+
 				_.each(area.targets, function(column, x) {
 					_.each(column, function(card, y) {
 						area.targets[x][y] = {
 							column: x,
 							row: y,
-							playerId: Number(playerId),
-							player: idToPlayer(playerId),
+							playerId: area.playerId,
+							player: area.player,
 							card: card
 						};
 					});
