@@ -79,4 +79,38 @@ describe('game/effectsSpec', function() {
 		expect(targets[2].card.moves).toBe(1);
 	});
 
+
+	it('.rally should give players pride for their cards in play', function() {
+		var board = {
+			playerTargets: function(playerId) {
+				if(playerId === 1) {
+					return [
+						{card: {}},
+						{card: {commander:true}}
+					];
+				}
+				if(playerId === 2) {
+					return [
+						{card: {}}
+					]
+				}
+			}
+		};
+
+		var player1 = {
+			_id: 1,
+			pride: 0
+		};
+		var player2 = {
+			_id: 2,
+			pride: 0
+		};
+		var players = [player1, player2];
+
+		effects.rally(players, board);
+
+		expect(player1.pride).toBe(3);
+		expect(player2.pride).toBe(1);
+	});
+
 });

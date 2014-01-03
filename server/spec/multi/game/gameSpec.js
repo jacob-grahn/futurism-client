@@ -195,7 +195,7 @@ describe('game', function() {
 				expect(game.board.target(1,0,0).card.moves).toBe(1);
 				expect( game.doAction(player1, 'rlly', [{playerId:1, column:0, row:0}]) ).toBe('ok');
 				expect(game.board.target(1,0,0).card.moves).toBe(0);
-				expect(player1.pride).toBe(1);
+				expect(player1.pride).toBe(3);
 				game.endTurn(player1);
 
 				game.board.target(2,0,0).card.health = -4;

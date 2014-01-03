@@ -95,6 +95,13 @@
 					 */
 					self.drawCards(self.players, rules.handSize);
 					effects.hand(self.players);
+					effects.rally(self.turnTicker.turnOwners, self.board);
+					self.emit('gameUpdate', {
+						players: _.map(self.turnTicker.turnOwners, function(player) {
+							return _.pick(player, '_id', 'pride');
+						})
+					});
+
 
 					/**
 					 * tell the clients to move to the next turn
@@ -240,10 +247,7 @@
 			}
 
 			// create a list of changed players
-			var changedPlayers = [{
-				_id: player._id,
-				pride: player.pride
-			}];
+			var changedPlayers = [_.pick(player, '_id', 'pride')];
 
 			// create a list of changed targets
 			var fullTargets = actionFns.lookupTargets(self, targetPositions);
@@ -259,6 +263,13 @@
 
 			//
 			return 'ok';
+		};
+
+
+		self.loopPick = function() {
+			_.map(objs, function(obj) {
+				return _.pick(obj, 'pride');
+			});
 		};
 
 

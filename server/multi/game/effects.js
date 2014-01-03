@@ -86,6 +86,26 @@
 					card.moves = 1;
 				});
 			});
+		},
+
+
+		/**
+		 * Gain pride from your cards in play
+		 * @param {Array} players
+		 * @param {Board} board
+		 */
+		rally: function(players, board) {
+			_.each(players, function(player) {
+				var targets = board.playerTargets(player._id);
+				eachCard(targets, function(card) {
+					if(card.commander) {
+						player.pride += 2;
+					}
+					else {
+						player.pride += 1;
+					}
+				});
+			});
 		}
 	}
 }());
