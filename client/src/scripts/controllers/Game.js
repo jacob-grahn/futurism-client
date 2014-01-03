@@ -56,6 +56,9 @@ angular.module('futurism')
 			if(isMyTurn()) {
 				startMyTurn();
 			}
+			else {
+				$scope.state = {name: 'waiting'};
+			}
 		});
 
 
@@ -64,12 +67,6 @@ angular.module('futurism')
 		 */
 		socket.$on('hand', function(hand) {
 			$scope.me.hand = hand;
-			if(hand.length > 0) {
-				$scope.state = {name: 'lookingAtHand'};
-			}
-			else {
-				$scope.state = {name: 'thinking'};
-			}
 		});
 
 
@@ -166,6 +163,18 @@ angular.module('futurism')
 		};
 
 
+		/**
+		 *
+		 */
+		$scope.showHand = function() {
+			socket.authEmit('hand', {gameId: $scope.gameId});
+			$scope.state.showHand = true;
+		};
+
+
+		/**
+		 *
+		 */
 		$scope.closeHand = function() {
 			$scope.state = {name: 'thinking'};
 		};
@@ -226,10 +235,8 @@ angular.module('futurism')
 
 
 		var startMyTurn = function() {
-			if($scope.state.name === 'waiting') {
-				socket.authEmit('hand', {gameId: $scope.gameId});
-				$scope.state = {name: 'waitingForHand'};
-			}
+			$scope.state = {name: 'thinking'};
+			$scope.showHand();
 		};
 
 	});
