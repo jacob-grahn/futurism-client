@@ -28,13 +28,13 @@
 	</div>
 	<ul class="game-buttons panel-segment clearfix">
 		<li>
-			<button class='btn btn-default' ng-click="showHand()">{{lang.game.showHand}}</button>
+			<button class='btn btn-default' ng-click="showHand()" ng-disabled="me.hand.length === 0">{{lang.game.showHand}}</button>
 		</li>
 		<li>
-			<button class='btn btn-default' ng-click="showFutures()">{{lang.game.showFutures}}</button>
+			<button class='btn btn-default' ng-click="showFutures()" disabled>{{lang.game.showFutures}}</button>
 		</li>
 		<li>
-			<button class='btn btn-default' ng-click="endTurn()">{{lang.game.endTurn}}</button>
+			<button class='btn btn-default' ng-click="endTurn()" ng-disabled="!isMyTurn()">{{lang.game.endTurn}}</button>
 		</li>
 		<li>
 			<button class='btn btn-default' ng-click="forfeit()">{{lang.game.forfeit}}</button>
@@ -43,7 +43,7 @@
 	<chat-display class="panel-segment" room="chat-{{gameId}}"></chat-display>
 </div>
 
-<div ng-show="state.showHand" id="hand">
+<div ng-show="state.showHand && me.hand.length > 0" id="hand">
 	<div id="hand-content">
 		<h1>{{lang.game.pride}}: {{me.pride}}</h1>
 		<a class="close-x" ng-click="closeHand()">{{lang.game.close}} [x]</a>

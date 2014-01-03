@@ -25,7 +25,7 @@ angular.module('futurism')
 			$scope.turnOwners = data.turnOwners;
 			board.inflateStatus(data.board, $scope.idToPlayer);
 			$scope.state = {name: 'waiting'};
-			if(isMyTurn()) {
+			if($scope.isMyTurn()) {
 				startMyTurn();
 			}
 		});
@@ -53,7 +53,7 @@ angular.module('futurism')
 		socket.$on('turn', function(data) {
 			$scope.turnStartTime = data.time;
 			$scope.turnOwners = data.turnOwners;
-			if(isMyTurn()) {
+			if($scope.isMyTurn()) {
 				startMyTurn();
 			}
 			else {
@@ -199,7 +199,7 @@ angular.module('futurism')
 		 * Returns true if it is your turn
 		 * @returns {boolean}
 		 */
-		var isMyTurn = function() {
+		$scope.isMyTurn = function() {
 			if(!$scope.me) {
 				return false;
 			}
