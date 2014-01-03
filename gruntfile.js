@@ -318,19 +318,6 @@ module.exports = function (grunt) {
 		},
 
 
-		// Run unit tests on node server
-		jasmine_node: {
-			forceExit: false,
-			match: '.',
-			matchall: false,
-			captureExceptions: false,
-			autotest: false,
-			extensions: 'js',
-			specNameMatcher: 'Spec',
-			projectRoot: '<%= yeoman.server %>/spec'
-		},
-
-
 		// Postpone whatever tasks come after this one
 		wait: {
 			options: {
@@ -352,6 +339,23 @@ module.exports = function (grunt) {
 					// Arguments passed to the command
 				}
 			}
+		},
+
+
+		// shell commands
+		shell: {
+			jasmine: {
+				command: 'jasmine-node server/spec --forceexit',
+				options: {
+					stdout: true
+				}
+			},
+			jasmineWatch: {
+				command: 'jasmine-node server/spec --autotest --watch server',
+				options: {
+					stdout: true
+				}
+			}
 		}
 
 	});
@@ -367,7 +371,7 @@ module.exports = function (grunt) {
 			'clean:server',
 			'concurrent:server',
 			'autoprefixer',
-			'jasmine_node',
+			'shell:jasmine',
 			'develop',
 			'watch'
 		]);
@@ -384,15 +388,13 @@ module.exports = function (grunt) {
 		'clean:server',
 		'concurrent:test',
 		'autoprefixer',
-		'jasmine_node',
+		'shell:jasmine',
 		'karma'
 	]);
 
 
 	grunt.registerTask('watch-server-tests', [
-		'jasmine_node',
-		'wait',
-		'watch:serverTest'
+		'shell:jasmineWatch'
 	]);
 
 
