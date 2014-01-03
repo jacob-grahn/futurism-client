@@ -395,8 +395,11 @@
 			],
 			use: function(src, target1, target2) {
 				target2.card = {
-					name: 'WAR BABY',
-					attack: 1,
+					_id: '389222-fvzT8A04',
+					version: 1,
+					name: 'GROW TUBE',
+					hasImage: true,
+					attack: 0,
 					health: 1,
 					abilities: ['grow'],
 					parent: _.clone(src.card)
@@ -415,8 +418,11 @@
 			],
 			use: function(src, target1, target2) {
 				target2.card = {
-					name: 'WAR BABY',
-					attack: 1,
+					_id: '389222-fvzT8A04',
+					version: 1,
+					name: 'GROW TUBE',
+					hasImage: true,
+					attack: 0,
 					health: 1,
 					abilities: ['grow'],
 					parent: _.clone(src.card)

@@ -80,7 +80,7 @@ describe('actionFns', function() {
 			{playerId:1, column:1, row:0} //empty slot for child
 		]);
 		expect(result).toBe('ok');
-		expect(board.target(1,1,0).card.name).toBe('WAR BABY');
+		expect(board.target(1,1,0).card.name).toBe('GROW TUBE');
 	});
 
 

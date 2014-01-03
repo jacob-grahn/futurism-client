@@ -371,7 +371,7 @@ module.exports = function (grunt) {
 			'clean:server',
 			'concurrent:server',
 			'autoprefixer',
-			'shell:jasmine',
+			//'shell:jasmine',
 			'develop',
 			'watch'
 		]);

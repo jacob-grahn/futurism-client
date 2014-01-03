@@ -333,7 +333,7 @@ describe('game/actions', function() {
 		target(1,0,0).card = strongCard;
 		target(1,1,0).card = weakCard;
 		actions.male.use(target(1,0,0), target(1,1,0), target(1,0,1));
-		expect(target(1,0,1).card.name).toBe('WAR BABY');
+		expect(target(1,0,1).card.name).toBe('GROW TUBE');
 	});
 
 
@@ -341,7 +341,7 @@ describe('game/actions', function() {
 		target(1,0,0).card = strongCard;
 		target(1,1,0).card = weakCard;
 		actions.feml.use(target(1,0,0), target(1,1,0), target(1,0,1));
-		expect(target(1,0,1).card.name).toBe('WAR BABY');
+		expect(target(1,0,1).card.name).toBe('GROW TUBE');
 	});
 
 
