@@ -229,19 +229,23 @@
 		},
 		"futures": {
 			"en": "Futures",
-			"ct": "meow"
+			"ct": "meow",
+			"lt": "Ateities taškai"
 		},
 		"showFutures": {
 			"en": "Show Futures",
-			"ct": "meow"
+			"ct": "meow",
+			"lt": "Rodyti ateities sugebėjimus"
 		},
 		"showHand": {
 			"en": "Show Hand",
-			"ct": "meow"
+			"ct": "meow",
+			"lt": "Kortos rankoje"
 		},
 		"forfeit": {
 			"en": "Forfeit",
-			"ct": "meow"
+			"ct": "meow",
+			"lt": "Pasitraukti"
 		}
 	},
   "chat": {
@@ -817,26 +821,32 @@
   "abilities": {
 		"rlly": {
 			"name": {
-				"en": "rally"
+				"en": "rally",
+				"lt": "Mitingas"
 			},
 			"desc": {
-				"en": "Produce pride, which can be use to play more cards."
+				"en": "Produce pride, which can be use to play more cards.",
+				"lt": "Vertės generavimasm, kuri leidžia naudoti daugiau kortų."
 			}
 		},
 		"attk": {
 			"name": {
-				"en": "attack"
+				"en": "attack",
+				"lt": "Ataka"
 			},
 			"desc": {
-				"en": "Trade blows with an enemy card."
+				"en": "Trade blows with an enemy card.",
+				"lt": "Apsimaino kumtšelėjimais su priešininko kortą."
 			}
 		},
 		"move": {
 			"name": {
-				"en": "move"
+				"en": "move",
+				"lt": "Judėmimas"
 			},
 			"desc": {
-				"en": "Reposition this card."
+				"en": "Reposition this card.",
+				"lt": "Kortos repozicionavimas."
 			}
 		},
     "heal": {
@@ -1470,82 +1480,100 @@
 
 		"free": {
 			"name": {
-				"en": "Free Love"
+				"en": "Free Love",
+				"lt": "Romantika"
 			},
 			"desc": {
-				"en": "Cards that do not attack gain 1 point of health."
+				"en": "Cards that do not attack gain 1 point of health.",
+				"lt": "Nepuolanti korta, gauna 1 gyvybės tašką."
 			}
 		},
 
 		"blod": {
 			"name": {
-				"en": "Blood Fued"
+				"en": "Blood Fued",
+				"lt": "Kraujo liejimas"
 			},
 			"desc": {
-				"en": "All cards must attack."
+				"en": "All cards must attack.",
+				"lt": "Visos kortos privalo pulti."
 			}
 		},
 
 		"rena": {
 			"name": {
-				"en": "Renaissance"
+				"en": "Renaissance",
+				"lt": "Renesansas"
 			},
 			"desc": {
-				"en": "Players gain an extra 2 pride per turn."
+				"en": "Players gain an extra 2 pride per turn.",
+				"lt": "Žaidėjas gauna 2 vertės taškus per ėjimą."
 			}
 		},
 
 		"comm": {
 			"name": {
-				"en": "Communism"
+				"en": "Communism",
+				"lt": "Komunizmas"
 			},
 			"desc": {
-				"en": "Every action has a 50% chance to fail."
+				"en": "Every action has a 50% chance to fail.",
+				"lt": "Kiekvienas veiksmas turi 50% galimybę susimauti."
 			}
 		},
 
 		"thdr": {
 			"name": {
-				"en": "Thunderdome"
+				"en": "Thunderdome",
+				"lt": "Cenzas"
 			},
 			"desc": {
-				"en": "No new cards can be played."
+				"en": "No new cards can be played.",
+				"lt": "Negalima į kovos lauką dėti naujų kortų."
 			}
 		},
 
 		"anar": {
 			"name": {
-				"en": "Anarchy"
+				"en": "Anarchy",
+				"lt": "Anachija"
 			},
 			"desc": {
-				"en": "All cards gain the move ability."
+				"en": "All cards gain the move ability.",
+				"lt": "Visos kortos gauna judėjimo sugebėjimą."
 			}
 		},
 
 		"mira": {
 			"name": {
-				"en": "Miracle"
+				"en": "Miracle",
+				"lt": "Stebuklas"
 			},
 			"desc": {
-				"en": "Cards stay alive until their health reaches -10."
+				"en": "Cards stay alive until their health reaches -10.",
+				"lt": "Visos kortos išlieka gyvos iki kol jų gyvybių taškai pasiekia -10."
 			}
 		},
 
 		"zvir": {
 			"name": {
-				"en": "Z Virus"
+				"en": "Z Virus",
+				"lt": "Z Virusas"
 			},
 			"desc": {
-				"en": "Cards that would die become zombies instead."
+				"en": "Cards that would die become zombies instead.",
+				"lt": "Kortos nemiršta, bet tampa zombiais."
 			}
 		},
 
 		"arma": {
 			"name": {
-				"en": "Armageddon"
+				"en": "Armageddon",
+				"lt": "Armagėdonas"
 			},
 			"desc": {
-				"en": "All cards loose 1 health per turn."
+				"en": "All cards loose 1 health per turn.",
+				"lt": "Visos kortos, kiekvieną ėjimą praranda po 1 gyvybės tašką."
 			}
 		}
 	}
