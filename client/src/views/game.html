@@ -9,7 +9,7 @@
 			</div>
 
 			<ul ng-repeat="column in area.targets" class="player-field-column">
-				<li ng-repeat="target in column" class="target">
+				<li ng-repeat="target in column | inverseFoes:me.team" class="target">
 					<div ng-show="isValidTarget(target)" ng-click="selectTarget(target)" class="target-selector"></div>
 					<div ng-if="target.card" class="target-card">
 						<card-magnify card="target.card" action-fn="selectAction(abilityId, cid)" size="small" magnify="medium"></card-magnify>
