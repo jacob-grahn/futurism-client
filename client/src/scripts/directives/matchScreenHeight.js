@@ -40,7 +40,9 @@ angular.module('futurism')
 				/**
 				 * defaults
 				 */
-				var subtractHeight = attrs.subtract || 0;
+				var offsetTop = Number(attrs.offsetTop) || 0;
+				var offsetBottom = Number(attrs.offsetBottom) || 0;
+				var subtractHeight = offsetTop + offsetBottom;
 				var breakWidth = attrs.breakWidth || 768;
 				var breakHeight = attrs.breakHeight || 300;
 				var resizeElement = attrs.resizeElement;
@@ -85,12 +87,33 @@ angular.module('futurism')
 
 
 				/**
+				 *
+				 */
+				var scrollHandler = function() {
+					var scrollTo = 0;
+					if(jWindow.width() >= breakWidth) {
+						scrollTo = offsetTop + $(window).scrollTop();
+					}
+					elem.css({
+						'margin-top': scrollTo
+					});
+				};
+				jWindow.on('scroll', scrollHandler);
+
+
+				/**
 				 * call resizeHandler after the template has rendered
 				 * $timeout is a quirky trick to do this
 				 */
 				$timeout(function() {
 					resizeHandler();
 				}, 100);
+				$timeout(function() {
+					resizeHandler();
+				}, 1000);
+				$timeout(function() {
+					resizeHandler();
+				}, 10000);
 
 
 				/**
@@ -98,6 +121,7 @@ angular.module('futurism')
 				 */
 				scope.$on('$destroy', function() {
 					jWindow.off('resize', resizeHandler);
+					jWindow.off('scroll', scrollHandler);
 				});
 			}
 		};

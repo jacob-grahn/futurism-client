@@ -146,7 +146,7 @@ angular.module('futurism')
 			if($scope.state.name === 'selectingTarget') {
 				var filters = $scope.state.restrict[$scope.state.targets.length];
 				var targets = [target];
-				_.each(filters, function(filter, index) {
+				_.each(filters, function(filter) {
 					targets = filter(targets, $scope.me);
 				});
 				return targets.length !== 0;
