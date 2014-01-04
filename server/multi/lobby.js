@@ -1,7 +1,6 @@
 (function() {
 	'use strict';
 
-	var sharedFns = require('../../shared/fns');
 	var fns = require('../fns/fns');
 	var Game = require('./game/game');
 	var Chat = require('./chat');
@@ -113,9 +112,10 @@
 			}
 
 			account.matchupId = null;
-			sharedFns.removeFromArrayFunc(matchup.accounts, function(obj) {
-				return obj._id === account._id;
+			matchup.accounts = _.filter(matchup.accounts, function(acc) {
+				return acc._id !== account._id;
 			});
+
 			broadcast(roomName, 'leaveMatchup', {id: matchup.id, user:account});
 			cleanMatchup(matchup);
 
