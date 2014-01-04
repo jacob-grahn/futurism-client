@@ -233,38 +233,26 @@
 		"futures": {
 			"en": "Futures",
 			"ct": "meow",
-<<<<<<< HEAD
-			"ne": "Futures"
-=======
+			"ne": "Futures",
 			"lt": "Ateities taškai"
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 		},
 		"showFutures": {
 			"en": "Show Futures",
 			"ct": "meow",
-<<<<<<< HEAD
-			"ne": "Laat Futures zien"
-=======
+			"ne": "Laat Futures zien",
 			"lt": "Rodyti ateities sugebėjimus"
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 		},
 		"showHand": {
 			"en": "Show Hand",
 			"ct": "meow",
-<<<<<<< HEAD
-			"ne": "Laat Hand zien"
-=======
+			"ne": "Laat Hand zien",
 			"lt": "Kortos rankoje"
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 		},
 		"forfeit": {
 			"en": "Forfeit",
 			"ct": "meow",
-<<<<<<< HEAD
 			"ne": "Verlaten",
-=======
 			"lt": "Pasitraukti"
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 		}
 	},
   "chat": {
@@ -841,56 +829,37 @@
 		"rlly": {
 			"name": {
 				"en": "rally",
-<<<<<<< HEAD
-				"ne": "Bijeenkomst"
-			
-			},
-			"desc": {
-				"en": "Produce pride, which can be use to play more cards.",
-				"ne": "Produceer de Trots, zodat je meer kaarten kunt gebruiken."
-=======
+				"ne": "Bijeenkomst",
 				"lt": "Mitingas"
 			},
 			"desc": {
 				"en": "Produce pride, which can be use to play more cards.",
+				"ne": "Produceer de Trots, zodat je meer kaarten kunt gebruiken.",
 				"lt": "Vertės generavimasm, kuri leidžia naudoti daugiau kortų."
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 			}
 		},
 		"attk": {
 			"name": {
 				"en": "attack",
-<<<<<<< HEAD
-				"ne": "aanvallen"
-			},
-			"desc": {
-				"en": "Trade blows with an enemy card.",
-				"ne": "Ruil tegenslag met een vijands zijn kaart."
-=======
+				"ne": "aanvallen",
 				"lt": "Ataka"
 			},
 			"desc": {
 				"en": "Trade blows with an enemy card.",
+				"ne": "Ruil tegenslag met een vijands zijn kaart.",
 				"lt": "Apsimaino kumtšelėjimais su priešininko kortą."
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 			}
 		},
 		"move": {
 			"name": {
 				"en": "move",
-<<<<<<< HEAD
-				"ne": "zet"
-			},
-			"desc": {
-				"en": "Reposition this card.",
-				"ne": "Deze kaart een nieuwe positie geven.",
-=======
+				"ne": "zet",
 				"lt": "Judėmimas"
 			},
 			"desc": {
 				"en": "Reposition this card.",
+				"ne": "Deze kaart een nieuwe positie geven.",
 				"lt": "Kortos repozicionavimas."
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 			}
 		},
     "heal": {
@@ -1525,171 +1494,117 @@
 		"free": {
 			"name": {
 				"en": "Free Love",
-<<<<<<< HEAD
-				"ne": "Gratis Liefde"
-			},
-			"desc": {
-				"en": "Cards that do not attack gain 1 point of health.",
-				"ne": "Kaarten die niet aanvallen verdienen levens punt."
-=======
+				"ne": "Gratis Liefde",
 				"lt": "Romantika"
 			},
 			"desc": {
 				"en": "Cards that do not attack gain 1 point of health.",
+				"ne": "Kaarten die niet aanvallen verdienen levens punt.",
 				"lt": "Nepuolanti korta, gauna 1 gyvybės tašką."
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 			}
 		},
 
 		"blod": {
 			"name": {
 				"en": "Blood Fued",
-<<<<<<< HEAD
-				"ne": "Bloed vijandschap"
-			},
-			"desc": {
-				"en": "All cards must attack.",
-				"ne": "Alle kaarten moeten aanvallen."
-=======
+				"ne": "Bloed vijandschap",
 				"lt": "Kraujo liejimas"
 			},
 			"desc": {
 				"en": "All cards must attack.",
+				"ne": "Alle kaarten moeten aanvallen.",
 				"lt": "Visos kortos privalo pulti."
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 			}
 		},
 
 		"rena": {
 			"name": {
 				"en": "Renaissance",
-<<<<<<< HEAD
-				"ne": "Wedergeboorte"
-			},
-			"desc": {
-				"en": "Players gain an extra 2 pride per turn.",
-				"ne": "Spelers verdienen 2 extra trots punten per beurt."
-=======
+				"ne": "Wedergeboorte",
 				"lt": "Renesansas"
 			},
 			"desc": {
 				"en": "Players gain an extra 2 pride per turn.",
+				"ne": "Spelers verdienen 2 extra trots punten per beurt.",
 				"lt": "Žaidėjas gauna 2 vertės taškus per ėjimą."
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 			}
 		},
 
 		"comm": {
 			"name": {
 				"en": "Communism",
-<<<<<<< HEAD
-				"ne": "Communist"
-			},
-			"desc": {
-				"en": "Every action has a 50% chance to fail.",
-				"ne": "Elke actie heeft 50% kans om te valen."
-=======
+				"ne": "Communist",
 				"lt": "Komunizmas"
 			},
 			"desc": {
 				"en": "Every action has a 50% chance to fail.",
+				"ne": "Elke actie heeft 50% kans om te valen.",
 				"lt": "Kiekvienas veiksmas turi 50% galimybę susimauti."
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 			}
 		},
 
 		"thdr": {
 			"name": {
 				"en": "Thunderdome",
-<<<<<<< HEAD
-				"ne": "Donderkoepel"
-			},
-			"desc": {
-				"en": "No new cards can be played.",
-				"ne": "Er kan niet met nieuwe kaarten worden gespeeld"
-=======
+				"ne": "Donderkoepel",
 				"lt": "Cenzas"
 			},
 			"desc": {
 				"en": "No new cards can be played.",
+				"ne": "Er kan niet met nieuwe kaarten worden gespeeld",
 				"lt": "Negalima į kovos lauką dėti naujų kortų."
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 			}
 		},
 
 		"anar": {
 			"name": {
 				"en": "Anarchy",
-<<<<<<< HEAD
 				"ne": "Anarchie",
-			},
-			"desc": {
-				"en": "All cards gain the move ability.",
-				"ne": "Alle kaarten krijgen de verplaats kracht."
-=======
 				"lt": "Anachija"
 			},
 			"desc": {
 				"en": "All cards gain the move ability.",
+				"ne": "Alle kaarten krijgen de verplaats kracht.",
 				"lt": "Visos kortos gauna judėjimo sugebėjimą."
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 			}
 		},
 
 		"mira": {
 			"name": {
 				"en": "Miracle",
-<<<<<<< HEAD
-				"ne": "Wonder"
-			},
-			"desc": {
-				"en": "Cards stay alive until their health reaches -10.",
-				"ne": "Kaarten blijven levend todat hun levens -10 halen."
-=======
+				"ne": "Wonder",
 				"lt": "Stebuklas"
 			},
 			"desc": {
 				"en": "Cards stay alive until their health reaches -10.",
+				"ne": "Kaarten blijven levend todat hun levens -10 halen.",
 				"lt": "Visos kortos išlieka gyvos iki kol jų gyvybių taškai pasiekia -10."
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 			}
 		},
 
 		"zvir": {
 			"name": {
 				"en": "Z Virus",
-<<<<<<< HEAD
-				"ne": "Z Virus"
-			},
-			"desc": {
-				"en": "Cards that would die become zombies instead.",
-				"ne": "Kaarten die dood zouden gaan, worden zombies."
-=======
+				"ne": "Z Virus",
 				"lt": "Z Virusas"
 			},
 			"desc": {
 				"en": "Cards that would die become zombies instead.",
+				"ne": "Kaarten die dood zouden gaan, worden zombies.",
 				"lt": "Kortos nemiršta, bet tampa zombiais."
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 			}
 		},
 
 		"arma": {
 			"name": {
 				"en": "Armageddon",
-<<<<<<< HEAD
-				"ne": "Armageddon"
-			},
-			"desc": {
-				"en": "All cards loose 1 health per turn.",
-				"ne": "Alle kaarten verliezen 1 leven elke beurt."
-=======
+				"ne": "Armageddon",
 				"lt": "Armagėdonas"
 			},
 			"desc": {
 				"en": "All cards loose 1 health per turn.",
+				"ne": "Alle kaarten verliezen 1 leven elke beurt.",
 				"lt": "Visos kortos, kiekvieną ėjimą praranda po 1 gyvybės tašką."
->>>>>>> 556c9cc46c1481f11a7b18cf576b5514ca14bf22
 			}
 		}
 	}
