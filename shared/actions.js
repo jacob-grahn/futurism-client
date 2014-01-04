@@ -10,12 +10,10 @@
 	if(typeof require !== 'undefined') {
 		_ = require('lodash');
 		filters = require('./filters');
-		fns = require('./fns');
 	}
 	else {
 		_ = window._;
 		filters = window.futurismShared.filters;
-		fns = window.futurismShared.fns;
 	}
 
 
@@ -80,7 +78,7 @@
 				[filters.owned, filters.empty]
 			],
 			use: function(src, target) {
-				fns.removeFromArray(src.player.hand, src.card);
+				_.pull(src.player.hand, src.card);
 				src.player.pride -= src.card.pride;
 				target.card = src.card;
 			},
@@ -401,6 +399,7 @@
 					hasImage: true,
 					attack: 0,
 					health: 1,
+					moves: 0,
 					abilities: ['grow'],
 					parent: _.clone(src.card)
 				};
@@ -424,6 +423,7 @@
 					hasImage: true,
 					attack: 0,
 					health: 1,
+					moves: 0,
 					abilities: ['grow'],
 					parent: _.clone(src.card)
 				};
