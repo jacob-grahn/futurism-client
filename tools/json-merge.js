@@ -1,8 +1,5 @@
 var _ = require('lodash');
-var underscoreDeepExtend = require('underscoreDeepExtend');
 var fs = require('fs');
-
-_.mixin({deepExtend: underscoreDeepExtend(_)});
 
 /**
  * read in provided json files
@@ -35,7 +32,7 @@ var parseJsonFiles = function(files) {
 var mergeData = function(objs) {
 	var masterObj = {};
 	_.each(objs, function(obj) {
-		_.deepExtend(masterObj, obj);
+		_.merge(masterObj, obj);
 	});
 	return masterObj;
 };
