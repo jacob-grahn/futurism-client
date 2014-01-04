@@ -53,6 +53,9 @@ var objs = parseJsonFiles(files);
 var masterObj = mergeData(objs);
 var masterJson = JSON.stringify(masterObj, null, 2);
 
+masterJson = masterJson.replace(/^  \},/gm, "  },\n\n");
+masterJson = masterJson.replace(/^    \},/gm, "    },\n");
+
 fs.writeFileSync(outputDir, masterJson, 'utf8');
 
 console.log('files', dirs, 'merged to', outputDir);
