@@ -1,61 +1,62 @@
 angular.module('futurism')
-	.factory('matchups', function(socket, $rootScope, shared, $location, account, _) {
+	.factory('matchups', function(socket, $rootScope, $location, account, _) {
 		'use strict';
 
-		var lobbyName = 'brutus';
-		var matchups = [];
+		var self = this;
+		self.lobbyName = 'brutus';
+		self.matchups = [];
 
 
 		/**
 		 * start listening to lobby events
 		 */
-		var subscribe = function() {
-			socket.authEmit('allMatchups', {lobbyName: lobbyName});
-			socket.authEmit('subscribe', lobbyName);
+		self.subscribe = function() {
+			socket.authEmit('allMatchups', {lobbyName: self.lobbyName});
+			socket.authEmit('subscribe', self.lobbyName);
 		};
 
 
 		/**
 		 * stop listening to lobby events
 		 */
-		var unsubscribe = function() {
-			socket.authEmit('unsubscribe', lobbyName);
-			leave();
-			clear();
+		self.unsubscribe = function() {
+			socket.authEmit('unsubscribe', self.lobbyName);
+			self.leave();
+			self.clear();
 		};
 
 
 		/**
 		 * create a new matchup
-		 * @param rules
+		 * @param {Object} rules
 		 */
-		var create = function(rules) {
-			socket.authEmit('createMatchup', {lobbyName: lobbyName, rules: rules});
+		self.createMatchup = function(rules) {
+			socket.authEmit('createMatchup', {lobbyName: self.lobbyName, rules: rules});
 		};
 
 
 		/**
 		 * join an existing matchup
-		 * @param matchup
+		 * @param matchupId
 		 */
-		var join = function(matchupId) {
-			socket.authEmit('joinMatchup', {lobbyName: lobbyName, matchupId: matchupId});
+		self.join = function(matchupId) {
+			socket.authEmit('joinMatchup', {lobbyName: self.lobbyName, matchupId: matchupId});
 		};
 
 
 		/**
 		 * Leave whatever matchup you may be in
 		 */
-		var leave = function() {
-			socket.authEmit('leaveMatchup', {lobbyName: lobbyName});
+		self.leave = function() {
+			socket.authEmit('leaveMatchup', {lobbyName: self.lobbyName});
 		};
 
 
 		/**
 		 * remove all matchups
 		 */
-		var clear = function() {
-			matchups.splice(0, matchups.length);
+		self.clear = function() {
+			self.matchups = [];
 		};
 
 
@@ -64,9 +65,9 @@ angular.module('futurism')
 		 * @param {number} id
 		 * @returns {*}
 		 */
-		var idToMatchup = function(id) {
-			for(var i=0; i<matchups.length; i++) {
-				var matchup = matchups[i];
+		self.idToMatchup = function(id) {
+			for(var i=0; i<self.matchups.length; i++) {
+				var matchup = self.matchups[i];
 				if(matchup.id === id) {
 					return matchup;
 				}
@@ -75,35 +76,12 @@ angular.module('futurism')
 
 
 		/**
-		 * Remove a user from a matchup
-		 * @param matchup
-		 * @param userToRemove
-		 */
-		var removeUserFromMatchup = function(matchup, userToRemove) {
-			shared.fns.removeFromArrayFunc(matchup.accounts, function(user) {
-				return user._id === userToRemove._id;
-			});
-		};
-
-
-		/**
-		 * Remove a matchup from the matchups array
-		 * @param matchupToRemove
-		 */
-		var removeMatchup = function(matchupToRemove) {
-			shared.fns.removeFromArrayFunc(matchups, function(matchup) {
-				return matchup.id === matchupToRemove.id;
-			});
-		};
-
-
-		/**
 		 * If you are in provided matchup, start the game
 		 */
-		var goIfMember = function(matchup, gameId) {
+		self.goIfMember = function(matchup, gameId) {
 			_.each(matchup.accounts, function(user) {
-				if(+user._id === +account._id) { // + casts to number
-					return gotoGamePage(gameId, matchup.rules.pride);
+				if(Number(user._id) === Number(account._id)) {
+					self.gotoGamePage(gameId, matchup.rules.pride);
 				}
 			});
 		};
@@ -114,7 +92,7 @@ angular.module('futurism')
 		 * @param {string} gameId
 		 * @param {number} maxPride
 		 */
-		var gotoGamePage = function(gameId, maxPride) {
+		self.gotoGamePage = function(gameId, maxPride) {
 			$location.url('/loadup/'+gameId+'/'+maxPride);
 		};
 
@@ -122,31 +100,28 @@ angular.module('futurism')
 		/**
 		 * when a user creates a new matchup
 		 */
-		socket.on('createMatchup', function(matchup) {
-			$rootScope.$apply(function() {
-				matchups.push(matchup);
-			});
+		socket.$on('createMatchup', function(matchup) {
+			self.matchups.push(matchup);
 		});
 
 
 		/**
 		 * when a user joins a matchup
 		 */
-		socket.on('joinMatchup', function(data) {
-			$rootScope.$apply(function() {
-				var matchup = idToMatchup(data.id);
-				matchup.accounts.push(data.user);
-			});
+		socket.$on('joinMatchup', function(data) {
+			var matchup = self.idToMatchup(data.id);
+			matchup.accounts.push(data.user);
 		});
 
 
 		/**
 		 * when a user leaves a matchup
 		 */
-		socket.on('leaveMatchup', function(data) {
-			$rootScope.$apply(function() {
-				var matchup = idToMatchup(data.id);
-				removeUserFromMatchup(matchup, data.user);
+		socket.$on('leaveMatchup', function(data) {
+			var matchup = self.idToMatchup(data.id);
+			console.log(data, matchup);
+			matchup.accounts = _.filter(matchup.accounts, function(account) {
+				return account._id !== data.user._id;
 			});
 		});
 
@@ -154,50 +129,36 @@ angular.module('futurism')
 		/**
 		 * when a matchup is complete and a game begins
 		 */
-		socket.on('startMatchup', function(data) {
-			$rootScope.$apply(function() {
-				var matchup = idToMatchup(data.id);
-				if(matchup) {
-					matchup.starting = true;
-					removeMatchup(matchup);
-					goIfMember(matchup, data.gameId);
-				}
-			});
+		socket.$on('startMatchup', function(data) {
+			var matchup = self.idToMatchup(data.id);
+			if(matchup) {
+				matchup.starting = true;
+				_.pull(self.matchups, matchup);
+				self.goIfMember(matchup, data.gameId);
+			}
 		});
 
 
 		/**
 		 * when a matchup is closed
 		 */
-		socket.on('removeMatchup', function(id) {
-			$rootScope.$apply(function() {
-				var matchup = idToMatchup(id);
-				removeMatchup(matchup);
-			});
+		socket.$on('removeMatchup', function(id) {
+			var matchup = self.idToMatchup(id);
+			_.pull(self.matchups, matchup);
 		});
 
 
 		/**
 		 * when first connecting, receive a full list of matchups
 		 */
-		socket.on('allMatchups', function(all) {
-			$rootScope.$apply(function() {
-				clear();
-				_.extend(matchups, all);
-			});
+		socket.$on('allMatchups', function(all) {
+			self.clear();
+			self.matchups = all;
 		});
 
 
 		/**
 		 * public interface
 		 */
-		return {
-			create: create,
-			join: join,
-			leave: leave,
-			subscribe: subscribe,
-			unsubscribe: unsubscribe,
-			clear: clear,
-			list: matchups
-		};
+		return self;
 	});
