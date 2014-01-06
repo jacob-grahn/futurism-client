@@ -92,7 +92,7 @@ angular.module('futurism')
 				var scrollHandler = function() {
 					var scrollTo = 0;
 					if(jWindow.width() >= breakWidth) {
-						scrollTo = offsetTop + $(window).scrollTop();
+						scrollTo = offsetTop + jWindow.scrollTop();
 					}
 					elem.css({
 						'margin-top': scrollTo

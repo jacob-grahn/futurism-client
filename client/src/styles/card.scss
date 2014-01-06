@@ -13,13 +13,6 @@ body .card-ze h1 {
 	color: $zealot;
 }
 
-.card-list .card-holder {
-	float: left;
-}
-
-.card-list .card {
-	cursor: pointer;
-}
 
 .card {
 	color: $dark-blend;
@@ -30,7 +23,7 @@ body .card-ze h1 {
   overflow-y: hidden;
   overflow-x: hidden;
   padding: 0px;
-	margin: 15px;
+	margin: 0px;
 
 	@include border-radius(4px);
 	@include box-shadow(2px, 2px, 7px, rgba(0,0,0,.8));
@@ -38,15 +31,29 @@ body .card-ze h1 {
 .card-medium {
 	width: 130px;
 	height: 186px;
-	margin: 12px;
 	@include border-radius(2px);
 }
 .card-small {
 	width: 65px;
 	height: 93px;
-	margin: 12px;
 	@include border-radius(1px);
 }
+
+
+
+.card-list > li {
+	float: left;
+	margin: 12px;
+}
+
+
+.card {
+	cursor: pointer;
+}
+
+
+
+
 
 .card h1 {
 	white-space: nowrap;
@@ -56,6 +63,9 @@ body .card-ze h1 {
 .card-medium h1 {
 	font-size: 18px;
 }
+
+
+
 
 
 .card ul {
@@ -137,19 +147,34 @@ body .card-ze h1 {
 
 .card .greyout {
 	position: absolute;
+	width: 100%;
+	height: 100%;
 	top: 0;
 	left: 0;
 	z-index: 10;
+	display: none;
 }
 
+
+
 .card-disabled .greyout {
-	width: 100%;
-	height: 100%;
+	display: block;
 	background-color: rgba(0, 0, 0, 0.66);
 }
 
-.card-disabled .card {
+.card-disabled {
 	cursor: default;
+}
+
+
+
+.target-valid .greyout {
+	display: block;
+	background-color: rgba(255, 255, 255, .5);
+}
+
+.target-valid .card {
+	border: 1px solid white;
 }
 
 
@@ -164,7 +189,6 @@ body .card-ze h1 {
 	top: -55px; left: -45px;
 	width: 130px;
 	height: 186px;
-	//pointer-events: none;
 	z-index: 11;
 	-webkit-transition: 0.25s;
 	transition: 0.25s;

@@ -69,15 +69,10 @@ $outline: rgba(82, 79, 73, .75);
 	position: relative;
 }
 
-.target-selector {
+.target-valid {
 	background-color: rgba(255, 255, 255, .25);
+	border: 1px solid white;
 	cursor: pointer;
-	width: 65px;
-	height: 93px;
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 11;
 }
 
 .players .desc {
@@ -85,10 +80,6 @@ $outline: rgba(82, 79, 73, .75);
 	font-size: 12px;
 	position: relative;
 	top: -5px;
-}
-
-.card {
-	cursor: pointer;
 }
 
 #hand {
@@ -131,8 +122,3 @@ $outline: rgba(82, 79, 73, .75);
 #hand-content > h1 {
 	color: $light-contrast;
 }
-
-.hand-cards > li {
-	float: left;
-}
-
