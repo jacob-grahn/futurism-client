@@ -276,7 +276,7 @@
       "en": "Futures",
       "ct": "meow",
       "ne": "Futures",
-      "lt": "Ateities taškai",
+      "lt": "Futuristinė galia",
       "hu": "Jövendők"
     },
 
@@ -284,7 +284,7 @@
       "en": "Show Futures",
       "ct": "meow",
       "ne": "Laat Futures zien",
-      "lt": "Rodyti ateities sugebėjimus",
+      "lt": "Futuristiniai sugebėjimai",
       "hu": "Jövendők Mutatása"
     },
 
@@ -591,7 +591,7 @@
 
     "futures": {
       "en": "futures",
-      "lt": "Ateities Taškai",
+      "lt": "Futuristinė galia",
       "ct": "meow",
       "sv": "framtid",
       "fr": "Futurs",
@@ -817,7 +817,7 @@
     "futures": {
       "en": "Futures",
       "ct": "meow",
-      "lt": "Ateitys",
+      "lt": "Futuristiniai sugebėjimai",
       "fr": "Futurs",
       "sv": "Framitid",
       "pi": "Days after tomorrow",
