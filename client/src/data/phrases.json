@@ -195,7 +195,7 @@
       "ne": "Nieuw",
       "sv": "Nytt",
       "es": "Nueva",
-      "nb": "Ny",
+      "nb": "Nytt",
       "it": "Nuova",
       "hu": "Új"
     },
@@ -253,7 +253,8 @@
       "ct": "meow",
       "ne": "Eindig Beurt",
       "lt": "Užbaigti ėjimą",
-      "hu": "Fordulat vége"
+      "hu": "Fordulat vége",
+      "nb": "Avslutt runden"
     },
 
     "pride": {
@@ -261,7 +262,8 @@
       "ct": "meow",
       "ne": "Trots",
       "lt": "Vertė",
-      "hu": "Büszkeség"
+      "hu": "Büszkeség",
+      "nb": "Stolthet"
     },
 
     "close": {
@@ -269,7 +271,8 @@
       "ct": "meow",
       "ne": "Dicht doen",
       "lt": "uždaryti",
-      "hu": "bezár"
+      "hu": "bezár",
+      "nb": "lukk"
     },
 
     "futures": {
@@ -277,7 +280,8 @@
       "ct": "meow",
       "ne": "Futures",
       "lt": "Ateities taškai",
-      "hu": "Jövendők"
+      "hu": "Jövendők",
+      "nb": "Fremtider"
     },
 
     "showFutures": {
@@ -285,7 +289,8 @@
       "ct": "meow",
       "ne": "Laat Futures zien",
       "lt": "Rodyti ateities sugebėjimus",
-      "hu": "Jövendők Mutatása"
+      "hu": "Jövendők Mutatása",
+      "nb": "Vis fremtider"
     },
 
     "showHand": {
@@ -293,7 +298,8 @@
       "ct": "meow",
       "ne": "Laat Hand zien",
       "lt": "Kortos rankoje",
-      "hu": "Kezelő Mutatása"
+      "hu": "Kezelő Mutatása",
+      "nb": "Vis hånda"
     },
 
     "forfeit": {
@@ -301,7 +307,8 @@
       "ct": "meow",
       "ne": "Verlaten",
       "lt": "Pasitraukti",
-      "hu": "Felmondás"
+      "hu": "Felmondás",
+      "nb": "Forlat kampen"
     }
   },
 
@@ -395,7 +402,7 @@
       "ne": "Nieuw",
       "sv": "Nytt",
       "es": "Nuevo",
-      "nb": "Ny",
+      "nb": "Nytt",
       "it": "Nuova",
       "hu": "Új"
     },
@@ -672,7 +679,7 @@
       "ne": "gilde",
       "sv": "klan",
       "es": "gremio",
-      "nb": "klan",
+      "nb": "laug",
       "hu": "klán"
     }
   },
@@ -973,13 +980,15 @@
         "en": "rally",
         "ne": "Bijeenkomst",
         "lt": "Mitingas",
-        "hu": "rally"
+        "hu": "rally",
+        "nb": "sammenkomst"
       },
       "desc": {
         "en": "Produce pride, which can be use to play more cards.",
         "ne": "Produceer de Trots, zodat je meer kaarten kunt gebruiken.",
         "lt": "Vertės generavimasm, kuri leidžia naudoti daugiau kortų.",
-        "hu": "Produce pride, which can be use to play more cards."
+        "hu": "Produce pride, which can be use to play more cards.",
+        "nb": "Produserer stolthet, som kan bli brukt for å spille fler kort."
       }
     },
 
@@ -988,7 +997,8 @@
         "en": "attack",
         "ne": "aanvallen",
         "lt": "Ataka",
-        "hu": "támadás"
+        "hu": "támadás",
+        "nb": "angrep"
       },
       "desc": {
         "en": "Trade blows with an enemy card.",
@@ -1003,13 +1013,15 @@
         "en": "move",
         "ne": "zet",
         "lt": "Judėmimas",
-        "hu": "mozgás"
+        "hu": "mozgás",
+        "nb": "flytt"
       },
       "desc": {
         "en": "Reposition this card.",
         "ne": "Deze kaart een nieuwe positie geven.",
         "lt": "Kortos repozicionavimas.",
-        "hu": "Reposition this card."
+        "hu": "Reposition this card.",
+        "nb": "Flytt dette kortet"
       }
     },
 
@@ -1717,13 +1729,15 @@
         "en": "Free Love",
         "ne": "Gratis Liefde",
         "lt": "Romantika",
-        "hu": "Ingyen Szeretet"
+        "hu": "Ingyen Szeretet",
+        "nb": "Fri kjærlighet"
       },
       "desc": {
         "en": "Cards that do not attack gain 1 point of health.",
         "ne": "Kaarten die niet aanvallen verdienen levens punt.",
         "lt": "Nepuolanti korta, gauna 1 gyvybės tašką.",
-        "hu": "Cards that do not attack gain 1 point of health."
+        "hu": "Cards that do not attack gain 1 point of health.",
+        "nb": "Kort som ikke angriper får 1 helsepoeng."
       }
     },
 
@@ -1732,13 +1746,15 @@
         "en": "Blood Feud",
         "ne": "Bloed vijandschap",
         "lt": "Kraujo liejimas",
-        "hu": "Vérbosszú"
+        "hu": "Vérbosszú",
+        "nb": "Blodfeide"
       },
       "desc": {
         "en": "All cards must attack.",
         "ne": "Alle kaarten moeten aanvallen.",
         "lt": "Visos kortos privalo pulti.",
-        "hu": "All cards must attack."
+        "hu": "All cards must attack.",
+        "nb": "Alle kort må angripe."
       }
     },
 
@@ -1747,13 +1763,15 @@
         "en": "Renaissance",
         "ne": "Wedergeboorte",
         "lt": "Renesansas",
-        "hu": "Reneszánsz"
+        "hu": "Reneszánsz",
+        "nb": "Rennesanse"
       },
       "desc": {
         "en": "Players gain an extra 2 pride per turn.",
         "ne": "Spelers verdienen 2 extra trots punten per beurt.",
         "lt": "Žaidėjas gauna 2 vertės taškus per ėjimą.",
-        "hu": "Players gain an extra 2 pride per turn."
+        "hu": "Players gain an extra 2 pride per turn.",
+        "nb": "Spillere får to mer stolthet per runde."
       }
     },
 
@@ -1762,13 +1780,15 @@
         "en": "Communism",
         "ne": "Communist",
         "lt": "Komunizmas",
-        "hu": "Kommunizmus"
+        "hu": "Kommunizmus",
+        "nb": "Kommunisme"
       },
       "desc": {
         "en": "Every action has a 50% chance to fail.",
         "ne": "Elke actie heeft 50% kans om te valen.",
         "lt": "Kiekvienas veiksmas turi 50% galimybę susimauti.",
-        "hu": "Every action has a 50% chance to fail."
+        "hu": "Every action has a 50% chance to fail.",
+        "nb": "Hvert gjøremål har en 50% sjangse for å mislykkes."
       }
     },
 
@@ -1777,13 +1797,15 @@
         "en": "Thunderdome",
         "ne": "Donderkoepel",
         "lt": "Cenzas",
-        "hu": "Thunderdome"
+        "hu": "Thunderdome",
+        "nb": "Tordenskuppel"
       },
       "desc": {
         "en": "No new cards can be played.",
         "ne": "Er kan niet met nieuwe kaarten worden gespeeld",
         "lt": "Negalima į kovos lauką dėti naujų kortų.",
-        "hu": "No new cards can be played."
+        "hu": "No new cards can be played.",
+        "nb": "Ingen nye kort kan spilles."
       }
     },
 
@@ -1792,13 +1814,15 @@
         "en": "Anarchy",
         "ne": "Anarchie",
         "lt": "Anachija",
-        "hu": "Anarchia"
+        "hu": "Anarchia",
+        "nb": "Anarki"
       },
       "desc": {
         "en": "All cards gain the move ability.",
         "ne": "Alle kaarten krijgen de verplaats kracht.",
         "lt": "Visos kortos gauna judėjimo sugebėjimą.",
-        "hu": "All cards gain the move ability."
+        "hu": "All cards gain the move ability.",
+        "nb": "Alle kort får flytteegenskapen."
       }
     },
 
@@ -1807,13 +1831,15 @@
         "en": "Miracle",
         "ne": "Wonder",
         "lt": "Stebuklas",
-        "hu": "Csoda"
+        "hu": "Csoda",
+        "nb": "Mirakel"
       },
       "desc": {
         "en": "Cards stay alive until their health reaches -10.",
         "ne": "Kaarten blijven levend todat hun levens -10 halen.",
         "lt": "Visos kortos išlieka gyvos iki kol jų gyvybių taškai pasiekia -10.",
-        "hu": "Cards stay alive until their health reaches -10."
+        "hu": "Cards stay alive until their health reaches -10.",
+        "nb": "Kort forblir i live til helsepoengene deres når -10."
       }
     },
 
@@ -1822,13 +1848,15 @@
         "en": "Z Virus",
         "ne": "Z Virus",
         "lt": "Z Virusas",
-        "hu": "Z Virus"
+        "hu": "Z Virus",
+        "nb": "Z-virus"
       },
       "desc": {
         "en": "Cards that would die become zombies instead.",
         "ne": "Kaarten die dood zouden gaan, worden zombies.",
         "lt": "Kortos nemiršta, bet tampa zombiais.",
-        "hu": "Cards that would die become zombies instead."
+        "hu": "Cards that would die become zombies instead.",
+        "nb": "Kort som ville dødd blir til zombier i stedet."
       }
     },
 
@@ -1837,13 +1865,15 @@
         "en": "Armageddon",
         "ne": "Armageddon",
         "lt": "Armagėdonas",
-        "hu": "Armageddon"
+        "hu": "Armageddon",
+        "nb": "Armageddon"
       },
       "desc": {
         "en": "All cards loose 1 health per turn.",
         "ne": "Alle kaarten verliezen 1 leven elke beurt.",
         "lt": "Visos kortos, kiekvieną ėjimą praranda po 1 gyvybės tašką.",
-        "hu": "All cards loose 1 health per turn."
+        "hu": "All cards loose 1 health per turn.",
+        "nb": "Alle kort mister 1 helsepoeng i runden."
       }
     }
   }
