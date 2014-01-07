@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('GameCtrl', function($scope, $routeParams, $location, socket, _, account, shared, board, errorHandler) {
+	.controller('GameCtrl', function($scope, $routeParams, $location, socket, _, account, shared, board) {
 		'use strict';
 
 		var actions = shared.actions;
