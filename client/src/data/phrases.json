@@ -6,7 +6,7 @@
     "fr": "Français",
     "pi": "Pirate",
     "es": "Español",
-    "ne": "Nederlands",
+    "ne": "Dutch",
     "lt": "Lietuvių",
     "sv": "Svenska",
     "nb": "Norsk Bokmål",
@@ -21,7 +21,7 @@
     "ct": "Katy Purry",
     "es": "aaaaaa123456789",
     "fr": "JV-TRUC",
-    "ne": "Ringstaart/Larsyuipo",
+    "ne": "larsyuipo",
     "pi": "Arcanity",
     "lt": "zebriukas",
     "sv": "jonswe",
@@ -39,7 +39,7 @@
       "fr": "FUTURISME",
       "pi": "Day after Tomorrow",
       "lt": "FUTURISM",
-      "ne": "FUTURISME",
+      "ne": "FUTURISM",
       "sv": "Futurism",
       "es": "FUTURISMO",
       "nb": "FUTURISME",
@@ -84,7 +84,7 @@
       "fr": "TUTORIELS",
       "pi": "Davy Jones' Locker",
       "lt": "INSTRUKCIJOS",
-      "ne": "Instructievideos",
+      "ne": "Instructiefilmpjes",
       "sv": "Instruktioner",
       "es": "Videos educativos",
       "nb": "INSTRUKSJONSVIDEOER",
@@ -117,7 +117,7 @@
       "fr": "Nommer",
       "pi": "Name yar booty",
       "lt": "Pavadinimas",
-      "ne": "Voer een naam in",
+      "ne": "Geef een Naam",
       "sv": "Namnge det",
       "es": "Nombrar",
       "nb": "Navngi det",
@@ -132,7 +132,7 @@
       "fr": "Charger une image",
       "pi": "Enscribe yar map",
       "lt": "Paveikslėlio įkelimas",
-      "ne": "Upload een afbeelding",
+      "ne": "Upload een Plaatje",
       "sv": "bilduppladdning",
       "es": "Cargar imagen",
       "nb": "Bildeopplasting",
@@ -195,7 +195,7 @@
       "ne": "Nieuw",
       "sv": "Nytt",
       "es": "Nueva",
-      "nb": "Nytt",
+      "nb": "Ny",
       "it": "Nuova",
       "hu": "Új"
     },
@@ -269,7 +269,7 @@
     "close": {
       "en": "close",
       "ct": "meow",
-      "ne": "sluit",
+      "ne": "Dicht doen",
       "lt": "uždaryti",
       "hu": "bezár",
       "nb": "lukk"
@@ -278,7 +278,7 @@
     "futures": {
       "en": "Futures",
       "ct": "meow",
-      "ne": "Toekomsten",
+      "ne": "Futures",
       "lt": "Ateities taškai",
       "hu": "Jövendők",
       "nb": "Fremtider"
@@ -287,7 +287,7 @@
     "showFutures": {
       "en": "Show Futures",
       "ct": "meow",
-      "ne": "Laat Toekomsten zien",
+      "ne": "Laat Futures zien",
       "lt": "Rodyti ateities sugebėjimus",
       "hu": "Jövendők Mutatása",
       "nb": "Vis fremtider"
@@ -305,7 +305,7 @@
     "forfeit": {
       "en": "Forfeit",
       "ct": "meow",
-      "ne": "opgeven",
+      "ne": "Verlaten",
       "lt": "Pasitraukti",
       "hu": "Felmondás",
       "nb": "Forlat kampen"
@@ -321,7 +321,7 @@
       "fr": "Envoyer",
       "pi": "Belch",
       "lt": "Kalbėk",
-      "ne": "praten",
+      "ne": "Zeggen",
       "sv": "säg",
       "es": "Enviar",
       "nb": "si",
@@ -336,7 +336,7 @@
       "fr": "Taper pour bavarder",
       "pi": "Open ye mouth",
       "lt": "Įveskite norimą tekstą",
-      "ne": "Type om te praten",
+      "ne": "Type iets in de chat",
       "sv": "skriv för att chatta",
       "es": "Escribe para conversar",
       "nb": "skriv for å chatte",
@@ -402,7 +402,7 @@
       "ne": "Nieuw",
       "sv": "Nytt",
       "es": "Nuevo",
-      "nb": "Nytt",
+      "nb": "Ny",
       "it": "Nuova",
       "hu": "Új"
     },
@@ -513,7 +513,7 @@
       "fr": "Joueur",
       "pi": "Sailor",
       "lt": "Žaidėjai",
-      "ne": "spelers",
+      "ne": "Speler",
       "sv": "spelare",
       "es": "jugadores",
       "nb": "spiller",
@@ -651,7 +651,7 @@
       "fr": "Personnaliser",
       "pi": "Blank map",
       "lt": "Redaguojamas",
-      "ne": "Aangepast",
+      "ne": "Eigen",
       "sv": "Anpassad",
       "es": "Personalizado",
       "it": "Personalizzato",
@@ -666,7 +666,7 @@
       "fr": "Personnaliser",
       "pi": "Blank map",
       "lt": "Redaguojamas",
-      "ne": "aangepast",
+      "ne": "zelfgemaakt",
       "sv": "Anpassad",
       "es": "personalizado",
       "nb": "Egendefinert",
@@ -683,7 +683,7 @@
       "ne": "gilde",
       "sv": "klan",
       "es": "gremio",
-      "nb": "laug",
+      "nb": "klan",
       "hu": "klán"
     }
   },
@@ -694,7 +694,7 @@
       "en": "Toggle Navigation",
       "ko": "토글",
       "ct": "meow",
-      "ne": "Navigatie tonen/verbergen",
+      "ne": "Navigatie aanzetten",
       "fr": "Activer la navigation",
       "pi": "Toggle Map",
       "lt": "Navigacijos Perjungimas",
@@ -709,7 +709,7 @@
       "en": "Futurism",
       "ko": "미래의 배",
       "ct": "meow",
-      "ne": "Futurisme",
+      "ne": "Futurism",
       "fr": "Futurisme",
       "pi": "Day after Tomorrow",
       "lt": "Futurism",
@@ -769,7 +769,7 @@
       "en": "My Stats",
       "ko": "통계",
       "ct": "meow",
-      "ne": "Mijn statistieken",
+      "ne": "Mijn status",
       "fr": "Ma Statistiques",
       "pi": "Pirate-ness",
       "lt": "Mano statusai",
@@ -956,7 +956,7 @@
         "fr": "Fanatique",
         "pi": "Priest",
         "lt": "Fanatikai",
-        "ne": "Fanaticus",
+        "ne": "ijveraar",
         "sv": "Zealot",
         "es": "Fanático",
         "nb": "Selot",
@@ -990,7 +990,7 @@
       },
       "desc": {
         "en": "Produce pride, which can be use to play more cards.",
-        "ne": "Verzamel trots, zodat je meer kaarten kunt gebruiken",
+        "ne": "Produceer de Trots, zodat je meer kaarten kunt gebruiken.",
         "lt": "Vertės generavimasm, kuri leidžia naudoti daugiau kortų.",
         "hu": "Produce pride, which can be use to play more cards.",
         "nb": "Produserer stolthet, som kan bli brukt for å spille fler kort."
@@ -1007,7 +1007,7 @@
       },
       "desc": {
         "en": "Trade blows with an enemy card.",
-        "ne": "Ruil klappen uit met een kaart van de tegenstander",
+        "ne": "Ruil tegenslag met een vijands zijn kaart.",
         "lt": "Apsimaino kumtšelėjimais su priešininko kortą.",
         "hu": "Trade blows with an enemy card."
       }
@@ -1016,14 +1016,14 @@
     "move": {
       "name": {
         "en": "move",
-        "ne": "beweeg",
+        "ne": "zet",
         "lt": "Judėmimas",
         "hu": "mozgás",
         "nb": "flytt"
       },
       "desc": {
         "en": "Reposition this card.",
-        "ne": "Verplaats deze kaart",
+        "ne": "Deze kaart een nieuwe positie geven.",
         "lt": "Kortos repozicionavimas.",
         "hu": "Reposition this card.",
         "nb": "Flytt dette kortet"
@@ -1038,7 +1038,7 @@
         "fr": "Guérir",
         "pi": "Rum drinker",
         "lt": "Gydimas",
-        "ne": "helen",
+        "ne": "Helen",
         "sv": "Helande",
         "es": "Curación",
         "nb": "Helbreding",
@@ -1051,7 +1051,7 @@
         "fr": "La carte cible reçoit 1 point de santé.",
         "pi": "Target pirate drinks 1 bottle o' rum",
         "lt": "Pasirinkta korta gaun  1 gyvybės tašką.",
-        "ne": "De doelkaart krijgt 1 leven erbij.",
+        "ne": "Doel krijgt 1 leven erbij.",
         "sv": "Det valda kortet får ett hälsopoäng",
         "es": "La carta objetivo gana 1 de vida.",
         "nb": "Målsatt kort får ett helsepoeng.",
@@ -1067,7 +1067,7 @@
         "fr": "Mauvaises herbes",
         "pi": "Seaweed",
         "lt": "Žolinis medis",
-        "ne": "onkruidbomen",
+        "ne": "onkruid bomen",
         "sv": "ogrästräd",
         "es": "árboles de hierbas",
         "nb": "Ugresstrær",
@@ -1183,7 +1183,7 @@
         "fr": "Abeilles",
         "pi": "Abeeminations",
         "lt": "Bitės!",
-        "ne": "bijen!",
+        "ne": " bijen",
         "sv": "Bin!",
         "es": "¡abejas!",
         "nb": "bier!",
@@ -1270,7 +1270,7 @@
         "fr": "Précision",
         "pi": "spyglass",
         "lt": "Taiklumas",
-        "ne": "precisieschot",
+        "ne": "nauwkeurig",
         "sv": "presis",
         "es": "preciso",
         "nb": "presis",
@@ -1341,7 +1341,7 @@
         "fr": "Gagner les habiletés d'un allié.",
         "pi": "Gain cargo from an ally.",
         "lt": "Draugiško padaro sugebėjimų įgavimas",
-        "ne": "Verkrijg de vaardigheden van één van je andere kaarten.",
+        "ne": "Krijg de vaardigheden van een andere speler.",
         "sv": "Få en allierads förmågor",
         "es": "Obtiene las habilidades de un aliado.",
         "nb": "Få en allierts egenskaper.",
@@ -1357,7 +1357,7 @@
         "fr": "Transformeur",
         "pi": "illusionist",
         "lt": "Apkeitimas",
-        "ne": "transformatie",
+        "ne": "transformer",
         "sv": "transformator",
         "es": "transformista",
         "nb": "transformator",
@@ -1739,7 +1739,7 @@
       },
       "desc": {
         "en": "Cards that do not attack gain 1 point of health.",
-        "ne": "Kaarten die niet aanvallen krijgen 1 leven erbij",
+        "ne": "Kaarten die niet aanvallen verdienen levens punt.",
         "lt": "Nepuolanti korta, gauna 1 gyvybės tašką.",
         "hu": "Cards that do not attack gain 1 point of health.",
         "nb": "Kort som ikke angriper får 1 helsepoeng."
@@ -1749,7 +1749,7 @@
     "blod": {
       "name": {
         "en": "Blood Feud",
-        "ne": "Bloedvete",
+        "ne": "Bloed vijandschap",
         "lt": "Kraujo liejimas",
         "hu": "Vérbosszú",
         "nb": "Blodfeide"
@@ -1773,7 +1773,7 @@
       },
       "desc": {
         "en": "Players gain an extra 2 pride per turn.",
-        "ne": "Spelers verdienen 2 extra trots per beurt.",
+        "ne": "Spelers verdienen 2 extra trots punten per beurt.",
         "lt": "Žaidėjas gauna 2 vertės taškus per ėjimą.",
         "hu": "Players gain an extra 2 pride per turn.",
         "nb": "Spillere får to mer stolthet per runde."
@@ -1783,14 +1783,14 @@
     "comm": {
       "name": {
         "en": "Communism",
-        "ne": "Communisme",
+        "ne": "Communist",
         "lt": "Komunizmas",
         "hu": "Kommunizmus",
         "nb": "Kommunisme"
       },
       "desc": {
         "en": "Every action has a 50% chance to fail.",
-        "ne": "Iedere actie heeft een kans van 50% om te falen.",
+        "ne": "Elke actie heeft 50% kans om te valen.",
         "lt": "Kiekvienas veiksmas turi 50% galimybę susimauti.",
         "hu": "Every action has a 50% chance to fail.",
         "nb": "Hvert gjøremål har en 50% sjangse for å mislykkes."
@@ -1807,7 +1807,7 @@
       },
       "desc": {
         "en": "No new cards can be played.",
-        "ne": "Er kunnen geen nieuwe kaarten meer in het spel worden gebracht.",
+        "ne": "Er kan niet met nieuwe kaarten worden gespeeld",
         "lt": "Negalima į kovos lauką dėti naujų kortų.",
         "hu": "No new cards can be played.",
         "nb": "Ingen nye kort kan spilles."
@@ -1841,7 +1841,7 @@
       },
       "desc": {
         "en": "Cards stay alive until their health reaches -10.",
-        "ne": "Kaarten blijven in leven tot ze -10 levens hebben.",
+        "ne": "Kaarten blijven levend todat hun levens -10 halen.",
         "lt": "Visos kortos išlieka gyvos iki kol jų gyvybių taškai pasiekia -10.",
         "hu": "Cards stay alive until their health reaches -10.",
         "nb": "Kort forblir i live til helsepoengene deres når -10."
@@ -1858,7 +1858,7 @@
       },
       "desc": {
         "en": "Cards that would die become zombies instead.",
-        "ne": "Kaarten die dood zouden gaan, worden in plaats daarvan zombies.",
+        "ne": "Kaarten die dood zouden gaan, worden zombies.",
         "lt": "Kortos nemiršta, bet tampa zombiais.",
         "hu": "Cards that would die become zombies instead.",
         "nb": "Kort som ville dødd blir til zombier i stedet."
@@ -1868,7 +1868,7 @@
     "arma": {
       "name": {
         "en": "Armageddon",
-        "ne": "Einde der tijden",
+        "ne": "Armageddon",
         "lt": "Armagėdonas",
         "hu": "Armageddon",
         "nb": "Armageddon"
@@ -1886,19 +1886,23 @@
 
   "analyzer": {
     "pride": {
-      "en": "pride"
+      "en": "pride",
+      "lt": "vertė"
     },
 
     "cardCount": {
-      "en": "cards"
+      "en": "cards",
+      "lt": "kortų kiekis"
     },
 
     "attack": {
-      "en": "attack"
+      "en": "attack",
+      "lt": "Puolimo taškai"
     },
 
     "health": {
-      "en": "health"
+      "en": "health",
+      "lt": "Gyvibių taškai"
     }
   }
 }
