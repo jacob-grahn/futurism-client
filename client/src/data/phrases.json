@@ -1851,16 +1851,20 @@
 
 	"analyzer": {
 		"pride": {
-			"en": "pride"
+			"en": "pride",
+			"lt": "vertė"
 		},
 		"cardCount": {
-			"en": "cards"
+			"en": "cards",
+			"lt": "kortų kiekis"
 		},
 		"attack": {
-			"en": "attack"
+			"en": "attack",
+			"lt": "Puolimo taškai"
 		},
 		"health": {
-			"en": "health"
+			"en": "health",
+			"lt": "Gyvibių taškai"
 		}
 	}
 }
