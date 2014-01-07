@@ -351,7 +351,7 @@ module.exports = function (grunt) {
 				}
 			},
 			jasmineWatch: {
-				command: 'jasmine-node server/spec --autotest --watch server/*.js server/fns server/middleware server/models server/multi server/routes',
+				command: 'jasmine-node server/spec --autotest --watch server/*.js server/fns server/middleware server/models server/multi server/routes shared',
 				options: {
 					stdout: true
 				}

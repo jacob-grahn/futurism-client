@@ -18,12 +18,12 @@
 
 			<div class="form-group">
 				<h1>{{lang.deckBuilder.cards}}</h1>
-				<span>{{lang.deckBuilder.deckPride}}: {{deckFns.calcPride(deck)}}</span><br>
 				<ul class="card-list clearfix">
 					<li class="card-holder" ng-repeat="card in deck.cards">
 						<card-display card="card" ng-click="removeCard(card)" size="small"></card-display>
 					</li>
 				</ul>
+				<deck-analyzer deck="deck"></deck-analyzer>
 			</div>
 
 		</form>

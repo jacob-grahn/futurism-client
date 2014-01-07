@@ -1846,5 +1846,21 @@
         "hu": "All cards loose 1 health per turn."
       }
     }
-  }
+  },
+
+
+	"analyzer": {
+		"pride": {
+			"en": "pride"
+		},
+		"cardCount": {
+			"en": "cards"
+		},
+		"attack": {
+			"en": "attack"
+		},
+		"health": {
+			"en": "health"
+		}
+	}
 }
