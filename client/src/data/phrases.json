@@ -255,6 +255,7 @@
       "lt": "Užbaigti ėjimą",
       "hu": "Fordulat vége",
       "nb": "Avslutt runden"
+      "pi": "Hit the bunk"
     },
 
     "pride": {
@@ -264,6 +265,7 @@
       "lt": "Vertė",
       "hu": "Büszkeség",
       "nb": "Stolthet"
+      "pi": "Pride"
     },
 
     "close": {
@@ -273,6 +275,7 @@
       "lt": "uždaryti",
       "hu": "bezár",
       "nb": "lukk"
+      "pi": "Seal"
     },
 
     "futures": {
@@ -282,6 +285,7 @@
       "lt": "Ateities taškai",
       "hu": "Jövendők",
       "nb": "Fremtider"
+      "pi": "Days after tomorrow"
     },
 
     "showFutures": {
@@ -291,6 +295,7 @@
       "lt": "Rodyti ateities sugebėjimus",
       "hu": "Jövendők Mutatása",
       "nb": "Vis fremtider"
+      "pi": "Scry Days after Tomorrow"
     },
 
     "showHand": {
@@ -300,6 +305,7 @@
       "lt": "Kortos rankoje",
       "hu": "Kezelő Mutatása",
       "nb": "Vis hånda"
+      "pi": "Show hand"
     },
 
     "forfeit": {
@@ -309,6 +315,7 @@
       "lt": "Pasitraukti",
       "hu": "Felmondás",
       "nb": "Forlat kampen"
+      "pi": "Abandon ship"
     }
   },
 
@@ -987,6 +994,7 @@
         "lt": "Mitingas",
         "hu": "rally",
         "nb": "sammenkomst"
+        "pi": "Pirate's cry"
       },
       "desc": {
         "en": "Produce pride, which can be use to play more cards.",
@@ -994,6 +1002,7 @@
         "lt": "Vertės generavimasm, kuri leidžia naudoti daugiau kortų.",
         "hu": "Produce pride, which can be use to play more cards.",
         "nb": "Produserer stolthet, som kan bli brukt for å spille fler kort."
+        "pi": "Boosts yar pirate's pride, which lets mor' pirates arrive in the battle."
       }
     },
 
@@ -1004,12 +1013,14 @@
         "lt": "Ataka",
         "hu": "támadás",
         "nb": "angrep"
+        "pi": "attack"
       },
       "desc": {
         "en": "Trade blows with an enemy card.",
         "ne": "Ruil tegenslag met een vijands zijn kaart.",
         "lt": "Apsimaino kumtšelėjimais su priešininko kortą.",
         "hu": "Trade blows with an enemy card."
+        "pi": "Swap cannonballs with an enemy ship."
       }
     },
 
@@ -1020,6 +1031,7 @@
         "lt": "Judėmimas",
         "hu": "mozgás",
         "nb": "flytt"
+        "pi": "sail"
       },
       "desc": {
         "en": "Reposition this card.",
@@ -1027,6 +1039,7 @@
         "lt": "Kortos repozicionavimas.",
         "hu": "Reposition this card.",
         "nb": "Flytt dette kortet"
+        "pi": "Move your ship"
       }
     },
 
@@ -1736,6 +1749,7 @@
         "lt": "Romantika",
         "hu": "Ingyen Szeretet",
         "nb": "Fri kjærlighet"
+        "pi": "Party"
       },
       "desc": {
         "en": "Cards that do not attack gain 1 point of health.",
@@ -1743,6 +1757,7 @@
         "lt": "Nepuolanti korta, gauna 1 gyvybės tašką.",
         "hu": "Cards that do not attack gain 1 point of health.",
         "nb": "Kort som ikke angriper får 1 helsepoeng."
+        "pi": "Ships that don't fight drink 1 rum."
       }
     },
 
@@ -1753,6 +1768,7 @@
         "lt": "Kraujo liejimas",
         "hu": "Vérbosszú",
         "nb": "Blodfeide"
+        "pi": "Rage"
       },
       "desc": {
         "en": "All cards must attack.",
@@ -1760,6 +1776,7 @@
         "lt": "Visos kortos privalo pulti.",
         "hu": "All cards must attack.",
         "nb": "Alle kort må angripe."
+        "pi": "All ships must attack."
       }
     },
 
@@ -1770,6 +1787,7 @@
         "lt": "Renesansas",
         "hu": "Reneszánsz",
         "nb": "Rennesanse"
+        "pi": "Golden era"
       },
       "desc": {
         "en": "Players gain an extra 2 pride per turn.",
@@ -1777,6 +1795,7 @@
         "lt": "Žaidėjas gauna 2 vertės taškus per ėjimą.",
         "hu": "Players gain an extra 2 pride per turn.",
         "nb": "Spillere får to mer stolthet per runde."
+        "pi": "Captains gain an extra 2 pride per turn"
       }
     },
 
@@ -1787,6 +1806,7 @@
         "lt": "Komunizmas",
         "hu": "Kommunizmus",
         "nb": "Kommunisme"
+        "pi": "Commies"
       },
       "desc": {
         "en": "Every action has a 50% chance to fail.",
@@ -1794,6 +1814,7 @@
         "lt": "Kiekvienas veiksmas turi 50% galimybę susimauti.",
         "hu": "Every action has a 50% chance to fail.",
         "nb": "Hvert gjøremål har en 50% sjangse for å mislykkes."
+        "pi": "All plots be as likely to succeed as heads on a coin."
       }
     },
 
@@ -1804,6 +1825,7 @@
         "lt": "Cenzas",
         "hu": "Thunderdome",
         "nb": "Tordenskuppel"
+        "pi": "Thunderstorm"
       },
       "desc": {
         "en": "No new cards can be played.",
@@ -1811,6 +1833,7 @@
         "lt": "Negalima į kovos lauką dėti naujų kortų.",
         "hu": "No new cards can be played.",
         "nb": "Ingen nye kort kan spilles."
+        "pi": "No new cards can enter the battlefield."
       }
     },
 
@@ -1821,6 +1844,7 @@
         "lt": "Anachija",
         "hu": "Anarchia",
         "nb": "Anarki"
+        "pi": "Anchorarchy"
       },
       "desc": {
         "en": "All cards gain the move ability.",
@@ -1828,6 +1852,7 @@
         "lt": "Visos kortos gauna judėjimo sugebėjimą.",
         "hu": "All cards gain the move ability.",
         "nb": "Alle kort får flytteegenskapen."
+        "pi": "All ships take up thar anchors and can sail about."
       }
     },
 
@@ -1838,6 +1863,7 @@
         "lt": "Stebuklas",
         "hu": "Csoda",
         "nb": "Mirakel"
+        "pi": "Davy Jone's favor"
       },
       "desc": {
         "en": "Cards stay alive until their health reaches -10.",
@@ -1845,6 +1871,7 @@
         "lt": "Visos kortos išlieka gyvos iki kol jų gyvybių taškai pasiekia -10.",
         "hu": "Cards stay alive until their health reaches -10.",
         "nb": "Kort forblir i live til helsepoengene deres når -10."
+        "pi": "Ships don't sink until they have -10 rum."
       }
     },
 
@@ -1855,6 +1882,7 @@
         "lt": "Z Virusas",
         "hu": "Z Virus",
         "nb": "Z-virus"
+        "pi": "Davy Jones's Curse"
       },
       "desc": {
         "en": "Cards that would die become zombies instead.",
@@ -1862,6 +1890,7 @@
         "lt": "Kortos nemiršta, bet tampa zombiais.",
         "hu": "Cards that would die become zombies instead.",
         "nb": "Kort som ville dødd blir til zombier i stedet."
+        "pi": "All ships that sink becomes servants of Davy Jones."
       }
     },
 
@@ -1872,13 +1901,15 @@
         "lt": "Armagėdonas",
         "hu": "Armageddon",
         "nb": "Armageddon"
+        "pi": "Armageddon"
       },
       "desc": {
-        "en": "All cards loose 1 health per turn.",
+        "en": "All cards lose 1 health per turn.",
         "ne": "Alle kaarten verliezen 1 leven elke beurt.",
         "lt": "Visos kortos, kiekvieną ėjimą praranda po 1 gyvybės tašką.",
         "hu": "All cards loose 1 health per turn.",
         "nb": "Alle kort mister 1 helsepoeng i runden."
+        "pi": "All ships are on fire and lose 1 rum each turn."
       }
     }
   },
@@ -1888,21 +1919,25 @@
     "pride": {
       "en": "pride",
       "lt": "vertė"
+      "pi": "pride"
     },
 
     "cardCount": {
       "en": "cards",
       "lt": "kortų kiekis"
+      "pi": "ships"
     },
 
     "attack": {
       "en": "attack",
       "lt": "Puolimo taškai"
+      "pi": "cannons"
     },
 
     "health": {
       "en": "health",
       "lt": "Gyvibių taškai"
+      "pi": "rum"
     }
   }
 }
