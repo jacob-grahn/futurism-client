@@ -14,7 +14,7 @@ describe('records - get', function() {
 			_id: '123',
 			time: new Date(1000),
 			turns: 7,
-			players: [
+			users: [
 				{_id: 1, name: 'Sally', deck: []},
 				{_id: 2, name: 'Biff', deck: []}
 			],
@@ -38,14 +38,14 @@ describe('records - get', function() {
 
 	it('should return a specific summary', function(done) {
 		var request = {
-			body: {
+			params: {
 				gameId: '123'
 			}
 		};
 		summariesGet(request, {apiOut: function(err, result) {
 			expect(err).toBeFalsy();
 			expect(result._id).toBe('123');
-			expect(result.players[0].name).toBe('Sally');
+			expect(result.users[0].name).toBe('Sally');
 			expect(result.actions).toBeFalsy();
 			done();
 		}});

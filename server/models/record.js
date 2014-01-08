@@ -18,7 +18,7 @@
 		turns: {
 			type: Number
 		},
-		players: {
+		users: {
 			type: Array
 		},
 		actions: {

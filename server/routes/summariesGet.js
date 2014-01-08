@@ -11,7 +11,7 @@
 	 */
 	module.exports = function(req, res) {
 
-		RecordGoose.findById(req.body.gameId, {_id:1, time:1, turns:1, players:1}, res.apiOut);
+		RecordGoose.findById(req.params.gameId, {_id:1, time:1, turns:1, users:1}, res.apiOut);
 
 	};
 
