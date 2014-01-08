@@ -11,11 +11,6 @@ describe('service: lang', function() {
 		//load the module
 		module('futurism');
 
-		//mock session so we don't get an unexpected and unrelated http request
-		angular.mock.module("futurism", function ($provide) {
-			$provide.value('session', window.sessionMock);
-		});
-
 		//inject
 		inject(function($httpBackend, _lang_) {
 			http = $httpBackend;
@@ -23,8 +18,8 @@ describe('service: lang', function() {
 		});
 
 		//create dummy data
-		http.expectGET('data/phrases.json').
-			respond({
+		http.expectGET('data/phrases.json')
+			.respond({
 				"title": {
 					"play": {
 						"en": "play",
@@ -54,6 +49,9 @@ describe('service: lang', function() {
 					}
 				}
 			});
+
+		//
+		lang.init();
 
 		//complete the http request
 		http.flush();

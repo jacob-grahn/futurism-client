@@ -57,14 +57,16 @@
 		/**
 		 * Load in the phrases.json file
 		 */
-		$http.get('data/phrases.json')
-			.success(function(phraseData) {
-				lang.phrases = phraseData;
-				lang.setLang('en');
-			})
-			.error(function() {
-				errorHandler.handleError('Could not load language file.');
-			});
+		lang.init = function() {
+			$http.get('data/phrases.json')
+				.success(function(phraseData) {
+					lang.phrases = phraseData;
+					lang.setLang('en');
+				})
+				.error(function() {
+					errorHandler.handleError('Could not load language file.');
+				});
+		};
 
 
 		return lang;

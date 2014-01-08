@@ -23,10 +23,4 @@ angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', '
 			otherwise({redirectTo: '/title'});
 
 		$locationProvider.html5Mode(true).hashPrefix('#');
-	})
-
-	.run(function(autoLogin, session, errorHandler, $rootScope, lang) {
-		autoLogin.activate();
-		session.renew(errorHandler.callback);
-		$rootScope.lang = lang;
 	});

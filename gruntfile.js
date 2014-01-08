@@ -304,6 +304,10 @@ module.exports = function (grunt) {
 			unit: {
 				configFile: 'karma.conf.js',
 				singleRun: true
+			},
+			watch: {
+				configFile: 'karma.conf.js',
+				autoWatch: true
 			}
 		},
 
@@ -390,6 +394,11 @@ module.exports = function (grunt) {
 		'autoprefixer',
 		'shell:jasmine',
 		'karma'
+	]);
+
+
+	grunt.registerTask('watch-client-tests', [
+		'karma:watch'
 	]);
 
 
