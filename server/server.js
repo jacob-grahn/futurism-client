@@ -53,7 +53,8 @@
 	expr.delete('/api/tokens', require('./routes/tokensDelete'));
 	expr.put('/api/tokens', require('./routes/tokensPut'));
 	expr.get('/api/tokens', require('./routes/tokensGet'));
-	expr.get('/api/records', require('./routes/recordsGet'));
+	expr.get('/api/records/:gameId', require('./routes/recordsGet'));
+	expr.get('/api/summaries/:gameId', require('./routes/summariesGet'));
 	expr.get(/^(?!\/api)((?!\.).)*$/i, require('./routes/indexGet')); //--- this ridiculous regex matches any string that does not start with '/api' and does not contain a period.
 
 

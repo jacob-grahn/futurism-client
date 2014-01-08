@@ -16,6 +16,9 @@
 		if(req.query) {
 			_.extend(req.body, req.query);
 		}
+		if(req.params) {
+			_.extend(req.body, req.params);
+		}
 		return next();
 	}
 
