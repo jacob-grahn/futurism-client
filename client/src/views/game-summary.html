@@ -1,15 +1,22 @@
 <div id="game-summary row">
+
 	<ul class="panel panel-default">
 		<li ng-repeat="user in summ.users" class="panel-segment">
+
 			<h1><username name="{{user.name}}" id="{{user._id}}" site="{{user.site}}" group="{{user.group}}"></username></h1>
+			<div>exp: <b>{{user.newFame}} / 78</b> <span class="text-success">(+{{user.newFame-user.oldFame}})</span></div>
+			<div>fame: <b>{{fameCalc.rankify(user.newFame)}}</b> <span class="text-success">(+{{fameCalc.rankify(user.newFame)-fameCalc.rankify(user.oldFame)}})</span></div>
+			<div>fractures: <b>{{user.newFractures}}</b> <span class="text-success">(+{{user.newFractures-user.oldFractures}})</span></div>
+
 			<h3>Deck: {{user.deck.name}}</h3>
 			<ul class="deck-list clearfix">
 				<li ng-repeat="card in user.deck.cards">
 					<card-display card="card" size="small"></card-display>
 				</li>
 			</ul>
-			<deck-analyzer deck="user.deck"></deck-analyzer>
 
+			<deck-analyzer deck="user.deck"></deck-analyzer>
 		</li>
 	</ul>
+
 </div>
