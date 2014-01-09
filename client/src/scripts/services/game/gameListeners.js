@@ -47,7 +47,7 @@ angular.module('futurism')
 		 * The game is over
 		 */
 		socket.$on('gameOver', function() {
-			$location.url('/game-summary/' + $routeParams.gameId);
+			$location.url('/summary/' + $routeParams.gameId);
 		});
 
 
