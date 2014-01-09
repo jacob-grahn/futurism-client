@@ -4,6 +4,6 @@ angular.module('futurism')
 
 		$scope.gameId = $routeParams.gameId;
 		$scope.account = account;
-		$scope.fameCalc = rankCalc;
+		$scope.rankCalc = rankCalc;
 		$scope.summ = SummaryResource.get({gameId: $scope.gameId});
 	});

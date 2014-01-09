@@ -50,6 +50,7 @@
 						return callback('you do not own this deck');
 					}
 
+					player.deck = deck;
 					player.deckPride = deck.pride;
 					player.cards = [];
 					_.each(deck.cards, function(card) {

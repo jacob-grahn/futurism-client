@@ -98,4 +98,24 @@ describe('rankCalc', function() {
 			expect(rankCalc.expNeeded({})).toBe(0);
 		});
 	});
+
+
+	describe('expRemainder', function() {
+
+		it('should return 0 if you have exactly enough exp to be on a new rank', function() {
+			expect(rankCalc.expRemainder(9)).toBe(9);
+			expect(rankCalc.expRemainder(10)).toBe(0);
+			expect(rankCalc.expRemainder(11)).toBe(1);
+		});
+
+		it('should return 0 for invalid or negative inputs', function() {
+			expect(rankCalc.expRemainder(0)).toBe(0);
+			expect(rankCalc.expRemainder(null)).toBe(0);
+			expect(rankCalc.expRemainder(undefined)).toBe(0);
+			expect(rankCalc.expRemainder(-145)).toBe(0);
+			expect(rankCalc.expRemainder(NaN)).toBe(0);
+			expect(rankCalc.expRemainder('hello!')).toBe(0);
+			expect(rankCalc.expRemainder({})).toBe(0);
+		});
+	});
 });

@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('board', function(_) {
+	.factory('board', function(_, players) {
 		'use strict';
 
 		var self = this;
@@ -10,31 +10,28 @@ angular.module('futurism')
 		/**
 		 * Fully set the board state
 		 * @param {Object} minBoard - compact board data
-		 * @param {Function} idToPlayer
 		 */
-		self.fullUpdate = function(minBoard, idToPlayer) {
+		self.fullUpdate = function(minBoard) {
 			self.minBoard = minBoard;
-			self.inflateStatus(self.minBoard, idToPlayer);
+			self.inflateStatus(self.minBoard);
 		};
 
 
 		/**
 		 * Update specific targets
 		 * @param {Object} boardDiff - changes to the board
-		 * @param {Function} idToPlayer
 		 */
-		self.partialUpdate = function(boardDiff, idToPlayer) {
+		self.partialUpdate = function(boardDiff) {
 			_.merge(self.minBoard, boardDiff);
-			self.inflateStatus(self.minBoard, idToPlayer);
+			self.inflateStatus(self.minBoard);
 		};
 
 
 		/**
 		 * Apply a compressed game status from the server
 		 * @param {Object} minBoard
-		 * @param {Function} idToPlayer
 		 */
-		self.inflateStatus = function(minBoard, idToPlayer) {
+		self.inflateStatus = function(minBoard) {
 			self.clear();
 			self.areas = {};
 
@@ -42,7 +39,7 @@ angular.module('futurism')
 				var area = {};
 				var targets = [];
 				area.playerId = Number(playerId);
-				area.player = idToPlayer(playerId);
+				area.player = players.idToPlayer(playerId);
 				area.team = area.player.team;
 				area.targets = targets;
 				self.areas[playerId] = area;

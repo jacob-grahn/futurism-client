@@ -14,11 +14,10 @@ angular.module('futurism')
 		 * @returns {number}
 		 */
 		rankCalc.expToRank = function(exp) {
-			var rank = Math.floor(Math.pow(exp/mult, om));
-			if(isNaN(rank)) {
-				rank = 0;
+			if(isNaN(exp) || exp <= 0) {
+				return 0;
 			}
-			return rank;
+			return Math.floor(Math.pow(exp/mult, om));
 		};
 
 
@@ -28,7 +27,7 @@ angular.module('futurism')
 		 * @returns {number}
 		 */
 		rankCalc.rankToExp = function(rank) {
-			if(isNaN(rank) || !rank || rank <= 0) {
+			if(isNaN(rank) || rank <= 0) {
 				return 0;
 			}
 			return Math.round(Math.pow(rank, omInv) * mult);
@@ -42,12 +41,27 @@ angular.module('futurism')
 		 */
 		rankCalc.expNeeded = function(rank) {
 			rank = Math.floor(rank);
-			if(isNaN(rank) || !rank || rank <= 0) {
+			if(isNaN(rank) || rank <= 0) {
 				return 0;
 			}
 			var minExp = rankCalc.rankToExp(rank);
 			var maxExp = rankCalc.rankToExp(rank+1);
 			return maxExp - minExp;
+		};
+
+
+		/**
+		 * Calculate how much exp is contributing to a new rank
+		 * @param {number} exp
+		 * @returns {number}
+		 */
+		rankCalc.expRemainder = function(exp) {
+			if(isNaN(exp) || exp <= 0) {
+				return 0;
+			}
+			var rank = rankCalc.expToRank(exp);
+			var baseExp = rankCalc.rankToExp(rank);
+			return exp - baseExp;
 		};
 
 		return rankCalc;

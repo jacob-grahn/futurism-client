@@ -18,6 +18,7 @@
 	var prizeCalculator = require('./prizeCalculator');
 	var TurnTicker = require('./turnTicker');
 	var victoryCondition = require('./victoryCondition');
+	var Recorder = require('./recorder');
 
 
 	/**
@@ -52,6 +53,7 @@
 		self.board = new Board(self.players, rules.columns, rules.rows);
 		self.turnTicker = new TurnTicker(self.players, rules.turnDuration);
 		self.diffTracker = new DiffTracker();
+		self.recorder = new Recorder();
 
 
 		/**
@@ -78,9 +80,9 @@
 
 				/**
 				 * at the start of every turn
-				 * @param {Number} time
+				 * @param {Number} startTime
 				 */
-				function(time) {
+				function(startTime) {
 
 					/**
 					 * refill hands
@@ -95,7 +97,7 @@
 					 * tell the clients to move to the next turn
 					 */
 					self.emit('turn', {
-						time: time,
+						startTime: startTime,
 						turnOwners: self.turnTicker.getTurnOwnerIds()
 					});
 				},
@@ -127,12 +129,31 @@
 						self.state = 'awarding';
 						self.turnTicker.stop();
 
-						prizeCalculator.run(self.players, result.team, false, function() {
+						prizeCalculator.run(self.players, result.team, false, function(err, users) {
+							if(err) {
+								self.remove();
+								return false;
+							}
+
 
 							/**
-							 * That's it, we're done
+							 * save a record of this game
 							 */
-							self.remove();
+							self.state = 'saving';
+							self.recorder.users = self.players;
+							self.recorder.save(gameId, function(err, doc) {
+								if(err) {
+									self.emit('error', err);
+									self.remove();
+									return false;
+								}
+
+								/**
+								 * That's it, we're done
+								 */
+								self.emit('gameOver', null);
+								self.remove();
+							});
 						});
 					}
 				}
@@ -186,6 +207,7 @@
 			status.turnOwners = self.turnTicker.getTurnOwnerIds();
 			status.board = self.board.compactClone();
 			status.turn = self.turnTicker.turn;
+			status.startTime = self.turnTicker.startTime;
 			status.state = self.state;
 
 			return status;

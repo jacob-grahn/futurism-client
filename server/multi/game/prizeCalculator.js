@@ -79,9 +79,9 @@
 		_.each(players, function(player) {
 			var user = lookup[player._id];
 			if(user) {
-				player.elo = player.oldElo = user.elo;
-				player.fame = player.oldFame = user.fame;
-				player.fractures = player.oldFractures = user.fractures;
+				player.elo = player.oldElo = user.oldElo = user.elo;
+				player.fame = player.oldFame = user.oldFame = user.fame;
+				player.fractures = player.oldFractures = user.oldFractures = user.fractures;
 			}
 		});
 	};
@@ -104,6 +104,7 @@
 				user.elo = player.elo;
 				user.fame = player.fame;
 				user.fractures = player.fractures;
+				user.deck = player.deck;
 			}
 		});
 	};

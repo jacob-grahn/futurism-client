@@ -1,6 +1,11 @@
 <div class="col-sm-12 panel panel-default">
 	<div class="panel-segment">
 		<h1>{{lang.errorPage.error}}</h1>
-		<p>{{errorMessage}}!</p>
+		<div class="well">
+			<div><b>{{errorMessage}}!</b></div>
+			<ul>
+				<li ng-repeat="line in stack">{{line}}</li>
+			</ul>
+		</div>
 	</div>
 </div>

@@ -15,13 +15,13 @@
 	var TurnTicker = function(players, timePerTurn) {
 		var self = this;
 		var intervalId;
-		var startTime;
 		var running = false;
 		var beginCallback;
 		var endCallback;
 
 		self.turn = 0;
 		self.turnOwners = [];
+		self.startTime = 0;
 
 
 		/**
@@ -53,7 +53,7 @@
 		 * @returns {number}
 		 */
 		self.getElapsed = function() {
-			return (+new Date()) - startTime;
+			return (+new Date()) - self.startTime;
 		};
 
 
@@ -104,11 +104,11 @@
 		 * Move a turn to the next player in line
 		 */
 		var nextTurn = function() {
-			startTime = +new Date();
+			self.startTime = +new Date();
 			self.populateTurn();
 			intervalId = setTimeout(self.endTurn, timePerTurn);
 			if(beginCallback) {
-				beginCallback(startTime);
+				beginCallback(self.startTime);
 			}
 		};
 

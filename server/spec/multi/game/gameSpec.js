@@ -10,6 +10,7 @@ describe('game', function() {
 	var DeckGoose = require('../../../models/deck');
 	var CardGoose = require('../../../models/card');
 	var UserGoose = require('../../../models/user');
+	var broadcast = require('../../../multi/broadcast');
 
 
 	beforeEach(function(done) {
@@ -199,6 +200,7 @@ describe('game', function() {
 
 				_.delay(function() {
 					expect(game.getStatus().state).toBe('removed');
+					expect(broadcast.lastMessage.event).toBe('gameOver');
 
 					UserGoose.findById(1, function(err, doc) {
 						expect(err).toBe(null);

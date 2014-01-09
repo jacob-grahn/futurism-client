@@ -1,17 +1,17 @@
-<div id="game" class="clearfix" auto-scroll watch="state" watchzzz="{{state.name}}" find="scroll-here" target="board-area">
+<div id="game" class="clearfix" auto-scroll watch="state" find="scroll-here" target="board-area">
 	<ul class="board col-sm-7 inverse">
-		<li class="row" ng-repeat="area in board.areas | teamSort:me.team">
+		<li class="row" ng-repeat="area in board.areas | teamSort:players.me.team">
 			<div class="board-area clearfix">
 
 				<div class="area-header">
-					<h1 ng-show="isTheirTurn(area.playerId)" class="active-indicator">*</h1>
-					<h1 class="area-title">{{idToPlayer(area.playerId).name}}</h1>
-					<span class="area-desc">{{lang.game.pride}}: {{idToPlayer(area.playerId).pride}}, {{lang.game.futures}}: {{idToPlayer(area.playerId).futures.length}}</span>
+					<h1 ng-show="turn.isTheirTurn(area.playerId)" class="active-indicator">*</h1>
+					<h1 class="area-title">{{players.idToPlayer(area.playerId).name}}</h1>
+					<span class="area-desc">{{lang.game.pride}}: {{players.idToPlayer(area.playerId).pride}}, {{lang.game.futures}}: {{players.idToPlayer(area.playerId).futures.length}}</span>
 				</div>
 
 				<ul ng-repeat="column in area.targets" class="player-field-column">
-					<li ng-repeat="target in column | inverseFoes:me.team" ng-click="selectTarget(target)" ng-class="{target: true, 'target-valid': isValidTarget(target), 'scroll-here': isValidTarget(target)}">
-						<card-magnify ng-if="target.card" card="target.card" action-fn="selectAction(abilityId, cid)" size="small" magnify="medium" ng-class="{'card-disabled': target.card.moves <= 0}"></card-magnify>
+					<li ng-repeat="target in column | inverseFoes:players.me.team" ng-click="targeter.selectTarget(target)" ng-class="{target: true, 'target-valid': targeter.isValidTarget(target), 'scroll-here': targeter.isValidTarget(target)}">
+						<card-magnify ng-if="target.card" card="target.card" action-fn="targeter.selectAction(abilityId, cid)" size="small" magnify="medium" ng-class="{'card-disabled': target.card.moves <= 0}"></card-magnify>
 					</li>
 				</ul>
 
@@ -26,13 +26,13 @@
 		</div>
 		<ul class="game-buttons panel-segment clearfix">
 			<li>
-				<button class='btn btn-default' ng-click="showHand()" ng-disabled="me.hand.length === 0">{{lang.game.showHand}}</button>
+				<button class='btn btn-default' ng-click="hand.toggle()" ng-disabled="players.me.hand.length === 0">{{lang.game.showHand}}</button>
 			</li>
 			<li>
 				<button class='btn btn-default' ng-click="showFutures()" disabled>{{lang.game.showFutures}}</button>
 			</li>
 			<li>
-				<button class='btn btn-default' ng-click="endTurn()" ng-disabled="!isMyTurn()">{{lang.game.endTurn}}</button>
+				<button class='btn btn-default' ng-click="endTurn()" ng-disabled="!turn.isMyTurn()">{{lang.game.endTurn}}</button>
 			</li>
 			<li>
 				<button class='btn btn-default' ng-click="forfeit()">{{lang.game.forfeit}}</button>
@@ -41,13 +41,13 @@
 		<chat-display class="panel-segment" room="chat-{{gameId}}"></chat-display>
 	</div>
 
-	<div ng-show="state.showHand && me.hand.length > 0" id="hand">
+	<div ng-show="hand.show && hand.cards.length > 0" id="hand">
 		<div id="hand-content">
-			<h1>{{lang.game.pride}}: {{me.pride}}</h1>
-			<a class="close-x" ng-click="closeHand()">{{lang.game.close}} [x]</a>
+			<h1>{{lang.game.pride}}: {{players.me.pride}}</h1>
+			<a class="close-x" ng-click="hand.close()">{{lang.game.close}} [x]</a>
 			<ul class="card-list row">
-				<li ng-repeat="card in me.hand">
-					<card-display card="card" size="medium" ng-click="pickCardFromHand(card)" ng-class="{'card-disabled': card.pride > me.pride}"></card-display>
+				<li ng-repeat="card in hand.cards">
+					<card-display card="card" size="medium" ng-click="pickCardFromHand(card)" ng-class="{'card-disabled': card.pride > players.me.pride}"></card-display>
 				</li>
 			</ul>
 		</div>
