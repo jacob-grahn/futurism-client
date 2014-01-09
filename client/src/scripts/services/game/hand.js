@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('hand', function(socket, $routeParams) {
+	.factory('hand', function(socket, $routeParams, state) {
 		'use strict';
 
 		var hand = {
@@ -7,9 +7,11 @@ angular.module('futurism')
 			show: false,
 
 			toggle: function() {
-				hand.show = !hand.show;
 				if(hand.show) {
-					socket.authEmit('hand', {gameId: $routeParams.gameId});
+					hand.close();
+				}
+				else {
+					hand.open();
 				}
 			},
 
@@ -20,6 +22,7 @@ angular.module('futurism')
 			open: function() {
 				hand.show = true;
 				socket.authEmit('hand', {gameId: $routeParams.gameId});
+				state.toDefault();
 			}
 		};
 

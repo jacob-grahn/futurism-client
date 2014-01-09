@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('state', function() {
+	.factory('state', function(turn) {
 		'use strict';
 
 		var state = {
@@ -16,6 +16,7 @@ angular.module('futurism')
 			 * @param {*} [data]
 			 */
 			set: function(name, data) {
+				console.log('state::set', name, data);
 				state.name = name;
 				state.data = data;
 			},
@@ -24,8 +25,14 @@ angular.module('futurism')
 			/**
 			 * Reset to a default
 			 */
-			clear: function() {
-
+			toDefault: function() {
+				console.log('state::toDefault');
+				if(turn.isMyTurn()) {
+					state.set(state.THINKING);
+				}
+				else {
+					state.set(state.WAITING);
+				}
 			}
 		};
 

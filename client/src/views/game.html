@@ -32,7 +32,7 @@
 				<button class='btn btn-default' ng-click="showFutures()" disabled>{{lang.game.showFutures}}</button>
 			</li>
 			<li>
-				<button class='btn btn-default' ng-click="endTurn()" ng-disabled="!turn.isMyTurn()">{{lang.game.endTurn}}</button>
+				<button class='btn btn-default' ng-click="endTurn(); hand.close();" ng-disabled="!turn.isMyTurn()">{{lang.game.endTurn}}</button>
 			</li>
 			<li>
 				<button class='btn btn-default' ng-click="forfeit()">{{lang.game.forfeit}}</button>

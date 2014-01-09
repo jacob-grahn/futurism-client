@@ -35,7 +35,7 @@ angular.module('futurism')
 					return false;
 				}
 				if(!targeter.isValidTarget(target)) {
-					state.set(state.THINKING);
+					state.toDefault();
 					return false;
 				}
 				state.data.targets.push(target);
@@ -53,7 +53,7 @@ angular.module('futurism')
 						actionId: state.data.actionId,
 						targets: state.data.targets
 					});
-					state.set(state.THINKING);
+					state.toDefault();
 				}
 			},
 
