@@ -21,6 +21,8 @@ angular.module('futurism')
 		 */
 		socket.$on('gameUpdate', function(data) {
 			_.merge(players.list, data.players);
+			players.me = players.findMe();
+
 			board.partialUpdate(data.board);
 		});
 

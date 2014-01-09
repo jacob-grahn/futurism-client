@@ -18,6 +18,14 @@ angular.module('futurism')
 			set: function(name, data) {
 				state.name = name;
 				state.data = data;
+			},
+
+
+			/**
+			 * Reset to a default
+			 */
+			clear: function() {
+
 			}
 		};
 

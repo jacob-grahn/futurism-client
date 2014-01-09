@@ -47,7 +47,7 @@ angular.module('futurism')
 					playerId: players.me._id
 				}];
 			}
-			
+
 			hand.close();
 
 			return true;
@@ -60,6 +60,7 @@ angular.module('futurism')
 		$scope.$on('$destroy', function() {
 			gameListeners.unsubscribe($scope.gameId);
 			board.clear();
+			hand.show = false;
 		});
 
 	});
