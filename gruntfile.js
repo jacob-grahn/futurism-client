@@ -316,7 +316,6 @@ module.exports = function (grunt) {
 		develop: {
 			server: {
 				file: '<%= yeoman.server %>/test-server.js',
-				//env: {NODE_ENV: 'production'},
 				nodeArgs: ['--debug']
 			}
 		},
