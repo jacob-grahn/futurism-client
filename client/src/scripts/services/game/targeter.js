@@ -22,7 +22,8 @@ angular.module('futurism')
 					restrict: action.restrict,
 					targets: [target]
 				});
-				return targeter.checkTargetChain();
+				targeter.checkTargetChain();
+				return false;
 			},
 
 
@@ -35,7 +36,9 @@ angular.module('futurism')
 					return false;
 				}
 				if(!targeter.isValidTarget(target)) {
-					state.toDefault();
+					if(target !== state.data.targets[0]) {
+						state.toDefault();
+					}
 					return false;
 				}
 				state.data.targets.push(target);
