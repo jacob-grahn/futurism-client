@@ -37,7 +37,9 @@
 		ga('send', 'pageview');
 	</script>
 
-	<link rel="stylesheet" href="styles/main.css"/>
+	<!-- build:css(.tmp) styles/main.css -->
+	<link rel="stylesheet" href="styles/main.css">
+	<!-- endbuild -->
 
 </head>
 
@@ -57,13 +59,99 @@
 	<script src="bower_components/angular/angular.js"></script>
 	<script src="bower_components/socket.io-client/dist/socket.io.js"></script>
 	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-	<script src="bower_components/bootstrap-sass/js/collapse.js"></script>
 
-	<script src="scripts/modules.js"></script>
+	<!-- build:js scripts/modules.js -->
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="bower_components/angular-route/angular-route.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<!-- endbuild -->
 
-	<script src="scripts/futurism-shared.js"></script>
+	<!-- build:js(shared) scripts/futurism-shared.js -->
+	<script src="filters.js"></script>
+	<script src="actions.js"></script>
+	<script src="cardFns.js"></script>
+	<script src="deckFns.js"></script>
+	<script src="factions.js"></script>
+	<script src="futures.js"></script>
+	<script src="groups.js"></script>
+	<!-- endbuild -->
 
+	<!-- build:js scripts/futurism.js -->
 	<script src="scripts/futurism.js"></script>
+	<script src="scripts/futurism-run.js"></script>
+
+	<script src="scripts/controllers/CardBuilder.js"></script>
+	<script src="scripts/controllers/CardSelector.js"></script>
+	<script src="scripts/controllers/Credits.js"></script>
+	<script src="scripts/controllers/DeckBuilder.js"></script>
+	<script src="scripts/controllers/DeckSelector.js"></script>
+	<script src="scripts/controllers/Error.js"></script>
+	<script src="scripts/controllers/Futures.js"></script>
+	<script src="scripts/controllers/Game.js"></script>
+	<script src="scripts/controllers/GameSummary.js"></script>
+	<script src="scripts/controllers/Loadup.js"></script>
+	<script src="scripts/controllers/Guild.js"></script>
+	<script src="scripts/controllers/Instructions.js"></script>
+	<script src="scripts/controllers/Language.js"></script>
+	<script src="scripts/controllers/Lobby.js"></script>
+	<script src="scripts/controllers/NavBar.js"></script>
+	<script src="scripts/controllers/Title.js"></script>
+
+	<script src="scripts/directives/autoScroll.js"></script>
+	<script src="scripts/directives/busyButton.js"></script>
+	<script src="scripts/directives/cardDisplay.js"></script>
+	<script src="scripts/directives/cardMagnify.js"></script>
+	<script src="scripts/directives/chatDisplay.js"></script>
+	<script src="scripts/directives/deckAnalyzer.js"></script>
+	<script src="scripts/directives/deckDisplay.js"></script>
+	<script src="scripts/directives/imageupload.js"></script>
+	<script src="scripts/directives/matchScreenHeight.js"></script>
+	<script src="scripts/directives/username.js"></script>
+
+	<script src="scripts/filters/inverseFoes.js"></script>
+	<script src="scripts/filters/teamSort.js"></script>
+	<script src="scripts/filters/truthyFields.js"></script>
+
+	<script src="scripts/services/game/board.js"></script>
+	<script src="scripts/services/game/gameListeners.js"></script>
+	<script src="scripts/services/game/hand.js"></script>
+	<script src="scripts/services/game/players.js"></script>
+	<script src="scripts/services/game/state.js"></script>
+	<script src="scripts/services/game/targeter.js"></script>
+	<script src="scripts/services/game/turn.js"></script>
+
+	<script src="scripts/services/resources/CardResource.js"></script>
+	<script src="scripts/services/resources/DeckResource.js"></script>
+	<script src="scripts/services/resources/RecordResource.js"></script>
+	<script src="scripts/services/resources/SummaryResource.js"></script>
+	<script src="scripts/services/resources/TokenResource.js"></script>
+
+	<script src="scripts/services/window/jquery.js"></script>
+	<script src="scripts/services/window/lodash.js"></script>
+	<script src="scripts/services/window/socket.io.client.js"></script>
+	<script src="scripts/services/window/window.js"></script>
+
+	<script src="scripts/services/session/account.js"></script>
+	<script src="scripts/services/session/autoLogin.js"></script>
+	<script src="scripts/services/session/http-auth-interceptor.js"></script>
+	<script src="scripts/services/session/session.js"></script>
+	<script src="scripts/services/session/tokenInterceptor.js"></script>
+
+	<script src="scripts/services/cardInProgress.js"></script>
+	<script src="scripts/services/Chat.js"></script>
+	<script src="scripts/services/dataUrlToBlob.js"></script>
+	<script src="scripts/services/deckInProgress.js"></script>
+	<script src="scripts/services/errorHandler.js"></script>
+	<script src="scripts/services/lang.js"></script>
+	<script src="scripts/services/matchups.js"></script>
+	<script src="scripts/services/maths.js"></script>
+	<script src="scripts/services/messager.js"></script>
+	<script src="scripts/services/rankCalc.js"></script>
+	<script src="scripts/services/shared.js"></script>
+	<script src="scripts/services/socket.js"></script>
+	<script src="scripts/services/staticContentUrl.js"></script>
+	<script src="scripts/services/websites.js"></script>
+	<!-- endbuild -->
 
 
 </body>
