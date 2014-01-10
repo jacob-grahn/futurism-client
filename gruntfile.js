@@ -173,7 +173,7 @@ module.exports = function (grunt) {
 
 		// Performs rewrites based on rev and the useminPrepare configuration
 		usemin: {
-			html: ['<%= yeoman.dist %>/{,*/}*.html'],
+			html: ['<%= yeoman.app %>/index.html'],
 			css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
 			options: {
 				assetsDirs: ['<%= yeoman.dist %>']
@@ -358,7 +358,20 @@ module.exports = function (grunt) {
 				options: {
 					stdout: true
 				}
+			},
+			deploy: {
+				command: 'modulus deploy --project-name futurism-web-staging',
+				options: {
+					stdout: true
+				}
+			},
+			deployLive: {
+				command: 'modulus deploy --project-name futurism-web',
+				options: {
+					stdout: true
+				}
 			}
+
 		}
 
 	});
@@ -411,6 +424,16 @@ module.exports = function (grunt) {
 	]);
 
 
+	grunt.registerTask('deploy', [
+		'shell:deploy'
+	]);
+
+
+	grunt.registerTask('deploy-live', [
+		'shell:deployLive'
+	]);
+
+
 	grunt.registerTask('build', [
 		'clean:dist',
 		'useminPrepare',
@@ -423,7 +446,8 @@ module.exports = function (grunt) {
 		'cssmin',
 		'uglify',
 		//'rev',
-		'usemin'
+		'usemin',
+		'shell:deploy'
 	]);
 
 
