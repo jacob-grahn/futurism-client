@@ -6,6 +6,9 @@ angular.module('futurism')
 		var targeter = {
 
 
+			onCooldown: false,
+
+
 			/**
 			 * Choose an action to use
 			 * @param {String} actionId
@@ -22,6 +25,7 @@ angular.module('futurism')
 					restrict: action.restrict,
 					targets: [target]
 				});
+				targeter.cooldown();
 				return targeter.checkTargetChain();
 			},
 
@@ -31,13 +35,14 @@ angular.module('futurism')
 			 * @param {Object} target
 			 */
 			selectTarget: function(target) {
+				if(targeter.onCooldown) {
+					return false;
+				}
 				if(state.name !== state.TARGETING) {
 					return false;
 				}
 				if(!targeter.isValidTarget(target)) {
-					if(target !== state.data.targets[0]) {
-						state.toDefault();
-					}
+					state.toDefault();
 					return false;
 				}
 				state.data.targets.push(target);
@@ -73,6 +78,18 @@ angular.module('futurism')
 					targets = filter(targets, players.me);
 				});
 				return targets.length !== 0;
+			},
+
+
+			/**
+			 * prevent targeting immediately after an action
+			 * handy for preventing double clicks from messing things up
+			 */
+			cooldown: function() {
+				targeter.onCooldown = true;
+				_.delay(function() {
+					targeter.onCooldown = false;
+				}, 500);
 			}
 		};
 
