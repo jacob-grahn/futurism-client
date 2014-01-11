@@ -1,7 +1,7 @@
 <div id="game-summary row">
 
 	<ul class="panel panel-default">
-		<li ng-repeat="user in summ.users" class="panel-segment">
+		<li ng-repeat="user in summ.users | meFirst" class="panel-segment">
 
 			<h1><username name="{{user.name}}" id="{{user._id}}" site="{{user.site}}" group="{{user.group}}"></username></h1>
 			<div>exp:
