@@ -254,6 +254,7 @@
       "ne": "Eindig Beurt",
       "lt": "Užbaigti ėjimą",
       "hu": "Fordulat vége",
+      "it": "Termina turno",
       "nb": "Avslutt runden"
     },
 
@@ -263,6 +264,7 @@
       "ne": "Trots",
       "lt": "Vertė",
       "hu": "Büszkeség",
+      "it": "Valore",
       "nb": "Stolthet"
     },
 
@@ -272,6 +274,7 @@
       "ne": "Dicht doen",
       "lt": "uždaryti",
       "hu": "bezár",
+      "it": "chiudi",
       "nb": "lukk"
     },
 
@@ -281,6 +284,7 @@
       "ne": "Futures",
       "lt": "Ateities taškai",
       "hu": "Jövendők",
+      "it": "Futures",
       "nb": "Fremtider"
     },
 
@@ -290,6 +294,7 @@
       "ne": "Laat Futures zien",
       "lt": "Rodyti ateities sugebėjimus",
       "hu": "Jövendők Mutatása",
+      "it": "Mostra Futures,
       "nb": "Vis fremtider"
     },
 
@@ -299,6 +304,7 @@
       "ne": "Laat Hand zien",
       "lt": "Kortos rankoje",
       "hu": "Kezelő Mutatása",
+      "it": "Mostra la mano",
       "nb": "Vis hånda"
     },
 
@@ -308,6 +314,7 @@
       "ne": "Verlaten",
       "lt": "Pasitraukti",
       "hu": "Felmondás",
+      "it": "Abbandona",
       "nb": "Forlat kampen"
     }
   },
@@ -605,6 +612,7 @@
       "pi": "Days after tomorrow",
       "nb": "fremtider",
       "hu": "jövendők",
+      "it": "futures",
       "ne": "toekomsten"
     },
 
@@ -617,6 +625,7 @@
       "pi": "Skirmish",
       "nb": "Kamp",
       "hu": "Csetepaté",
+      "it": "Scaramuccia",
       "ne": "Kort gevecht"
     },
 
@@ -629,6 +638,7 @@
       "pi": "Raid",
       "nb": "Slag",
       "hu": "Csata",
+      "it": "Battaglia",
       "ne": "Strijd"
     },
 
@@ -641,6 +651,7 @@
       "pi": "War",
       "nb": "Krig",
       "hu": "Háború",
+      "it": "Guerra",
       "ne": "Veldslag"
     },
 
@@ -670,6 +681,7 @@
       "sv": "Anpassad",
       "es": "personalizado",
       "nb": "Egendefinert",
+      "it": "Personalizzato",
       "hu": "egyéni"
     },
 
@@ -684,6 +696,7 @@
       "sv": "klan",
       "es": "gremio",
       "nb": "klan",
+      "it": "clan",
       "hu": "klán"
     }
   },
@@ -834,6 +847,7 @@
       "pi": "Days after tomorrow",
       "nb": "Fremtider",
       "hu": "Jövendők",
+      "it": "Futures",
       "ne": "Toekomsten"
     },
 
@@ -849,6 +863,7 @@
       "es": "Gremio",
       "it": "Gilda",
       "nb": "Laug",
+      "it": "Clan",
       "hu": "Klán"
     }
   },
@@ -867,7 +882,7 @@
         "sv": "Ent",
         "es": "Ent",
         "nb": "Ent",
-        "it": "Ent",
+        "it": "Enti",
         "hu": "Ent"
       },
       "desc": {
@@ -881,7 +896,7 @@
         "sv": "Sökande efter en obligation med naturen,och enterna mixtrar med sin egen dna. En vild grupp av nomader, de säger att du aldrig kommer att möta samma Ent två gånger.",
         "es": "En la búsqueda de un lazo con la naturaleza, los Ents alteraron su propio ADN. Son un grupo salvaje de nómades, y dicen que nunca verás al mismo Ent dos veces.",
         "nb": "I sin søknad etter et bånd med naturen tuklet entene med sitt eget DNA. De er en vill gruppe nomader, og det sies at du aldri møter den samme enten to ganger.",
-        "it": "Cercando un legame con la natura, gli Ent hanno modificato il loro DNA. Sono un gruppo di nomadi, e si dice che non si può vedere un Ent più di due volte.",
+        "it": "Cercando un legame con la natura, gli Enti hanno modificato il loro DNA. Sono un gruppo di nomadi, e si dice che non si può vedere un Ente più di due volte.",
         "hu": "Seeking a bond with nature, the Ents tinkered with their own dna. A wild group of nomads, they say you'll never meet the same Ent twice."
       }
     },
@@ -960,6 +975,7 @@
         "sv": "Zealot",
         "es": "Fanático",
         "nb": "Selot",
+        "it": "Fanatico",
         "hu": "Zelóta"
       },
       "desc": {
@@ -973,6 +989,7 @@
         "sv": "Alltid säker på sanningen, zeloterna är mer än villiga att kämpa för det. Bränderna i konstanta krig har finslipat sina militära färdigheter till perfektion.",
         "es": "Siempre seguros de la verdad, los Fanáticos están más que dispuestos a luchar por ella. Las llamas de la guerra constante han hecho que sus habilidades militares alcancen la perfección.",
         "nb": "Alltid sikker på sannheten, er Seloter mer enn villig til å kjempe for den. Brannene av konstant krig har finpusset deres militære ferdigheter til perfeksjon.",
+        "it": "Sempre certi della verità, i Fanatici sono più che disposti per combattere per lei. I focolari di guerra costante hanno portato le loro abilità militari alla perfezione.",
         "hu": "Always certain of the truth, Zealots are more than willing to fight for it. The fires of constant war have honed their military skills to perfection."
       }
     }
@@ -986,6 +1003,7 @@
         "ne": "Bijeenkomst",
         "lt": "Mitingas",
         "hu": "rally",
+        "it": "rally",
         "nb": "sammenkomst"
       },
       "desc": {
@@ -993,6 +1011,7 @@
         "ne": "Produceer de Trots, zodat je meer kaarten kunt gebruiken.",
         "lt": "Vertės generavimasm, kuri leidžia naudoti daugiau kortų.",
         "hu": "Produce pride, which can be use to play more cards.",
+        "it": "Produci valore, che può essere usato per giocare più carte.",
         "nb": "Produserer stolthet, som kan bli brukt for å spille fler kort."
       }
     },
@@ -1003,12 +1022,14 @@
         "ne": "aanvallen",
         "lt": "Ataka",
         "hu": "támadás",
+        "it": "attacca",
         "nb": "angrep"
       },
       "desc": {
         "en": "Trade blows with an enemy card.",
         "ne": "Ruil tegenslag met een vijands zijn kaart.",
         "lt": "Apsimaino kumtšelėjimais su priešininko kortą.",
+        "it": "Scambia i punti attacco con una carda nemica.",
         "hu": "Trade blows with an enemy card."
       }
     },
@@ -1019,6 +1040,7 @@
         "ne": "zet",
         "lt": "Judėmimas",
         "hu": "mozgás",
+        "it": "muovi",
         "nb": "flytt"
       },
       "desc": {
@@ -1026,6 +1048,7 @@
         "ne": "Deze kaart een nieuwe positie geven.",
         "lt": "Kortos repozicionavimas.",
         "hu": "Reposition this card.",
+        "it": "Riposiziona questa carta.",
         "nb": "Flytt dette kortet"
       }
     },
@@ -1042,6 +1065,7 @@
         "sv": "Helande",
         "es": "Curación",
         "nb": "Helbreding",
+        "it": "cura",
         "hu": "gyógyulás"
       },
       "desc": {
@@ -1055,6 +1079,7 @@
         "sv": "Det valda kortet får ett hälsopoäng",
         "es": "La carta objetivo gana 1 de vida.",
         "nb": "Målsatt kort får ett helsepoeng.",
+        "it": "La carta bersaglio ottiene un punto salute.",
         "hu": "Target card gains 1 health."
       }
     },
@@ -1071,6 +1096,7 @@
         "sv": "ogrästräd",
         "es": "árboles de hierbas",
         "nb": "Ugresstrær",
+        "it": "Albero di Erba",
         "hu": "gyom fák"
       },
       "desc": {
@@ -1084,6 +1110,7 @@
         "sv": "Ett 1/1 träd är skapat",
         "es": "Un árbol 1/1 es creado",
         "nb": "Et 1/1-tre blir lagd",
+        "it": "Viene creato un albero 1x1",
         "hu": "A 1/1 tree is created"
       }
     },
@@ -1100,6 +1127,7 @@
         "sv": "avskyvärdighet",
         "es": "abominación",
         "nb": "styggedom",
+        "it": "Abominio",
         "hu": "utálat"
       },
       "desc": {
@@ -1113,6 +1141,7 @@
         "sv": "Slå ihop den här enheten med en annan",
         "es": "Esta unidad se combina con otra.",
         "nb": "Slå denne enheten sammen med en annen.",
+        "it": "Fondi questa carta con un'altra.",
         "hu": "Merge this unit with another."
       }
     },
@@ -1129,6 +1158,7 @@
         "sv": "sekretaioner",
         "es": "secreciones",
         "nb": "sekresjoner",
+        "it": "secrezioni",
         "hu": "választás"
       },
       "desc": {
@@ -1142,6 +1172,7 @@
         "sv": "Den valda enheten kan inte attackera nästa omgång",
         "es": "El enemigo objetivo no puede atacar el próximo turno.",
         "nb": "Målsatt fiende kan ikke angripe neste runde.",
+        "it": "L'obiettivo nemico non può attaccare il prossimo turno.",
         "hu": "Target enemy can not attack next turn."
       }
     },
@@ -1158,6 +1189,7 @@
         "sv": "klon",
         "es": "clonar",
         "nb": "klone",
+        "it": "clona",
         "hu": "klón"
       },
       "desc": {
@@ -1171,6 +1203,7 @@
         "sv": "Offra den här enheten för att producera en kopia av en annan enhet.",
         "es": "Sacrifica esta unidad para producir una copia de otra.",
         "nb": "Ofre denne enheten for å produsere et duplikat av en annen enhet.",
+        "it": "Sacrifica questa unità per produrre una copia di un'altra carta.",
         "hu": "Sacrifice this unit to produce a duplicate of another unit."
       }
     },
@@ -1187,6 +1220,7 @@
         "sv": "Bin!",
         "es": "¡abejas!",
         "nb": "bier!",
+        "it": "api!",
         "hu": "méhek!"
       },
       "desc": {
@@ -1200,6 +1234,7 @@
         "sv": "Alla fiender i en siktad kolumn tappar ett hälsopoäng.",
         "es": "Toos los enemigos en la columna objetivo pierden 1 de vida.",
         "nb": "Alle fiender i målsatt kolonne mister ett helsepoeng.",
+        "it": "Tutti i nemici nella colonna bersaglio perdono 1 punto salute.",
         "hu": "All enemies in target column loose 1 health."
       }
     },
@@ -1216,6 +1251,7 @@
         "sv": "omkonstruera",
         "es": "reconstruir",
         "nb": "gjenoppbygg",
+        "it": "ricostruisci",
         "hu": "újraépítés"
       },
       "desc": {
@@ -1229,6 +1265,7 @@
         "sv": "Återuppliva en död maskin.",
         "es": "Revive una máquina muerta.",
         "nb": "Gjenoppliv en død maskin.",
+        "it": "Fai risorgere una macchina morta.",
         "hu": "Resurrect a dead machine."
       }
     },
@@ -1245,6 +1282,7 @@
         "es": "Escudo T",
         "nb": "t-skjold",
         "sv": "T-sköld",
+        "it": "Scudo T",
         "hu": "t-pajzs"
       },
       "desc": {
@@ -1258,6 +1296,7 @@
         "sv": "All skada som skulle ha blivit handlat till enheten är nedsatt till en för en omgång.",
         "es": "Todo el daño que la unidad objetivo fuera a recibir se reduce en 1 por un turno.",
         "nb": "All skade som ville ha blitt gitt til målrettet enhet er redusert med 1 for én runde.",
+        "it": "Tutto il danno che dovrebbe essere stato afflitto all'unità persaglio viene ridotto a 1 per un turno.",
         "hu": "All damage that would be dealt to target unit is reduced by 1 for a turn."
       }
     },
@@ -1274,6 +1313,7 @@
         "sv": "presis",
         "es": "preciso",
         "nb": "presis",
+        "it": "precisione",
         "hu": "precíz"
       },
       "desc": {
@@ -1287,6 +1327,7 @@
         "sv": "Attackera en fiende av ditt val oavsett´av defensiva former",
         "es": "Ataca un enemigo a tu elección sin importar las formaciones defensivas.",
         "nb": "Angrip en fiende av ditt valg uavhengig av defensive formasjoner.",
+        "it": "Attacca un nemico di tua scelta senza contare delle formazioni difensive.",
         "hu": "Attack an enemy of your choice regardless of defensive formations."
       }
     },
@@ -1303,6 +1344,7 @@
         "sv": "strateg",
         "es": "estratega",
         "nb": "strateg",
+        "it": "Stratega",
         "hu": "stratéga"
       },
       "desc": {
@@ -1316,6 +1358,7 @@
         "sv": "Allierade kan utföra en extra åtgärd den här omgången",
         "es": "Un aliado puede realizar una acción más en este turno",
         "nb": "Allierte kan utøve en ekstra handling denne runden",
+        "it": "Un alleato può fare un'azione extra in questo turno.",
         "hu": "Ally can perform an extra action this turn"
       }
     },
@@ -1332,6 +1375,7 @@
         "sv": "nätverk",
         "es": "conexiones",
         "nb": "nettverk",
+        "it": "networking",
         "hu": "hálózat"
       },
       "desc": {
@@ -1345,6 +1389,7 @@
         "sv": "Få en allierads förmågor",
         "es": "Obtiene las habilidades de un aliado.",
         "nb": "Få en allierts egenskaper.",
+        "it": "Ottieni un'abilità di un alleato.",
         "hu": "Gain an allies abilities."
       }
     },
@@ -1361,6 +1406,7 @@
         "sv": "transformator",
         "es": "transformista",
         "nb": "transformator",
+        "it": "transformer",
         "hu": "transformer"
       },
       "desc": {
@@ -1374,6 +1420,7 @@
         "sv": "Byt hälsa och attack",
         "es": "Intercambia ataque y vida.",
         "nb": "Bytt helse- og angrepspoeng.",
+        "it": "Scambia salute e attacco.",
         "hu": "Swap health and attack."
       }
     },
@@ -1390,6 +1437,7 @@
         "sv": "lockelse",
         "es": "seducción",
         "nb": "forførelse",
+        "it": "seduzione",
         "hu": "csábítás"
       },
       "desc": {
@@ -1403,6 +1451,7 @@
         "sv": "Konvertera en fiende till din sida om dens hälsa är ett",
         "es": "Convierte un enemigo a tu bando si su vida es 1.",
         "nb": "Konverter en fiende til din side dersom deres helse er 1.",
+        "it": "Converti un nemico dalla tua parte se la sua salute è 1.",
         "hu": "Convert an enemy to your side if their health is 1."
       }
     },
@@ -1419,6 +1468,7 @@
         "sv": "mördare",
         "es": "asesino",
         "nb": "snikmorder",
+        "it": "assassino",
         "hu": "assassin"
       },
       "desc": {
@@ -1432,6 +1482,7 @@
         "sv": "Attackera utan att ta skada",
         "es": "Ataca sin recibir daño.",
         "nb": "Angrip uten å ta imot skade.",
+        "it": "Attacca senza prendere danno.",
         "hu": "Attack without taking damage."
       }
     },
@@ -1448,6 +1499,7 @@
         "sv": "sända",
         "es": "delegar",
         "nb": "delegat",
+        "it": "delega",
         "hu": "képviselő"
       },
       "desc": {
@@ -1461,6 +1513,7 @@
         "sv": "Byt det här kortet med en annan enhet i din hand",
         "es": "Intercambia esta unidad con otra de tu mano.",
         "nb": "Bytt denne enheten med en annen enhet på hånda.",
+        "it": "Scambia quest'unità con un'altra nella tua mano.",
         "hu": "Trade this unit with another unit in your hand."
       }
     },
@@ -1477,6 +1530,7 @@
         "sv": "gift",
         "es": "veneno",
         "nb": "gift",
+        "it": "veleno",
         "hu": "méreg"
       },
       "desc": {
@@ -1490,6 +1544,7 @@
         "sv": "Den valda fienden förlorar ett hälsopoäng per omgång",
         "es": "El enemigo objetivo pierde 1 de vida por turno.",
         "nb": "Målsatt fiende mister ett helsepoeng per runde.",
+        "it": "Il nemico bersaglio perde 1 punto vita a turno.",
         "hu": "Target enemy loses 1 health per turn."
       }
     },
@@ -1506,6 +1561,7 @@
         "sv": "Säcka dem",
         "es": "embolsar",
         "nb": "fang dem",
+        "it": "impacchettare",
         "hu": "bag 'em"
       },
       "desc": {
@@ -1519,6 +1575,7 @@
         "sv": "Kortet du valde är tillbakadraget till ägarens hand",
         "es": "La carta objetivo retorna a la mano de su dueño.",
         "nb": "Målsatt kort blir retunert til eierens hånd.",
+        "it": "La carta bersaglio ritorna alla mano del suo proprietario.",
         "hu": "Target card is returned to its owner's hand."
       }
     },
@@ -1535,6 +1592,7 @@
         "sv": "sifon",
         "es": "sifón",
         "nb": "hevert",
+        "it": "sifone",
         "hu": "szifon"
       },
       "desc": {
@@ -1548,6 +1606,7 @@
         "sv": "Stjäl ett hälsopoäng från ett kort av ditt val",
         "es": "Roba 1 de vida de una carta a tu elección.",
         "nb": "Stjel ett helsepoeng fra et valgfritt kort.",
+        "it": "Ruba un punto vita da una carta di tua scelta.",
         "hu": "Steal 1 health from a card of your choice."
       }
     },
@@ -1564,6 +1623,7 @@
         "sv": "man",
         "es": "macho",
         "nb": "hannkjønn",
+        "it": "maschio",
         "hu": "férfi"
       },
       "desc": {
@@ -1577,6 +1637,7 @@
         "sv": "Kan ompruduceras med kvinnor",
         "es": "Puede reproducirse con hembras.",
         "nb": "Kan reprodusere med hunkjønn.",
+        "it": "Si può riprodurre con le femmine.",
         "hu": "Can reproduce with females."
       }
     },
@@ -1593,6 +1654,7 @@
         "sv": "kvinna",
         "es": "hembra",
         "nb": "hunkjønn",
+        "it": "femmina",
         "hu": "nő"
       },
       "desc": {
@@ -1606,6 +1668,7 @@
         "sv": "Kan omproduceras med män",
         "es": "Puede reproducirse con machos.",
         "nb": "Kan reprodusere med hankjønn.",
+        "it": "Si può riprodurre con i maschi.",
         "hu": "Can reproduce with males."
       }
     },
@@ -1622,6 +1685,7 @@
         "sv": "krigs gråt",
         "es": "Grito de batalla",
         "nb": "krigsrop",
+        "it": "Pianto di battaglia",
         "hu": "harci kiáltás"
       },
       "desc": {
@@ -1635,6 +1699,7 @@
         "sv": "Att träffa en enhet ger två attacker för omgången",
         "es": "La unidad objetivo gana 2 de ataque por este turno.",
         "nb": "Målsatt enhet får 2 angrep denne runden.",
+        "it": "L'unità bersaglio guadagna 2 punti attacco per questo turno.",
         "hu": "Target unit gains 2 attack for the turn."
       }
     },
@@ -1651,6 +1716,7 @@
         "sv": "avgjord",
         "es": "determinado",
         "nb": "bestemt",
+        "it": "Determinazione",
         "hu": "eltökélt"
       },
       "desc": {
@@ -1664,6 +1730,7 @@
         "sv": "Offra det här kortet för att handla dubbel skada",
         "es": "Sacrifica esta carta para realizar doble daño.",
         "nb": "Ofre dette kortet for å gi dobbel skade.",
+        "it": "Sacrifica questa carta per realizzare doppio danno.",
         "hu": "Sacrifice this card to deal double damage."
       }
     },
@@ -1680,6 +1747,7 @@
         "sv": "hjältligt offer",
         "es": "sacrificio heroico",
         "nb": "heroisk ofring",
+        "it": "sacrificio eroico",
         "hu": "hősies áldozat"
       },
       "desc": {
@@ -1693,6 +1761,7 @@
         "sv": "Alla fienders attacker måste sikta på det här kortet för en omgång",
         "es": "Todos los ataques enemigos deben tener a esta carta como objetivo por un turno.",
         "nb": "Alle fiendtlige angrep må målsette dette kortet én runde.",
+        "it": "Tutti gli attacchi del nemico devono essere indirizzati a questa carta per un turno.",
         "hu": "All enemy attacks must target this card for one turn."
       }
     },
@@ -1709,6 +1778,7 @@
         "sv": "superserum",
         "es": "súper suero",
         "nb": "super-serum",
+        "it": "super siero",
         "hu": "szuper szérum"
       },
       "desc": {
@@ -1722,6 +1792,7 @@
         "sv": "Tillgänliga hälsopoäng är konverterade till attackpoäng",
         "es": "Los puntos de vida disponibles se convierten en puntos de ataque.",
         "nb": "Tilgjengelige helsepoeng er konvertert til angrepspoeng.",
+        "it": "I punti vita disponibili vengono convertiti in punti attacco.",
         "hu": "Available health points are converted into attack points"
       }
     }
@@ -1735,6 +1806,7 @@
         "ne": "Gratis Liefde",
         "lt": "Romantika",
         "hu": "Ingyen Szeretet",
+        "it": "Amore gratis",
         "nb": "Fri kjærlighet"
       },
       "desc": {
@@ -1742,6 +1814,7 @@
         "ne": "Kaarten die niet aanvallen verdienen levens punt.",
         "lt": "Nepuolanti korta, gauna 1 gyvybės tašką.",
         "hu": "Cards that do not attack gain 1 point of health.",
+        "it": "Le carte che non attaccano guadagnano 1 punto vita.",
         "nb": "Kort som ikke angriper får 1 helsepoeng."
       }
     },
@@ -1752,6 +1825,7 @@
         "ne": "Bloed vijandschap",
         "lt": "Kraujo liejimas",
         "hu": "Vérbosszú",
+        "it": "Fiotto di sangue",
         "nb": "Blodfeide"
       },
       "desc": {
@@ -1759,6 +1833,7 @@
         "ne": "Alle kaarten moeten aanvallen.",
         "lt": "Visos kortos privalo pulti.",
         "hu": "All cards must attack.",
+        "it": "Tutte le carte devono attaccare.",
         "nb": "Alle kort må angripe."
       }
     },
@@ -1769,6 +1844,7 @@
         "ne": "Wedergeboorte",
         "lt": "Renesansas",
         "hu": "Reneszánsz",
+        "it": "Rinascimento",
         "nb": "Rennesanse"
       },
       "desc": {
@@ -1776,6 +1852,7 @@
         "ne": "Spelers verdienen 2 extra trots punten per beurt.",
         "lt": "Žaidėjas gauna 2 vertės taškus per ėjimą.",
         "hu": "Players gain an extra 2 pride per turn.",
+        "it": "I giocatori guadagnano 2 valori extra per turno.",
         "nb": "Spillere får to mer stolthet per runde."
       }
     },
@@ -1786,6 +1863,7 @@
         "ne": "Communist",
         "lt": "Komunizmas",
         "hu": "Kommunizmus",
+        "it": "Comunismo",
         "nb": "Kommunisme"
       },
       "desc": {
@@ -1793,6 +1871,7 @@
         "ne": "Elke actie heeft 50% kans om te valen.",
         "lt": "Kiekvienas veiksmas turi 50% galimybę susimauti.",
         "hu": "Every action has a 50% chance to fail.",
+        "it": "Ogni azione ha una probabilità del 50% di fallire.",
         "nb": "Hvert gjøremål har en 50% sjangse for å mislykkes."
       }
     },
@@ -1803,6 +1882,7 @@
         "ne": "Donderkoepel",
         "lt": "Cenzas",
         "hu": "Thunderdome",
+        "it": "Fulmini",
         "nb": "Tordenskuppel"
       },
       "desc": {
@@ -1810,6 +1890,7 @@
         "ne": "Er kan niet met nieuwe kaarten worden gespeeld",
         "lt": "Negalima į kovos lauką dėti naujų kortų.",
         "hu": "No new cards can be played.",
+        "it": "Non possono essere giocate nuove carte.",
         "nb": "Ingen nye kort kan spilles."
       }
     },
@@ -1837,6 +1918,7 @@
         "ne": "Wonder",
         "lt": "Stebuklas",
         "hu": "Csoda",
+        "it": "Miracolo",
         "nb": "Mirakel"
       },
       "desc": {
@@ -1844,6 +1926,7 @@
         "ne": "Kaarten blijven levend todat hun levens -10 halen.",
         "lt": "Visos kortos išlieka gyvos iki kol jų gyvybių taškai pasiekia -10.",
         "hu": "Cards stay alive until their health reaches -10.",
+        "it": "Le carte possono stare in vita fino a quando la loro salute raggiunge -10.",
         "nb": "Kort forblir i live til helsepoengene deres når -10."
       }
     },
@@ -1871,6 +1954,7 @@
         "ne": "Armageddon",
         "lt": "Armagėdonas",
         "hu": "Armageddon",
+        "it": "Armageddon",
         "nb": "Armageddon"
       },
       "desc": {
@@ -1878,6 +1962,7 @@
         "ne": "Alle kaarten verliezen 1 leven elke beurt.",
         "lt": "Visos kortos, kiekvieną ėjimą praranda po 1 gyvybės tašką.",
         "hu": "All cards loose 1 health per turn.",
+        "it": "Tutte le carte perdono 1 punto vita per turno.",
         "nb": "Alle kort mister 1 helsepoeng i runden."
       }
     }
@@ -1887,22 +1972,26 @@
   "analyzer": {
     "pride": {
       "en": "pride",
-      "lt": "vertė"
+      "lt": "vertė",
+      "it": "valore"
     },
 
     "cardCount": {
       "en": "cards",
-      "lt": "kortų kiekis"
+      "lt": "kortų kiekis",
+      "it": "carte"
     },
 
     "attack": {
       "en": "attack",
-      "lt": "Puolimo taškai"
+      "lt": "Puolimo taškai",
+      "it": "attacco"
     },
 
     "health": {
       "en": "health",
       "lt": "Gyvibių taškai"
+      "it": "salute",
     }
   }
 }
