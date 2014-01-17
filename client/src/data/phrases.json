@@ -669,7 +669,7 @@
       "ne": "zelfgemaakt",
       "sv": "Anpassad",
       "es": "personalizado",
-      "nb": "Egendefinert",
+      "nb": "egendefinert",
       "hu": "egyéni"
     },
 
@@ -1010,6 +1010,7 @@
         "ne": "Ruil tegenslag met een vijands zijn kaart.",
         "lt": "Apsimaino kumtšelėjimais su priešininko kortą.",
         "hu": "Trade blows with an enemy card."
+        "nb": "Bytt slag med et fiendtlig kort."
       }
     },
 
