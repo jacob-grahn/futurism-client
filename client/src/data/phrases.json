@@ -1887,21 +1887,25 @@
   "analyzer": {
     "pride": {
       "en": "pride",
+      "ne": "trots",
       "lt": "vertė"
     },
 
     "cardCount": {
       "en": "cards",
+      "ne": "kaarten",
       "lt": "kortų kiekis"
     },
 
     "attack": {
       "en": "attack",
+      "ne": "aanval",
       "lt": "Puolimo taškai"
     },
 
     "health": {
       "en": "health",
+      "ne": "levens",
       "lt": "Gyvibių taškai"
     }
   }
