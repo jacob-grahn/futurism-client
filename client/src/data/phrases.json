@@ -669,7 +669,7 @@
       "ne": "zelfgemaakt",
       "sv": "Anpassad",
       "es": "personalizado",
-      "nb": "Egendefinert",
+      "nb": "egendefinert",
       "hu": "egyéni"
     },
 
@@ -1010,6 +1010,7 @@
         "ne": "Ruil tegenslag met een vijands zijn kaart.",
         "lt": "Apsimaino kumtšelėjimais su priešininko kortą.",
         "hu": "Trade blows with an enemy card."
+        "nb": "Bytt slag med et fiendtlig kort."
       }
     },
 
@@ -1887,21 +1888,25 @@
   "analyzer": {
     "pride": {
       "en": "pride",
+      "ne": "trots",
       "lt": "vertė"
     },
 
     "cardCount": {
       "en": "cards",
+      "ne": "kaarten",
       "lt": "kortų kiekis"
     },
 
     "attack": {
       "en": "attack",
+      "ne": "aanval",
       "lt": "Puolimo taškai"
     },
 
     "health": {
       "en": "health",
+      "ne": "levens",
       "lt": "Gyvibių taškai"
     }
   }
