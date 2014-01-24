@@ -1,8 +1,7 @@
 (function() {
 	'use strict';
 
-	var session = require('../fns/mongoSession');
-	var revalidateLogin = require('../fns/revalidateLogin');
+	var session = require('../fns/redisSession');
 
 	module.exports = {
 
@@ -19,13 +18,7 @@
 						return callback('no session', socket);
 					}
 
-					revalidateLogin(sess.userId, function(err, user) {
-						if(err) {
-							return callback(err, socket);
-						}
-
-						return callback(null, socket, user);
-					});
+					return callback(null, socket, sess);
 				});
 			});
 		}

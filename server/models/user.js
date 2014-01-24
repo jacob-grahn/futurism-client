@@ -1,16 +1,16 @@
 var mongoose = require("mongoose");
-var validate = require('mongoose-validator').validate;
 var groups = require('../../shared/groups');
+var isName = require('../validators/isName');
 
 
 var UserSchema = new mongoose.Schema({
 	_id: {
-		type: Number,
+		type: mongoose.Schema.Types.ObjectId,
 		index: true
 	},
 	name: {
 		type: String,
-		validate: validate('len', 1, 100)
+		validate: isName
 	},
 	site: {
 		type: String,
@@ -18,7 +18,7 @@ var UserSchema = new mongoose.Schema({
 	},
 	group: {
 		type: String,
-		validate: validate('isIn', [groups.GUEST, groups.USER, groups.MOD, groups.ADMIN])
+		enum: [groups.GUEST, groups.USER, groups.MOD, groups.ADMIN]
 	},
 	elo: {
 		type: Number,
@@ -39,12 +39,6 @@ var UserSchema = new mongoose.Schema({
 	updated: {
 		type: Date,
 		default: Date.now
-	},
-	bannedUntil: {
-		type: Date
-	},
-	silencedUntil: {
-		type: Date
 	}
 });
 

@@ -1,34 +1,63 @@
 (function() {
 	'use strict';
 
-
-	var redis;
-	var fns = require('../fns/fns');
+	var redis = require('redis');
+	var createRandomString = require('../fns/createRandomString');
 	var sessionLife = 60*60; //one hour
+	var client;
+	var redisSession = {};
 
 
 	/**
-	 * Set the redis connection to be used
-	 * @param redisConn
+	 * Connect to a redis database
+	 * @param {string} [uri]
+	 * @param {Function} [callback]
 	 */
-	var setRedis = function(redisConn) {
-		redis = redisConn;
+	redisSession.connect = function(uri, callback) {
+		redisSession.end();
+
+		if(uri) {
+			var rtg = require('url').parse(uri);
+			client = redis.createClient(rtg.port, rtg.hostname);
+			client.auth(rtg.auth.split(':')[1]);
+		}
+		else {
+			client = redis.createClient();
+		}
+
+		if(callback) {
+			client.on('ready', function() {
+				callback(null);
+			});
+			client.on('error', function(err) {
+				callback(err);
+			});
+		}
+	};
+
+
+	/**
+	 * Close redis connection
+	 */
+	redisSession.end = function() {
+		if(client) {
+			client.end();
+			client = null;
+		}
 	};
 
 
 	/**
 	 * Create a new session and store data to it
-	 * @param {object} data
-	 * @param {function} callback
+	 * @param {string} userId
+	 * @param {Object} data
+	 * @param {Function} callback
 	 * @returns {void}
 	 */
-	var make = function(data, callback) {
-		var token = createToken();
-		set(token, data, function(err, result) {
-			if(err || result != 'OK') {
-				return callback(err || result);
-			}
-			return callback(null, {token: token, result: result});
+	redisSession.make = function(userId, data, callback) {
+		data.token = redisSession.createToken(userId);
+		redisSession.set(data.token, data, function(err, result) {
+			return callback(err, result, data.token);
 		});
 	};
 
@@ -38,26 +67,36 @@
 	 * @param {string} token
 	 * @param {object} data
 	 * @param {function} callback
-	 * @returns {void}
 	 */
-	var set = function(token, data, callback) {
-		redis.setex(token, sessionLife, JSON.stringify(data), callback);
+	redisSession.set = function(token, data, callback) {
+		var userId = token.split('-')[0];
+		client.setex(userId, sessionLife, JSON.stringify(data), callback);
 	};
 
 
 	/**
 	 * Get data from a session
 	 * @param {string} token
-	 * @param {callback} function
+	 * @param {Function} callback
 	 * @returns {void}
 	 */
-	var get = function(token, callback) {
-		redis.get(token, function(err, result) {
+	redisSession.get = function(token, callback) {
+		var userId = token.split('-')[0];
+
+		client.get(userId, function(err, result) {
 			if(err) {
 				return callback(err);
 			}
-			var data = JSON.parse(result);
-			return callback(null, data);
+			if(!result) {
+				return callback('no session found with this token');
+			}
+
+			var obj = JSON.parse(result);
+			if(obj.token !== token) {
+				return callback('not the right token');
+			}
+
+			return callback(null, obj);
 		});
 	};
 
@@ -68,31 +107,31 @@
 	 * @param {function} callback
 	 * @returns {void}
 	 */
-	var destroy = function(token, callback) {
-		redis.del(token, callback);
+	redisSession.destroy = function(token, callback) {
+		var userId = token.split('-')[0];
+
+		redisSession.get(token, function(err, doc) {
+			if(err) {
+				return callback(err);
+			}
+			if(doc.token !== token) {
+				return callback('not the right token');
+			}
+			return client.del(userId, callback);
+		});
 	};
 
 
 	/**
 	 * Create a random string to use as a token
+	 * @param {string} userId
 	 * @returns {string} token
 	 */
-	var createToken = function() {
-		var token = fns.createRandomString(32);
-		return token;
+	redisSession.createToken = function(userId) {
+		return userId + '-' + createRandomString(32);
 	};
 
 
-	/**
-	 * public interface
-	 * @type {{setRedis: Function, make: Function, set: Function, get: Function, destroy: Function}}
-	 */
-	module.exports = {
-		setRedis: setRedis,
-		make: make,
-		set: set,
-		get: get,
-		destroy: destroy
-	};
+	module.exports = redisSession;
 
 }());

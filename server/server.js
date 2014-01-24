@@ -3,10 +3,9 @@
 
 	//--- initialize
 	var express = require('express');
-	var consolidateParams = require('./middleware/consolidateParams');
 	var continueSession = require('./middleware/continueSession');
 	var handleErrors = require('./middleware/handleErrors');
-	var checkAuth = require('./middleware/checkAuth');
+	var checkLogin = require('./middleware/checkLogin');
 	var checkMod = require('./middleware/checkMod');
 	var output = require('./middleware/output');
 	var expr = express();
@@ -15,17 +14,18 @@
 
 
 	//--- mongoose connect
-	require('./fns/fndSave'); //extends mongoose
 	var mongoose = require('mongoose');
-	var mongoAddr = require('./fns/mongoConnect').getConnectAddr();
-	mongoose.connect(mongoAddr);
+	require('./fns/mongoose/findByIdAndSave').attach(mongoose);
+	require('./fns/mongoose/findOneAndSave').attach(mongoose);
+	require('./fns/mongoose/validatedUpdate').attach(mongoose);
+	mongoose.connect(process.env.MONGO_URI);
 
 
 	//--- middleware
 	expr.use('/', handleErrors);
 	expr.use('/api', output);
-	expr.use('/api', express.bodyParser());
-	expr.use('/api', consolidateParams);
+	expr.use('/api', express.urlencoded());
+	expr.use('/api', express.json());
 	expr.use('/api', continueSession);
 
 
@@ -43,16 +43,13 @@
 
 	//--- load routes
 	expr.post('/api/canonCards', checkMod, require('./routes/canonCardsPost'));
-	expr.delete('/api/cards', checkAuth, require('./routes/cardsDelete'));
-	expr.get('/api/cards', checkAuth, require('./routes/cardsGet'));
-	expr.post('/api/cards', checkAuth, require('./routes/cardsPost'));
-	expr.delete('/api/decks', checkAuth, require('./routes/decksDelete'));
-	expr.get('/api/decks', checkAuth, require('./routes/decksGet'));
-	expr.post('/api/decks', checkAuth, require('./routes/decksPost'));
+	expr.delete('/api/cards', checkLogin, require('./routes/cardsDelete'));
+	expr.get('/api/cards', checkLogin, require('./routes/cardsGet'));
+	expr.post('/api/cards', checkLogin, require('./routes/cardsPost'));
+	expr.delete('/api/decks', checkLogin, require('./routes/decksDelete'));
+	expr.get('/api/decks', checkLogin, require('./routes/decksGet'));
+	expr.post('/api/decks', checkLogin, require('./routes/decksPost'));
 	expr.get('/api/tests', require('./routes/testsGet'));
-	expr.delete('/api/tokens', require('./routes/tokensDelete'));
-	expr.put('/api/tokens', require('./routes/tokensPut'));
-	expr.get('/api/tokens', require('./routes/tokensGet'));
 	expr.get('/api/records/:gameId', require('./routes/recordsGet'));
 	expr.get('/api/summaries/:gameId', require('./routes/summariesGet'));
 	expr.get(/^(?!\/api)((?!\.).)*$/i, require('./routes/indexGet')); //--- this ridiculous regex matches any string that does not start with '/api' and does not contain a period.
@@ -60,12 +57,10 @@
 
 	//--- load multi
 	var multiInit = require('./multi/init');
-	var gamehub = require('./multi/gamehub');
 	var broadcast = require('./multi/broadcast');
 	var Chat = require('./multi/chat');
 	var Lobby = require('./multi/lobby');
 	multiInit.listenForConnections(io);
-	gamehub.start(io);
 	broadcast.setIo(io);
 	Chat.safeCreate('chat-brutus');
 	Lobby.createRoom('brutus');

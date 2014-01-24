@@ -5,10 +5,9 @@
 (function() {
 	'use strict';
 
-	var fns = require('../fns/fns');
+	var createHashId = require('../fns/createHashId');
 	var Deck = require('../models/deck');
 	var _ = require('lodash');
-	var fndSave = require('../fns/fndSave');
 
 
 
@@ -25,12 +24,12 @@
 
 
 		//--- server defined properties
-		deck.id = req.session.userId + '-' + fns.createHashId(deck.name);
+		deck.id = req.session.userId + '-' + createHashId(deck.name);
 		deck.userId = req.session.userId;
 
 
 		//--- save deck to db
-		fndSave(Deck, deck, res.apiOut);
+		Deck.findByIdAndSave(deck, res.apiOut);
 	};
 
 }());

@@ -8,9 +8,8 @@
 
 	var _ = require('lodash');
 	var async = require('async');
-	var fns = require('../fns/fns');
-	var fndSave = require('../fns/fndSave');
 	var Card = require('../models/card');
+	var createHashId = require('../fns/createHashId');
 
 
 	/**
@@ -64,7 +63,7 @@
 			function(callback) {
 				if(req.files && req.files.image) {
 					data.hasImage = true;
-					saveImage(req.files.image, data._id, callback);
+					return saveImage(req.files.image, data._id, callback);
 				}
 				else {
 					return callback();
@@ -73,7 +72,7 @@
 
 			//--- save the card
 			function(callback) {
-				fndSave(Card, data, callback);
+				Card.findByIdAndSave(data, callback);
 			}
 		],
 

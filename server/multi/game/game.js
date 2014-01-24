@@ -2,7 +2,6 @@
 	'use strict';
 
 	var _ = require('lodash');
-	var fns = require('../../fns/fns');
 	var DiffTracker = require('../../fns/diffTracker');
 	var factions = require('../../../shared/factions');
 	var broadcast = require('../broadcast');

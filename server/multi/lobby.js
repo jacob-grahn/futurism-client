@@ -1,11 +1,11 @@
 (function() {
 	'use strict';
 
-	var fns = require('../fns/fns');
 	var Game = require('./game/game');
 	var Chat = require('./chat');
 	var broadcast = require('./broadcast');
 	var Lookup = require('../fns/lookup');
+	var createRandomString = require('../fns/createRandomString');
 	var _ = require('lodash');
 	var defaultRules = require('./game/defaultRules');
 
@@ -128,7 +128,7 @@
 		 * @param {object} matchup
 		 */
 		var startMatchup = function(matchup) {
-			var gameId = fns.createRandomString(12);
+			var gameId = createRandomString(12);
 			new Game(matchup.accounts, matchup.rules, gameId);
 
 			Chat.safeCreate('chat-' + gameId);

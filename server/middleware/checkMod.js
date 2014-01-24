@@ -4,7 +4,7 @@
 	var groups = require('../../shared/groups');
 
 	module.exports = function(req, res, next) {
-		if (req.session && req.session.userId && req.user.group === groups.MOD) {
+		if (req.session && req.session._id && (req.user.group === groups.MOD || req.user.group === groups.ADMIN)) {
 			next();
 		}
 		else {

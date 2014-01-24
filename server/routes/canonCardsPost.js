@@ -7,7 +7,6 @@
 	'use strict';
 
 	var Card = require('../models/card');
-	var fndSave = require('../fns/fndSave');
 
 
 	/**
@@ -21,7 +20,7 @@
 			_id: req.body.cardId,
 			canon: req.body.canon
 		};
-		fndSave(Card, data, function(err, card) {
+		Card.findByIdAndSave(data, function(err, card) {
 			res.apiOut(err, card);
 		});
 	};
