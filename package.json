@@ -22,7 +22,8 @@
     "mongoose-validator": "~0.2.2",
     "validator": "~1.5.1",
     "socket.io": "~0.9.16",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "http-proxy": "~1.0.1"
   },
   "devDependencies": {
     "connect-livereload": "~0.2.0",

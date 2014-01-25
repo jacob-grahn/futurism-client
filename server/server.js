@@ -3,11 +3,6 @@
 
 	//--- initialize
 	var express = require('express');
-	var continueSession = require('./middleware/continueSession');
-	var handleErrors = require('./middleware/handleErrors');
-	var checkLogin = require('./middleware/checkLogin');
-	var checkMod = require('./middleware/checkMod');
-	var output = require('./middleware/output');
 	var expr = express();
 	var httpServer = require('http').createServer(expr);
 	var io = require('socket.io').listen(httpServer);
@@ -22,7 +17,16 @@
 
 
 	//--- middleware
-	expr.use('/', handleErrors);
+	var continueSession = require('./middleware/continueSession');
+	var handleErrors = require('./middleware/handleErrors');
+	var output = require('./middleware/output');
+
+	expr.use(express.errorHandler({
+		dumpExceptions: true,
+		showStack: true
+	}));
+
+	expr.use('/globe', require('./middleware/proxy')(process.env.GLOBE_URI));
 	expr.use('/api', output);
 	expr.use('/api', express.urlencoded());
 	expr.use('/api', express.json());
@@ -42,17 +46,7 @@
 
 
 	//--- load routes
-	expr.post('/api/canonCards', checkMod, require('./routes/canonCardsPost'));
-	expr.delete('/api/cards', checkLogin, require('./routes/cardsDelete'));
-	expr.get('/api/cards', checkLogin, require('./routes/cardsGet'));
-	expr.post('/api/cards', checkLogin, require('./routes/cardsPost'));
-	expr.delete('/api/decks', checkLogin, require('./routes/decksDelete'));
-	expr.get('/api/decks', checkLogin, require('./routes/decksGet'));
-	expr.post('/api/decks', checkLogin, require('./routes/decksPost'));
-	expr.get('/api/tests', require('./routes/testsGet'));
-	expr.get('/api/records/:gameId', require('./routes/recordsGet'));
-	expr.get('/api/summaries/:gameId', require('./routes/summariesGet'));
-	expr.get(/^(?!\/api)((?!\.).)*$/i, require('./routes/indexGet')); //--- this ridiculous regex matches any string that does not start with '/api' and does not contain a period.
+	require('./routes')(expr);
 
 
 	//--- load multi

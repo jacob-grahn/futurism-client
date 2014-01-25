@@ -46,8 +46,7 @@ module.exports = function (grunt) {
 					'server/models/**/*.js',
 					'server/multi/**/*.js',
 					'server/routes/**/*.js',
-					'server/server.js',
-					'server/test-server.js'
+					'server/*.js'
 				],
 				tasks: ['develop', 'wait'],
 				options: {nospawn: true}
@@ -312,10 +311,10 @@ module.exports = function (grunt) {
 		},
 
 
-		// Run the node server in server/test-server.js
+		// Run the node server in server/testServer.js
 		develop: {
 			server: {
-				file: '<%= yeoman.server %>/test-server.js',
+				file: '<%= yeoman.server %>/testServer.js',
 				nodeArgs: ['--debug']
 			}
 		},
