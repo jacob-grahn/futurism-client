@@ -30,7 +30,7 @@ var CardSchema = new mongoose.Schema({
 	_id: {
 		type: String,
 		index: true,
-		validate: validate('len', 1, 25)
+		validate: validate('len', 1, 100)
 	},
 	canon: {
 		type: Boolean,
@@ -38,11 +38,7 @@ var CardSchema = new mongoose.Schema({
 		default: false
 	},
 	userId: {
-		type: Number,
-		index: true,
-		required: true,
-		set: Math.round,
-		min: 0,
+		type: mongoose.Schema.Types.ObjectId,
 		ref: 'User'
 	},
 	name: {

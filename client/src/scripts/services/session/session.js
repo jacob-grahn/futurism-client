@@ -1,9 +1,9 @@
 angular.module('futurism')
-	.factory('session', function($http, $location, websites, account, TokenResource) {
+	.factory('session', function($http, $location, websites, account, SessionResource) {
 		'use strict';
 
 		var self = this;
-		var sitesToTry = ['j', 'g'];
+		var sitesToTry = ['j'];
 		var token = '';
 		var tempCredentials;
 
@@ -11,7 +11,7 @@ angular.module('futurism')
 		self.makeNew = function(callback) {
 			checkLogins(function(err) {
 				if(err) {
-					return callback(err);
+					tempCredentials = {site: 'g'};
 				}
 
 				authorizeLogin(function(err, data) {
@@ -27,34 +27,36 @@ angular.module('futurism')
 		};
 
 
-		self.destroy = function(callback) {
+		self.destroy = function() {
 			setToken(null);
-			$http
-				.delete('/api/token')
-				.success(function(data) {callback(null, data);})
-				.error(callback);
+			delete account.name;
+			delete account.site;
+			delete account.token;
+			delete account.group;
+			delete account._id;
+			account.loggedIn = false;
+			$http.delete('/api/token');
+			return $http;
 		};
 
 
 		self.renew = function(callback) {
 			var token = self.getToken();
 
-			if(token) {
-				TokenResource.update({token: token}, function(data) {
-					if(data.error) {
-						return self.makeNew(callback);
-					}
-					updateAccount(data);
-					return callback(null, data);
-				},
-				function(err) {
-					return self.makeNew(callback);
-				});
-			}
-
-			else {
+			if(!token) {
 				return self.makeNew(callback);
 			}
+
+			return SessionResource.get(function(data) {
+				if(data.error) {
+					return self.makeNew(callback);
+				}
+				updateAccount(data);
+				return callback(null, data);
+			},
+			function() {
+				return self.makeNew(callback);
+			});
 		};
 
 
@@ -109,7 +111,7 @@ angular.module('futurism')
 
 
 		var authorizeLogin = function(callback) {
-			TokenResource.get(tempCredentials, function(data) {
+			SessionResource.post(tempCredentials, function(data) {
 				if(data.error) {
 					return callback(data.error);
 				}

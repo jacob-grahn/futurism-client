@@ -8,6 +8,7 @@
 
 	var _ = require('lodash');
 	var async = require('async');
+	var mongoose = require('mongoose');
 	var Card = require('../models/card');
 	var createHashId = require('../fns/createHashId');
 
@@ -43,8 +44,8 @@
 
 		var data = _.pick(req.body, 'name', 'story', 'faction', 'abilities', 'attack', 'health');
 
-		data.userId = req.session.userId;
-		data._id = req.session.userId + '-' + fns.createHashId(data.name);
+		data.userId = req.session._id;
+		data._id = createHashId(req.session._id + '-' + data.name, 16);
 
 		if(data.abilities) {
 			data.abilities = data.abilities.split(',');

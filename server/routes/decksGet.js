@@ -6,7 +6,7 @@
 
 	var replyWithDeck = function(req, res) {
 		var deckId = req.body.deckId;
-		var userId = req.session.userId;
+		var userId = req.session._id;
 
 		Deck.findOne({_id:deckId, userId:userId})
 			.populate('cards')
@@ -17,7 +17,7 @@
 
 
 	var replyWidthList = function(req, res) {
-		var userId = req.session.userId;
+		var userId = req.session._id;
 
 		Deck.find({userId:userId})
 			.exec(function(err, result) {

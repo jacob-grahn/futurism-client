@@ -18,7 +18,7 @@
 	module.exports = function(req, res) {
 
 		//--- import
-		var userId = req.body.userId || req.session.userId;
+		var userId = req.body.userId || req.session._id;
 		var cardId = req.body._id || req.body.id || req.body.cardId;
 		var canon = req.body.canon || false;
 

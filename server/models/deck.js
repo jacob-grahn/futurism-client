@@ -10,7 +10,7 @@
 		_id: {
 			type: String,
 			index: true,
-			validate: validate('len', 1, 25)
+			validate: validate('len', 1, 100)
 		},
 		name: {
 			type: String,
@@ -19,7 +19,7 @@
 			set: function(val) { return(sanitize(val).xss()); }
 		},
 		userId: {
-			type: Number,
+			type: mongoose.Schema.Types.ObjectId,
 			required: true,
 			set: Math.round,
 			min: 0,

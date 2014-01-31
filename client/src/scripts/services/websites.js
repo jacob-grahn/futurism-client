@@ -5,7 +5,7 @@ angular.module('futurism')
 
 		var checkJiggLogin = function(callback) {
 			$http
-				.jsonp('https://jiggmin.com/-who-am-i.php?callback=JSON_CALLBACK')
+				.jsonp('https://jiggmin.com/-who-am-i.php?callback=JSON_CALLBACK&date='+new Date())
 				.success(function(data) {
 					if(data.logged_in) {
 						data.site = 'j';
@@ -13,23 +13,6 @@ angular.module('futurism')
 					}
 					else {
 						return callback('not logged into jiggmin.com');
-					}
-				})
-				.error(callback);
-		};
-
-
-		var checkGuestLogin = function(callback) {
-			$http
-				.jsonp('https://guestville.jiggmin.com/guest-login.php?callback=JSON_CALLBACK')
-				.success(
-				function(data) {
-					if(data.success) {
-						data.site = 'g';
-						return callback(null, data);
-					}
-					else {
-						return callback('not logged into guestville..?');
 					}
 				})
 				.error(callback);
@@ -59,7 +42,6 @@ angular.module('futurism')
 			},
 			g: {
 				name: 'guestville',
-				loginFn: checkGuestLogin,
 				icon: '/images/sites/g.png'
 			}
 		};
@@ -67,7 +49,6 @@ angular.module('futurism')
 
 		return {
 			checkJiggLogin: checkJiggLogin,
-			checkGuestLogin: checkGuestLogin,
 			lookup: lookup
 		};
 

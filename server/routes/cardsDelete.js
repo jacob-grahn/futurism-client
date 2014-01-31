@@ -11,7 +11,7 @@
 	 */
 	module.exports = function(req, res) {
 		var cardId = req.body.cardId || req.body.id || req.body._id;
-		var userId = req.session.userId;
+		var userId = req.session._id;
 
 		var query = {_id: cardId, userId: userId};
 		if(req.user.group === groups.MOD || req.user.group === groups.ADMIN) {

@@ -24,8 +24,8 @@
 
 
 		//--- server defined properties
-		deck.id = req.session.userId + '-' + createHashId(deck.name);
-		deck.userId = req.session.userId;
+		deck.id = createHashId(req.session._id + '-' + deck.name, 16);
+		deck.userId = req.session._id;
 
 
 		//--- save deck to db

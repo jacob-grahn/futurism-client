@@ -16,6 +16,11 @@
 	mongoose.connect(process.env.MONGO_URI);
 
 
+	//--- redis connect
+	var redisSession = require('./fns/redisSession');
+	redisSession.connect(process.env.REDIS_URI);
+
+
 	//--- middleware
 	var continueSession = require('./middleware/continueSession');
 	var handleErrors = require('./middleware/handleErrors');
@@ -28,9 +33,11 @@
 
 	expr.use('/globe', require('./middleware/proxy')(process.env.GLOBE_URI));
 	expr.use('/api', output);
-	expr.use('/api', express.urlencoded());
-	expr.use('/api', express.json());
+	/*expr.use('/api', express.urlencoded());
+	expr.use('/api', express.json());*/
+	expr.use('/api', express.bodyParser());
 	expr.use('/api', continueSession);
+	expr.use('/api', require('./middleware/consolidateQuery'));
 
 
 	//--- serve static files (more middleware, technically)
