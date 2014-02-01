@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('session', function($http, $location, websites, account, SessionResource) {
+	.factory('session', function($http, $location, websites, account, SessionResource, memory) {
 		'use strict';
 
 		var self = this;
@@ -61,19 +61,15 @@ angular.module('futurism')
 
 
 		self.getToken = function() {
-			if(!token && typeof Storage !== 'undefined') {
-				token = account.token = sessionStorage.getItem('token');
-			}
-			return token;
+			return memory.short.get('token');
 		};
 		token = self.getToken();
 
 
-		var setToken = function(tkn) {
-			token = account.token = tkn;
-			if(typeof Storage !== 'undefined') {
-				sessionStorage.setItem('token', tkn);
-			}
+		var setToken = function(newToken) {
+			token = newToken;
+			account.token = newToken;
+			memory.short.set('token', newToken);
 		};
 
 
