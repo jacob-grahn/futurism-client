@@ -64,7 +64,7 @@ redisSession.set = function(token, data, callback) {
  * @param callback
  */
 redisSession.update = function(userId, data, callback) {
-	redisSession._get(userId+'-bla', function(err, result) {
+	redisSession._get(userId, function(err, result) {
 		if(err === 'no session found with this token') {
 			return callback(null, null);
 		}
@@ -73,7 +73,7 @@ redisSession.update = function(userId, data, callback) {
 		}
 
 		_.assign(result, data);
-		return redisSession.set(userId+'-bla', result, function(err, result) {
+		return redisSession.set(userId, result, function(err, result) {
 			if(err) {
 				return callback(err);
 			}
