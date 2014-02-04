@@ -103,3 +103,29 @@ ul {
   background-color: rgba(255, 255, 255, 0.9);
   @include box-shadow(2px, 2px, 7px, rgba(0, 0, 0, 0.7));
 }
+
+
+
+
+
+
+
+.modal {
+	display: block;
+	height: 0;
+	overflow: visible;
+}
+
+.modal-body:before,
+.modal-body:after {
+	display: table;
+	content: " ";
+}
+
+.modal-header:before,
+.modal-header:after {
+	display: table;
+	content: " ";
+}
+
+
