@@ -9,24 +9,39 @@ angular.module('futurism')
 				name: '@',
 				id: '@',
 				site: '@',
-				group: '@'
+				group: '@',
+				link: '@',
+				size: '@'
 			},
 			templateUrl: 'views/username.html',
 			link: function(scope) {
 
+				scope.displaySize = scope.size || 'small';
+
+				if(scope.displaySize === 'small') {
+					scope.avatarWidth = 16;
+					scope.avatarHeight = 16;
+				}
+				if(scope.displaySize === 'large') {
+					scope.avatarWidth = 48;
+					scope.avatarHeight = 48;
+				}
+
 				scope.showUser = function () {
 
-					console.log('showUser', scope.id);
+					var link = scope.link || 'true';
 
-					var modalInstance = $modal.open({
-						templateUrl: 'views/userModal.html',
-						controller: 'UserModalCtrl',
-						resolve: {
-							userId: function () {
-								return scope.id;
+					if(link === 'true') {
+						$modal.open({
+							templateUrl: 'views/userModal.html',
+							controller: 'UserModalCtrl',
+							resolve: {
+								userId: function () {
+									return scope.id;
+								}
 							}
-						}
-					});
+						});
+					}
 				};
 			}
 		};
