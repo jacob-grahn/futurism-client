@@ -15,9 +15,27 @@
 		 */
 		listenForConnections: function(io) {
 			io.sockets.on('connection', function (socket) {
-				auth.authorizeSocket(socket, onAuthorized);
+				init(socket);
 			});
 		}
+	};
+
+
+
+	var init = function(socket) {
+
+		/**
+		 * Standard way to return errors to the client
+		 * @param message
+		 */
+		socket.emitError = function(message) {
+			socket.emit('error', message);
+		};
+
+		/**
+		 * verify the owner of this connection
+		 */
+		auth.authorizeSocket(socket, onAuthorized);
 	};
 
 
@@ -81,15 +99,6 @@
 				var isSilenced = new Date(silencedUntil) > new Date();
 				return callback(null, isSilenced);
 			});
-		};
-
-
-		/**
-		 * Standard way to return errors to the client
-		 * @param message
-		 */
-		socket.emitError = function(message) {
-			socket.emit('error', message);
 		};
 
 

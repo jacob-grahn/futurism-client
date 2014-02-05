@@ -47,7 +47,7 @@ redisSession.make = function(userId, data, callback) {
 
 /**
  * Update data in the session
- * @param {string} token
+ * @param {string} tz
  * @param {object} data
  * @param {function} callback
  */

@@ -4,7 +4,6 @@ angular.module('futurism')
 
 		var self = this;
 		var sitesToTry = ['j'];
-		var token = '';
 		var tempCredentials;
 
 
@@ -61,13 +60,12 @@ angular.module('futurism')
 
 
 		self.getToken = function() {
-			return memory.short.get('token');
+			var token = memory.short.get('token');
+			return token;
 		};
-		token = self.getToken();
 
 
 		var setToken = function(newToken) {
-			token = newToken;
 			account.token = newToken;
 			memory.short.set('token', newToken);
 		};
