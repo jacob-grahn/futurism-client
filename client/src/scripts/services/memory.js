@@ -11,7 +11,7 @@ angular.module('futurism')
 			short: {
 				set: function(key, value) {
 					if(typeof window.Storage !== 'undefined') {
-						sessionStorage.setItem(key, value);
+						window.sessionStorage.setItem(key, value);
 					}
 					else {
 						shortMem[key] = value;
@@ -19,10 +19,10 @@ angular.module('futurism')
 				},
 				get: function(key) {
 					if(typeof window.Storage !== 'undefined') {
-						sessionStorage.getItem(key);
+						return window.sessionStorage.getItem(key);
 					}
 					else {
-						shortMem[key] = value;
+						return shortMem[key];
 					}
 				}
 			},
@@ -31,7 +31,7 @@ angular.module('futurism')
 			long: {
 				set: function(key, value) {
 					if(typeof window.Storage !== 'undefined') {
-						localStorage.setItem(key, value);
+						window.localStorage.setItem(key, value);
 					}
 					else {
 						longMem[key] = value;
@@ -39,10 +39,10 @@ angular.module('futurism')
 				},
 				get: function(key) {
 					if(typeof window.Storage !== 'undefined') {
-						localStorage.getItem(key);
+						return window.localStorage.getItem(key);
 					}
 					else {
-						longMem[key] = value;
+						return longMem[key];
 					}
 				}
 			}
