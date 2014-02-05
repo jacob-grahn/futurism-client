@@ -19,7 +19,7 @@ var findByIdAndSave = function(Model, data, callback) {
 	var id = data._id || data.id;
 	data._id = id;
 	if(typeof id === 'undefined') {
-		return callback('an id is required');
+		return callback('findByIdAndSave: an id is required');
 	}
 
 	//--- load the card

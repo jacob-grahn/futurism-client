@@ -1,6 +1,6 @@
 angular.module('futurism')
-	.controller('UserModalCtrl', function($scope) {
+	.controller('UserModalCtrl', function($scope, userId, UserResource) {
 		'use strict';
 
-		$scope.value = 13;
+		$scope.user = UserResource.get({userId: userId});
 	});

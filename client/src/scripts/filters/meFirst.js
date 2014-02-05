@@ -3,12 +3,17 @@
  */
 
 angular.module('futurism')
-	.filter('meFirst', function(_, account) {
+	.filter('meFirst', function(_, me) {
 		'use strict';
 
 		return function(arr) {
-			return _.sortBy(arr, function(val) {
-				if(val === account._id || val._id === account._id || val.userId === account._id) {
+
+			if(!me.userId) {
+				return arr;
+			}
+
+			_.sortBy(arr, function(val) {
+				if(val === me.userId || val._id === me.userId || val.userId === me.userId) {
 					return -1;
 				}
 				return 1;

@@ -9,7 +9,7 @@ describe('game', function() {
 	var Game = require('../../../multi/game/game');
 	var DeckGoose = require('../../../models/deck');
 	var CardGoose = require('../../../models/card');
-	var UserGoose = require('../../../models/user');
+	var UserGoose = require('../../../models/stats');
 	var broadcast = require('../../../multi/broadcast');
 
 

@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('players', function(account) {
+	.factory('players', function(me) {
 		'use strict';
 
 		var players = {
@@ -28,7 +28,7 @@ angular.module('futurism')
 			 * Find a player with your _id
 			 */
 			findMe: function() {
-				return players.idToPlayer(account._id);
+				return players.idToPlayer(me.userId);
 			}
 
 		};

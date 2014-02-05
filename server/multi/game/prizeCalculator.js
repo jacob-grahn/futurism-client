@@ -4,7 +4,7 @@
 	var _ = require('lodash');
 	var async = require('async');
 	var Elo = require('../../fns/elo');
-	var UserGoose = require('../../models/user');
+	var UserGoose = require('../../models/stats');
 	var Player = require('./player');
 
 

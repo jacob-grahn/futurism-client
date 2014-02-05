@@ -22,7 +22,6 @@
 
 
 	//--- middleware
-	var continueSession = require('./middleware/continueSession');
 	var handleErrors = require('./middleware/handleErrors');
 	var output = require('./middleware/output');
 
@@ -36,7 +35,6 @@
 	/*expr.use('/api', express.urlencoded());
 	expr.use('/api', express.json());*/
 	expr.use('/api', express.bodyParser());
-	expr.use('/api', continueSession);
 	expr.use('/api', require('./middleware/consolidateQuery'));
 
 

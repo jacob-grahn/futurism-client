@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('matchups', function(socket, $rootScope, $location, account, _) {
+	.factory('matchups', function(socket, $rootScope, $location, me, _) {
 		'use strict';
 
 		var self = this;
@@ -80,7 +80,7 @@ angular.module('futurism')
 		 */
 		self.goIfMember = function(matchup, gameId) {
 			_.each(matchup.accounts, function(user) {
-				if(Number(user._id) === Number(account._id)) {
+				if(user._id === me.userId) {
 					self.gotoGamePage(gameId, matchup.rules.pride);
 				}
 			});

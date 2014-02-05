@@ -1,0 +1,19 @@
+<div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<h3><img class="avatar" ng-if="user._id" ng-src="globe/avatars/{{user._id}}-48x48.gif"/><img class="site-icon" ng-if="user.site" ng-src="/images/sites/{{user.site}}.png"/> {{user.name}}</h3>
+		</div>
+		<div class="modal-body">
+			<ul>
+				<li>Group: {{user.group}}</li>
+				<li>Player Since: {{user.registerDate}}</li>
+				<li>Last Login: {{user.loginDate}}</li>
+			</ul>
+			{{user.userId}}
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary" ng-click="$dismiss('close')">close</button>
+		</div>
+	</div>
+</div>
+

@@ -1,8 +1,9 @@
 angular.module('futurism')
-	.factory('session', function($http, $location, websites, account, SessionResource, memory) {
+	.factory('session', function($http, $location, websites, me, SessionResource, memory) {
 		'use strict';
 
 		var self = this;
+		var active = false;
 		var sitesToTry = ['j'];
 		var tempCredentials;
 
@@ -18,7 +19,8 @@ angular.module('futurism')
 						return callback(err);
 					}
 
-					updateAccount(data);
+					active = true;
+					me.setUserId(data._id);
 					setToken(data.token);
 					return callback(null, data);
 				});
@@ -28,12 +30,8 @@ angular.module('futurism')
 
 		self.destroy = function() {
 			setToken(null);
-			delete account.name;
-			delete account.site;
-			delete account.token;
-			delete account.group;
-			delete account._id;
-			account.loggedIn = false;
+			active = false;
+			me.clear();
 			$http.delete('/api/token');
 			return $http;
 		};
@@ -50,7 +48,8 @@ angular.module('futurism')
 				if(data.error) {
 					return self.makeNew(callback);
 				}
-				updateAccount(data);
+				active = true;
+				me.setUserId(data._id);
 				return callback(null, data);
 			},
 			function() {
@@ -66,14 +65,7 @@ angular.module('futurism')
 
 
 		var setToken = function(newToken) {
-			account.token = newToken;
 			memory.short.set('token', newToken);
-		};
-
-
-		var updateAccount = function(data) {
-			_.assign(account, data);
-			account.loggedIn = true;
 		};
 
 

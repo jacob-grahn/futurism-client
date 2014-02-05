@@ -4,7 +4,7 @@ describe('game/prizeCalculator', function() {
 	var mockgoose = require('mockgoose');
 	mockgoose(mongoose);
 
-	var UserGoose = require('../../../models/user');
+	var UserGoose = require('../../../models/stats');
 	var PrizeCalculator = require('../../../multi/game/prizeCalculator');
 	var Elo = require('../../../fns/elo');
 

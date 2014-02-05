@@ -1,10 +1,10 @@
 angular.module('futurism')
-	.controller('TitleCtrl', function($scope, $location, session, account) {
+	.controller('TitleCtrl', function($scope, $location, session) {
 		'use strict';
 
 		$scope.login = function() {
-			if(!account.loggedIn) {
-				session.makeNew();
+			if(!session.active) {
+				session.renew();
 			}
 			$location.url('/lobby');
 		};

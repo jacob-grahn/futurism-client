@@ -16,22 +16,20 @@ angular.module('futurism')
 
 				scope.showUser = function () {
 
-					var modalInstance = $modal.open({
-						templateUrl: 'views/modal.html'
-						 /*resolve: {
-							items: function () {
-								return $scope.items;
-							}
-						}*/
-					});
+					console.log('showUser', scope.id);
 
-					/*modalInstance.result.then(function (selectedItem) {
-						$scope.selected = selectedItem;
-					}, function () {
-						$log.info('Modal dismissed at: ' + new Date());
-					});*/
+					var modalInstance = $modal.open({
+						templateUrl: 'views/userModal.html',
+						controller: 'UserModalCtrl',
+						resolve: {
+							userId: function () {
+								return scope.id;
+							}
+						}
+					});
 				};
 			}
 		};
 
 	});
+
