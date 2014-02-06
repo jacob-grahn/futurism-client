@@ -20,7 +20,8 @@ angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', '
 			when('/title', {templateUrl: 'views/title.html', controller: 'TitleCtrl'}).
 			when('/record/:gameId', {templateUrl: 'views/game-record.html', controller: 'GameRecordCtrl'}).
 			when('/summary/:gameId', {templateUrl: 'views/game-summary.html', controller: 'GameSummaryCtrl'}).
+			when('/messages', {templateUrl: 'views/messages.html', controller: 'MessagesCtrl'}).
 			otherwise({redirectTo: '/title'});
 
-		$locationProvider.html5Mode(true).hashPrefix('#');
+		$locationProvider.html5Mode(true);
 	});

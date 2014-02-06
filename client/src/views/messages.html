@@ -1,0 +1,36 @@
+<div id="conversations" class="row">
+
+	<div id="conversation-list" class="col-sm-5 panel panel-default">
+		<ul>
+			<li class="panel-segment" ng-repeat="convo in convos" ng-click="selectConvo(convo)">
+				<ul>
+					<li ng-repeat="message in convo">
+						<username link="false" ng-if="message.fromUser._id == me.user._id" id="{{message.toUser._id}}" name="{{message.toUser.name}}" site="{{message.toUser.site}}" group="{{message.toUser.group}}"></username>
+						<username link="false" ng-if="message.toUser._id == me.user._id" id="{{message.fromUser._id}}" name="{{message.fromUser.name}}" site="{{message.fromUser.site}}" group="{{message.fromUser.group}}"></username>
+						<div>{{message.body}} <span class="subtle">{{message.date | date}}</span></div>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+
+
+	<div id="conversation" class="col-sm-7">
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="message in selectedConvo">
+				<username id="{{message.fromUser._id}}" name="{{message.fromUser.name}}" site="{{message.fromUser.site}}" group="{{message.fromUser.group}}"></username>
+				<div>{{message.body}} <span class="subtle">{{message.date | date}}</span></div>
+			</li>
+		</ul>
+		<form ng-hide="selectedConvo" submit="sendMessage()">
+			<div class="input-group">
+				<input class="form-control" type="text" ng-model="typedMessage" maxlength="200">
+				<span class="input-group-btn">
+					<button class='btn btn-default' type="submit" ng-click="sendMessage()">send</button>
+				</span>
+			</div>
+		</form>
+	</div>
+
+</div>
