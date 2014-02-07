@@ -14,11 +14,6 @@
 	<script type="text/javascript" src="//use.typekit.net/rca3kqg.js"></script>
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-	<!--[if lt IE 9]>
-	<script src="bower_components/es5-shim/es5-shim.js"></script>
-	<script src="bower_components/json3/lib/json3.min.js"></script>
-	<![endif]-->
-
 
 	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 	<script>
@@ -53,12 +48,32 @@
 	<div id="main-container" class="container" ng-view></div>
 
 	<!-- libraries -->
+
+	<!-- ref:js //code.jquery.com/jquery-1.11.0.min.js -->
 	<script src="bower_components/jquery/jquery.js"></script>
+	<!-- endref -->
+
+	<!-- ref:js //cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js -->
 	<script src="bower_components/lodash/dist/lodash.js"></script>
+	<!-- endref -->
+
+	<!-- ref:js //cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.10/angular.min.js -->
 	<script src="bower_components/angular/angular.js"></script>
+	<!-- endref -->
+
+	<!-- ref:js //cdnjs.cloudflare.com/ajax/libs/socket.io/0.9.16/socket.io.min.js-->
 	<script src="bower_components/socket.io-client/dist/socket.io.js"></script>
+	<!-- endref -->
+
+	<!-- ref:js //cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js -->
 	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<!-- endref -->
+
+	<!-- Ideally this should be removed eventually -->
+	<!-- ref:js //cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.1.0/js/bootstrap.min.js -->
 	<script src="bower_components/bootstrap-sass/js/collapse.js"></script>
+	<!-- endref -->
+
 
 	<!-- build:js scripts/modules.js -->
 	<script src="bower_components/angular-resource/angular-resource.js"></script>

@@ -214,7 +214,7 @@ module.exports = function (grunt) {
 				},
 				files: [{
 					expand: true,
-					cwd: '<%= yeoman.dist %>',
+					cwd: '<%= yeoman.app %>',
 					src: ['*.html', 'views/*.html'],
 					dest: '<%= yeoman.dist %>'
 				}]
@@ -236,10 +236,16 @@ module.exports = function (grunt) {
 		},
 
 
-		// Replace Google CDN references
-		cdnify: {
+		htmlrefs: {
 			dist: {
-				html: ['<%= yeoman.dist %>/*.html']
+				/** @required  - string including grunt glob variables */
+				src: '<%= yeoman.dist %>/**/*.html'
+				/** @optional  - string directory name*/
+				//dest: '<%= yeoman.dist %>/**/*.html',
+				/** any other parameter included on the options will be passed for template evaluation */
+				//options: {
+				//	buildNumber: 47878
+				//}
 			}
 		},
 
@@ -437,16 +443,17 @@ module.exports = function (grunt) {
 		'clean:dist',
 		'useminPrepare',
 		'concurrent:dist',
-		//'autoprefixer',
+		'autoprefixer',
 		'concat',
 		'ngmin',
+		'htmlmin',
 		'copy:dist',
-		'cdnify',
 		'cssmin',
 		'uglify',
 		//'rev',
 		'usemin',
-		'shell:deploy'
+		'htmlrefs',
+		//'shell:deploy'
 	]);
 
 

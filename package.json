@@ -38,7 +38,6 @@
     "grunt-contrib-jshint": "~0.7.1",
     "grunt-contrib-uglify": "~0.2.0",
     "grunt-contrib-watch": "~0.5.2",
-    "grunt-google-cdn": "~0.2.0",
     "grunt-karma": "~0.6.2",
     "grunt-newer": "~0.5.4",
     "grunt-ngmin": "0.0.3",
@@ -68,6 +67,7 @@
     "load-grunt-tasks": "~0.2.0",
     "node-sass": "0.6.7",
     "time-grunt": "~0.2.1",
-    "grunt-protractor-runner": "~0.2.0"
+    "grunt-protractor-runner": "~0.2.0",
+		"grunt-htmlrefs": "0.4.2"
   }
 }

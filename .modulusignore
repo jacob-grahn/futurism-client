@@ -6,3 +6,4 @@ server/config/env.js
 server/spec
 client/src
 client/test
+client/dist/bower_components
