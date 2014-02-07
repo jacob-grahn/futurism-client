@@ -9,6 +9,11 @@ angular.module('futurism')
 
 
 		self.makeNew = function(callback) {
+
+			if(!callback) {
+				callback = function() {};
+			}
+
 			checkLogins(function(err) {
 				if(err) {
 					tempCredentials = {site: 'g'};
@@ -40,21 +45,28 @@ angular.module('futurism')
 		self.renew = function(callback) {
 			var token = self.getToken();
 
+			if(!callback) {
+				callback = function() {};
+			}
 			if(!token) {
 				return self.makeNew(callback);
 			}
 
-			return SessionResource.get(function(data) {
-				if(data.error) {
+			return SessionResource.get(
+
+				function(data) {
+					if(data.error) {
+						return self.makeNew(callback);
+					}
+					active = true;
+					me.setUserId(data._id);
+					return callback(null, data);
+				},
+
+				function() {
 					return self.makeNew(callback);
 				}
-				active = true;
-				me.setUserId(data._id);
-				return callback(null, data);
-			},
-			function() {
-				return self.makeNew(callback);
-			});
+			);
 		};
 
 

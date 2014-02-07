@@ -6,7 +6,7 @@ angular.module('futurism')
 		/**
 		 * Private
 		 */
-		var freq = 1000 * 60 * 2; // two minutes
+		var freq = 1000 * 60; // one minute
 		var promise;
 
 		var doneWaiting = function() {
