@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('session', function($http, $location, websites, me, SessionResource, memory) {
+	.factory('session', function($http, $location, websites, me, SessionResource, memory, _) {
 		'use strict';
 
 		var self = this;
@@ -8,8 +8,7 @@ angular.module('futurism')
 		var tempCredentials;
 
 
-		self.makeNew = function(callback) {
-
+		self.makeNew = _.throttle(function(callback) {
 			if(!callback) {
 				callback = function() {};
 			}
@@ -25,12 +24,12 @@ angular.module('futurism')
 					}
 
 					active = true;
-					me.setUserId(data._id);
 					setToken(data.token);
+					me.setUserId(data._id);
 					return callback(null, data);
 				});
 			});
-		};
+		}, 5000);
 
 
 		self.destroy = function() {
@@ -42,7 +41,7 @@ angular.module('futurism')
 		};
 
 
-		self.renew = function(callback) {
+		self.renew = _.throttle(function(callback) {
 			var token = self.getToken();
 
 			if(!callback) {
@@ -67,7 +66,7 @@ angular.module('futurism')
 					return self.makeNew(callback);
 				}
 			);
-		};
+		}, 5000, {leading: true, trailing: false});
 
 
 		self.getToken = function() {

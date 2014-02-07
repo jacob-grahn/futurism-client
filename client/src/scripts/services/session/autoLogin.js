@@ -19,7 +19,7 @@ angular.module('futurism')
 		};
 
 		var loginRequiredHandler = function() {
-			session.makeNew(function(error, result) {
+			session.renew(function(error) {
 				if(error) {
 					return $location.path('/error');
 				}

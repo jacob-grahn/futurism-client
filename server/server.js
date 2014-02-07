@@ -30,7 +30,9 @@
 		showStack: true
 	}));
 
+	expr.use('/globe', require('./middleware/nocache'));
 	expr.use('/globe', require('./middleware/proxy')(process.env.GLOBE_URI));
+	expr.use('/api', require('./middleware/nocache'));
 	expr.use('/api', output);
 	/*expr.use('/api', express.urlencoded());
 	expr.use('/api', express.json());*/

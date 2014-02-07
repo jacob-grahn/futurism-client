@@ -17,7 +17,7 @@ module.exports = function(expr) {
 	expr.get('/api/records/:gameId', continueSession, require('./routes/recordsGet'));
 
 	var stats = require('./routes/stats');
-	expr.post('/api/stats', continueSession, stats.post);
+	expr.post('/api/stats', continueSession, checkLogin, stats.post);
 	expr.get('/api/stats/:userId', stats.get);
 
 	expr.get('/api/summaries/:gameId', require('./routes/summariesGet'));
