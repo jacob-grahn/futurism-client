@@ -453,7 +453,7 @@ module.exports = function (grunt) {
 		//'rev',
 		'usemin',
 		'htmlrefs',
-		//'shell:deploy'
+		'shell:deploy'
 	]);
 
 

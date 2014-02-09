@@ -4,8 +4,6 @@ var createHashId = require('../fns/createHashId');
 var Deck = require('../models/deck');
 var _ = require('lodash');
 
-
-
 /**
  * Save a deck
  * @body {string} name

@@ -7,7 +7,7 @@ module.exports = function(expr) {
 	var checkMod = require('./middleware/checkMod');
 
 	expr.post('/api/canonCards', continueSession, checkMod, require('./routes/canonCardsPost'));
-	expr.delete('/api/cards', continueSession, checkLogin, require('./routes/cardsDelete'));
+	expr.delete('/api/cards/:cardId', continueSession, checkLogin, require('./routes/cardsDelete'));
 	expr.get('/api/cards', continueSession, checkLogin, require('./routes/cardsGet'));
 	expr.post('/api/cards', continueSession, checkLogin, require('./routes/cardsPost'));
 	expr.delete('/api/decks', continueSession, checkLogin, require('./routes/decksDelete'));
