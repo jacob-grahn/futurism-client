@@ -22,9 +22,6 @@
 
 
 	//--- middleware
-	var handleErrors = require('./middleware/handleErrors');
-	var output = require('./middleware/output');
-
 	expr.use(express.errorHandler({
 		dumpExceptions: true,
 		showStack: true
@@ -33,7 +30,7 @@
 	expr.use('/globe', require('./middleware/nocache'));
 	expr.use('/globe', require('./middleware/proxy')(process.env.GLOBE_URI));
 	expr.use('/api', require('./middleware/nocache'));
-	expr.use('/api', output);
+	expr.use('/api', require('./middleware/output'));
 	/*expr.use('/api', express.urlencoded());
 	expr.use('/api', express.json());*/
 	expr.use('/api', express.bodyParser());

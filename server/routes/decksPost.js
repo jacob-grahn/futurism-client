@@ -1,35 +1,26 @@
+'use strict';
+
+var createHashId = require('../fns/createHashId');
+var Deck = require('../models/deck');
+var _ = require('lodash');
+
+
+
 /**
- * Save deck
+ * Save a deck
+ * @body {string} name
+ * @body {string[]} cards
+ * @body {number} pride
  */
+module.exports = function(req, res) {
 
-(function() {
-	'use strict';
+	//--- bring in user input
+	var deck = _.pick(req.body, 'name', 'cards', 'pride');
 
-	var createHashId = require('../fns/createHashId');
-	var Deck = require('../models/deck');
-	var _ = require('lodash');
+	//--- server defined properties
+	deck._id = createHashId(req.session._id + '-' + deck.name, 16);
+	deck.userId = req.session._id;
 
-
-
-	/**
-	 * Save a deck
-	 * @body {string} name
-	 * @body {string[]} cards
-	 * @body {number} pride
-	 */
-	module.exports = function(req, res) {
-
-		//--- bring in user input
-		var deck = _.pick(req.body, 'name', 'cards', 'pride');
-
-
-		//--- server defined properties
-		deck.id = createHashId(req.session._id + '-' + deck.name, 16);
-		deck.userId = req.session._id;
-
-
-		//--- save deck to db
-		Deck.findByIdAndSave(deck, res.apiOut);
-	};
-
-}());
+	//--- save deck to db
+	Deck.findByIdAndSave(deck, res.apiOut);
+};
