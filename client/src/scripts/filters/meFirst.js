@@ -18,6 +18,8 @@ angular.module('futurism')
 				}
 				return 1;
 			});
+
+			return arr;
 		};
 
 	});
