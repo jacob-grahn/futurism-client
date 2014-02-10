@@ -46,7 +46,7 @@
 					if(player.cards.length > 0) {
 						return callback('a deck was already loaded for you');
 					}
-					if(player._id !== deck.userId) {
+					if(String(player._id) !== String(deck.userId)) {
 						return callback('you do not own this deck');
 					}
 
@@ -54,11 +54,11 @@
 					player.deckPride = deck.pride;
 					player.cards = [];
 					_.each(deck.cards, function(card) {
-						var card = _.pick(card, 'faction', 'attack', 'health', 'abilities', 'hasImage', 'name', 'story', 'userId', '_id');
-						card.cid = nextCid();
-						card.moves = 0;
-						card.pride = cardFns.calcPride(card);
-						player.cards.push(card);
+						var publicCard = _.pick(card, 'faction', 'attack', 'health', 'abilities', 'hasImage', 'name', 'story', 'userId', '_id');
+						publicCard.cid = nextCid();
+						publicCard.moves = 0;
+						publicCard.pride = cardFns.calcPride(publicCard);
+						player.cards.push(publicCard);
 					});
 
 					self.nextIfDone();
