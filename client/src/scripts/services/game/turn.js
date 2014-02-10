@@ -22,7 +22,7 @@ angular.module('futurism')
 			 * @returns {Boolean}
 			 */
 			isTheirTurn: function(playerId) {
-				return turn.turnOwners.indexOf(Number(playerId)) !== -1;
+				return turn.turnOwners.indexOf(playerId) !== -1;
 			},
 
 

@@ -3,7 +3,6 @@ angular.module('futurism')
 		'use strict';
 
 		var self = this;
-		self.minBoard;
 		self.areas = {};
 
 
@@ -38,7 +37,7 @@ angular.module('futurism')
 			_.each(minBoard.areas, function(minArea, playerId) {
 				var area = {};
 				var targets = [];
-				area.playerId = Number(playerId);
+				area.playerId = playerId;
 				area.player = players.idToPlayer(playerId);
 				area.team = area.player.team;
 				area.targets = targets;

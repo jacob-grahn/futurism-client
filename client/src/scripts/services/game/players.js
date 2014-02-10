@@ -10,13 +10,12 @@ angular.module('futurism')
 
 			/**
 			 * Find a player using their id
-			 * @param {number} playerId
+			 * @param {ObjectId} playerId
 			 */
 			idToPlayer: function(playerId) {
-				playerId = Number(playerId);
 				var playerMatch = null;
 				_.each(players.list, function(player) {
-					if(player._id === playerId) {
+					if(String(player._id) === String(playerId)) {
 						playerMatch = player;
 					}
 				});
