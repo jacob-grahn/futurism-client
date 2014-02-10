@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('session', function($http, $location, websites, me, SessionResource, memory, _) {
+	.factory('session', function($location, websites, me, SessionResource, memory, _) {
 		'use strict';
 
 		var self = this;
@@ -33,11 +33,10 @@ angular.module('futurism')
 
 
 		self.destroy = function() {
+			SessionResource.delete({token: self.getToken()});
 			setToken(null);
 			active = false;
 			me.clear();
-			$http.delete('/api/token');
-			return $http;
 		};
 
 
