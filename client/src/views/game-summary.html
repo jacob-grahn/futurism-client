@@ -3,7 +3,7 @@
 	<ul class="panel panel-default">
 		<li ng-repeat="user in summ.users | meFirst" class="panel-segment">
 
-			<h1><username name="{{user.name}}" id="{{user._id}}" site="{{user.site}}" group="{{user.group}}"></username></h1>
+			<h1><username size="large" name="{{user.name}}" id="{{user._id}}" site="{{user.site}}" group="{{user.group}}"></username></h1>
 			<div>exp:
 				<b>{{rankCalc.expRemainder(user.fame) | number:0}} / {{rankCalc.expNeeded(rankCalc.expToRank(user.fame)) | number}}</b>
 				<span class="text-success">(+{{user.fame-user.oldFame | number:0}})</span>

@@ -28,7 +28,7 @@
 			min: 0
 		},
 		users: [{
-			_id: Number,
+			_id: mongoose.Schema.Types.ObjectId,
 			name: String,
 			site: String,
 			group: String,
