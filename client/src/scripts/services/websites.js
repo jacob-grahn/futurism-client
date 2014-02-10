@@ -1,21 +1,26 @@
 angular.module('futurism')
-	.factory('websites', function($http) {
+	.factory('websites', function($) {
 		'use strict';
 
 
 		var checkJiggLogin = function(callback) {
-			$http
-				.jsonp('https://jiggmin.com/-who-am-i.php?callback=JSON_CALLBACK&date='+new Date())
-				.success(function(data) {
-					if(data.logged_in) {
-						data.site = 'j';
-						return callback(null, data);
-					}
-					else {
-						return callback('not logged into jiggmin.com');
-					}
-				})
-				.error(callback);
+			$.ajax('//jiggmin.com/-who-am-i.php', {
+				type: 'GET',
+				dataType: 'jsonp',
+				xhrFields: {
+					withCredentials: true
+				}
+			})
+			.done(function(data) {
+				if(data.logged_in) {
+					data.site = 'j';
+					return callback(null, data);
+				}
+				else {
+					return callback('not logged into jiggmin.com');
+				}
+			})
+			.error(callback);
 		};
 
 
