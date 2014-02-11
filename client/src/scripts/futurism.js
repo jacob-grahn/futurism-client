@@ -14,6 +14,7 @@ angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', '
 			when('/game/:gameId', {templateUrl: 'views/game.html', controller: 'GameCtrl'}).
 			when('/loadup/:gameId/:maxPride', {templateUrl: 'views/loadup.html', controller: 'LoadupCtrl'}).
 			when('/guild', {templateUrl: 'views/guild.html', controller: 'GuildCtrl'}).
+			when('/guild-join', {templateUrl: 'views/guild-join.html', controller: 'GuildJoinCtrl'}).
 			when('/instructions', {templateUrl: 'views/instructions.html', controller: 'InstructionsCtrl'}).
 			when('/language', {templateUrl: 'views/language.html', controller: 'LanguageCtrl'}).
 			when('/lobby', {templateUrl: 'views/lobby.html', controller: 'LobbyCtrl'}).

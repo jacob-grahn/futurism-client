@@ -1909,5 +1909,54 @@
       "ne": "levens",
       "lt": "Gyvibių taškai"
     }
-  }
+  },
+
+
+	"guildJoin": {
+		"joinGuild": {
+			"en": "Join Guild"
+		},
+
+		"createGuild": {
+			"en": "Create Guild"
+		},
+
+		"joinPolicy": {
+			"en": "Join Policy"
+		},
+
+		"banner": {
+			"en": "Banner"
+		}
+	},
+
+
+	"guildJoinPolicy": {
+		"open": {
+			"name": {
+				"en": "Open"
+			},
+			"desc": {
+				"en": "Anyone can join this guild."
+			}
+		},
+
+		"invite": {
+			"name": {
+				"en": "Invite"
+			},
+			"desc": {
+				"en": "Only invited players can join this guild."
+			}
+		},
+
+		"ask": {
+			"name": {
+				"en": "Ask"
+			},
+			"desc": {
+				"en": "Players must ask or be invited to join this guild."
+			}
+		}
+	}
 }

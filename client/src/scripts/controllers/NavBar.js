@@ -43,6 +43,16 @@ angular.module('futurism')
 		};
 
 
+		$scope.clickGuild = function() {
+			if(me.guild) {
+				$location.url('/guild');
+			}
+			else {
+				$location.url('/guild-join');
+			}
+		};
+
+
 		$scope.shouldShow = function() {
 			//return $scope.path !== '/title' && $scope.path.indexOf('/game') !== 0;
 			return $scope.path !== '/title';
