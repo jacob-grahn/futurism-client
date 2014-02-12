@@ -1925,8 +1925,28 @@
 			"en": "Join Policy"
 		},
 
+		"join": {
+			"en": "Join"
+		},
+
 		"banner": {
 			"en": "Banner"
+		},
+
+		"leaders": {
+			"en": "Leaders"
+		},
+
+		"members": {
+			"en": "Members"
+		},
+
+		"gpToday": {
+			"en": "GP Today"
+		},
+
+		"founded": {
+			"en": "Founded"
 		}
 	},
 
