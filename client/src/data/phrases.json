@@ -1914,19 +1914,23 @@
 
 	"guildJoin": {
 		"joinGuild": {
-			"en": "Join Guild"
+			"en": "Join Guild",
+			"lt": "Stoti į Gildiją"
 		},
 
 		"createGuild": {
-			"en": "Create Guild"
+			"en": "Create Guild",
+			"lt": "Sukurti Gildiją"
 		},
 
 		"joinPolicy": {
-			"en": "Join Policy"
+			"en": "Join Policy",
+			"lt": "Įstojimo tipas"
 		},
 
 		"banner": {
-			"en": "Banner"
+			"en": "Banner",
+			"lt": "Logotipas"
 		}
 	},
 
@@ -1934,28 +1938,34 @@
 	"guildJoinPolicy": {
 		"open": {
 			"name": {
-				"en": "Open"
+				"en": "Open",
+				"lt": "Atvira"
 			},
 			"desc": {
-				"en": "Anyone can join this guild."
+				"en": "Anyone can join this guild.",
+				"lt": "Į šią Gildiją gali įstoti visi."
 			}
 		},
 
 		"invite": {
 			"name": {
-				"en": "Invite"
+				"en": "Invite",
+				"lt": "Tik su pakvietimu"
 			},
 			"desc": {
-				"en": "Only invited players can join this guild."
+				"en": "Only invited players can join this guild.".
+				"lt": "Tik pakviesti žaidėjai gali įstoti į šią Gildiją"
 			}
 		},
 
 		"ask": {
 			"name": {
-				"en": "Ask"
+				"en": "Ask",
+				"lt": "Tik su užklausa"
 			},
 			"desc": {
-				"en": "Players must ask or be invited to join this guild."
+				"en": "Players must ask or be invited to join this guild.",
+				"lt": "Žaidėjai turi atsiusti užklausą arba būti pakviesti kad galėtu įstoti į šią Gildiją"
 			}
 		}
 	}
