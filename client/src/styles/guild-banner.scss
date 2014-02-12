@@ -1,0 +1,22 @@
+.guild-banner {
+	width: 200px;
+	height: 50px;
+	background-color: black;
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+
+.guild-banner img {
+
+}
+
+.guild-banner h3 {
+	position: absolute;
+	left: 0px;
+	bottom: 5px;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin: 0;
+	padding: 0 10px 0 10px;
+}

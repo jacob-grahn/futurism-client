@@ -3,17 +3,24 @@ angular.module('futurism')
 		'use strict';
 
 		var urlBase = location.href.substring(0, location.href.lastIndexOf('/')+1);
-		var staticContentUrl;
+		var futurismStatic;
+		var globeStatic;
 
 		if(urlBase.indexOf('production') !== -1) {
-			staticContentUrl = 'http://futurism-production.s3-website-us-east-1.amazonaws.com';
+			futurismStatic = '//futurism-production.s3-website-us-east-1.amazonaws.com';
+			globeStatic = '//globe-production.s3-website-us-east-1.amazonaws.com';
 		}
 		else if(urlBase.indexOf('staging') !== -1) {
-			staticContentUrl = 'http://futurism-staging.s3-website-us-east-1.amazonaws.com';
+			futurismStatic = '//futurism-staging.s3-website-us-east-1.amazonaws.com';
+			globeStatic = '//globe-staging.s3-website-us-east-1.amazonaws.com';
 		}
 		else {
-			staticContentUrl = 'http://futurism-development.s3-website-us-east-1.amazonaws.com';
+			futurismStatic = '//futurism-development.s3-website-us-east-1.amazonaws.com';
+			globeStatic = '//globe-development.s3-website-us-east-1.amazonaws.com';
 		}
 
-		return staticContentUrl;
+		return {
+			globe: globeStatic,
+			futurism: futurismStatic
+		};
 	});

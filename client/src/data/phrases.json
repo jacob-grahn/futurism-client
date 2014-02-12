@@ -1912,7 +1912,7 @@
   },
 
 
-	"guildJoin": {
+	"guildJoiner": {
 		"joinGuild": {
 			"en": "Join Guild"
 		},

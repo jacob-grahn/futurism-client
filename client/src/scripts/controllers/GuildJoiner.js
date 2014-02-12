@@ -1,7 +1,8 @@
 angular.module('futurism')
-	.controller('GuildJoinCtrl', function($scope, GuildResource, dataUrlToBlob) {
+	.controller('GuildJoinerCtrl', function($scope, GuildResource, dataUrlToBlob, staticContentUrl) {
 		'use strict';
 
+		$scope.static = staticContentUrl;
 		$scope.joinOptions = ['invite', 'ask', 'open'];
 
 		$scope.newGuild = {
@@ -17,7 +18,7 @@ angular.module('futurism')
 
 		$scope.createGuild = function(guildData) {
 			if($scope.uppedBanner) {
-				guildData.banner = dataUrlToBlob($scope.uppedBanner.resized.dataURL);
+				guildData.bannerImg = dataUrlToBlob($scope.uppedBanner.resized.dataURL);
 			}
 
 			var guild = GuildResource.put(guildData);

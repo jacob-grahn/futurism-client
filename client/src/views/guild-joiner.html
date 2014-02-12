@@ -1,0 +1,69 @@
+<div id="lobby-matchups" class="col-sm-7">
+
+	<div class="col-sm-12">
+		<div class="row">
+
+			<h1 class="inverse">{{lang.guildJoiner.joinGuild}}</h1>
+
+			<ul class="list-group">
+				<li class="list-group-item" ng-repeat="guild in guilds" ng-click="joinGuild(guild._id)">
+
+					<div class="guild-banner">
+						<h3>{{guild._id}}</h3>
+						<img ng-src="{{static.globe}}/banners/large_{{guild.banner.file}}?{{guild.banner.updated}}">
+					</div>
+					<ul>
+						<li>
+							Owners:
+							<span ng-repeat="owner in guild.owners">
+								<username id="{{owner._id}}" name="{{owner.name}}" site="{{owner.site}}" group="{{owner.group}}"></username>
+							</span>
+						</li>
+						<li>
+							Member Count: <b>{{guild.members.length}}</b>
+						</li>
+						<li>
+							GP Today: <b>{{guild.gpDay}}</b>
+						</li>
+						<li>
+							Founded: <b>{{guild.createdDate | date}}</b>
+						</li>
+						<li>
+							{{guild.desc}}
+						</li>
+					</ul>
+
+				</li>
+			</ul>
+
+		</div>
+	</div>
+
+</div>
+
+
+
+<div class="col-sm-5 panel panel-default">
+
+	<div class="panel-segment">
+		<h1>{{lang.guildJoiner.createGuild}}</h1>
+		<div class="form-group">
+			<input class="form-control" type="text" ng-model="newGuild._id" placeholder="Guild Name">
+		</div>
+		<div class="form-group">
+			<textarea class="form-control" rows="2" ng-model="newGuild.desc" placeholder="Description"></textarea>
+		</div>
+		<div class="form-group">
+			{{lang.guildJoiner.joinPolicy}}: <select ng-model="newGuild.join" ng-options="lang.guildJoinPolicy[value].name for value in joinOptions"></select><br>
+			<span class="subtle">{{lang.guildJoinPolicy[newGuild.join].desc}}</span>
+		</div>
+		<div class="form-group">
+			{{lang.guildJoiner.banner}}: <span class="subtle">(200x50)</span> <input type="file" accept="image/*" image="uppedBanner" resize-max-width="200" resize-max-height="50" resize-quality="0.9" resize-type="image/jpg"/>
+			<img ng-if="uppedBanner" ng-src="{{uppedBanner.resized.dataURL}}" width="200" height="50"/>
+		</div>
+		<div class="form-group">
+			<busy-button on-click="createGuild(newGuild)" label="{{lang.guildJoiner.createGuild}}"></busy-button>
+		</div>
+	</div>
+
+</div>

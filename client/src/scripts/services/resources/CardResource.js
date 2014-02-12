@@ -1,21 +1,12 @@
 angular.module('futurism')
-	.factory('CardResource', function($resource) {
+	.factory('CardResource', function($resource, formTransformer) {
 		'use strict';
 
 		var CardResource = $resource('/api/cards/:cardId', {userId:'@_id'}, {
 
 			save: {
 				method: 'POST',
-				transformRequest: function(request) {
-					var formData = new FormData();
-					for(var key in request) {
-						if(request.hasOwnProperty(key) && key.charAt(0) !== '$') {
-							var val = request[key];
-							formData.append(key, val);
-						}
-					}
-					return(formData);
-				},
+				transformRequest: formTransformer,
 				headers: {
 					'Content-Type': undefined
 				}
