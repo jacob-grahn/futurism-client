@@ -58,14 +58,19 @@
 		 * Load in the phrases.json file
 		 */
 		lang.init = function() {
-			$http.get('data/phrases.json')
-				.success(function(phraseData) {
-					lang.phrases = phraseData;
-					lang.setLang('en');
-				})
-				.error(function() {
-					errorHandler.handleError('Could not load language file.');
-				});
+			var onLoad = function(phraseData) {
+				lang.phrases = phraseData;
+				lang.setLang('en');
+			};
+			var onError = function() {
+				errorHandler.handleError('Could not load language file.');
+			};
+
+			$http.get('data/abilities.json').success(onLoad).error(onError);
+			$http.get('data/factions.json').success(onLoad).error(onError);
+			$http.get('data/futures.json').success(onLoad).error(onError);
+			$http.get('data/languages.json').success(onLoad).error(onError);
+			$http.get('data/phrases.json').success(onLoad).error(onError);
 		};
 
 

@@ -1,5 +1,35 @@
 {
+
+	"futureTypes": {
+		"unstable": {
+			"name": {
+				"en": "Stable Futures"
+			},
+			"desc": {
+				"en": "These reliable futures can be used any number of times."
+			}
+		},
+		"stable": {
+			"name": {
+				"en": "Unstable Futures"
+			},
+			"desc": {
+				"en": "These futures are powerful, but only last a short while before fading away."
+			}
+		},
+		"paradox": {
+			"name": {
+				"en": "Paradoxes"
+			},
+			"desc": {
+				"en": "The combined time manipulations of an entire guild are needed to create a paradox. Paradoxes are wildly powerful, but only last a short while."
+			}
+		}
+	},
+
+
 	"futures": {
+
 		"free": {
 			"name": {
 				"en": "Free Love",

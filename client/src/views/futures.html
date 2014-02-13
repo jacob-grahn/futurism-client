@@ -2,8 +2,8 @@
 
 	<div class="col-sm-5 panel panel-default">
 		<div class="panel-segment">
-			<h1>Stable Futures</h1>
-			<span>These futures can be used any number of times.</span>
+			<h1>{{lang.futureTypes.stable.name}}</h1>
+			<span>{{lang.futureTypes.stable.desc}}</span>
 			<ul>
 				<li ng-repeat="futureId in futures.stable">
 					<h3>{{lang.futures[futureId].name}}</h3>
@@ -13,8 +13,8 @@
 		</div>
 
 		<div class="panel-segment">
-			<h1>Unstable Futures</h1>
-			<span>These futures can be used once.</span>
+			<h1>{{lang.futureTypes.unstable.name}}</h1>
+			<span>{{lang.futureTypes.unstable.desc}}</span>
 			<ul>
 				<li ng-repeat="futureId in futures.unstable">
 					<h3>{{lang.futures[futureId].name}}</h3>
@@ -27,8 +27,8 @@
 
 
 	<div class="col-sm-7 inverse">
-		<h1>Paradoxes</h1>
-		<span>An entire guild is needed to unlock one. Each member of the guild can use it once.</span>
+		<h1>{{lang.futureTypes.paradox.name}}</h1>
+		<span>{{lang.futureTypes.paradox.desc}}</span>
 		<ul>
 			<li ng-repeat="futureId in futures.paradox">
 				<h3>{{lang.futures[futureId].name}}</h3>
