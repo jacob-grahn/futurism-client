@@ -191,7 +191,7 @@
       "ct": "meow",
       "fr": "Nouvelle",
       "pi": "Plunder new booty",
-      "lt": "Naujas",
+      "lt": "Nauja korta",
       "ne": "Nieuw",
       "sv": "Nytt",
       "es": "Nueva",
@@ -236,7 +236,7 @@
       "ct": "meow",
       "fr": "Santé",
       "pi": "Rum",
-      "lt": "Gyvybių taškai",
+      "lt": "Gyvybės taškai",
       "ne": "Levens",
       "sv": "Hälsa",
       "es": "Vida",
@@ -272,7 +272,7 @@
       "en": "close",
       "ct": "meow",
       "ne": "Dicht doen",
-      "lt": "uždaryti",
+      "lt": "Uždaryti",
       "hu": "bezár",
       "nb": "lukk",
       "pi": "Seal"
@@ -282,7 +282,7 @@
       "en": "Futures",
       "ct": "meow",
       "ne": "Futures",
-      "lt": "Ateities taškai",
+      "lt": "Futuristikos taškai",
       "hu": "Jövendők",
       "nb": "Fremtider",
       "pi": "Days after tomorrow"
@@ -292,7 +292,7 @@
       "en": "Show Futures",
       "ct": "meow",
       "ne": "Laat Futures zien",
-      "lt": "Rodyti ateities sugebėjimus",
+      "lt": "Rodyti futuristinius sugebėjimus",
       "hu": "Jövendők Mutatása",
       "nb": "Vis fremtider",
       "pi": "Scry Days after Tomorrow"
@@ -605,7 +605,7 @@
 
     "futures": {
       "en": "futures",
-      "lt": "Ateities Taškai",
+      "lt": "Futuristikos taškai",
       "ct": "meow",
       "sv": "framtid",
       "fr": "Futurs",
@@ -672,7 +672,7 @@
       "ct": "meow",
       "fr": "Personnaliser",
       "pi": "Blank map",
-      "lt": "Redaguojamas",
+      "lt": "Futuristinis",
       "ne": "zelfgemaakt",
       "sv": "Anpassad",
       "es": "personalizado",
@@ -835,7 +835,7 @@
     "futures": {
       "en": "Futures",
       "ct": "meow",
-      "lt": "Ateitys",
+      "lt": "Futuristinai sugebėjimai.",
       "fr": "Futurs",
       "sv": "Framitid",
       "pi": "Days after tomorrow",
@@ -883,7 +883,7 @@
         "ct": "mewoowo",
         "fr": "Cherchant un lien avec la nature, les Ents ont fabriqué leur propre ADN. Sauvage groupe de nomades, on dit que vous ne rencontrerez jamais deux fois le même Ent.",
         "pi": "Yarr, the race o' the krakens are a strange one. They were once but a cult, until Davy Jones cursed them to dwell in the sea.",
-        "lt": "Siekdamai maksimalaus ryšio su gamta, Entai modifikavo savo DNR. Pasak legendų niekada nesutiks dviejų visiškai vienodų Entų.",
+        "lt": "Pasak legendų, niekados nesutiksi dviejų visiškai vienodų Entų - nes pastarieji, siekdami maksimalaus ryšio su gamta modifikavo savo DNR.",
         "ne": "In hun zoektocht naar een band met de natuur hebben de Enten aan hun eigen DNA gesleuteld. Ze zijn een wilde groep nomaden, en ze zeggen dat je dezelfde Ent nooit tweemaal zult tegenkomen.",
         "sv": "Sökande efter en obligation med naturen,och enterna mixtrar med sin egen dna. En vild grupp av nomader, de säger att du aldrig kommer att möta samma Ent två gånger.",
         "es": "En la búsqueda de un lazo con la naturaleza, los Ents alteraron su propio ADN. Son un grupo salvaje de nómades, y dicen que nunca verás al mismo Ent dos veces.",
@@ -914,7 +914,7 @@
         "ct": "mewoowo",
         "fr": "L'incessante poursuite de la connaissance en a mené certains à améliorer leurs esprits grâce au métal. Ils sont devenus bien plus que ce que les humains ont jamais été, et bien moins.",
         "pi": "Tha inventors are a lively bunch, ever in the pursuit of rum and knowledge. They know how to make good cannons",
-        "lt": "Išminties siekimas, privedė prie impmatų smegenyse - taip gimė Kiborgai, galingesni bei išmintingesni nei bet kuri kita humanoidų rasė.",
+        "lt": "Siekdami išminties, savo smegenyse įtaisė implantus, taip tapdami žymiai galingesni nei žmonės, bet prarasdami žmogiškumą.",
         "ne": "De onophoudelijke speurtocht naar kennis leidde ertoe dat sommigen hun geest hebben verbeterd met metaal. Ze zijn veel meer dan mensen ooit waren, maar ook veel minder.",
         "sv": "Den obevekliga strävan efter kunskap leder några att förbättra sina sinnen med metall. De har blivit mycket mer än människan någonsin var, och långt mindre.",
         "es": "La búsqueda incansable del conocimiento llevó a algunos a mejorar sus mentes con metal. Se han convertido en mucho más que lo que los humanos nunca llegaron a ser, y en mucho menos.",
@@ -975,7 +975,7 @@
         "ct": "mewoowo",
         "fr": "Toujours certains de détenir la vérité, les Fanatiques sont plus que déterminés à se battre pour elle. Les feux constants de la guerre ont aiguisé leurs compétences militaires à la perfection.",
         "pi": "The priests are a pirate's bain, preaching' what be right and what be wrong. Filthy landlubbers.",
-        "lt": "Fanatikų įgyta patirtis, kovų metu vardan savo tiesios - kuria jie yra visiškai įsitikinę, visiškai ištobulinu jų armiją.",
+        "lt": "Patirtis įgauta kovų metu, vardan savosios tiesos, visiškai ištobulinų Fanatikų armija. ",
         "ne": "Zeloten zijn altijd zeker van de waarheid, en meer dan bereid ervoor te vechten. De vuren van hun constante oorlog hebben hun militaire vaardigheid tot perfectie aangescherpt.",
         "sv": "Alltid säker på sanningen, zeloterna är mer än villiga att kämpa för det. Bränderna i konstanta krig har finslipat sina militära färdigheter till perfektion.",
         "es": "Siempre seguros de la verdad, los Fanáticos están más que dispuestos a luchar por ella. Las llamas de la guerra constante han hecho que sus habilidades militares alcancen la perfección.",
@@ -999,7 +999,7 @@
       "desc": {
         "en": "Produce pride, which can be use to play more cards.",
         "ne": "Produceer de Trots, zodat je meer kaarten kunt gebruiken.",
-        "lt": "Vertės generavimasm, kuri leidžia naudoti daugiau kortų.",
+        "lt": "Vertės generavimas, kuri leidžia naudoti daugiau kortų.",
         "hu": "Produce pride, which can be use to play more cards.",
         "nb": "Produserer stolthet, som kan bli brukt for å spille fler kort.",
         "pi": "Boosts yar pirate's pride, which lets mor' pirates arrive in the battle."
@@ -1064,7 +1064,7 @@
         "ct": "mewoowo",
         "fr": "La carte cible reçoit 1 point de santé.",
         "pi": "Target pirate drinks 1 bottle o' rum",
-        "lt": "Pasirinkta korta gaun  1 gyvybės tašką.",
+        "lt": "Pasirinkta korta gauna  1 gyvybės tašką.",
         "ne": "Doel krijgt 1 leven erbij.",
         "sv": "Det valda kortet får ett hälsopoäng",
         "es": "La carta objetivo gana 1 de vida.",
@@ -1122,7 +1122,7 @@
         "ct": "mewoowo",
         "fr": "Fusionner cette carte avec une autre.",
         "pi": "Bury two treasures together",
-        "lt": "Sujungia dviejus padarus",
+        "lt": "Sujungia dviejas kortas",
         "ne": "Versmelt deze kaart met een andere kaart.",
         "sv": "Slå ihop den här enheten med en annan",
         "es": "Esta unidad se combina con otra.",
@@ -1151,7 +1151,7 @@
         "ct": "mewoowo",
         "fr": "La cible ennemie ne peut attaquer au prochain tour.",
         "pi": "Target boat is busy fixin' leaks until next turn",
-        "lt": "Uždraudžia priešininko padarui pulti vienam ėjimui.",
+        "lt": "Uždraudžia priešininko kortai pulti vienam ėjimui.",
         "ne": "Het doel kan de volgende beurt niet aanvallen.",
         "sv": "Den valda enheten kan inte attackera nästa omgång",
         "es": "El enemigo objetivo no puede atacar el próximo turno.",
@@ -1180,7 +1180,7 @@
         "ct": "mewoowo",
         "fr": "Sacrifier cette carte pour produire une copie d'une autre carte.",
         "pi": "Throw this unit overboard so ye can get another pirate.",
-        "lt": "Vieno padaro paukojimas, vardan kito padaro klono sukūrimo.",
+        "lt": "Vienos kortos paaukojimos, bei kitos kortos klonavimas.",
         "ne": "Offer deze kaart op om een replica van een andere kaart te maken.",
         "sv": "Offra den här enheten för att producera en kopia av en annan enhet.",
         "es": "Sacrifica esta unidad para producir una copia de otra.",
@@ -1209,7 +1209,7 @@
         "ct": "mewoowo",
         "fr": "Tous les ennemis de la colonne ciblée perdent 1 point de santé.",
         "pi": "All enemy ships in target column drop 1 rum.",
-        "lt": "Visi priešininkai vertikaliai nuo puolamo padaro praranda 1 gyvybės tašką.",
+        "lt": "Visi priešininkai vertikaliai nuo puolamos kortos praranda 1 gyvybės tašką.",
         "ne": "Alle vijanden verliezen 1 leven.",
         "sv": "Alla fiender i en siktad kolumn tappar ett hälsopoäng.",
         "es": "Toos los enemigos en la columna objetivo pierden 1 de vida.",
@@ -1238,7 +1238,7 @@
         "ct": "mewoowo",
         "fr": "Ressusciter une machine morte.",
         "pi": "Repair a sunk ship to bring it back",
-        "lt": "Prikelia mirusią mašiną.",
+        "lt": "Prikelia mirusią Kiborgų Frakcijos kortą.",
         "ne": "Breng een dode machine weer tot leven.",
         "sv": "Återuppliva en död maskin.",
         "es": "Revive una máquina muerta.",
@@ -1354,7 +1354,7 @@
         "ct": "mewoowo",
         "fr": "Gagner les habiletés d'un allié.",
         "pi": "Gain cargo from an ally.",
-        "lt": "Draugiško padaro sugebėjimų įgavimas",
+        "lt": "Savos kortos sugebėjimų įgavimas",
         "ne": "Krijg de vaardigheden van een andere speler.",
         "sv": "Få en allierads förmågor",
         "es": "Obtiene las habilidades de un aliado.",
@@ -1412,7 +1412,7 @@
         "ct": "mewoowo",
         "fr": "Convertir un ennemi de votre côté si son niveau de santé est de 1.",
         "pi": "Convert an enemy crew to yer side if they have only 1 rum.",
-        "lt": "Pervilioja priešininko padarą turinti tik 1 gyvybės tašką, į tavo pusę.",
+        "lt": "Pervilioja priešininko kortą turinčią tik 1 gyvybės tašką, į tavo pusę.",
         "ne": "Haal een vijand naar jouw kant als ze 1 leven overhebben.",
         "sv": "Konvertera en fiende till din sida om dens hälsa är ett",
         "es": "Convierte un enemigo a tu bando si su vida es 1.",
@@ -1441,7 +1441,7 @@
         "ct": "mewoowo",
         "fr": "Attaquer sans subir de dégâts.",
         "pi": "Attack without reciving fire.",
-        "lt": "Puoldamas nepraranda gyvybės taškų.",
+        "lt": "Korta puoldama nepraranda gyvybės taškų.",
         "ne": "Val aan zonder zelf schaden te ondervinden.",
         "sv": "Attackera utan att ta skada",
         "es": "Ataca sin recibir daño.",
@@ -1470,7 +1470,7 @@
         "ct": "mewoowo",
         "fr": "Échanger cette carte pour une autre dans votre paquet.",
         "pi": "Swap this unit wit one o' yer others.",
-        "lt": "Apkeičia šį padarą su kitu esančiu tavo rankoje.",
+        "lt": "Apkeičia šį kortą su kita esančia tavo rankoje.",
         "ne": "Ruil deze kaart om met een kaart in je hand.",
         "sv": "Byt det här kortet med en annan enhet i din hand",
         "es": "Intercambia esta unidad con otra de tu mano.",
@@ -1499,7 +1499,7 @@
         "ct": "mewoowo",
         "fr": "La cible ennemie perd 1 point de santé par tour.",
         "pi": "Target ship loses 1 rum per turn.",
-        "lt": "Priešinko padaras praranda 1 gyvybės tašką kiekvieną ėjimą.",
+        "lt": "Kiekvieną ėjimą, priešininko korta praranda 1 gyvybės tašką..",
         "ne": "Het vijandelijke doel verliest 1 leven per beurt.",
         "sv": "Den valda fienden förlorar ett hälsopoäng per omgång",
         "es": "El enemigo objetivo pierde 1 de vida por turno.",
@@ -1528,7 +1528,7 @@
         "ct": "mewoowo",
         "fr": "La carte cible retourne dans le paquet de son propriétaire.",
         "pi": "Target ship is blown back to port.",
-        "lt": "Sugražina priešininko padarą į rankas.",
+        "lt": "Sugražina priešininko kortą į savininko rankas.",
         "ne": "Het doel gaat terug naar de hand van de eigenaar.",
         "sv": "Kortet du valde är tillbakadraget till ägarens hand",
         "es": "La carta objetivo retorna a la mano de su dueño.",
@@ -1586,7 +1586,7 @@
         "ct": "mewoowo",
         "fr": "Peut se reproduire avec les cartes femelles.",
         "pi": "Can make wee ones with women.",
-        "lt": "Gali daugintis su motėrimis.",
+        "lt": "Gali daugintis su moterimis.",
         "ne": "Kan reproduceren met een vrouwelijke kaard.",
         "sv": "Kan ompruduceras med kvinnor",
         "es": "Puede reproducirse con hembras.",
@@ -1644,7 +1644,7 @@
         "ct": "mewoowo",
         "fr": "La carte cible gagne 2 points d'attaque pour ce tour.",
         "pi": "Ship is enthralled and fires 2 more cannons for the turn.",
-        "lt": "Padaras įgauna 2 atako taškus šiam ėjimui.",
+        "lt": "Šiam ėjimui kortą gauna 2 atakos taškus.",
         "ne": "Het doel krijgt twee kracht voor deze beurt.",
         "sv": "Att träffa en enhet ger två attacker för omgången",
         "es": "La unidad objetivo gana 2 de ataque por este turno.",
@@ -1673,7 +1673,7 @@
         "ct": "mewoowo",
         "fr": "Sacrifier cette carte pour infliger le double de dégâts.",
         "pi": "Ram another ship to do double damage (destroys own ship)",
-        "lt": "Padaro pasiaukojimas idin padaryt dvigubą žalą priešininkui.",
+        "lt": "Kortos pasiaukojimas padarant dvigubą žalą.",
         "ne": "Offer deze kaart op om dubbele schade toe te brengen.",
         "sv": "Offra det här kortet för att handla dubbel skada",
         "es": "Sacrifica esta carta para realizar doble daño.",
@@ -1702,7 +1702,7 @@
         "ct": "mewoowo",
         "fr": "Tous les ennemis doivent cibler cette carte pour un tour.",
         "pi": "All enemies that fire must attack this ship for one turn.",
-        "lt": "Kito ėjimo metu, visi priešininkų padarai galės pulti tik šį padarą.",
+        "lt": "Kito ėjimo metu, visi priešininkų padarai galės pulti tik šią kortą.",
         "ne": "Alle vijanden moeten de volgende beurt deze kaart aanvallen.",
         "sv": "Alla fienders attacker måste sikta på det här kortet för en omgång",
         "es": "Todos los ataques enemigos deben tener a esta carta como objetivo por un turno.",
@@ -1731,7 +1731,7 @@
         "ct": "mewoowo",
         "fr": "Les points de santé disponible sont convertis en points d'attaque.",
         "pi": "Available rum is converted into cannon munitions.",
-        "lt": "Konvertuoja gyvybės taškus į puolimo.",
+        "lt": "Konvertuoja gyvybės taškus į puolimo taškus.",
         "ne": "Alle beschikbare levens worden omgezet in kracht.",
         "sv": "Tillgänliga hälsopoäng är konverterade till attackpoäng",
         "es": "Los puntos de vida disponibles se convierten en puntos de ataque.",
@@ -1755,7 +1755,7 @@
       "desc": {
         "en": "Cards that do not attack gain 1 point of health.",
         "ne": "Kaarten die niet aanvallen verdienen levens punt.",
-        "lt": "Nepuolanti korta, gauna 1 gyvybės tašką.",
+        "lt": "Nepuolanti korta, gauna 1 papildomą gyvybės tašką.",
         "hu": "Cards that do not attack gain 1 point of health.",
         "nb": "Kort som ikke angriper får 1 helsepoeng.",
         "pi": "Ships that don't fight drink 1 rum."
@@ -1766,7 +1766,7 @@
       "name": {
         "en": "Blood Feud",
         "ne": "Bloed vijandschap",
-        "lt": "Kraujo liejimas",
+        "lt": "Kraujo praliejimas",
         "hu": "Vérbosszú",
         "nb": "Blodfeide",
         "pi": "Rage"
@@ -1793,7 +1793,7 @@
       "desc": {
         "en": "Players gain an extra 2 pride per turn.",
         "ne": "Spelers verdienen 2 extra trots punten per beurt.",
-        "lt": "Žaidėjas gauna 2 vertės taškus per ėjimą.",
+        "lt": "Žaidėjas gauna 2 vertės taškus kiekvieną ėjimą.",
         "hu": "Players gain an extra 2 pride per turn.",
         "nb": "Spillere får to mer stolthet per runde.",
         "pi": "Captains gain an extra 2 pride per turn"
@@ -1812,7 +1812,7 @@
       "desc": {
         "en": "Every action has a 50% chance to fail.",
         "ne": "Elke actie heeft 50% kans om te valen.",
-        "lt": "Kiekvienas veiksmas turi 50% galimybę susimauti.",
+        "lt": "Kiekvienam veiksmui yra 50% galimybė susimauti.",
         "hu": "Every action has a 50% chance to fail.",
         "nb": "Hvert gjøremål har en 50% sjangse for å mislykkes.",
         "pi": "All plots be as likely to succeed as heads on a coin."
@@ -1831,7 +1831,7 @@
       "desc": {
         "en": "No new cards can be played.",
         "ne": "Er kan niet met nieuwe kaarten worden gespeeld",
-        "lt": "Negalima į kovos lauką dėti naujų kortų.",
+        "lt": "Kovos lauke nebegalima padėti naujų kortų.",
         "hu": "No new cards can be played.",
         "nb": "Ingen nye kort kan spilles.",
         "pi": "No new cards can enter the battlefield."
@@ -1850,7 +1850,7 @@
       "desc": {
         "en": "All cards gain the move ability.",
         "ne": "Alle kaarten krijgen de verplaats kracht.",
-        "lt": "Visos kortos gauna judėjimo sugebėjimą.",
+        "lt": "Visos kortos įgauna judėjimo sugebėjimą.",
         "hu": "All cards gain the move ability.",
         "nb": "Alle kort får flytteegenskapen.",
         "pi": "All ships take up thar anchors and can sail about."
@@ -1888,7 +1888,7 @@
       "desc": {
         "en": "Cards that would die become zombies instead.",
         "ne": "Kaarten die dood zouden gaan, worden zombies.",
-        "lt": "Kortos nemiršta, bet tampa zombiais.",
+        "lt": "Mirties atvėju, korta tampa zombiu.",
         "hu": "Cards that would die become zombies instead.",
         "nb": "Kort som ville dødd blir til zombier i stedet.",
         "pi": "All ships that sink becomes servants of Davy Jones."
@@ -1920,15 +1920,15 @@
     "pride": {
       "en": "pride",
       "ne": "trots",
-      "lt": "vertė",
+			"lt": "Vertė",
       "pi": "pride"
     },
 
     "cardCount": {
       "en": "cards",
       "ne": "kaarten",
-      "lt": "kortų kiekis",
-      "pi": "ships"
+			"lt": "Kortų kiekis",
+			"pi": "ships"
     },
 
     "attack": {
@@ -1941,7 +1941,7 @@
     "health": {
       "en": "health",
       "ne": "levens",
-      "lt": "Gyvibių taškai",
+			"lt": "Gyvybių taškai",
       "pi": "rum"
     }
   },
