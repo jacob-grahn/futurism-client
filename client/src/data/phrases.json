@@ -882,42 +882,51 @@
 
 		"joinGuild": {
 			"en": "Join Guild",
+			"ne": "Treed toe in de Gilde",
 			"lt": "Stoti į Gildiją"
 		},
 
 		"createGuild": {
 			"en": "Create Guild",
+			"ne": "Maak Gilde",
 			"lt": "Sukurti Gildiją"
 		},
 
 		"joinPolicy": {
 			"en": "Join Policy",
+			"ne": "Treed toe in de politiek",
 			"lt": "Įstojimo tipas"
 		},
 
 		"banner": {
 			"en": "Banner",
+			"ne": "Logo",
 			"lt": "Logotipas"
 		},
 
     "join": {
-      "en": "Join"
+      "en": "Join",
+      "ne": "Treed toe"
     },
 
     "leaders": {
-      "en": "Leaders"
+      "en": "Leaders",
+      "ne": "Leiders"
     },
 
     "members": {
-      "en": "Members"
+      "en": "Members",
+      "ne": "Leden"
     },
 
     "gpToday": {
-      "en": "GP Today"
+      "en": "GP Today",
+      "ne": "GP vandaag"
     },
 
     "founded": {
-      "en": "Founded"
+      "en": "Founded",
+      "ne": "Gesticht"
     }
   },
 
@@ -926,10 +935,12 @@
 		"open": {
 			"name": {
 				"en": "Open",
+				"ne": "Open",
 				"lt": "Atvira"
 			},
 			"desc": {
 				"en": "Anyone can join this guild.",
+				"ne": "Iedereen kan in deze guild komen",
 				"lt": "Į šią Gildiją gali įstoti visi."
 			}
 		},
@@ -937,10 +948,12 @@
 		"invite": {
 			"name": {
 				"en": "Invite",
+				"ne": "Nodig uit",
 				"lt": "Tik su pakvietimu"
 			},
 			"desc": {
 				"en": "Only invited players can join this guild.",
+				"ne": "Alleen uitgenodigde speler kunnen in deze gilde komen",
 				"lt": "Tik pakviesti žaidėjai gali įstoti į šią Gildiją"
 			}
 		},
@@ -948,10 +961,12 @@
 		"ask": {
 			"name": {
 				"en": "Ask",
+				"ne": "Vraag",
 				"lt": "Tik su užklausa"
 			},
 			"desc": {
 				"en": "Players must ask or be invited to join this guild.",
+				"ne": "Spelers moeten gevraagd hebben of uitgenodigd zijn om deze gilde te betreden",
 				"lt": "Žaidėjai turi atsiusti užklausą arba būti pakviesti kad galėtu įstoti į šią Gildiją"
 			}
 		}
