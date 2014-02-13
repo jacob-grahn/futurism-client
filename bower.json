@@ -6,7 +6,7 @@
 		"angular-resource": "~1.2.0",
 		"angular-route": "~1.2.0",
 		"angular-animate": "~1.2.0",
-		"angular-bootstrap": "~0.7.0",
+		"angular-bootstrap": "~0.10.0",
     "json3": "~3.2.4",
     "jquery": "~1.9.1",
     "bootstrap-sass": "~3.0.0",
