@@ -1,16 +1,12 @@
-<div class="modal-dialog">
-	<div class="modal-content">
-		<div class="modal-header">
-			<username id="{{user._id}}" name="{{user.name}}" site="{{user.site}}" group="{{user.group}}" size="large" link="false"></username>
-		</div>
-		<div class="modal-body">
-			<form>
-				<textarea ng-model="body" rows="4" cols="50" maxlength="200"></textarea>
-			</form>
-		</div>
-		<div class="modal-footer">
-			<button class="btn btn-info" ng-click="send(body)">send</button>
-			<button class="btn btn-primary" ng-click="$dismiss('close')">close</button>
-		</div>
-	</div>
+<div class="modal-header">
+	<username id="{{user._id}}" name="{{user.name}}" site="{{user.site}}" group="{{user.group}}" size="large" link="false"></username>
+</div>
+<div class="modal-body">
+	<form>
+		<textarea ng-model="body" rows="4" cols="50" maxlength="200"></textarea>
+	</form>
+</div>
+<div class="modal-footer">
+	<button class="btn btn-info" ng-click="send(body)">send</button>
+	<button class="btn btn-primary" ng-click="$dismiss('close')">close</button>
 </div>
