@@ -59,7 +59,7 @@
 		 */
 		lang.init = function() {
 			var onLoad = function(phraseData) {
-				lang.phrases = phraseData;
+				_.extend(lang.phrases, phraseData);
 				lang.setLang('en');
 			};
 			var onError = function() {
