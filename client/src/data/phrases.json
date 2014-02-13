@@ -553,7 +553,7 @@
       "ko": "이야기",
       "ct": "meow",
       "fr": "Bavarder",
-      "pi": "Belch",
+      "pi": "Tavern",
       "lt": "Pokalbiai",
       "ne": "chat",
       "sv": "chatt",
@@ -847,7 +847,7 @@
     "pride": {
       "en": "pride",
       "ne": "trots",
-			"lt": "Vertė",
+      "lt": "Vertė",
       "pi": "pride",
       "it": "valore"
     },
@@ -855,8 +855,8 @@
     "cardCount": {
       "en": "cards",
       "ne": "kaarten",
-			"lt": "Kortų kiekis",
-			"pi": "ships",
+      "lt": "Kortų kiekis",
+      "pi": "ships",
       "it": "carte"
     },
 
@@ -871,89 +871,105 @@
     "health": {
       "en": "health",
       "ne": "levens",
-			"lt": "Gyvybių taškai",
+      "lt": "Gyvybių taškai",
       "pi": "rum",
-			"it": "salute"
+      "it": "salute"
     }
   },
 
 
   "guildJoiner": {
 
-		"joinGuild": {
-			"en": "Join Guild",
-			"lt": "Stoti į Gildiją"
-		},
+    "joinGuild": {
+      "en": "Join Guild",
+      "lt": "Stoti į Gildiją",
+      "pi": "Enlist"
+    },
 
-		"createGuild": {
-			"en": "Create Guild",
-			"lt": "Sukurti Gildiją"
-		},
+    "createGuild": {
+      "en": "Create Guild",
+      "lt": "Sukurti Gildiją",
+      "pi": "Found guild"
+    },
 
-		"joinPolicy": {
-			"en": "Join Policy",
-			"lt": "Įstojimo tipas"
-		},
+    "joinPolicy": {
+      "en": "Join Policy",
+      "lt": "Įstojimo tipas",
+      "pi": "Enlistment policy" 
+    },
 
-		"banner": {
-			"en": "Banner",
-			"lt": "Logotipas"
-		},
+    "banner": {
+      "en": "Banner",
+      "lt": "Logotipas",
+      "pi": "Flag"
+    },
 
     "join": {
-      "en": "Join"
+      "en": "Join",
+      "pi": "Enlist"
     },
 
     "leaders": {
-      "en": "Leaders"
+      "en": "Leaders",
+      "pi": "Captains"
     },
 
     "members": {
-      "en": "Members"
+      "en": "Members",
+      "pi": "Crewers"
     },
 
     "gpToday": {
-      "en": "GP Today"
+      "en": "GP Today",
+      "pi": "Gold today"
     },
 
     "founded": {
-      "en": "Founded"
+      "en": "Founded",
+      "pi": "Founded"
     }
   },
 
 
-	"guildJoinPolicy": {
-		"open": {
-			"name": {
-				"en": "Open",
-				"lt": "Atvira"
-			},
-			"desc": {
-				"en": "Anyone can join this guild.",
-				"lt": "Į šią Gildiją gali įstoti visi."
-			}
-		},
+  "guildJoinPolicy": {
+    "open": {
+      "name": {
+        "en": "Open",
+        "lt": "Atvira",
+        "pi": "Open doors"
+        
+      },
+      "desc": {
+        "en": "Anyone can join this guild.",
+        "lt": "Į šią Gildiją gali įstoti visi.",
+        "pi": "Any pirate may join this crew."
+      }
+    },
 
-		"invite": {
-			"name": {
-				"en": "Invite",
-				"lt": "Tik su pakvietimu"
-			},
-			"desc": {
-				"en": "Only invited players can join this guild.",
-				"lt": "Tik pakviesti žaidėjai gali įstoti į šią Gildiją"
-			}
-		},
+    "invite": {
+      "name": {
+        "en": "Invite",
+        "lt": "Tik su pakvietimu",
+        "pi": "Private"
+      },
+      "desc": {
+        "en": "Only invited players can join this guild.",
+        "lt": "Tik pakviesti žaidėjai gali įstoti į šią Gildiją",
+        "pi": "Pirates must have a letter to join this guild."
+      }
+    },
 
-		"ask": {
-			"name": {
-				"en": "Ask",
-				"lt": "Tik su užklausa"
-			},
-			"desc": {
-				"en": "Players must ask or be invited to join this guild.",
-				"lt": "Žaidėjai turi atsiusti užklausą arba būti pakviesti kad galėtu įstoti į šią Gildiją"
-			}
-		}
-	}
+    "ask": {
+      "name": {
+        "en": "Ask",
+        "lt": "Tik su užklausa",
+        "pi": "Inquiry only"
+      },
+      "desc": {
+        "en": "Players must ask or be invited to join this guild.",
+        "lt": "Žaidėjai turi atsiusti užklausą arba būti pakviesti kad galėtu įstoti į šią Gildiją",
+        "pi": "Pirates must either have their request approved or have a letter to join this guild."
+      }
+    }
+  }
 }
