@@ -46,7 +46,8 @@ module.exports = function (grunt) {
 					'server/models/**/*.js',
 					'server/multi/**/*.js',
 					'server/routes/**/*.js',
-					'server/*.js'
+					'server/*.js',
+					'shared/**/*.js'
 				],
 				tasks: ['develop', 'wait'],
 				options: {nospawn: true}
