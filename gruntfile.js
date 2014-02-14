@@ -431,6 +431,7 @@ module.exports = function (grunt) {
 
 
 	grunt.registerTask('deploy', [
+		'build',
 		'shell:deploy'
 	]);
 
@@ -453,8 +454,7 @@ module.exports = function (grunt) {
 		'uglify',
 		//'rev',
 		'usemin',
-		'htmlrefs',
-		'shell:deploy'
+		'htmlrefs'
 	]);
 
 
