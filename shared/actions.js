@@ -360,6 +360,7 @@
 			use: function(src, target) {
 				var card = target.card;
 				target.card = null;
+				card.pride = 0;
 				target.player.hand.push(card);
 			}
 		},
