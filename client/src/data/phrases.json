@@ -901,23 +901,28 @@
 		},
 
     "join": {
-      "en": "Join"
+      "en": "Join",
+      "lt": "Įstoti"
     },
 
     "leaders": {
-      "en": "Leaders"
+      "en": "Leaders",
+      "lt": "Vadovai"
     },
 
     "members": {
-      "en": "Members"
+      "en": "Members",
+      "lt": "Nariai"
     },
 
     "gpToday": {
-      "en": "GP Today"
+      "en": "GP Today",
+      "lt": "Šiandienos GP"
     },
 
     "founded": {
-      "en": "Founded"
+      "en": "Founded",
+      "lt": "Įkurta"
     }
   },
 
