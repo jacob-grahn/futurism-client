@@ -3,6 +3,7 @@ describe('cards-post', function() {
 	var mongoose = require('mongoose');
 	var mockgoose = require('mockgoose');
 	mockgoose(mongoose);
+	require('../../fns/mongoose/findByIdAndSave').attach(mongoose);
 
 	var cardsPost = require('../../routes/cardsPost');
 	var request = {};
@@ -11,7 +12,7 @@ describe('cards-post', function() {
 	beforeEach(function() {
 		request = {
 			session: {
-				userId: 1
+				_id: mongoose.Types.ObjectId()
 			},
 			body: {
 				name: 'TestCard',
@@ -28,7 +29,7 @@ describe('cards-post', function() {
 	it('should save a valid card', function(done) {
 		cardsPost(request, {apiOut: function(error, result) {
 			expect(error).toBe(null);
-			expect(result._id).toBe('1-hTJTUUj1');
+			expect(result._id).toBeTruthy();
 			done();
 		}});
 	});

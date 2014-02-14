@@ -9,10 +9,13 @@ describe('cards-get', function() {
 	var CardGoose = require('../../models/card');
 
 
+	var userId1 = mongoose.Types.ObjectId();
+	var userId2 = mongoose.Types.ObjectId();
+
 	beforeEach(function(done) {
 		CardGoose.create({
 				_id: '1-blah',
-				userId: 1,
+				userId: userId1,
 				abilities: [],
 				name: 'LoadMe',
 				attack: 1,
@@ -21,12 +24,12 @@ describe('cards-get', function() {
 			},
 			function(err, card) {
 				if(err) {
-					throw err;
+					return done(err);
 				}
 
 				CardGoose.create({
 						_id: '2-canon',
-						userId: 5,
+						userId: userId2,
 						abilities: [],
 						name: 'CanonIAm',
 						attack: 1,
@@ -36,7 +39,7 @@ describe('cards-get', function() {
 					},
 					function(err, card) {
 						if(err) {
-							throw err;
+							return done(err);
 						}
 						done();
 					});
@@ -52,13 +55,16 @@ describe('cards-get', function() {
 	it('should load a card', function(done) {
 		var request = {
 			session: {
-				userId: 1
+				_id: userId1
 			},
 			body: {
 				cardId: '1-blah'
 			}
 		};
 		cardsGet(request, {apiOut: function(err, result) {
+			if(err) {
+				return done(err);
+			}
 			expect(err).toBe(null);
 			expect(result.name).toBe('LoadMe');
 			done();
@@ -69,7 +75,7 @@ describe('cards-get', function() {
 	it('should load a list of cards by owner', function(done) {
 		var request = {
 			session: {
-				userId: 1
+				_id: userId1
 			},
 			body: {}
 		};
@@ -86,7 +92,7 @@ describe('cards-get', function() {
 	/*it('should load a list by owner mixed with a list by canon', function(done) {
 		var request = {
 			session: {
-				userId: 1
+				_id: userId1
 			},
 			body: {
 				canon: true

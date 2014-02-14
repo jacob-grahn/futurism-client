@@ -11,7 +11,6 @@ var crypto = require('crypto');
 var createHashId = function(str, len) {
 	len = len || 8;
 	var md5 = crypto.createHash('md5');
-	console.log('md5', str);
 	md5.update(str, 'utf8');
 	var hash = md5.digest('base64');
 	hash = hash.replace(/[\/\+]/ig, '');

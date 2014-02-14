@@ -1,4 +1,4 @@
-describe('deckPreload', function() {
+describe('loadup', function() {
 
 	var mongoose = require('mongoose');
 	var mockgoose = require('mockgoose');
@@ -16,16 +16,16 @@ describe('deckPreload', function() {
 
 
 	beforeEach(function(done) {
-		player1 = new Player({_id:1});
-		player2 = new Player({_id:2});
+		player1 = new Player({_id:mongoose.Types.ObjectId()});
+		player2 = new Player({_id:mongoose.Types.ObjectId()});
 		rules = {pride: 10};
 		players = [player1, player2];
 
-		DeckGoose.create({_id:'1-deck', userId:1, name:'lotr', cards:['1-card','2-card']}, function(err, deck){
-			DeckGoose.create({_id:'2-deck', userId:2, name:'puppies', cards:['1-card', '1-card', '2-card', '2-card']}, function(err, deck){
-				CardGoose.create({_id:'1-card', userId:1, name:'Gandalf', attack:1, health:2, abilities:[]}, function(err, deck){
-					CardGoose.create({_id:'2-card', userId:1, name:'Frodo', attack:1, health:1, abilities:[]}, function(err, deck){
-						done();
+		DeckGoose.create({_id:'1-deck', userId:player1._id, name:'lotr', cards:['1-card','2-card']}, function(err1, deck){
+			DeckGoose.create({_id:'2-deck', userId:player2._id, name:'puppies', cards:['1-card', '1-card', '2-card', '2-card']}, function(err2, deck){
+				CardGoose.create({_id:'1-card', userId:player1._id, name:'Gandalf', attack:1, health:2, abilities:[]}, function(err3, deck){
+					CardGoose.create({_id:'2-card', userId:player2._id, name:'Frodo', attack:1, health:1, abilities:[]}, function(err4, deck){
+						done(err1 || err2 || err3 || err4);
 					});
 				});
 			});

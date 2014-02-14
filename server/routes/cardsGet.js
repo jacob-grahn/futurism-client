@@ -24,7 +24,7 @@
 
 		//--- sanity check
 		if(!cardId && !userId) {
-			throw new Error('cardId or userId should be defined');
+			return res.apiOut('cardId or userId is required');
 		}
 
 		//--- return a single card based on cardId

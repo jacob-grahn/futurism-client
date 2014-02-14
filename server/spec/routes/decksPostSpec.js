@@ -1,6 +1,7 @@
 describe('decks-post', function() {
 
 	var mongoose = require('mongoose');
+	require('../../fns/mongoose/findByIdAndSave').attach(mongoose);
 	var mockgoose = require('mockgoose');
 	mockgoose(mongoose);
 
@@ -10,7 +11,7 @@ describe('decks-post', function() {
 	it('should save a valid deck', function(done) {
 		var request = {
 			session: {
-				userId: 1
+				_id: mongoose.Types.ObjectId()
 			},
 			body: {
 				name: 'Team Flamingo',

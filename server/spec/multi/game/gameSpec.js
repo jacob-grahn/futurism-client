@@ -13,10 +13,14 @@ describe('game', function() {
 	var broadcast = require('../../../multi/broadcast');
 
 
+	var uid1 = mongoose.Types.ObjectId();
+	var uid2 = mongoose.Types.ObjectId();
+	var uid3 = mongoose.Types.ObjectId();
+
 	beforeEach(function(done) {
 
 		UserGoose.create({
-			_id: 1,
+			_id: uid1,
 			name: 'phil',
 			site: 'j',
 			group: 'm',
@@ -24,14 +28,10 @@ describe('game', function() {
 			fame: 0,
 			fractures: 0
 		},
-		function(err) {
-			if(err) {
-				throw err;
-			}
-
+		function(err1) {
 
 			UserGoose.create({
-				_id: 2,
+				_id: uid2,
 				name: 'paulina',
 				site: 'j',
 				group: 'm',
@@ -39,14 +39,10 @@ describe('game', function() {
 				fame: 30,
 				fractures: 52
 			},
-			function(err) {
-				if(err) {
-					throw err;
-				}
-
+			function(err2) {
 
 				UserGoose.create({
-					_id: 3,
+					_id: uid3,
 					name: 'jetson',
 					site: 'j',
 					group: 'm',
@@ -54,37 +50,25 @@ describe('game', function() {
 					fame: 9765,
 					fractures: 2
 				},
-				function(err) {
-					if(err) {
-						throw err;
-					}
-
+				function(err3) {
 
 					DeckGoose.create({
 						_id: 'deck1',
 						name: 'deck1',
 						cards: ['card1'],
-						userId: 1,
+						userId: uid1,
 						pride: 17
 					},
-					function(err) {
-						if(err) {
-							throw err;
-						}
-
+					function(err4) {
 
 						DeckGoose.create({
 							_id: 'deck2',
 							name: 'deck2',
 							cards: ['card1', 'card1'],
-							userId: 2,
+							userId: uid2,
 							pride: 17
 						},
-						function(err) {
-							if(err) {
-								throw err;
-							}
-
+						function(err5) {
 
 							CardGoose.create({
 								_id: 'card1',
@@ -93,15 +77,11 @@ describe('game', function() {
 								abilities: [],
 								attack: 5,
 								health: 2,
-								userId: 123
+								userId: mongoose.Types.ObjectId()
 							},
-							function(err) {
-								if(err) {
-									throw err;
-								}
+							function(err6) {
 
-
-								done();
+								done(err1 || err2 || err3 || err4 || err5 || err6);
 							});
 						});
 					});
@@ -118,8 +98,8 @@ describe('game', function() {
 
 	it('should play through a simple game', function(done) {
 		var accounts = [
-			{_id:1, name:'phil'},
-			{_id:2, name:'paulina'}
+			{_id:uid1, name:'phil'},
+			{_id:uid2, name:'paulina'}
 		];
 		var rules = {};
 		var gameId = 'game1';
@@ -127,8 +107,8 @@ describe('game', function() {
 		var game = new Game(accounts, rules, gameId);
 		expect(game.getStatus().state).toBe('loadup');
 
-		var player1 = game.idToPlayer(1);
-		var player2 = game.idToPlayer(2);
+		var player1 = game.idToPlayer(uid1);
+		var player2 = game.idToPlayer(uid2);
 		expect(player1.name).toBe('phil');
 		expect(player2.name).toBe('paulina');
 		expect(player1.pride).toBe(0);
@@ -141,29 +121,31 @@ describe('game', function() {
 			game.loadup.selectDeck(player2, 'deck2', function(err) {
 				expect(err).toBe(null);
 				expect(game.getStatus().state).toBe('running');
-				expect(game.players[0]._id).toBe(1);
-				expect(game.players[1]._id).toBe(2);
+				expect(game.players[0]._id).toBe(uid1);
+				expect(game.players[1]._id).toBe(uid2);
 
 
 				////////////////////////////////////////////////////////
 				// play the commander card for player1's hand
 				////////////////////////////////////////////////////////
-				expect(
-					game.doAction(player1, 'entr', [
-						{
-							playerId: 1,
-							cid: player1.hand[0].cid
-						},
-						{
-							playerId: 1,
-							column: 0,
-							row: 0
-						}
-					])
-				).toBe('ok');
+				var actionResult = game.doAction(player1, 'entr', [
+					{
+						playerId: uid1,
+						cid: player1.hand[0].cid
+					},
+					{
+						playerId: uid1,
+						column: 0,
+						row: 0
+					}
+				]);
 
-				expect(game.board.target(1,0,0).card.name).toBe('phil');
-				expect(game.board.target(1,0,0).card.moves).toBe(0);
+				if(actionResult !== 'ok') {
+					return done(actionResult);
+				}
+
+				expect(game.board.target(uid1,0,0).card.name).toBe('phil');
+				expect(game.board.target(uid1,0,0).card.moves).toBe(0);
 
 				game.endTurn(player1);
 
@@ -174,11 +156,11 @@ describe('game', function() {
 				expect(
 					game.doAction(player2, 'entr', [
 						{
-							playerId: 2,
+							playerId: uid2,
 							cid: player2.hand[0].cid
 						},
 						{
-							playerId: 2,
+							playerId: uid2,
 							column: 0,
 							row: 0
 						}
@@ -187,13 +169,13 @@ describe('game', function() {
 
 				game.endTurn(player2);
 
-				expect(game.board.target(1,0,0).card.moves).toBe(1);
-				expect( game.doAction(player1, 'rlly', [{playerId:1, column:0, row:0}]) ).toBe('ok');
-				expect(game.board.target(1,0,0).card.moves).toBe(0);
+				expect(game.board.target(uid1,0,0).card.moves).toBe(1);
+				expect( game.doAction(player1, 'rlly', [{playerId:uid1, column:0, row:0}]) ).toBe('ok');
+				expect(game.board.target(uid1,0,0).card.moves).toBe(0);
 				expect(player1.pride).toBe(3);
 				game.endTurn(player1);
 
-				game.board.target(2,0,0).card.health = -4;
+				game.board.target(uid2,0,0).card.health = -4;
 				game.endTurn(player2);
 
 				expect(game.getStatus().state).toBe('awarding');
@@ -202,12 +184,12 @@ describe('game', function() {
 					expect(game.getStatus().state).toBe('removed');
 					expect(broadcast.lastMessage.event).toBe('gameOver');
 
-					UserGoose.findById(1, function(err, doc) {
+					UserGoose.findById(uid1, function(err, doc) {
 						expect(err).toBe(null);
 						expect(doc.elo > 150).toBe(true);
 						expect(doc.fame > 0).toBe(true);
 
-						UserGoose.findById(2, function(err, doc) {
+						UserGoose.findById(uid2, function(err, doc) {
 							expect(err).toBe(null);
 							expect(doc.elo < 549).toBe(true);
 							expect(doc.fame > 30).toBe(true);

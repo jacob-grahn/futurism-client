@@ -24,7 +24,7 @@ describe('record', function () {
 			turns: 11,
 			duration: 89000,
 			users: [{
-				_id: '111',
+				_id: mongoose.Types.ObjectId(),
 				name: 'Bob',
 				site: 'g',
 				group: 'm',
@@ -69,7 +69,7 @@ describe('record', function () {
 			turns: 11,
 			duration: 89000,
 			users: [{
-				_id: '111',
+				_id: mongoose.Types.ObjectId(),
 				name: 'Bob',
 				site: 'g',
 				group: 'm',

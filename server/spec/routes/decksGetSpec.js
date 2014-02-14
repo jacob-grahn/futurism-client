@@ -9,12 +9,16 @@ describe('decks-get', function() {
 	var decksGet = require('../../routes/decksGet');
 
 
+	var userId1;
+
 	beforeEach(function(done) {
+		userId1 = mongoose.Types.ObjectId();
+
 		DeckGoose.create({
 				_id: '1-deck',
 				name: 'Saints',
 				cards: ['st.pattrick', 'st.peters', 'thepope'],
-				userId: 1,
+				userId: userId1,
 				pride: 3
 			},
 			function(err, deck) {
@@ -26,7 +30,7 @@ describe('decks-get', function() {
 						_id: '1-ldfsj',
 						name: 'Buffalo',
 						cards: ['buffalo', 'buffalo', 'buffalo'],
-						userId: 1,
+						userId: userId1,
 						pride: 3
 					},
 					function(err, deck) {
@@ -47,16 +51,15 @@ describe('decks-get', function() {
 	it('should return a deck that is owned by the requester', function(done) {
 		var request = {
 			session: {
-				userId: 1
+				_id: userId1
 			},
 			body: {
 				deckId: '1-deck'
 			}
 		};
 		decksGet(request, {apiOut: function(err, response) {
-			expect(err).toBe(null);
 			expect(response.name).toBe('Saints');
-			done();
+			done(err);
 		}});
 	});
 
@@ -64,7 +67,7 @@ describe('decks-get', function() {
 	it('should return a list of decks owned by the requester', function(done) {
 		var request = {
 			session: {
-				userId: '1'
+				_id: userId1
 			}
 		};
 		decksGet(request, {apiOut: function(err, response) {

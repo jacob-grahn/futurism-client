@@ -9,10 +9,16 @@ describe('game/prizeCalculator', function() {
 	var Elo = require('../../../fns/elo');
 
 
+	var uid1, uid2, uid3;
+
 	beforeEach(function(done) {
 
+		uid1 = mongoose.Types.ObjectId();
+		uid2 = mongoose.Types.ObjectId();
+		uid3 = mongoose.Types.ObjectId();
+
 		UserGoose.create({
-			_id: 1234,
+			_id: uid1,
 			name: 'Kronk',
 			site: 'j',
 			group: 'm',
@@ -27,7 +33,7 @@ describe('game/prizeCalculator', function() {
 
 
 			UserGoose.create({
-				_id: 55555,
+				_id: uid2,
 				name: 'Blazer',
 				site: 'j',
 				group: 'm',
@@ -42,7 +48,7 @@ describe('game/prizeCalculator', function() {
 
 
 				UserGoose.create({
-					_id: 196,
+					_id: uid3,
 					name: 'Awful',
 					site: 'j',
 					group: 'm',
@@ -79,7 +85,7 @@ describe('game/prizeCalculator', function() {
 
 
 	it('should drop players that do not exist in the db', function(done) {
-		var players = [{_id:98465135}, {_id:196}];
+		var players = [{_id:uid3}, {_id:mongoose.Types.ObjectId()}];
 		var winningTeam = 0;
 		var prize = false;
 		PrizeCalculator.run(players, winningTeam, prize, function(err, users) {
@@ -91,12 +97,12 @@ describe('game/prizeCalculator', function() {
 
 
 	it('should return the updated UserGooses', function(done) {
-		var players = [{_id:196}];
+		var players = [{_id:uid1}];
 		var winningTeam = 0;
 		var prize = false;
 		PrizeCalculator.run(players, winningTeam, prize, function(err, users) {
 			expect(err).toBeFalsy();
-			expect(users[0]._id).toBe(196);
+			expect(users[0]._id).toEqual(uid1);
 			done();
 		});
 	});
@@ -109,7 +115,7 @@ describe('game/prizeCalculator', function() {
 		var winsB = 0;
 		var eloResult = Elo.calcChange(eloA, eloB, winsA, winsB);
 
-		var players = [{_id:196, team:1}, {_id:1234, team:2}];
+		var players = [{_id:uid3, team:1}, {_id:uid1, team:2}];
 		var winningTeam = 1;
 		var prize = true;
 		PrizeCalculator.run(players, winningTeam, prize, function(err, users) {
@@ -130,7 +136,7 @@ describe('game/prizeCalculator', function() {
 		var fameA = 974256 + eloResult.a - eloA + PrizeCalculator.BASE_FAME_GAIN;
 		var fameB = 0 + PrizeCalculator.BASE_FAME_GAIN;
 
-		var players = [{_id:55555, team:1}, {_id:1234, team:2}];
+		var players = [{_id:uid2, team:1}, {_id:uid1, team:2}];
 		var winningTeam = 1;
 		var prize = true;
 		PrizeCalculator.run(players, winningTeam, prize, function(err, users) {
@@ -143,7 +149,7 @@ describe('game/prizeCalculator', function() {
 
 
 	it('should award a fracture to the winners', function(done) {
-		var players = [{_id:196, team:1}, {_id:1234, team:1}, {_id:55555, team:2}];
+		var players = [{_id:uid1, team:1}, {_id:uid3, team:1}, {_id:uid2, team:2}];
 		var winningTeam = 1;
 		var prize = true;
 		PrizeCalculator.run(players, winningTeam, prize, function(err, users) {
@@ -158,12 +164,12 @@ describe('game/prizeCalculator', function() {
 
 
 	it('should save changes to the db', function(done) {
-		var players = [{_id:196, team:1}, {_id:1234, team:2}];
+		var players = [{_id:uid3, team:1}, {_id:uid2, team:2}];
 		var winningTeam = 1;
 		var prize = true;
 		PrizeCalculator.run(players, winningTeam, prize, function(err, users) {
 			expect(err).toBeFalsy();
-			UserGoose.findById(196, function(err, doc) {
+			UserGoose.findById(uid3, function(err, doc) {
 				expect(err).toBeFalsy();
 				expect(doc.fractures).toBe(3);
 				expect(doc.fame > 9765).toBe(true);

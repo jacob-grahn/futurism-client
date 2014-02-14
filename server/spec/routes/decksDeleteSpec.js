@@ -8,12 +8,13 @@ describe('decks-delete', function() {
 	var decksDelete = require('../../routes/decksDelete');
 
 
+	var userId1 = mongoose.Types.ObjectId();
 	beforeEach(function(done) {
 		DeckGoose.create({
 			_id: '1-deck',
 			name: 'Saints',
 			cards: ['st.pattrick', 'st.peters', 'thepope'],
-			userId: 1,
+			userId: userId1,
 			pride: 17
 		},
 		function(err, deck) {
@@ -33,15 +34,14 @@ describe('decks-delete', function() {
 	it('should delete an existing deck', function(done) {
 		var request = {
 			session: {
-				userId: 1
+				userId: userId1
 			},
 			body: {
 				deckId: '1-deck'
 			}
 		};
 		decksDelete(request, {apiOut: function(err, result) {
-			expect(result.name).toBe('Saints');
-			done();
+			done(err);
 		}});
 	});
 

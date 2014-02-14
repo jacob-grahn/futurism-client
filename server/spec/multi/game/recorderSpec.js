@@ -61,7 +61,7 @@ describe('recorder', function() {
 
 		it('should pull out unneeded values', function() {
 			var user = {
-				_id: 123,
+				_id: mongoose.Types.ObjectId(),
 				name: 'Sue',
 				random: 'Hi gueis',
 				deck: {
@@ -75,7 +75,7 @@ describe('recorder', function() {
 
 			var minUser = recorder.minimizeUser(user);
 
-			expect(minUser._id).toBe(123);
+			expect(minUser._id).toBe(user._id);
 			expect(minUser.name).toBe('Sue');
 			expect(minUser.random).toBe(undefined);
 			expect(minUser.deck._id).toBe(undefined);
@@ -125,7 +125,7 @@ describe('recorder', function() {
 
 			recorder.users = [
 				{
-					_id: 1,
+					_id: mongoose.Types.ObjectId(),
 					oldElo: 50,
 					elo: 52,
 					oldFame: 544,
@@ -136,7 +136,7 @@ describe('recorder', function() {
 					extra: 'hi'
 				},
 				{
-					_id: 2,
+					_id: mongoose.Types.ObjectId(),
 					elo: 60,
 					fame: 6729,
 					deck: {
@@ -159,7 +159,7 @@ describe('recorder', function() {
 					expect(err).toBeFalsy();
 					expect(doc).toBeTruthy();
 					if(doc) {
-						expect(doc.users[0]._id).toBe(1);
+						expect(doc.users[0]._id).toEqual(recorder.users[0]._id);
 						expect(doc.users[0].oldElo).toBe(50);
 						expect(doc.turns).toBe(83);
 						expect(doc.cards[0].name).toBe('arrr');

@@ -3,20 +3,19 @@ describe('cards-delete', function() {
 	var mongoose = require('mongoose');
 	var mockgoose = require('mockgoose');
 	mockgoose(mongoose);
-	var async = require('async');
 	var groups = require('../../../shared/groups');
 	var factions = require('../../../shared/factions');
 	var CardGoose = require('../../models/card');
 	var cardsDelete = require('../../routes/cardsDelete');
-	var fns = require('../../fns/fns');
 
-	var cardId;
 
+	var userId1;
 
 	beforeEach(function(done) {
+		userId1 = mongoose.Types.ObjectId();
 		CardGoose.create({
 			_id: '35-asdfj',
-			userId: 1,
+			userId: userId1,
 			abilities: [],
 			name: 'Gandoki',
 			attack: 1,
@@ -40,12 +39,12 @@ describe('cards-delete', function() {
 	it('should delete a card if you own it', function(done) {
 		var request = {
 			session: {
-				userId: 1
+				_id: userId1
 			},
 			user: {
 				group: groups.USER
 			},
-			body: {
+			params: {
 				cardId: '35-asdfj'
 			}
 		};
@@ -60,12 +59,12 @@ describe('cards-delete', function() {
 	it('should not delete a card if you are not a mod and you do not own it', function(done) {
 		var request = {
 			session: {
-				userId: 2
+				_id: mongoose.Types.ObjectId()
 			},
 			user: {
 				group: groups.USER
 			},
-			body: {
+			params: {
 				cardId: '35-asdfj'
 			}
 		};
@@ -80,12 +79,10 @@ describe('cards-delete', function() {
 	it('mods can delete cards they do not own', function(done) {
 		var request = {
 			session: {
-				userId: 5
-			},
-			user: {
+				_id: mongoose.Types.ObjectId(),
 				group: groups.MOD
 			},
-			body: {
+			params: {
 				cardId: '35-asdfj'
 			}
 		};

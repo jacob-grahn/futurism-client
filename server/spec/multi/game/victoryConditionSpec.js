@@ -12,12 +12,13 @@ describe('game/victoryCondition', function() {
 		});
 
 
-		it('should return no winner if there is not yet a winner', function() {
-			var players = [{_id:1, team:1},{_id:2, team:2}];
+		it('should return no winner if more than one team has a living commander', function() {
+			var players = [
+				{_id:1, team:1, commander: {health: 7}},
+				{_id:2, team:2, commander: {health: 14}}
+			];
 
 			var board = new Board(players, 2, 2);
-			board.target(1,0,0).card = {commander: true};
-			board.target(2,0,0).card = {commander: true};
 
 			expect(VictoryCondition.commanderRules(players, board).winner).toBe(false);
 		});
@@ -25,16 +26,13 @@ describe('game/victoryCondition', function() {
 
 		it('should return a winner if that team is the only one with a commander left', function() {
 			var players = [
-				{_id:1, team:1},
-				{_id:2, team:1},
-				{_id:3, team:2},
-				{_id:4, team:2}
+				{_id:1, team:1, commander: {health: 1}},
+				{_id:2, team:1, commander: {health: 0}},
+				{_id:3, team:2, commander: {health: 0}},
+				{_id:4, team:2, commander: {health: 0}}
 			];
 
 			var board = new Board(players, 2, 2);
-			board.target(1,0,0).card = {commander: true};
-			board.target(2,0,0).card = {commander: false};
-			board.target(4,0,0).card = {commander: false};
 
 			var result = VictoryCondition.commanderRules(players, board);
 			expect(result.winner).toBe(true);

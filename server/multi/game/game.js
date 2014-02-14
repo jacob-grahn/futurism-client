@@ -185,7 +185,7 @@
 		self.idToPlayer = function(id) {
 			var match = null;
 			_.each(self.players, function(player) {
-				if(player._id === id) {
+				if(String(player._id) === String(id)) {
 					match = player;
 				}
 			});

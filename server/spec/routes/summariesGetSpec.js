@@ -15,18 +15,15 @@ describe('records - get', function() {
 			time: new Date(1000),
 			turns: 7,
 			users: [
-				{_id: 1, name: 'Sally', deck: []},
-				{_id: 2, name: 'Biff', deck: []}
+				{_id: mongoose.Types.ObjectId(), name: 'Sally', deck: []},
+				{_id: mongoose.Types.ObjectId(), name: 'Biff', deck: []}
 			],
 			actions: [
 				{id: 'tree', pos: '3743,1,0'},
 				{id: 'tree', pos: '2,1,0'}
 			]
 		}, function(err) {
-			if(err) {
-				throw err;
-			}
-			done();
+			done(err);
 		});
 	});
 
