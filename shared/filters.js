@@ -16,6 +16,14 @@
 	}
 
 
+	filters.playable = function(targets, me) {
+		var isCommanderInHand = _.where(me.hand, {commander: true}).length > 0;
+		return _.filter(targets, function(target) {
+			return !isCommanderInHand || target.card.commander === true;
+		});
+	};
+
+
 	filters.affordable = function(targets, me) {
 		return _.filter(targets, function(target) {
 			return target.card.pride <= me.pride;

@@ -74,7 +74,7 @@
 		 */
 		entr: {
 			restrict: [
-				[filters.owned, filters.affordable],
+				[filters.playable, filters.owned, filters.affordable],
 				[filters.owned, filters.empty]
 			],
 			use: function(src, target) {
@@ -355,7 +355,7 @@
 		bagm: {
 			restrict: [
 				[filters.owned],
-				[filters.enemy, filters.front]
+				[filters.enemy, filters.full, filters.front]
 			],
 			use: function(src, target) {
 				var card = target.card;
