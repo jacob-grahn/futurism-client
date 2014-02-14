@@ -906,27 +906,32 @@
 
     "join": {
       "en": "Join",
-      "ne": "Treed toe"
+      "ne": "Treed toe",
+      "lt": "Įstoti"
     },
 
     "leaders": {
       "en": "Leaders",
-      "ne": "Leiders"
+      "ne": "Leiders",
+      "lt": "Vadovai"
     },
 
     "members": {
       "en": "Members",
-      "ne": "Leden"
+      "ne": "Leden",
+      "lt": "Nariai"
     },
 
     "gpToday": {
       "en": "GP Today",
-      "ne": "GP vandaag"
+      "ne": "GP vandaag",
+      "lt": "Šiandienos GP"
     },
 
     "founded": {
       "en": "Founded",
-      "ne": "Gesticht"
+      "ne": "Gesticht",
+      "lt": "Įkurta"
     }
   },
 
