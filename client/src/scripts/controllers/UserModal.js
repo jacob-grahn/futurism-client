@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('UserModalCtrl', function($scope, userId, UserResource, StatsResource, ApprenticeResource, ModeratorResource, BanResource, GuildModResource, $modal) {
+	.controller('UserModalCtrl', function($scope, userId, UserResource, StatsResource, ApprenticeResource, ModeratorResource, BanResource, GuildModResource, KickResource, $modal) {
 		'use strict';
 
 		$scope.user = UserResource.get({userId: userId});
@@ -92,5 +92,23 @@ angular.module('futurism')
 		$scope.deGuildMod = function() {
 			GuildModResource.delete({userId: userId, guildId: $scope.user.guild});
 			$scope.$dismiss('deGuildMod');
+		};
+
+
+		/**
+		 * kick a user from your guild
+		 */
+		$scope.kick = function() {
+			KickResource.put({userId: userId, guildId: $scope.user.guild});
+			$scope.$dismiss('kick');
+		};
+
+
+		/**
+		 * allow a user back into your guild
+		 */
+		$scope.deKick = function() {
+			KickResource.delete({userId: userId, guildId: $scope.user.guild});
+			$scope.$dismiss('deKick');
 		};
 	});
