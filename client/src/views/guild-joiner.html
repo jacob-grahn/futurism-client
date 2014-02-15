@@ -5,10 +5,10 @@
 
 			<h1 class="inverse">{{lang.guildJoiner.joinGuild}}</h1>
 
-			<pagination page="guilds.page" items-per-page="10" total-items="guilds.pageCount * 10" max-size="5" on-select-page="refreshGuilds(page)"></pagination>
+			<paginated resource="GuildResource" results="guilds" find="find" sort="sort">
 
 			<ul class="list-group">
-				<li class="list-group-item" ng-repeat="guild in guilds.results">
+				<li class="list-group-item" ng-repeat="guild in guilds">
 
 					<div class="guild-banner">
 						<h3>{{guild._id}}</h3>
@@ -46,7 +46,7 @@
 				</li>
 			</ul>
 
-			<pagination page="guilds.page" items-per-page="10" total-items="guilds.pageCount * 10" max-size="5" on-select-page="refreshGuilds(page)"></pagination>
+			</paginated>
 
 		</div>
 	</div>

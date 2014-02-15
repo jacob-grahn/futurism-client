@@ -4,7 +4,11 @@ angular.module('futurism')
 
 		$scope.static = staticContentUrl;
 		$scope.joinOptions = ['invite', 'ask', 'open'];
+
 		$scope.guilds = {};
+		$scope.find = {join: 'open'};
+		$scope.sort = {gpToday: -1};
+		$scope.GuildResource = GuildResource;
 
 		$scope.newGuild = {
 			_id: '',
@@ -12,12 +16,6 @@ angular.module('futurism')
 			join: 'open',
 			banner: null
 		};
-
-
-		$scope.refreshGuilds = function(page) {
-			$scope.guilds = GuildResource.query({find: {join: 'open'}, sort: {'gpToday': 1}, page: page});
-		};
-		$scope.refreshGuilds(1);
 
 
 		$scope.createGuild = function(guildData) {
