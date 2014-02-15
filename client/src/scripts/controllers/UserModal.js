@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('UserModalCtrl', function($scope, userId, UserResource, StatsResource, ApprenticeResource, ModeratorResource, BanResource, $modal) {
+	.controller('UserModalCtrl', function($scope, userId, UserResource, StatsResource, ApprenticeResource, ModeratorResource, BanResource, GuildModResource, $modal) {
 		'use strict';
 
 		$scope.user = UserResource.get({userId: userId});
@@ -74,5 +74,23 @@ angular.module('futurism')
 		$scope.deBan = function() {
 			BanResource.delete({userId: userId, banId: $scope.user.ban._id});
 			$scope.$dismiss('deBan');
+		};
+
+
+		/**
+		 * promote guild member to guild mod
+		 */
+		$scope.guildMod = function() {
+			GuildModResource.put({userId: userId, guildId: $scope.user.guild});
+			$scope.$dismiss('guildMod');
+		};
+
+
+		/**
+		 * demote guild mod
+		 */
+		$scope.deGuildMod = function() {
+			GuildModResource.delete({userId: userId, guildId: $scope.user.guild});
+			$scope.$dismiss('deGuildMod');
 		};
 	});
