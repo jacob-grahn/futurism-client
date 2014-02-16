@@ -21,7 +21,7 @@ angular.module('futurism')
 
 			open: function() {
 				hand.show = true;
-				socket.authEmit('hand', {gameId: $routeParams.gameId});
+				socket.emit('hand', {gameId: $routeParams.gameId});
 				state.toDefault();
 			}
 		};

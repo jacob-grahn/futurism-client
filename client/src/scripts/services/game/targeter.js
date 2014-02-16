@@ -55,7 +55,7 @@ angular.module('futurism')
 			 */
 			checkTargetChain: function() {
 				if(state.data.targets.length >= state.data.restrict.length) {
-					socket.authEmit('doAction', {
+					socket.emit('doAction', {
 						gameId: $routeParams.gameId,
 						actionId: state.data.actionId,
 						targets: state.data.targets

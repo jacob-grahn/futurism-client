@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('Chat', function(socket, $rootScope) {
+	.factory('Chat', function(socket) {
 		'use strict';
 
 		/**
@@ -18,8 +18,8 @@ angular.module('futurism')
 			 * Start listening to this chat room
 			 */
 			var subscribe = function() {
-				socket.authEmit('subscribe', roomName);
-				socket.authEmit('chatHistory', roomName);
+				socket.emit('subscribe', roomName);
+				socket.emit('chatHistory', roomName);
 			};
 
 
@@ -27,7 +27,7 @@ angular.module('futurism')
 			 * Stop listening to this chat room
 			 */
 			var unsubscribe = function() {
-				socket.authEmit('unsubscribe', roomName);
+				socket.emit('unsubscribe', roomName);
 				clear();
 			};
 
@@ -37,7 +37,7 @@ angular.module('futurism')
 			 * @param {string} txt
 			 */
 			var send = function(txt) {
-				socket.authEmit('chat', {roomName: roomName, txt: txt});
+				socket.emit('chat', {roomName: roomName, txt: txt});
 			};
 
 
@@ -74,11 +74,9 @@ angular.module('futurism')
 			/**
 			 * Listen for incoming chat messages
 			 */
-			socket.on('chat', function(msg) {
+			socket.$on('chat', function(msg) {
 				if(msg.roomName === roomName) {
-					$rootScope.$apply(function() {
-						add(msg);
-					});
+					add(msg);
 				}
 			});
 
@@ -86,14 +84,12 @@ angular.module('futurism')
 			/**
 			 * Listen for incoming chatHistory
 			 */
-			socket.on('chatHistory', function(data) {
+			socket.$on('chatHistory', function(data) {
 				if(data.roomName === roomName) {
-					$rootScope.$apply(function() {
-						for(var i=0; i<data.history.length; i++) {
-							var chat = data.history[i];
-							add(chat);
-						}
-					});
+					for(var i=0; i<data.history.length; i++) {
+						var chat = data.history[i];
+						add(chat);
+					}
 				}
 			});
 

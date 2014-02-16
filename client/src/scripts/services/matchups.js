@@ -5,14 +5,15 @@ angular.module('futurism')
 		var self = this;
 		self.lobbyName = 'brutus';
 		self.matchups = [];
+		socket.connect();
 
 
 		/**
 		 * start listening to lobby events
 		 */
 		self.subscribe = function() {
-			socket.authEmit('allMatchups', {lobbyName: self.lobbyName});
-			socket.authEmit('subscribe', self.lobbyName);
+			socket.emit('allMatchups', {lobbyName: self.lobbyName});
+			socket.emit('subscribe', self.lobbyName);
 		};
 
 
@@ -20,7 +21,7 @@ angular.module('futurism')
 		 * stop listening to lobby events
 		 */
 		self.unsubscribe = function() {
-			socket.authEmit('unsubscribe', self.lobbyName);
+			socket.emit('unsubscribe', self.lobbyName);
 			self.leave();
 			self.clear();
 		};
@@ -31,7 +32,7 @@ angular.module('futurism')
 		 * @param {Object} rules
 		 */
 		self.createMatchup = function(rules) {
-			socket.authEmit('createMatchup', {lobbyName: self.lobbyName, rules: rules});
+			socket.emit('createMatchup', {lobbyName: self.lobbyName, rules: rules});
 		};
 
 
@@ -40,7 +41,7 @@ angular.module('futurism')
 		 * @param matchupId
 		 */
 		self.join = function(matchupId) {
-			socket.authEmit('joinMatchup', {lobbyName: self.lobbyName, matchupId: matchupId});
+			socket.emit('joinMatchup', {lobbyName: self.lobbyName, matchupId: matchupId});
 		};
 
 
@@ -48,7 +49,7 @@ angular.module('futurism')
 		 * Leave whatever matchup you may be in
 		 */
 		self.leave = function() {
-			socket.authEmit('leaveMatchup', {lobbyName: self.lobbyName});
+			socket.emit('leaveMatchup', {lobbyName: self.lobbyName});
 		};
 
 

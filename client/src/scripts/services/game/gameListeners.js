@@ -72,8 +72,8 @@ angular.module('futurism')
 		 * @param {string} gameId
 		 */
 		self.subscribe = function(gameId) {
-			socket.authEmit('subscribe', gameId);
-			socket.authEmit('gameStatus', {gameId: gameId});
+			socket.emit('subscribe', gameId);
+			socket.emit('gameStatus', {gameId: gameId});
 		};
 
 
@@ -82,7 +82,7 @@ angular.module('futurism')
 		 * @param {string} gameId
 		 */
 		self.unsubscribe = function(gameId) {
-			socket.authEmit('unsubscribe', gameId);
+			socket.emit('unsubscribe', gameId);
 		};
 
 

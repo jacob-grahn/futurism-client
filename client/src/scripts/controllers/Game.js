@@ -18,7 +18,7 @@ angular.module('futurism')
 		 * End your turn
 		 */
 		$scope.endTurn = function() {
-			socket.authEmit('endTurn', {gameId: $scope.gameId});
+			socket.emit('endTurn', {gameId: $scope.gameId});
 		};
 
 
@@ -26,7 +26,7 @@ angular.module('futurism')
 		 * Remove yourself from the game
 		 */
 		$scope.forfeit = function() {
-			socket.authEmit('forfeit', {gameId: $scope.gameId});
+			socket.emit('forfeit', {gameId: $scope.gameId});
 			$location.url('/lobby');
 		};
 
