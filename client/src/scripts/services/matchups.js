@@ -5,13 +5,13 @@ angular.module('futurism')
 		var self = this;
 		self.lobbyName = 'brutus';
 		self.matchups = [];
-		socket.connect();
 
 
 		/**
 		 * start listening to lobby events
 		 */
 		self.subscribe = function() {
+			socket.connect();
 			socket.emit('allMatchups', {lobbyName: self.lobbyName});
 			socket.emit('subscribe', self.lobbyName);
 		};

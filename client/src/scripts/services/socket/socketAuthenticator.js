@@ -9,9 +9,7 @@ angular.module('futurism')
 			var reAuthDelay = 3000;
 
 			var sendAuth = function() {
-				if(socket.socket.connected) {
-					socket.emit('auth', {token: session.getToken()});
-				}
+				socket.emit('auth', {token: session.getToken()});
 			};
 
 			var flushBuffer = function() {
@@ -26,10 +24,8 @@ angular.module('futurism')
 			});
 
 			socket.on('connect', function() {
+				console.log('on connect');
 				authenticated = false;
-			});
-
-			socket.on('auth', function () {
 				sendAuth();
 			});
 

@@ -6,10 +6,6 @@ module.exports = {
 
 	authorizeSocket: function(socket, callback) {
 
-
-		socket.emit('auth', {serverVersion: '0.0.5'});
-
-
 		socket.on('auth', function(data) {
 
 			if(!data.token) {

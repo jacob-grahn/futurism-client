@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('navBarCtrl', function($scope, me, $, messager, session, $location, unread) {
+	.controller('navBarCtrl', function($scope, me, $, messager, session, $location, unread, socket) {
 		'use strict';
 
 		$scope.path = '';
@@ -60,6 +60,7 @@ angular.module('futurism')
 
 
 		$scope.logout = function() {
+			socket.disconnect();
 			session.destroy();
 			$location.url('/');
 		};

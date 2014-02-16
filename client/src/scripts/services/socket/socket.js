@@ -29,24 +29,30 @@ angular.module('futurism')
 		};
 
 
-		return {
+		var face = {
 
-			connect: function(_uri_) {
-				if(uri !== _uri_) {
-					uri = _uri_;
+			connect: function(newUri) {
+				console.log(uri, newUri, socket);
+				if(uri !== newUri || !socket) {
+					uri = newUri;
+					face.disconnect();
+
+					socket = io.connect(uri);
+					if(socket.authEmit) {
+						socket.socket.connect();
+					}
+					else {
+						socketAuthenticator(socket);
+						socketErrors(socket);
+						applyListeners(socket);
+					}
 				}
-				if(socket) {
-					socket.disconnect();
-				}
-				socket = io.connect(uri);
-				socketAuthenticator(socket);
-				socketErrors(socket);
-				applyListeners();
 			},
 
 			disconnect: function() {
 				if(socket) {
 					socket.disconnect();
+					socket = null;
 				}
 			},
 
@@ -63,5 +69,7 @@ angular.module('futurism')
 				}
 			}
 		};
+
+		return face;
 
 	});
