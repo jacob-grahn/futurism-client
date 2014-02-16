@@ -21,14 +21,20 @@ html, body {
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-image: url("/images/futurism-bg-1920x1080.jpg");
+	background-image: url("/images/futurism-bg-960x540.jpg");
   background-repeat: no-repeat;
   background-color: #000000;
   background-attachment: fixed;
-  background-position: center;
+  //background-position: center;
   margin: 0 0 0 0;
   padding: 50px 0 0 0;
   color: $dark-blend;
+}
+
+@media all and (min-width: 960px), (min-height: 540px) {
+	body {
+		background-image: url("/images/futurism-bg-1920x1080.jpg");
+	}
 }
 
 h1 {
