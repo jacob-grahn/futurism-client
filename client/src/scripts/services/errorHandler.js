@@ -4,7 +4,7 @@ angular.module('futurism')
 
 		var message = '';
 
-		var handle = function(err) {
+		var fatal = function(err) {
 			err.stack = err.stack;
 			message = err;
 			$location.url('/error');
@@ -30,7 +30,7 @@ angular.module('futurism')
 
 		return {
 			getLastError: getLastError,
-			handle: handle,
+			fatal: fatal,
 			callback: callback,
 			reset: reset,
 			show: show
