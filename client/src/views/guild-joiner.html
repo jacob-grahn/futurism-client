@@ -1,55 +1,46 @@
-<div id="lobby-matchups" class="col-sm-7">
+<div class="col-sm-7">
 
-	<div class="col-sm-12">
-		<div class="row">
+	<h1 class="inverse">{{lang.guildJoiner.joinGuild}}</h1>
 
-			<h1 class="inverse">{{lang.guildJoiner.joinGuild}}</h1>
+	<paginated resource="GuildResource" results="guilds" find="find" sort="sort">
 
-			<paginated resource="GuildResource" results="guilds" find="find" sort="sort">
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="guild in guilds">
 
-			<ul class="list-group">
-				<li class="list-group-item" ng-repeat="guild in guilds">
-
-					<div class="guild-banner">
-						<h3>{{guild._id}}</h3>
-						<img ng-if="guild.banner.file" ng-src="{{static.globe}}/banners/large_{{guild.banner.file}}?{{guild.banner.updated}}">
-					</div>
-					<ul>
-						<li>
-							{{lang.guildJoiner.leaders}}:
-							<span ng-repeat="owner in guild.owners">
-								<username id="{{owner._id}}" name="{{owner.name}}" site="{{owner.site}}" group="{{owner.group}}"></username>
-							</span>
-						</li>
-						<li>
-							{{lang.guildJoiner.members}}: <b>{{guild.members.length}}</b>
-						</li>
-						<li>
-							{{lang.guildJoiner.gpToday}}: <b>{{guild.gpDay}}</b>
-						</li>
-						<li>
-							{{lang.guildJoiner.founded}}: <b>{{guild.createdDate | date}}</b>
-						</li>
-						<li ng-if="guild.desc">
-							<p>
-								-- <br>
-								{{guild.desc}}
-							</p>
-						</li>
-						<li>
-							<p>
-								<busy-button on-click="joinGuild(guild)" label="{{lang.guildJoiner.join}}"></busy-button>
-							</p>
-						</li>
-					</ul>
-
+			<banner guild="guild"></banner>
+			<ul>
+				<li>
+					{{lang.guildJoiner.leaders}}:
+					<span ng-repeat="owner in guild.owners">
+						<username id="{{owner._id}}" name="{{owner.name}}" site="{{owner.site}}" group="{{owner.group}}"></username>
+					</span>
+				</li>
+				<li>
+					{{lang.guildJoiner.members}}: <b>{{guild.members.length}}</b>
+				</li>
+				<li>
+					{{lang.guildJoiner.gpToday}}: <b>{{guild.gpDay}}</b>
+				</li>
+				<li>
+					{{lang.guildJoiner.founded}}: <b>{{guild.createdDate | date}}</b>
+				</li>
+				<li ng-if="guild.desc">
+					<p>
+						-- <br>
+						{{guild.desc}}
+					</p>
+				</li>
+				<li>
+					<p>
+						<busy-button on-click="joinGuild(guild)" label="{{lang.guildJoiner.join}}"></busy-button>
+					</p>
 				</li>
 			</ul>
 
-			</paginated>
+		</li>
+	</ul>
 
-		</div>
-	</div>
+	</paginated>
 
 </div>
 
