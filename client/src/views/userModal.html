@@ -3,7 +3,7 @@
 </div>
 <div class="modal-body">
 	<ul>
-		<li>Guild: <a href="/guilds/{{user.guild}}">{{user.guild}}</a></li>
+		<li>Guild: <a ng-click="openGuild(user.guild)">{{user.guild}}</a></li>
 		<li>Fame: {{stats.fame}}</li>
 		<li>Elo: {{stats.elo}}</li>
 		<li>Group: {{user.group}}</li>

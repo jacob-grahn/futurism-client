@@ -1,9 +1,15 @@
 angular.module('futurism')
-	.controller('UserModalCtrl', function($scope, userId, UserResource, StatsResource, ApprenticeResource, ModeratorResource, BanResource, GuildModResource, KickResource, $modal) {
+	.controller('UserModalCtrl', function($scope, userId, $location, UserResource, StatsResource, ApprenticeResource, ModeratorResource, BanResource, GuildModResource, KickResource, $modal) {
 		'use strict';
 
 		$scope.user = UserResource.get({userId: userId});
 		$scope.stats = StatsResource.get({userId: userId});
+
+
+		$scope.openGuild = function(guildId) {
+			$location.url('/guilds/' + guildId);
+			$scope.$dismiss('openGuild');
+		};
 
 
 		/**

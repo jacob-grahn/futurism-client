@@ -13,7 +13,7 @@ angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', '
 			when('/futures', {templateUrl: 'views/futures.html', controller: 'FuturesCtrl'}).
 			when('/game/:gameId', {templateUrl: 'views/game.html', controller: 'GameCtrl'}).
 			when('/loadup/:gameId/:maxPride', {templateUrl: 'views/loadup.html', controller: 'LoadupCtrl'}).
-			when('/guild', {templateUrl: 'views/guild.html', controller: 'GuildCtrl'}).
+			when('/guilds/:guildId', {templateUrl: 'views/guild.html', controller: 'GuildCtrl'}).
 			when('/guild-joiner', {templateUrl: 'views/guild-joiner.html', controller: 'GuildJoinerCtrl'}).
 			when('/instructions', {templateUrl: 'views/instructions.html', controller: 'InstructionsCtrl'}).
 			when('/language', {templateUrl: 'views/language.html', controller: 'LanguageCtrl'}).
