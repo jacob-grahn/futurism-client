@@ -44,8 +44,8 @@ angular.module('futurism')
 
 
 		$scope.clickGuild = function() {
-			if(me.guild) {
-				$location.url('/guild');
+			if(me.user.guild) {
+				$location.url('/guilds/'+me.user.guild);
 			}
 			else {
 				$location.url('/guild-joiner');

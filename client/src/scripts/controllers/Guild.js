@@ -1,6 +1,7 @@
 angular.module('futurism')
-	.controller('GuildCtrl', function($scope, $routeParams) {
+	.controller('GuildCtrl', function($scope, $routeParams, GuildResource) {
 		'use strict';
-		$scope.hi = 'hi';
-		$scope.guildId = $routeParams.gameId;
+
+		$scope.guildId = $routeParams.guildId;
+		$scope.guild = GuildResource.get({guildId: $routeParams.guildId});
 	});

@@ -1,1 +1,46 @@
-Hello this is the guild page. {{guildId}}
+<div class="col-sm-7">
+
+	<banner guild="guild"></banner>
+
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="member in guild.members">
+			<username id="{{member._id}}" name="{{member.name}}" site="{{member.site}}" group="{{member.group}}"></username>
+		</li>
+	</ul>
+
+</div>
+
+
+
+<div class="col-sm-5 panel panel-default">
+
+	<div class="panel-segment">
+		<h1>Bonus Goals</h1>
+		<ul>
+			<li ng-repeat="goal in guild.goals">goal</li>
+		</ul>
+		<ul>
+			<li class="subtle">none</li>
+		</ul>
+	</div>
+
+	<div class="panel-segment">
+		<h1>Active Perks</h1>
+		<ul>
+			<li class="subtle">none</li>
+		</ul>
+	</div>
+
+	<div class="panel-segment">
+		<h1>Stats</h1>
+		<ul>
+			<li>
+				GP: {{guild.gp | number}}
+			</li>
+			<li>
+				GP Today: {{guild.gpDay | number}}
+			</li>
+		</ul>
+	</div>
+
+</div>
