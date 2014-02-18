@@ -70,6 +70,10 @@
 	});
 
 
+	//--- create lobbies
+	require('./config/defaultLobbies')();
+
+
 	//--- listen for requests
 	var port = process.env.PORT || 9000;
 	console.log('NODE_ENV: ', process.env.NODE_ENV);

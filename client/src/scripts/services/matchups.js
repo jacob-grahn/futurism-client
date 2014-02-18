@@ -3,14 +3,16 @@ angular.module('futurism')
 		'use strict';
 
 		var self = this;
-		self.lobbyName = 'brutus';
+		self.lobbyName = null;
 		self.matchups = [];
 
 
 		/**
 		 * start listening to lobby events
 		 */
-		self.subscribe = function() {
+		self.subscribe = function(lobbyName) {
+			self.unsubscribe();
+			self.lobbyName = lobbyName;
 			socket.connect();
 			socket.emit('allMatchups', {lobbyName: self.lobbyName});
 			socket.emit('subscribe', self.lobbyName);
@@ -21,8 +23,11 @@ angular.module('futurism')
 		 * stop listening to lobby events
 		 */
 		self.unsubscribe = function() {
-			socket.emit('unsubscribe', self.lobbyName);
-			self.leave();
+			if(self.lobbyName) {
+				socket.emit('unsubscribe', self.lobbyName);
+				self.leave();
+				self.lobbyName = null;
+			}
 			self.clear();
 		};
 
