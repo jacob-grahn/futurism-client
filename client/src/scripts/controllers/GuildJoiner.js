@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('GuildJoinerCtrl', function($scope, GuildResource, MemberResource, dataUrlToBlob, staticContentUrl, me) {
+	.controller('GuildJoinerCtrl', function($scope, GuildResource, MemberResource, LobbyResource, dataUrlToBlob, staticContentUrl, me) {
 		'use strict';
 
 		$scope.static = staticContentUrl;
@@ -23,7 +23,9 @@ angular.module('futurism')
 				guildData.bannerImg = dataUrlToBlob($scope.uppedBanner.resized.dataURL);
 			}
 
-			var guild = GuildResource.put(guildData);
+			var guild = GuildResource.put(guildData, function() {
+				LobbyResource.save();
+			});
 
 			return guild.$promise;
 		};

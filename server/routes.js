@@ -2,6 +2,8 @@
 
 module.exports = function(expr) {
 
+	var lobbies = require('./routes/lobbies');
+
 	var continueSession = require('./middleware/continueSession');
 	var checkLogin = require('./middleware/checkLogin');
 	var checkMod = require('./middleware/checkMod');
@@ -13,6 +15,11 @@ module.exports = function(expr) {
 	expr.delete('/api/decks', continueSession, checkLogin, require('./routes/decksDelete'));
 	expr.get('/api/decks', continueSession, checkLogin, require('./routes/decksGet'));
 	expr.post('/api/decks', continueSession, checkLogin, require('./routes/decksPost'));
+
+	expr.get('/api/lobbies', continueSession, lobbies.getList);
+	expr.get('/api/lobbies/:lobbyId', continueSession, lobbies.get);
+	expr.post('/api/lobbies', continueSession, lobbies.post);
+
 	expr.get('/api/tests', continueSession, require('./routes/testsGet'));
 	expr.get('/api/records/:gameId', continueSession, require('./routes/recordsGet'));
 
