@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('GuildJoinerCtrl', function($scope, GuildResource, MemberResource, LobbyResource, dataUrlToBlob, staticContentUrl, me) {
+	.controller('GuildJoinerCtrl', function($scope, $location, GuildResource, MemberResource, LobbyResource, dataUrlToBlob, staticContentUrl, me) {
 		'use strict';
 
 		$scope.static = staticContentUrl;
@@ -25,6 +25,7 @@ angular.module('futurism')
 
 			var guild = GuildResource.put(guildData, function() {
 				LobbyResource.save();
+				$location.url('/guilds/'+guildData._id);
 			});
 
 			return guild.$promise;
@@ -34,7 +35,9 @@ angular.module('futurism')
 		$scope.joinGuild = function(guild) {
 			var data = {guildId: guild._id, userId: me.user._id};
 			var member = MemberResource.put(data, function(result) {
-				console.log('join result', result);
+				if(!result.error) {
+					$location.url('/guilds/'+guild._id);
+				}
 			});
 
 			return member.$promise;
