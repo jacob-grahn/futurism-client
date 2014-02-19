@@ -9,7 +9,6 @@ angular.module('futurism')
 		 * @constructor
 		 */
 		var Chat = function(roomName) {
-			roomName = 'chat:' + roomName;
 			var msgs = [];
 			var maxMsgs = 35;
 			var receivedCount = 0;

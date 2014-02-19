@@ -63,7 +63,6 @@
 				id: nextId++
 			};
 			lobby.matchups.store(matchup.id, matchup);
-			console.log('lobby.createMatchup', lobbyId);
 			broadcast(lobbyId, 'createMatchup', matchup);
 			lobby.joinMatchup(account, matchup.id);
 			return matchup;

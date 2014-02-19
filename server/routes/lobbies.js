@@ -9,7 +9,7 @@ module.exports = {
 
 	getList: function(req, res) {
 		Lobby.find({$or: [
-			{_id: '_' + req.session.guild},
+			{_id: req.session.guild},
 			{open: true}
 		]}, res.apiOut);
 	},
@@ -27,7 +27,7 @@ module.exports = {
 		}
 
 		Lobby.create({
-			_id: '_' + guildId,
+			_id: guildId,
 			open: false,
 			server: selectServer(),
 			date: new Date(),

@@ -43,7 +43,7 @@
 	<div class="panel-segment">
 		<h1>{{model.lobby._id}}</h1>
 		<select ng-model="model.lobby" ng-options="lby._id for lby in lobbies"></select>
-		<chat-display id="lobby-chat" room="{{model.lobby._id}}"></chat-display>
+		<chat-display id="lobby-chat" room="{{chatId}}"></chat-display>
 	</div>
 
 </div>

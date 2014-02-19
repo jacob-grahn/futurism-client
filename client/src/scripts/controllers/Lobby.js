@@ -3,6 +3,7 @@ angular.module('futurism')
 		'use strict';
 
 		$scope.matchups = matchups;
+		$scope.chatId = null;
 
 		$scope.model = {
 			lobby: {}
@@ -15,9 +16,14 @@ angular.module('futurism')
 
 
 		$scope.$watch('model.lobby', function() {
-			if($scope.model.lobby.server) {
-				socket.connect($scope.model.lobby.server);
-				matchups.subscribe('lobby:' + $scope.model.lobby._id);
+			var lobby = $scope.model.lobby;
+			if(lobby.server) {
+				var type = lobby.open ? 'open' : 'guild';
+				var lobbyId = type + ':lobby:' + lobby._id;
+				var chatId = type + ':chat:' + lobby._id;
+				socket.connect(lobby.server);
+				matchups.subscribe(lobbyId);
+				$scope.chatId = chatId;
 			}
 		}, true);
 
