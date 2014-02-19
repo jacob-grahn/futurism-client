@@ -18,7 +18,6 @@
 		_.each(accounts, function(account) {
 			var player = new Player(account);
 			var commander = makeAccountCard(account);
-			player.commander = commander;
 			player.hand.push(commander);
 			players.push(player);
 		});

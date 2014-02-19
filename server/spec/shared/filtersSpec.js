@@ -406,11 +406,17 @@ describe('filters', function() {
 	});
 
 
-	it('should find cards that are at the front', function() {
-		var frontTargets = filters.front(targets);
-		expect(frontTargets).toContain(targets[2]);
-		expect(frontTargets).toContain(targets[11]);
-		expect(frontTargets).not.toContain(targets[16]);
+	describe('front', function() {
+		it('should find targets that are at the highest row in the column', function() {
+			var targets = [
+				{column:0, row:2, cid:2},
+				{column:0, row:1, cid:1},
+				{column:0, row:0, cid:0}
+			];
+			var frontTargets = filters.front(targets);
+			expect(frontTargets.length).toBe(1);
+			expect(frontTargets).toContain(targets[0]);
+		});
 	});
 
 

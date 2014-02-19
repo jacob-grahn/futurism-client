@@ -3,6 +3,13 @@
 var _ = require('lodash');
 
 
+var playerHasCommander = function(player, board) {
+	var handCommanders = _.filter(player.hand, {commander: true});
+	var boardCommanders = _.filter(board.playerTargets(player._id), {card: {commander: true}});
+	return handCommanders.length || boardCommanders.length;
+};
+
+
 module.exports = {
 
 	commanderRules: function(players, board, turn) {
@@ -15,7 +22,7 @@ module.exports = {
 		// make a list of teams that have a surviving commander
 		var survivingTeams = [];
 		_.each(players, function(player) {
-			if(player.commander.health > 0) {
+			if(playerHasCommander(player, board)) {
 				survivingTeams.push(player.team);
 			}
 		});

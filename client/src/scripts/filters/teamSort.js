@@ -12,7 +12,7 @@ angular.module('futurism')
 				if(target.team === myTeam) {
 					return Infinity;
 				}
-				return target.team;
+				return 1;
 			});
 		};
 

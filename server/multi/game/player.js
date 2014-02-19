@@ -17,7 +17,6 @@ var Player = function(account) {
 	self.pride = 0;
 	self.deckPride = 0;
 	self.deck = {};
-	self.commander = null;
 };
 
 module.exports = Player;

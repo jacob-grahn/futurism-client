@@ -14,8 +14,8 @@ describe('game/victoryCondition', function() {
 
 		it('should return no winner if more than one team has a living commander', function() {
 			var players = [
-				{_id:1, team:1, commander: {health: 7}},
-				{_id:2, team:2, commander: {health: 14}}
+				{_id:1, team:1, hand: [{commander: true}]},
+				{_id:2, team:2, hand: [{commander: true}]}
 			];
 
 			var board = new Board(players, 2, 2);
@@ -24,12 +24,27 @@ describe('game/victoryCondition', function() {
 		});
 
 
+		it('should count commanders on the board or in the hand', function() {
+			var players = [
+				{_id:1, team:1, hand: []},
+				{_id:2, team:2, hand: []}
+			];
+
+			var board = new Board(players, 2, 2);
+			board.target(1,0,0).card = {commander: true};
+
+			var result = VictoryCondition.commanderRules(players, board);
+			expect(result.winner).toBe(true);
+			expect(result.team).toBe(1);
+		});
+
+
 		it('should return a winner if that team is the only one with a commander left', function() {
 			var players = [
-				{_id:1, team:1, commander: {health: 1}},
-				{_id:2, team:1, commander: {health: 0}},
-				{_id:3, team:2, commander: {health: 0}},
-				{_id:4, team:2, commander: {health: 0}}
+				{_id:1, team:1, hand: [{commander: true}]},
+				{_id:2, team:1, hand: []},
+				{_id:3, team:2, hand: []},
+				{_id:4, team:2, hand: []}
 			];
 
 			var board = new Board(players, 2, 2);
