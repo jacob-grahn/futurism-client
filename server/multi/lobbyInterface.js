@@ -1,7 +1,7 @@
 'use strict';
 
 var Lobby = require('./lobby');
-
+var canJoinRoom = require('./canJoinRoom');
 
 module.exports = {
 
@@ -13,6 +13,10 @@ module.exports = {
 
 		socket.onLobby = function(event, callback) {
 			socket.onAccount(event, function(data, account) {
+				if(!canJoinRoom(account, data.lobbyName)) {
+					return false;
+				}
+
 				var lobby = Lobby.lookup.idToValue(data.lobbyName);
 				if(!lobby) {
 					lobby = Lobby.createRoom(data.lobbyName);
