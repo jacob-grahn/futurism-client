@@ -21,11 +21,9 @@ angular.module('futurism')
 			}
 		};
 
-		socket.on('selectDeckResult', function(data) {
+		socket.$on('selectDeckResult', function(data) {
 			if(data.result === 'success') {
-				$scope.$apply(function() {
-					$location.url('/game/' + $routeParams.gameId);
-				});
+				$location.url('/game/' + $routeParams.gameId);
 			}
 			else {
 				errorHandler.handle(data.error);

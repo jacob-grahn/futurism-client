@@ -129,7 +129,7 @@
 		 * @param {object} matchup
 		 */
 		var startMatchup = function(matchup) {
-			var gameId = createRandomString(12);
+			var gameId = 'open:game:' + createRandomString(12);
 			new Game(matchup.accounts, matchup.rules, gameId);
 			broadcast(lobbyId, 'startMatchup', {id: matchup.id, gameId: gameId});
 			lobby.matchups.deleteId(matchup.id);

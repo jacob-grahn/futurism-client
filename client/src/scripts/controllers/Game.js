@@ -9,6 +9,7 @@ angular.module('futurism')
 		$scope.hand = hand;
 		$scope.targeter = targeter;
 		$scope.gameId = $routeParams.gameId;
+		$scope.chatId = $scope.gameId.replace('game', 'chat');
 
 
 		gameListeners.subscribe($scope.gameId);

@@ -38,7 +38,7 @@
 				<button class='btn btn-default' ng-click="forfeit()">{{lang.game.forfeit}}</button>
 			</li>
 		</ul>
-		<chat-display class="panel-segment" room="chat-{{gameId}}"></chat-display>
+		<chat-display class="panel-segment" room="{{chatId}}"></chat-display>
 	</div>
 
 	<div ng-show="hand.show && hand.cards.length > 0" id="hand">
