@@ -331,7 +331,7 @@ describe('filters', function() {
 	];
 
 
-	it('should find affordable targets', function() {
+	it('should find affordable targets (targets that cost less pride than you have)', function() {
 		var targets = [
 			{
 				card: {
@@ -350,6 +350,26 @@ describe('filters', function() {
 		var results = filters.affordable(targets, player1);
 		expect(results.length).toBe(1);
 		expect(results[0].card.cid).toBe(1);
+	});
+
+
+	describe('weak', function() {
+
+		it('should find targets with a health of 1', function() {
+			var targets = [
+				{card: {
+					cid: 0,
+					health: 8
+				}},
+				{card: {
+					cid: 1,
+					health: 1
+				}}
+			];
+			var weakTargets = filters.weak(targets);
+			expect(weakTargets.length).toBe(1);
+			expect(weakTargets[0].card.cid).toBe(1);
+		});
 	});
 
 

@@ -135,6 +135,7 @@
 				sCard.health += tCard.health;
 				sCard.attack += tCard.attack;
 				sCard.abilities = _.uniq(sCard.abilities.concat(tCard.abilities));
+				sCard.commander = tCard.commander || sCard.commander;
 				target.card = null;
 			}
 		},
@@ -299,7 +300,7 @@
 		sduc: {
 			restrict: [
 				[filters.owned],
-				[filters.enemy, filters.front],
+				[filters.enemy, filters.full, filters.front, filters.weak],
 				[filters.friend, filters.empty]
 			],
 			use: function(src, target, target2) {

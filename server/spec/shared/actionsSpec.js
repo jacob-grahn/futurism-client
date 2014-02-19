@@ -267,12 +267,15 @@ describe('game/actions', function() {
 	// elite
 	///////////////////////////////////////////////////////////////////////////////////////////
 
-	it('sduc should pull into your control', function() {
-		target(1,1,0).card = strongCard;
-		target(2,0,0).card = weakCard;
-		actions.sduc.use(target(1,1,0), target(2,0,0), target(1,0,0));
-		expect(target(2,0,0).card).toBeFalsy();
-		expect(target(1,0,0).card).toBe(weakCard);
+	describe('sduc', function() {
+
+		it('should pull a card into your control', function() {
+			target(1,1,0).card = strongCard;
+			target(2,0,0).card = weakCard;
+			actions.sduc.use(target(1,1,0), target(2,0,0), target(1,0,0));
+			expect(target(2,0,0).card).toBeFalsy();
+			expect(target(1,0,0).card).toBe(weakCard);
+		});
 	});
 
 

@@ -24,6 +24,14 @@
 	};
 
 
+	filters.weak = function(targets, me) {
+		return _.filter(targets, function(target) {
+			console.log(target);
+			return target.card.health === 1;
+		});
+	};
+
+
 	filters.affordable = function(targets, me) {
 		return _.filter(targets, function(target) {
 			return target.card.pride <= me.pride;
