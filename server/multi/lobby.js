@@ -2,7 +2,6 @@
 	'use strict';
 
 	var Game = require('./game/game');
-	var Chat = require('./chat');
 	var broadcast = require('./broadcast');
 	var Lookup = require('../fns/lookup');
 	var createRandomString = require('../fns/createRandomString');
@@ -133,9 +132,6 @@
 		var startMatchup = function(matchup) {
 			var gameId = createRandomString(12);
 			new Game(matchup.accounts, matchup.rules, gameId);
-
-			Chat.safeCreate('chat:' + gameId);
-
 			broadcast(lobbyId, 'startMatchup', {id: matchup.id, gameId: gameId});
 			lobby.matchups.deleteId(matchup.id);
 		};
