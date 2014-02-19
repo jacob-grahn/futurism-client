@@ -1,6 +1,7 @@
 'use strict';
 
 var Chat = require('./chat');
+var canJoinRoom = require('./canJoinRoom');
 
 
 var ChatInterface = {
@@ -14,6 +15,9 @@ var ChatInterface = {
 				}
 				if(silenced) {
 					return socket.emit('silenced', 'you have been silenced');
+				}
+				if(!canJoinRoom(account, data.roomName)) {
+					return 'You can not send messages to this room';
 				}
 				return Chat.safeAdd(account, data.txt, data.roomName);
 			});
