@@ -98,4 +98,99 @@ describe('diff', function() {
 		expect(result).toEqual({});
 	});
 
+
+
+	it('should handle a false value without stopping', function() {
+		var obj1 = {
+			"0-0": null,
+			"0-1": {
+				"_id": 0,
+				"commander": true,
+				"userId": "52fe6f6d199a1412277d62c8",
+				"name": "Jiggmin",
+				"faction": "no",
+				"attack": 0,
+				"health": 10,
+				"story": "",
+				"abilities": [],
+				"hasImage": true,
+				"cid": 2,
+				"moves": 1,
+				"pride": 0,
+				"attackBuf": 0,
+				"shield": 0,
+				"hero": 0
+			},
+			"1-0": null,
+			"1-1": null,
+			"2-0": null,
+			"2-1": null,
+			"3-0": null,
+			"3-1": null
+		};
+
+		var obj2 = {
+			"0-0": null,
+			"0-1": {
+				"_id": 0,
+				"commander": true,
+				"userId": "52fe6f6d199a1412277d62c8",
+				"name": "Jiggmin",
+				"faction": "no",
+				"attack": 0,
+				"health": 10,
+				"story": "",
+				"abilities": [],
+				"hasImage": true,
+				"cid": 2,
+				"moves": 1,
+				"pride": 0,
+				"attackBuf": 0,
+				"shield": 0,
+				"hero": 0
+			},
+			"1-0": null,
+			"1-1": null,
+			"2-0": null,
+			"2-1": {
+				"faction": "en",
+				"attack": 0,
+				"health": 1,
+				"abilities": [
+					"abom"
+				],
+				"hasImage": false,
+				"name": "abomination",
+				"story": "",
+				"userId": "52fe6f6d199a1412277d62c8",
+				"_id": "QXrVlVKwbPLCx7qo",
+				"cid": 7,
+				"moves": 0,
+				"pride": 2
+			},
+			"3-0": null,
+			"3-1": null
+		};
+
+		var result = diff(obj1, obj2);
+
+		expect(result).toEqual({
+			'2-1': {
+				faction: 'en',
+				attack: 0,
+				health: 1,
+				abilities: [
+					'abom'
+				],
+				hasImage: false,
+				name: 'abomination',
+				story: '',
+				userId: '52fe6f6d199a1412277d62c8',
+				_id: 'QXrVlVKwbPLCx7qo',
+				cid: 7,
+				moves: 0,
+				pride: 2
+			}
+		});
+	});
 });

@@ -1,7 +1,6 @@
 describe('game/actions', function() {
 	'use strict';
 
-	var _ = require('lodash');
 	var actions = require('../../../shared/actions');
 	var factions = require('../../../shared/factions');
 	var board, player1, player2, player3, weakCard, strongCard;
@@ -188,13 +187,16 @@ describe('game/actions', function() {
 	});
 
 
-	it('bees should hurt all targets passed in', function() {
-		target(1,0,0).card = weakCard;
-		target(1,0,2).card = strongCard;
-		actions.bees.use(target(1,0,0), target(1,0,1), target(1,0,2));
-		expect(target(1,0,0).card.health).toBe(0);
-		expect(target(1,0,2).card.health).toBe(8);
+	describe('bees', function() {
+		it('should hurt all targets passed in', function() {
+			target(1,0,0).card = weakCard;
+			target(1,0,2).card = strongCard;
+			actions.bees.use(target(1,0,0), target(1,0,1), target(1,0,2));
+			expect(target(1,0,0).card.health).toBe(0);
+			expect(target(1,0,2).card.health).toBe(8);
+		});
 	});
+
 
 
 	////////////////////////////////////////////////////////////////////////////////////////////
@@ -254,7 +256,7 @@ describe('game/actions', function() {
 	it('tran should switch health and attack', function() {
 		var transCard = {
 			attack: 5,
-			health: 1,
+			health: 1
 		};
 		target(1,0,0).card = transCard;
 		actions.tran.use(target(1,0,0));
@@ -300,7 +302,7 @@ describe('game/actions', function() {
 	it('posn should damage a card every turn', function() {
 		var card = {
 			poison: 0
-		}
+		};
 		target(1,0,0).card = strongCard;
 		target(2,0,0).card = card;
 		actions.posn.use(target(1,0,0), target(2,0,0));
@@ -378,8 +380,8 @@ describe('game/actions', function() {
 
 	it('hero should mark a card as the only available target', function() {
 		var card = {
-			hero: 0,
-		}
+			hero: 0
+		};
 		target(1,0,0).card = card;
 		actions.hero.use(target(1,0,0));
 		expect(card.hero).toBe(1);
