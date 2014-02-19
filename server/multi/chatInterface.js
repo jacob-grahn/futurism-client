@@ -28,9 +28,9 @@ var ChatInterface = {
 		});
 
 
-		socket.on('createChat', function(data) {
-			//Chat.safeCreate(data.roomName);
-		})
+		socket.on('createChat', function(roomName) {
+			Chat.safeCreate(roomName);
+		});
 	}
 };
 

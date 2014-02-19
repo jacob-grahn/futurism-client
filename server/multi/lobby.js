@@ -38,15 +38,17 @@
 	/**
 	 * Player matchmaking
 	 * matchups are created by users, then filled with other users
-	 * @param roomName
+	 * @param lobbyId
 	 */
-	Lobby.createRoom = function(roomName) {
-		var self = this;
+	Lobby.createRoom = function(lobbyId) {
+		var lobby = {};
+		lobby.id = lobbyId;
+
 
 		/**
 		 * stores matchups in progress
 		 */
-		self.matchups = new Lookup();
+		lobby.matchups = new Lookup();
 
 
 		/**
@@ -55,15 +57,16 @@
 		 * @param {object} rules
 		 * @returns {{accounts: Array, rules: object, id: number}}
 		 */
-		self.createMatchup = function(account, rules) {
+		lobby.createMatchup = function(account, rules) {
 			var matchup = {
 				accounts: [],
 				rules: _.defaults(rules, defaultRules),
 				id: nextId++
 			};
-			self.matchups.store(matchup.id, matchup);
-			broadcast(roomName, 'createMatchup', matchup);
-			self.joinMatchup(account, matchup.id);
+			lobby.matchups.store(matchup.id, matchup);
+			console.log('lobby.createMatchup', lobbyId);
+			broadcast(lobbyId, 'createMatchup', matchup);
+			lobby.joinMatchup(account, matchup.id);
 			return matchup;
 		};
 
@@ -74,18 +77,18 @@
 		 * @param {number} matchupId
 		 * @returns {object}
 		 */
-		self.joinMatchup = function(account, matchupId) {
+		lobby.joinMatchup = function(account, matchupId) {
 			if(matchupId === account.matchupId) {
 				return 'you are already in this matchup';
 			}
 
-			self.leaveMatchup(account);
+			lobby.leaveMatchup(account);
 
-			var matchup = self.matchups.idToValue(matchupId);
+			var matchup = lobby.matchups.idToValue(matchupId);
 			if(matchup) {
 				account.matchupId = matchupId;
 				matchup.accounts.push(account);
-				broadcast(roomName, 'joinMatchup', {id: matchup.id, user: _.pick(account, '_id', 'name', 'site', 'group')});
+				broadcast(lobbyId, 'joinMatchup', {id: matchup.id, user: _.pick(account, '_id', 'name', 'site', 'group')});
 
 				if(matchup.accounts.length >= matchup.rules.players) {
 					startMatchup(matchup);
@@ -101,12 +104,12 @@
 		 * @param {object} account
 		 * @returns {string} result
 		 */
-		self.leaveMatchup = function(account) {
+		lobby.leaveMatchup = function(account) {
 			if(!account.matchupId) {
 				return 'you are not in a matchup';
 			}
 
-			var matchup = self.matchups.idToValue(account.matchupId);
+			var matchup = lobby.matchups.idToValue(account.matchupId);
 			if(!matchup) {
 				return 'matchup was not found';
 			}
@@ -116,7 +119,7 @@
 				return acc._id !== account._id;
 			});
 
-			broadcast(roomName, 'leaveMatchup', {id: matchup.id, user:account});
+			broadcast(lobbyId, 'leaveMatchup', {id: matchup.id, user:account});
 			cleanMatchup(matchup);
 
 			return 'ok';
@@ -131,10 +134,10 @@
 			var gameId = createRandomString(12);
 			new Game(matchup.accounts, matchup.rules, gameId);
 
-			Chat.safeCreate('chat-' + gameId);
+			Chat.safeCreate('chat:' + gameId);
 
-			broadcast(roomName, 'startMatchup', {id: matchup.id, gameId: gameId});
-			self.matchups.deleteId(matchup.id);
+			broadcast(lobbyId, 'startMatchup', {id: matchup.id, gameId: gameId});
+			lobby.matchups.deleteId(matchup.id);
 		};
 
 
@@ -144,8 +147,8 @@
 		 */
 		var cleanMatchup = function(matchup) {
 			if(matchup.accounts.length === 0) {
-				broadcast(roomName, 'removeMatchup', matchup.id);
-				self.matchups.deleteId(matchup.id);
+				broadcast(lobbyId, 'removeMatchup', matchup.id);
+				lobby.matchups.deleteId(matchup.id);
 			}
 		};
 
@@ -153,16 +156,16 @@
 		/**
 		 * Return the lobby to its original state
 		 */
-		self.clear = function() {
-			self.matchups.clear();
+		lobby.clear = function() {
+			lobby.matchups.clear();
 		};
 
 
 		/**
 		 * store this so it can be found later
 		 */
-		Lobby.lookup.store(roomName, self);
-		return(self);
+		Lobby.lookup.store(lobbyId, lobby);
+		return(lobby);
 	};
 
 

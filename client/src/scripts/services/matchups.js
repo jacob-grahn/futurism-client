@@ -13,7 +13,6 @@ angular.module('futurism')
 		self.subscribe = function(lobbyName) {
 			self.unsubscribe();
 			self.lobbyName = lobbyName;
-			socket.connect();
 			socket.emit('allMatchups', {lobbyName: self.lobbyName});
 			socket.emit('subscribe', self.lobbyName);
 		};
@@ -125,7 +124,6 @@ angular.module('futurism')
 		 */
 		socket.$on('leaveMatchup', function(data) {
 			var matchup = self.idToMatchup(data.id);
-			console.log(data, matchup);
 			matchup.accounts = _.filter(matchup.accounts, function(account) {
 				return account._id !== data.user._id;
 			});

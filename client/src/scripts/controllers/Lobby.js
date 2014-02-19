@@ -1,20 +1,25 @@
 angular.module('futurism')
-	.controller('LobbyCtrl', function($scope, matchups, LobbyResource) {
+	.controller('LobbyCtrl', function($scope, socket, matchups, LobbyResource) {
 		'use strict';
 
 		$scope.matchups = matchups;
 
+		$scope.model = {
+			lobby: {}
+		};
+
 
 		$scope.lobbies = LobbyResource.query({}, function() {
-			console.log($scope.lobbies);
-			$scope.connectToLobby($scope.lobbies[0]);
+			$scope.model.lobby = $scope.lobbies[0];
 		});
 
 
-		$scope.connectToLobby = function(lobby) {
-			$scope.lobby = lobby;
-			matchups.subscribe(lobby._id);
-		};
+		$scope.$watch('model.lobby', function() {
+			if($scope.model.lobby.server) {
+				socket.connect($scope.model.lobby.server);
+				matchups.subscribe('lobby:' + $scope.model.lobby._id);
+			}
+		}, true);
 
 
 		$scope.$on('$destroy', function() {

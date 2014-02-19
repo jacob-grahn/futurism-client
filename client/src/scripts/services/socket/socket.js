@@ -29,17 +29,23 @@ angular.module('futurism')
 		};
 
 
+		var removeListeners = function(socket) {
+			_.each(listeners, function(obj) {
+				socket.removeAllListeners(obj.event);
+			});
+		};
+
+
 		var face = {
 
 			connect: function(newUri) {
-				console.log(uri, newUri, socket);
-				if(uri !== newUri || !socket) {
-					uri = newUri;
+				if(uri !== newUri) {
 					face.disconnect();
 
+					uri = newUri;
 					socket = io.connect(uri);
 					if(socket.authEmit) {
-						socket.socket.connect();
+						//socket.socket.connect();
 					}
 					else {
 						socketAuthenticator(socket);
@@ -51,8 +57,10 @@ angular.module('futurism')
 
 			disconnect: function() {
 				if(socket) {
-					socket.disconnect();
+					removeListeners(socket);
+					//socket.disconnect();
 					socket = null;
+					uri = null;
 				}
 			},
 

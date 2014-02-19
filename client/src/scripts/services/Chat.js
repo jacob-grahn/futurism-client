@@ -9,6 +9,7 @@ angular.module('futurism')
 		 * @constructor
 		 */
 		var Chat = function(roomName) {
+			roomName = 'chat:' + roomName;
 			var msgs = [];
 			var maxMsgs = 35;
 			var receivedCount = 0;
@@ -18,6 +19,7 @@ angular.module('futurism')
 			 * Start listening to this chat room
 			 */
 			var subscribe = function() {
+				socket.emit('createChat', roomName);
 				socket.emit('subscribe', roomName);
 				socket.emit('chatHistory', roomName);
 			};

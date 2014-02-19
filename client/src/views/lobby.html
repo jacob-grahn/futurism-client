@@ -41,8 +41,9 @@
 <div id="lobby-panel" class="col-sm-5 panel panel-default" match-screen-height ng-transclude offset-bottom="100" resize-element=".auto-size">
 
 	<div class="panel-segment">
-		<h1>{{lobby._id}}</h1><select ng-options="lobby._id for lobby in lobbies"></select>
-		<chat-display id="lobby-chat" room="chat-{{lobbyName}}"></chat-display>
+		<h1>{{model.lobby._id}}</h1>
+		<select ng-model="model.lobby" ng-options="lby._id for lby in lobbies"></select>
+		<chat-display id="lobby-chat" room="{{model.lobby._id}}"></chat-display>
 	</div>
 
 </div>

@@ -60,8 +60,6 @@
 	var Lobby = require('./multi/lobby');
 	multiInit.listenForConnections(io);
 	broadcast.setIo(io);
-	Chat.safeCreate('chat-brutus');
-	Lobby.createRoom('brutus');
 
 
 	//--- last ditch error handler

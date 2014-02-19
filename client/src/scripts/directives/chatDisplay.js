@@ -12,10 +12,8 @@ angular.module('futurism')
 
 			link: function (scope, elem) {
 
-				var chat = new Chat(scope.room);
-
-				chat.subscribe();
-				scope.chat = chat;
+				scope.chat = null;
+				scope.msgs = [];
 				scope.lang = lang;
 
 
@@ -30,7 +28,7 @@ angular.module('futurism')
 
 				scope.sendMessage = function() {
 					if(scope.typedMessage) {
-						chat.send(scope.typedMessage);
+						scope.chat.send(scope.typedMessage);
 						scope.typedMessage = null;
 					}
 				};
@@ -49,11 +47,27 @@ angular.module('futurism')
 
 
 				scope.$watch('chat.getReceivedCount()', function(oldCount, newCount) {
-					if(newCount >= chat.maxMsgs) {
-						var log = elem.find('.chat-log');
-						log[0].scrollTop -= 15;
+					if(scope.chat) {
+						if(newCount >= scope.chat.maxMsgs) {
+							var log = elem.find('.chat-log');
+							log[0].scrollTop -= 15;
+						}
+						scrollToBottom();
 					}
-					scrollToBottom();
+				});
+
+
+				scope.$watch('room', function(oldRoom, newRoom) {
+					if(scope.chat) {
+						scope.chat.unsubscribe();
+						scope.msgs = [];
+					}
+
+					if(scope.room) {
+						scope.chat = new Chat(scope.room);
+						scope.chat.subscribe();
+						scope.msgs = scope.chat.msgs;
+					}
 				});
 
 
@@ -62,7 +76,9 @@ angular.module('futurism')
 
 				scope.$on('$destroy', function() {
 					$(window).off('resize', scrollToBottom);
-					chat.unsubscribe();
+					if(scope.chat) {
+						scope.chat.unsubscribe();
+					}
 				});
 			}
 		};
