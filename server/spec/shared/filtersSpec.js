@@ -2,6 +2,7 @@ describe('filters', function() {
 	'use strict';
 
 	var filters = require('../../../shared/filters');
+	var Board = require('../../multi/game/board');
 	var _ = require('lodash');
 
 	// players
@@ -408,14 +409,15 @@ describe('filters', function() {
 
 	describe('front', function() {
 		it('should find targets that are at the highest row in the column', function() {
-			var targets = [
-				{column:0, row:2, cid:2},
-				{column:0, row:1, cid:1},
-				{column:0, row:0, cid:0}
-			];
-			var frontTargets = filters.front(targets);
-			expect(frontTargets.length).toBe(1);
-			expect(frontTargets).toContain(targets[0]);
+			var board = new Board([player1], 4, 2);
+			board.target(1, 3, 0).card = {cid: 1};
+			board.target(1, 2, 1).card = {cid: 2};
+			board.target(1, 1, 1).card = {cid: 3};
+			board.target(1, 0, 1).card = {cid: 4};
+			var frontTargets = filters.front(board.allTargets(), player1, board);
+			console.log('front targets', frontTargets);
+			expect(frontTargets.length).toBe(7);
+			expect(frontTargets).not.toContain(board.target(1, 3, 1));
 		});
 	});
 

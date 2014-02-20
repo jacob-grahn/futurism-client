@@ -40,7 +40,7 @@ var actionFns = {
 		if(player !== src.player) {
 			return 'this is not your card';
 		}
-		if(!actionFns.isValidAction(player, action, targets)) {
+		if(!actionFns.isValidAction(player, action, targets, game.board)) {
 			return 'target is not allowed';
 		}
 
@@ -99,15 +99,16 @@ var actionFns = {
 	 * @param {object} player
 	 * @param {object} action
 	 * @param {Array} targets
+	 * @param {Board} board
 	 * @returns {boolean} result
 	 */
-	isValidAction: function(player, action, targets) {
+	isValidAction: function(player, action, targets, board) {
 		var valid = true;
 		_.each(targets, function(target, index) {
 			var filters = action.restrict[index];
 
 			if(filters) {
-				var validTargets = module.exports.useFilters(filters, player, [target]);
+				var validTargets = module.exports.useFilters(filters, player, [target], board);
 				if(validTargets.length === 0) {
 					valid = false;
 				}
@@ -122,11 +123,12 @@ var actionFns = {
 	 * @param {array} filters
 	 * @param {object} player
 	 * @param {Array} targets
+	 * @param {Board} board
 	 */
-	useFilters: function(filters, player, targets) {
+	useFilters: function(filters, player, targets, board) {
 		var filtered = _.clone(targets);
 		_.each(filters, function(filter) {
-			filtered = filter(filtered, player);
+			filtered = filter(filtered, player, board);
 		});
 		return filtered;
 	}

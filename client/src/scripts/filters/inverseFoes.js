@@ -3,7 +3,7 @@
  */
 
 angular.module('futurism')
-	.filter('inverseFoes', function(_) {
+	.filter('inverseFoes', function() {
 		'use strict';
 
 		return function(targets, myTeam) {

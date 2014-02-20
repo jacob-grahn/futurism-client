@@ -67,24 +67,25 @@
 	};
 
 
-	// should probably run after filters.full
-	filters.front = function(targets, me) {
-		// find the highest row value in each column
-		var fronts = {};
-		_.each(targets, function(target) {
-			if(!fronts[target.column] || fronts[target.column].row < target.row) {
-				fronts[target.column] = target;
+	filters.front = function(targets, me, board) {
+
+		return _.filter(targets, function(target) {
+			var column = target.column;
+			var row = target.row - 1;
+
+			if(column === undefined || row === undefined) {
+				return false;
 			}
-		});
 
-		// convert to an array
-		var ret = [];
-		_.each(fronts, function(front) {
-			ret.push(front);
-		});
+			while(row >= 0) {
+				if(board.target(target.player._id, column, row).card) {
+					return false;
+				}
+				row--;
+			}
 
-		//
-		return ret;
+			return true;
+		});
 	};
 
 

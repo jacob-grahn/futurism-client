@@ -75,7 +75,7 @@ angular.module('futurism')
 				var filters = state.data.restrict[state.data.targets.length];
 				var targets = [target];
 				_.each(filters, function(filter) {
-					targets = filter(targets, players.me);
+					targets = filter(targets, players.me, board);
 				});
 				return targets.length !== 0;
 			},

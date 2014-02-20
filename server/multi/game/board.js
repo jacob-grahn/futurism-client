@@ -27,6 +27,9 @@
 		}
 		return targets;
 	};
+
+
+
 	/**
 	 * A representation of cards that are in play
 	 * @param {Array} players
