@@ -12,6 +12,7 @@ var globe = {
 
 		var options = {
 			form: {
+				app: process.env.APP_NAME,
 				userId: userId,
 				report: report,
 				key: process.env.GLOBE_KEY

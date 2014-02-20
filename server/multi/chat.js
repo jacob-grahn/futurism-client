@@ -46,10 +46,10 @@ var Chat = function(roomName) {
 		 */
 		report: function(user, note, callback) {
 			gamehub.saveReport(user._id, {
-				app: 'futurism',
 				note: note,
+				type: 'chat',
 				publicData: {
-					chat: chat.msgs
+					messages: chat.msgs
 				}
 			}, callback);
 		},
