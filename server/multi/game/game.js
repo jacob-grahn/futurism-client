@@ -242,10 +242,7 @@
 		 */
 		self.broadcastChanges = function() {
 			var status = self.getStatus();
-			//console.log('status', JSON.stringify(status, null, 2));
-			var changes = self.diffTracker.diff(status);
-			//console.log('changes', JSON.stringify(changes, null, 2));
-			//console.log('');
+			var changes = self.diffTracker.diff(status, false);
 			self.emit('gameUpdate', changes);
 		};
 

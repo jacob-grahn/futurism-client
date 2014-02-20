@@ -99,6 +99,16 @@ describe('diff', function() {
 	});
 
 
+	it('should be able to disable sparse arrays', function() {
+		var result = diff(
+			{targets: {suuz: {arr: [1,2,3]}}},
+			{targets: {suuz: {arr: [1,2,5]}}},
+			false
+		);
+
+		expect(result).toEqual({targets: {suuz: {arr: [1, 2, 5]}}});
+	});
+
 
 	it('should handle a false value without stopping', function() {
 		var obj1 = {

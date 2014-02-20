@@ -13,8 +13,8 @@
 		var self = this;
 		self.state = _.cloneDeep(initialState) || {};
 
-		self.diff = function(newState) {
-			var changes = diff(self.state, newState);
+		self.diff = function(newState, sparseArrays) {
+			var changes = diff(self.state, newState, sparseArrays);
 			self.state = _.cloneDeep(newState);
 			return changes;
 		};

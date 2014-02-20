@@ -7,9 +7,14 @@ var _ = require('lodash');
  * Return the difference between two objects
  * @param obj1
  * @param obj2
+ * @param {boolean} sparseArrays
  * @returns {Object}
  */
-var deepDiff = function(obj1, obj2) {
+var deepDiff = function(obj1, obj2, sparseArrays) {
+
+	if(_.isUndefined(sparseArrays)) {
+		sparseArrays = true;
+	}
 
 	if(obj1 !== null && obj2 === null) {
 		return null;
@@ -19,7 +24,18 @@ var deepDiff = function(obj1, obj2) {
 
 	if(_.isArray(obj2)) {
 		obj = [];
+
+		// sparse arrays don't work well with json encoding, just return the whole array instead
+		if(!sparseArrays) {
+			if(_.isEqual(obj1, obj2)) {
+				return [];
+			}
+			else {
+				return _.cloneDeep(obj2);
+			}
+		}
 	}
+
 	else {
 		obj = {};
 	}
@@ -33,7 +49,7 @@ var deepDiff = function(obj1, obj2) {
 		}
 
 		if(typeof val === 'object') {
-			var subDiff = deepDiff(obj1[key], obj2[key]);
+			var subDiff = deepDiff(obj1[key], obj2[key], sparseArrays);
 			if(_.size(subDiff) > 0 || subDiff === null) {
 				obj[key] = subDiff;
 				return;
