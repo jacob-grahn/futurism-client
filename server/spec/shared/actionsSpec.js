@@ -1,13 +1,10 @@
 describe('game/actions', function() {
 	'use strict';
 
+	var Board = require('../../multi/game/board');
 	var actions = require('../../../shared/actions');
 	var factions = require('../../../shared/factions');
-	var board, player1, player2, player3, weakCard, strongCard;
-
-	var target = function(playerId, row, column) {
-		return board.areas[playerId].targets[column][row];
-	};
+	var board, player1, player2, player3, weakCard, strongCard, target;
 
 
 	beforeEach(function() {
@@ -68,32 +65,9 @@ describe('game/actions', function() {
 		};
 
 
-		board = {
-			future: 0,
-			areas: {
-				'1': {
-					targets: [
-						[{row:0,column:0,player:player1,team:1}, {row:0,column:1,player:player1,team:1}, {row:0,column:2,player:player1,team:1}, {row:0,column:3,player:player1,team:1}],
-						[{row:1,column:0,player:player1,team:1}, {row:1,column:1,player:player1,team:1}, {row:1,column:2,player:player1,team:1}, {row:1,column:3,player:player1,team:1}],
-						[{row:2,column:0,player:player1,team:1}, {row:2,column:1,player:player1,team:1}, {row:2,column:2,player:player1,team:1}, {row:2,column:3,player:player1,team:1}]
-					]
-				},
-				'2': {
-					targets: [
-						[{row:0,column:0,player:player2,team:2}, {row:0,column:1,player:player2,team:2}, {row:0,column:2,player:player2,team:2}, {row:0,column:3,player:player2,team:2}],
-						[{row:1,column:0,player:player2,team:2}, {row:1,column:1,player:player2,team:2}, {row:1,column:2,player:player2,team:2}, {row:1,column:3,player:player2,team:2}],
-						[{row:2,column:0,player:player2,team:2}, {row:2,column:1,player:player2,team:2}, {row:2,column:2,player:player2,team:2}, {row:2,column:3,player:player2,team:2}]
-					]
-				},
-				'3': {
-					targets: [
-						[{row:0,column:0,player:player3,team:2}, {row:0,column:1,player:player3,team:2}, {row:0,column:2,player:player3,team:2}, {row:0,column:3,player:player3,team:2}],
-						[{row:1,column:0,player:player3,team:2}, {row:1,column:1,player:player3,team:2}, {row:1,column:2,player:player3,team:2}, {row:1,column:3,player:player3,team:2}],
-						[{row:2,column:0,player:player3,team:2}, {row:2,column:1,player:player3,team:2}, {row:2,column:2,player:player3,team:2}, {row:2,column:3,player:player3,team:2}]
-					]
-				}
-			}
-		};
+		board = new Board([player1, player2, player3], 4, 3);
+
+		target = board.target;
 	});
 
 
@@ -191,7 +165,7 @@ describe('game/actions', function() {
 		it('should hurt all targets passed in', function() {
 			target(1,0,0).card = weakCard;
 			target(1,0,2).card = strongCard;
-			actions.bees.use(target(1,0,0), target(1,0,1), target(1,0,2));
+			actions.bees.use(target(2,0,0), target(1,0,2), board);
 			expect(target(1,0,0).card.health).toBe(0);
 			expect(target(1,0,2).card.health).toBe(8);
 		});
@@ -394,6 +368,5 @@ describe('game/actions', function() {
 		expect(strongCard.attack).toBe(11);
 		expect(strongCard.health).toBe(8);
 	});
-
 
 });

@@ -47,13 +47,13 @@ var actionFns = {
 		src.card.moves--;
 
 		if(targets.length === 1) {
-			action.use(src);
+			action.use(src, game.board);
 		}
 		if(targets.length === 2) {
-			action.use(src, targets[1]);
+			action.use(src, targets[1], game.board);
 		}
 		if(targets.length === 3) {
-			action.use(src, targets[1], targets[2]);
+			action.use(src, targets[1], targets[2], game.board);
 		}
 
 		return 'ok';
