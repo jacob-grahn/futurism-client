@@ -33,6 +33,14 @@ var init = function(socket) {
 	};
 
 	/**
+	 * Standard way to show a message to the client
+	 * @param message
+	 */
+	socket.emitNotif = function(message) {
+		socket.emit('notif', message);
+	};
+
+	/**
 	 * verify the owner of this connection
 	 */
 	auth.authorizeSocket(socket, onAuthorized);
@@ -77,21 +85,6 @@ var onAuthorized = function(err, socket, user) {
 
 
 	/**
-	 * Return true if silencedUntil > curTime
-	 * @param callback
-	 */
-	socket.isSilenced = function(callback) {
-		socket.get('account', function(err, account) {
-			if(err) {
-				return callback(err);
-			}
-			var isSilenced = new Date(account.silencedUntil) > new Date();
-			return callback(null, isSilenced);
-		});
-	};
-
-
-	/**
 	 * Route an event to an account
 	 * @param eventName
 	 * @param callback
@@ -106,6 +99,14 @@ var onAuthorized = function(err, socket, user) {
 				}
 				if(!account) {
 					return socket.emitError('No account is registered to this connection.');
+				}
+
+				// check bans
+				account.silenced = new Date(account.silencedUntil) > new Date();
+				account.banned = new Date(account.bannedUntil) > new Date();
+
+				if(account.banned) {
+					return socket.emitError('This account has been banned');
 				}
 
 				//everything worked

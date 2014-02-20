@@ -51,9 +51,8 @@ angular.module('futurism')
 				 * Start listening to this chat room
 				 */
 				subscribe: function() {
-					socket.emit('createChat', roomName);
 					socket.emit('subscribe', roomName);
-					socket.emit('chatHistory', roomName);
+					socket.emit('chatHistory', {roomName: roomName});
 					socket.$on('chat', onChat);
 					socket.$on('chatHistory', onChatHistory);
 				},
@@ -75,7 +74,12 @@ angular.module('futurism')
 				 * @param {string} txt
 				 */
 				send: function(txt) {
-					socket.emit('chat', {roomName: roomName, txt: txt});
+					if(txt.indexOf('/report') === 0) {
+						socket.emit('reportChat', {roomName: roomName, note: txt.substr(8)});
+					}
+					else {
+						socket.emit('chat', {roomName: roomName, txt: txt});
+					}
 				},
 
 

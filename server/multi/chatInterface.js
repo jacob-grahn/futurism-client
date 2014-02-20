@@ -7,33 +7,47 @@ var canJoinRoom = require('./canJoinRoom');
 var ChatInterface = {
 	initSocket: function(socket) {
 
+		socket.onChat = function(eventName, callback) {
+			socket.onAccount(eventName, function(data, account) {
 
-		socket.onAccount('chat', function(data, account) {
-			socket.isSilenced(function(err, silenced) {
-				if(err) {
-					return err;
-				}
-				if(silenced) {
-					return socket.emit('silenced', 'you have been silenced');
+				var chat = Chat.getRoom(data.roomName);
+
+				if(account.silenced) {
+					return socket.emitError('You have been silenced');
 				}
 				if(!canJoinRoom(account, data.roomName)) {
-					return 'You can not send messages to this room';
+					return socket.emitError('You can not send messages to this room');
 				}
-				return Chat.safeAdd(account, data.txt, data.roomName);
+
+				if(!chat) {
+					chat = new Chat(data.roomName);
+				}
+
+				return callback(data, account, chat);
 			});
+		};
+
+
+		socket.onChat('chat', function(data, account, chat) {
+			chat.add(account, data.txt);
 		});
 
 
-		socket.on('chatHistory', function(roomName) {
+		socket.onChat('chatHistory', function(data, account, chat) {
 			socket.emit('chatHistory', {
-				roomName: roomName,
-				history: Chat.safeGetHistory(roomName)
+				roomName: data.roomName,
+				history: chat.msgs
 			});
 		});
 
 
-		socket.on('createChat', function(roomName) {
-			Chat.safeCreate(roomName);
+		socket.onChat('reportChat', function(data, account, chat) {
+			chat.report(account, data.note, function(err) {
+				if(err) {
+					return socket.emitError(err);
+				}
+				return socket.emitNotif('Report filed successfully');
+			});
 		});
 	}
 };
