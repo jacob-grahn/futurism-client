@@ -2,6 +2,9 @@ angular.module('futurism')
 	.factory('Chat', function(socket) {
 		'use strict';
 
+
+
+
 		/**
 		 * Send and receive messages from a chat room
 		 * @param roomName
@@ -9,100 +12,104 @@ angular.module('futurism')
 		 * @constructor
 		 */
 		var Chat = function(roomName) {
-			var msgs = [];
-			var maxMsgs = 35;
-			var receivedCount = 0;
-
-
-			/**
-			 * Start listening to this chat room
-			 */
-			var subscribe = function() {
-				socket.emit('createChat', roomName);
-				socket.emit('subscribe', roomName);
-				socket.emit('chatHistory', roomName);
-			};
-
-
-			/**
-			 * Stop listening to this chat room
-			 */
-			var unsubscribe = function() {
-				socket.emit('unsubscribe', roomName);
-				clear();
-			};
-
-
-			/**
-			 * Send a text message off to the chat server
-			 * @param {string} txt
-			 */
-			var send = function(txt) {
-				socket.emit('chat', {roomName: roomName, txt: txt});
-			};
-
-
-			/**
-			 * Add a chat to the msgs array
-			 * @param {object} chat
-			 */
-			var add = function(chat) {
-				receivedCount++;
-				msgs.push(chat);
-				prune(maxMsgs);
-			};
-
-
-			/**
-			 * Remove old chat messages
-			 * @param {number} max
-			 */
-			var prune = function(max) {
-				while(msgs.length > max) {
-					msgs.shift();
-				}
-			};
-
-
-			/**
-			 * Empty all chat messages
-			 */
-			var clear = function() {
-				msgs.splice(0, msgs.length);
-			};
 
 
 			/**
 			 * Listen for incoming chat messages
 			 */
-			socket.$on('chat', function(msg) {
+			var onChat = function(msg) {
+				console.log('on chat', msg);
 				if(msg.roomName === roomName) {
-					add(msg);
+					chat.add(msg);
 				}
-			});
+			};
 
 
 			/**
 			 * Listen for incoming chatHistory
 			 */
-			socket.$on('chatHistory', function(data) {
+			var onChatHistory = function(data) {
 				if(data.roomName === roomName) {
 					for(var i=0; i<data.history.length; i++) {
-						var chat = data.history[i];
-						add(chat);
+						var msg = data.history[i];
+						chat.add(msg);
 					}
 				}
-			});
-
-
-			return {
-				subscribe: subscribe,
-				unsubscribe: unsubscribe,
-				msgs: msgs,
-				send: send,
-				getReceivedCount: function(){ return receivedCount; },
-				maxMsgs: maxMsgs
 			};
+
+
+			/**
+			 * public
+			 */
+			var chat = {
+				msgs: [],
+				maxMsgs: 35,
+				receivedCount: 0,
+
+
+				/**
+				 * Start listening to this chat room
+				 */
+				subscribe: function() {
+					socket.emit('createChat', roomName);
+					socket.emit('subscribe', roomName);
+					socket.emit('chatHistory', roomName);
+					socket.$on('chat', onChat);
+					socket.$on('chatHistory', onChatHistory);
+				},
+
+
+				/**
+				 * Stop listening to this chat room
+				 */
+				unsubscribe: function() {
+					socket.emit('unsubscribe', roomName);
+					socket.$off('chat', onChat);
+					socket.$off('chatHistory', onChatHistory);
+					chat.clear();
+				},
+
+
+				/**
+				 * Send a text message off to the chat server
+				 * @param {string} txt
+				 */
+				send: function(txt) {
+					socket.emit('chat', {roomName: roomName, txt: txt});
+				},
+
+
+				/**
+				 * Add a chat to the msgs array
+				 * @param {object} msg
+				 */
+				add: function(msg) {
+					chat.receivedCount++;
+					chat.msgs.push(msg);
+					chat.prune(chat.msgs, chat.maxMsgs);
+				},
+
+
+				/**
+				 * Remove old chat messages
+				 */
+				prune: function(msgs, max) {
+					while(msgs.length > max) {
+						msgs.shift();
+					}
+				},
+
+
+				/**
+				 * Empty all chat messages
+				 */
+				clear: function() {
+					chat.msgs.splice(0, chat.msgs.length);
+				}
+
+			};
+
+			return chat;
 		};
 
 		return Chat;
