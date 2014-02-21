@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('rallyAnimation', function(animator, _) {
+	.factory('rallyAnimation', function(_) {
 		'use strict';
 
 		var rlly = {
@@ -13,6 +13,5 @@ angular.module('futurism')
 			}
 		};
 
-		animator.addAnimation('rlly', rlly);
 		return rlly;
 	});

@@ -1,13 +1,15 @@
 angular.module('futurism')
-	.factory('animator', function() {
+	.factory('animator', function(noAnimation, rallyAnimation) {
 		'use strict';
 
+		var animationLookup = {
+			'rlly': rallyAnimation
+		};
+		var queue = [];
+		var running = false;
+
+
 		var animator = {
-
-			animationLookup: {},
-			queue: [],
-			running: false,
-
 
 			/**
 			 * register an animation to be used
@@ -15,7 +17,7 @@ angular.module('futurism')
 			 * @param animation
 			 */
 			addAnimation: function(name, animation) {
-				animator.animationLookup[name] = animation;
+				animationLookup[name] = animation;
 			},
 
 
@@ -26,10 +28,9 @@ angular.module('futurism')
 			 * @param {Function} callback
 			 */
 			animateUpdate: function(name, changes, callback) {
-				var animation = animator.animationLookup[name];
+				var animation = animationLookup[name];
 				if(!animation) {
-					console.log('No animation found for "'+name+'"');
-					return callback();
+					animation = noAnimation;
 				}
 				console.log('Running animation "'+name+'"');
 				queue.push({animation: animation, changes: changes, callback: callback});
@@ -41,13 +42,13 @@ angular.module('futurism')
 			 * play the next animation in the queue
 			 */
 			run: function() {
-				if(!animator.running && animator.queue.length > 0) {
-					animator.running = true;
+				if(!running && queue.length > 0) {
+					running = true;
 
 					var task = queue.shift();
 					task.animation.run(task.changes, function(err) {
 						task.callback(err);
-						animator.running = false;
+						running = false;
 						return animator.run();
 					});
 				}

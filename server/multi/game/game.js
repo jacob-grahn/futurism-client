@@ -89,7 +89,7 @@
 					self.drawCards(self.players, rules.handSize);
 					effects.hand(self.players);
 					effects.rally(self.turnTicker.turnOwners, self.board);
-					self.broadcastChanges();
+					self.broadcastChanges('rlly');
 
 
 					/**
