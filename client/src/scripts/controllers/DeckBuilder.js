@@ -1,11 +1,14 @@
 angular.module('futurism')
-	.controller('DeckBuilderCtrl', function($scope, CardResource, DeckResource, deckInProgress, shared, _) {
+	.controller('DeckBuilderCtrl', function($scope, CardResource, DeckResource, deckInProgress, shared, me, _) {
 		'use strict';
 
 		var deck = deckInProgress.deck;
 		$scope.deck = deck;
-		$scope.cards = CardResource.query({canon:true}, function() {});
 		$scope.deckFns = shared.deckFns;
+
+		$scope.CardResource = CardResource;
+		$scope.query = {userId: me.user._id, cannon: true};
+		$scope.cards = [];
 
 
 		$scope.saveDeck = function() {
