@@ -43,22 +43,11 @@ angular.module('futurism')
 				$scope.card.image = null;
 			}
 
-			console.log($scope.card);
 			var newCard = CardResource.save($scope.card, function() {
 				$scope.uppedImage = null;
 			});
 
-			/*var promise = $scope.card.$save({userId: me.user._id}, function() {
-				$scope.uppedImage = null;
-			});*/
-
 			return newCard.$promise;
-		};
-
-
-		$scope.deleteCard = function() {
-			CardResource.delete({cardId: $scope.card._id});
-			$scope.applyDefaults();
 		};
 
 

@@ -4,6 +4,8 @@
 	<ul class="card-list clearfix">
 		<li class="card-holder" ng-repeat="card in cards">
 			<card-display card="card" ng-click="selectCard(card)" size="medium"></card-display>
+			<busy-button ng-show="canDelete(card)" on-click="deleteCard(card)" label="{{lang.messages.delete}}"></busy-button>
+			<busy-button ng-show="canReport(card)" on-click="reportCard(card)" label="{{lang.messages.report}}"></busy-button>
 		</li>
 	</ul>
 </paginated>

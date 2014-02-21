@@ -4,6 +4,7 @@
 	var groups = {
 		GUEST: 'g',
 		USER: 'u',
+		APPRENTICE: 'p',
 		MOD: 'm',
 		ADMIN: 'a'
 	};
