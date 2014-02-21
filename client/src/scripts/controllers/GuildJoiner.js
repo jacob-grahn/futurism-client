@@ -5,10 +5,12 @@ angular.module('futurism')
 		$scope.static = staticContentUrl;
 		$scope.joinOptions = ['invite', 'ask', 'open'];
 
-		$scope.guilds = {};
-		$scope.find = {join: 'open'};
-		$scope.sort = {gpToday: -1};
 		$scope.GuildResource = GuildResource;
+		$scope.guilds = {};
+		$scope.query = {
+			find: {join: 'open'},
+			sort: {gpToday: -1}
+		};
 
 		$scope.newGuild = {
 			_id: '',

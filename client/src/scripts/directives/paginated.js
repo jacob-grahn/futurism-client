@@ -11,8 +11,7 @@ angular.module('futurism')
 			scope: {
 				resource: '=',
 				results: '=',
-				find: '=',
-				sort: '='
+				query: '='
 			},
 
 			link: function (scope) {
@@ -24,12 +23,15 @@ angular.module('futurism')
 				scope.selectPage = function(page) {
 					scope.page = page;
 
-					var queryObj = {
+					/*var queryObj =
+					{
 						find: scope.find || {},
 						sort: scope.sort || {},
 						page: page
-					};
-					scope.resource.query(queryObj, function(data) {
+					};*/
+
+					scope.query.page = page;
+					scope.resource.query(scope.query, function(data) {
 						console.log('paginated::loadedData', data);
 						scope.results = data.results;
 						scope.pageCount = data.pageCount;

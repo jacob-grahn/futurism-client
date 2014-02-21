@@ -2,7 +2,7 @@
 
 	<h1 class="inverse">{{lang.guildJoiner.joinGuild}}</h1>
 
-	<paginated resource="GuildResource" results="guilds" find="find" sort="sort">
+	<paginated resource="GuildResource" results="guilds" query="query">
 
 	<ul class="list-group">
 		<li class="list-group-item" ng-repeat="guild in guilds">
