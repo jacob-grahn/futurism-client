@@ -13,7 +13,7 @@ module.exports = function(expr) {
 	expr.del('/api/cards/:userId/:cardId', continueSession, checkLogin, cards.del);
 	expr.get('/api/cards/:userId/:cardId', continueSession, checkLogin, cards.get);
 	expr.get('/api/cards/:userId', continueSession, checkLogin, cards.getList);
-	expr.post('/api/cards', continueSession, checkLogin, require('./routes/cardsPost'));
+	expr.post('/api/cards/:userId', continueSession, checkLogin, require('./routes/cardsPost'));
 
 	expr.delete('/api/decks', continueSession, checkLogin, require('./routes/decksDelete'));
 	expr.get('/api/decks', continueSession, checkLogin, require('./routes/decksGet'));

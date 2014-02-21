@@ -34,6 +34,7 @@ angular.module('futurism')
 
 		$scope.saveCard = function() {
 			$scope.card.imageUrl = null;
+			$scope.card.userId = me.user._id;
 
 			if($scope.uppedImage) {
 				$scope.card.image = dataUrlToBlob($scope.uppedImage.resized.dataURL);
@@ -42,11 +43,16 @@ angular.module('futurism')
 				$scope.card.image = null;
 			}
 
-			var promise = $scope.card.$save({}, function() {
+			console.log($scope.card);
+			var newCard = CardResource.save($scope.card, function() {
 				$scope.uppedImage = null;
 			});
 
-			return promise;
+			/*var promise = $scope.card.$save({userId: me.user._id}, function() {
+				$scope.uppedImage = null;
+			});*/
+
+			return newCard.$promise;
 		};
 
 
