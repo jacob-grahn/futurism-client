@@ -415,7 +415,6 @@ describe('filters', function() {
 			board.target(1, 1, 1).card = {cid: 3};
 			board.target(1, 0, 1).card = {cid: 4};
 			var frontTargets = filters.front(board.allTargets(), player1, board);
-			console.log('front targets', frontTargets);
 			expect(frontTargets.length).toBe(7);
 			expect(frontTargets).not.toContain(board.target(1, 3, 1));
 		});

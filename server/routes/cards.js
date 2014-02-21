@@ -2,6 +2,7 @@
 
 var Card = require('../models/card');
 var groups = require('../../shared/groups');
+var globe = require('../fns/globe');
 
 
 module.exports = {
@@ -19,6 +20,42 @@ module.exports = {
 			.exec(function(err, result) {
 				return res.apiOut(err, result);
 			});
+	},
+
+
+	/**
+	 * report a card
+	 */
+	edit: function(req, res) {
+
+		var action = req.param('action');
+		var cardId = req.param('cardId');
+
+		if(action === 'report') {
+			Card.findById(cardId)
+				.populate('User')
+				.exec(function(err, card) {
+					if(err) {
+						return res.apiOut(err);
+					}
+
+					card = card.toObject();
+
+					var report = {
+						note: null,
+						type: 'card',
+						publicData: card
+					};
+
+					globe.saveReport(req.session._id, report, function(err) {
+						card.reported = true;
+						return res.apiOut(err, card);
+					});
+				});
+		}
+		else {
+			return res.apiOut('Action "'+action+'" not found');
+		}
 	},
 
 

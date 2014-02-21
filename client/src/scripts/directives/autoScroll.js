@@ -36,7 +36,6 @@ angular.module('futurism')
 								var maxY = trueHeight - visibleHeight;
 								var targetY = +$(confirmedTarget).offset().top;
 
-								console.log('scroll', trueHeight, visibleHeight, maxY, targetY);
 								if(targetY > maxY) {
 									targetY = maxY;
 								}

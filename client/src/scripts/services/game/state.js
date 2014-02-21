@@ -16,7 +16,6 @@ angular.module('futurism')
 			 * @param {*} [data]
 			 */
 			set: function(name, data) {
-				console.log('state::set', name, data);
 				state.name = name;
 				state.data = data;
 			},
@@ -26,7 +25,6 @@ angular.module('futurism')
 			 * Reset to a default
 			 */
 			toDefault: function() {
-				console.log('state::toDefault');
 				if(turn.isMyTurn()) {
 					state.set(state.THINKING);
 				}

@@ -18,7 +18,6 @@ angular.module('futurism')
 			 * Listen for incoming chat messages
 			 */
 			var onChat = function(msg) {
-				console.log('on chat', msg);
 				if(msg.roomName === roomName) {
 					chat.add(msg);
 				}

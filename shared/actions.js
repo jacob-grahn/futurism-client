@@ -181,7 +181,6 @@
 				var row = 0;
 				while(board.target(target.player._id, column, row)) {
 					var t = board.target(target.player._id, column, row);
-					console.log('bees are flying to', t);
 					if(t.card) {
 						t.card.health--;
 					}

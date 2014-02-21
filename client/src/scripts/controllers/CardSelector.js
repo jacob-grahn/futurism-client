@@ -19,7 +19,10 @@ angular.module('futurism')
 		};
 
 		$scope.reportCard = function(card) {
-
+			var r = CardResource.save({userId: card.userId, cardId: card._id, action: 'report'}, function() {
+				// say the report worked
+			});
+			return r.$promise;
 		};
 
 		$scope.deleteCard = function(card) {

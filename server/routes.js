@@ -12,6 +12,7 @@ module.exports = function(expr) {
 	expr.put('/api/cards/:userId/:cardId/cannon', continueSession, checkMod, cards.putCanon);
 	expr.del('/api/cards/:userId/:cardId', continueSession, checkLogin, cards.del);
 	expr.get('/api/cards/:userId/:cardId', continueSession, checkLogin, cards.get);
+	expr.post('/api/cards/:userId/:cardId', continueSession, checkLogin, cards.edit);
 	expr.get('/api/cards/:userId', continueSession, checkLogin, cards.getList);
 	expr.post('/api/cards/:userId', continueSession, checkLogin, require('./routes/cardsPost'));
 

@@ -10,9 +10,6 @@ var createDefaultLobbies = function() {
 			minElo: 0
 		}, {
 			upsert: true
-		},
-		function(err, lobby) {
-			console.log(err, lobby);
 		});
 
 	Lobby.findByIdAndUpdate('Masters', {
@@ -22,9 +19,6 @@ var createDefaultLobbies = function() {
 			minElo: 300
 		}, {
 			upsert: true
-		},
-		function(err, lobby) {
-			console.log(err, lobby);
 		});
 
 };

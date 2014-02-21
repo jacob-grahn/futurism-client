@@ -18,7 +18,6 @@ var globe = {
 				key: process.env.GLOBE_KEY
 			}
 		};
-		console.log('sending', options);
 
 		request.post(process.env.GLOBE_URI+'/reports', options, function(err, response, body) {
 			if(err) {
@@ -31,7 +30,7 @@ var globe = {
 			body = JSON.parse(body);
 
 			if(body.error) {
-				return callback('globe error: ' + JSON.stringify(body.error));
+				return callback('globe error: ' + JSON.stringify(body));
 			}
 
 			return callback(null);
