@@ -20,10 +20,11 @@
 	<button ng-if="user.actions.deApprentice" class="btn" ng-click="deApprentice()">de-apprentice</button>
 	<button ng-if="user.actions.ban" class="btn" ng-click="ban()">ban</button>
 	<button ng-if="user.actions.deBan" class="btn" ng-click="deBan()">de-ban</button>
-	<button ng-if="user.actions.message" class="btn" ng-click="message()">message</button>
 	<button ng-if="user.actions.guildMod" class="btn" ng-click="guildMod()">guild mod</button>
 	<button ng-if="user.actions.deGuildMod" class="btn" ng-click="deGuildMod()">de-guild mod</button>
 	<button ng-if="user.actions.kick" class="btn" ng-click="kick()">kick</button>
 	<button ng-if="user.actions.deKick" class="btn" ng-click="deKick()">de-kick</button>
+	<button ng-if="user.actions.message" class="btn" ng-click="message()">message</button>
+	<button class="btn" ng-click="cards()">cards</button>
 	<button class="btn btn-primary" ng-click="$dismiss('close')">close</button>
 </div>

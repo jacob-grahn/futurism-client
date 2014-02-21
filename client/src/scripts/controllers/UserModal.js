@@ -30,6 +30,15 @@ angular.module('futurism')
 
 
 		/**
+		 * go to a page showing the user's cards
+		 */
+		$scope.cards = function() {
+			$location.url('/card-selector/'+userId);
+			$scope.$dismiss('cards');
+		};
+
+
+		/**
 		 * promote user to apprentice
 		 */
 		$scope.apprentice = function() {
