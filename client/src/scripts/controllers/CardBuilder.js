@@ -1,6 +1,8 @@
 angular.module('futurism')
-	.controller('CardBuilderCtrl', function($scope, shared, cardInProgress, dataUrlToBlob, CardResource, _) {
+	.controller('CardBuilderCtrl', function($scope, shared, cardInProgress, dataUrlToBlob, CardResource, me, _) {
 		'use strict';
+
+		$scope.me = me;
 
 		var factions = shared.factions;
 		var cardFns = shared.cardFns;

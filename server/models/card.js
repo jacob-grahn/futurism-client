@@ -3,6 +3,7 @@ var validate = require('mongoose-validator').validate;
 var _ = require('lodash');
 var sanitize = require('validator').sanitize;
 var factions = require('../../shared/factions');
+var paginate = require('../fns/mongoose/paginate');
 
 
 var validateAbilities = [
@@ -95,6 +96,12 @@ var CardSchema = new mongoose.Schema({
 CardSchema.post('validate', function (doc) {
 	doc.version++;
 });
+
+
+/**
+ * adds pagination
+ */
+CardSchema.statics.paginate = paginate;
 
 
 var Card = mongoose.model('Card', CardSchema);

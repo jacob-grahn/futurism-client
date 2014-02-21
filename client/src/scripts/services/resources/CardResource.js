@@ -2,7 +2,7 @@ angular.module('futurism')
 	.factory('CardResource', function($resource, formTransformer) {
 		'use strict';
 
-		var CardResource = $resource('/api/cards/:cardId', {userId:'@_id'}, {
+		var CardResource = $resource('/api/cards/:userId/:cardId', {}, {
 
 			save: {
 				method: 'POST',
@@ -10,6 +10,11 @@ angular.module('futurism')
 				headers: {
 					'Content-Type': undefined
 				}
+			},
+
+			query: {
+				method: 'GET',
+				array: false
 			}
 		});
 

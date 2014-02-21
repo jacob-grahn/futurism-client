@@ -1,13 +1,19 @@
 angular.module('futurism')
-	.controller('CardSelectorCtrl', ['$scope', '$location', 'CardResource', 'cardInProgress', function($scope, $location, CardResource, cardInProgress) {
+	.controller('CardSelectorCtrl', function($scope, $location, $routeParams, CardResource, UserResource, cardInProgress, me) {
 		'use strict';
 
-		$scope.cards = CardResource.query(function() {});
+		$scope.userId = $routeParams.userId;
+		$scope.user = UserResource.get({userId: $scope.userId});
 
+		$scope.CardResource = CardResource;
+		$scope.query = {userId: $scope.userId};
+		$scope.cards = [];
 
 		$scope.selectCard = function(card) {
-			cardInProgress.card = card;
-			$location.url('/card-builder');
+			if($scope.userId === me.user._id) {
+				cardInProgress.card = card;
+				$location.url('/card-builder');
+			}
 		};
 
-	}]);
+	});

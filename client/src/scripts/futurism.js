@@ -5,7 +5,7 @@ angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', '
 	.config(function($routeProvider, $locationProvider) {
 		$routeProvider.
 			when('/card-builder', {templateUrl: 'views/card-builder.html', controller: 'CardBuilderCtrl'}).
-			when('/card-selector', {templateUrl: 'views/card-selector.html', controller: 'CardSelectorCtrl'}).
+			when('/card-selector/:userId', {templateUrl: 'views/card-selector.html', controller: 'CardSelectorCtrl'}).
 			when('/credits', {templateUrl: 'views/credits.html', controller: 'CreditsCtrl'}).
 			when('/deck-builder', {templateUrl: 'views/deck-builder.html', controller: 'DeckBuilderCtrl'}).
 			when('/deck-selector', {templateUrl: 'views/deck-selector.html', controller: 'DeckSelectorCtrl'}).
