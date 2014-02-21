@@ -43,4 +43,16 @@ angular.module('futurism')
 				$scope.selectConvo($scope.selectedConvo);
 			});
 		};
+
+
+		$scope.deleteConversation = function(convo) {
+			var userId = $scope.getForeignUserId(convo);
+			ConversationResource.delete({userId: userId});
+		};
+
+
+		$scope.reportConversation = function(convo) {
+			var userId = $scope.getForeignUserId(convo);
+			ConversationResource.save({userId: userId, action: 'report'});
+		}
 	});

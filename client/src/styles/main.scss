@@ -10,6 +10,7 @@
 @import "game";
 @import "guild-banner";
 @import "lobby";
+@import "messages";
 @import "navbar";
 @import "title";
 @import "username";
@@ -54,6 +55,10 @@ h1.inverse, .inverse h1 {
 
 h3.inverse, .inverse h3 {
 	color: white;
+}
+
+a {
+	cursor: pointer;
 }
 
 .panel {

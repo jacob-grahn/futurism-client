@@ -990,5 +990,15 @@
 				"pi": "Pirates must either have their request approved or have a letter to join this guild."
 			}
 		}
+	},
+
+
+	"messages": {
+		"delete": {
+			"en": "delete"
+		},
+		"report": {
+			"en": "report"
+		}
 	}
 }

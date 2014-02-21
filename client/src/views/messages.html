@@ -17,12 +17,19 @@
 
 
 	<div id="conversation" class="col-sm-7">
+
 		<ul class="list-group">
 			<li class="list-group-item" ng-repeat="message in selectedConvo">
 				<username id="{{message.fromUser._id}}" name="{{message.fromUser.name}}" site="{{message.fromUser.site}}" group="{{message.fromUser.group}}"></username>
 				<div>{{message.body}} <span class="subtle">{{message.date | date}}</span></div>
 			</li>
 		</ul>
+
+		<div ng-if="selectedConvo.length" class="convo-options inverse">
+			<a class="inverse" ng-click="reportConversation(selectedConvo)">{{lang.messages.report}}</a> |
+			<a class="inverse" ng-click="deleteConversation(selectedConvo)">{{lang.messages.delete}}</a>
+		</div>
+
 		<form ng-hide="selectedConvo" submit="sendMessage()">
 			<div class="input-group">
 				<input class="form-control" type="text" ng-model="typedMessage" maxlength="200">
@@ -31,6 +38,7 @@
 				</span>
 			</div>
 		</form>
+
 	</div>
 
 </div>
