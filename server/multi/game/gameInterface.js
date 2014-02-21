@@ -71,7 +71,10 @@ module.exports = {
 		 * Send in a card action
 		 */
 		socket.onPlayer('doAction', function(data, game, player) {
-			return game.doAction(player, data.actionId, data.targets);
+			var result = game.doAction(player, data.actionId, data.targets);
+			if(result !== 'ok') {
+				socket.emitError(result);
+			}
 		});
 
 

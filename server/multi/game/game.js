@@ -240,10 +240,10 @@
 		/**
 		 * broadcast changes as a partial update
 		 */
-		self.broadcastChanges = function() {
+		self.broadcastChanges = function(cause) {
 			var status = self.getStatus();
 			var changes = self.diffTracker.diff(status, false);
-			self.emit('gameUpdate', changes);
+			self.emit('gameUpdate', {cause: cause, changes: changes});
 		};
 
 
@@ -267,7 +267,7 @@
 			}
 
 			// create a list of changed targets
-			self.broadcastChanges();
+			self.broadcastChanges(actionId);
 
 			//
 			return 'ok';

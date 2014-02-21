@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('gameListeners', function($routeParams, $location, socket, players, turn, board, state, hand) {
+	.factory('gameListeners', function($routeParams, $location, socket, players, turn, board, state, hand, animator) {
 		'use strict';
 		var self = this;
 
@@ -20,10 +20,14 @@ angular.module('futurism')
 		 * Receive a partial game state
 		 */
 		socket.$on('gameUpdate', function(data) {
-			_.merge(players.list, data.players);
-			players.me = players.findMe();
+			var cause = data.cause;
+			var changes = data.changes;
 
-			board.partialUpdate(data.board);
+			animator.animateUpdate(cause, changes, function() {
+				_.merge(players.list, changes.players);
+				board.partialUpdate(changes.board);
+				players.me = players.findMe();
+			});
 		});
 
 
