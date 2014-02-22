@@ -6,7 +6,7 @@ describe('cards-delete', function() {
 	var groups = require('../../../shared/groups');
 	var factions = require('../../../shared/factions');
 	var CardGoose = require('../../models/card');
-	var cardsDelete = require('../../routes/cardsDelete');
+	var cards = require('../../routes/cards');
 
 
 	var userId1;
@@ -48,7 +48,7 @@ describe('cards-delete', function() {
 				cardId: '35-asdfj'
 			}
 		};
-		cardsDelete(request, {apiOut: function(err, result) {
+		cards.del(request, {apiOut: function(err, result) {
 			expect(err).toBe(null);
 			expect(result.name).toBe('Gandoki');
 			done();
@@ -68,7 +68,7 @@ describe('cards-delete', function() {
 				cardId: '35-asdfj'
 			}
 		};
-		cardsDelete(request, {apiOut: function(err, result) {
+		cards.del(request, {apiOut: function(err, result) {
 			expect(err).toBe('card not found');
 			expect(result).toBeFalsy();
 			done();
@@ -86,7 +86,7 @@ describe('cards-delete', function() {
 				cardId: '35-asdfj'
 			}
 		};
-		cardsDelete(request, {apiOut: function(err, result) {
+		cards.del(request, {apiOut: function(err, result) {
 			expect(err).toBe(null);
 			expect(result.name).toBe('Gandoki');
 			done();

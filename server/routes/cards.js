@@ -73,6 +73,7 @@ module.exports = {
 			query = {$or: [{userId: userId}, {canon: true}]};
 		}
 
+		console.log(query, page, count);
 		Card.paginate(query, page, count, function(err, pageCount, results) {
 			return res.apiOut(err, {pageCount: pageCount, results: results, page: page});
 		}, {sortBy: {updated:-1}});

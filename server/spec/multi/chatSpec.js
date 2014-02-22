@@ -1,9 +1,7 @@
-describe('lobby', function() {
+describe('chat', function() {
 
 	var Chat = require('../../multi/chat');
 	var broadcast = require('../../multi/broadcast');
-
-	var lastMessage = '';
 
 
 	beforeEach(function() {
@@ -30,15 +28,15 @@ describe('lobby', function() {
 		var room1 = new Chat('room1');
 		var room2 = new Chat('room2');
 		expect(room1.roomName).toBe('room1');
-		expect(Chat.getChat('room2')).toBe(room2);
+		expect(Chat.getRoom('room2')).toBe(room2);
 	});
 
 
 	it('should store messages', function() {
 		var room = new Chat('room1');
-		Chat.safeAdd({name:'bob'}, 'hi', 'room1');
-		Chat.safeAdd({name:'bob'}, 'well', 'room1');
-		expect(room.getHistory().length).toBe(2);
+		room.add({name:'bob'}, 'hi');
+		room.add({name:'bob'}, 'well');
+		expect(room.msgs.length).toBe(2);
 	});
 
 
@@ -47,7 +45,7 @@ describe('lobby', function() {
 		for(var i=0; i<25; i++) {
 			room.add({name:'feilix'}, 'str'+i);
 		}
-		expect(room.getHistory().length).toBe(20);
+		expect(room.msgs.length).toBe(20);
 	});
 
 });

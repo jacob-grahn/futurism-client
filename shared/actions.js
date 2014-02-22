@@ -34,8 +34,7 @@
 			use: function(src, target) {
 				target.card.health -= src.card.attack;
 				src.card.health -= target.card.attack;
-			},
-			free: true
+			}
 		},
 
 
@@ -50,8 +49,7 @@
 			use: function(src, target) {
 				target.card = src.card;
 				src.card = null;
-			},
-			free: true
+			}
 		},
 
 
@@ -64,15 +62,31 @@
 			],
 			use: function(src) {
 				src.player.pride++;
-			},
-			free: true
+			}
+		},
+
+
+		/**
+		 * Summon: bring a new card into the game at a pride cost
+		 */
+		smmn: {
+			restrict: [
+				[filters.owned],
+				[filters.playable, filters.owned, filters.affordable],
+				[filters.owned, filters.empty]
+			],
+			use: function(src, target1, target2) {
+				_.pull(src.player.hand, target1.card);
+				src.player.pride -= target1.card.pride;
+				target2.card = target1.card;
+			}
 		},
 
 
 		/**
 		 * Enter: join the game at a pride cost
 		 */
-		entr: {
+		/*entr: {
 			restrict: [
 				[filters.playable, filters.owned, filters.affordable],
 				[filters.owned, filters.empty]
@@ -81,9 +95,8 @@
 				_.pull(src.player.hand, src.card);
 				src.player.pride -= src.card.pride;
 				target.card = src.card;
-			},
-			free: true
-		},
+			}
+		},*/
 
 
 		/////////////////////////////////////////////////////////////////////////////////////////

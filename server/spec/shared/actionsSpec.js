@@ -102,7 +102,7 @@ describe('game/actions', function() {
 	});
 
 
-	it('entr should put a card into play', function() {
+	/*it('entr should put a card into play', function() {
 		var handTarget = {
 			card: strongCard,
 			player: player1
@@ -110,6 +110,37 @@ describe('game/actions', function() {
 		player1.pride = 9;
 		actions.entr.use(handTarget, target(1,0,0));
 		expect(player1.pride).toBe(0);
+	});*/
+
+
+	describe('smmn', function() {
+
+		it('should be able to play itself from a hand', function() {
+			var commanderTarget = {
+				card: {commander: true, abilities: ['smmn']},
+				player: player1
+			};
+			var handTarget = {
+				card: strongCard,
+				player: player1
+			};
+			player1.pride = 9;
+			actions.smmn.use(commanderTarget, handTarget, target(1,0,0));
+			expect(player1.pride).toBe(0);
+			expect(target(1,0,0).card).toBe(strongCard);
+		});
+
+		it('should be able to play a card from your hand', function() {
+			var handTarget = {
+				card: strongCard,
+				player: player1
+			};
+			player1.pride = 9;
+			target(1,1,0).card = {commander: true, abilities: ['smmn']}
+			actions.smmn.use(target(1,1,0), handTarget, target(1,0,0));
+			expect(player1.pride).toBe(0);
+			expect(target(1,0,0).card).toBe(strongCard);
+		});
 	});
 
 

@@ -21,6 +21,7 @@ var Chat = function(roomName) {
 
 		msgs: [],
 		maxHistory: 20,
+		roomName: roomName,
 
 
 		/**

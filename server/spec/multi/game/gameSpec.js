@@ -128,7 +128,11 @@ describe('game', function() {
 				////////////////////////////////////////////////////////
 				// play the commander card for player1's hand
 				////////////////////////////////////////////////////////
-				var actionResult = game.doAction(player1, 'entr', [
+				var actionResult = game.doAction(player1, 'smmn', [
+					{
+						playerId: uid1,
+						cid: player1.hand[0].cid
+					},
 					{
 						playerId: uid1,
 						cid: player1.hand[0].cid
@@ -154,7 +158,11 @@ describe('game', function() {
 				// play the commander card from player2's hand
 				/////////////////////////////////////////////////////////
 				expect(
-					game.doAction(player2, 'entr', [
+					game.doAction(player2, 'smmn', [
+						{
+							playerId: uid2,
+							cid: player2.hand[0].cid
+						},
 						{
 							playerId: uid2,
 							cid: player2.hand[0].cid
