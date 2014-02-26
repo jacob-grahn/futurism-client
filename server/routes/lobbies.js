@@ -1,7 +1,8 @@
 'use strict';
 
+var _ = require('lodash');
 var Lobby = require('../models/lobby');
-var selectServer = require('../fns/selectServer');
+var serverFns = require('../fns/serverFns');
 
 
 module.exports = {
@@ -11,7 +12,23 @@ module.exports = {
 		Lobby.find({$or: [
 			{_id: req.session.guild},
 			{open: true}
-		]}, res.apiOut);
+		]}, {}, {lean: true}, function(err, lobbies) {
+			if(err) {
+				return res.apiOut(err);
+			}
+
+			_.each(lobbies, function(lobby) {
+				if(!lobby.server || !serverFns.isServerId(lobby.server)) {
+					lobby.server = serverFns.nextServerId();
+
+					Lobby.findByIdAndUpdate(lobby._id, _.omit(lobby, '_id'), {upsert: true}, function(err, updatedLobby) {
+						console.log('update result', err, updatedLobby);
+					});
+				}
+			});
+
+			return res.apiOut(null, lobbies);
+		});
 	},
 
 
@@ -29,7 +46,7 @@ module.exports = {
 		Lobby.create({
 			_id: guildId,
 			open: false,
-			server: selectServer(),
+			server: serverFns.nextServerId(),
 			date: new Date(),
 			minElo: 0
 		}, res.apiOut);

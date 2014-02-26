@@ -6,7 +6,7 @@ var lobbySchema = new mongoose.Schema({
 		index: true
 	},
 	server: {
-		type: String
+		type: Number
 	},
 	open: {
 		type: Boolean

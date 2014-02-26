@@ -1,10 +1,10 @@
 var Lobby = require('../models/lobby');
-var selectServer = require('../fns/selectServer');
+var serverFns = require('../fns/serverFns');
 
 var createDefaultLobbies = function() {
 
 	Lobby.findByIdAndUpdate('Brutus', {
-			server: selectServer(),
+			server: serverFns.nextServerId(),
 			open: true,
 			date: new Date(),
 			minElo: 0
@@ -13,7 +13,7 @@ var createDefaultLobbies = function() {
 		});
 
 	Lobby.findByIdAndUpdate('Masters', {
-			server: selectServer(),
+			server: serverFns.nextServerId(),
 			open: true,
 			date: new Date(),
 			minElo: 300
