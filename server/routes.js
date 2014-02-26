@@ -4,6 +4,8 @@ module.exports = function(expr) {
 
 	var lobbies = require('./routes/lobbies');
 	var cards = require('./routes/cards');
+	var servers = require('./routes/servers');
+	var stats = require('./routes/stats');
 
 	var continueSession = require('./middleware/continueSession');
 	var checkLogin = require('./middleware/checkLogin');
@@ -24,14 +26,15 @@ module.exports = function(expr) {
 	expr.get('/api/lobbies/:lobbyId', continueSession, lobbies.get);
 	expr.post('/api/lobbies', continueSession, lobbies.post);
 
-	expr.get('/api/tests', continueSession, require('./routes/testsGet'));
 	expr.get('/api/records/:gameId', continueSession, require('./routes/recordsGet'));
+	expr.get('/api/servers', servers.get);
 
-	var stats = require('./routes/stats');
 	expr.post('/api/stats', continueSession, checkLogin, stats.post);
 	expr.get('/api/stats/:userId', stats.get);
 
 	expr.get('/api/summaries/:gameId', require('./routes/summariesGet'));
+
+	expr.get('/api/tests', continueSession, require('./routes/testsGet'));
 
 	expr.get(/^(?!\/api)((?!\.).)*$/i, require('./routes/indexGet')); //--- this ridiculous regex matches any string that does not start with '/api' and does not contain a period.
 

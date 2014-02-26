@@ -2,15 +2,18 @@
 
 var _ = require('lodash');
 
-var servers = process.env.GAME_SERVERS.split(',');
+var servers = _.map(process.env.GAME_SERVERS.split(','), function(serverUri, index){
+	return {id: index + 1, uri: serverUri};
+});
 
 module.exports = {
 
+	servers: servers,
+
 
 	nextServerId: function() {
-		var id = Math.floor(Math.random()*servers.length) + 1;
-		console.log('game server id', id);
-		return id;
+		var server = _.sample(servers);
+		return server.id;
 	},
 
 
