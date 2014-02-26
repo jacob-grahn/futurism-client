@@ -1,10 +1,11 @@
 angular.module('futurism')
-	.factory('socket', function(_, io, errorHandler, $rootScope, socketAuthenticator, socketErrors) {
+	.factory('socket', function(_, io, errorHandler, $rootScope, socketAuthenticator, socketErrors, servers) {
 		'use strict';
 
 		var socket;
 		var listeners = [];
 		var uri;
+		var buffer = [];
 
 
 		var applyListener = function(socket, obj) {
@@ -43,23 +44,51 @@ angular.module('futurism')
 		};
 
 
-		var face = {
+		var flushBuffer = function() {
+			if(socket) {
+				_.each(buffer, function(obj) {
+					socket.authEmit(obj.event, obj.data);
+				});
+			}
+			buffer = [];
+		};
 
-			connect: function(newUri) {
-				if(uri !== newUri) {
-					face.disconnect();
 
-					uri = newUri;
-					socket = io.connect(uri);
-					if(socket.authEmit) {
-						//socket.socket.connect();
+		var self = {
+
+			/**
+			 * connect to a game server
+			 * @param {Number} serverId
+			 */
+			connect: function(serverId) {
+
+				serverId = Number(serverId);
+				
+				console.log('socket.connect', serverId);
+				// lookup server uri with the serverId
+				servers.getUri(serverId, function(err, newUri) {
+					if(err) {
+						return false;
 					}
-					else {
-						socketAuthenticator(socket);
-						socketErrors(socket);
+
+					// connect to the server
+					if(uri !== newUri) {
+						self.disconnect();
+
+						uri = newUri;
+						socket = io.connect(uri);
+						if(socket.authEmit) {
+							//socket.socket.connect();
+						}
+						else {
+							socketAuthenticator(socket);
+							socketErrors(socket);
+						}
+
 						applyListeners(socket);
+						flushBuffer();
 					}
-				}
+				});
 			},
 
 			disconnect: function() {
@@ -72,8 +101,13 @@ angular.module('futurism')
 			},
 
 			emit: function(event, data) {
+				console.log('socket.emit', event, data);
 				if(socket) {
 					socket.authEmit(event, data);
+				}
+				else {
+					console.log('buffer it');
+					buffer.push({event: event, data: data});
 				}
 			},
 
@@ -88,7 +122,9 @@ angular.module('futurism')
 			$off: function(event, listener) {
 				listeners = _.filter(listeners, function(obj) {
 					if(obj.event === event && obj.listener === listener) {
-						socket.removeListener(event, obj.wrappedListener);
+						if(socket) {
+							socket.removeListener(event, obj.wrappedListener);
+						}
 						return false;
 					}
 					return true;
@@ -96,6 +132,6 @@ angular.module('futurism')
 			}
 		};
 
-		return face;
+		return self;
 
 	});

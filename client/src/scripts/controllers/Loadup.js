@@ -2,6 +2,7 @@ angular.module('futurism')
 	.controller('LoadupCtrl', function($scope, $location, $routeParams, DeckResource, socket, errorHandler) {
 		'use strict';
 
+		socket.connect($routeParams.serverId);
 		$scope.decks = DeckResource.query(function(){});
 		$scope.maxPride = $routeParams.maxPride;
 
@@ -23,7 +24,7 @@ angular.module('futurism')
 
 		socket.$on('selectDeckResult', function(data) {
 			if(data.result === 'success') {
-				$location.url('/game/' + $routeParams.gameId);
+				$location.url('/game/' + $routeParams.serverId + '/' + $routeParams.gameId);
 			}
 			else {
 				errorHandler.handle(data.error);

@@ -98,7 +98,8 @@ angular.module('futurism')
 		 * @param {number} maxPride
 		 */
 		self.gotoGamePage = function(gameId, maxPride) {
-			$location.url('/loadup/'+gameId+'/'+maxPride);
+			var serverId = 1;
+			$location.url('/loadup/'+serverId+'/'+gameId+'/'+maxPride);
 		};
 
 

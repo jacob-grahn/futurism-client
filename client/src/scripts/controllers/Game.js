@@ -2,6 +2,8 @@ angular.module('futurism')
 	.controller('GameCtrl', function($scope, $routeParams, $location, socket, _, gameListeners, players, turn, board, state, hand, targeter, errorHandler, shared) {
 		'use strict';
 
+		socket.connect($routeParams.serverId);
+
 		var actions = shared.actions;
 
 		$scope.board = board;
