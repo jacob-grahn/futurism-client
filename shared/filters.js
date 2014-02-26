@@ -16,10 +16,17 @@
 	}
 
 
-	filters.playable = function(targets, me) {
+	filters.commanderFirst = function(targets, me) {
 		var isCommanderInHand = _.where(me.hand, {commander: true}).length > 0;
 		return _.filter(targets, function(target) {
 			return !isCommanderInHand || target.card.commander === true;
+		});
+	};
+
+
+	filters.inHand = function(targets, me) {
+		return _.filter(targets, function(target) {
+			return me.hand.indexOf(target.card) !== -1;
 		});
 	};
 
@@ -33,7 +40,7 @@
 
 	filters.affordable = function(targets, me) {
 		return _.filter(targets, function(target) {
-			return target.card.pride <= me.pride;
+			return target.card && (target.card.pride <= me.pride);
 		});
 	};
 

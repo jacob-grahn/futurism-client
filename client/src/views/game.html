@@ -44,7 +44,7 @@
 	<div ng-show="hand.show && hand.cards.length > 0" id="hand">
 		<div id="hand-content">
 			<h1>{{lang.game.pride}}: {{players.me.pride}}</h1>
-			<a class="close-x" ng-click="hand.close()">{{lang.game.close}} [x]</a>
+			<a ng-if="!hand.force" class="close-x" ng-click="hand.close()">{{lang.game.close}} [x]</a>
 			<ul class="card-list row">
 				<li ng-repeat="card in hand.cards">
 					<card-display card="card" size="medium" ng-click="pickCardFromHand(card)" ng-class="{'card-disabled': card.pride > players.me.pride}"></card-display>

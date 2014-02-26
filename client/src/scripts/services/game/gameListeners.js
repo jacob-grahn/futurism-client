@@ -9,10 +9,10 @@ angular.module('futurism')
 		socket.$on('gameStatus', function(data) {
 			players.list = data.players;
 			players.me = players.findMe();
-
 			board.fullUpdate(data.board);
-
-			self.startTurn(data);
+			animator.animateUpdate('turn', data, function() {
+				self.startTurn(data);
+			});
 		});
 
 
@@ -35,15 +35,9 @@ angular.module('futurism')
 		 * Receive a new turn
 		 */
 		socket.$on('turn', function(data) {
-			self.startTurn(data);
-		});
-
-
-		/**
-		 * Receive the cards in your hand
-		 */
-		socket.$on('hand', function(cards) {
-			hand.cards = cards;
+			animator.animateUpdate('turn', data, function() {
+				self.startTurn(data);
+			});
 		});
 
 
@@ -51,7 +45,9 @@ angular.module('futurism')
 		 * The game is over
 		 */
 		socket.$on('gameOver', function() {
-			$location.url('/summary/' + $routeParams.gameId);
+			animator.animateUpdate('gameOver', null, function() {
+				$location.url('/summary/' + $routeParams.gameId);
+			});
 		});
 
 
@@ -63,7 +59,11 @@ angular.module('futurism')
 			turn.startTime = data.startTime;
 			if(turn.isMyTurn()) {
 				state.set(state.THINKING);
-				hand.open();
+				hand.refresh();
+				if(!board.playerHasCommander(players.me._id)) {
+					hand.open();
+					hand.forcePlay();
+				}
 			}
 			else {
 				state.set(state.WAITING);

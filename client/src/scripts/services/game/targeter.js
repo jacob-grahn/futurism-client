@@ -12,14 +12,13 @@ angular.module('futurism')
 			/**
 			 * Choose an action to use
 			 * @param {String} actionId
-			 * @param {Number} cid
+			 * @param {Object} target
 			 */
-			selectAction: function(actionId, cid) {
+			selectAction: function(actionId, target) {
 				if(state.name !== 'thinking') {
 					return false;
 				}
 				var action = actions[actionId];
-				var target = board.cidToTarget(cid);
 				state.set(state.TARGETING, {
 					actionId: actionId,
 					restrict: action.restrict,
@@ -55,11 +54,22 @@ angular.module('futurism')
 			 */
 			checkTargetChain: function() {
 				if(state.data.targets.length >= state.data.restrict.length) {
+
+					var targets = _.map(state.data.targets, function(target) {
+						return {
+							column: target.column,
+							row: target.row,
+							playerId: target.player._id,
+							cid: target.card ? target.card.cid : null
+						};
+					});
+
 					socket.emit('doAction', {
 						gameId: $routeParams.gameId,
 						actionId: state.data.actionId,
-						targets: state.data.targets
+						targets: targets
 					});
+
 					state.toDefault();
 				}
 			},
@@ -78,6 +88,14 @@ angular.module('futurism')
 					targets = filter(targets, players.me, board);
 				});
 				return targets.length !== 0;
+			},
+
+
+			/**
+			 * Returns if a valid target is in your hand
+			 */
+			isValidTargetInHand: function() {
+
 			},
 
 

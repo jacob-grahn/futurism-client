@@ -1,5 +1,24 @@
 {
 	"abilities": {
+
+		"smmn": {
+			"name": {
+				"en": "summon"
+			},
+			"desc": {
+				"en": "Play a card from your hand."
+			}
+		},
+
+		"futr": {
+			"name": {
+				"en": "future"
+			},
+			"desc": {
+				"en": "Change the future."
+			}
+		},
+
 		"rlly": {
 			"name": {
 				"en": "rally",

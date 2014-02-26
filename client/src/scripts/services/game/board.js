@@ -93,6 +93,23 @@ angular.module('futurism')
 
 
 		/**
+		 * Create a 1d array of all targets owned by a player
+		 * @param {number} playerId
+		 * @returns {Array} targets
+		 */
+		self.playerTargets = function(playerId) {
+			var area = self.areas[playerId];
+			var all = [];
+			_.each(area.targets, function(column) {
+				_.each(column, function(target) {
+					all.push(target);
+				});
+			});
+			return all;
+		};
+
+
+		/**
 		 * Create a 1d array of all targets
 		 * @returns {Array} targets
 		 */
@@ -106,6 +123,23 @@ angular.module('futurism')
 				});
 			});
 			return all;
+		};
+
+
+		/**
+		 * returns true if player has a commander on the board
+		 * @param {ObjectId} playerId
+		 * @returns {boolean}
+		 */
+		self.playerHasCommander = function(playerId) {
+			var hasCommander = false;
+			var targets = self.playerTargets(playerId);
+			_.each(targets, function(target) {
+				if(target.card && target.card.commander) {
+					hasCommander = true;
+				}
+			});
+			return hasCommander;
 		};
 
 

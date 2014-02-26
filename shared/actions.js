@@ -26,6 +26,7 @@
 		/**
 		 * Attack: trade blows with another card
 		 */
+		ATTACK: 'attk',
 		attk: {
 			restrict: [
 				[filters.owned],
@@ -41,6 +42,7 @@
 		/**
 		 * Move: move a card from one place to another
 		 */
+		MOVE: 'move',
 		move: {
 			restrict: [
 				[filters.owned],
@@ -56,9 +58,10 @@
 		/**
 		 * Rally: generate pride
 		 */
+		RALLY: 'rlly',
 		rlly: {
 			restrict: [
-				false
+				[filters.owned]
 			],
 			use: function(src) {
 				src.player.pride++;
@@ -69,16 +72,31 @@
 		/**
 		 * Summon: bring a new card into the game at a pride cost
 		 */
+		SUMMON: 'smmn',
 		smmn: {
 			restrict: [
 				[filters.owned],
-				[filters.playable, filters.owned, filters.affordable],
+				[filters.inHand, filters.commanderFirst, filters.owned, filters.affordable],
 				[filters.owned, filters.empty]
 			],
 			use: function(src, target1, target2) {
 				_.pull(src.player.hand, target1.card);
 				src.player.pride -= target1.card.pride;
 				target2.card = target1.card;
+			}
+		},
+
+
+		/**
+		 * Change the active future
+		 */
+		FUTURE: 'futr',
+		futr: {
+			restrict: [
+				false
+			],
+			use: function(src) {
+
 			}
 		},
 
@@ -106,6 +124,7 @@
 		/**
 		 * Heal: Target card gains 1 health.
 		 */
+		HEAL: 'heal',
 		heal: {
 			restrict: [
 				[filters.owned],
@@ -119,6 +138,7 @@
 		/**
 		 * Tree Sprout: A 1/1 tree is created.
 		 */
+		TREE: 'tree',
 		tree: {
 			restrict: [
 				[filters.owned],
@@ -137,6 +157,7 @@
 		/**
 		 * Abomination: Merge this unit with another.
 		 */
+		ABOMINATION: 'abom',
 		abom: {
 			restrict: [
 				[filters.owned],
@@ -156,6 +177,7 @@
 		/**
 		 * Secretions: Target enemy can not attack next turn.
 		 */
+		SECRETIONS: 'secr',
 		secr: {
 			restrict: [
 				[filters.owned],
@@ -169,6 +191,7 @@
 		/**
 		 * Clone: Sacrifice this unit to produce a duplicate of another unit.
 		 */
+		CLONE: 'clne',
 		clne: {
 			restrict: [
 				[filters.owned],
@@ -184,6 +207,7 @@
 		/**
 		 * Bees: All enemies in target column loose 1 health.
 		 */
+		BEES: 'bees',
 		bees: {
 			restrict: [
 				[filters.owned],
@@ -210,6 +234,7 @@
 		/**
 		 * Rebuild: Resurrect a dead machine with 1 health.
 		 */
+		REBUILD: 'rbld',
 		rbld: {
 			restrict: [
 				[filters.owned],
@@ -243,6 +268,7 @@
 		/**
 		 * Shield: All damage that would be dealt to target card is reduced by 1 for a turn.
 		 */
+		SHIELD: 'shld',
 		shld: {
 			restrict: [
 				[filters.owned]
@@ -253,8 +279,9 @@
 		},
 
 		/**
-		 * Presicion: Attack an enemy of your choice regardless of defensive formations.
+		 * Precision: Attack an enemy of your choice regardless of defensive formations.
 		 */
+		PRECISION: 'prci',
 		prci: {
 			restrict: [
 				[filters.owned],
@@ -269,6 +296,7 @@
 		/**
 		 * Strategist: Ally can perform an extra action this turn
 		 */
+		STRATEGIST: 'strt',
 		strt: {
 			restrict: [
 				[filters.owned],
@@ -282,6 +310,7 @@
 		/**
 		 * Network: Gain an allies abilities.
 		 */
+		NETWORK: 'netw',
 		netw: {
 			restrict: [
 				[filters.owned],
@@ -295,6 +324,7 @@
 		/**
 		 * Transform: Swap health and attack.
 		 */
+		TRANSFORM: 'tran',
 		tran: {
 			restrict: [
 				[filters.owned]
@@ -314,6 +344,7 @@
 		/**
 		 * Seduction: Convert an enemy to your side if their health is 1.
 		 */
+		SEDUCTION: 'sduc',
 		sduc: {
 			restrict: [
 				[filters.owned],
@@ -329,6 +360,7 @@
 		/**
 		 * Assassin: Attack without taking damage.
 		 */
+		ASSASSIN: 'assn',
 		assn: {
 			restrict: [
 				[filters.owned],
@@ -342,6 +374,7 @@
 		/**
 		 * Delegate: Return this unit to your hand
 		 */
+		DELEGATE: 'delg',
 		delg: {
 			restrict: [
 				[filters.owned]
@@ -357,6 +390,7 @@
 		/**
 		 * Poison: Target enemy looses 1 health per turn.
 		 */
+		POISON: 'posn',
 		posn: {
 			restrict: [
 				[filters.owned],
@@ -370,6 +404,7 @@
 		/**
 		 * Bag'em: Target card is returned to its owners hand.
 		 */
+		BAGEM: 'bagm',
 		bagm: {
 			restrict: [
 				[filters.owned],
@@ -386,6 +421,7 @@
 		/**
 		 * Siphon: Steal 1 health from a card of your choice.
 		 */
+		SIPHON: 'siph',
 		siph: {
 			restrict: [
 				[filters.owned],
@@ -404,6 +440,7 @@
 		/**
 		 * Male: Can reproduce with females.
 		 */
+		MALE: 'male',
 		male: {
 			restrict: [
 				[filters.owned],
@@ -428,6 +465,7 @@
 		/**
 		 * Female: Can reproduce with males.
 		 */
+		FEMALE: 'feml',
 		feml: {
 			restrict: [
 				[filters.owned],
@@ -452,6 +490,7 @@
 		/**
 		 * Grow: turn a WAR BABY into its parent
 		 */
+		GROW: 'grow',
 		grow: {
 			restrict: [
 				[filters.owned]
@@ -464,6 +503,7 @@
 		/**
 		 * Battlecry: Target unit gains 2 attack for the turn.
 		 */
+		BATTLECRY: 'btle',
 		btle: {
 			restrict: [
 				[filters.owned],
@@ -477,6 +517,7 @@
 		/**
 		 * Determined: Sacrifice this card to defeat any enemy
 		 */
+		DETERMINED: 'detr',
 		detr: {
 			restrict: [
 				[filters.owned],
@@ -491,6 +532,7 @@
 		/**
 		 * Sacrifice: All enemy attacks must target this card for one turn.
 		 */
+		HERO: 'hero',
 		hero: {
 			restrict: [
 				[filters.owned]
@@ -503,6 +545,7 @@
 		/**
 		 * Super Serum: Available health points are converted into attack points.
 		 */
+		SERUM: 'serm',
 		serm: {
 			restrict: [
 				[filters.owned]

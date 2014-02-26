@@ -9,7 +9,7 @@ angular.module('futurism')
 				_.delay(function() {
 					console.log('rallyAnimation done');
 					callback();
-				}, 4000)
+				}, 1);
 			}
 		};
 

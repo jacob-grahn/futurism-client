@@ -254,6 +254,9 @@
 		 * @param {Array} targetPositions
 		 */
 		self.doAction = function(player, actionId, targetPositions) {
+			console.log('game.doAction');
+			console.log('actionId', actionId);
+			console.log('targetPositions', targetPositions);
 
 			// its gotta be your turn
 			if(!self.turnTicker.isTheirTurn(player)) {

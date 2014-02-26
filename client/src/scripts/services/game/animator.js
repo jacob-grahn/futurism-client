@@ -11,15 +11,6 @@ angular.module('futurism')
 
 		var animator = {
 
-			/**
-			 * register an animation to be used
-			 * @param name
-			 * @param animation
-			 */
-			addAnimation: function(name, animation) {
-				animationLookup[name] = animation;
-			},
-
 
 			/**
 			 * play an animation for an action or force like heal or poison
@@ -30,6 +21,7 @@ angular.module('futurism')
 			animateUpdate: function(name, changes, callback) {
 				var animation = animationLookup[name];
 				if(!animation) {
+					console.log('No animation found for "'+name+'". Using default.');
 					animation = noAnimation;
 				}
 				console.log('Running animation "'+name+'"');

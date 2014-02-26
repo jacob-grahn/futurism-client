@@ -1,6 +1,8 @@
 angular.module('futurism')
-	.controller('GameCtrl', function($scope, $routeParams, $location, socket, _, gameListeners, players, turn, board, state, hand, targeter) {
+	.controller('GameCtrl', function($scope, $routeParams, $location, socket, _, gameListeners, players, turn, board, state, hand, targeter, errorHandler, shared) {
 		'use strict';
+
+		var actions = shared.actions;
 
 		$scope.board = board;
 		$scope.players = players;
@@ -33,35 +35,52 @@ angular.module('futurism')
 
 
 		/**
-		 * Pick a card from your hand
-		 * @param {Object} card
-		 */
-		$scope.pickCardFromHand = function(card) {
-			if(card.pride > players.me.pride) {
-				return false;
-			}
-
-			targeter.selectAction('entr', card.cid);
-			if(state.data) {
-				state.data.targets = [{
-					cid: card.cid,
-					playerId: players.me._id
-				}];
-			}
-
-			hand.close();
-
-			return true;
-		};
-
-
-		/**
 		 * clean up
 		 */
 		$scope.$on('$destroy', function() {
 			gameListeners.unsubscribe($scope.gameId);
 			board.clear();
-			hand.show = false;
 		});
+
+
+		/**
+		 * open hand when summon is used
+		 */
+		$scope.$watchCollection('state', function() {
+			console.log('state.actionId changed', state);
+			if(state.name === state.TARGETING) {
+				if(state.data.actionId === actions.SUMMON && state.data.targets.length === 1) {
+					hand.open();
+				}
+			}
+		});
+
+
+		/**
+		 * play a card from your hand
+		 * @param card
+		 * @returns {boolean}
+		 */
+		$scope.pickCardFromHand = function(card) {
+			if(card.pride > players.me.pride) {
+				errorHandler.show('You do not have enough pride to play this card');
+				return false;
+			}
+			if(hand.cards.indexOf(card) === -1) {
+				errorHandler.show('This card is not in your hand');
+				return false;
+			}
+
+			if(card.commander) {
+				targeter.selectAction('smmn', {card: card, player: players.me});
+				targeter.onCooldown = false;
+			}
+
+			targeter.selectTarget({card: card, player: players.me});
+
+			hand.close();
+
+			return true;
+		};
 
 	});

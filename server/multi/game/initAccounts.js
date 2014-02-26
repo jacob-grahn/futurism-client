@@ -39,7 +39,7 @@ var makeAccountCard = function(account) {
 		attack: 0,
 		health: 10,
 		story: '',
-		abilities: ['smmn', 'rlly', 'move'],
+		abilities: ['smmn', 'rlly', 'futr'],
 		hasImage: true,
 		cid: nextCid(),
 		moves: 0,
