@@ -10,6 +10,7 @@ angular.module('futurism')
 			scope: {
 				card: '=',
 				size: '@',
+				useButtons: '@',
 				actionFn: '&'
 			},
 

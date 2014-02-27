@@ -181,24 +181,47 @@ body .card-ze h1 {
 	position: relative;
 }
 
-.card-bigger {
+
+.card-bigger-medium {
 	margin: auto;
 	position: absolute;
 	top: -45px; left: -35px;
-	width: 130px;
-	height: 186px;
 	z-index: 11;
 	-webkit-transition: 0.25s;
 	transition: 0.25s;
 	opacity: 1;
 }
 
-.card-bigger.ng-hide {
+.card-bigger-medium.ng-hide {
 	transform: scale(.5, .5);
 	opacity: 0;
 }
 
-.card-bigger.ng-hide-add,
-.card-bigger.ng-hide-remove {
+.card-bigger-medium.ng-hide-add,
+.card-bigger-medium.ng-hide-remove {
+	display: block !important;
+}
+
+
+
+
+
+.card-bigger-large {
+	margin: auto;
+	position: absolute;
+	top: -135px; left: -100px;
+	z-index: 11;
+	-webkit-transition: 0.25s;
+	transition: 0.25s;
+	opacity: 1;
+}
+
+.card-bigger-large.ng-hide {
+	transform: scale(.25, .25);
+	opacity: 0;
+}
+
+.card-bigger-large.ng-hide-add,
+.card-bigger-large.ng-hide-remove {
 	display: block !important;
 }

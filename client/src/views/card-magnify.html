@@ -1,4 +1,4 @@
 <div class="card-magnify">
 	<card-display card="card" class="card-base" size="{{size}}"></card-display>
-	<card-display card="card" action-fn="actionFn({abilityId: abilityId, cid: cid})" class="ng-hide card-bigger" ng-show="hovering" size="{{magnify}}"></card-display>
+	<card-display card="card" action-fn="actionFn({abilityId: abilityId, card: card})" class="ng-hide card-bigger-{{magnify}}" ng-show="hovering" size="{{magnify}}" use-buttons="{{useButtons}}"></card-display>
 </div>

@@ -11,7 +11,8 @@
 	<h1>{{card.name}}</h1>
 	<ul class="abilities">
 		<li ng-repeat="abilityId in card.abilities | limitTo:3">
-			<a ng-click="actionFn({abilityId: abilityId, cid: card.cid})">{{lang.abilities[abilityId].name}}</a>
+			<span ng-if="!useButtons">{{lang.abilities[abilityId].name}}</span>
+			<button ng-if="useButtons" ng-click="actionFn({abilityId: abilityId, card: card})">{{lang.abilities[abilityId].name}}</button>
 		</li>
 	</ul>
 
