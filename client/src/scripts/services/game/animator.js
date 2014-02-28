@@ -1,11 +1,7 @@
 angular.module('futurism')
-	.factory('animator', function(noAnimation, rallyAnimation, turnAnimation, $rootScope, errorHandler) {
+	.factory('animator', function($rootScope, $timeout, errorHandler) {
 		'use strict';
 
-		var animationLookup = {
-			'rlly': rallyAnimation,
-			'turn': turnAnimation
-		};
 		var queue = [];
 		var running = false;
 
@@ -20,13 +16,8 @@ angular.module('futurism')
 			 * @param {Function} callback
 			 */
 			animateUpdate: function(name, changes, callback) {
-				var animation = animationLookup[name];
-				if(!animation) {
-					console.log('No animation found for "'+name+'". Using default.');
-					animation = noAnimation;
-				}
-				console.log('Running animation "'+name+'"');
-				queue.push({animation: animation, changes: changes, callback: callback});
+				var task = {name: name, changes: changes, callback: callback};
+				queue.push(task);
 				animator.run();
 			},
 
@@ -40,24 +31,28 @@ angular.module('futurism')
 					running = true;
 					var task = queue.shift();
 
-					task.animation.run(task.changes, function(err) {
+					$rootScope.$broadcast('event:'+task.name, task.changes);
 
+					$timeout(function() {
 						running = false;
-
-						try {
-							$rootScope.$apply(function() {
-								task.callback(err);
-							});
-						}
-
-						catch(error) {
-							task.callback(err);
-						}
-
+						task.callback();
 						return animator.run();
-
-					});
+					}, animator.eventWaitTime(task.name));
 				}
+			},
+
+
+			/**
+			 * returns how long to wait for certain animation events
+			 * @param {string} name
+			 * @returns {number}
+			 */
+			eventWaitTime: function(name) {
+				var wait = 1;
+				if(name === 'turn') {
+					wait = 2000;
+				}
+				return wait;
 			}
 		};
 
