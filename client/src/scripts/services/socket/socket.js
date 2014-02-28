@@ -63,7 +63,7 @@ angular.module('futurism')
 			connect: function(serverId) {
 
 				serverId = Number(serverId);
-				
+
 				console.log('socket.connect', serverId);
 				// lookup server uri with the serverId
 				servers.getUri(serverId, function(err, newUri) {

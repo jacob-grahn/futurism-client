@@ -1,9 +1,10 @@
 angular.module('futurism')
-	.factory('animator', function(noAnimation, rallyAnimation) {
+	.factory('animator', function(noAnimation, rallyAnimation, turnAnimation, $rootScope, errorHandler) {
 		'use strict';
 
 		var animationLookup = {
-			'rlly': rallyAnimation
+			'rlly': rallyAnimation,
+			'turn': turnAnimation
 		};
 		var queue = [];
 		var running = false;
@@ -35,13 +36,26 @@ angular.module('futurism')
 			 */
 			run: function() {
 				if(!running && queue.length > 0) {
-					running = true;
 
+					running = true;
 					var task = queue.shift();
+
 					task.animation.run(task.changes, function(err) {
-						task.callback(err);
+
 						running = false;
+
+						try {
+							$rootScope.$apply(function() {
+								task.callback(err);
+							});
+						}
+
+						catch(error) {
+							task.callback(err);
+						}
+
 						return animator.run();
+
 					});
 				}
 			}
