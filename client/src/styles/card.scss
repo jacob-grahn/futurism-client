@@ -17,6 +17,7 @@ body .card-ze h1 {
   position: relative;
   width: 260px;
   height: 372px;
+  min-height: 372px;
   background-color: white;
   overflow-y: hidden;
   overflow-x: hidden;
@@ -29,21 +30,26 @@ body .card-ze h1 {
 .card-medium {
 	width: 130px;
 	height: 186px;
+	min-height: 186px;
 	@include border-radius(2px);
 }
 .card-small {
 	width: 65px;
 	height: 93px;
+	min-height: 93px;
 	@include border-radius(1px);
 }
 
+
+.stretch .card {
+	height: auto;
+}
 
 
 .card-list > li {
 	float: left;
 	margin: 12px;
 }
-
 
 .card {
 	cursor: pointer;
@@ -97,7 +103,7 @@ body .card-ze h1 {
 
 
 .card-story {
-  margin: 0 15px 5px 15px;
+  margin: 0 15px 25px 15px;
 	font-style: italic;
 	text-align: center;
 }

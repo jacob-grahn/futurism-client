@@ -10,7 +10,7 @@
 
 	<h1>{{card.name}}</h1>
 	<ul class="abilities">
-		<li ng-repeat="abilityId in card.abilities | limitTo:3">
+		<li ng-repeat="abilityId in card.abilities">
 			<span ng-if="useButtons != 'true'">{{lang.abilities[abilityId].name}}</span>
 			<button ng-if="useButtons == 'true'" ng-click="actionFn({abilityId: abilityId, card: card})">{{lang.abilities[abilityId].name}}</button>
 		</li>
