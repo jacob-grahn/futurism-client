@@ -13,7 +13,7 @@
 
 				<ul ng-repeat="column in area.targets" class="player-field-column">
 					<li ng-repeat="target in column | inverseFoes:players.me.team" ng-click="targeter.selectTarget(target)" ng-class="{target: true, 'target-valid': targeter.isValidTarget(target), 'scroll-here': targeter.isValidTarget(target)}">
-						<card-magnify ng-if="target.card" card="target.card" action-fn="targeter.selectAction(abilityId, target)" size="small" magnify="large" use-buttons="yes" ng-class="{'card-disabled': target.card.moves <= 0}"></card-magnify>
+						<card-magnify ng-if="target.card" card="target.card" action-fn="targeter.selectAction(abilityId, target)" size="small" magnify="large" use-buttons="{{target.player == players.me}}" ng-class="{'card-disabled': target.card.moves <= 0}"></card-magnify>
 					</li>
 				</ul>
 
