@@ -93,6 +93,16 @@ angular.module('futurism')
 
 
 		/**
+		 * Return target found at pos
+		 * @param {Object} pos
+		 * @returns {*}
+		 */
+		self.targetPos = function(pos) {
+			return self.target(pos.playerId, pos.column, pos.row);
+		};
+
+
+		/**
 		 * Create a 1d array of all targets owned by a player
 		 * @param {number} playerId
 		 * @returns {Array} targets

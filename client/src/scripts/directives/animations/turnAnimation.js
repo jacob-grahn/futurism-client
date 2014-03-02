@@ -12,7 +12,6 @@ angular.module('futurism')
 				scope.name = '';
 
 				$rootScope.$on('event:turn', function(srcScope, changes) {
-					console.log('turnAnimationDisplay', changes);
 
 					var playerId = changes.turnOwners[0];
 					var player = players.idToPlayer(playerId);
@@ -24,6 +23,8 @@ angular.module('futurism')
 							scope.active = false;
 						}, 4000);
 					}
+
+					$rootScope.$broadcast('event:animationComplete');
 				});
 			}
 		};

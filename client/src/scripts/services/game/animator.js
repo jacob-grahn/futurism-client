@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('animator', function($rootScope, $timeout, errorHandler) {
+	.factory('animator', function($rootScope, $timeout) {
 		'use strict';
 
 		var queue = [];
@@ -27,34 +27,40 @@ angular.module('futurism')
 			 */
 			run: function() {
 				if(!running && queue.length > 0) {
-
+					var task = queue[0];
 					running = true;
-					var task = queue.shift();
-
-					$rootScope.$broadcast('event:'+task.name, task.changes);
-
-					$timeout(function() {
-						running = false;
-						task.callback();
-						return animator.run();
-					}, animator.eventWaitTime(task.name));
+					if(task.name) {
+						console.log('*** begin animating '+task.name+' ***', task.changes);
+						$rootScope.$broadcast('event:'+task.name, task.changes);
+						//$timeout(onAnimationComplete, 3000); //fallback timeout...
+					}
+					else {
+						onAnimationComplete();
+					}
 				}
-			},
-
-
-			/**
-			 * returns how long to wait for certain animation events
-			 * @param {string} name
-			 * @returns {number}
-			 */
-			eventWaitTime: function(name) {
-				var wait = 1;
-				if(name === 'turn') {
-					wait = 2000;
-				}
-				return wait;
 			}
 		};
+
+
+		/**
+		 * Listen for when animations are finished
+		 * animations are expected to broadcast this event whenever it is ok to continue
+		 */
+		$rootScope.$on('event:animationComplete', function() {
+			onAnimationComplete();
+		});
+
+
+		var onAnimationComplete = function() {
+			if(queue.length > 0) {
+				console.log('*** animation complete ***');
+				var task = queue.shift();
+				running = false;
+				task.callback();
+				animator.run();
+			}
+		};
+
 
 		return animator;
 	});
