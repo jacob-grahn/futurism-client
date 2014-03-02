@@ -83,14 +83,6 @@
 				 */
 				function(startTime) {
 
-					/**
-					 * refill hands
-					 */
-					self.drawCards(self.players, rules.handSize);
-					effects.hand(self.players);
-					effects.rally(self.turnTicker.turnOwners, self.board);
-					self.broadcastChanges('rlly');
-
 
 					/**
 					 * tell the clients to move to the next turn
@@ -99,6 +91,15 @@
 						startTime: startTime,
 						turnOwners: self.turnTicker.getTurnOwnerIds()
 					});
+
+
+					/**
+					 * refill hands
+					 */
+					self.drawCards(self.players, rules.handSize);
+					effects.hand(self.players);
+					effects.rally(self.turnTicker.turnOwners, self.board);
+					self.broadcastChanges('rlly');
 				},
 
 
