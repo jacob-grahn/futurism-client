@@ -2,6 +2,12 @@ angular.module('futurism')
 	.directive('boardAnimations', function(_, $, $timeout, $rootScope, board, players) {
 		'use strict';
 
+		var cardWidth = 65;
+		var cardHeight = 93;
+		var halfCardWidth = Math.round(cardWidth/2);
+		var halfCardHeight = Math.round(cardHeight/2);
+
+
 		var parseUpdatePositions = function(update) {
 			var positions = [];
 			_.each(update.board.areas, function(area, index) {
@@ -27,39 +33,62 @@ angular.module('futurism')
 			link: function(scope, element) {
 
 
+
 				/**
 				 * summon animation
 				 */
 				scope.$on('event:smmn', function(srcScope, update) {
 
 					var updatedPositions = parseUpdatePositions(update);
-					console.log('positions', updatedPositions);
+					var effect, srcPoint, destPoint;
 
 					_.each(updatedPositions, function(pos) {
 						var target = board.targetPos(pos);
 						var elm = findTargetElm(pos);
-						var effect;
+						var offset = elm.offset();
+						var selfOffset = element.offset();
+						var point = {
+							x: offset.left - selfOffset.left + halfCardWidth,
+							y: offset.top - selfOffset.top + halfCardHeight
+						};
 
-						console.log('target', target);
-						console.log('elm', elm);
-
-						//appear animation
 						if(!target.card) {
-							effect = $('<div class="appear">');
-							elm.append(effect);
+							destPoint = point;
 						}
-
-						//summon animation
-						if(target.card) {
-							effect = $('<div class="summon">');
-							elm.append(effect);
+						else {
+							srcPoint = point;
 						}
 					});
 
+					if(!srcPoint) {
+						srcPoint = destPoint;
+					}
+
+					effect = $('<div class="summon-effect"><div class="effect"></div><div class="effect"></div></div>');
+					effect.css({left: srcPoint.x, top: srcPoint.y});
+					effect.animate({left: destPoint.x, top: destPoint.y});
+					element.append(effect);
+
 					$timeout(function() {
 						$rootScope.$broadcast('event:animationComplete');
-					}, 30000);
+					}, 1000);
+
+					$timeout(function() {
+						effect.remove();
+					}, 2000);
 				});
+
+
+
+				/**
+				 * rally animation
+				 */
+				scope.$on('event:rlly', function(srcScope, update) {
+					$rootScope.$broadcast('event:animationComplete');
+				});
+
+
+
 			}
 		};
 	});

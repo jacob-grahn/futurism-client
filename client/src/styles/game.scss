@@ -43,6 +43,10 @@ $outline: rgba(82, 79, 73, .75);
 	color: lightgrey;
 }
 
+.board {
+	position: relative;
+}
+
 .board .card .card-pride {
 	display: none;
 }

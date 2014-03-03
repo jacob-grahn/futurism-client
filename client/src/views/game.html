@@ -1,9 +1,9 @@
 <turn-animation></turn-animation>
 
 <div id="game" class="clearfix" auto-scroll watch="state" find="scroll-here" target="board-area">
-	<ul class="board col-sm-7 inverse">
+	<ul class="board col-sm-7 inverse" board-animations>
 		<li class="row" ng-repeat="area in board.areas | teamSort:players.me.team">
-			<div class="board-area clearfix" board-animations>
+			<div class="board-area clearfix">
 
 				<div class="area-header">
 					<h1 ng-show="turn.isTheirTurn(area.playerId)" class="active-indicator">*</h1>
