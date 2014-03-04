@@ -15,7 +15,6 @@ angular.module('futurism')
 			 * @param {Object} target
 			 */
 			selectAction: function(actionId, target) {
-				console.log('targeter::selectAction', actionId, target);
 				if(state.name !== 'thinking') {
 					return false;
 				}

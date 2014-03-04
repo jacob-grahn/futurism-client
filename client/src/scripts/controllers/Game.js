@@ -49,7 +49,6 @@ angular.module('futurism')
 		 * open hand when summon is used
 		 */
 		$scope.$watchCollection('state', function() {
-			console.log('state.actionId changed', state);
 			if(state.name === state.TARGETING) {
 				if(state.data.actionId === actions.SUMMON && state.data.targets.length === 1) {
 					hand.open();

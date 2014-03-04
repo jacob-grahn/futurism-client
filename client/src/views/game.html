@@ -8,7 +8,7 @@
 				<div class="area-header">
 					<h1 ng-show="turn.isTheirTurn(area.playerId)" class="active-indicator">*</h1>
 					<h1 class="area-title">{{players.idToPlayer(area.playerId).name}}</h1>
-					<span class="area-desc">{{lang.game.pride}}: {{players.idToPlayer(area.playerId).pride}}, {{lang.game.futures}}: {{players.idToPlayer(area.playerId).futures.length}}</span>
+					<span id="area-desc-{{area.playerId}}" class="area-desc">{{lang.game.pride}}: {{players.idToPlayer(area.playerId).pride}}, {{lang.game.futures}}: {{players.idToPlayer(area.playerId).futures.length}}</span>
 				</div>
 
 				<ul ng-repeat="column in area.targets" class="player-field-column">

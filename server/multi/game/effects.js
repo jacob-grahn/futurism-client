@@ -91,21 +91,51 @@
 
 		/**
 		 * Gain pride from your cards in play
-		 * @param {Array} players
+		 * @param {Player} player
 		 * @param {Board} board
 		 */
-		rally: function(players, board) {
-			_.each(players, function(player) {
-				var targets = board.playerTargets(player._id);
-				eachCard(targets, function(card) {
-					if(card.commander) {
-						player.pride += 2;
-					}
-					else {
-						player.pride += 1;
-					}
-				});
+		rally: function(player, board) {
+
+			// get a list of cards with action points
+			var targets = board.playerTargets(player._id);
+
+			// count how many cards of each faction there are
+			var factions = {};
+			var dominantFaction = '';
+			eachCard(targets, function(card) {
+				if(factions[card.faction]) {
+					factions[card.faction] += 1;
+				}
+				else {
+					factions[card.faction] = 1;
+				}
 			});
+
+			// find the faction with the majority
+			var most = 0;
+			factions.no = 0; // make sure the non-faction 'no' is not the majority
+			_.each(factions, function(count, faction) {
+				if(count === most) {
+					dominantFaction = '';
+				}
+				if(count > most) {
+					dominantFaction = faction;
+					most = count;
+				}
+			});
+
+			// dominant faction gets +2, others get +1
+			eachCard(targets, function(card) {
+				if(card.faction === dominantFaction) {
+					player.pride += 2;
+				}
+				else {
+					player.pride += 1;
+				}
+			});
+
+			return dominantFaction;
+
 		}
 	}
 }());

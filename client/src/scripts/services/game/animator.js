@@ -32,7 +32,7 @@ angular.module('futurism')
 					if(task.name) {
 						console.log('*** begin animating '+task.name+' ***', task.changes);
 						$rootScope.$broadcast('event:'+task.name, task.changes);
-						//$timeout(onAnimationComplete, 3000); //fallback timeout...
+						$timeout(onAnimationComplete, 3000); //fallback timeout...
 					}
 					else {
 						onAnimationComplete();

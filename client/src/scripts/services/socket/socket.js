@@ -64,7 +64,6 @@ angular.module('futurism')
 
 				serverId = Number(serverId);
 
-				console.log('socket.connect', serverId);
 				// lookup server uri with the serverId
 				servers.getUri(serverId, function(err, newUri) {
 					if(err) {
@@ -101,12 +100,10 @@ angular.module('futurism')
 			},
 
 			emit: function(event, data) {
-				console.log('socket.emit', event, data);
 				if(socket) {
 					socket.authEmit(event, data);
 				}
 				else {
-					console.log('buffer it');
 					buffer.push({event: event, data: data});
 				}
 			},

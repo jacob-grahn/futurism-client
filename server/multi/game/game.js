@@ -98,8 +98,7 @@
 					 */
 					self.drawCards(self.players, rules.handSize);
 					effects.hand(self.players);
-					effects.rally(self.turnTicker.turnOwners, self.board);
-					self.broadcastChanges('rlly');
+					self.broadcastChanges('rlly', effects.rally(self.turnTicker.turnOwners[0], self.board));
 				},
 
 
@@ -241,10 +240,12 @@
 		/**
 		 * broadcast changes as a partial update
 		 */
-		self.broadcastChanges = function(cause) {
-			var status = self.getStatus();
-			var changes = self.diffTracker.diff(status, false);
-			self.emit('gameUpdate', {cause: cause, changes: changes});
+		self.broadcastChanges = function(cause, data) {
+			if(data !== false) {
+				var status = self.getStatus();
+				var changes = self.diffTracker.diff(status, false);
+				self.emit('gameUpdate', {cause: cause, changes: changes, data: data});
+			}
 		};
 
 
