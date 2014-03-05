@@ -7,43 +7,53 @@ angular.module('futurism')
 			restrict: 'A',
 			link: function(scope, boardElement) {
 
-				/**
-				 * attack animation
-				 */
+
 				scope.$on('event:attk', function(srcScope, update) {
 
-					var attackerCid = update.data[0].cid;
+					var targets = update.data;
 
-					var updatingTargets = animFns.getUpdatedTargets(update);
-					var attacker;
-					var defender;
-					if(updatingTargets[0].target.card.cid === attackerCid) {
-						attacker = updatingTargets[0];
-						defender = updatingTargets[1];
-					}
-					else {
-						attacker = updatingTargets[1];
-						defender = updatingTargets[0];
-					}
+					var attacker = animFns.getUpdatedTarget(update, targets[0]);
+					var defender = animFns.getUpdatedTarget(update, targets[1]);
 
+					animAttack(attacker, defender, function() {
+						console.log('defender', defender);
+						if( (!defender.newData || defender.newData.health > 0) && defender.target.card.attack > 0) {
+							animAttack(defender, attacker, function() {
+								done();
+							});
+						}
+						else {
+							done();
+						}
+					});
+				});
+
+
+				var animAttack = function(attacker, defender, callback) {
 					var srcPoint = animFns.getTargetPoint(attacker.target, boardElement);
 					var destPoint = animFns.getTargetPoint(defender.target, boardElement);
+
 					var angleRad = Math.atan2(destPoint.y - srcPoint.y, destPoint.x - srcPoint.x);
 					var angleDeg = (angleRad * maths.RAD_DEG) + 90;
 
 					var effect = $('<div class="attack-effect"><div class="sword"></div></div>')
 						.css({left: srcPoint.x-10, top: srcPoint.y-75, opacity: 0, transform: 'rotate('+angleDeg+'deg)'})
 						.animate({opacity: 1}, 1000)
-						.animate({left: destPoint.x-10, top: destPoint.y-75}, 500, 'linear')
+						.animate({left: destPoint.x-10, top: destPoint.y-75}, 400, 'linear')
 						.animate({opacity: 0}, 500, function() {
-							$rootScope.$apply(function() {
-								$rootScope.$broadcast('event:animationComplete');
-							});
 							this.remove();
+							callback();
 						});
 
 					boardElement.append(effect);
-				});
+				};
+
+
+				var done = function() {
+					$rootScope.$apply(function() {
+						$rootScope.$broadcast('event:animationComplete');
+					});
+				};
 
 
 

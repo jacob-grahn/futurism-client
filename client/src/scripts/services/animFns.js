@@ -19,16 +19,30 @@ angular.module('futurism')
 							var column = xy[0];
 							var row = xy[1];
 
-							var target = board.target(playerId, column, row);
-							var elem = self.findTargetElem(target);
-
-							var updatingTarget = {target: target, newData: targetData, elem: elem};
+							var updatingTarget = self.getUpdatedTarget(update, {playerId: playerId, column: column, row: row});
 
 							targets.push(updatingTarget);
 						});
 					});
 				}
 				return targets;
+			},
+
+
+
+			getUpdatedTarget: function(update, targetPos) {
+				var target = board.targetPos(targetPos);
+				var elem = self.findTargetElem(target);
+				console.log('getUpdatedTarget', update, targetPos);
+
+				var newData = null;
+				if(update.board && update.board.areas && update.board.areas[targetPos.playerId]) {
+					newData = update.board.areas[targetPos.playerId].targets[targetPos.column+'-'+targetPos.row];
+				}
+				console.log('newData', newData);
+
+				var updatingTarget = {target: target, newData: newData, elem: elem};
+				return updatingTarget;
 			},
 
 
