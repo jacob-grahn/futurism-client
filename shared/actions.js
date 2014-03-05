@@ -33,8 +33,10 @@
 				[filters.enemy, filters.full, filters.front]
 			],
 			use: function(src, target) {
-				target.card.health -= src.card.attack;
-				src.card.health -= target.card.attack;
+				target.card.health -= _.random(0, src.card.attack);
+				if(target.card.health > 0) {
+					src.card.health -= _.random(0, target.card.attack);
+				}
 			}
 		},
 

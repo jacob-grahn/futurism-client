@@ -10,8 +10,6 @@ angular.module('futurism')
 
 				scope.$on('event:smmn', function(srcScope, update) {
 
-					console.log('event:smmn', update);
-
 					var updatingTargets = animFns.getUpdatedTargets(update);
 					var effect;
 					var srcPoint;
