@@ -11,6 +11,7 @@ angular.module('futurism')
 				size: '@',
 				magnify: '@',
 				useButtons: '@',
+				active: '@',
 				card: '=',
 				actionFn: '&'
 			},
@@ -43,12 +44,14 @@ angular.module('futurism')
 
 
 				elem.click(function() {
-					scope.$apply(function() {
-						scope.hovering = !scope.hovering;
-						if(scope.hovering) {
-							_.delay(scrollIntoView, 500);
-						}
-					});
+					if(scope.active !== 'false') {
+						scope.$apply(function() {
+							scope.hovering = !scope.hovering;
+							if(scope.hovering) {
+								_.delay(scrollIntoView, 400);
+							}
+						});
+					}
 				});
 
 				elem.mouseleave(function() {
