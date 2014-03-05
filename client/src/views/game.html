@@ -1,7 +1,7 @@
-<turn-animation></turn-animation>
+<turn-anim></turn-anim>
 
 <div id="game" class="clearfix" auto-scroll watch="state" find="scroll-here" target="board-area">
-	<ul class="board col-sm-7 inverse" board-animations>
+	<ul class="board col-sm-7 inverse" summon-anim attack-anim rally-anim>
 		<li class="row" ng-repeat="area in board.areas | teamSort:players.me.team">
 			<div class="board-area clearfix">
 

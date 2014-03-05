@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('turnAnimation', function($, $timeout, $rootScope, players) {
+	.directive('turnAnim', function($, $timeout, $rootScope, players) {
 		'use strict';
 
 		return {
