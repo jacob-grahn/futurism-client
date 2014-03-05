@@ -28,12 +28,6 @@
 		</div>
 		<ul class="game-buttons panel-segment clearfix">
 			<li>
-				<button class='btn btn-default' ng-click="hand.toggle()" ng-disabled="players.me.hand.length === 0">{{lang.game.showHand}}</button>
-			</li>
-			<li>
-				<button class='btn btn-default' ng-click="showFutures()" disabled>{{lang.game.showFutures}}</button>
-			</li>
-			<li>
 				<button class='btn btn-default' ng-click="endTurn(); hand.close();" ng-disabled="!turn.isMyTurn()">{{lang.game.endTurn}}</button>
 			</li>
 			<li>
