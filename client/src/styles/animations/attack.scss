@@ -1,0 +1,23 @@
+.attack-effect {
+	position: absolute;
+	z-index: 100;
+}
+
+.sword {
+	background-image: url("/images/sword.png");
+	width: 27px;
+	height: 150px;
+	animation-name: attack-rotate;
+	animation-duration: 1s;
+}
+
+@keyframes attack-rotate {
+	from {
+		transform: rotate(0deg);
+		//transform-origin: 0px 0px;
+	}
+	to {
+		transform: rotate(360deg);
+		//transform-origin: 25px 150px;
+	}
+}
