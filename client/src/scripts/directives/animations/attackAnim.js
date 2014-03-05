@@ -36,16 +36,33 @@ angular.module('futurism')
 					var angleRad = Math.atan2(destPoint.y - srcPoint.y, destPoint.x - srcPoint.x);
 					var angleDeg = (angleRad * maths.RAD_DEG) + 90;
 
-					var effect = $('<div class="attack-effect"><div class="sword"></div></div>')
+					defender.newData = defender.newData || {health: defender.target.card.health};
+					var damage = defender.target.card.health - defender.newData.health;
+
+					if(damage === 0) {
+						damage = 'miss!';
+					}
+					else {
+						damage = "-" + damage;
+					}
+
+					boardElement.append($('<div class="attack-effect"><div class="sword"></div></div>')
 						.css({left: srcPoint.x-10, top: srcPoint.y-75, opacity: 0, transform: 'rotate('+angleDeg+'deg)'})
 						.animate({opacity: 1}, 1000)
-						.animate({left: destPoint.x-10, top: destPoint.y-75}, 400, 'linear')
+						.animate({left: destPoint.x-10, top: destPoint.y-75}, 400, 'linear', function() {
+
+							boardElement.append($('<div class="life-effect life-effect-dec">'+damage+'</div>')
+								.css({left: destPoint.x, top: destPoint.y})
+								.animate({top: destPoint.y-100}, 'slow')
+								.animate({opacity: 0}, 'slow', function() {
+									this.remove();
+								}));
+
+						})
 						.animate({opacity: 0}, 500, function() {
 							this.remove();
 							callback();
-						});
-
-					boardElement.append(effect);
+						}));
 				};
 
 
