@@ -17,13 +17,12 @@ angular.module('futurism')
 				scope.lang = lang;
 
 
-				var scrollToBottom = function() {
+				var scrollToBottom = _.throttle(function() {
 					var log = elem.find('.chat-log');
 					var scrollHeight = log[0].scrollHeight - log.height() + 50;
-
 					log.clearQueue();
 					log.animate({scrollTop: scrollHeight}, 250);
-				};
+				}, 500);
 
 
 				scope.sendMessage = function() {
@@ -46,7 +45,7 @@ angular.module('futurism')
 				};
 
 
-				scope.$watch('chat.getReceivedCount()', function(oldCount, newCount) {
+				scope.$watch('chat.receivedCount', function(oldCount, newCount) {
 					if(scope.chat) {
 						if(newCount >= scope.chat.maxMsgs) {
 							var log = elem.find('.chat-log');
