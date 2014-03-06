@@ -12,8 +12,8 @@ angular.module('futurism')
 
 					var targets = update.data;
 
-					var attacker = animFns.getUpdatedTarget(update, targets[0]);
-					var defender = animFns.getUpdatedTarget(update, targets[1]);
+					var attacker = animFns.makeAnimTarget(update, targets[0]);
+					var defender = animFns.makeAnimTarget(update, targets[1]);
 
 					animAttack(attacker, defender, function() {
 						console.log('defender', defender);
@@ -30,8 +30,8 @@ angular.module('futurism')
 
 
 				var animAttack = function(attacker, defender, callback) {
-					var srcPoint = animFns.getTargetPoint(attacker.target, boardElement);
-					var destPoint = animFns.getTargetPoint(defender.target, boardElement);
+					var srcPoint = animFns.targetCenter(attacker.target, boardElement);
+					var destPoint = animFns.targetCenter(defender.target, boardElement);
 
 					var angleRad = Math.atan2(destPoint.y - srcPoint.y, destPoint.x - srcPoint.x);
 					var angleDeg = (angleRad * maths.RAD_DEG) + 90;

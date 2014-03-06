@@ -23,7 +23,7 @@ angular.module('futurism')
 
 						_.each(targets, function(target) {
 							_.delay(function() {
-								var point = animFns.getTargetPoint(target, boardElement);
+								var point = animFns.targetCenter(target, boardElement);
 								var prideGain = 1;
 								if(target.card.faction === dominantFaction) {
 									prideGain = 2;

@@ -10,13 +10,13 @@ angular.module('futurism')
 
 				scope.$on('event:smmn', function(srcScope, update) {
 
-					var updatingTargets = animFns.getUpdatedTargets(update);
+					var updatingTargets = animFns.updatedAnimTargets(update);
 					var effect;
 					var srcPoint;
 					var destPoint = {x: 0, y: 0};
 
 					_.each(updatingTargets, function(updatingTarget) {
-						var point = animFns.getTargetPoint(updatingTarget.target, boardElement);
+						var point = animFns.targetCenter(updatingTarget.target, boardElement);
 						if(!updatingTarget.target.card) {
 							destPoint = point;
 						}

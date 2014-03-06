@@ -12,8 +12,8 @@ angular.module('futurism')
 
 					var targetChain = update.data;
 
-					var abom = animFns.getUpdatedTarget(update, targetChain[0]);
-					var victim = animFns.getUpdatedTarget(update, targetChain[1]);
+					var abom = animFns.makeAnimTarget(update, targetChain[0]);
+					var victim = animFns.makeAnimTarget(update, targetChain[1]);
 
 					var abomElem = $('.card-small.cid-'+abom.target.card.cid);
 					var victimElem = $('.card-small.cid-'+victim.target.card.cid);
