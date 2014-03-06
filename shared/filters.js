@@ -16,6 +16,13 @@
 	}
 
 
+	filters.notSelf = function(targets, me, board, targetChain) {
+		return _.filter(targets, function(target) {
+			return !targetChain || !targetChain[0] || target.card.cid !== targetChain[0].card.cid;
+		});
+	};
+
+
 	filters.commanderFirst = function(targets, me) {
 		var isCommanderInHand = _.where(me.hand, {commander: true}).length > 0;
 		return _.filter(targets, function(target) {

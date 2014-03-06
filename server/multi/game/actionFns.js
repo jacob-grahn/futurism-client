@@ -108,7 +108,7 @@ var actionFns = {
 			var filters = action.restrict[index];
 
 			if(filters) {
-				var validTargets = module.exports.useFilters(filters, player, [target], board);
+				var validTargets = module.exports.useFilters(filters, player, [target], board, targets);
 				if(validTargets.length === 0) {
 					valid = false;
 				}
@@ -124,11 +124,12 @@ var actionFns = {
 	 * @param {object} player
 	 * @param {Array} targets
 	 * @param {Board} board
+	 * @param {Array} targetChain
 	 */
-	useFilters: function(filters, player, targets, board) {
+	useFilters: function(filters, player, targets, board, targetChain) {
 		var filtered = _.clone(targets);
 		_.each(filters, function(filter) {
-			filtered = filter(filtered, player, board);
+			filtered = filter(filtered, player, board, targetChain);
 		});
 		return filtered;
 	}

@@ -163,7 +163,7 @@
 		abom: {
 			restrict: [
 				[filters.owned],
-				[filters.friend, filters.full]
+				[filters.friend, filters.full, filters.notSelf]
 			],
 			use: function(src, target) {
 				var tCard = target.card;

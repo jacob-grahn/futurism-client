@@ -82,10 +82,11 @@ angular.module('futurism')
 				if(state.name !== state.TARGETING) {
 					return false;
 				}
-				var filters = state.data.restrict[state.data.targets.length];
+				var targetChain = state.data.targets;
+				var filters = state.data.restrict[targetChain.length];
 				var targets = [target];
 				_.each(filters, function(filter) {
-					targets = filter(targets, players.me, board);
+					targets = filter(targets, players.me, board, targetChain);
 				});
 				return targets.length !== 0;
 			},
