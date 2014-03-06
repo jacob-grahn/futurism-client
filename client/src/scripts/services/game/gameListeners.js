@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('gameListeners', function($routeParams, $location, socket, players, turn, board, state, hand, animator) {
+	.factory('gameListeners', function($routeParams, $location, socket, players, turn, board, state, hand, animator, autoTurnEnder) {
 		'use strict';
 		var self = this;
 
@@ -28,6 +28,7 @@ angular.module('futurism')
 				_.merge(players.list, changes.players);
 				board.partialUpdate(changes.board);
 				players.me = players.findMe();
+				autoTurnEnder.run();
 			});
 		});
 

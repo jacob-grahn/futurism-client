@@ -62,7 +62,6 @@ angular.module('futurism')
 				 * @param {Number} effectCount
 				 */
 				var addEffects = function(healee, effectCount) {
-					console.log('addEffect', healee, effectCount);
 
 					// add the effect
 					var effect = $('<div class="heal-effect"><div class="heal-effect-inner">+</div></div>')

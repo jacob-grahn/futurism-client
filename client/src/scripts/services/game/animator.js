@@ -30,7 +30,6 @@ angular.module('futurism')
 					var task = queue[0];
 					running = true;
 					if(task.name) {
-						console.log('*** begin animating '+task.name+' ***', task.changes);
 						$rootScope.$broadcast('event:'+task.name, task.changes);
 						$timeout(onAnimationComplete, 2500); //fallback timeout...
 					}
@@ -53,7 +52,6 @@ angular.module('futurism')
 
 		var onAnimationComplete = function() {
 			if(queue.length > 0) {
-				console.log('*** animation complete ***');
 				var task = queue.shift();
 				running = false;
 				task.callback();
