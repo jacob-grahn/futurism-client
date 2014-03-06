@@ -1,7 +1,8 @@
-<turn-anim></turn-anim>
+<div id="game" class="row" auto-scroll watch="state" find="scroll-here" target="board-area">
 
-<div id="game" class="clearfix" auto-scroll watch="state" find="scroll-here" target="board-area">
-	<ul class="board col-sm-7 inverse" summon-anim attack-anim rally-anim>
+	<turn-anim></turn-anim>
+
+	<ul id="board" class="board col-sm-7 inverse" summon-anim attack-anim rally-anim>
 		<li class="row" ng-repeat="area in board.areas | teamSort:players.me.team">
 			<div class="board-area clearfix">
 
@@ -21,21 +22,24 @@
 		</li>
 	</ul>
 
-	<div class="col-sm-5 panel panel-default" match-screen-height ng-transclude resize-element=".auto-size" offset-top="0" offset-bottom="100">
-		<div class="future-desc panel-segment">
-			<h1>Normal</h1>
-			Nothing is especially fancy about this future.
+	<div class="col-sm-5">
+		<div id="game-panel" class="panel panel-default" match-screen-height resize-element=".auto-size" offset-bottom="100">
+			<div class="future-desc panel-segment">
+				<h1>Normal</h1>
+				Nothing is especially fancy about this future.
+			</div>
+			<ul class="game-buttons panel-segment clearfix">
+				<li>
+					<button class='btn btn-default' ng-click="endTurn(); hand.close();" ng-disabled="!turn.isMyTurn()">{{lang.game.endTurn}}</button>
+				</li>
+				<li>
+					<button class='btn btn-default' ng-click="forfeit()">{{lang.game.forfeit}}</button>
+				</li>
+			</ul>
+			<chat-display class="panel-segment" room="{{chatId}}"></chat-display>
 		</div>
-		<ul class="game-buttons panel-segment clearfix">
-			<li>
-				<button class='btn btn-default' ng-click="endTurn(); hand.close();" ng-disabled="!turn.isMyTurn()">{{lang.game.endTurn}}</button>
-			</li>
-			<li>
-				<button class='btn btn-default' ng-click="forfeit()">{{lang.game.forfeit}}</button>
-			</li>
-		</ul>
-		<chat-display class="panel-segment" room="{{chatId}}"></chat-display>
 	</div>
+
 
 	<div ng-show="hand.show && hand.cards.length > 0" id="hand">
 		<div id="hand-content">
@@ -48,4 +52,5 @@
 			</ul>
 		</div>
 	</div>
+
 </div>

@@ -1,49 +1,50 @@
-<div id="lobby-matchups" class="col-sm-7">
+<div id="lobby" class="row">
 
-	<div class="col-sm-12">
+	<div id="lobby-matchups" class="col-sm-7">
+
 		<div class="row">
-
-			<h1 class="inverse">{{lang.lobby.start}}</h1>
-			<ul class="game-starters">
-				<li><button class='btn btn-default' ng-click="matchups.createMatchup({players: 2, pride: 20, futures: 0})">{{lang.lobby.shortGame}}</button></li>
-				<li><button class='btn btn-default' ng-click="matchups.createMatchup({players: 2, pride: 40, futures: 1})">{{lang.lobby.mediumGame}}</button></li>
-				<li><button class='btn btn-default' ng-click="matchups.createMatchup({players: 2, pride: 60, futures: 3})">{{lang.lobby.longGame}}</button></li>
-				<li><button class='btn btn-default' ng-click="matchups.createMatchup({players: 4, pride: 60, futures: 3})">{{lang.lobby.customGame}}</button></li>
-			</ul>
-
+			<div class="col-sm-12">
+				<h1 class="inverse">{{lang.lobby.start}}</h1>
+				<ul class="game-starters">
+					<li><button class='btn btn-default' ng-click="matchups.createMatchup({players: 2, pride: 20, futures: 0})">{{lang.lobby.shortGame}}</button></li>
+					<li><button class='btn btn-default' ng-click="matchups.createMatchup({players: 2, pride: 40, futures: 1})">{{lang.lobby.mediumGame}}</button></li>
+					<li><button class='btn btn-default' ng-click="matchups.createMatchup({players: 2, pride: 60, futures: 3})">{{lang.lobby.longGame}}</button></li>
+					<li><button class='btn btn-default' ng-click="matchups.createMatchup({players: 4, pride: 60, futures: 3})">{{lang.lobby.customGame}}</button></li>
+				</ul>
+			</div>
 		</div>
+
+
+		<div class="row">
+			<div class="col-sm-12">
+				<h1 class="inverse">{{lang.lobby.join}}</h1>
+				<ul class="list-group">
+					<li class="list-group-item matchup" ng-repeat="matchup in matchups.matchups" ng-click="matchups.join(matchup.id)">
+						<h3>{{matchup.rules.players}} {{lang.lobby.player}} / {{matchup.rules.pride}} {{lang.lobby.pride}} / {{matchup.rules.futures}} {{lang.lobby.futures}}</h3>
+						<ul class="matchup-members">
+							<li ng-repeat="user in matchup.accounts">
+								<div username name="{{user.name}}" id="{{user._id}}" site="{{user.site}}" group="{{user.group}}"></div>
+							</li>
+						</ul>
+						<button class='btn btn-default'>{{lang.lobby.join}}</button>
+					</li>
+				</ul>
+			</div>
+		</div>
+
 	</div>
 
 
-	<div class="col-sm-12">
-		<div class="row">
+	<div id="lobby-chat" class="col-sm-5">
 
-			<h1 class="inverse">{{lang.lobby.join}}</h1>
-			<ul class="list-group">
-				<li class="list-group-item matchup" ng-repeat="matchup in matchups.matchups" ng-click="matchups.join(matchup.id)">
-					<h3>{{matchup.rules.players}} {{lang.lobby.player}} / {{matchup.rules.pride}} {{lang.lobby.pride}} / {{matchup.rules.futures}} {{lang.lobby.futures}}</h3>
-					<ul class="matchup-members">
-						<li ng-repeat="user in matchup.accounts">
-							<div username name="{{user.name}}" id="{{user._id}}" site="{{user.site}}" group="{{user.group}}"></div>
-						</li>
-					</ul>
-					<button class='btn btn-default'>{{lang.lobby.join}}</button>
-				</li>
-			</ul>
-
+		<div id="lobby-chat-panel" class="panel panel-default" match-screen-height resize-element=".auto-size" offset-bottom="100">
+			<div class="panel-segment">
+				<h1>{{model.lobby._id}}</h1>
+				<select ng-model="model.lobby" ng-options="lby._id for lby in lobbies"></select>
+				<chat-display id="lobby-chat" room="{{chatId}}"></chat-display>
+			</div>
 		</div>
-	</div>
 
-</div>
-
-
-
-<div id="lobby-panel" class="col-sm-5 panel panel-default" match-screen-height ng-transclude offset-bottom="100" resize-element=".auto-size">
-
-	<div class="panel-segment">
-		<h1>{{model.lobby._id}}</h1>
-		<select ng-model="model.lobby" ng-options="lby._id for lby in lobbies"></select>
-		<chat-display id="lobby-chat" room="{{chatId}}"></chat-display>
 	</div>
 
 </div>

@@ -12,23 +12,6 @@ angular.module('futurism')
 
 
 			/**
-			 * Allow content inside the div to remain if you add the ng-transclude attribute
-			 */
-			transclude: true,
-
-
-			/**
-			 * example: <div match-screen-height subtract="20"></div>
-			 */
-			/*scope: {
-				subtract: '@',
-				resizeElement: '@',
-				breakWidth: '@',
-				breakHeight: '@'
-			},*/
-
-
-			/**
 			 * Auto resize the target element to match the height of the screen
 			 * example: <div ng-transclude match-screen-height subtract="20">transclude allows these words to appear here</div>
 			 * @param {object} scope
@@ -44,7 +27,7 @@ angular.module('futurism')
 				var offsetBottom = Number(attrs.offsetBottom) || 0;
 				var subtractHeight = offsetTop + offsetBottom;
 				var breakWidth = attrs.breakWidth || 768;
-				var breakHeight = attrs.breakHeight || 300;
+				var defaultHeight = attrs.defaultHeight || 300;
 				var resizeElement = attrs.resizeElement;
 
 
@@ -60,45 +43,49 @@ angular.module('futurism')
 				 */
 				var resizeHandler = function() {
 
-					// calculate the target height
-					var targetHeight;
+					// default display for phones
 					if(jWindow.width() < breakWidth) {
-						targetHeight = breakHeight;
-					}
-					else {
-						targetHeight = jWindow.height() - subtractHeight;
+						elem.removeAttr( 'style' );
+						becomeHeight(defaultHeight)
 					}
 
-					// try tp make the html element that height
+					// fixed display for wider screens
+					else {
+
+						// detatch from document flow
+						elem.css({
+							'position': 'fixed'
+						});
+
+						// match screen height
+						var targetHeight = jWindow.height() - subtractHeight;
+						becomeHeight(targetHeight);
+
+						// match containing element width
+						var parent = elem.parent();
+						elem.css({
+							'width': parent.width()
+						});
+					}
+
+				};
+
+
+				var becomeHeight = function(height) {
 					if(!attrs.resizeElement) {
 						elem.css({
-							'height': targetHeight
+							'height': height
 						});
 					}
 					else {
 						var target = elem.find(resizeElement);
 						var diff = elem.height() - target.height();
 						target.css({
-							'height': (targetHeight - diff)
+							'height': (height - diff)
 						});
 					}
 				};
-				jWindow.on('resize', resizeHandler);
 
-
-				/**
-				 *
-				 */
-				var scrollHandler = function() {
-					var scrollTo = 0;
-					if(jWindow.width() >= breakWidth) {
-						scrollTo = offsetTop + jWindow.scrollTop();
-					}
-					elem.css({
-						'margin-top': scrollTo
-					});
-				};
-				jWindow.on('scroll', scrollHandler);
 
 
 				/**
@@ -116,12 +103,19 @@ angular.module('futurism')
 				}, 10000);
 
 
+
+				/**
+				 * add listeners
+				 */
+				jWindow.on('resize', resizeHandler);
+
+
+
 				/**
 				 * Clean up the event listener when this element is removed
 				 */
 				scope.$on('$destroy', function() {
 					jWindow.off('resize', resizeHandler);
-					jWindow.off('scroll', scrollHandler);
 				});
 			}
 		};

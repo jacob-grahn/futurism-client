@@ -23,19 +23,12 @@
 @import "username";
 @import "you-panel";
 
-html, body {
-  margin: 20px;
-}
-
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	background-image: url("/images/futurism-bg-960x540.jpg");
   background-repeat: no-repeat;
   background-color: #000000;
   background-attachment: fixed;
-  //background-position: center;
-  margin: 0 0 0 0;
-  padding: 50px 0 0 0;
   color: $dark-blend;
 }
 
@@ -43,6 +36,10 @@ body {
 	body {
 		background-image: url("/images/futurism-bg-1920x1080.jpg");
 	}
+}
+
+#main-container {
+	padding: 70px 20px 20px 20px;
 }
 
 h1 {
