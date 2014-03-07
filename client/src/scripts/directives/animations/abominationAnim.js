@@ -10,27 +10,20 @@ angular.module('futurism')
 
 				scope.$on('event:abom', function(srcScope, update) {
 
-					var targetChain = update.data;
+					var animTargets = animFns.chainedAnimTargets(update, update.data);
+					var abom = animTargets[0];
+					var victim = animTargets[1];
 
-					var abom = animFns.makeAnimTarget(update, targetChain[0]);
-					var victim = animFns.makeAnimTarget(update, targetChain[1]);
-
-					var abomElem = $('.card-small.cid-'+abom.target.card.cid);
-					var victimElem = $('.card-small.cid-'+victim.target.card.cid);
-
-					var abomOffset = animFns.relativeOffset(abomElem, boardElem);
-					var victimOffset = animFns.relativeOffset(victimElem, boardElem);
-
-					var cloneElem = victimElem.clone(false);
+					var cloneElem = victim.elem.find('.card-small').clone();
 
 					cloneElem.css({
 						position: 'absolute',
-						top: victimOffset.top,
-						left: victimOffset.left,
+						top: victim.offset.top,
+						left: victim.offset.left,
 						'z-index': 99
 					});
 
-					makeGrabbers(4, abomOffset, victimOffset, function() {
+					makeGrabbers(4, abom.offset, victim.offset, function() {
 						$('.grabber-effect')
 							.animate({
 								width: 1
@@ -40,8 +33,8 @@ angular.module('futurism')
 
 						cloneElem
 							.animate({
-								top: abomOffset.top,
-								left: abomOffset.left
+								top: abom.offset.top,
+								left: abom.offset.left
 							}, 'slow')
 							.animate({
 								opacity: 0
