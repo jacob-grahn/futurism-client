@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('summonAnim', function(_, $, $timeout, $rootScope, animFns) {
+	.directive('summonAnim', function(_, $, $timeout, animFns) {
 		'use strict';
 
 
@@ -33,10 +33,6 @@ angular.module('futurism')
 					effect.css({left: srcPoint.x, top: srcPoint.y});
 					effect.animate({left: destPoint.x, top: destPoint.y});
 					boardElement.append(effect);
-
-					$timeout(function() {
-						$rootScope.$broadcast('event:animationComplete');
-					}, 1000);
 
 					$timeout(function() {
 						effect.remove();

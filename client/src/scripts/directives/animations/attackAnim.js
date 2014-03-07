@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('attackAnim', function($, $rootScope, maths, animFns) {
+	.directive('attackAnim', function($, maths, animFns) {
 		'use strict';
 
 
@@ -18,12 +18,7 @@ angular.module('futurism')
 					animAttack(attacker, defender, function() {
 						console.log('defender', defender);
 						if( (!defender.newData || defender.newData.health > 0) && defender.target.card.attack > 0) {
-							animAttack(defender, attacker, function() {
-								done();
-							});
-						}
-						else {
-							done();
+							animAttack(defender, attacker, function() {});
 						}
 					});
 				});
@@ -64,15 +59,6 @@ angular.module('futurism')
 							callback();
 						}));
 				};
-
-
-				var done = function() {
-					$rootScope.$apply(function() {
-						$rootScope.$broadcast('event:animationComplete');
-					});
-				};
-
-
 
 			}
 		};

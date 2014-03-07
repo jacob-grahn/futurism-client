@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('rallyAnim', function(_, $, $rootScope, board, players, animFns) {
+	.directive('rallyAnim', function(_, $, board, players, animFns) {
 		'use strict';
 
 
@@ -39,12 +39,9 @@ angular.module('futurism')
 						_.delay(function() {
 							var allEffects = boardElement.find('.rally-effect');
 							var descPosition = animFns.relativeOffset(boardElement.find('#area-desc-'+player._id), boardElement);
-							allEffects.animate({left: descPosition.left + 10, top: descPosition.top - 25, opacity: 0}, {complete: function() {
-								$rootScope.$apply(function() {
-									$rootScope.$broadcast('event:animationComplete');
-								});
+							allEffects.animate({left: descPosition.left + 10, top: descPosition.top - 25, opacity: 0}, function() {
 								allEffects.remove();
-							}});
+							});
 
 						}, delay + 1000);
 					});

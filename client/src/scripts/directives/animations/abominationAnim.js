@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('abominationAnim', function($, $rootScope, maths, animFns) {
+	.directive('abominationAnim', function($, maths, animFns) {
 		'use strict';
 
 
@@ -51,7 +51,6 @@ angular.module('futurism')
 					});
 
 					boardElem.append(cloneElem);
-					$rootScope.$broadcast('event:animationComplete');
 				});
 
 

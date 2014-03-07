@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('gameListeners', function($routeParams, $location, socket, players, turn, board, state, hand, animator, autoTurnEnder) {
+	.factory('gameListeners', function($routeParams, $location, socket, players, turn, board, state, hand, updateDelayer, autoTurnEnder) {
 		'use strict';
 		var self = this;
 
@@ -10,7 +10,7 @@ angular.module('futurism')
 			players.list = data.players;
 			players.me = players.findMe();
 			board.fullUpdate(data.board);
-			animator.animateUpdate('turn', data, function() {
+			updateDelayer.add('turn', data, function() {
 				self.startTurn(data);
 			});
 		});
@@ -24,7 +24,7 @@ angular.module('futurism')
 			var changes = data.changes;
 			changes.data = data.data;
 
-			animator.animateUpdate(cause, changes, function() {
+			updateDelayer.add(cause, changes, function() {
 				_.merge(players.list, changes.players);
 				board.partialUpdate(changes.board);
 				players.me = players.findMe();
@@ -37,7 +37,7 @@ angular.module('futurism')
 		 * Receive a new turn
 		 */
 		socket.$on('turn', function(data) {
-			animator.animateUpdate('turn', data, function() {
+			updateDelayer.add('turn', data, function() {
 				self.startTurn(data);
 			});
 		});
@@ -47,7 +47,7 @@ angular.module('futurism')
 		 * The game is over
 		 */
 		socket.$on('gameOver', function() {
-			animator.animateUpdate('gameOver', null, function() {
+			updateDelayer.add('gameOver', null, function() {
 				$location.url('/summary/' + $routeParams.gameId);
 			});
 		});

@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('healAnim', function($, $rootScope, animFns) {
+	.directive('healAnim', function($, animFns) {
 		'use strict';
 
 
@@ -27,8 +27,6 @@ angular.module('futurism')
 					else {
 						addEffects(healee, 0);
 					}
-
-					$rootScope.$broadcast('event:animationComplete');
 				});
 
 

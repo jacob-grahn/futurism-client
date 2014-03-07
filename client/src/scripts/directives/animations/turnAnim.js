@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('turnAnim', function($, $timeout, $rootScope, players) {
+	.directive('turnAnim', function($, $timeout, players) {
 		'use strict';
 
 		return {
@@ -21,10 +21,8 @@ angular.module('futurism')
 						scope.active = true;
 						$timeout(function() {
 							scope.active = false;
-						}, 4000);
+						}, 3000);
 					}
-
-					$rootScope.$broadcast('event:animationComplete');
 				});
 			}
 		};
