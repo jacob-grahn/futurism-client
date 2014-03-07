@@ -13,11 +13,16 @@ angular.module('futurism')
 
 					var targets = board.playerTargets(me.user._id);
 
+					var filledTargets = _.filter(targets, function(target) {
+						return target.card;
+					});
+
 					var unusedTargets = _.filter(targets, function(target) {
 						return target.card && target.card.moves > 0;
 					});
 
-					if(unusedTargets.length === 0) {
+					if(unusedTargets.length === 0 && filledTargets.length > 0) {
+						console.log('ennnding tuuuurn');
 						_.delay(function() {
 							socket.emit('endTurn', {gameId: $routeParams.gameId});
 						}, 1000);
