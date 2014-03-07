@@ -32,10 +32,11 @@ angular.module('futurism')
 					var task = queue.shift();
 					running = true;
 
-					if(task.name) {
-						$rootScope.$broadcast('event:'+task.name, task.changes);
-					}
+					$rootScope.$broadcast('pre:'+task.name, task.changes);
+
 					task.callback(task);
+
+					$rootScope.$broadcast('post:'+task.name, task.changes);
 
 					$timeout(function() {
 						running = false;

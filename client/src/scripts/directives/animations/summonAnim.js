@@ -8,36 +8,38 @@ angular.module('futurism')
 			link: function(scope, boardElement) {
 
 
-				scope.$on('event:smmn', function(srcScope, update) {
+				scope.$on('post:smmn', function(srcScope, update) {
 
-					var updatingTargets = animFns.updatedAnimTargets(update);
-					var effect;
-					var srcPoint;
-					var destPoint = {x: 0, y: 0};
 
-					_.each(updatingTargets, function(updatingTarget) {
-						var point = animFns.targetCenter(updatingTarget.target, boardElement);
-						if(!updatingTarget.target.card) {
-							destPoint = point;
-						}
-						else {
-							srcPoint = point;
-						}
+					_.delay(function() {
+
+
+						// get positions
+						var chain = animFns.chainedAnimTargets(update, update.data);
+						var src = chain[0] || chain[2];
+						var dest = chain[2];
+
+
+						// hide the new card for a bit
+						dest.elem.addClass('target-hidden');
+						_.delay(function() {
+							dest.elem.removeClass('target-hidden');
+						}, 1000);
+
+
+						// make the swirly animation
+						var effect = $('<div class="summon-effect"><div class="effect"></div><div class="effect"></div></div>');
+						effect.css({left: src.center.x, top: src.center.y});
+						effect.animate({left: dest.center.x, top: dest.center.y});
+						boardElement.append(effect);
+
+						$timeout(function() {
+							effect.remove();
+						}, 2000);
 					});
 
-					if(!srcPoint) {
-						srcPoint = destPoint;
-					}
 
-					effect = $('<div class="summon-effect"><div class="effect"></div><div class="effect"></div></div>');
-					effect.css({left: srcPoint.x, top: srcPoint.y});
-					effect.animate({left: destPoint.x, top: destPoint.y});
-					boardElement.append(effect);
-
-					$timeout(function() {
-						effect.remove();
-					}, 2000);
-				});
+				}, 0);
 
 
 			}

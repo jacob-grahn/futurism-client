@@ -78,6 +78,10 @@ $outline: rgba(82, 79, 73, .75);
 	cursor: pointer;
 }
 
+.target-hidden .card {
+	display: none;
+}
+
 .players .desc {
 	color: grey;
 	font-size: 12px;

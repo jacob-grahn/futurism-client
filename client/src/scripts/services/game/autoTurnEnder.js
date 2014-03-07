@@ -22,7 +22,6 @@ angular.module('futurism')
 					});
 
 					if(unusedTargets.length === 0 && filledTargets.length > 0) {
-						console.log('ennnding tuuuurn');
 						_.delay(function() {
 							socket.emit('endTurn', {gameId: $routeParams.gameId});
 						}, 1000);

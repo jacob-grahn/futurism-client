@@ -39,6 +39,10 @@ angular.module('futurism')
 
 
 			makeAnimTarget: function(update, targetPos) {
+				if(!targetPos.column) {
+					return null;
+				}
+
 				var target = board.targetPos(targetPos);
 				var elem = self.targetElem(target);
 				var boardElem = $('#board');
