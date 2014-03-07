@@ -14,6 +14,9 @@
 			<span ng-if="useButtons != 'true'">{{lang.abilities[abilityId].name}}</span>
 			<button ng-if="useButtons == 'true'" ng-click="actionFn({abilityId: abilityId, card: card})">{{lang.abilities[abilityId].name}}</button>
 		</li>
+		<li ng-if="useButtons == 'true'">
+			<button ng-click="actionFn({abilityId: 'prde', card: card})">{{lang.abilities['prde'].name}}</button>
+		</li>
 	</ul>
 
 	<div class="card-story">{{card.story}}</div>

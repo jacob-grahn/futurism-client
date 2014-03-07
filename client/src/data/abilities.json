@@ -40,6 +40,28 @@
 			}
 		},
 
+		"prde": {
+			"name": {
+				"en": "pride",
+				"ct": "meow",
+				"ne": "Trots",
+				"lt": "Vertė",
+				"hu": "Büszkeség",
+				"nb": "Stolthet",
+				"pi": "Pride",
+				"it": "Valore"
+			},
+			"desc": {
+				"en": "Produce pride, which can be use to play more cards.",
+				"ne": "Produceer de Trots, zodat je meer kaarten kunt gebruiken.",
+				"lt": "Vertės generavimas, kuri leidžia naudoti daugiau kortų.",
+				"hu": "Produce pride, which can be use to play more cards.",
+				"nb": "Produserer stolthet, som kan bli brukt for å spille fler kort.",
+				"pi": "Boosts yar pirate's pride, which lets mor' pirates arrive in the battle.",
+				"it": "Produci valore, che può essere usato per giocare più carte."
+			}
+		},
+
 		"attk": {
 			"name": {
 				"en": "attack",

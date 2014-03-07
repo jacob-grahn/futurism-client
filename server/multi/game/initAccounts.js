@@ -3,6 +3,7 @@
 var _ = require('lodash');
 var gameLookup = require('./gameLookup');
 var factions = require('../../../shared/factions');
+var actions = require('../../../shared/actions');
 var Player = require('./player');
 var nextCid = require('./nextCid');
 
@@ -39,7 +40,7 @@ var makeAccountCard = function(account) {
 		attack: 0,
 		health: 10,
 		story: '',
-		abilities: ['smmn', 'rlly', 'futr'],
+		abilities: [actions.SUMMON, actions.FUTURE],
 		hasImage: true,
 		cid: nextCid(),
 		moves: 0,

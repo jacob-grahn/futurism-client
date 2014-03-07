@@ -58,10 +58,11 @@
 
 
 		/**
-		 * Rally: generate pride
+		 * Pride: generate pride
 		 */
-		RALLY: 'rlly',
-		rlly: {
+		PRIDE: 'prde',
+		prde: {
+			free: true,
 			restrict: [
 				[filters.owned]
 			],
@@ -85,6 +86,7 @@
 				_.pull(src.player.hand, target1.card);
 				src.player.pride -= target1.card.pride;
 				target2.card = target1.card;
+				target1.card.moves = 0;
 			}
 		},
 
@@ -101,22 +103,6 @@
 
 			}
 		},
-
-
-		/**
-		 * Enter: join the game at a pride cost
-		 */
-		/*entr: {
-			restrict: [
-				[filters.playable, filters.owned, filters.affordable],
-				[filters.owned, filters.empty]
-			],
-			use: function(src, target) {
-				_.pull(src.player.hand, src.card);
-				src.player.pride -= src.card.pride;
-				target.card = src.card;
-			}
-		},*/
 
 
 		/////////////////////////////////////////////////////////////////////////////////////////
