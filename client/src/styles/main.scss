@@ -137,6 +137,7 @@ ul {
 	display: block;
 	height: 0;
 	overflow: visible;
+	outline: none;
 }
 
 .modal-body:before,
@@ -150,5 +151,4 @@ ul {
 	display: table;
 	content: " ";
 }
-
 
