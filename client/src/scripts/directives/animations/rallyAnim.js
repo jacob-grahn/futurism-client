@@ -8,7 +8,7 @@ angular.module('futurism')
 			link: function(scope, boardElement) {
 
 
-				scope.$on('event:rlly', function(srcScope, update) {
+				scope.$on('post:rlly', function(srcScope, update) {
 
 					var dominantFaction = update.data;
 

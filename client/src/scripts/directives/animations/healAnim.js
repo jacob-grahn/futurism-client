@@ -8,7 +8,7 @@ angular.module('futurism')
 			link: function(scope, boardElem) {
 
 
-				scope.$on('event:heal', function(srcScope, update) {
+				scope.$on('post:heal', function(srcScope, update) {
 
 					var targetChain = update.data;
 					var animChain = animFns.chainedAnimTargets(update, targetChain);

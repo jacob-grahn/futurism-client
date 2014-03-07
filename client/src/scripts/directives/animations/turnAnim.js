@@ -11,7 +11,7 @@ angular.module('futurism')
 				scope.active = false;
 				scope.name = '';
 
-				scope.$on('event:turn', function(srcScope, changes) {
+				scope.$on('post:turn', function(srcScope, changes) {
 
 					var playerId = changes.turnOwners[0];
 					var player = players.idToPlayer(playerId);

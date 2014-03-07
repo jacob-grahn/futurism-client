@@ -8,7 +8,7 @@ angular.module('futurism')
 			link: function(scope, boardElem) {
 
 
-				scope.$on('event:abom', function(srcScope, update) {
+				scope.$on('post:abom', function(srcScope, update) {
 
 					var animTargets = animFns.chainedAnimTargets(update, update.data);
 					var abom = animTargets[0];

@@ -8,7 +8,7 @@ angular.module('futurism')
 			link: function(scope, boardElement) {
 
 
-				scope.$on('event:smmn', function(srcScope, update) {
+				scope.$on('post:smmn', function(srcScope, update) {
 
 
 					_.delay(function() {
