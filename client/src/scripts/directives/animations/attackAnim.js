@@ -10,13 +10,12 @@ angular.module('futurism')
 
 				scope.$on('event:attk', function(srcScope, update) {
 
-					var targets = update.data;
+					var animTargets = animFns.chainedAnimTargets(update, update.data);
 
-					var attacker = animFns.makeAnimTarget(update, targets[0]);
-					var defender = animFns.makeAnimTarget(update, targets[1]);
+					var attacker = animTargets[0];
+					var defender = animTargets[1];
 
 					animAttack(attacker, defender, function() {
-						console.log('defender', defender);
 						if( (!defender.newData || defender.newData.health > 0) && defender.target.card.attack > 0) {
 							animAttack(defender, attacker, function() {});
 						}
@@ -25,6 +24,7 @@ angular.module('futurism')
 
 
 				var animAttack = function(attacker, defender, callback) {
+					console.log('anim attack', attacker, defender);
 					var srcPoint = animFns.targetCenter(attacker.target, boardElement);
 					var destPoint = animFns.targetCenter(defender.target, boardElement);
 
