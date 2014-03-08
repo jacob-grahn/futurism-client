@@ -8,7 +8,23 @@ angular.module('futurism')
 			link: function(scope, boardElement) {
 
 
+				scope.$on('post:male', function(srcScope, update) {
+					anim(update, 'summon-sex');
+				});
+
+
+				scope.$on('post:feml', function(srcScope, update) {
+					anim(update, 'summon-sex');
+				});
+
+
 				scope.$on('post:smmn', function(srcScope, update) {
+					anim(update, '');
+				});
+
+
+
+				var anim = function(update, cssClass) {
 
 
 					_.delay(function() {
@@ -28,7 +44,7 @@ angular.module('futurism')
 
 
 						// make the swirly animation
-						var effect = $('<div class="summon-effect"><div class="effect"></div><div class="effect"></div></div>');
+						var effect = $('<div class="summon-effect '+cssClass+'"><div class="effect"></div><div class="effect"></div></div>');
 						effect.css({left: src.center.x, top: src.center.y});
 						effect.animate({left: dest.center.x, top: dest.center.y});
 						boardElement.append(effect);
@@ -39,7 +55,7 @@ angular.module('futurism')
 					});
 
 
-				}, 0);
+				};
 
 
 			}

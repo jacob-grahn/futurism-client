@@ -12,12 +12,16 @@
 }
 
 .summon-effect .effect {
-	background-image: url("/images/effects/summon.png");
+	background-image: url("/images/summon.png");
 	width: 200px;
 	height: 200px;
 	position: absolute;
 	top: -100px;
 	left: -100px;
+}
+
+.summon-sex .effect {
+	background-image: url("/images/heart.png");
 }
 
 .summon-effect .effect:first-child {
