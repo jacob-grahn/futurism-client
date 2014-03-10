@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('Chat', function(socket) {
+	.factory('Chat', function(socket, lang) {
 		'use strict';
 
 
@@ -37,6 +37,13 @@ angular.module('futurism')
 			};
 
 
+			var onNotify = function(data) {
+				if(lang.notify[data.message]) {
+					console.log('onNotify match', lang.notify[data.message]);
+				}
+			};
+
+
 			/**
 			 * public
 			 */
@@ -54,6 +61,7 @@ angular.module('futurism')
 					socket.emit('chatHistory', {roomName: roomName});
 					socket.$on('chat', onChat);
 					socket.$on('chatHistory', onChatHistory);
+					socket.$on('notify', onNotify);
 				},
 
 

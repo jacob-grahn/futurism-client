@@ -68,8 +68,11 @@
 
 			$http.get('data/abilities.json').success(onLoad).error(onError);
 			$http.get('data/factions.json').success(onLoad).error(onError);
+			$http.get('data/fractures.json').success(onLoad).error(onError);
 			$http.get('data/futures.json').success(onLoad).error(onError);
+			$http.get('data/goals.json').success(onLoad).error(onError);
 			$http.get('data/languages.json').success(onLoad).error(onError);
+			$http.get('data/notifications.json').success(onLoad).error(onError);
 			$http.get('data/phrases.json').success(onLoad).error(onError);
 		};
 
