@@ -13,7 +13,7 @@ angular.module('futurism')
 					var targetChain = update.data;
 					var target = board.targetPos(targetChain[0]);
 					var player = target.player;
-					
+
 
 					var targets = board.playerTargets(player._id);
 					var delay = 0;

@@ -35,6 +35,12 @@ angular.module('futurism')
 			self.areas = {};
 
 			_.each(minBoard.areas, function(minArea, playerId) {
+
+				if(!minArea) {
+					self.areas[playerId] = [];
+					return;
+				}
+
 				var area = {};
 				var targets = [];
 				area.playerId = playerId;

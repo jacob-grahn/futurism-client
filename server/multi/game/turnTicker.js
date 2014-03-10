@@ -14,10 +14,13 @@
 	 */
 	var TurnTicker = function(players, timePerTurn) {
 		var self = this;
-		var intervalId;
 		var running = false;
+		var playerCount = players.length;
+		var intervalId;
 		var beginCallback;
 		var endCallback;
+
+		timePerTurn = timePerTurn || 30000;
 
 		self.turn = 0;
 		self.turnOwners = [];
@@ -91,6 +94,17 @@
 
 
 		/**
+		 * select players based on which turn it is
+		 */
+		var getTurnOwners = function(turn) {
+			var index = turn % playerCount;
+			var player = players[index];
+			var owners = [player];
+			return owners;
+		};
+
+
+		/**
 		 * Return an array of userIds that are active this turn
 		 */
 		self.getTurnOwnerIds = function() {
@@ -101,28 +115,35 @@
 
 
 		/**
+		 * Return numbers of active players there are this turn
+		 * @returns {number}
+		 */
+		self.getActivePlayers = function() {
+			var activePlayers = _.filter(self.turnOwners, function(player) {
+				return !player.forfeited;
+			});
+			return activePlayers.length;
+		};
+
+
+		/**
 		 * Move a turn to the next player in line
 		 */
 		var nextTurn = function() {
 			self.startTime = +new Date();
 			self.populateTurn();
-			intervalId = setTimeout(self.endTurn, timePerTurn);
+
+			var turnExpireTime = timePerTurn;
+			if(self.getActivePlayers() === 0) {
+				turnExpireTime = 1000;
+			}
+
+			intervalId = setTimeout(self.endTurn, turnExpireTime);
+
 			if(beginCallback) {
 				beginCallback(self.startTime);
 			}
 		};
-
-
-		/**
-		 * select players based on which turn it is
-		 */
-		var getTurnOwners = function(turn) {
-			var index = turn % (players.length);
-			var player = players[index];
-			var owners = [player];
-			return owners;
-		};
-
 	};
 
 

@@ -295,8 +295,10 @@
 			player.cards = [];
 			player.hand = [];
 			player.graveyard = [];
+			player.forfeited = true;
 			self.board.areas[player._id].targets = [];
-			self.broadcastChanges();
+			self.broadcastChanges('forfeit');
+			self.endTurn(player);
 		};
 
 

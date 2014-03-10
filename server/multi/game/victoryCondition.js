@@ -14,15 +14,10 @@ module.exports = {
 
 	commanderRules: function(players, board, turn) {
 
-		// don't declare a winner if some people haven't had a turn yet
-		if(turn <= players.length) {
-			return {winner: false}
-		}
-
 		// make a list of teams that have a surviving commander
 		var survivingTeams = [];
 		_.each(players, function(player) {
-			if(playerHasCommander(player, board)) {
+			if(playerHasCommander(player, board) ) {
 				survivingTeams.push(player.team);
 			}
 		});
