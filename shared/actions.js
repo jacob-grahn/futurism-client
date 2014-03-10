@@ -177,18 +177,20 @@
 		},
 
 		/**
-		 * Clone: Sacrifice this unit to produce a duplicate of another unit.
+		 * Vagabond: All allies gain move ability
 		 */
-		CLONE: 'clne',
-		clne: {
+		VAGABOND: 'vgbn',
+		vgbn: {
 			restrict: [
-				[filters.owned],
-				[filters.friend, filters.full]
+				[filters.owned]
 			],
-			use: function(src, target) {
-				src.card.abilities = _.clone(target.card.abilities);
-				src.card.attack = target.card.attack;
-				src.card.name = target.card.name;
+			use: function(src, board) {
+				var targets = board.playerTargets(src.player._id);
+				_.each(targets, function(target) {
+					if(target.card && target.card.abilities.indexOf('move') === -1) {
+						target.card.abilities.push('move');
+					}
+				});
 			}
 		},
 

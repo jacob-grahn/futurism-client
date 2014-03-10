@@ -228,34 +228,12 @@
 			}
 		},
 
-		"clne": {
+		"vgbn": {
 			"name": {
-				"en": "clone",
-				"ko": "복제",
-				"ct": "mewoowo",
-				"fr": "Clone",
-				"pi": "throw overboard",
-				"lt": "Klonas",
-				"ne": "kloon",
-				"sv": "klon",
-				"es": "clonar",
-				"nb": "klone",
-				"it": "clona",
-				"hu": "klón"
+				"en": "vagabond"
 			},
 			"desc": {
-				"en": "Sacrifice this unit to produce a duplicate of another unit.",
-				"ko": "다른 장치의 복제본을 생성하기 위해이 장치를 제물로 바친다.",
-				"ct": "mewoowo",
-				"fr": "Sacrifier cette carte pour produire une copie d'une autre carte.",
-				"pi": "Throw this unit overboard so ye can get another pirate.",
-				"lt": "Vienos kortos paaukojimos, bei kitos kortos klonavimas.",
-				"ne": "Offer deze kaart op om een replica van een andere kaart te maken.",
-				"sv": "Offra den här enheten för att producera en kopia av en annan enhet.",
-				"es": "Sacrifica esta unidad para producir una copia de otra.",
-				"nb": "Ofre denne enheten for å produsere et duplikat av en annen enhet.",
-				"it": "Sacrifica questa unità per produrre una copia di un'altra carta.",
-				"hu": "Sacrifice this unit to produce a duplicate of another unit."
+				"en": "All your cards gain the move ability."
 			}
 		},
 
