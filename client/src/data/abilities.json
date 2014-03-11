@@ -137,7 +137,7 @@
 
 		"tree": {
 			"name": {
-				"en": "weed trees",
+				"en": "trees!",
 				"ko": "잡초 나무",
 				"ct": "mewoowo",
 				"fr": "Mauvaises herbes",
@@ -151,18 +151,18 @@
 				"hu": "gyom fák"
 			},
 			"desc": {
-				"en": "A 1/1 tree is created",
-				"ko": "1 / 1 나무가 만들어집니다",
+				"en": "A 0/1 tree is created",
+				"ko": "0/1 나무가 만들어집니다",
 				"ct": "mewoowo",
-				"fr": "Un arbre 1/1 est créé.",
-				"pi": "A 1/1 seaweed drifts into the field",
-				"lt": "Sukuria 1/1 galingumo medį.",
-				"ne": "Er wordt een 1/1 boom gemaakt.",
-				"sv": "Ett 1/1 träd är skapat",
-				"es": "Un árbol 1/1 es creado",
-				"nb": "Et 1/1-tre blir lagd",
-				"it": "Viene creato un albero 1x1",
-				"hu": "A 1/1 tree is created"
+				"fr": "Un arbre 0/1 est créé.",
+				"pi": "A 0/1 seaweed drifts into the field",
+				"lt": "Sukuria 0/1 galingumo medį.",
+				"ne": "Er wordt een 0/1 boom gemaakt.",
+				"sv": "Ett 0/1 träd är skapat",
+				"es": "Un árbol 0/1 es creado",
+				"nb": "Et 0/1-tre blir lagd",
+				"it": "Viene creato un albero 0x1",
+				"hu": "A 0/1 tree is created"
 			}
 		},
 

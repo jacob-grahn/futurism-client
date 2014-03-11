@@ -124,7 +124,7 @@
 		},
 
 		/**
-		 * Tree Sprout: A 1/1 tree is created.
+		 * Tree Sprout: A 0/1 tree is created.
 		 */
 		TREE: 'tree',
 		tree: {
@@ -134,9 +134,12 @@
 			],
 			use: function(src, target) {
 				target.card = {
-					title: 'TREE',
-					desc: 'Make way for the TREE parade!',
-					attack: 1,
+					_id: 'tree',
+					hasImage: true,
+					name: 'TREE',
+					faction: 'en',
+					story: 'I just love growing!',
+					attack: 0,
 					health: 1
 				}
 			}

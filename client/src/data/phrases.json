@@ -995,11 +995,11 @@
 
 	"messages": {
 		"delete": {
-			"en": "delete
+			"en": "delete",
 			"ne": "verwijder"
 		},
 		"report": {
-			"en": "report"
+			"en": "report",
 			"ne": "rapporteren"
 		}
 	}
