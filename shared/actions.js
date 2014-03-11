@@ -21,7 +21,7 @@
 	 * reproduce (code for male and female abilities)
 	 */
 	var reproduce = function(src, target1, target2) {
-		target1.card.moves =- 1;
+		target1.card.moves -= 1;
 
 		var parent = src.card;
 		if(Math.random() > .5) {

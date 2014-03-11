@@ -1,6 +1,15 @@
 {
 	"abilities": {
 
+		"grow": {
+			"name": {
+				"en": "grow"
+			},
+			"desc": {
+				"en": "Become a lovable clone that is just like mommy or daddy."
+			}
+		},
+
 		"smmn": {
 			"name": {
 				"en": "summon"
