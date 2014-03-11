@@ -41,7 +41,6 @@ var makeAccountCard = function(account) {
 		health: 10,
 		story: '',
 		abilities: [actions.SUMMON, actions.FUTURE],
-		hasImage: true,
 		cid: nextCid(),
 		moves: 0,
 		pride: 0
