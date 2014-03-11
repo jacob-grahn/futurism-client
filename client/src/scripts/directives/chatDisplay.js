@@ -17,15 +17,13 @@ angular.module('futurism')
 				scope.lang = lang;
 
 				var logElem = elem.find('.chat-log');
-				var scrolling = false;
 
 
 				var scrollToBottom = _.throttle(function() {
-					scrolling = true;
-					var scrollHeight = logElem[0].scrollHeight - logElem.height();
-					logElem.animate({scrollTop: scrollHeight}, 200, function() {
-						scrolling = false;
-					});
+
+					var scrollTop = logElem[0].scrollHeight - logElem.height();
+					logElem.animate({scrollTop: scrollTop}, 200);
+
 				}, 200);
 
 
@@ -49,22 +47,20 @@ angular.module('futurism')
 				};
 
 
-				scope.$watch('chat.receivedCount', function(newCount, oldCount) {
+				scope.$watch('chat.receivedCount', function(newCount) {
 					if(scope.chat) {
 
-						if(newCount >= scope.chat.maxMsgs && !scrolling) {
-						 logElem[0].scrollTop -= 18;
+						if(newCount >= scope.chat.maxMsgs) {
+							logElem[0].scrollTop = logElem[0].scrollHeight - logElem.height() - $('.chat-log li:first-child').height();
 						}
 
-						_.delay(function() {
-							scrollToBottom();
-						}, 50);
-
+						_.delay(scrollToBottom, 50);
+						_.delay(scrollToBottom, 1000);
 					}
 				});
 
 
-				scope.$watch('room', function(newRoom, oldRoom) {
+				scope.$watch('room', function(newRoom) {
 					if(newRoom) {
 						scope.chat.join(newRoom);
 					}
