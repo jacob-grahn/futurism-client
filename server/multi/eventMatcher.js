@@ -32,7 +32,7 @@ var eventEndTick = function() {
 
 var notify = function() {
 	var time = new Date( new Date().getTime() + freq * 0.25 );
-	io.sockets.emit('notify', {message: 'incomingFracture', data: time});
+	io.sockets.emit('notify', {message: 'incomingFracture', data: {time: time}});
 };
 
 

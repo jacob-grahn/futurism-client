@@ -1,10 +1,10 @@
 {
 	"notify": {
 		"incomingFracture": {
-			"en": "Sensors detect an incoming fracture. It will intersect with your line at {{time}}."
+			"en": "Sensors detect an incoming FRACTURE. It will intersect with your line at {{time}}."
 		},
 		"startFracture": {
-			"en": "Fracture detected. Attempting to ascertain location relative to your line... Location determined."
+			"en": "FRACTURE detected. Attempting to ascertain location relative to your line... Location determined."
 		}
 	}
 
