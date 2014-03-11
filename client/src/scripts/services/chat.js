@@ -34,8 +34,8 @@ angular.module('futurism')
 		 */
 		var self = {
 
+			maxMsgs: 35,
 			msgs: [],
-			maxMsgs: 30,
 			receivedCount: 0,
 
 
@@ -44,7 +44,6 @@ angular.module('futurism')
 			 * @param _roomName_
 			 */
 			join: function(_roomName_) {
-				console.log('JOIN ', _roomName_);
 				if(roomName) {
 					self.unsubscribe(roomName);
 				}
@@ -60,8 +59,7 @@ angular.module('futurism')
 			 */
 			clear: function() {
 				self.msgs = [];
-				self.maxMsgs = 30;
-				self.recievedCount = 0;
+				self.receivedCount = 0;
 			},
 
 
