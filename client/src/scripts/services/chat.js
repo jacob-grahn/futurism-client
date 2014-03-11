@@ -35,7 +35,7 @@ angular.module('futurism')
 		var self = {
 
 			msgs: [],
-			maxMsgs: 35,
+			maxMsgs: 30,
 			receivedCount: 0,
 
 
@@ -60,7 +60,7 @@ angular.module('futurism')
 			 */
 			clear: function() {
 				self.msgs = [];
-				self.maxMsgs = 35;
+				self.maxMsgs = 30;
 				self.recievedCount = 0;
 			},
 
