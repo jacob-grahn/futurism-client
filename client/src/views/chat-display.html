@@ -1,6 +1,6 @@
 <div class="chat">
 	<ul class="chat-log auto-size">
-		<li ng-repeat="msg in msgs">
+		<li ng-repeat="msg in chat.msgs">
 			<div ng-if="msg.user" class="user-message">
 				<div username name="{{msg.user.name}}" id="{{msg.user._id}}" site="{{msg.user.site}}" group="{{msg.user.group}}"></div>
 				<span class="chat-text">- {{filter(msg.txt)}}</span>
@@ -14,9 +14,9 @@
 	<form submit="sendMessage()">
 		<div class="input-group">
 			<input class="form-control" type="text" ng-model="typedMessage" placeholder="{{lang.chat.placeholder}}" maxlength="100">
-		<span class="input-group-btn">
-			<button class='btn btn-default' type="submit" ng-click="sendMessage()">{{lang.chat.say}}</button>
-		</span>
+			<span class="input-group-btn">
+				<button class='btn btn-default' type="submit" ng-click="sendMessage()">{{lang.chat.say}}</button>
+			</span>
 		</div>
 	</form>
 </div>

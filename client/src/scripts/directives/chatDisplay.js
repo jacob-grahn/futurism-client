@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('chatDisplay', function(Chat, lang, window, $) {
+	.directive('chatDisplay', function(chat, lang, window, $) {
 		'use strict';
 
 		return {
@@ -12,7 +12,7 @@ angular.module('futurism')
 
 			link: function (scope, elem) {
 
-				scope.chat = null;
+				scope.chat = chat;
 				scope.msgs = [];
 				scope.lang = lang;
 
@@ -45,7 +45,7 @@ angular.module('futurism')
 				};
 
 
-				scope.$watch('chat.receivedCount', function(oldCount, newCount) {
+				scope.$watch('chat.receivedCount', function(newCount, oldCount) {
 					if(scope.chat) {
 						if(newCount >= scope.chat.maxMsgs) {
 							var log = elem.find('.chat-log');
@@ -56,16 +56,9 @@ angular.module('futurism')
 				});
 
 
-				scope.$watch('room', function(oldRoom, newRoom) {
-					if(scope.chat) {
-						scope.chat.unsubscribe();
-						scope.msgs = [];
-					}
-
-					if(scope.room) {
-						scope.chat = new Chat(scope.room);
-						scope.chat.subscribe();
-						scope.msgs = scope.chat.msgs;
+				scope.$watch('room', function(newRoom, oldRoom) {
+					if(newRoom && newRoom !== oldRoom) {
+						scope.chat.join(newRoom);
 					}
 				});
 
