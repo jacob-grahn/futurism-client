@@ -219,7 +219,7 @@
     "endTurn": {
       "en": "End Turn",
       "ct": "meow",
-      "ne": "Eindig Beurt",
+      "ne": "Beeindig Beurt",
       "lt": "Užbaigti ėjimą",
       "hu": "Fordulat vége",
       "nb": "Avslutt runden",
@@ -252,7 +252,7 @@
     "futures": {
       "en": "Futures",
       "ct": "meow",
-      "ne": "Futures",
+      "ne": "Toekomsten",
       "lt": "Futuristikos taškai",
       "hu": "Jövendők",
       "nb": "Fremtider",
@@ -263,7 +263,7 @@
     "showFutures": {
       "en": "Show Futures",
       "ct": "meow",
-      "ne": "Laat Futures zien",
+      "ne": "Laat Toekomsten zien",
       "lt": "Rodyti futuristinius sugebėjimus",
       "hu": "Jövendők Mutatása",
       "nb": "Vis fremtider",
@@ -285,7 +285,7 @@
     "forfeit": {
       "en": "Forfeit",
       "ct": "meow",
-      "ne": "Verlaten",
+      "ne": "Opgeven",
       "lt": "Pasitraukti",
       "hu": "Felmondás",
       "nb": "Forlat kampen",
@@ -627,7 +627,7 @@
       "nb": "Krig",
       "hu": "Háború",
       "it": "Guerra",
-      "ne": "Veldslag"
+      "ne": "Oorlog"
     },
 
     "customGame": {
@@ -757,7 +757,7 @@
       "en": "My Stats",
       "ko": "통계",
       "ct": "meow",
-      "ne": "Mijn status",
+      "ne": "Mijn statistieken",
       "fr": "Ma Statistiques",
       "pi": "Pirate-ness",
       "lt": "Mano statusai",
@@ -896,7 +896,7 @@
 
 		"joinPolicy": {
 			"en": "Join Policy",
-			"ne": "Treed toe in de politiek",
+			"ne": "Treed toe in het overleg",
 			"lt": "Įstojimo tipas",
 			"pi": "Enlistment policy"
 		},
@@ -995,10 +995,12 @@
 
 	"messages": {
 		"delete": {
-			"en": "delete"
+			"en": "delete
+			"ne": "verwijder"
 		},
 		"report": {
 			"en": "report"
+			"ne": "rapporteren"
 		}
 	}
 }
