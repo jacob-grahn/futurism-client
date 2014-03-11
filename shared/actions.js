@@ -17,6 +17,34 @@
 	}
 
 
+	/**
+	 * reproduce (code for male and female abilities)
+	 */
+	var reproduce = function(src, target1, target2) {
+		target1.card.moves =- 1;
+
+		var parent = src.card;
+		if(Math.random() > .5) {
+			parent = target1.card;
+		}
+
+		target2.card = {
+			_id: 'tube',
+			cid: +new Date(),
+			version: 1,
+			name: 'GROW TUBE',
+			hasImage: true,
+			attack: 0,
+			health: 1,
+			moves: 0,
+			faction: 'ze',
+			abilities: ['grow'],
+			parent: _.clone(parent)
+		};
+	};
+
+
+
 	var actions = {
 
 		/////////////////////////////////////////////////////////////////////////////////////////
@@ -135,6 +163,7 @@
 			use: function(src, target) {
 				target.card = {
 					_id: 'tree',
+					cid: +new Date(),
 					hasImage: true,
 					name: 'TREE',
 					faction: 'en',
@@ -437,21 +466,11 @@
 		male: {
 			restrict: [
 				[filters.owned],
-				[filters.friend, filters.female],
+				[filters.friend, filters.female, filters.hasMoves],
 				[filters.owned, filters.empty]
 			],
 			use: function(src, target1, target2) {
-				target2.card = {
-					_id: '389222-fvzT8A04',
-					version: 1,
-					name: 'GROW TUBE',
-					hasImage: true,
-					attack: 0,
-					health: 1,
-					moves: 0,
-					abilities: ['grow'],
-					parent: _.clone(src.card)
-				};
+				reproduce(src, target1, target2);
 			}
 		},
 
@@ -462,23 +481,14 @@
 		feml: {
 			restrict: [
 				[filters.owned],
-				[filters.friend, filters.male],
+				[filters.friend, filters.male, filters.hasMoves],
 				[filters.owned, filters.empty]
 			],
 			use: function(src, target1, target2) {
-				target2.card = {
-					_id: '389222-fvzT8A04',
-					version: 1,
-					name: 'GROW TUBE',
-					hasImage: true,
-					attack: 0,
-					health: 1,
-					moves: 0,
-					abilities: ['grow'],
-					parent: _.clone(src.card)
-				};
+				reproduce(src, target1, target2);
 			}
 		},
+
 
 		/**
 		 * Grow: turn a WAR BABY into its parent

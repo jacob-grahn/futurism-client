@@ -16,6 +16,13 @@
 	}
 
 
+	filters.hasMoves = function(targets) {
+		return _.filter(targets, function(target) {
+			return target.card && target.card.moves > 0;
+		});
+	};
+
+
 	filters.notSelf = function(targets, me, board, targetChain) {
 		return _.filter(targets, function(target) {
 			return !targetChain || !targetChain[0] || target.card.cid !== targetChain[0].card.cid;
