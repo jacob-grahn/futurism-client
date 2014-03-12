@@ -16,11 +16,12 @@ angular.module('futurism')
 				scope.lang = lang;
 
 				var updateDesc = function() {
-					scope.desc = shared.deckFns.analyze(scope.deck);
+					if(scope.deck.cards) {
+						scope.desc = shared.deckFns.analyze(scope.deck);
+					}
 				};
-				updateDesc();
 
-				scope.$watchCollection('deck.cards', updateDesc);
+				scope.$watch('deck.cards.length', updateDesc);
 			}
 		}
 	});
