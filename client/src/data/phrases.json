@@ -12,7 +12,8 @@
       "es": "FUTURISMO",
       "nb": "FUTURISME",
       "it": "Futurismo",
-      "hu": "Futurism"
+      "hu": "Futurism",
+      "pl": "FUTURISM"
     },
 
     "login": {
@@ -27,7 +28,8 @@
       "es": "Ingresar",
       "nb": "Logg inn",
       "it": "Entra",
-      "hu": "Bejelentkezés"
+      "hu": "Bejelentkezés",
+      "pl": "Graj"
     },
 
     "credits": {
@@ -42,7 +44,8 @@
       "es": "Créditos",
       "nb": "MEDVIRKENDE",
       "it": "Ringraziamenti",
-      "hu": "Készítők"
+      "hu": "Készítők",
+      "pl": "Autorzy"
     },
 
     "instructions": {
@@ -57,7 +60,8 @@
       "es": "Videos educativos",
       "nb": "INSTRUKSJONSVIDEOER",
       "it": "Istruzioni",
-      "hu": "Instrukciók"
+      "hu": "Instrukciók",
+      "pl": "Instrukcje"
     }
   },
 
@@ -75,7 +79,8 @@
       "es": "Guardar y cargar",
       "nb": "Lagre og åpne",
       "it": "Salva e Carica",
-      "hu": "Mentés és Betöltés"
+      "hu": "Mentés és Betöltés",
+      "pl": "Zapisz i Zaladuj"
     },
 
     "nameIt": {
@@ -90,7 +95,8 @@
       "es": "Nombrar",
       "nb": "Navngi det",
       "it": "Nominala",
-      "hu": "Nevezd el"
+      "hu": "Nevezd el",
+      "pl": "Nazwij"
     },
 
     "imageUpload": {
@@ -105,7 +111,8 @@
       "es": "Cargar imagen",
       "nb": "Bildeopplasting",
       "it": "Carica un'immagine",
-      "hu": "Képfeltöltés"
+      "hu": "Képfeltöltés",
+      "pl": "Zaladuj obrazek"
     },
 
     "factionAbilities": {
@@ -120,7 +127,8 @@
       "es": "Habilidades de la facción",
       "nb": "Klanegenskaper",
       "it": "Abilità della fazione",
-      "hu": "Képességek"
+      "hu": "Képességek",
+      "pl": "Zdolnosci"
     },
 
     "save": {
@@ -135,7 +143,8 @@
       "es": "Guardar",
       "nb": "Lagre",
       "it": "Salva",
-      "hu": "Mentés"
+      "hu": "Mentés",
+      "pl": "Zapisz"
     },
 
     "load": {
@@ -150,7 +159,8 @@
       "es": "Cargar",
       "nb": "Åpne",
       "it": "Carica",
-      "hu": "Betöltés"
+      "hu": "Betöltés",
+      "pl": "Zaladuj",
     },
 
     "new": {
@@ -165,7 +175,8 @@
       "es": "Nueva",
       "nb": "Ny",
       "it": "Nuova",
-      "hu": "Új"
+      "hu": "Új",
+      "pl": "Utwórz"
     },
 
     "delete": {
@@ -180,7 +191,8 @@
       "es": "Eliminar",
       "nb": "Slett",
       "it": "Elimina",
-      "hu": "Törlés"
+      "hu": "Törlés",
+      "pl": "Usun"
     },
 
     "attack": {
@@ -195,7 +207,8 @@
       "es": "Ataque",
       "nb": "Angrip",
       "it": "Attacca",
-      "hu": "Támadás"
+      "hu": "Támadás",
+      "pl": "Atak"
     },
 
     "health": {
@@ -210,7 +223,8 @@
       "es": "Vida",
       "nb": "Helse",
       "it": "Salute",
-      "hu": "Élet"
+      "hu": "Élet",
+      "pl": "Zdrowie"
     }
   },
 
@@ -224,7 +238,8 @@
       "hu": "Fordulat vége",
       "nb": "Avslutt runden",
       "pi": "Hit the bunk",
-      "it": "Termina turno"
+      "it": "Termina turno",
+      "pl": "Zakoncz ture"
     },
 
     "pride": {
@@ -235,7 +250,8 @@
       "hu": "Büszkeség",
       "nb": "Stolthet",
       "pi": "Pride",
-      "it": "Valore"
+      "it": "Valore",
+      "pl": "Duma"
     },
 
     "close": {
@@ -246,7 +262,8 @@
       "hu": "bezár",
       "nb": "lukk",
       "pi": "Seal",
-      "it": "chiudi"
+      "it": "chiudi",
+      "pl": "Zamknij"
     },
 
     "futures": {
@@ -257,7 +274,8 @@
       "hu": "Jövendők",
       "nb": "Fremtider",
       "pi": "Days after tomorrow",
-      "it": "Futures"
+      "it": "Futures",
+      "pl": "Przyszlosci"
     },
 
     "showFutures": {
@@ -268,7 +286,8 @@
       "hu": "Jövendők Mutatása",
       "nb": "Vis fremtider",
       "pi": "Scry Days after Tomorrow",
-      "it": "Mostra Futures"
+      "it": "Mostra Futures",
+      "pl": "Pokaz Przyszlosci"
     },
 
     "showHand": {
@@ -279,7 +298,8 @@
       "hu": "Kezelő Mutatása",
       "nb": "Vis hånda",
       "pi": "Show hand",
-      "it": "Mostra la mano"
+      "it": "Mostra la mano",
+      "pl": "Pokaz karty"
     },
 
     "forfeit": {
@@ -290,7 +310,8 @@
       "hu": "Felmondás",
       "nb": "Forlat kampen",
       "pi": "Abandon ship",
-      "it": "Abbandona"
+      "it": "Abbandona",
+      "pl": "Zrezygnuj"
     }
   },
 
@@ -308,8 +329,9 @@
       "es": "Enviar",
       "nb": "si",
       "it": "Invia",
-      "hu": "mondd"
-    },
+      "hu": "mondd",
+      "pl": "Pisz"
+      },
 
     "placeholder": {
       "en": "type to chat",
@@ -323,7 +345,8 @@
       "es": "Escribe para conversar",
       "nb": "skriv for å chatte",
       "it": "Scrivi per mandare messaggi",
-      "hu": "ide írj!"
+      "hu": "ide írj!",
+      "pl": "Pisz zeby czatowac"
     }
   },
 
@@ -341,7 +364,8 @@
       "es": "Guardar y cargar",
       "nb": "Lagre og åpne",
       "it": "Salva e Carica",
-      "hu": "Mentés és Betöltés"
+      "hu": "Mentés és Betöltés",
+      "pl": "Zapisz i Zaladuj"
     },
 
     "save": {
@@ -356,7 +380,8 @@
       "es": "Guardar",
       "nb": "Lagre",
       "it": "Salva",
-      "hu": "Mentés"
+      "hu": "Mentés",
+      "pl": "Zapisz"
     },
 
     "load": {
@@ -371,7 +396,8 @@
       "es": "Cargar",
       "nb": "Åpne",
       "it": "Carica",
-      "hu": "Betöltés"
+      "hu": "Betöltés",
+      "pl": "Zaladuj"
     },
 
     "new": {
@@ -386,7 +412,8 @@
       "es": "Nuevo",
       "nb": "Ny",
       "it": "Nuova",
-      "hu": "Új"
+      "hu": "Új",
+      "pl": "Utwórz"
     },
 
     "delete": {
@@ -401,7 +428,8 @@
       "es": "Eliminar",
       "nb": "Slett",
       "it": "Elimina",
-      "hu": "Törlés"
+      "hu": "Törlés",
+      "pl": "Usun"
     },
 
     "nameIt": {
@@ -416,7 +444,8 @@
       "es": "Nombrar",
       "nb": "Navngi det",
       "it": "Nominalo",
-      "hu": "Nevezd el"
+      "hu": "Nevezd el",
+      "pl": "Nazwij"
     },
 
     "cards": {
@@ -431,7 +460,8 @@
       "es": "Cartas",
       "nb": "Kort",
       "it": "Carte",
-      "hu": "Kártyák"
+      "hu": "Kártyák",
+      "pl": "Karty"
     },
 
     "deckPride": {
@@ -446,7 +476,8 @@
       "es": "Orgullo del mazo",
       "nb": "Korstokkens Stolthet",
       "it": "Valore del mazzo",
-      "hu": "Kártyacsomag Büszkeség"
+      "hu": "Kártyacsomag Büszkeség",
+      "pl": "Duma talii"
     }
   },
 
@@ -464,7 +495,8 @@
       "es": "Error",
       "nb": "Feil",
       "it": "Errore!",
-      "hu": "Hiba!"
+      "hu": "Hiba!",
+      "pl": "Blad"
     }
   },
 
@@ -482,7 +514,8 @@
       "es": "Máximo orgullo",
       "nb": "Maksimal Stolthet",
       "it": "Valore massimo",
-      "hu": "Max Büszkeség"
+      "hu": "Max Büszkeség",
+      "pl": "Max. dumy"
     }
   },
 
@@ -500,7 +533,8 @@
       "es": "jugadores",
       "nb": "spiller",
       "it": "Giocatori",
-      "hu": "játékosok"
+      "hu": "játékosok",
+      "pl": "gracze"
     },
 
     "pride": {
@@ -515,7 +549,8 @@
       "es": "orgullo",
       "nb": "stolthet",
       "it": "Valore",
-      "hu": "büszkeség"
+      "hu": "büszkeség",
+      "pl": "duma"
     },
 
     "join": {
@@ -530,7 +565,8 @@
       "es": "unirse",
       "nb": "bli med",
       "it": "unisciti",
-      "hu": "csatlakozás"
+      "hu": "csatlakozás",
+      "pl": "graj"
     },
 
     "start": {
@@ -545,7 +581,8 @@
       "es": "Iniciar",
       "nb": "start",
       "it": "inizia",
-      "hu": "indítás"
+      "hu": "indítás",
+      "pl": "start"
     },
 
     "chat": {
@@ -560,7 +597,8 @@
       "es": "chat",
       "nb": "chatterom",
       "it": "chat",
-      "hu": "chat"
+      "hu": "chat",
+      "pl": "czat"
     },
 
     "people": {
@@ -575,7 +613,8 @@
       "es": "personas",
       "nb": "personer",
       "it": "persone",
-      "hu": "emberek"
+      "hu": "emberek",
+      "pl": "gracze"
     },
 
     "futures": {
@@ -588,7 +627,8 @@
       "nb": "fremtider",
       "hu": "jövendők",
       "it": "futures",
-      "ne": "toekomsten"
+      "ne": "toekomsten",
+      "pl": "przyszlosci"
     },
 
     "shortGame": {
@@ -601,7 +641,8 @@
       "nb": "Kamp",
       "hu": "Csetepaté",
       "it": "Scaramuccia",
-      "ne": "Kort gevecht"
+      "ne": "Kort gevecht",
+      "pl": "Potyczka"
     },
 
     "mediumGame": {
@@ -614,7 +655,8 @@
       "nb": "Slag",
       "hu": "Csata",
       "it": "Battaglia",
-      "ne": "Strijd"
+      "ne": "Strijd",
+      "pl": "Bitwa"
     },
 
     "longGame": {
@@ -627,7 +669,8 @@
       "nb": "Krig",
       "hu": "Háború",
       "it": "Guerra",
-      "ne": "Oorlog"
+      "ne": "Oorlog",
+      "pl": "Wojna"
     },
 
     "customGame": {
@@ -642,7 +685,8 @@
       "es": "Personalizado",
       "it": "Personalizzato",
       "nb": "Egendefinert",
-      "hu": "Egyéni"
+      "hu": "Egyéni",
+      "pl": "Wlasna"
     },
 
     "custom": {
@@ -657,7 +701,8 @@
       "es": "personalizado",
       "nb": "Egendefinert",
       "it": "Personalizzato",
-      "hu": "egyéni"
+      "hu": "egyéni",
+      "pl": "wlasna"
     },
 
     "guild": {
@@ -672,7 +717,8 @@
       "es": "gremio",
       "nb": "klan",
       "it": "clan",
-      "hu": "klán"
+      "hu": "klán",
+      "pl": "gildia"
     }
   },
 
@@ -690,7 +736,8 @@
       "es": "Habilitar barra de navegación",
       "nb": "Bytt Navigasjon",
       "it": "Abilita la navigazione",
-      "hu": "Váltás Navigációra"
+      "hu": "Váltás Navigációra",
+      "pl": "Nawigacja"
     },
 
     "futurism": {
@@ -705,7 +752,8 @@
       "es": "Futurismo",
       "nb": "Futurisme",
       "it": "Futurismo",
-      "hu": "Futurism"
+      "hu": "Futurism",
+      "pl": "Futurism"
     },
 
     "deckBuilder": {
@@ -720,7 +768,8 @@
       "es": "Constructor de mazos",
       "nb": "Kortstokkbygger",
       "it": "Creatore dei mazzi",
-      "hu": "Kártyacsomag Készítő"
+      "hu": "Kártyacsomag Készítő",
+      "pl": "Edytor talii"
     },
 
     "cardBuilder": {
@@ -735,7 +784,8 @@
       "es": "Constructor de cartas",
       "nb": "Kortbygger",
       "it": "Creatore delle carte",
-      "hu": "Kártya Készítő"
+      "hu": "Kártya Készítő",
+      "pl": "Edytor kart"
     },
 
     "lobby": {
@@ -750,7 +800,8 @@
       "es": "Lobby",
       "nb": "Lobby",
       "it": "Lobby",
-      "hu": "Előcsarnok"
+      "hu": "Előcsarnok",
+      "pl": "Lobby"
     },
 
     "stats": {
@@ -765,7 +816,8 @@
       "es": "Mis estadísticas",
       "nb": "Min Statistikk",
       "it": "Le mie statistiche",
-      "hu": "Statisztikáim"
+      "hu": "Statisztikáim",
+      "pl": "Statystyki"
     },
 
     "messages": {
@@ -780,7 +832,8 @@
       "es": "Mensajes",
       "nb": "Meldinger",
       "it": "Messaggi",
-      "hu": "Üzenetek"
+      "hu": "Üzenetek",
+      "pl": "Wiadomosci
     },
 
     "logout": {
@@ -795,7 +848,8 @@
       "es": "Cerrar sesión",
       "nb": "Logg ut",
       "it": "Esci",
-      "hu": "Kijelentkezés"
+      "hu": "Kijelentkezés",
+      "pl": "Wyloguj sie"
     },
 
     "language": {
@@ -810,7 +864,8 @@
       "es": "Idioma",
       "nb": "Språk",
       "it": "Lingua",
-      "hu": "Nyelv"
+      "hu": "Nyelv",
+      "pl": "Zmien jezyk"
     },
 
     "futures": {
@@ -823,7 +878,8 @@
       "nb": "Fremtider",
       "hu": "Jövendők",
       "it": "Futures",
-      "ne": "Toekomsten"
+      "ne": "Toekomsten",
+      "pl": "Przyszlosci"
     },
 
     "guild": {
@@ -838,7 +894,8 @@
       "es": "Gremio",
       "it": "Gilda",
       "nb": "Laug",
-      "hu": "Klán"
+      "hu": "Klán",
+      "pl": "Gildia"
     }
   },
 
@@ -849,15 +906,17 @@
       "ne": "trots",
       "lt": "Vertė",
       "pi": "pride",
-      "it": "valore"
-    },
+      "it": "valore",
+      "pl": "duma"
+      },
 
     "cardCount": {
       "en": "cards",
       "ne": "kaarten",
       "lt": "Kortų kiekis",
       "pi": "ships",
-      "it": "carte"
+      "it": "carte",
+      "pl": "ilosc kart"
     },
 
     "attack": {
@@ -865,7 +924,8 @@
       "ne": "aanval",
       "lt": "Puolimo taškai",
       "pi": "cannons",
-      "it": "attacco"
+      "it": "attacco",
+      "pl": "atak"
     },
 
     "health": {
@@ -873,7 +933,8 @@
       "ne": "levens",
       "lt": "Gyvybių taškai",
       "pi": "rum",
-      "it": "salute"
+      "it": "salute",
+      "pl": "zycie"
     }
   },
 
@@ -884,63 +945,72 @@
 			"en": "Join Guild",
 			"ne": "Treed toe in de Gilde",
 			"lt": "Stoti į Gildiją",
-			"pi": "Enlist"
+			"pi": "Enlist",
+			"pl": "Dolacz do gildii"
 		},
 
 		"createGuild": {
 			"en": "Create Guild",
 			"ne": "Maak Gilde",
 			"lt": "Sukurti Gildiją",
-			"pi": "Found guild"
+			"pi": "Found guild",
+			"pl": "Zaloz gildie"
 		},
 
 		"joinPolicy": {
 			"en": "Join Policy",
 			"ne": "Treed toe in het overleg",
 			"lt": "Įstojimo tipas",
-			"pi": "Enlistment policy"
+			"pi": "Enlistment policy",
+			"pl": "Warunki dolaczenia"
 		},
 
 		"banner": {
 			"en": "Banner",
 			"ne": "Logo",
 			"lt": "Logotipas",
-			"pi": "Flag"
+			"pi": "Flag",
+			"pl": "Banner"
 		},
 
     "join": {
       "en": "Join",
       "ne": "Treed toe",
       "lt": "Įstoti",
-			"pi": "Enlist"
+			"pi": "Enlist",
+			"pl": "Dolacz"
     },
 
     "leaders": {
       "en": "Leaders",
       "ne": "Leiders",
       "lt": "Vadovai",
-      "pi": "Captains"
+      "pi": "Captains",
+      "pl": "Dowodcy"
     },
 
     "members": {
       "en": "Members",
       "ne": "Leden",
       "lt": "Nariai",
-      "pi": "Crewers"
+      "pi": "Crewers",
+      "pl": "Czlonkowie"
     },
 
     "gpToday": {
       "en": "GP Today",
       "ne": "GP vandaag",
       "lt": "Šiandienos GP",
-      "pi": "Gold today"
+      "pi": "Gold today",
+      "pl": "GP dzis"
     },
 
     "founded": {
       "en": "Founded",
       "ne": "Gesticht",
       "lt": "Įkurta",
-      "pi": "Founded"
+      "pi": "Founded",
+      "pl": "Zalozona"
     }
   },
 
@@ -951,13 +1021,15 @@
 				"en": "Open",
 				"ne": "Open",
 				"lt": "Atvira",
-				"pi": "Open doors"
+				"pi": "Open doors",
+				"pl": "Otwarta"
 			},
 			"desc": {
 				"en": "Anyone can join this guild.",
 				"ne": "Iedereen kan in deze guild komen",
 				"lt": "Į šią Gildiją gali įstoti visi.",
-				"pi": "Any pirate may join this crew."
+				"pi": "Any pirate may join this crew.",
+				"pl": "Kazdy moze dolaczyc do tej gildii."
 			}
 		},
 
@@ -966,13 +1038,15 @@
 				"en": "Invite",
 				"ne": "Nodig uit",
 				"lt": "Tik su pakvietimu",
-				"pi": "Private"
-			},
+				"pi": "Private",
+				"pl": "Prywatna"
+				},
 			"desc": {
 				"en": "Only invited players can join this guild.",
 				"ne": "Alleen uitgenodigde speler kunnen in deze gilde komen",
 				"lt": "Tik pakviesti žaidėjai gali įstoti į šią Gildiją",
-				"pi": "Pirates must have a letter to join this guild."
+				"pi": "Pirates must have a letter to join this guild.",
+				"pl": "Tylko zaproszeni gracze moga dolaczyc do tej gildii."
 			}
 		},
 
@@ -981,13 +1055,15 @@
 				"en": "Ask",
 				"ne": "Vraag",
 				"lt": "Tik su užklausa",
-				"pi": "Inquiry only"
+				"pi": "Inquiry only,
+				"pl": "Moderowana"
 			},
 			"desc": {
 				"en": "Players must ask or be invited to join this guild.",
 				"ne": "Spelers moeten gevraagd hebben of uitgenodigd zijn om deze gilde te betreden",
 				"lt": "Žaidėjai turi atsiusti užklausą arba būti pakviesti kad galėtu įstoti į šią Gildiją",
-				"pi": "Pirates must either have their request approved or have a letter to join this guild."
+				"pi": "Pirates must either have their request approved or have a letter to join this guild.",
+				"pl": "Aby dolaczyc, musisz sie zapytac lub zostac zaproszonym."
 			}
 		}
 	},
@@ -996,11 +1072,13 @@
 	"messages": {
 		"delete": {
 			"en": "delete",
-			"ne": "verwijder"
+			"ne": "verwijder",
+			"pl": "usun"
 		},
 		"report": {
 			"en": "report",
-			"ne": "rapporteren"
+			"ne": "rapporteren",
+			"pl": "zreportuj"
 		}
 	}
 }
