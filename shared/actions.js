@@ -420,11 +420,13 @@
 				[filters.enemy, filters.full, filters.front]
 			],
 			use: function(src, target) {
-				if(target.card.poison) {
-					target.card.poison += 1;
-				}
-				else {
-					target.card.poison = 1;
+				if(Math.random() > 0.5) {
+					if(target.card.poison) {
+						target.card.poison += 1;
+					}
+					else {
+						target.card.poison = 1;
+					}
 				}
 			}
 		},
