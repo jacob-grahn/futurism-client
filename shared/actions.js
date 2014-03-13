@@ -417,10 +417,15 @@
 		posn: {
 			restrict: [
 				[filters.owned],
-				[filters.enemy, filters.front]
+				[filters.enemy, filters.full, filters.front]
 			],
 			use: function(src, target) {
-				target.card.poison += 1;
+				if(target.card.poison) {
+					target.card.poison += 1;
+				}
+				else {
+					target.card.poison = 1;
+				}
 			}
 		},
 

@@ -113,11 +113,10 @@
 					 * apply effects
 					 */
 					var turnTargets = self.board.playerTargets(self.turnTicker.turnOwners[0]._id);
-					effects.poison(turnTargets);
-					effects.deBuf(turnTargets);
-					effects.refresh(turnTargets);
-					effects.death(self.board.allTargets());
-					self.broadcastChanges();
+					self.doEffect('poison', turnTargets);
+					self.doEffect('deBuf', turnTargets);
+					self.doEffect('refresh', turnTargets);
+					self.doEffect('death', self.board.allTargets());
 
 
 					/**
@@ -244,7 +243,9 @@
 			if(data !== false) {
 				var status = self.getStatus();
 				var changes = self.diffTracker.diff(status, false);
-				self.emit('gameUpdate', {cause: cause, changes: changes, data: data});
+				if(!_.isEmpty(changes)) {
+					self.emit('gameUpdate', {cause: cause, changes: changes, data: data});
+				}
 			}
 		};
 
@@ -274,6 +275,19 @@
 			//
 			return 'ok';
 		};
+
+
+
+		/**
+		 * run an effect, and broadcast the changes if there are any
+		 * @param effectName
+		 * @param targets
+		 */
+		self.doEffect = function(effectName, targets) {
+			effects[effectName](targets);
+			self.broadcastChanges(effectName);
+		};
+
 
 
 		/**

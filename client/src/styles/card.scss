@@ -71,6 +71,38 @@ body .card-ze h1 {
 
 
 
+.card .status {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 2;
+	margin: 0;
+	padding: 0;
+	opacity: 0.85;
+}
+
+.card .status li {
+	width: 25px;
+	height: 25px;
+	margin: 0px;
+	float: left;
+	background-color: #afff26;
+
+}
+
+.card-small .status li {
+	background-size: 12px 12px;
+	width: 12px;
+	height: 12px;
+}
+
+.card .status .poison {
+	background-image: url('/images/poison-25x25.png');
+}
+
+
+
+
 
 .card ul {
   margin: 10px 0;

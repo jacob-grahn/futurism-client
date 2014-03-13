@@ -1,6 +1,7 @@
 .attack-effect {
 	position: absolute;
 	z-index: 100;
+	pointer-events: none;
 }
 
 .sword {

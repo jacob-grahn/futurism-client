@@ -2,6 +2,10 @@
 
 	<div class="greyout"></div>
 
+	<ul class="status">
+		<li ng-if="card.poison" class="poison"></li>
+	</ul>
+
 	<div class="card-image-holder">
 		<img ng-if="card.imageUrl" class="card-image absolute-center" ng-src="{{card.imageUrl}}"/>
 		<img ng-if="card.hasImage" class="card-image absolute-center" ng-src="{{staticContentUrl.futurism}}/images/cards/{{size}}_{{card._id}}.jpg?{{card.version}}"/>

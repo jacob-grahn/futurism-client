@@ -4,7 +4,7 @@ angular.module('futurism')
 
 		var queue = [];
 		var running = false;
-		var playbackRate = 1000;
+		var playbackRate = 500;
 
 
 		var self = {
