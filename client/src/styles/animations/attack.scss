@@ -4,21 +4,28 @@
 	pointer-events: none;
 }
 
-.sword {
-	background-image: url("/images/sword.png");
+.attack-effect-inner {
 	width: 27px;
 	height: 150px;
 	animation-name: attack-rotate;
 	animation-duration: 1s;
 }
 
+.attack-effect-inner.sword {
+	background-image: url("/images/sword.png");
+}
+
+.attack-effect-inner.poison-sword {
+	background-image: url("/images/poison-sword.png");
+}
+
 @keyframes attack-rotate {
 	from {
 		transform: rotate(0deg);
-		//transform-origin: 0px 0px;
+		//transform-origin: 10px 100px;
 	}
 	to {
 		transform: rotate(360deg);
-		//transform-origin: 25px 150px;
+		//transform-origin: 27px 150px;
 	}
 }

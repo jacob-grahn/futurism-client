@@ -26,28 +26,51 @@ angular.module('futurism')
 				});
 
 
+				scope.$on('pre:posn', function(srcScope, update) {
+
+					var animTargets = animFns.chainedAnimTargets(update, update.data);
+
+					var attacker = animTargets[0];
+					var defender = animTargets[1];
+					var message = 'miss!';
+
+					var oldPoison = defender.target.card.poison || 0;
+
+					if(defender.newData && defender.newData.poison > oldPoison) {
+						message = 'poisoned!';
+					}
+
+					animThrow(attacker, defender, 'poison-sword', message);
+				});
+
+
 				var animAttack = function(attacker, defender, callback) {
-					console.log('anim attack', attacker, defender);
-					var srcPoint = animFns.targetCenter(attacker.target, boardElement);
-					var destPoint = animFns.targetCenter(defender.target, boardElement);
+					var message;
+					if(defender.damage === 0 || isNaN(defender.damage)) {
+						message = 'miss!';
+					}
+					else {
+						message = defender.damage;
+					}
+
+					animThrow(attacker, defender, 'sword', message, callback);
+				};
+
+
+				var animThrow = function(attacker, defender, className, message, callback) {
+					var srcPoint = attacker.center;
+					var destPoint = defender.center;
 
 					var angleRad = Math.atan2(destPoint.y - srcPoint.y, destPoint.x - srcPoint.x);
 					var angleDeg = (angleRad * maths.RAD_DEG) + 90;
 
-					var displayDamage;
-					if(defender.damage === 0 || isNaN(defender.damage)) {
-						displayDamage = 'miss!';
-					}
-					else {
-						displayDamage = defender.damage;
-					}
 
-					boardElement.append($('<div class="attack-effect"><div class="sword"></div></div>')
+					boardElement.append($('<div class="attack-effect"><div class="attack-effect-inner '+className+'"></div></div>')
 						.css({left: srcPoint.x-10, top: srcPoint.y-75, opacity: 0, transform: 'rotate('+angleDeg+'deg)'})
 						.animate({opacity: 1}, 1000)
 						.animate({left: destPoint.x-10, top: destPoint.y-75}, 400, 'linear', function() {
 
-							boardElement.append($('<div class="life-effect life-effect-dec">'+displayDamage+'</div>')
+							boardElement.append($('<div class="life-effect life-effect-dec">'+message+'</div>')
 								.css({left: destPoint.x, top: destPoint.y})
 								.animate({top: destPoint.y-100}, 'slow')
 								.animate({opacity: 0}, 'slow', function() {
@@ -57,7 +80,9 @@ angular.module('futurism')
 						})
 						.animate({opacity: 0}, 500, function() {
 							this.remove();
-							callback();
+							if(callback) {
+								callback();
+							}
 						}));
 				};
 
