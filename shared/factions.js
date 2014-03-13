@@ -4,13 +4,12 @@
 	var ent = {
 		id: 'en',
 		abilities: [
+			{id: 'siph'},
 			{id: 'move'},
-			{id: 'attk'},
 			{id: 'heal'},
 			{id: 'tree'},
 			{id: 'abom'},
 			{id: 'secr'},
-			{id: 'vgbn'},
 			{id: 'bees'}
 		]
 	};
@@ -18,11 +17,10 @@
 	var machine = {
 		id: 'mc',
 		abilities: [
+			{id: 'prci'},
 			{id: 'move'},
-			{id: 'attk'},
 			{id: 'rbld'},
 			{id: 'shld'},
-			{id: 'prci'},
 			{id: 'strt'},
 			{id: 'netw'},
 			{id: 'tran'}
@@ -33,13 +31,13 @@
 	var elite = {
 		id: 'el',
 		abilities: [
-			{id: 'move'},
 			{id: 'assn'},
+			{id: 'move'},
 			{id: 'sduc'},
 			{id: 'delg'},
 			{id: 'posn'},
 			{id: 'bagm'},
-			{id: 'siph'}
+			{id: 'tlpt'}
 		]
 	};
 
@@ -47,8 +45,8 @@
 	var zealot = {
 		id: 'ze',
 		abilities: [
+			{id: 'righ'},
 			{id: 'move'},
-			{id: 'attk'},
 			{id: 'male'},
 			{id: 'feml'},
 			{id: 'btle'},

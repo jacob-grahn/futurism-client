@@ -8,7 +8,7 @@ angular.module('futurism')
 			link: function(scope, boardElement) {
 
 
-				scope.$on('pre:vgbn', function(srcScope, update) {
+				scope.$on('pre:tlpt', function(srcScope, update) {
 
 					var targetChain = update.data;
 					var target = board.targetPos(targetChain[0]);

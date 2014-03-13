@@ -82,7 +82,7 @@
 				"it": "attacca"
 			},
 			"desc": {
-				"en": "Trade blows with an enemy card.",
+				"en": "Attack an enemy card. If they survive, they will counter-attack.",
 				"ne": "Ruil tegenslag met een vijands zijn kaart.",
 				"lt": "Apsimaino kumtšelėjimais su priešininko kortą.",
 				"hu": "Trade blows with an enemy card.",
@@ -237,15 +237,6 @@
 			}
 		},
 
-		"vgbn": {
-			"name": {
-				"en": "vagabond"
-			},
-			"desc": {
-				"en": "All your cards gain the move ability."
-			}
-		},
-
 		"bees": {
 			"name": {
 				"en": "bees!",
@@ -262,18 +253,7 @@
 				"hu": "méhek!"
 			},
 			"desc": {
-				"en": "All enemies in target column loose 1 health.",
-				"ko": "목표 컬럼에있는 모든 적을 1 건강 느슨한.",
-				"ct": "mewoowo",
-				"fr": "Tous les ennemis de la colonne ciblée perdent 1 point de santé.",
-				"pi": "All enemy ships in target column drop 1 rum.",
-				"lt": "Visi priešininkai vertikaliai nuo puolamos kortos praranda 1 gyvybės tašką.",
-				"ne": "Alle vijanden verliezen 1 leven.",
-				"sv": "Alla fiender i en siktad kolumn tappar ett hälsopoäng.",
-				"es": "Toos los enemigos en la columna objetivo pierden 1 de vida.",
-				"nb": "Alle fiender i målsatt kolonne mister ett helsepoeng.",
-				"it": "Tutti i nemici nella colonna bersaglio perdono 1 punto salute.",
-				"hu": "All enemies in target column loose 1 health."
+				"en": "A random enemy loses 1 health."
 			}
 		},
 
@@ -341,7 +321,7 @@
 
 		"prci": {
 			"name": {
-				"en": "precise",
+				"en": "attack [precise]",
 				"ko": "정확한",
 				"ct": "mewoowo",
 				"fr": "Précision",
@@ -355,7 +335,7 @@
 				"hu": "precíz"
 			},
 			"desc": {
-				"en": "Attack an enemy of your choice regardless of defensive formations.",
+				"en": "Attack any enemy regardless of their defensive formations. The enemy will counter-attack.",
 				"ko": "에 관계없이 방어 형성의 선택의 적을 공격한다.",
 				"ct": "mewoowo",
 				"fr": "Attaquer l'ennemi de votre choix peu importe les défenses en place.",
@@ -372,7 +352,7 @@
 
 		"strt": {
 			"name": {
-				"en": "strategist",
+				"en": "recharge",
 				"ko": "전략가",
 				"ct": "mewoowo",
 				"fr": "Stratège",
@@ -496,7 +476,7 @@
 
 		"assn": {
 			"name": {
-				"en": "assassin",
+				"en": "attack [assassin]",
 				"ko": "암살자",
 				"ct": "mewoowo",
 				"fr": "Assassin",
@@ -510,7 +490,7 @@
 				"hu": "assassin"
 			},
 			"desc": {
-				"en": "Attack without taking damage.",
+				"en": "Attack with no chance of a counter attack.",
 				"ko": "피해를하지 않고 공격한다.",
 				"ct": "mewoowo",
 				"fr": "Attaquer sans subir de dégâts.",
@@ -541,18 +521,7 @@
 				"hu": "képviselő"
 			},
 			"desc": {
-				"en": "Trade this unit with another unit in your hand.",
-				"ko": "당신의 손에있는 다른 장치와이 장치를 무역.",
-				"ct": "mewoowo",
-				"fr": "Échanger cette carte pour une autre dans votre paquet.",
-				"pi": "Swap this unit wit one o' yer others.",
-				"lt": "Apkeičia šį kortą su kita esančia tavo rankoje.",
-				"ne": "Ruil deze kaart om met een kaart in je hand.",
-				"sv": "Byt det här kortet med en annan enhet i din hand",
-				"es": "Intercambia esta unidad con otra de tu mano.",
-				"nb": "Bytt denne enheten med en annen enhet på hånda.",
-				"it": "Scambia quest'unità con un'altra nella tua mano.",
-				"hu": "Trade this unit with another unit in your hand."
+				"en": "Return this card to you hand, refunding its original pride cost."
 			}
 		},
 
@@ -584,6 +553,15 @@
 				"nb": "Målsatt fiende mister ett helsepoeng per runde.",
 				"it": "Il nemico bersaglio perde 1 punto vita a turno.",
 				"hu": "Target enemy loses 1 health per turn."
+			}
+		},
+
+		"tlpt": {
+			"name": {
+				"en": "teleporter"
+			},
+			"desc": {
+				"en": "All your cards gain the move ability."
 			}
 		},
 
@@ -620,7 +598,7 @@
 
 		"siph": {
 			"name": {
-				"en": "siphon",
+				"en": "attack [siphon]",
 				"ko": "사이펀",
 				"ct": "mewoowo",
 				"fr": "Siphon",
@@ -634,18 +612,7 @@
 				"hu": "szifon"
 			},
 			"desc": {
-				"en": "Steal 1 health from a card of your choice.",
-				"ko": "당신의 선택의 카드에서 1 건강을 훔치는.",
-				"ct": "mewoowo",
-				"fr": "Voler 1 point de santé à la carte de votre choix",
-				"pi": "Drain 1 rum from a ship o' yer choosin'.",
-				"lt": "Pavogia vieną gyvybės tašką iš pasirinktos kortos.",
-				"ne": "Steel 1 leven van een kaard van je keuze.",
-				"sv": "Stjäl ett hälsopoäng från ett kort av ditt val",
-				"es": "Roba 1 de vida de una carta a tu elección.",
-				"nb": "Stjel ett helsepoeng fra et valgfritt kort.",
-				"it": "Ruba un punto vita da una carta di tua scelta.",
-				"hu": "Steal 1 health from a card of your choice."
+				"en": "Attack an enemy, converting some of the damage into health. The enemy will counter-attack."
 			}
 		},
 
@@ -742,37 +709,6 @@
 			}
 		},
 
-		"detr": {
-			"name": {
-				"en": "determined",
-				"ko": "결정된",
-				"ct": "mewoowo",
-				"fr": "Déterminé",
-				"pi": "ram",
-				"lt": "Pasiaukojimas",
-				"ne": "vastberaden",
-				"sv": "avgjord",
-				"es": "determinado",
-				"nb": "bestemt",
-				"it": "Determinazione",
-				"hu": "eltökélt"
-			},
-			"desc": {
-				"en": "Sacrifice this card to deal double damage.",
-				"ko": "더블 데미지를이 카드를 제물로 바친다.",
-				"ct": "mewoowo",
-				"fr": "Sacrifier cette carte pour infliger le double de dégâts.",
-				"pi": "Ram another ship to do double damage (destroys own ship)",
-				"lt": "Kortos pasiaukojimas padarant dvigubą žalą.",
-				"ne": "Offer deze kaart op om dubbele schade toe te brengen.",
-				"sv": "Offra det här kortet för att handla dubbel skada",
-				"es": "Sacrifica esta carta para realizar doble daño.",
-				"nb": "Ofre dette kortet for å gi dobbel skade.",
-				"it": "Sacrifica questa carta per realizzare doppio danno.",
-				"hu": "Sacrifice this card to deal double damage."
-			}
-		},
-
 		"hero": {
 			"name": {
 				"en": "heroic sacrifice",
@@ -820,18 +756,17 @@
 				"hu": "szuper szérum"
 			},
 			"desc": {
-				"en": "Available health points are converted into attack points",
-				"ko": "가능한 건강 포인트는 공격 포인트로 변환",
-				"ct": "mewoowo",
-				"fr": "Les points de santé disponible sont convertis en points d'attaque.",
-				"pi": "Available rum is converted into cannon munitions.",
-				"lt": "Konvertuoja gyvybės taškus į puolimo taškus.",
-				"ne": "Alle beschikbare levens worden omgezet in kracht.",
-				"sv": "Tillgänliga hälsopoäng är konverterade till attackpoäng",
-				"es": "Los puntos de vida disponibles se convierten en puntos de ataque.",
-				"nb": "Tilgjengelige helsepoeng er konvertert til angrepspoeng.",
-				"it": "I punti vita disponibili vengono convertiti in punti attacco.",
-				"hu": "Available health points are converted into attack points"
+				"en": "Attack is increased by 3, and this card becomes poisoned."
+			}
+		},
+
+
+		"righ": {
+			"name": {
+				"en": "attack [righteous]"
+			},
+			"desc": {
+				"en": "Attack an enemy, converting the damage into pride. The enemy will counter-attack."
 			}
 		}
 	}
