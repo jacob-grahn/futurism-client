@@ -66,7 +66,7 @@
 	};
 
 
-	filters.full = function(targets, me) {
+	filters.full = function(targets) {
 		return _.filter(targets, function(target) {
 			return !!target.card;
 		});

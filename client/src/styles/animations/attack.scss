@@ -5,18 +5,29 @@
 }
 
 .attack-effect-inner {
-	width: 27px;
-	height: 150px;
 	animation-name: attack-rotate;
 	animation-duration: 1s;
 }
 
 .attack-effect-inner.sword {
+	width: 27px;
+	height: 150px;
 	background-image: url("/images/sword.png");
 }
 
 .attack-effect-inner.poison-sword {
+	width: 24px;
+	height: 100px;
 	background-image: url("/images/poison-sword.png");
+}
+
+.attack-effect-inner.bees {
+	position: absolute;
+	left: -75px;
+	top: 0px;
+	width: 150px;
+	height: 130px;
+	background-image: url("/images/bees.png");
 }
 
 @keyframes attack-rotate {

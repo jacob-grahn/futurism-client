@@ -26,6 +26,24 @@ angular.module('futurism')
 				});
 
 
+				scope.$on('pre:bees', function(srcScope, update) {
+					var animTargets = animFns.updatedAnimTargets(update);
+					var attacker;
+					var defender;
+
+					_.each(animTargets, function(animTarget) {
+						if(animTarget.newData.health !== undefined) {
+							defender = animTarget;
+						}
+						else {
+							attacker = animTarget;
+						}
+					});
+
+					animThrow(attacker, defender, 'bees', 'omg bees!')
+				});
+
+
 				scope.$on('pre:posn', function(srcScope, update) {
 
 					var animTargets = animFns.chainedAnimTargets(update, update.data);

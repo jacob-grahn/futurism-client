@@ -227,24 +227,20 @@
 		},
 
 		/**
-		 * Bees: All enemies in target column loose 1 health.
+		 * Bees: random enemy looses 1 health
 		 */
 		BEES: 'bees',
 		bees: {
 			restrict: [
-				[filters.owned],
-				[filters.enemy, filters.front]
+				[filters.owned]
 			],
-			use: function(src, target, board) {
-				var column = target.column;
-				var row = 0;
-				while(board.target(target.player._id, column, row)) {
-					var t = board.target(target.player._id, column, row);
-					if(t.card) {
-						t.card.health--;
-					}
-					row++;
+			use: function(src, board) {
+				var possibleTargets = filters.full( filters.enemy(board.allTargets(), src.player) );
+				if(possibleTargets.length === 0) {
+					return false;
 				}
+				var target = _.sample(possibleTargets);
+				target.card.health--;
 			}
 		},
 

@@ -253,7 +253,7 @@
 				"hu": "méhek!"
 			},
 			"desc": {
-				"en": "A random enemy loses 1 health."
+				"en": "A random enemy loses 1 health. This attack always hits."
 			}
 		},
 
@@ -541,7 +541,7 @@
 				"hu": "méreg"
 			},
 			"desc": {
-				"en": "Target enemy loses 1 health per turn.",
+				"en": "Target enemy loses 1 health per turn. 50% chance to fail.",
 				"ko": "대상 적 턴에 1 건강을 푼다.",
 				"ct": "mewoowo",
 				"fr": "La cible ennemie perd 1 point de santé par tour.",
