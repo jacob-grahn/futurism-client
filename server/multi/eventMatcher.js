@@ -4,7 +4,7 @@ var _ = require('lodash');
 var lobby = require('./lobby');
 
 
-var freq = 10 * 1000;
+var freq = 60 * 60 * 1000;
 var duration = 3 * 1000;
 var io;
 var timeoutId;

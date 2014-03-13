@@ -260,7 +260,7 @@
 		rbld: {
 			restrict: [
 				[filters.owned],
-				[filters.friend, filters.open]
+				[filters.friend, filters.empty]
 			],
 			use: function(src, target) {
 
@@ -283,6 +283,7 @@
 
 				//add the card back into the game
 				card.health = 1;
+				card.moves = 0;
 				target.card = card;
 			}
 		},

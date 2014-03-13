@@ -23,6 +23,11 @@ angular.module('futurism')
 				});
 
 
+				scope.$on('post:rbld', function(srcScope, update) {
+					anim(update, 'summon-rebuild');
+				});
+
+
 
 				var anim = function(update, cssClass) {
 
@@ -32,8 +37,17 @@ angular.module('futurism')
 
 						// get positions
 						var chain = animFns.chainedAnimTargets(update, update.data);
-						var src = chain[0] || chain[2];
-						var dest = chain[2];
+						var src;
+						var dest;
+						if(chain.length === 3) {
+							src = chain[0] || chain[2];
+							dest = chain[2];
+						}
+						if(chain.length === 2) {
+							src = chain[0];
+							dest = chain[1];
+						}
+
 
 
 						// hide the new card for a bit

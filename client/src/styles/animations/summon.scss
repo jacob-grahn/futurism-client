@@ -24,6 +24,11 @@
 	background-image: url("/images/heart.png");
 }
 
+.summon-rebuild .effect {
+	background-image: url("/images/rebuild.png");
+	opacity: 0.76;
+}
+
 .summon-effect .effect:first-child {
 	animation-name: summon-rotate1;
 	animation-duration: 2.9s;
