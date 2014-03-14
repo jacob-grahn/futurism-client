@@ -254,9 +254,9 @@
 		 * If it is the accounts turn, pass the action on to the table
 		 * @param {Player} player
 		 * @param {String} actionId
-		 * @param {Array} targetPositions
+		 * @param {Array} targetChain
 		 */
-		self.doAction = function(player, actionId, targetPositions) {
+		self.doAction = function(player, actionId, targetChain) {
 
 			// its gotta be your turn
 			if(!self.turnTicker.isTheirTurn(player)) {
@@ -264,13 +264,10 @@
 			}
 
 			// do the action
-			var result = actionFns.doAction(self, player, actionId, targetPositions);
-			if(result !== 'ok') {
-				return result;
-			}
+			var result = actionFns.doAction(self, player, actionId, targetChain);
 
 			// create a list of changed targets
-			self.broadcastChanges(actionId, targetPositions);
+			self.broadcastChanges(actionId, {result: result, targetChain: targetChain});
 
 			//
 			return 'ok';

@@ -100,6 +100,21 @@ angular.module('futurism')
 			targetElem: function(pos) {
 				var selector = self.targetSelector(pos)
 				return $(selector);
+			},
+
+
+			animNotif: function(elem, point, txt, classStr) {
+				var effect = $('<div class="card-notif '+classStr+'">'+txt+'</div>');
+
+				effect.css({left: point.x, top: point.y})
+					.animate({top: point.y-100}, 'slow')
+					.animate({opacity: 0}, 'slow', function() {
+						this.remove();
+					});
+
+				elem.append(effect);
+
+				return effect;
 			}
 
 		};

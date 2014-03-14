@@ -10,8 +10,7 @@ angular.module('futurism')
 
 				scope.$on('post:heal', function(srcScope, update) {
 
-					var targetChain = update.data;
-					var animChain = animFns.chainedAnimTargets(update, targetChain);
+					var animChain = animFns.chainedAnimTargets(update, update.data.targetChain);
 					var healer = animChain[0];
 					var healee = animChain[1];
 

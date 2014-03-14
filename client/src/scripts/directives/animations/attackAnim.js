@@ -8,21 +8,27 @@ angular.module('futurism')
 			link: function(scope, boardElement) {
 
 
-				scope.$on('pre:attk', function(srcScope, update) {
+				scope.$on('pre:siph', function(srcScope, update) {
+					var animTargets = animAttackAndCounter(update);
+					_.delay(function() {
+						var attacker = animTargets[0];
+						animFns.animNotif(boardElement, attacker.center, '+'+update.data.result.srcHeal+' health', 'good');
+					}, 1500);
+				});
 
-					var animTargets = animFns.chainedAnimTargets(update, update.data);
 
-					var attacker = animTargets[0];
-					var defender = animTargets[1];
+				scope.$on('pre:siph', function(srcScope, update) {
+					animAttackAndCounter(update);
+				});
 
-					attacker.damage = attacker.newData ? (attacker.newData.health - attacker.target.card.health) : 0;
-					defender.damage = defender.newData ? (defender.newData.health - defender.target.card.health) : 0;
 
-					animAttack(attacker, defender, function() {
-						if( (!defender.newData || defender.newData.health > 0) && defender.target.card.attack > 0) {
-							animAttack(defender, attacker, function() {});
-						}
-					});
+				scope.$on('pre:assn', function(srcScope, update) {
+					animAttackAndCounter(update);
+				});
+
+
+				scope.$on('pre:righ', function(srcScope, update) {
+					animAttackAndCounter(update);
 				});
 
 
@@ -62,17 +68,38 @@ angular.module('futurism')
 				});
 
 
+
+				var animAttackAndCounter = function(update) {
+					var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
+					var attacker = animTargets[0];
+					var defender = animTargets[1];
+
+					attacker.damage = update.data.result.srcDamage;
+					defender.damage = update.data.result.targetDamage;
+
+					animAttack(attacker, defender, function() {
+						if( (!defender.newData || defender.newData.health > 0) && defender.target.card.attack > 0) {
+							animAttack(defender, attacker, function() {});
+						}
+					});
+
+					return animTargets;
+				};
+
+
+
 				var animAttack = function(attacker, defender, callback) {
 					var message;
 					if(defender.damage === 0 || isNaN(defender.damage)) {
 						message = 'miss!';
 					}
 					else {
-						message = defender.damage;
+						message = '-' + defender.damage + ' health';
 					}
 
 					animThrow(attacker, defender, 'sword', message, callback);
 				};
+
 
 
 				var animThrow = function(attacker, defender, className, message, callback) {
@@ -87,14 +114,7 @@ angular.module('futurism')
 						.css({left: srcPoint.x-10, top: srcPoint.y-75, opacity: 0, transform: 'rotate('+angleDeg+'deg)'})
 						.animate({opacity: 1}, 1000)
 						.animate({left: destPoint.x-10, top: destPoint.y-75}, 400, 'linear', function() {
-
-							boardElement.append($('<div class="life-effect life-effect-dec">'+message+'</div>')
-								.css({left: destPoint.x, top: destPoint.y})
-								.animate({top: destPoint.y-100}, 'slow')
-								.animate({opacity: 0}, 'slow', function() {
-									this.remove();
-								}));
-
+							animFns.animNotif(boardElement, destPoint, message, 'danger');
 						})
 						.animate({opacity: 0}, 500, function() {
 							this.remove();

@@ -36,7 +36,7 @@ angular.module('futurism')
 
 
 						// get positions
-						var chain = animFns.chainedAnimTargets(update, update.data);
+						var chain = animFns.chainedAnimTargets(update, update.data.targetChain);
 						var src;
 						var dest;
 						if(chain.length === 3) {

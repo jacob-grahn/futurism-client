@@ -11,7 +11,7 @@ angular.module('futurism')
 				scope.$on('post:move', function(srcScope, update) {
 
 					_.delay(function() {
-						var animTargets = animFns.chainedAnimTargets(update, update.data);
+						var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
 						var startPos = animTargets[0];
 						var endPos = animTargets[1];
 

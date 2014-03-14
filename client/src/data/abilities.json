@@ -71,27 +71,6 @@
 			}
 		},
 
-		"attk": {
-			"name": {
-				"en": "attack",
-				"ne": "aanvallen",
-				"lt": "Ataka",
-				"hu": "támadás",
-				"nb": "angrep",
-				"pi": "attack",
-				"it": "attacca"
-			},
-			"desc": {
-				"en": "Attack an enemy card. If they survive, they will counter-attack.",
-				"ne": "Ruil tegenslag met een vijands zijn kaart.",
-				"lt": "Apsimaino kumtšelėjimais su priešininko kortą.",
-				"hu": "Trade blows with an enemy card.",
-				"nb": "Bytt slag med et fiendtlig kort.",
-				"pi": "Swap cannonballs with an enemy ship.",
-				"it": "Scambia i punti attacco con una carda nemica."
-			}
-		},
-
 		"move": {
 			"name": {
 				"en": "move",
@@ -115,7 +94,7 @@
 
 		"heal": {
 			"name": {
-				"en": "healing",
+				"en": "heal",
 				"ko": "치료",
 				"ct": "mewoowo",
 				"fr": "Guérir",

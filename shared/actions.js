@@ -44,30 +44,46 @@
 	};
 
 
+	/**
+	 * base attack
+	 * @param {object} src
+	 * @param {object} target
+	 * @param {boolean} counterAttack
+	 */
+	var attack = function(src, target, counterAttack) {
+		var srcAttack = _.random(0, src.card.attack);
+		var targetAttack = _.random(0, target.card.attack);
+		var srcDamage = targetAttack;
+		var targetDamage = srcAttack;
+
+		if(srcDamage > src.card.health) {
+			srcDamage = src.card.health;
+		}
+		if(targetDamage > target.card.health) {
+			targetDamage = target.card.health;
+		}
+
+		target.card.health -= targetDamage;
+		if(target.card.health > 0 && counterAttack) {
+			src.card.health -= srcDamage;
+		}
+
+		return {
+			srcAttack: srcAttack,
+			targetAttack: targetAttack,
+			srcDamage: srcDamage,
+			targetDamage: targetDamage
+		}
+	};
+
+
+
 
 	var actions = {
 
 		/////////////////////////////////////////////////////////////////////////////////////////
 		// universal
 		/////////////////////////////////////////////////////////////////////////////////////////
-
-		/**
-		 * Attack: trade blows with another card
-		 */
-		ATTACK: 'attk',
-		attk: {
-			restrict: [
-				[filters.owned],
-				[filters.enemy, filters.full, filters.front]
-			],
-			use: function(src, target) {
-				target.card.health -= _.random(0, src.card.attack);
-				if(target.card.health > 0) {
-					src.card.health -= _.random(0, target.card.attack);
-				}
-			}
-		},
-
 
 		/**
 		 * Move: move a card from one place to another
@@ -136,6 +152,23 @@
 		/////////////////////////////////////////////////////////////////////////////////////////
 		// ent
 		/////////////////////////////////////////////////////////////////////////////////////////
+
+		/**
+		 * Attack [siphon]: trade blows with another card, maybe suck their life-force
+		 */
+		SIPHON: 'siph',
+		siph: {
+			restrict: [
+				[filters.owned],
+				[filters.enemy, filters.full, filters.front]
+			],
+			use: function(src, target) {
+				var result = attack(src, target, true);
+				result.srcHeal = Math.round(result.targetDamage / 2);
+				src.card.health += result.srcHeal;
+				return result;
+			}
+		},
 
 		/**
 		 * Heal: Target card gains 1 health.
@@ -208,23 +241,6 @@
 			}
 		},
 
-		/**
-		 * Vagabond: All allies gain move ability
-		 */
-		VAGABOND: 'vgbn',
-		vgbn: {
-			restrict: [
-				[filters.owned]
-			],
-			use: function(src, board) {
-				var targets = board.playerTargets(src.player._id);
-				_.each(targets, function(target) {
-					if(target.card && target.card.abilities.indexOf('move') === -1) {
-						target.card.abilities.push('move');
-					}
-				});
-			}
-		},
 
 		/**
 		 * Bees: random enemy looses 1 health
@@ -361,6 +377,24 @@
 		////////////////////////////////////////////////////////////////////////////
 
 		/**
+		 * Teleporter: All allies gain move ability
+		 */
+		TELEPORTER: 'tlpr',
+		tlpr: {
+			restrict: [
+				[filters.owned]
+			],
+			use: function(src, board) {
+				var targets = board.playerTargets(src.player._id);
+				_.each(targets, function(target) {
+					if(target.card && target.card.abilities.indexOf('move') === -1) {
+						target.card.abilities.push('move');
+					}
+				});
+			}
+		},
+
+		/**
 		 * Seduction: Convert an enemy to your side if their health is 1.
 		 */
 		SEDUCTION: 'sduc',
@@ -441,21 +475,6 @@
 				target.card = null;
 				card.pride = 0;
 				target.player.hand.push(card);
-			}
-		},
-
-		/**
-		 * Siphon: Steal 1 health from a card of your choice.
-		 */
-		SIPHON: 'siph',
-		siph: {
-			restrict: [
-				[filters.owned],
-				[filters.enemy, filters.front]
-			],
-			use: function(src, target) {
-				src.card.health++;
-				target.card.health--;
 			}
 		},
 
