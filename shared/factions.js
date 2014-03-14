@@ -9,7 +9,7 @@
 			{id: 'heal'},
 			{id: 'tree'},
 			{id: 'abom'},
-			{id: 'secr'},
+			{id: 'peap'},
 			{id: 'bees'}
 		]
 	};

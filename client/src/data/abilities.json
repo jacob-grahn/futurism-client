@@ -185,20 +185,9 @@
 			}
 		},
 
-		"secr": {
+		"peap": {
 			"name": {
-				"en": "secretions",
-				"ko": "분비물",
-				"ct": "mewoowo",
-				"fr": "Sécrétions",
-				"pi": "Leaky ship",
-				"lt": "Atskyrimas",
-				"ne": "uitscheiding",
-				"sv": "sekretaioner",
-				"es": "secreciones",
-				"nb": "sekresjoner",
-				"it": "secrezioni",
-				"hu": "választás"
+				"en": "peace pipe"
 			},
 			"desc": {
 				"en": "Target enemy can not attack next turn.",

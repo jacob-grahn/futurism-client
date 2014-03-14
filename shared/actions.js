@@ -228,10 +228,10 @@
 		},
 
 		/**
-		 * Secretions: Target enemy can not attack next turn.
+		 * Peace Pipe: Target enemy can not attack next turn.
 		 */
-		SECRETIONS: 'secr',
-		secr: {
+		PEACE_PIPE: 'peap',
+		peap: {
 			restrict: [
 				[filters.owned],
 				[filters.enemy, filters.front]
