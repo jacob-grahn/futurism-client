@@ -64,8 +64,12 @@
 		}
 
 		target.card.health -= targetDamage;
+
 		if(target.card.health > 0 && counterAttack) {
 			src.card.health -= srcDamage;
+		}
+		else {
+			srcDamage = 0;
 		}
 
 		return {
@@ -420,7 +424,9 @@
 				[filters.enemy, filters.full, filters.front]
 			],
 			use: function(src, target) {
-				target.card.health -= src.card.attack;
+				var result = attack(src, target, false);
+				result.counterAttack = false;
+				return result;
 			}
 		},
 

@@ -17,13 +17,12 @@ angular.module('futurism')
 				});
 
 
-				scope.$on('pre:siph', function(srcScope, update) {
-					animAttackAndCounter(update);
-				});
-
-
 				scope.$on('pre:assn', function(srcScope, update) {
-					animAttackAndCounter(update);
+					var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
+					var attacker = animTargets[0];
+					var defender = animTargets[1];
+					defender.damage = update.data.result.targetDamage;
+					animAttack(attacker, defender);
 				});
 
 
