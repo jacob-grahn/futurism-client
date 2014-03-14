@@ -28,6 +28,11 @@ angular.module('futurism')
 				});
 
 
+				scope.$on('post:tree', function(srcScope, update) {
+					anim(update, 'summon-trees');
+				});
+
+
 
 				var anim = function(update, cssClass) {
 

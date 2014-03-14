@@ -30,6 +30,10 @@
 	opacity: 0.76;
 }
 
+.summon-trees .effect {
+	background-image: url("/images/trees.png");
+}
+
 .summon-effect .effect:first-child {
 	animation-name: summon-rotate1;
 	animation-duration: 2.9s;
@@ -74,9 +78,9 @@
 
 @keyframes summon-rotate2 {
 	from {
-		transform: rotate(0deg);
+		transform: rotate(180deg);
 	}
 	to {
-		transform: rotate(360deg);
+		transform: rotate(540deg);
 	}
 }
