@@ -42,7 +42,7 @@ var makeAccountCard = function(account) {
 		story: '',
 		abilities: [actions.SUMMON, actions.FUTURE],
 		cid: nextCid(),
-		moves: 0,
+		moves: 1,
 		pride: 0
 	};
 };

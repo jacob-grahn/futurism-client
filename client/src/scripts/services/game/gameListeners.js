@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('gameListeners', function($routeParams, $location, socket, players, turn, board, state, hand, updateDelayer, autoTurnEnder) {
+	.factory('gameListeners', function($routeParams, $location, socket, players, turn, board, state, hand, updateDelayer, autoTurnEnder, shared) {
 		'use strict';
 		var self = this;
 
@@ -29,6 +29,10 @@ angular.module('futurism')
 				board.partialUpdate(changes.board);
 				players.me = players.findMe();
 				autoTurnEnder.run();
+
+				if(cause === shared.actions.SUMMON) {
+					hand.removeCid(changes.data.targetChain[1].cid);
+				}
 			});
 		});
 

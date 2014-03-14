@@ -1,45 +1,43 @@
 angular.module('futurism')
-	.directive('teleporterAnim', function(_, $, board, players, animFns) {
+	.directive('teleporterAnim', function(_, $, board, animFns) {
 		'use strict';
 
 
 		return {
 			restrict: 'A',
-			link: function(scope, boardElement) {
+			link: function(scope, boardElem) {
 
 
-				scope.$on('pre:trpt', function(srcScope, update) {
+				scope.$on('pre:tlpt', function(srcScope, update) {
 
-					var targetChain = update.data;
-					var target = board.targetPos(targetChain[0]);
-					var player = target.player;
+					var animTarget = animFns.chainedAnimTargets(update, update.data.targetChain)[0];
 
+					animFns.animNotif(boardElem, animTarget.center, 'Who wants to teleport somewhere?', '');
 
+					var player = animTarget.target.player;
 					var targets = board.playerTargets(player._id);
-					var delay = 0;
-
 					targets = _.filter(targets, function(target) {
 						return target.card && target.card.abilities.indexOf('move') === -1;
 					});
+					_.delay(function() {
+						giveMove(targets);
+					}, 1500);
+				});
+
+
+
+				var giveMove = function(targets) {
+
+					var delay = 0;
 
 					_.each(targets, function(target) {
 						_.delay(function() {
-							var point = animFns.targetCenter(target, boardElement);
-							var effect = $('<div class="rally-effect">+move</div>');
-							effect.css({left: point.x, top: point.y, opacity: 0});
-							effect.animate({top: point.y-100, opacity: 1});
-							boardElement.append(effect);
+							var point = animFns.targetCenter(target, boardElem);
+							animFns.animNotif(boardElem, point, '+move', '');
 						}, delay);
 						delay += 333;
 					});
-
-					_.delay(function() {
-						var allEffects = boardElement.find('.rally-effect');
-						allEffects.animate({opacity: 0}, function() {
-							allEffects.remove();
-						});
-					}, delay + 1000);
-				});
+				};
 
 			}
 		};

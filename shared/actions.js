@@ -132,9 +132,15 @@
 			],
 			use: function(src, target1, target2) {
 				_.pull(src.player.hand, target1.card);
-				src.player.pride -= target1.card.pride;
 				target2.card = target1.card;
-				target1.card.moves = 0;
+				if(target1.card.pride === 0) {
+					src.card.moves++;
+					target1.card.moves = 1;
+				}
+				else {
+					src.player.pride -= target1.card.pride;
+					target1.card.moves = 0;
+				}
 			}
 		},
 
@@ -383,8 +389,8 @@
 		/**
 		 * Teleporter: All allies gain move ability
 		 */
-		TELEPORTER: 'tlpr',
-		tlpr: {
+		TELEPORTER: 'tlpt',
+		tlpt: {
 			restrict: [
 				[filters.owned]
 			],

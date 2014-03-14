@@ -6,7 +6,7 @@ angular.module('futurism')
 		 * Receive the cards in your hand
 		 */
 		socket.$on('hand', function(cards) {
-			hand.cards = cards;
+			self.cards = cards;
 			players.me.hand = cards;
 		});
 
@@ -14,49 +14,56 @@ angular.module('futurism')
 		/**
 		 *
 		 */
-		var hand = {
+		var self = {
 			cards: [],
 			show: false,
 			force: false,
 
 
 			toggle: function() {
-				if(hand.show) {
-					//state.toDefault();
-					hand.close();
+				if(self.show) {
+					self.close();
 				}
 				else {
-					hand.open();
+					self.open();
 				}
 			},
 
 
 			close: function() {
-				hand.show = false;
-				hand.force = false;
+				self.show = false;
+				self.force = false;
 			},
 
 
 			open: function() {
-				hand.show = true;
+				self.show = true;
 			},
 
 
 			forcePlay: function() {
-				hand.force = true;
+				self.force = true;
 			},
 
 
 			clear: function() {
-				hand.cards = [];
+				self.cards = [];
+			},
+
+
+			removeCid: function(cid) {
+				self.cards = _.filter(self.cards, function(card) {
+					return card.cid !== cid;
+				});
+				players.me.hand = self.cards;
 			},
 
 
 			refresh: function() {
-				hand.clear();
+				self.clear();
 				socket.emit('hand', {gameId: $routeParams.gameId});
 			}
 		};
 
-		return hand;
+		return self;
 	});
