@@ -409,6 +409,7 @@
 				[filters.friend, filters.empty]
 			],
 			use: function(src, target, target2) {
+				src.card.health--;
 				target2.card = target.card;
 				target.card = null;
 			}

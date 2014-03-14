@@ -427,7 +427,7 @@
 				"hu": "csábítás"
 			},
 			"desc": {
-				"en": "Convert an enemy to your side if their health is 1.",
+				"en": "Sacrifice one health to convert a weak enemy to your side.",
 				"ko": "자신의 건강이 1이면 옆으로 적을 변환합니다.",
 				"ct": "mewoowo",
 				"fr": "Convertir un ennemi de votre côté si son niveau de santé est de 1.",

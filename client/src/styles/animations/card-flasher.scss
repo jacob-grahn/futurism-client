@@ -5,6 +5,10 @@
 }
 
 .card-flasher-inner {
+	left: -50px;
+	top: -50px;
+	width: 100px;
+	height: 100px;
 	opacity: 0;
 	position: absolute;
 	animation-name: fade-in-out;
@@ -20,11 +24,11 @@
 }
 
 .card-flasher.peace-pipe .card-flasher-inner {
-	left: -50px;
-	top: -50px;
-	width: 100px;
-	height: 100px;
 	background-image: url('/images/peace-pipe.png');
+}
+
+.card-flasher.seduction .card-flasher-inner {
+	background-image: url('/images/seduction.png');
 }
 
 @keyframes fade-in-out {

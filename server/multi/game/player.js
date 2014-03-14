@@ -14,7 +14,7 @@ var Player = function(account) {
 	self.graveyard = [];
 	self.cards = [];
 	self.futures = [];
-	self.pride = 0;
+	self.pride = 3;
 	self.deckPride = 0;
 	self.deck = {};
 };

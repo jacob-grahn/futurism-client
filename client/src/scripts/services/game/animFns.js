@@ -134,6 +134,33 @@ angular.module('futurism')
 				}, 2000);
 
 				return effect;
+			},
+
+
+			animMove: function(elem, startPos, endPos, delayTime) {
+				endPos.elem.addClass('target-hidden');
+
+				var cloneElem = endPos.elem.find('.card-small').clone();
+				console.log('startPos', startPos);
+				console.log('endPos', endPos);
+
+				cloneElem
+					.css({
+						position: 'absolute',
+						top: startPos.offset.top,
+						left: startPos.offset.left,
+						'z-index': 48
+					})
+					.delay(delayTime)
+					.animate({
+						top: endPos.offset.top,
+						left: endPos.offset.left
+					}, 'slow', function() {
+						endPos.elem.removeClass('target-hidden');
+						cloneElem.remove();
+					});
+
+				elem.append(cloneElem);
 			}
 
 		};
