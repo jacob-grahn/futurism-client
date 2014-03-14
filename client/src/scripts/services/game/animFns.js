@@ -141,8 +141,6 @@ angular.module('futurism')
 				endPos.elem.addClass('target-hidden');
 
 				var cloneElem = endPos.elem.find('.card-small').clone();
-				console.log('startPos', startPos);
-				console.log('endPos', endPos);
 
 				cloneElem
 					.css({
