@@ -115,6 +115,25 @@ angular.module('futurism')
 				elem.append(effect);
 
 				return effect;
+			},
+
+
+			animFlasher: function(elem, point, classStr) {
+				var effect = $('<div class="card-flasher '+classStr+'"><div class="card-flasher-inner"></div></div>');
+
+				effect.css({
+					left: point.x,
+					top: point.y
+				});
+
+				elem.append(effect);
+
+				// cleanup
+				_.delay(function() {
+					effect.remove();
+				}, 2000);
+
+				return effect;
 			}
 
 		};

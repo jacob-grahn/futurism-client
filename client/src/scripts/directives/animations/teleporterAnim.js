@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('vagabondAnim', function(_, $, board, players, animFns) {
+	.directive('teleporterAnim', function(_, $, board, players, animFns) {
 		'use strict';
 
 

@@ -234,7 +234,7 @@
 		peap: {
 			restrict: [
 				[filters.owned],
-				[filters.enemy, filters.front]
+				[filters.enemy, filters.full, filters.front]
 			],
 			use: function(src, target) {
 				target.card.moves--;
