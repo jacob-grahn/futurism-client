@@ -15,7 +15,7 @@ angular.module('futurism')
 						var startPos = animTargets[0];
 						var endPos = animTargets[1];
 
-						animFns.animMove(boardElem, startPos, endPos, 0);
+						animFns.animMove(boardElem, startPos, endPos, 1);
 					});
 				});
 

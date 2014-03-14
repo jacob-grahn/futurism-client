@@ -137,10 +137,14 @@ angular.module('futurism')
 			},
 
 
-			animMove: function(elem, startPos, endPos, delayTime) {
+			animMove: function(holderElem, startPos, endPos, delayTime) {
 				endPos.elem.addClass('target-hidden');
 
-				var cloneElem = self.cloneCardElem(elem, startPos);
+				var cloneElem = self.cloneCardElem(holderElem, endPos);
+				cloneElem.css({
+					top: startPos.offset.top,
+					left: startPos.offset.left
+				});
 
 				cloneElem
 					.delay(delayTime)
@@ -148,6 +152,7 @@ angular.module('futurism')
 						top: endPos.offset.top,
 						left: endPos.offset.left
 					}, 'slow', function() {
+						console.log('move animation complete');
 						endPos.elem.removeClass('target-hidden');
 						cloneElem.remove();
 					});

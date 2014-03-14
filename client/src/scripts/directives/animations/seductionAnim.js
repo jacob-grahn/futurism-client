@@ -16,6 +16,8 @@ angular.module('futurism')
 						var target = animTargets[1];
 						var dest = animTargets[2];
 
+						animFns.animMove(boardElem, target, dest, 2000);
+
 						animFns.animNotif(boardElem, src.center, '-1 health', 'danger');
 
 						_.delay(function() {
@@ -26,7 +28,6 @@ angular.module('futurism')
 								animFns.animFlasher(boardElem, target.center, 'seduction');
 							}, 500);
 
-							animFns.animMove(boardElem, target, dest, 1500);
 						}, 500);
 
 					});
