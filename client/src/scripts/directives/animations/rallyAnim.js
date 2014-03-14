@@ -57,7 +57,7 @@ angular.module('futurism')
 							var descPosition = animFns.relativeOffset(boardElement.find('#area-desc-'+player._id), boardElement);
 							allEffects.animate({
 								left: descPosition.left + 10,
-								top: descPosition.top - 25, 
+								top: descPosition.top - 25,
 								opacity: 0
 							}, function() {
 								scope.$apply(function() {

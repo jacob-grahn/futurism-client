@@ -140,15 +140,9 @@ angular.module('futurism')
 			animMove: function(elem, startPos, endPos, delayTime) {
 				endPos.elem.addClass('target-hidden');
 
-				var cloneElem = endPos.elem.find('.card-small').clone();
+				var cloneElem = self.cloneCardElem(elem, startPos);
 
 				cloneElem
-					.css({
-						position: 'absolute',
-						top: startPos.offset.top,
-						left: startPos.offset.left,
-						'z-index': 48
-					})
 					.delay(delayTime)
 					.animate({
 						top: endPos.offset.top,
@@ -157,8 +151,19 @@ angular.module('futurism')
 						endPos.elem.removeClass('target-hidden');
 						cloneElem.remove();
 					});
+			},
 
-				elem.append(cloneElem);
+
+			cloneCardElem: function(holderElem, animTarget) {
+				var cloneElem = animTarget.elem.find('.card-small').clone();
+				cloneElem.css({
+					position: 'absolute',
+					top: animTarget.offset.top,
+					left: animTarget.offset.left,
+					'z-index': 48
+				});
+				holderElem.append(cloneElem);
+				return cloneElem;
 			}
 
 		};
