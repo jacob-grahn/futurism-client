@@ -133,13 +133,14 @@
 			use: function(src, target1, target2) {
 				_.pull(src.player.hand, target1.card);
 				target2.card = target1.card;
-				if(target1.card.pride === 0) {
+				src.player.pride -= target1.card.pride;
+				if(target1.card.hasBeenPlayed) {
 					src.card.moves++;
 					target1.card.moves = 1;
 				}
 				else {
-					src.player.pride -= target1.card.pride;
 					target1.card.moves = 0;
+					target1.card.hasBeenPlayed = true;
 				}
 			}
 		},
@@ -447,6 +448,7 @@
 			],
 			use: function(src) {
 				var card = src.card;
+				card.hasBeenPlayed = false;
 				src.card = null;
 				src.player.pride += card.pride;
 				src.player.hand.push(card);
