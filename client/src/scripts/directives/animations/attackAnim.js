@@ -31,6 +31,11 @@ angular.module('futurism')
 				});
 
 
+				scope.$on('pre:prci', function(srcScope, update) {
+					animAttackAndCounter(update);
+				});
+
+
 				scope.$on('pre:bees', function(srcScope, update) {
 					var animTargets = animFns.updatedAnimTargets(update);
 					var attacker;

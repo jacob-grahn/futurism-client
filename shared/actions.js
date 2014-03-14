@@ -325,7 +325,7 @@
 		},
 
 		/**
-		 * Precision: Attack an enemy of your choice regardless of defensive formations.
+		 * Attack [Precision]: Attack an enemy of your choice regardless of defensive formations.
 		 */
 		PRECISION: 'prci',
 		prci: {
@@ -334,8 +334,8 @@
 				[filters.enemy, filters.full]
 			],
 			use: function(src, target) {
-				target.card.health -= src.card.attack;
-				src.card.health -= target.card.attack;
+				var result = attack(src, target, true);
+				return result;
 			}
 		},
 
