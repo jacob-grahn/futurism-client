@@ -99,6 +99,13 @@
 					self.drawCards(self.players, rules.handSize);
 					effects.hand(self.players);
 					self.broadcastChanges('rlly', effects.rally(self.turnTicker.turnOwners[0], self.board));
+
+
+					/**
+					 * beginning of turn effects
+					 */
+					var turnTargets = self.board.playerTargets(self.turnTicker.turnOwners[0]._id);
+					self.doEffect('deBuf', turnTargets);
 				},
 
 
@@ -110,11 +117,10 @@
 
 
 					/**
-					 * apply effects
+					 * end of turn effects
 					 */
 					var turnTargets = self.board.playerTargets(self.turnTicker.turnOwners[0]._id);
 					self.doEffect('poison', turnTargets);
-					self.doEffect('deBuf', turnTargets);
 					self.doEffect('refresh', turnTargets);
 					self.doEffect('death', self.board.allTargets());
 

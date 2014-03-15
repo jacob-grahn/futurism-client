@@ -56,17 +56,17 @@
 		var srcDamage = targetAttack;
 		var targetDamage = srcAttack;
 
-		if(srcDamage > src.card.health) {
+		/*if(srcDamage > src.card.health) {
 			srcDamage = src.card.health;
 		}
 		if(targetDamage > target.card.health) {
 			targetDamage = target.card.health;
-		}
+		}*/
 
-		target.card.health -= targetDamage;
+		takeDamage(target, targetDamage);
 
 		if(target.card.health > 0 && counterAttack) {
-			src.card.health -= srcDamage;
+			takeDamage(src, srcDamage);
 		}
 		else {
 			srcDamage = 0;
@@ -77,6 +77,22 @@
 			targetAttack: targetAttack,
 			srcDamage: srcDamage,
 			targetDamage: targetDamage
+		}
+	};
+
+
+	/**
+	 * apply damage to a card
+	 * @param target
+	 * @param damage
+	 */
+	var takeDamage = function(target, damage) {
+		if(target.card) {
+			while(target.card.shield > 0 && damage > 0) {
+				target.card.shield--;
+				damage--;
+			}
+			target.card.health -= damage;
 		}
 	};
 
@@ -267,7 +283,7 @@
 					return false;
 				}
 				var target = _.sample(possibleTargets);
-				target.card.health--;
+				takeDamage(target, 1);
 			}
 		},
 
@@ -320,7 +336,7 @@
 				[filters.owned]
 			],
 			use: function(src) {
-				src.card.shield++;
+				src.card.shield = 2;
 			}
 		},
 

@@ -61,7 +61,6 @@ angular.module('futurism')
 
 
 				var makeGrabber = function(abomOffset, victimOffset, callback) {
-					console.log('make grabber');
 					var p1 = {
 						x: abomOffset.left + (Math.random() * animFns.cardWidth),
 						y: abomOffset.top + (Math.random() * animFns.cardHeight)

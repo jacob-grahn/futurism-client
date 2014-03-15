@@ -31,6 +31,10 @@
 	background-image: url('/images/seduction.png');
 }
 
+.card-flasher.shield .card-flasher-inner {
+	background-image: url('/images/t-shield.png');
+}
+
 @keyframes fade-in-out {
 	0% {
 		transform: scale(0.25, 0.25);

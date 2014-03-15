@@ -4,6 +4,7 @@
 
 	<ul class="status">
 		<li ng-if="card.poison" class="poison"></li>
+		<li ng-if="card.shield" class="shield"></li>
 	</ul>
 
 	<div class="card-image-holder">
@@ -24,6 +25,7 @@
 	</ul>
 
 	<div class="card-story">{{card.story}}</div>
+	<div ng-if="card.shield" class="card-shield good">+{{card.shield}}</div>
 	<div class="card-stats">{{card.attack}}/{{card.health}}</div>
 	<div class="card-pride">{{card.pride}} ₱</div>
 

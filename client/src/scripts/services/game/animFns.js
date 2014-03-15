@@ -152,7 +152,6 @@ angular.module('futurism')
 						top: endPos.offset.top,
 						left: endPos.offset.left
 					}, 'slow', function() {
-						console.log('move animation complete');
 						endPos.elem.removeClass('target-hidden');
 						cloneElem.remove();
 					});

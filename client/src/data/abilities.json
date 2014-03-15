@@ -272,18 +272,7 @@
 				"hu": "t-pajzs"
 			},
 			"desc": {
-				"en": "All damage that would be dealt to target unit is reduced by 1 for a turn.",
-				"ko": "단위를 대상으로 처리 될 수있는 모든 피해는 차례를 1로 줄일 수있다.",
-				"ct": "mewoowo",
-				"fr": "Tous les dégâts que subiraient la cible au prochain tour sont réduits de 1.",
-				"pi": "Target ship receives one less cannonball per attack for 1 turn",
-				"lt": "Vieną ėjima, visa padaryta žala yra sumažinta 1 tašku.",
-				"ne": "Alle schade die zou worden toegebracht aan het doel wordt verminderd met 1 voor een beurt.",
-				"sv": "All skada som skulle ha blivit handlat till enheten är nedsatt till en för en omgång.",
-				"es": "Todo el daño que la unidad objetivo fuera a recibir se reduce en 1 por un turno.",
-				"nb": "All skade som ville ha blitt gitt til målrettet enhet er redusert med 1 for én runde.",
-				"it": "Tutto il danno che dovrebbe essere stato afflitto all'unità persaglio viene ridotto a 1 per un turno.",
-				"hu": "All damage that would be dealt to target unit is reduced by 1 for a turn."
+				"en": "Protect this card from two points of damage."
 			}
 		},
 
