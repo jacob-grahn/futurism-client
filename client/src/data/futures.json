@@ -3,26 +3,32 @@
 	"futureTypes": {
 		"unstable": {
 			"name": {
-				"en": "Stable Futures"
+				"en": "Stable Futures",
+				"nb": "Stabile fremtider"
 			},
 			"desc": {
-				"en": "These reliable futures can be used any number of times."
+				"en": "These reliable futures can be used any number of times.",
+				"nb": "Disse pålitelige fremtidene kan brukes et ubegrenset antall ganger."
 			}
 		},
 		"stable": {
 			"name": {
-				"en": "Unstable Futures"
+				"en": "Unstable Futures",
+				"nb": "Ustabile fremtider"
 			},
 			"desc": {
-				"en": "These futures are powerful, but only last a short while before fading away."
+				"en": "These futures are powerful, but only last a short while before fading away.",
+				"nb": "Disse fremtidene er mektige, men varer bare i en liten stund før de visner bort."
 			}
 		},
 		"paradox": {
 			"name": {
-				"en": "Paradoxes"
+				"en": "Paradoxes",
+				"nb": "Paradokser"
 			},
 			"desc": {
-				"en": "The combined time manipulations of an entire guild are needed to create a paradox. Paradoxes are wildly powerful, but only last a short while."
+				"en": "The combined time manipulations of an entire guild are needed to create a paradox. Paradoxes are wildly powerful, but only last a short while.",
+				"nb": "Den kombinerte tidsmanipulasjonen til et helt laug trengs for å lage et paradoks. Paradokser er ekstremt kraftige, men varer bare i en liten stund."
 			}
 		}
 	},
@@ -45,7 +51,7 @@
 				"ne": "Kaarten die niet aanvallen verdienen levens punt.",
 				"lt": "Nepuolanti korta, gauna 1 papildomą gyvybės tašką.",
 				"hu": "Cards that do not attack gain 1 point of health.",
-				"nb": "Kort som ikke angriper får 1 helsepoeng.",
+				"nb": "Kort som ikke angriper får ett helsepoeng.",
 				"pi": "Ships that don't fight drink 1 rum.",
 				"it": "Le carte che non attaccano guadagnano 1 punto vita."
 			}
@@ -108,7 +114,7 @@
 				"ne": "Elke actie heeft 50% kans om te valen.",
 				"lt": "Kiekvienam veiksmui yra 50% galimybė susimauti.",
 				"hu": "Every action has a 50% chance to fail.",
-				"nb": "Hvert gjøremål har en 50% sjangse for å mislykkes.",
+				"nb": "Hver handling har en 50% sjangse for å mislykkes.",
 				"pi": "All plots be as likely to succeed as heads on a coin.",
 				"it": "Ogni azione ha una probabilità del 50% di fallire."
 			}
