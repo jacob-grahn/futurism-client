@@ -3,28 +3,34 @@
 
 		"grow": {
 			"name": {
-				"en": "grow"
+				"en": "grow",
+				"nb": "voks"
 			},
 			"desc": {
-				"en": "Become a lovable clone that is just like mommy or daddy."
+				"en": "Become a lovable clone that is just like mommy or daddy.",
+				"nb": "Bli en elskbar klone som er akkurat som mor eller far."
 			}
 		},
 
 		"smmn": {
 			"name": {
-				"en": "summon"
+				"en": "summon",
+				"nb": "framkall"
 			},
 			"desc": {
-				"en": "Play a card from your hand."
+				"en": "Play a card from your hand.",
+				"nb": "Spill et kort fra hånden din."
 			}
 		},
 
 		"futr": {
 			"name": {
-				"en": "future"
+				"en": "future",
+				"nb": "framtid"
 			},
 			"desc": {
-				"en": "Change the future."
+				"en": "Change the future.",
+				"nb": "Forandre framtiden."
 			}
 		},
 
@@ -34,7 +40,7 @@
 				"ne": "Bijeenkomst",
 				"lt": "Mitingas",
 				"hu": "rally",
-				"nb": "sammenkomst",
+				"nb": "opptog",
 				"pi": "Pirate's cry",
 				"it": "rally"
 			},
@@ -134,7 +140,7 @@
 				"ne": "onkruid bomen",
 				"sv": "ogrästräd",
 				"es": "árboles de hierbas",
-				"nb": "Ugresstrær",
+				"nb": "trær!",
 				"it": "Albero di Erba",
 				"hu": "gyom fák"
 			},
@@ -187,7 +193,8 @@
 
 		"peap": {
 			"name": {
-				"en": "peace pipe"
+				"en": "peace pipe",
+				"nb": "fredspipe"
 			},
 			"desc": {
 				"en": "Target enemy can not attack next turn.",
@@ -221,7 +228,8 @@
 				"hu": "méhek!"
 			},
 			"desc": {
-				"en": "A random enemy loses 1 health. This attack always hits."
+				"en": "A random enemy loses 1 health. This attack always hits.",
+				"nb": "En tilfeldig fiende mister ett liv. Dette angrepet treffer alltid."
 			}
 		},
 
@@ -272,7 +280,8 @@
 				"hu": "t-pajzs"
 			},
 			"desc": {
-				"en": "Protect this card from two points of damage."
+				"en": "Protect this card from two points of damage.",
+				"nb": "Beskytt dette kortet fra to skadepoeng."
 			}
 		},
 
@@ -301,7 +310,7 @@
 				"ne": "Val een vijand van je keuze aan, ongeacht de verdedigingsformatie.",
 				"sv": "Attackera en fiende av ditt val oavsett´av defensiva former",
 				"es": "Ataca un enemigo a tu elección sin importar las formaciones defensivas.",
-				"nb": "Angrip en fiende av ditt valg uavhengig av defensive formasjoner.",
+				"nb": "Angrip en fiende av ditt valg uavhengig av defensive formasjoner. Fienden vil gå til motangrep.",
 				"it": "Attacca un nemico di tua scelta senza contare delle formazioni difensive.",
 				"hu": "Attack an enemy of your choice regardless of defensive formations."
 			}
@@ -318,7 +327,7 @@
 				"ne": "strateeg",
 				"sv": "strateg",
 				"es": "estratega",
-				"nb": "strateg",
+				"nb": "oppladning",
 				"it": "Stratega",
 				"hu": "stratéga"
 			},
@@ -332,7 +341,7 @@
 				"ne": "De bondgenoot kan deze beurt een extra actie uitvoeren",
 				"sv": "Allierade kan utföra en extra åtgärd den här omgången",
 				"es": "Un aliado puede realizar una acción más en este turno",
-				"nb": "Allierte kan utøve en ekstra handling denne runden",
+				"nb": "En alliert kan utøve en ekstra handling denne runden",
 				"it": "Un alleato può fare un'azione extra in questo turno.",
 				"hu": "Ally can perform an extra action this turn"
 			}
@@ -349,7 +358,7 @@
 				"ne": "netwerk",
 				"sv": "nätverk",
 				"es": "conexiones",
-				"nb": "nettverk",
+				"nb": "nettverksbygging",
 				"it": "networking",
 				"hu": "hálózat"
 			},
@@ -425,7 +434,7 @@
 				"ne": "Haal een vijand naar jouw kant als ze maar 1 leven overhebben.",
 				"sv": "Konvertera en fiende till din sida om dens hälsa är ett",
 				"es": "Convierte un enemigo a tu bando si su vida es 1.",
-				"nb": "Konverter en fiende til din side dersom deres helse er 1.",
+				"nb": "Ofre ett helsepoeng for å konvertere en svak fiende til din side.",
 				"it": "Converti un nemico dalla tua parte se la sua salute è 1.",
 				"hu": "Convert an enemy to your side if their health is 1."
 			}
@@ -442,7 +451,7 @@
 				"ne": "moordenaar ",
 				"sv": "mördare",
 				"es": "asesino",
-				"nb": "snikmorder",
+				"nb": "angrip [snikmorder]",
 				"it": "assassino",
 				"hu": "assassin"
 			},
@@ -456,7 +465,7 @@
 				"ne": "Val aan zonder zelf schaden te ondervinden.",
 				"sv": "Attackera utan att ta skada",
 				"es": "Ataca sin recibir daño.",
-				"nb": "Angrip uten å ta imot skade.",
+				"nb": "Angrip uten noen sjanse for motangrep.",
 				"it": "Attacca senza prendere danno.",
 				"hu": "Attack without taking damage."
 			}
@@ -478,7 +487,8 @@
 				"hu": "képviselő"
 			},
 			"desc": {
-				"en": "Return this card to you hand, refunding its original pride cost."
+				"en": "Return this card to you hand, refunding its original pride cost.",
+				"nb": "Returner dette kortet til hånden din, og få tilbake dets opprinnelige stolthetskostnad."
 			}
 		},
 
@@ -507,7 +517,7 @@
 				"ne": "Het vijandelijke doel verliest 1 leven per beurt.",
 				"sv": "Den valda fienden förlorar ett hälsopoäng per omgång",
 				"es": "El enemigo objetivo pierde 1 de vida por turno.",
-				"nb": "Målsatt fiende mister ett helsepoeng per runde.",
+				"nb": "Målsatt fiende mister ett helsepoeng per runde. 50% sjanse for å mislykkes.",
 				"it": "Il nemico bersaglio perde 1 punto vita a turno.",
 				"hu": "Target enemy loses 1 health per turn."
 			}
@@ -515,10 +525,12 @@
 
 		"tlpt": {
 			"name": {
-				"en": "teleporter"
+				"en": "teleporter",
+				"nb": "teleportør"
 			},
 			"desc": {
-				"en": "All your cards gain the move ability."
+				"en": "All your cards gain the move ability.",
+				"nb": "Alle kortene dine får flytt-egenskapen."
 			}
 		},
 
@@ -564,12 +576,13 @@
 				"ne": "dief",
 				"sv": "sifon",
 				"es": "sifón",
-				"nb": "hevert",
+				"nb": "sifon",
 				"it": "sifone",
 				"hu": "szifon"
 			},
 			"desc": {
-				"en": "Attack an enemy, converting some of the damage into health. The enemy will counter-attack."
+				"en": "Attack an enemy, converting some of the damage into health. The enemy will counter-attack.",
+				"nb": "Angriper en fiende, og konverterer noe av skaden til helsepoeng. Fienden vil gå til motangrep."
 			}
 		},
 
@@ -660,7 +673,7 @@
 				"ne": "Het doel krijgt twee kracht voor deze beurt.",
 				"sv": "Att träffa en enhet ger två attacker för omgången",
 				"es": "La unidad objetivo gana 2 de ataque por este turno.",
-				"nb": "Målsatt enhet får 2 angrep denne runden.",
+				"nb": "Målsatt enhet får 2 angrepspoeng denne runden.",
 				"it": "L'unità bersaglio guadagna 2 punti attacco per questo turno.",
 				"hu": "Target unit gains 2 attack for the turn."
 			}
@@ -713,17 +726,20 @@
 				"hu": "szuper szérum"
 			},
 			"desc": {
-				"en": "Attack is increased by 3, and this card becomes poisoned."
+				"en": "Attack is increased by 3, and this card becomes poisoned.",
+				"nb": "Kortet får tre angrepspoeng, og blir forgiftet."
 			}
 		},
 
 
 		"righ": {
 			"name": {
-				"en": "attack [righteous]"
+				"en": "attack [righteous]",
+				"nb": "angrip [rettferdig]"
 			},
 			"desc": {
-				"en": "Attack an enemy, converting the damage into pride. The enemy will counter-attack."
+				"en": "Attack an enemy, converting the damage into pride. The enemy will counter-attack.",
+				"nb": "Angrip en fiende, og konverter skaden til stolthet. Fienden vil gå til motangrep."
 			}
 		}
 	}
