@@ -3,28 +3,34 @@
 
 		"grow": {
 			"name": {
-				"en": "grow"
+				"en": "grow",
+				"pi": "construct"
 			},
 			"desc": {
-				"en": "Become a lovable clone that is just like mommy or daddy."
+				"en": "Become a lovable clone that is just like mommy or daddy.",
+				"pi": "Build a replica ship."
 			}
 		},
 
 		"smmn": {
 			"name": {
-				"en": "summon"
+				"en": "summon",
+				"pi": "Writ of summons"
 			},
 			"desc": {
-				"en": "Play a card from your hand."
+				"en": "Play a card from your hand.",
+				"pi": "Send a ship from the shipyard."
 			}
 		},
 
 		"futr": {
 			"name": {
-				"en": "future"
+				"en": "future",
+				"pi": "tomorrow"
 			},
 			"desc": {
-				"en": "Change the future."
+				"en": "Change the future.",
+				"pi": "Change tomorrow."
 			}
 		},
 
@@ -187,7 +193,8 @@
 
 		"peap": {
 			"name": {
-				"en": "peace pipe"
+				"en": "peace pipe",
+				"pi": "leaky pipe"
 			},
 			"desc": {
 				"en": "Target enemy can not attack next turn.",
@@ -221,7 +228,8 @@
 				"hu": "méhek!"
 			},
 			"desc": {
-				"en": "A random enemy loses 1 health. This attack always hits."
+				"en": "A random enemy loses 1 health. This attack always hits.",
+				"pi": "Bees swarm a random enemy and destroy 1 rum. Bees bee deadly accurate."
 			}
 		},
 
@@ -272,7 +280,8 @@
 				"hu": "t-pajzs"
 			},
 			"desc": {
-				"en": "Protect this card from two points of damage."
+				"en": "Protect this card from two points of damage.",
+				"pi": "Fog enshrouds a ship and prevents the loss of two rum."
 			}
 		},
 
@@ -468,7 +477,7 @@
 				"ko": "대리자",
 				"ct": "mewoowo",
 				"fr": "Délégué",
-				"pi": "delegate",
+				"pi": "port",
 				"lt": "Įgaliojimas",
 				"ne": "afgevaardige",
 				"sv": "sända",
@@ -478,7 +487,8 @@
 				"hu": "képviselő"
 			},
 			"desc": {
-				"en": "Return this card to you hand, refunding its original pride cost."
+				"en": "Return this card to your hand, refunding its original pride cost.",
+				"pi": "Send this ship back to port, gaining back its pride cost."
 			}
 		},
 
@@ -515,10 +525,12 @@
 
 		"tlpt": {
 			"name": {
-				"en": "teleporter"
+				"en": "teleporter",
+				"pi": "take up anchor"
 			},
 			"desc": {
-				"en": "All your cards gain the move ability."
+				"en": "All your cards gain the move ability.",
+				"pi": "All ships may now move about."
 			}
 		},
 
@@ -569,7 +581,8 @@
 				"hu": "szifon"
 			},
 			"desc": {
-				"en": "Attack an enemy, converting some of the damage into health. The enemy will counter-attack."
+				"en": "Attack an enemy, converting some of the damage into health. The enemy will counter-attack.",
+				"pi": "Shoot an enemy ship. Some of their rum will be stolen, but they'll counter over their lost rum!"
 			}
 		},
 
@@ -713,17 +726,20 @@
 				"hu": "szuper szérum"
 			},
 			"desc": {
-				"en": "Attack is increased by 3, and this card becomes poisoned."
+				"en": "Attack is increased by 3, and this card becomes poisoned.",
+				"pi": "Ship has 3 more cannons, but its rum supply is poisoned."
 			}
 		},
 
 
 		"righ": {
 			"name": {
-				"en": "attack [righteous]"
+				"en": "attack [righteous]",
+				"pi": "righteous"
 			},
 			"desc": {
-				"en": "Attack an enemy, converting the damage into pride. The enemy will counter-attack."
+				"en": "Attack an enemy, converting the damage into pride. The enemy will counter-attack.",
+				"pi": "Shoot an enemy ship; rum will turn into pride. Enemey will counter over the loss of their rum!"
 			}
 		}
 	}
