@@ -356,13 +356,13 @@
 		},
 
 		/**
-		 * Strategist: Ally can perform an extra action this turn
+		 * Recharge: Ally can perform an extra action this turn
 		 */
-		STRATEGIST: 'strt',
-		strt: {
+		RECHARGE: 'rech',
+		rech: {
 			restrict: [
 				[filters.owned],
-				[filters.friend, filters.full]
+				[filters.friend, filters.full, filters.notSelf]
 			],
 			use: function(src, target) {
 				target.card.moves++;

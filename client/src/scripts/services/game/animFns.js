@@ -131,7 +131,7 @@ angular.module('futurism')
 				// cleanup
 				_.delay(function() {
 					effect.remove();
-				}, 2000);
+				}, 4000);
 
 				return effect;
 			},
@@ -168,6 +168,34 @@ angular.module('futurism')
 				});
 				holderElem.append(cloneElem);
 				return cloneElem;
+			},
+
+
+			makeGrabber: function(holderElem, p1, p2, classStr) {
+				var distX = p1.x - p2.x;
+				var distY = p1.y - p2.y;
+				var distTot = Math.sqrt(distX*distX + distY*distY);
+				var angleRad = Math.atan2(distY, distX) + Math.PI;
+
+				var grabber = $('<div class="grabber-effect '+classStr+'"></div>')
+					.css({
+						left: p1.x,
+						top: p1.y,
+						width: 1,
+						transform: 'rotate('+angleRad+'rad)'
+					})
+					.animate({
+						width: distTot
+					})
+					.delay(1000)
+					.animate({
+						opacity: 0
+					}, function() {
+						grabber.remove();
+					});
+
+				holderElem.append(grabber);
+				return grabber;
 			}
 
 		};

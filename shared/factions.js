@@ -21,7 +21,7 @@
 			{id: 'move'},
 			{id: 'rbld'},
 			{id: 'shld'},
-			{id: 'strt'},
+			{id: 'rech'},
 			{id: 'netw'},
 			{id: 'tran'}
 		]
