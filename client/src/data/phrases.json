@@ -880,39 +880,39 @@
 
   "guildJoiner": {
 
-		"joinGuild": {
-			"en": "Join Guild",
-			"ne": "Treed toe in de Gilde",
-			"lt": "Stoti į Gildiją",
-			"pi": "Enlist"
-		},
+    "joinGuild": {
+      "en": "Join Guild",
+      "ne": "Treed toe in de Gilde",
+      "lt": "Stoti į Gildiją",
+      "pi": "Enlist"
+    },
 
-		"createGuild": {
-			"en": "Create Guild",
-			"ne": "Maak Gilde",
-			"lt": "Sukurti Gildiją",
-			"pi": "Found guild"
-		},
+    "createGuild": {
+      "en": "Create Guild",
+      "ne": "Maak Gilde",
+      "lt": "Sukurti Gildiją",
+      "pi": "Found guild"
+    },
 
-		"joinPolicy": {
-			"en": "Join Policy",
-			"ne": "Treed toe in het overleg",
-			"lt": "Įstojimo tipas",
-			"pi": "Enlistment policy"
-		},
+    "joinPolicy": {
+      "en": "Join Policy",
+      "ne": "Treed toe in het overleg",
+      "lt": "Įstojimo tipas",
+      "pi": "Enlistment policy"
+    },
 
-		"banner": {
-			"en": "Banner",
-			"ne": "Logo",
-			"lt": "Logotipas",
-			"pi": "Flag"
-		},
+    "banner": {
+      "en": "Banner",
+      "ne": "Logo",
+      "lt": "Logotipas",
+      "pi": "Flag"
+    },
 
     "join": {
       "en": "Join",
       "ne": "Treed toe",
       "lt": "Įstoti",
-			"pi": "Enlist"
+      "pi": "Enlist"
     },
 
     "leaders": {
@@ -945,62 +945,64 @@
   },
 
 
-	"guildJoinPolicy": {
-		"open": {
-			"name": {
-				"en": "Open",
-				"ne": "Open",
-				"lt": "Atvira",
-				"pi": "Open doors"
-			},
-			"desc": {
-				"en": "Anyone can join this guild.",
-				"ne": "Iedereen kan in deze guild komen",
-				"lt": "Į šią Gildiją gali įstoti visi.",
-				"pi": "Any pirate may join this crew."
-			}
-		},
+  "guildJoinPolicy": {
+    "open": {
+      "name": {
+        "en": "Open",
+        "ne": "Open",
+        "lt": "Atvira",
+        "pi": "Open doors"
+      },
+      "desc": {
+        "en": "Anyone can join this guild.",
+        "ne": "Iedereen kan in deze guild komen",
+        "lt": "Į šią Gildiją gali įstoti visi.",
+        "pi": "Any pirate may join this crew."
+      }
+    },
 
-		"invite": {
-			"name": {
-				"en": "Invite",
-				"ne": "Nodig uit",
-				"lt": "Tik su pakvietimu",
-				"pi": "Private"
-			},
-			"desc": {
-				"en": "Only invited players can join this guild.",
-				"ne": "Alleen uitgenodigde speler kunnen in deze gilde komen",
-				"lt": "Tik pakviesti žaidėjai gali įstoti į šią Gildiją",
-				"pi": "Pirates must have a letter to join this guild."
-			}
-		},
+    "invite": {
+      "name": {
+        "en": "Invite",
+        "ne": "Nodig uit",
+        "lt": "Tik su pakvietimu",
+        "pi": "Private"
+      },
+      "desc": {
+        "en": "Only invited players can join this guild.",
+        "ne": "Alleen uitgenodigde speler kunnen in deze gilde komen",
+        "lt": "Tik pakviesti žaidėjai gali įstoti į šią Gildiją",
+        "pi": "Pirates must have a letter to join this guild."
+      }
+    },
 
-		"ask": {
-			"name": {
-				"en": "Ask",
-				"ne": "Vraag",
-				"lt": "Tik su užklausa",
-				"pi": "Inquiry only"
-			},
-			"desc": {
-				"en": "Players must ask or be invited to join this guild.",
-				"ne": "Spelers moeten gevraagd hebben of uitgenodigd zijn om deze gilde te betreden",
-				"lt": "Žaidėjai turi atsiusti užklausą arba būti pakviesti kad galėtu įstoti į šią Gildiją",
-				"pi": "Pirates must either have their request approved or have a letter to join this guild."
-			}
-		}
-	},
+    "ask": {
+      "name": {
+        "en": "Ask",
+        "ne": "Vraag",
+        "lt": "Tik su užklausa",
+        "pi": "Inquiry only"
+      },
+      "desc": {
+        "en": "Players must ask or be invited to join this guild.",
+        "ne": "Spelers moeten gevraagd hebben of uitgenodigd zijn om deze gilde te betreden",
+        "lt": "Žaidėjai turi atsiusti užklausą arba būti pakviesti kad galėtu įstoti į šią Gildiją",
+        "pi": "Pirates must either have their request approved or have a letter to join this guild."
+      }
+    }
+  },
 
 
-	"messages": {
-		"delete": {
-			"en": "delete",
-			"ne": "verwijder"
-		},
-		"report": {
-			"en": "report",
-			"ne": "rapporteren"
-		}
-	}
+  "messages": {
+    "delete": {
+      "en": "delete",
+      "ne": "verwijder",
+      "pi": "burn message"
+    },
+    "report": {
+      "en": "report",
+      "ne": "rapporteren",
+      "pi": "tip off police"
+    }
+  }
 }
