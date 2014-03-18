@@ -51,17 +51,17 @@
 	 * @param {boolean} counterAttack
 	 */
 	var attack = function(src, target, counterAttack) {
-		var srcAttack = _.random(0, src.card.attack);
-		var targetAttack = _.random(0, target.card.attack);
+		var srcAttack = Math.random() > .33 ? src.card.attack : 0;
+		var targetAttack = Math.random() > .33 ? target.card.attack : 0;
 		var srcDamage = targetAttack;
 		var targetDamage = srcAttack;
 
-		/*if(srcDamage > src.card.health) {
-			srcDamage = src.card.health;
+		if(srcDamage > src.card.health + src.card.shield) {
+			srcDamage = src.card.health + src.card.shield;
 		}
-		if(targetDamage > target.card.health) {
-			targetDamage = target.card.health;
-		}*/
+		if(targetDamage > target.card.health + target.card.shield) {
+			targetDamage = target.card.health + target.card.shield;
+		}
 
 		takeDamage(target, targetDamage);
 
@@ -104,6 +104,21 @@
 		/////////////////////////////////////////////////////////////////////////////////////////
 		// universal
 		/////////////////////////////////////////////////////////////////////////////////////////
+
+		/**
+		 * Attack: trade blows with another card
+		 */
+		ATTACK: 'attk',
+		attk: {
+			restrict: [
+				[filters.owned],
+				[filters.enemy, filters.full, filters.front]
+			],
+			use: function(src, target) {
+				var result = attack(src, target, true);
+				return result;
+			}
+		},
 
 		/**
 		 * Move: move a card from one place to another

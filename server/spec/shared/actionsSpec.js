@@ -1,6 +1,7 @@
-describe('game/actions', function() {
+describe('shared/actions', function() {
 	'use strict';
 
+	var _ = require('lodash');
 	var Board = require('../../multi/game/board');
 	var actions = require('../../../shared/actions');
 	var factions = require('../../../shared/factions');
@@ -79,11 +80,30 @@ describe('game/actions', function() {
 	//////////////////////////////////////////////////////////////////////////////////
 
 	it('attack should trade blows with another card', function() {
-		target(1,0,0).card = strongCard;
-		target(2,0,0).card = weakCard;
-		actions.attk.use(target(1,0,0), target(2,0,0));
-		expect(target(1,0,0).card.health).toBe(8);
-		expect(target(2,0,0).card.health).toBe(-8);
+		var target1 = {
+			card: {
+				health: 1000,
+				attack: 1
+			}
+		};
+		var target2 = {
+			card: {
+				health: 1000,
+				attack: 3
+			}
+		};
+
+		_.times(100, function() {
+			actions.prci.use(target1, target2);
+		});
+
+		var expectedHealth1 = 1000 - (3 * 100 * 0.66);
+		expect(target1.card.health).toBeGreaterThan(expectedHealth1 * 0.9);
+		expect(target1.card.health).toBeLessThan(expectedHealth1 * 1.1);
+
+		var expectedHealth2 = 1000 - (1 * 100 * 0.66);
+		expect(target2.card.health).toBeGreaterThan(expectedHealth2 * 0.9);
+		expect(target2.card.health).toBeLessThan(expectedHealth2 * 1.1);
 	});
 
 
@@ -95,22 +115,11 @@ describe('game/actions', function() {
 	});
 
 
-	it('rally should generate pride fot that cards owner', function() {
+	it('pride should generate pride fot that cards owner', function() {
 		target(1,0,0).card = strongCard;
-		actions.rlly.use(target(1,0,0), player1);
+		actions.prde.use(target(1,0,0), player1);
 		expect(player1.pride).toBe(1);
 	});
-
-
-	/*it('entr should put a card into play', function() {
-		var handTarget = {
-			card: strongCard,
-			player: player1
-		};
-		player1.pride = 9;
-		actions.entr.use(handTarget, target(1,0,0));
-		expect(player1.pride).toBe(0);
-	});*/
 
 
 	describe('smmn', function() {
@@ -158,7 +167,7 @@ describe('game/actions', function() {
 
 	it('tree should grow a tree', function() {
 		actions.tree.use(target(1,0,0), target(1,1,0));
-		expect(target(1,1,0).card.title).toBe('TREE');
+		expect(target(1,1,0).card.name).toBe('TREE');
 	});
 
 
@@ -173,32 +182,20 @@ describe('game/actions', function() {
 	});
 
 
-	it('secr should mark a card as tired', function() {
+	it('peap should mark a card as tired', function() {
 		strongCard.moves = 1;
 		target(1,0,0).card = weakCard;
 		target(2,0,0).card = strongCard;
-		actions.secr.use(target(1,0,0), target(2,0,0));
+		actions.peap.use(target(1,0,0), target(2,0,0));
 		expect(target(2,0,0).card.moves).toBe(0);
-	});
-
-
-	it('clne should clone another card', function() {
-		target(1,0,0).card = weakCard;
-		target(1,1,0).card = strongCard;
-		actions.clne.use(target(1,0,0), target(1,1,0));
-		expect(target(1,0,0).card.abilities).toEqual(strongCard.abilities);
-		expect(target(1,0,0).card.attack).toEqual(strongCard.health);
-		expect(target(1,0,0).card.health).toEqual(1);
 	});
 
 
 	describe('bees', function() {
 		it('should hurt all targets passed in', function() {
-			target(1,0,0).card = weakCard;
-			target(1,0,2).card = strongCard;
-			actions.bees.use(target(2,0,0), target(1,0,2), board);
-			expect(target(1,0,0).card.health).toBe(0);
-			expect(target(1,0,2).card.health).toBe(8);
+			target(1,0,0).card = strongCard;
+			actions.bees.use(target(2,0,0), board);
+			expect(target(1,0,0).card.health).toBe(8);
 		});
 	});
 
@@ -213,7 +210,7 @@ describe('game/actions', function() {
 			name: 'Ratched',
 			faction: factions.machine.id,
 			health: 0
-		}
+		};
 		player1.graveyard.push(machine);
 
 		target(1,1,0).card = strongCard;
@@ -229,23 +226,42 @@ describe('game/actions', function() {
 	it('shld should protect a card for a turn', function() {
 		target(1,0,0).card = weakCard;
 		actions.shld.use(target(1,0,0));
-		expect(target(1,0,0).card.shield).toEqual(1);
+		expect(target(1,0,0).card.shield).toEqual(2);
 	});
 
 
 	it('prci should decrease health', function() {
-		target(1,0,0).card = weakCard;
-		target(2,0,0).card = strongCard;
-		actions.prci.use(target(1,0,0), target(2,0,0));
-		expect(target(2,0,0).card.health).toBe(8);
-		expect(target(1,0,0).card.health).toBe(-8);
+		var target1 = {
+			card: {
+				health: 1000,
+				attack: 1
+			}
+		};
+		var target2 = {
+			card: {
+				health: 1000,
+				attack: 3
+			}
+		};
+
+		_.times(100, function() {
+			actions.prci.use(target1, target2);
+		});
+
+		var expectedHealth1 = 1000 - (3 * 100 * 0.66);
+		expect(target1.card.health).toBeGreaterThan(expectedHealth1 * 0.9);
+		expect(target1.card.health).toBeLessThan(expectedHealth1 * 1.1);
+
+		var expectedHealth2 = 1000 - (1 * 100 * 0.66);
+		expect(target2.card.health).toBeGreaterThan(expectedHealth2 * 0.9);
+		expect(target2.card.health).toBeLessThan(expectedHealth2 * 1.1);
 	});
 
 
-	it('strt should give a card another turn', function() {
+	it('recharge should give a card another turn', function() {
 		target(1,1,0).card = strongCard;
 		target(1,0,0).card = weakCard;
-		actions.strt.use(target(1,1,0), target(1,0,0));
+		actions.rech.use(target(1,1,0), target(1,0,0));
 		expect(target(1,0,0).card.moves).toBe(2);
 	});
 
@@ -287,11 +303,28 @@ describe('game/actions', function() {
 
 
 	it('assn should attack a card without reprocussions', function() {
-		target(1,0,0).card = weakCard;
-		target(2,0,0).card = strongCard;
-		actions.assn.use(target(1,0,0), target(2,0,0));
-		expect(target(1,0,0).card.health).toBe(1);
-		expect(target(2,0,0).card.health).toBe(8);
+		var target1 = {
+			card: {
+				health: 1000,
+				attack: 5
+			}
+		};
+		var target2 = {
+			card: {
+				health: 1000,
+				attack: 99
+			}
+		};
+
+		_.times(100, function() {
+			actions.assn.use(target1, target2);
+		});
+
+		expect(target1.card.health).toBe(1000);
+
+		var expectedHealth = 1000 - (100 * 5 * 0.66);
+		expect(target2.card.health).toBeGreaterThan(expectedHealth * 0.9);
+		expect(target2.card.health).toBeLessThan(expectedHealth * 1.1);
 	});
 
 
@@ -310,10 +343,11 @@ describe('game/actions', function() {
 		};
 		target(1,0,0).card = strongCard;
 		target(2,0,0).card = card;
-		actions.posn.use(target(1,0,0), target(2,0,0));
-		expect(card.poison).toBe(1);
-		actions.posn.use(target(1,0,0), target(2,0,0));
-		expect(card.poison).toBe(2);
+		_.times(100, function() {
+			actions.posn.use(target(1,0,0), target(2,0,0));
+		});
+		expect(card.poison).toBeLessThan(60);
+		expect(card.poison).toBeGreaterThan(40);
 	});
 
 
@@ -327,11 +361,26 @@ describe('game/actions', function() {
 
 
 	it('siph should suck health from one card and give it to another', function() {
-		target(1,0,0).card = strongCard;
-		target(2,0,0).card = weakCard;
-		actions.siph.use(target(1,0,0), target(2,0,0));
-		expect(target(1,0,0).card.health).toBe(10);
-		expect(target(2,0,0).card.health).toBe(0);
+		var target1 = {
+			card: {
+				health: 1000,
+				attack: 2
+			}
+		};
+		var target2 = {
+			card: {
+				health: 1000,
+				attack: 0
+			}
+		};
+
+		_.times(100, function() {
+			actions.siph.use(target1, target2);
+		});
+
+		var expectedHealth = 1000 + (2 / 2 * 0.66);
+		expect(target1.card.health).toBeGreaterThan(expectedHealth * 0.9);
+		expect(target1.card.health).toBeLessThan(expectedHealth * 1.1);
 	});
 
 
