@@ -27,7 +27,7 @@ angular.module('futurism')
 				});
 
 
-				scope.$on('pre:righ', function(srcScope, update) {
+				scope.$on('pre:frvt', function(srcScope, update) {
 					animAttackAndCounter(update);
 				});
 
@@ -59,11 +59,13 @@ angular.module('futurism')
 
 				scope.$on('pre:posn', function(srcScope, update) {
 
-					var animTargets = animFns.chainedAnimTargets(update, update.data);
+					var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
 
 					var attacker = animTargets[0];
 					var defender = animTargets[1];
 					var message = 'miss!';
+
+					console.log('pre:posn', animTargets, attacker, defender, message);
 
 					var oldPoison = defender.target.card.poison || 0;
 

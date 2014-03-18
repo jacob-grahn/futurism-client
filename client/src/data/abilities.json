@@ -718,12 +718,12 @@
 		},
 
 
-		"righ": {
+		"frvt": {
 			"name": {
-				"en": "attack [righteous]"
+				"en": "attack [fervent]"
 			},
 			"desc": {
-				"en": "Attack an enemy, converting the damage into pride. The enemy will counter-attack."
+				"en": "Attack an enemy without ever missing. The enemy will counter-attack."
 			}
 		}
 	}

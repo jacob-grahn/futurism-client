@@ -302,7 +302,7 @@ describe('shared/actions', function() {
 	});
 
 
-	it('assn should attack a card without reprocussions', function() {
+	it('assn should attack a card without repercussions', function() {
 		var target1 = {
 			card: {
 				health: 1000,
@@ -387,6 +387,34 @@ describe('shared/actions', function() {
 	/////////////////////////////////////////////////////////////////////////////////////////
 	// zealot
 	/////////////////////////////////////////////////////////////////////////////////////////
+
+	describe('attack [fervent]', function() {
+		it('should always hit', function() {
+			var target1 = {
+				card: {
+					health: 1000,
+					attack: 5
+				}
+			};
+			var target2 = {
+				card: {
+					health: 1000,
+					attack: 4
+				}
+			};
+
+			_.times(100, function() {
+				actions.frvt.use(target1, target2);
+			});
+
+			var expectedHealth1 = 1000 - (4 * 100 * 0.66);
+			expect(target1.card.health).toBeGreaterThan(expectedHealth1 * 0.9);
+			expect(target1.card.health).toBeLessThan(expectedHealth1 * 1.1);
+
+			var expectedHealth2 = 1000 - (5 * 100);
+			expect(target2.card.health).toBe(expectedHealth2);
+		});
+	});
 
 	it('male should hit up the ladies', function() {
 		target(1,0,0).card = strongCard;

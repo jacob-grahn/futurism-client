@@ -45,7 +45,7 @@
 	var zealot = {
 		id: 'ze',
 		abilities: [
-			{id: 'righ'},
+			{id: 'frvt'},
 			{id: 'move'},
 			{id: 'male'},
 			{id: 'feml'},

@@ -46,12 +46,17 @@
 
 	/**
 	 * base attack
-	 * @param {object} src
-	 * @param {object} target
-	 * @param {boolean} counterAttack
+	 * @param {Object} src
+	 * @param {Object} target
+	 * @param {Object} [options]
 	 */
-	var attack = function(src, target, counterAttack) {
-		var srcAttack = Math.random() > .33 ? src.card.attack : 0;
+	var attack = function(src, target, options) {
+
+		options = options || {};
+		options.counterAttack = options.counterAttack || false;
+		options.alwaysHit = options.alwaysHit || false;
+
+		var srcAttack = (options.alwaysHit || Math.random()) > .33 ? src.card.attack : 0;
 		var targetAttack = Math.random() > .33 ? target.card.attack : 0;
 		var srcDamage = targetAttack;
 		var targetDamage = srcAttack;
@@ -65,7 +70,7 @@
 
 		takeDamage(target, targetDamage);
 
-		if(target.card.health > 0 && counterAttack) {
+		if(target.card.health > 0 && options.counterAttack) {
 			takeDamage(src, srcDamage);
 		}
 		else {
@@ -115,7 +120,7 @@
 				[filters.enemy, filters.full, filters.front]
 			],
 			use: function(src, target) {
-				var result = attack(src, target, true);
+				var result = attack(src, target, {counterAttack: true});
 				return result;
 			}
 		},
@@ -205,7 +210,7 @@
 				[filters.enemy, filters.full, filters.front]
 			],
 			use: function(src, target) {
-				var result = attack(src, target, true);
+				var result = attack(src, target, {counterAttack: true});
 				result.srcHeal = Math.round(result.targetDamage / 2);
 				src.card.health += result.srcHeal;
 				return result;
@@ -365,7 +370,7 @@
 				[filters.enemy, filters.full]
 			],
 			use: function(src, target) {
-				var result = attack(src, target, true);
+				var result = attack(src, target, {counterAttack: true});
 				return result;
 			}
 		},
@@ -463,7 +468,7 @@
 				[filters.enemy, filters.full, filters.front]
 			],
 			use: function(src, target) {
-				var result = attack(src, target, false);
+				var result = attack(src, target, {counterAttack: false});
 				result.counterAttack = false;
 				return result;
 			}
@@ -524,9 +529,25 @@
 			}
 		},
 
+
 		//////////////////////////////////////////////////////////////////////////////////
 		// zealot
 		//////////////////////////////////////////////////////////////////////////////////
+
+		/**
+		 * Attack [Fervent] an attack that always hits
+		 */
+		FERVENT: 'frvt',
+		frvt: {
+			restrict: [
+				[filters.owned],
+				[filters.enemy, filters.full, filters.front]
+			],
+			use: function(src, target) {
+				var result = attack(src, target, {counterAttack: true, alwaysHit: true});
+				return result;
+			}
+		},
 
 		/**
 		 * Male: Can reproduce with females.
