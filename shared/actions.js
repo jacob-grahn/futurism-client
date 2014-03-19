@@ -56,8 +56,23 @@
 		options.counterAttack = options.counterAttack || false;
 		options.alwaysHit = options.alwaysHit || false;
 
-		var srcAttack = (options.alwaysHit || Math.random()) > .33 ? src.card.attack : 0;
-		var targetAttack = Math.random() > .33 ? target.card.attack : 0;
+
+		// calc attack force
+		src.card.attackBuf = src.card.attackBuf || 0;
+		target.card.attackBuf = target.card.attackBuf || 0;
+
+		var srcAttack = 0;
+		if(options.alwaysHit || Math.random() > 0.33) {
+			srcAttack = src.card.attack + src.card.attackBuf;
+		}
+
+		var targetAttack = 0;
+		if(Math.random() > 0.33) {
+			targetAttack = target.card.attack + target.card.attackBuf;
+		}
+
+
+		// calc damage taken
 		var srcDamage = targetAttack;
 		var targetDamage = srcAttack;
 
@@ -68,6 +83,8 @@
 			targetDamage = target.card.health + target.card.shield;
 		}
 
+
+		// apply damage
 		takeDamage(target, targetDamage);
 
 		if(target.card.health > 0 && options.counterAttack) {
@@ -594,16 +611,25 @@
 		},
 
 		/**
-		 * Battlecry: Target unit gains 2 attack for the turn.
+		 * Battlecry: Ally zealots get a +1 attack buff
 		 */
 		BATTLECRY: 'btle',
 		btle: {
 			restrict: [
-				[filters.owned],
-				[filters.friend, filters.full]
+				[filters.owned]
 			],
-			use: function(src) {
-				src.card.attackBuf += 2;
+			use: function(src, board) {
+				var targets = board.playerTargets(src.player._id);
+				_.each(targets, function(target) {
+					if(target.card && target.card.faction === 'ze') {
+						if(target.card.attackBuf) {
+							target.card.attackBuf++;
+						}
+						else {
+							target.card.attackBuf = 1;
+						}
+					}
+				});
 			}
 		},
 

@@ -441,13 +441,23 @@ describe('shared/actions', function() {
 	});
 
 
-	it('btle should buff a cards attack', function() {
-		var card = {
-			attackBuf: 0
-		};
-		target(1,0,0).card = card;
-		actions.btle.use(target(1,0,0));
-		expect(card.attackBuf).toBe(2);
+	describe('battlecry', function() {
+
+		it('should buff the attack of all ally zealots', function() {
+			board.target(1,1,1).card = {abilities: ['btle']};
+			board.target(1,0,0).card = {faction: 'ze'};
+			board.target(1,1,0).card = {faction: 'ze', attackBuf: 3};
+			board.target(1,2,0).card = {faction: 'no'};
+			board.target(2,0,0).card = {faction: 'ze'};
+
+			actions.btle.use(board.target(1,1,1), board);
+
+			expect(board.target(1,1,1).card.attackBuf).toBe(undefined);
+			expect(board.target(1,0,0).card.attackBuf).toBe(1);
+			expect(board.target(1,1,0).card.attackBuf).toBe(4);
+			expect(board.target(1,2,0).card.attackBuf).toBe(undefined);
+			expect(board.target(2,0,0).card.attackBuf).toBe(undefined);
+		});
 	});
 
 
