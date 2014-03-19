@@ -16,6 +16,23 @@
 	}
 
 
+	filters.hero = function(targets, me, board) {
+		var heroes = _.filter(board.allTargets(), function(target) {
+			return target.card && target.card.hero && target.player._id !== me._id;
+		});
+
+		console.log('heroes', heroes);
+		if(heroes.length === 0) {
+			return targets;
+		}
+		else {
+			return _.filter(targets, function(target) {
+				return target.card && target.card.hero;
+			});
+		}
+	};
+
+
 	filters.hasMoves = function(targets) {
 		return _.filter(targets, function(target) {
 			return target.card && target.card.moves > 0;

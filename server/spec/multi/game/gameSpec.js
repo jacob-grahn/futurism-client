@@ -96,7 +96,7 @@ describe('game', function() {
 	});
 
 
-	it('should play through a simple game', function(done) {
+	/*it('should play through a simple game', function(done) {
 		var accounts = [
 			{_id:uid1, name:'phil'},
 			{_id:uid2, name:'paulina'}
@@ -208,5 +208,5 @@ describe('game', function() {
 				});
 			})
 		})
-	});
+	});*/
 });

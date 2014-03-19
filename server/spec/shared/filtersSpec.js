@@ -421,6 +421,44 @@ describe('filters', function() {
 	});
 
 
+	describe('hero', function() {
+		it('should return only heroes if there are enemy heroes on the board', function() {
+			var board = new Board([player1, player2], 2, 2);
+			board.target(1, 0, 0).card = {cid: 1};
+			board.target(2, 1, 1).card = {cid: 3, hero: 1};
+			board.target(2, 0, 1).card = {cid: 4};
+
+			var targets = board.allTargets();
+			var heroTargets = filters.hero(targets, player1, board);
+			expect(heroTargets.length).toBe(1);
+			expect(heroTargets[0].card.cid).toBe(3);
+		});
+
+		it('should return everything if there are no heroes', function() {
+			var board = new Board([player1, player2], 2, 2);
+			board.target(1, 0, 0).card = {cid: 1};
+			board.target(2, 1, 1).card = {cid: 3};
+			board.target(2, 0, 1).card = {cid: 4};
+
+			var targets = board.allTargets();
+			var heroTargets = filters.hero(targets, player1, board);
+			expect(heroTargets.length).toBe(8);
+		});
+
+		it('should return everything if the only heroes belong to you', function() {
+			var board = new Board([player1, player2], 2, 2);
+			board.target(1, 0, 0).card = {cid: 1, hero: 1};
+			board.target(2, 1, 1).card = {cid: 3};
+			board.target(2, 0, 1).card = {cid: 4};
+
+
+			var targets = board.allTargets();
+			var heroTargets = filters.hero(targets, player1, board);
+			expect(heroTargets.length).toBe(8);
+		});
+	});
+
+
 	it('should find male targets', function() {
 		var maleTargets = filters.male(targets);
 		expect(maleTargets).toContain(targets[33]);

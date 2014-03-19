@@ -134,7 +134,7 @@
 		attk: {
 			restrict: [
 				[filters.owned],
-				[filters.enemy, filters.full, filters.front]
+				[filters.enemy, filters.full, filters.front, filters.hero]
 			],
 			use: function(src, target) {
 				var result = attack(src, target, {counterAttack: true});
@@ -224,7 +224,7 @@
 		siph: {
 			restrict: [
 				[filters.owned],
-				[filters.enemy, filters.full, filters.front]
+				[filters.enemy, filters.full, filters.front, filters.hero]
 			],
 			use: function(src, target) {
 				var result = attack(src, target, {counterAttack: true});
@@ -315,7 +315,13 @@
 				[filters.owned]
 			],
 			use: function(src, board) {
-				var possibleTargets = filters.full( filters.enemy(board.allTargets(), src.player) );
+				var possibleTargets = filters.hero(
+					filters.full(
+						filters.enemy(
+							board.allTargets(), src.player
+						)
+					)
+				);
 				if(possibleTargets.length === 0) {
 					return false;
 				}
@@ -384,7 +390,7 @@
 		prci: {
 			restrict: [
 				[filters.owned],
-				[filters.enemy, filters.full]
+				[filters.enemy, filters.full, filters.hero]
 			],
 			use: function(src, target) {
 				var result = attack(src, target, {counterAttack: true});
@@ -482,7 +488,7 @@
 		assn: {
 			restrict: [
 				[filters.owned],
-				[filters.enemy, filters.full, filters.front]
+				[filters.enemy, filters.full, filters.front, filters.hero]
 			],
 			use: function(src, target) {
 				var result = attack(src, target, {counterAttack: false});
@@ -558,7 +564,7 @@
 		frvt: {
 			restrict: [
 				[filters.owned],
-				[filters.enemy, filters.full, filters.front]
+				[filters.enemy, filters.full, filters.front, filters.hero]
 			],
 			use: function(src, target) {
 				var result = attack(src, target, {counterAttack: true, alwaysHit: true});
