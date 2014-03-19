@@ -651,18 +651,7 @@
 				"hu": "harci kiáltás"
 			},
 			"desc": {
-				"en": "Target unit gains 2 attack for the turn.",
-				"ko": "대상 장치는 회전 2 공격을 얻는다.",
-				"ct": "mewoowo",
-				"fr": "La carte cible gagne 2 points d'attaque pour ce tour.",
-				"pi": "Ship is enthralled and fires 2 more cannons for the turn.",
-				"lt": "Šiam ėjimui kortą gauna 2 atakos taškus.",
-				"ne": "Het doel krijgt twee kracht voor deze beurt.",
-				"sv": "Att träffa en enhet ger två attacker för omgången",
-				"es": "La unidad objetivo gana 2 de ataque por este turno.",
-				"nb": "Målsatt enhet får 2 angrep denne runden.",
-				"it": "L'unità bersaglio guadagna 2 punti attacco per questo turno.",
-				"hu": "Target unit gains 2 attack for the turn."
+				"en": "All ally zealots gain 1 attack for 1 turn."
 			}
 		},
 
