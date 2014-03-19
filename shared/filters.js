@@ -21,7 +21,6 @@
 			return target.card && target.card.hero && target.player._id !== me._id;
 		});
 
-		console.log('heroes', heroes);
 		if(heroes.length === 0) {
 			return targets;
 		}

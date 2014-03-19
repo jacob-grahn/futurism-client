@@ -321,7 +321,7 @@
 							board.allTargets(), src.player
 						)
 					)
-				);
+				, src.player, board);
 				if(possibleTargets.length === 0) {
 					return false;
 				}
@@ -668,7 +668,7 @@
 		},
 
 		/**
-		 * Super Serum: Available health points are converted into attack points.
+		 * Super Serum: Increase attack by 3 at the cost of becoming poisoned
 		 */
 		SERUM: 'serm',
 		serm: {
@@ -676,8 +676,13 @@
 				[filters.owned]
 			],
 			use: function(src) {
-				src.card.health -= 1;
-				src.card.attack += 2;
+				if(src.card.poison) {
+					src.card.poison++;
+				}
+				else {
+					src.card.poison = 1;
+				}
+				src.card.attack += 3;
 			}
 		}
 

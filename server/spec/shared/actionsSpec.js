@@ -192,9 +192,9 @@ describe('shared/actions', function() {
 
 
 	describe('bees', function() {
-		it('should hurt all targets passed in', function() {
+		it('should hurt a random enemy', function() {
 			target(1,0,0).card = strongCard;
-			actions.bees.use(target(2,0,0), board);
+			actions.bees.use(board.target(2,0,0), board);
 			expect(target(1,0,0).card.health).toBe(8);
 		});
 	});
@@ -480,11 +480,13 @@ describe('shared/actions', function() {
 	});
 
 
-	it('serm should turn 1 health into 2 attack', function() {
-		target(1,0,0).card = strongCard;
-		actions.serm.use(target(1,0,0));
-		expect(strongCard.attack).toBe(11);
-		expect(strongCard.health).toBe(8);
+	describe('super serum', function() {
+		it('serm should increase attack by three and add 1 poison', function() {
+			target(1,0,0).card = strongCard;
+			actions.serm.use(target(1,0,0));
+			expect(strongCard.attack).toBe(12);
+			expect(strongCard.poison).toBe(1);
+		});
 	});
 
 });

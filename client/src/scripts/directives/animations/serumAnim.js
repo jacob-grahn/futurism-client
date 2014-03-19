@@ -10,23 +10,17 @@ angular.module('futurism')
 
 				scope.$on('post:'+shared.actions.SERUM, function(srcScope, update) {
 
-					var waitTime = 0;
+					var src = animFns.chainedAnimTargets(update, update.data.targetChain)[0];
 
-					var animTargets = animFns.updatedAnimTargets(update);
+					animFns.animFlasher(boardElem, src.center, 'serum');
 
-					_.each(animTargets, function(animTarget) {
-						_.delay(function() {
+					_.delay(function() {
+						animFns.animNotif(boardElem, src.center, '+3 attack');
+					}, 1000);
 
-							// skull
-							animFns.animFlasher(boardElem, animTarget.center, 'poison');
-
-							// -1 health floaty
-							animFns.animNotif(boardElem, animTarget.center, '-1 health', 'danger');
-
-						}, waitTime);
-						waitTime += 100;
-					});
-
+					_.delay(function() {
+						animFns.animNotif(boardElem, src.center, 'poisoned!', 'danger');
+					}, 1500);
 				});
 			}
 		}

@@ -39,6 +39,14 @@
 	background-image: url('/images/sacrifice.png');
 }
 
+.card-flasher.serum .card-flasher-inner {
+	width: 46px;
+	height: 125px;
+	left: -23px;
+	top: -70px;
+	background-image: url('/images/super-serum.png');
+}
+
 @keyframes fade-in-out {
 	0% {
 		transform: scale(0.25, 0.25);
