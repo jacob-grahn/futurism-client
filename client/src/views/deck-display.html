@@ -1,0 +1,7 @@
+<div class="deck deck-{{size}} deck-{{active}}">
+	<ul class="deck-images">
+		<li ng-repeat="cardId in displayIds"><img ng-src="{{staticUrl}}/images/cards/{{size}}_{{cardId}}.jpg"/></li>
+	</ul>
+	<h1 class="deck-name">{{deck.name}}</h1>
+	<h1 class="deck-pride">pride: {{deck.pride}}</h1>
+</div>
