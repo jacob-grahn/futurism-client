@@ -3,8 +3,13 @@ angular.module('futurism')
 		'use strict';
 
 		var setup = function(socket) {
+
 			socket.on('error', function(data) {
 				errorHandler.show(data);
+			});
+
+			socket.on('banned', function(data) {
+				errorHandler.fatal(data);
 			});
 		};
 		

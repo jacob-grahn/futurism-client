@@ -58,10 +58,12 @@ var broadcast = require('./multi/broadcast');
 var Chat = require('./multi/chat');
 var Lobby = require('./multi/lobby');
 var eventMatcher = require('./multi/eventMatcher');
+var globeListener = require('./multi/globeListener');
 
 eventMatcher.init(io);
 multiInit.listenForConnections(io);
 broadcast.setIo(io);
+globeListener.startListening(io);
 
 
 //--- last ditch error handler

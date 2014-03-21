@@ -1,12 +1,11 @@
 'use strict';
 
-var io = require('io');
+var _ = require('lodash');
 var redisSession = require('../fns/redisSession');
 var redisClient = require('../fns/redisConnect')();
 
+var io;
 
-redisClient.subscribe('sessionUpdate');
-//redisClient.subscribe('ipBan');
 
 redisClient.on('message', function(channel, data) {
 	if(channel === 'sessionUpdate') {
@@ -22,7 +21,7 @@ var updateUser = function(userId) {
 
 	redisSession.get(userId, function(err, sessionData) {
 		if(err) {
-			return err;
+			sessionData = null;
 		}
 
 		var sockets = io.sockets.clients();
@@ -36,13 +35,17 @@ var updateUser = function(userId) {
 					return 'no session';
 				}
 
-				if(sessionData._id === account._id) {
-					_.extend(account, sessionData);
-					if(sessionData.bannedUntil > new Date()) {
+				if(userId === account._id) {
+
+					if(sessionData) {
+						_.extend(account, sessionData);
+					}
+
+					if(!sessionData || sessionData.bannedUntil > new Date()) {
 						socket.emit('banned', 'Your account has been banned.');
-						_.delay(2000, function() {
+						_.delay(function() {
 							socket.disconnect();
-						});
+						}, 2000);
 					}
 				}
 				return null;
@@ -50,3 +53,21 @@ var updateUser = function(userId) {
 		});
 	});
 };
+
+
+
+var self = {
+
+	startListening: function(_io_) {
+		io = _io_;
+		redisClient.subscribe('sessionUpdate');
+		redisClient.subscribe('ipBan');
+	},
+
+	stopListening: function() {
+		redisClient.unsubscribe('sessionUpdate');
+		redisClient.unsubscribe('ipBan');
+	}
+};
+
+module.exports = self;
