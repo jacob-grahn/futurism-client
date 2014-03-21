@@ -1,0 +1,18 @@
+<div id="reports" class="row">
+	<div class="col-md-12">
+		<div class="well">
+
+			<paginated resource="ReportResource" results="reports" query="query">
+				<ul class="report-list">
+					<li ng-repeat="report in reports">
+						<report-display report="report"></report-display>
+					</li>
+				</ul>
+			</paginated>
+
+		</div>
+	</div>
+</div>
+
+
+

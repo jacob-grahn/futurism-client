@@ -1,0 +1,14 @@
+<div class="report well">
+	reporter: <username></username><br>
+	date: {{report.date | date}}<br>
+	<div class="well">
+		<div ng-if="report.publicData" class="report-public-data">
+			<span ng-if="report.type === 'chat'">
+				<chat-log msgs="report.publicData.messages"></chat-log>
+			</span>
+		</div>
+		<div ng-if="report.privateData" class="report-private-data">
+			{{report.privateData}}
+		</div>
+	</div>
+</div>
