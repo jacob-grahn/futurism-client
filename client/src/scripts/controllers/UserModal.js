@@ -86,6 +86,15 @@ angular.module('futurism')
 
 
 		/**
+		 * silence a user
+		 */
+		$scope.silence = function() {
+			BanResource.save({userId: userId, reason: 'test', type: 'silence'});
+			$scope.$dismiss('silence');
+		};
+
+
+		/**
 		 * un-ban a user
 		 */
 		$scope.deBan = function() {
