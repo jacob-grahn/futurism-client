@@ -13,6 +13,7 @@
 	{{user.userId}}
 </div>
 <div class="modal-footer">
+	<button ng-if="user.bans" class="btn" ng-click="viewBans()">view bans</button>
 	<button ng-if="user.actions.report" class="btn" ng-click="report()">report</button>
 	<button ng-if="user.actions.mod" class="btn" ng-click="mod()">mod</button>
 	<button ng-if="user.actions.deMod" class="btn" ng-click="deMod()">de-mod</button>

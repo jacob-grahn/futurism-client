@@ -5,6 +5,11 @@
 		<li ng-repeat="(languageId, translator) in lang.phrases.translators">{{lang.phrases.languageName[languageId]}}: {{translator}}</li>
 	</ul>
 
+	<h1>Beta Testers</h1>
+	<ul>
+		<li ng-repeat="tester in testers">{{tester}}</li>
+	</ul>
+
 	<h1>Services and Software</h1>
 	<ul>
 		<li ng-repeat="service in services">{{service}}</li>

@@ -20,7 +20,17 @@ angular.module('futurism')
 
 		var callback = function(err) {
 			if(err) {
-				fatal(err);
+
+				if(err.error) {
+					err = err.error;
+				}
+
+				if(err.ban) {
+					$location.url('/users/'+err._id+'/bans');
+				}
+				else {
+					fatal(err);
+				}
 			}
 		};
 

@@ -1,8 +1,10 @@
 angular.module('futurism')
-	.controller('UserModalCtrl', function($scope, userId, $location, UserResource, StatsResource, ApprenticeResource, ModeratorResource, BanResource, GuildModResource, KickResource, $modal) {
+	.controller('UserModalCtrl', function($scope, userId, me, $location, UserResource, StatsResource, ApprenticeResource, ModeratorResource, BanResource, GuildModResource, KickResource, $modal) {
 		'use strict';
 
-		$scope.user = UserResource.get({userId: userId});
+		var includeBans = me.user.group === 'm' || me.user.group === 'a';
+
+		$scope.user = UserResource.get({userId: userId, bans: includeBans});
 		$scope.stats = StatsResource.get({userId: userId});
 
 
@@ -125,5 +127,14 @@ angular.module('futurism')
 		$scope.deKick = function() {
 			KickResource.delete({userId: userId, guildId: $scope.user.guild});
 			$scope.$dismiss('deKick');
+		};
+
+
+		/**
+		 * goto a list of their bans
+		 */
+		$scope.viewBans = function() {
+			$location.url('/users/'+userId+'/bans');
+			$scope.$dismiss('viewBans');
 		};
 	});

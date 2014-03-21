@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('socketErrors', function(errorHandler) {
+	.factory('socketErrors', function($location, me, session) {
 		'use strict';
 
 		var setup = function(socket) {
@@ -9,7 +9,8 @@ angular.module('futurism')
 			});
 
 			socket.on('banned', function(data) {
-				errorHandler.fatal(data);
+				$location.url('/users/'+me.user._id+'/bans');
+				session.destroy();
 			});
 		};
 		
