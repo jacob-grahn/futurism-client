@@ -11,7 +11,7 @@ angular.module('futurism')
 			$scope.stack = err.stack.split('\n');
 		}
 		else {
-			$scope.errorMessage = err;
+			$scope.errorMessage = JSON.stringify(err, null, 2);;
 		}
 
 	});

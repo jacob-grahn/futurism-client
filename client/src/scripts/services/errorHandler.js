@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('errorHandler', function($location, messager) {
+	.factory('errorHandler', function($location, messager, session) {
 		'use strict';
 
 		var message = '';
@@ -7,6 +7,10 @@ angular.module('futurism')
 		var fatal = function(err) {
 			err.stack = err.stack;
 			message = err;
+			if(err.error) {
+				message = err.error;
+			}
+			session.destroy();
 			$location.url('/error');
 		};
 
@@ -16,7 +20,7 @@ angular.module('futurism')
 
 		var callback = function(err) {
 			if(err) {
-				handle(err);
+				fatal(err);
 			}
 		};
 

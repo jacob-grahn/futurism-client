@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('session', function($location, websites, me, SessionResource, memory, _) {
+	.factory('session', function($location, $rootScope, websites, SessionResource, memory, _) {
 		'use strict';
 
 		var self = this;
@@ -18,14 +18,15 @@ angular.module('futurism')
 					tempCredentials = {site: 'g'};
 				}
 
-				authorizeLogin(function(err, data) {
+				createSession(function(err, data) {
 					if(err) {
 						return callback(err);
 					}
 
 					active = true;
 					setToken(data.token);
-					me.setUserId(data._id);
+					self.data = data;
+					$rootScope.$broadcast('event:sessionChange', self.data);
 					return callback(null, data);
 				});
 			});
@@ -36,7 +37,9 @@ angular.module('futurism')
 			SessionResource.delete({token: self.getToken()});
 			setToken(null);
 			active = false;
-			me.clear();
+			self._id = null;
+			self.data = {};
+			$rootScope.$broadcast('event:sessionChange', self.data);
 		};
 
 
@@ -46,30 +49,31 @@ angular.module('futurism')
 			if(!callback) {
 				callback = function() {};
 			}
+
 			if(!token) {
 				return self.makeNew(callback);
 			}
 
-			return SessionResource.get(
-
-				function(data) {
-					if(data.error) {
-						return self.makeNew(callback);
-					}
-					active = true;
-					me.setUserId(data._id);
-					return callback(null, data);
-				},
-
-				function() {
+			loadSession(token, function(err, data) {
+				if(err) {
 					return self.makeNew(callback);
 				}
-			);
+
+				active = true;
+				self.data = data;
+				$rootScope.$broadcast('event:sessionChange', self.data);
+
+				return callback(null, data);
+			});
+
 		}, 5000, {leading: true, trailing: false});
 
 
 		self.getToken = function() {
 			var token = memory.short.get('token');
+			if(token === 'null') {
+				token = null;
+			}
 			return token;
 		};
 
@@ -106,13 +110,35 @@ angular.module('futurism')
 		};
 
 
-		var authorizeLogin = function(callback) {
-			SessionResource.post(tempCredentials, function(data) {
-				if(data.error) {
-					return callback(data.error);
-				}
-				return callback(null, data);
-			});
+		var createSession = function(callback) {
+			SessionResource.post(tempCredentials,
+
+				function(data) {
+					if(data.error) {
+						return callback(data.error);
+					}
+					return callback(null, data);
+				},
+
+				function(errResponse) {
+					return callback(errResponse.data);
+				});
+		};
+
+
+		var loadSession = function(token, callback) {
+			SessionResource.get({token: token},
+
+				function(data) {
+					if(data.error) {
+						return callback(data.error);
+					}
+					return callback(null, data);
+				},
+
+				function(errResponse) {
+					return callback(errResponse.data);
+				});
 		};
 
 

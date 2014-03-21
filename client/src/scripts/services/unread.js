@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('unread', function($timeout, UnreadResource) {
+	.factory('unread', function($timeout, UnreadResource, session) {
 		'use strict';
 
 
@@ -32,9 +32,11 @@ angular.module('futurism')
 			},
 
 			refresh: function() {
-				var newCount = UnreadResource.get({}, function() {
-					unread.count = Number(newCount[0]);
-				});
+				if(session.active) {
+					var newCount = UnreadResource.get({}, function() {
+						unread.count = Number(newCount[0]);
+					});
+				}
 			}
 		};
 

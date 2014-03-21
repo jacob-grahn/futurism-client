@@ -1,9 +1,25 @@
 angular.module('futurism')
 
-	.factory('me', function(UserResource, StatsResource) {
+	.factory('me', function($rootScope, session, UserResource, StatsResource) {
 		'use strict';
 
-		var me = {
+		/**
+		 * Reload my info whenever my session changes (login/logout)
+		 */
+		$rootScope.$on('event:sessionChange', function(srcScope, session) {
+			if(session._id) {
+				self.setUserId(session._id);
+			}
+			else {
+				self.clear();
+			}
+		});
+
+
+		/**
+		 * Public interface
+		 */
+		var self = {
 			targetSite: 'j',
 			loggedIn: false,
 			userId: '',
@@ -11,22 +27,34 @@ angular.module('futurism')
 			user: {},
 
 			setUserId: function(userId) {
-				me.loggedIn = true;
-				me.userId = userId;
-				me.reload();
+				self.loggedIn = true;
+				self.userId = userId;
+				self.reload();
 			},
 
 			reload: function() {
-				me.stats = StatsResource.save();
-				me.user = UserResource.get({userId: me.userId});
+				self.stats = StatsResource.save();
+				self.user = UserResource.get({userId: self.userId});
 			},
 
 			clear: function() {
-				me.loggedIn = false;
-				me.stats = {};
-				me.user = {};
+				self.loggedIn = false;
+				self.stats = {};
+				self.user = {};
 			}
 		};
 
-		return me;
+
+		/**
+		 * The session may already be set up
+		 */
+		if(session.active) {
+			self.setUserId(session.data._id);
+		}
+
+
+		/**
+		 *
+		 */
+		return self;
 	});

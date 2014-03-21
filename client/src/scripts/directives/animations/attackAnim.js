@@ -65,8 +65,6 @@ angular.module('futurism')
 					var defender = animTargets[1];
 					var message = 'miss!';
 
-					console.log('pre:posn', animTargets, attacker, defender, message);
-
 					var oldPoison = defender.target.card.poison || 0;
 
 					if(defender.newData && defender.newData.poison > oldPoison) {
