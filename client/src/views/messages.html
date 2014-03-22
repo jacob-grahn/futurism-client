@@ -5,8 +5,8 @@
 			<li class="panel-segment" ng-repeat="convo in convos" ng-click="selectConvo(convo)">
 				<ul>
 					<li ng-repeat="message in convo">
-						<username link="false" ng-if="message.fromUser._id == me.user._id" id="{{message.toUser._id}}" name="{{message.toUser.name}}" site="{{message.toUser.site}}" group="{{message.toUser.group}}"></username>
-						<username link="false" ng-if="message.toUser._id == me.user._id" id="{{message.fromUser._id}}" name="{{message.fromUser.name}}" site="{{message.fromUser.site}}" group="{{message.fromUser.group}}"></username>
+						<username user="message.toUser" link="false" ng-if="message.fromUser._id == me.user._id"></username>
+						<username user="message.fromUser" link="false" ng-if="message.toUser._id == me.user._id"></username>
 						<div>{{message.body}} <span class="subtle">{{message.date | date}}</span></div>
 					</li>
 				</ul>
@@ -20,7 +20,7 @@
 
 		<ul class="list-group">
 			<li class="list-group-item" ng-repeat="message in selectedConvo">
-				<username id="{{message.fromUser._id}}" name="{{message.fromUser.name}}" site="{{message.fromUser.site}}" group="{{message.fromUser.group}}"></username>
+				<username user="message.fromUser"></username>
 				<div>{{message.body}} <span class="subtle">{{message.date | date}}</span></div>
 			</li>
 		</ul>

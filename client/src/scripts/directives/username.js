@@ -3,15 +3,12 @@ angular.module('futurism')
 		'use strict';
 
 		return {
-			restrict: 'AE',
+			restrict: 'E',
 			replace: true,
 			scope: {
-				name: '@',
-				id: '@',
-				site: '@',
-				group: '@',
 				link: '@',
-				size: '@'
+				size: '@',
+				user: '='
 			},
 			templateUrl: 'views/username.html',
 			link: function(scope) {
@@ -27,7 +24,7 @@ angular.module('futurism')
 					scope.avatarHeight = 48;
 				}
 
-				scope.showUser = function () {
+				scope.showUser = function (userId) {
 
 					var link = scope.link || 'true';
 
@@ -37,7 +34,7 @@ angular.module('futurism')
 							controller: 'UserModalCtrl',
 							resolve: {
 								userId: function () {
-									return scope.id;
+									return userId;
 								}
 							}
 						});

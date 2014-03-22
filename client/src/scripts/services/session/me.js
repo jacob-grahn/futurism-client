@@ -7,7 +7,7 @@ angular.module('futurism')
 		 * Reload my info whenever my session changes (login/logout)
 		 */
 		$rootScope.$on('event:sessionChange', function(srcScope, session) {
-			if(session._id) {
+			if(session && session._id) {
 				self.setUserId(session._id);
 			}
 			else {

@@ -12,7 +12,7 @@
 				<li>
 					{{lang.guildJoiner.leaders}}:
 					<span ng-repeat="owner in guild.owners">
-						<username id="{{owner._id}}" name="{{owner.name}}" site="{{owner.site}}" group="{{owner.group}}"></username>
+						<username user="owner"></username>
 					</span>
 				</li>
 				<li>
