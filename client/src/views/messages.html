@@ -18,12 +18,7 @@
 
 	<div id="conversation" class="col-sm-7">
 
-		<ul class="list-group">
-			<li class="list-group-item" ng-repeat="message in selectedConvo">
-				<username user="message.fromUser"></username>
-				<div>{{message.body}} <span class="subtle">{{message.date | date}}</span></div>
-			</li>
-		</ul>
+		<convo messages="selectedConvo"></convo>
 
 		<div ng-if="selectedConvo.length" class="convo-options inverse">
 			<a class="inverse" ng-click="reportConversation(selectedConvo)">{{lang.messages.report}}</a> |

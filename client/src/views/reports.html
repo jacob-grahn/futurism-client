@@ -1,16 +1,14 @@
 <div id="reports" class="row">
 	<div class="col-md-12">
-		<div class="well">
 
 			<paginated resource="ReportResource" results="reports" query="query">
 				<ul class="report-list">
-					<li class="every-other" ng-repeat="report in reports">
-						<report-display report="report"></report-display>
+					<li class="panel panel-default" ng-repeat="report in reports">
+						<report-display class="panel-segment" report="report"></report-display>
 					</li>
 				</ul>
 			</paginated>
 
-		</div>
 	</div>
 </div>
 

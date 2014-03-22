@@ -1,8 +1,11 @@
 <div class="report">
 
-	reporter: <username user="report.user"></username><br>
-	date: {{report.date | date}}<br>
-	<span ng-if="report.note">note: {{report.note}}<br></span>
+	<span class="meta">
+		reporter: <username user="report.user"></username><br>
+		date: {{report.date | date}}<br>
+		<span ng-if="report.note">note: {{report.note}}<br></span>
+		<br>
+	</span>
 
 	<div class="well">
 
@@ -18,10 +21,12 @@
 
 		<div ng-if="report.privateData" class="report-private-data">
 			<span ng-if="report.type === 'convo'">
-				{{report.privateData}}
+				<convo messages="report.privateData"></convo>
 			</span>
 		</div>
 
 	</div>
+
+	<button class="btn btn-primary" ng-click="archive(report)">archive</button>
 
 </div>
