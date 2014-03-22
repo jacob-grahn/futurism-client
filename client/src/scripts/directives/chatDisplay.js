@@ -21,8 +21,14 @@ angular.module('futurism')
 
 				var scrollToBottom = _.throttle(function() {
 
-					var scrollTop = logElem[0].scrollHeight - logElem.height();
-					logElem.animate({scrollTop: scrollTop}, 200);
+					if(!logElem) {
+						logElem = elem.find('.chat-log');
+					}
+
+					if(logElem.length > 0) {
+						var scrollTop = logElem[0].scrollHeight - logElem.height();
+						logElem.animate({scrollTop: scrollTop}, 200);
+					}
 
 				}, 200);
 
@@ -38,7 +44,7 @@ angular.module('futurism')
 				scope.$watch('chat.receivedCount', function(newCount) {
 					if(scope.chat) {
 
-						if(newCount >= scope.chat.maxMsgs) {
+						if(newCount >= scope.chat.maxMsgs && logElem.length > 0) {
 							logElem[0].scrollTop = logElem[0].scrollHeight - logElem.height() - $('.chat-log li:first-child').height();
 						}
 

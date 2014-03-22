@@ -1,7 +1,7 @@
 angular.module('futurism')
-	.run(function(autoLogin, session, errorHandler, $rootScope, lang, unread, notificationListener) {
+	.run(function(autoLogin, session, $rootScope, lang, unread, notificationListener) {
 		autoLogin.activate();
-		session.renew(errorHandler.callback);
+		session.renew();
 		lang.init();
 		$rootScope.lang = lang;
 		unread.start();

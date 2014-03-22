@@ -10,7 +10,7 @@ angular.module('futurism')
 
 		self.makeNew = _.throttle(function(callback) {
 			if(!callback) {
-				callback = function() {};
+				callback = defaultCallback;
 			}
 
 			checkLogins(function(err) {
@@ -47,7 +47,7 @@ angular.module('futurism')
 			var token = self.getToken();
 
 			if(!callback) {
-				callback = function() {};
+				callback = defaultCallback;
 			}
 
 			if(!token) {
@@ -139,6 +139,17 @@ angular.module('futurism')
 				function(errResponse) {
 					return callback(errResponse.data);
 				});
+		};
+
+
+		var defaultCallback = function(err) {
+			if(err.error) {
+				err = err.error;
+			}
+
+			if(err.ban) {
+				$location.url('/users/'+err._id+'/bans');
+			}
 		};
 
 

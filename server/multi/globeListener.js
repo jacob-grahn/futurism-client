@@ -19,7 +19,7 @@ redisClient.on('message', function(channel, data) {
 
 var updateUser = function(userId) {
 
-	redisSession.get(userId, function(err, sessionData) {
+	redisSession._get(userId, function(err, sessionData) {
 		if(err) {
 			sessionData = null;
 		}
