@@ -1,15 +1,27 @@
-<div class="report well">
+<div class="report">
+
 	reporter: <username user="report.user"></username><br>
 	date: {{report.date | date}}<br>
 	<span ng-if="report.note">note: {{report.note}}<br></span>
+
 	<div class="well">
+
 		<div ng-if="report.publicData" class="report-public-data">
 			<span ng-if="report.type === 'chat'">
 				<chat-log msgs="report.publicData.messages"></chat-log>
 			</span>
+			<span ng-if="report.type === 'card'">
+				<card-display card="report.publicData" size="medium"></card-display><br>
+				<a ng-click="openUser(report.publicData.userId)">[click here to load the user who made this card]</a>
+			</span>
 		</div>
+
 		<div ng-if="report.privateData" class="report-private-data">
-			{{report.privateData}}
+			<span ng-if="report.type === 'convo'">
+				{{report.privateData}}
+			</span>
 		</div>
+
 	</div>
+
 </div>

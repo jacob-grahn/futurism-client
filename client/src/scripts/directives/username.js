@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('username', function($modal) {
+	.directive('username', function(modals) {
 		'use strict';
 
 		return {
@@ -25,19 +25,9 @@ angular.module('futurism')
 				}
 
 				scope.showUser = function (userId) {
-
 					var link = scope.link || 'true';
-
 					if(link === 'true') {
-						$modal.open({
-							templateUrl: 'views/userModal.html',
-							controller: 'UserModalCtrl',
-							resolve: {
-								userId: function () {
-									return userId;
-								}
-							}
-						});
+						modals.openUser(userId);
 					}
 				};
 			}

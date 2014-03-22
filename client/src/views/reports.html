@@ -4,7 +4,7 @@
 
 			<paginated resource="ReportResource" results="reports" query="query">
 				<ul class="report-list">
-					<li ng-repeat="report in reports">
+					<li class="every-other" ng-repeat="report in reports">
 						<report-display report="report"></report-display>
 					</li>
 				</ul>
