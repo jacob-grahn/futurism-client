@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('UserModalCtrl', function($scope, userId, me, $location, UserResource, StatsResource, ApprenticeResource, ModeratorResource, BanResource, GuildModResource, KickResource, $modal) {
+	.controller('UserModalCtrl', function($scope, userId, me, $location, UserResource, BanResource, StatsResource, ApprenticeResource, ModeratorResource, GuildModResource, KickResource, modals) {
 		'use strict';
 
 		var includeBans = me.user.group === 'm' || me.user.group === 'a';
@@ -18,15 +18,7 @@ angular.module('futurism')
 		 * Open another modal to send user a message
 		 */
 		$scope.message = function() {
-			$modal.open({
-				templateUrl: 'views/messageModal.html',
-				controller: 'MessageModalCtrl',
-				resolve: {
-					toUserId: function () {
-						return userId;
-					}
-				}
-			});
+			modals.openMessage(userId);
 			$scope.$dismiss('message');
 		};
 
@@ -80,17 +72,8 @@ angular.module('futurism')
 		 * ban a user
 		 */
 		$scope.ban = function() {
-			BanResource.save({userId: userId, reason: 'test', type: 'ban'});
+			modals.openBanUser(userId);
 			$scope.$dismiss('ban');
-		};
-
-
-		/**
-		 * silence a user
-		 */
-		$scope.silence = function() {
-			BanResource.save({userId: userId, reason: 'test', type: 'silence'});
-			$scope.$dismiss('silence');
 		};
 
 

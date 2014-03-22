@@ -7,10 +7,36 @@ angular.module('futurism')
 
 			openUser: function(userId) {
 				$modal.open({
-					templateUrl: 'views/userModal.html',
+					templateUrl: 'views/user-modal.html',
 					controller: 'UserModalCtrl',
 					resolve: {
 						userId: function () {
+							return userId;
+						}
+					}
+				});
+			},
+
+
+			openBanUser: function(userId) {
+				$modal.open({
+					templateUrl: 'views/ban-user-modal.html',
+					controller: 'BanUserModalCtrl',
+					resolve: {
+						userId: function () {
+							return userId;
+						}
+					}
+				});
+			},
+
+
+			openMessage: function(userId) {
+				$modal.open({
+					templateUrl: 'views/message-modal.html',
+					controller: 'MessageModalCtrl',
+					resolve: {
+						toUserId: function () {
 							return userId;
 						}
 					}
