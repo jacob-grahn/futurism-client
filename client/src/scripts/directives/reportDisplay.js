@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('reportDisplay', function(modals) {
+	.directive('reportDisplay', function(modals, ReportResource, $rootScope) {
 		'use strict';
 
 		return {
@@ -14,6 +14,13 @@ angular.module('futurism')
 
 				scope.openUser = function(userId) {
 					modals.openUser(userId);
+				};
+
+				scope.archive = function(report) {
+					var updatedReport = ReportResource.save({reportId: report._id, read: true}, function() {
+						$rootScope.$broadcast('event:reportUpdated');
+					});
+					return updatedReport.$promise;
 				};
 			}
 		};

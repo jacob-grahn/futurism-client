@@ -1,7 +1,7 @@
 <div id="reports" class="row">
 	<div class="col-md-12">
 
-			<paginated resource="ReportResource" results="reports" query="query">
+			<paginated resource="ReportResource" results="reports" query="query" refresh-on="event:reportUpdated">
 				<ul class="report-list">
 					<li class="panel panel-default" ng-repeat="report in reports">
 						<report-display class="panel-segment" report="report"></report-display>
