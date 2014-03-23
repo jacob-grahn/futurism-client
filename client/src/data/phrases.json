@@ -678,6 +678,10 @@
 
 
   "nav": {
+		"reports": {
+			"en": "Reports"
+		},
+
     "toggle": {
       "en": "Toggle Navigation",
       "ko": "토글",
