@@ -3,28 +3,34 @@
 
 		"grow": {
 			"name": {
-				"en": "grow"
+				"en": "grow",
+				"pl": "wzrost"
 			},
 			"desc": {
-				"en": "Become a lovable clone that is just like mommy or daddy."
+				"en": "Become a lovable clone that is just like mommy or daddy.",
+				"pl": "Staje sie klonem swojego ojca lub matki."
 			}
 		},
 
 		"smmn": {
 			"name": {
-				"en": "summon"
+				"en": "summon",
+				"pl": "wezwanie"
 			},
 			"desc": {
-				"en": "Play a card from your hand."
+				"en": "Play a card from your hand.",
+				"pl": "Zagraj karta z reki."
 			}
 		},
 
 		"futr": {
 			"name": {
-				"en": "future"
+				"en": "future",
+				"pl": "przyszlosc"
 			},
 			"desc": {
-				"en": "Change the future."
+				"en": "Change the future.",
+				"pl": "Zmien przyszlosc!"
 			}
 		},
 
@@ -36,7 +42,8 @@
 				"hu": "rally",
 				"nb": "sammenkomst",
 				"pi": "Pirate's cry",
-				"it": "rally"
+				"it": "rally",
+				"pl": "triumf"
 			},
 			"desc": {
 				"en": "Produce pride, which can be use to play more cards.",
@@ -45,7 +52,8 @@
 				"hu": "Produce pride, which can be use to play more cards.",
 				"nb": "Produserer stolthet, som kan bli brukt for å spille fler kort.",
 				"pi": "Boosts yar pirate's pride, which lets mor' pirates arrive in the battle.",
-				"it": "Produci valore, che può essere usato per giocare più carte."
+				"it": "Produci valore, che può essere usato per giocare più carte.",
+				"pl": "Prodokuje dume, ktora moze byc uzyta do wezwania wiecej kart."
 			}
 		},
 
@@ -58,7 +66,8 @@
 				"hu": "Büszkeség",
 				"nb": "Stolthet",
 				"pi": "Pride",
-				"it": "Valore"
+				"it": "Valore",
+				"pl": "duma"
 			},
 			"desc": {
 				"en": "Produce pride, which can be use to play more cards.",
@@ -67,7 +76,8 @@
 				"hu": "Produce pride, which can be use to play more cards.",
 				"nb": "Produserer stolthet, som kan bli brukt for å spille fler kort.",
 				"pi": "Boosts yar pirate's pride, which lets mor' pirates arrive in the battle.",
-				"it": "Produci valore, che può essere usato per giocare più carte."
+				"it": "Produci valore, che può essere usato per giocare più carte.",
+				"pl": "Prodokuje dume, ktora moze byc uzyta do wezwania wiecej kart."
 			}
 		},
 
@@ -79,7 +89,8 @@
 				"hu": "mozgás",
 				"nb": "flytt",
 				"pi": "sail",
-				"it": "muovi"
+				"it": "muovi",
+				"pl": "przemieszczenie"
 			},
 			"desc": {
 				"en": "Reposition this card.",
@@ -88,7 +99,8 @@
 				"hu": "Reposition this card.",
 				"nb": "Flytt dette kortet",
 				"pi": "Move your ship",
-				"it": "Riposiziona questa carta."
+				"it": "Riposiziona questa carta.",
+				"pl": "Przemiesc ta karte."
 			}
 		},
 
@@ -105,7 +117,8 @@
 				"es": "Curación",
 				"nb": "Helbreding",
 				"it": "cura",
-				"hu": "gyógyulás"
+				"hu": "gyógyulás",
+				"pl": "zdrowie"
 			},
 			"desc": {
 				"en": "Target card gains 1 health.",
@@ -119,7 +132,8 @@
 				"es": "La carta objetivo gana 1 de vida.",
 				"nb": "Målsatt kort får ett helsepoeng.",
 				"it": "La carta bersaglio ottiene un punto salute.",
-				"hu": "Target card gains 1 health."
+				"hu": "Target card gains 1 health.",
+				"pl": "Wybrana karta dostaje 1 punkt zycia."
 			}
 		},
 
@@ -136,7 +150,8 @@
 				"es": "árboles de hierbas",
 				"nb": "Ugresstrær",
 				"it": "Albero di Erba",
-				"hu": "gyom fák"
+				"hu": "gyom fák",
+				"pl": "drzewa!"
 			},
 			"desc": {
 				"en": "A 0/1 tree is created",
@@ -150,7 +165,8 @@
 				"es": "Un árbol 0/1 es creado",
 				"nb": "Et 0/1-tre blir lagd",
 				"it": "Viene creato un albero 0x1",
-				"hu": "A 0/1 tree is created"
+				"hu": "A 0/1 tree is created",
+				"pl": "Tworzy drzewo 0/1."
 			}
 		},
 
@@ -167,7 +183,8 @@
 				"es": "abominación",
 				"nb": "styggedom",
 				"it": "Abominio",
-				"hu": "utálat"
+				"hu": "utálat",
+				"pl": "fuzja"
 			},
 			"desc": {
 				"en": "Merge this unit with another.",
@@ -181,13 +198,15 @@
 				"es": "Esta unidad se combina con otra.",
 				"nb": "Slå denne enheten sammen med en annen.",
 				"it": "Fondi questa carta con un'altra.",
-				"hu": "Merge this unit with another."
+				"hu": "Merge this unit with another.",
+				"pl": "Laczy ta karte z wybrana karta."
 			}
 		},
 
 		"peap": {
 			"name": {
-				"en": "peace pipe"
+				"en": "peace pipe",
+				"pl": "fajka pokoju"
 			},
 			"desc": {
 				"en": "Target enemy can not attack next turn.",
@@ -201,7 +220,8 @@
 				"es": "El enemigo objetivo no puede atacar el próximo turno.",
 				"nb": "Målsatt fiende kan ikke angripe neste runde.",
 				"it": "L'obiettivo nemico non può attaccare il prossimo turno.",
-				"hu": "Target enemy can not attack next turn."
+				"hu": "Target enemy can not attack next turn.",
+				"pl": "Wybrana karta przeciwnika nie moze atakowac w nastepnej turze."
 			}
 		},
 
@@ -218,10 +238,12 @@
 				"es": "¡abejas!",
 				"nb": "bier!",
 				"it": "api!",
-				"hu": "méhek!"
+				"hu": "méhek!",
+				"pl": "pszczoly!"
 			},
 			"desc": {
-				"en": "A random enemy loses 1 health. This attack always hits."
+				"en": "A random enemy loses 1 health. This attack always hits.",
+				"pl": "Losowa karta przeciwnika traci 1 punkt zycia. Zawsze trafia."
 			}
 		},
 
@@ -238,7 +260,8 @@
 				"es": "reconstruir",
 				"nb": "gjenoppbygg",
 				"it": "ricostruisci",
-				"hu": "újraépítés"
+				"hu": "újraépítés",
+				"pl": "odbudowa"
 			},
 			"desc": {
 				"en": "Resurrect a dead machine.",
@@ -252,7 +275,8 @@
 				"es": "Revive una máquina muerta.",
 				"nb": "Gjenoppliv en død maskin.",
 				"it": "Fai risorgere una macchina morta.",
-				"hu": "Resurrect a dead machine."
+				"hu": "Resurrect a dead machine.",
+				"pl": "Odbuduj martwa maszyne."
 			}
 		},
 
@@ -269,10 +293,12 @@
 				"nb": "t-skjold",
 				"sv": "T-sköld",
 				"it": "Scudo T",
-				"hu": "t-pajzs"
+				"hu": "t-pajzs",
+				"pl": "t-tarcza"
 			},
 			"desc": {
-				"en": "Protect this card from two points of damage."
+				"en": "Protect this card from two points of damage.",
+				"pi": "Target ship receives two less cannonballs this turn"
 			}
 		},
 
@@ -289,7 +315,8 @@
 				"es": "preciso",
 				"nb": "presis",
 				"it": "precisione",
-				"hu": "precíz"
+				"hu": "precíz",
+				"pl": "atak [precyzja]"
 			},
 			"desc": {
 				"en": "Attack any enemy regardless of their defensive formations. The enemy will counter-attack.",
@@ -303,7 +330,8 @@
 				"es": "Ataca un enemigo a tu elección sin importar las formaciones defensivas.",
 				"nb": "Angrip en fiende av ditt valg uavhengig av defensive formasjoner.",
 				"it": "Attacca un nemico di tua scelta senza contare delle formazioni difensive.",
-				"hu": "Attack an enemy of your choice regardless of defensive formations."
+				"hu": "Attack an enemy of your choice regardless of defensive formations.",
+				"pl": "Atakuje wybrana karte przeciwnika niezaleznie od defensywnych formacji."
 			}
 		},
 
@@ -320,7 +348,8 @@
 				"es": "estratega",
 				"nb": "strateg",
 				"it": "Stratega",
-				"hu": "stratéga"
+				"hu": "stratéga",
+				"pl": "doladowanie"
 			},
 			"desc": {
 				"en": "Ally can perform an extra action this turn",
@@ -334,7 +363,8 @@
 				"es": "Un aliado puede realizar una acción más en este turno",
 				"nb": "Allierte kan utøve en ekstra handling denne runden",
 				"it": "Un alleato può fare un'azione extra in questo turno.",
-				"hu": "Ally can perform an extra action this turn"
+				"hu": "Ally can perform an extra action this turn",
+				"pl": "Wybrana karta moze atakowac jeszcze raz w tej turze."
 			}
 		},
 
@@ -351,7 +381,8 @@
 				"es": "conexiones",
 				"nb": "nettverk",
 				"it": "networking",
-				"hu": "hálózat"
+				"hu": "hálózat",
+				"pl": "kooperacja"
 			},
 			"desc": {
 				"en": "Gain an allies abilities.",
@@ -365,7 +396,8 @@
 				"es": "Obtiene las habilidades de un aliado.",
 				"nb": "Få en allierts egenskaper.",
 				"it": "Ottieni un'abilità di un alleato.",
-				"hu": "Gain an allies abilities."
+				"hu": "Gain an allies abilities.",
+				"pl": "Sklonuj mozliwosci swojej innej karty."
 			}
 		},
 
@@ -382,7 +414,8 @@
 				"es": "transformista",
 				"nb": "transformator",
 				"it": "transformer",
-				"hu": "transformer"
+				"hu": "transformer",
+				"pl": "transformer"
 			},
 			"desc": {
 				"en": "Swap health and attack.",
@@ -396,7 +429,8 @@
 				"es": "Intercambia ataque y vida.",
 				"nb": "Bytt helse- og angrepspoeng.",
 				"it": "Scambia salute e attacco.",
-				"hu": "Swap health and attack."
+				"hu": "Swap health and attack.",
+				"pl": "Zamien punkty zycia i ataku."
 			}
 		},
 
@@ -413,7 +447,8 @@
 				"es": "seducción",
 				"nb": "forførelse",
 				"it": "seduzione",
-				"hu": "csábítás"
+				"hu": "csábítás",
+				"pl": "łapówka"
 			},
 			"desc": {
 				"en": "Sacrifice one health to convert a weak enemy to your side.",
@@ -427,7 +462,8 @@
 				"es": "Convierte un enemigo a tu bando si su vida es 1.",
 				"nb": "Konverter en fiende til din side dersom deres helse er 1.",
 				"it": "Converti un nemico dalla tua parte se la sua salute è 1.",
-				"hu": "Convert an enemy to your side if their health is 1."
+				"hu": "Convert an enemy to your side if their health is 1.",
+				"pl": "Poswiec 1 punkt zycia zeby przejac slabego przeciwnika na swoja strone."
 			}
 		},
 
@@ -444,7 +480,8 @@
 				"es": "asesino",
 				"nb": "snikmorder",
 				"it": "assassino",
-				"hu": "assassin"
+				"hu": "assassin",
+				"pl": "atak [skrytobójca]"
 			},
 			"desc": {
 				"en": "Attack with no chance of a counter attack.",
@@ -458,7 +495,8 @@
 				"es": "Ataca sin recibir daño.",
 				"nb": "Angrip uten å ta imot skade.",
 				"it": "Attacca senza prendere danno.",
-				"hu": "Attack without taking damage."
+				"hu": "Attack without taking damage.",
+				"pl": "Atakuj bez wyrzadzania sobie szkód."
 			}
 		},
 
@@ -475,10 +513,12 @@
 				"es": "delegar",
 				"nb": "delegat",
 				"it": "delega",
-				"hu": "képviselő"
+				"hu": "képviselő",
+				"pl": "delegacja"
 			},
 			"desc": {
-				"en": "Return this card to you hand, refunding its original pride cost."
+				"en": "Return this card to you hand, refunding its original pride cost.",
+				"pl": "Zwroc ta karte do reki, refundując jej orginalny koszt dumy."
 			}
 		},
 
@@ -495,7 +535,8 @@
 				"es": "veneno",
 				"nb": "gift",
 				"it": "veleno",
-				"hu": "méreg"
+				"hu": "méreg",
+				"pl": "zatruty miecz"
 			},
 			"desc": {
 				"en": "Target enemy loses 1 health per turn. 50% chance to fail.",
@@ -509,16 +550,19 @@
 				"es": "El enemigo objetivo pierde 1 de vida por turno.",
 				"nb": "Målsatt fiende mister ett helsepoeng per runde.",
 				"it": "Il nemico bersaglio perde 1 punto vita a turno.",
-				"hu": "Target enemy loses 1 health per turn."
+				"hu": "Target enemy loses 1 health per turn.",
+				"pl": "Wybrany przeciwnik traci 1 punkt zycia co ture. 50% szans na niepowodzenie."
 			}
 		},
 
 		"tlpt": {
 			"name": {
-				"en": "teleporter"
+				"en": "teleporter",
+				"pl": "teleportacja"
 			},
 			"desc": {
-				"en": "All your cards gain the move ability."
+				"en": "All your cards gain the move ability.",
+				"pl": "Kazda z twoich kard dostaje mozliwosc do poruszania się."
 			}
 		},
 
@@ -535,7 +579,8 @@
 				"es": "embolsar",
 				"nb": "fang dem",
 				"it": "impacchettare",
-				"hu": "bag 'em"
+				"hu": "bag 'em",
+				"pl": "zawrocenie"
 			},
 			"desc": {
 				"en": "Target card is returned to its owner's hand.",
@@ -549,7 +594,8 @@
 				"es": "La carta objetivo retorna a la mano de su dueño.",
 				"nb": "Målsatt kort blir retunert til eierens hånd.",
 				"it": "La carta bersaglio ritorna alla mano del suo proprietario.",
-				"hu": "Target card is returned to its owner's hand."
+				"hu": "Target card is returned to its owner's hand.",
+				"pl": "Zwroc wybrana karte przeciwnika do reki jej wlasciciela."
 			}
 		},
 
@@ -566,10 +612,12 @@
 				"es": "sifón",
 				"nb": "hevert",
 				"it": "sifone",
-				"hu": "szifon"
+				"hu": "szifon",
+				"pl": "atak [syfon]"
 			},
 			"desc": {
-				"en": "Attack an enemy, converting some of the damage into health. The enemy will counter-attack."
+				"en": "Attack an enemy, converting some of the damage into health. The enemy will counter-attack.",
+				"pl": "Zaatakuj przeciwnika, konwertujac niektore obrazenia w punkty zycia. Przeciwnik skontruje."
 			}
 		},
 
@@ -586,7 +634,8 @@
 				"es": "macho",
 				"nb": "hannkjønn",
 				"it": "maschio",
-				"hu": "férfi"
+				"hu": "férfi",
+				"pl": "mezczyzna"
 			},
 			"desc": {
 				"en": "Can reproduce with females.",
@@ -600,7 +649,8 @@
 				"es": "Puede reproducirse con hembras.",
 				"nb": "Kan reprodusere med hunkjønn.",
 				"it": "Si può riprodurre con le femmine.",
-				"hu": "Can reproduce with females."
+				"hu": "Can reproduce with females.",
+				"pl": "Moze reprodukowac sie z kobietami."
 			}
 		},
 
@@ -617,7 +667,8 @@
 				"es": "hembra",
 				"nb": "hunkjønn",
 				"it": "femmina",
-				"hu": "nő"
+				"hu": "nő",
+				"pl": "kobieta"
 			},
 			"desc": {
 				"en": "Can reproduce with males.",
@@ -631,7 +682,8 @@
 				"es": "Puede reproducirse con machos.",
 				"nb": "Kan reprodusere med hankjønn.",
 				"it": "Si può riprodurre con i maschi.",
-				"hu": "Can reproduce with males."
+				"hu": "Can reproduce with males.",
+				"pl": "Moze reprodukowac sie z mezczyznami."
 			}
 		},
 
@@ -648,7 +700,8 @@
 				"es": "Grito de batalla",
 				"nb": "krigsrop",
 				"it": "Pianto di battaglia",
-				"hu": "harci kiáltás"
+				"hu": "harci kiáltás",
+				"pl": "Okrzyk wojenny"
 			},
 			"desc": {
 				"en": "All ally zealots gain 1 attack for 1 turn."
@@ -668,7 +721,8 @@
 				"es": "sacrificio heroico",
 				"nb": "heroisk ofring",
 				"it": "sacrificio eroico",
-				"hu": "hősies áldozat"
+				"hu": "hősies áldozat",
+				"pl": "heroiczne poswiecenie"
 			},
 			"desc": {
 				"en": "All enemy attacks must target this card for one turn.",
@@ -682,7 +736,8 @@
 				"es": "Todos los ataques enemigos deben tener a esta carta como objetivo por un turno.",
 				"nb": "Alle fiendtlige angrep må målsette dette kortet én runde.",
 				"it": "Tutti gli attacchi del nemico devono essere indirizzati a questa carta per un turno.",
-				"hu": "All enemy attacks must target this card for one turn."
+				"hu": "All enemy attacks must target this card for one turn.",
+				"pl": "Wszystkie karty przeciwnika musza atakowac ta karte w nastepnej turze."
 			}
 		},
 
@@ -699,17 +754,20 @@
 				"es": "súper suero",
 				"nb": "super-serum",
 				"it": "super siero",
-				"hu": "szuper szérum"
+				"hu": "szuper szérum",
+				"pl": "super serum"
 			},
 			"desc": {
-				"en": "Attack is increased by 3, and this card becomes poisoned."
+				"en": "Attack is increased by 3, and this card becomes poisoned.",
+				"pl": "Atak powieksza sie o 3, lecz ta karta zostaje zatruta."
 			}
 		},
 
 
 		"frvt": {
 			"name": {
-				"en": "attack [fervent]"
+				"en": "attack [fervent]",
+				"pl": "atak [cnotliwy]"
 			},
 			"desc": {
 				"en": "Attack an enemy without ever missing. The enemy will counter-attack."
