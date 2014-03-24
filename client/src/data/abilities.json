@@ -5,12 +5,14 @@
 			"name": {
 				"en": "grow",
 				"pl": "wzrost",
-				"nb": "voks"
+				"nb": "voks",
+				"pi": "construct"
 			},
 			"desc": {
 				"en": "Become a lovable clone that is just like mommy or daddy.",
 				"pl": "Staje sie klonem swojego ojca lub matki.",
-				"nb": "Bli en elskbar klone som er akkurat som mor eller far."
+				"nb": "Bli en elskbar klone som er akkurat som mor eller far.",
+				"pi": "Build a replica ship."
 			}
 		},
 
@@ -18,12 +20,14 @@
 			"name": {
 				"en": "summon",
 				"pl": "wezwanie",
-				"nb": "framkall"
+				"nb": "framkall",
+				"pi": "Writ of summons"
 			},
 			"desc": {
 				"en": "Play a card from your hand.",
 				"pl": "Zagraj karta z reki.",
-				"nb": "Spill et kort fra hånden din."
+				"nb": "Spill et kort fra hånden din.",
+				"pi": "Send a ship from the shipyard."
 			}
 		},
 
@@ -31,12 +35,14 @@
 			"name": {
 				"en": "future",
 				"pl": "przyszlosc",
-				"nb": "framtid"
+				"nb": "framtid",
+				"pi": "tomorrow"
 			},
 			"desc": {
 				"en": "Change the future.",
 				"pl": "Zmien przyszlosc!",
-				"nb": "Forandre framtiden."
+				"nb": "Forandre framtiden.",
+				"pi": "Change tomorrow."
 			}
 		},
 
@@ -213,7 +219,8 @@
 			"name": {
 				"en": "peace pipe",
 				"pl": "fajka pokoju",
-				"nb": "fredspipe"
+				"nb": "fredspipe",
+				"pi": "leaky pipe"
 			},
 			"desc": {
 				"en": "Target enemy can not attack next turn.",
@@ -251,7 +258,8 @@
 			"desc": {
 				"en": "A random enemy loses 1 health. This attack always hits.",
 				"pl": "Losowa karta przeciwnika traci 1 punkt zycia. Zawsze trafia.",
-				"nb": "En tilfeldig fiende mister ett liv. Dette angrepet treffer alltid."
+				"nb": "En tilfeldig fiende mister ett liv. Dette angrepet treffer alltid.",
+				"pi": "Bees swarm a random enemy and destroy 1 rum. Bees bee deadly accurate."
 			}
 		},
 
@@ -306,7 +314,7 @@
 			},
 			"desc": {
 				"en": "Protect this card from two points of damage.",
-				"pi": "Target ship receives two less cannonballs this turn",
+				"pi": "Fog enshrouds a ship and prevents the loss of two rum.",
 				"nb": "Beskytt dette kortet fra to skadepoeng."
 			}
 		},
@@ -515,7 +523,7 @@
 				"ko": "대리자",
 				"ct": "mewoowo",
 				"fr": "Délégué",
-				"pi": "delegate",
+				"pi": "port",
 				"lt": "Įgaliojimas",
 				"ne": "afgevaardige",
 				"sv": "sända",
@@ -528,7 +536,8 @@
 			"desc": {
 				"en": "Return this card to you hand, refunding its original pride cost.",
 				"pl": "Zwroc ta karte do reki, refundując jej orginalny koszt dumy.",
-				"nb": "Returner dette kortet til hånden din, og få tilbake dets opprinnelige stolthetskostnad."
+				"nb": "Returner dette kortet til hånden din, og få tilbake dets opprinnelige stolthetskostnad.",
+				"pi": "Send this ship back to port, gaining back its pride cost."
 			}
 		},
 
@@ -569,12 +578,14 @@
 			"name": {
 				"en": "teleporter",
 				"pl": "teleportacja",
-				"nb": "teleportør"
+				"nb": "teleportør",
+				"pi": "take up anchor"
 			},
 			"desc": {
 				"en": "All your cards gain the move ability.",
 				"pl": "Kazda z twoich kard dostaje mozliwosc do poruszania się.",
-				"nb": "Alle kortene dine får flytt-egenskapen."
+				"nb": "Alle kortene dine får flytt-egenskapen.",
+				"pi": "All ships may now move about."
 			}
 		},
 
@@ -630,7 +641,8 @@
 			"desc": {
 				"en": "Attack an enemy, converting some of the damage into health. The enemy will counter-attack.",
 				"pl": "Zaatakuj przeciwnika, konwertujac niektore obrazenia w punkty zycia. Przeciwnik skontruje.",
-				"nb": "Angriper en fiende, og konverterer noe av skaden til helsepoeng. Fienden vil gå til motangrep."
+				"nb": "Angriper en fiende, og konverterer noe av skaden til helsepoeng. Fienden vil gå til motangrep.",
+				"pi": "Shoot an enemy ship. Some of their rum will be stolen, but they'll counter over their lost rum!"
 			}
 		},
 
@@ -773,7 +785,8 @@
 			"desc": {
 				"en": "Attack is increased by 3, and this card becomes poisoned.",
 				"pl": "Atak powieksza sie o 3, lecz ta karta zostaje zatruta.",
-				"nb": "Kortet får tre angrepspoeng, og blir forgiftet."
+				"nb": "Kortet får tre angrepspoeng, og blir forgiftet.",
+				"pi": "Ship has 3 more cannons, but its rum supply is poisoned."
 			}
 		},
 
@@ -781,11 +794,13 @@
 			"name": {
 				"en": "attack [fervent]",
 				"pl": "atak [cnotliwy]",
-				"nb": "angrip [rettferdig]"
+				"nb": "angrip [rettferdig]",
+				"pi": "righteous"
 			},
 			"desc": {
 				"en": "Attack an enemy without ever missing. The enemy will counter-attack.",
-				"nb": "Angrip en fiende, og konverter skaden til stolthet. Fienden vil gå til motangrep."
+				"nb": "Angrip en fiende, og konverter skaden til stolthet. Fienden vil gå til motangrep.",
+				"pi": "Shoot an enemy ship; rum will turn into pride. Enemey will counter over the loss of their rum!"
 			}
 		}
 	}

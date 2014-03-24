@@ -1097,13 +1097,15 @@
 			"en": "delete",
 			"ne": "verwijder",
 			"pl": "usun",
-			"nb": "slett"
+			"nb": "slett",
+			"pi": "burn message"
 		},
 		"report": {
 			"en": "report",
 			"ne": "rapporteren",
 			"pl": "zreportuj",
-			"nb": "rapporter"
+			"nb": "rapporter",
+			"pi": "tip off police"
 		}
 	}
 }
