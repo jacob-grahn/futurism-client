@@ -160,7 +160,7 @@
       "nb": "Åpne",
       "it": "Carica",
       "hu": "Betöltés",
-      "pl": "Zaladuj",
+      "pl": "Zaladuj"
     },
 
     "new": {
@@ -173,7 +173,7 @@
       "ne": "Nieuw",
       "sv": "Nytt",
       "es": "Nueva",
-      "nb": "Ny",
+      "nb": "Nytt",
       "it": "Nuova",
       "hu": "Új",
       "pl": "Utwórz"
@@ -236,7 +236,7 @@
       "ne": "Beeindig Beurt",
       "lt": "Užbaigti ėjimą",
       "hu": "Fordulat vége",
-      "nb": "Avslutt runden",
+      "nb": "Avslutt turen",
       "pi": "Hit the bunk",
       "it": "Termina turno",
       "pl": "Zakoncz ture"
@@ -410,7 +410,7 @@
       "ne": "Nieuw",
       "sv": "Nytt",
       "es": "Nuevo",
-      "nb": "Ny",
+      "nb": "Nytt",
       "it": "Nuova",
       "hu": "Új",
       "pl": "Utwórz"
@@ -493,7 +493,7 @@
       "ne": "Error",
       "sv": "Error",
       "es": "Error",
-      "nb": "Feil",
+      "nb": "Error",
       "it": "Errore!",
       "hu": "Hiba!",
       "pl": "Blad"
@@ -531,7 +531,7 @@
       "ne": "Speler",
       "sv": "spelare",
       "es": "jugadores",
-      "nb": "spiller",
+      "nb": "spillere",
       "it": "Giocatori",
       "hu": "játékosok",
       "pl": "gracze"
@@ -715,7 +715,7 @@
       "ne": "gilde",
       "sv": "klan",
       "es": "gremio",
-      "nb": "klan",
+      "nb": "laug",
       "it": "clan",
       "hu": "klán",
       "pl": "gildia"
@@ -837,7 +837,7 @@
       "nb": "Meldinger",
       "it": "Messaggi",
       "hu": "Üzenetek",
-      "pl": "Wiadomosci
+      "pl": "Wiadomosci"
     },
 
     "logout": {
@@ -911,8 +911,9 @@
       "lt": "Vertė",
       "pi": "pride",
       "it": "valore",
+			"nb": "stolthet",
       "pl": "duma"
-      },
+    },
 
     "cardCount": {
       "en": "cards",
@@ -920,6 +921,7 @@
       "lt": "Kortų kiekis",
       "pi": "ships",
       "it": "carte",
+			"nb": "kort",
       "pl": "ilosc kart"
     },
 
@@ -929,6 +931,7 @@
       "lt": "Puolimo taškai",
       "pi": "cannons",
       "it": "attacco",
+			"nb": "angrip",
       "pl": "atak"
     },
 
@@ -938,6 +941,7 @@
       "lt": "Gyvybių taškai",
       "pi": "rum",
       "it": "salute",
+			"nb": "helse",
       "pl": "zycie"
     }
   },
@@ -950,6 +954,7 @@
 			"ne": "Treed toe in de Gilde",
 			"lt": "Stoti į Gildiją",
 			"pi": "Enlist",
+			"nb": "Bli med i lauget",
 			"pl": "Dolacz do gildii"
 		},
 
@@ -958,6 +963,7 @@
 			"ne": "Maak Gilde",
 			"lt": "Sukurti Gildiją",
 			"pi": "Found guild",
+			"nb": "Lag et laug",
 			"pl": "Zaloz gildie"
 		},
 
@@ -966,6 +972,7 @@
 			"ne": "Treed toe in het overleg",
 			"lt": "Įstojimo tipas",
 			"pi": "Enlistment policy",
+			"nb": "Deltagelsesregler",
 			"pl": "Warunki dolaczenia"
 		},
 
@@ -974,6 +981,7 @@
 			"ne": "Logo",
 			"lt": "Logotipas",
 			"pi": "Flag",
+			"nb": "Banner",
 			"pl": "Banner"
 		},
 
@@ -982,7 +990,8 @@
       "ne": "Treed toe",
       "lt": "Įstoti",
 			"pi": "Enlist",
-			"pl": "Dolacz"
+			"pl": "Dolacz",
+      "nb": "Bli med"
     },
 
     "leaders": {
@@ -990,7 +999,8 @@
       "ne": "Leiders",
       "lt": "Vadovai",
       "pi": "Captains",
-      "pl": "Dowodcy"
+      "pl": "Dowodcy",
+      "nb": "Ledere"
     },
 
     "members": {
@@ -998,7 +1008,8 @@
       "ne": "Leden",
       "lt": "Nariai",
       "pi": "Crewers",
-      "pl": "Czlonkowie"
+      "pl": "Czlonkowie",
+      "nb": "Medlemmer"
     },
 
     "gpToday": {
@@ -1006,7 +1017,8 @@
       "ne": "GP vandaag",
       "lt": "Šiandienos GP",
       "pi": "Gold today",
-      "pl": "GP dzis"
+      "pl": "GP dzis",
+      "nb": "GP i dag"
     },
 
     "founded": {
@@ -1014,7 +1026,8 @@
       "ne": "Gesticht",
       "lt": "Įkurta",
       "pi": "Founded",
-      "pl": "Zalozona"
+      "pl": "Zalozona",
+      "nb": "Grunnlagt"
     }
   },
 
@@ -1026,14 +1039,16 @@
 				"ne": "Open",
 				"lt": "Atvira",
 				"pi": "Open doors",
-				"pl": "Otwarta"
+				"pl": "Otwarta",
+				"nb": "Åpent"
 			},
 			"desc": {
 				"en": "Anyone can join this guild.",
 				"ne": "Iedereen kan in deze guild komen",
 				"lt": "Į šią Gildiją gali įstoti visi.",
 				"pi": "Any pirate may join this crew.",
-				"pl": "Kazdy moze dolaczyc do tej gildii."
+				"pl": "Kazdy moze dolaczyc do tej gildii.",
+				"nb": "Alle kan bli med i dette lauget."
 			}
 		},
 
@@ -1043,14 +1058,16 @@
 				"ne": "Nodig uit",
 				"lt": "Tik su pakvietimu",
 				"pi": "Private",
-				"pl": "Prywatna"
-				},
+				"pl": "Prywatna",
+				"nb": "Privat"
+			},
 			"desc": {
 				"en": "Only invited players can join this guild.",
 				"ne": "Alleen uitgenodigde speler kunnen in deze gilde komen",
 				"lt": "Tik pakviesti žaidėjai gali įstoti į šią Gildiją",
 				"pi": "Pirates must have a letter to join this guild.",
-				"pl": "Tylko zaproszeni gracze moga dolaczyc do tej gildii."
+				"pl": "Tylko zaproszeni gracze moga dolaczyc do tej gildii.",
+				"nb": "Bare inviterte spillere kan bli med i dette lauget."
 			}
 		},
 
@@ -1059,15 +1076,17 @@
 				"en": "Ask",
 				"ne": "Vraag",
 				"lt": "Tik su užklausa",
-				"pi": "Inquiry only,
-				"pl": "Moderowana"
+				"pi": "Inquiry only",
+				"pl": "Moderowana",
+				"nb": "Spør"
 			},
 			"desc": {
 				"en": "Players must ask or be invited to join this guild.",
 				"ne": "Spelers moeten gevraagd hebben of uitgenodigd zijn om deze gilde te betreden",
 				"lt": "Žaidėjai turi atsiusti užklausą arba būti pakviesti kad galėtu įstoti į šią Gildiją",
 				"pi": "Pirates must either have their request approved or have a letter to join this guild.",
-				"pl": "Aby dolaczyc, musisz sie zapytac lub zostac zaproszonym."
+				"pl": "Aby dolaczyc, musisz sie zapytac lub zostac zaproszonym.",
+				"nb": "Spillere må spørre eller være invitert for å bli med i dette lauget."
 			}
 		}
 	},
@@ -1077,12 +1096,14 @@
 		"delete": {
 			"en": "delete",
 			"ne": "verwijder",
-			"pl": "usun"
+			"pl": "usun",
+			"nb": "slett"
 		},
 		"report": {
 			"en": "report",
 			"ne": "rapporteren",
-			"pl": "zreportuj"
+			"pl": "zreportuj",
+			"nb": "rapporter"
 		}
 	}
 }
