@@ -26,7 +26,7 @@ angular.module('futurism')
 					active = true;
 					setToken(data.token);
 					self.data = data;
-					$rootScope.$broadcast('event:sessionChange', self.data);
+					$rootScope.$broadcast('event:sessionChanged', self.data);
 					return callback(null, data);
 				});
 			});
@@ -39,7 +39,7 @@ angular.module('futurism')
 			active = false;
 			self._id = null;
 			self.data = {};
-			$rootScope.$broadcast('event:sessionChange', self.data);
+			$rootScope.$broadcast('event:sessionChanged', self.data);
 		};
 
 
@@ -61,7 +61,7 @@ angular.module('futurism')
 
 				active = true;
 				self.data = data;
-				$rootScope.$broadcast('event:sessionChange', self.data);
+				$rootScope.$broadcast('event:sessionChanged', self.data);
 
 				return callback(null, data);
 			});

@@ -3,16 +3,25 @@ angular.module('futurism')
 	.factory('me', function($rootScope, session, UserResource, StatsResource) {
 		'use strict';
 
+
 		/**
 		 * Reload my info whenever my session changes (login/logout)
 		 */
-		$rootScope.$on('event:sessionChange', function(srcScope, session) {
+		$rootScope.$on('event:sessionChanged', function(srcScope, session) {
 			if(session && session._id) {
 				self.setUserId(session._id);
 			}
 			else {
 				self.clear();
 			}
+		});
+
+
+		/**
+		 * Reload my info whenever it changes
+		 */
+		$rootScope.$on('event:accountChanged', function() {
+			self.reload();
 		});
 
 

@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('GuildCtrl', function($scope, $routeParams, $location, GuildResource, MemberResource, me) {
+	.controller('GuildCtrl', function($scope, $routeParams, $location, $rootScope, GuildResource, MemberResource, me) {
 		'use strict';
 
 		$scope.guildId = $routeParams.guildId;
@@ -7,7 +7,9 @@ angular.module('futurism')
 
 
 		$scope.leaveGuild = function() {
-			MemberResource.delete({guildId: $routeParams.guildId, userId: me.user._id});
+			MemberResource.delete({guildId: $routeParams.guildId, userId: me.user._id}, function() {
+				$rootScope.$broadcast('event:accountChanged');
+			});
 			$location.url('/guild-joiner');
 		};
 
