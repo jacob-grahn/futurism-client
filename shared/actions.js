@@ -266,7 +266,8 @@
 					faction: 'en',
 					story: 'I just love growing!',
 					attack: 0,
-					health: 1
+					health: 1,
+					moves: 0
 				}
 			}
 		},
