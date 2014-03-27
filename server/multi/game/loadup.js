@@ -38,10 +38,8 @@
 						return callback('deck id "'+deckId+'" not found');
 					}
 
-					deck.pride = deckFns.calcPride(deck);
-
-					if(deck.pride > rules.pride) {
-						return callback('this deck is too prideful');
+					if(deck.cards.length > rules.deckSize) {
+						return callback('this deck has too many cards');
 					}
 					if(player.cards.length > 0) {
 						return callback('a deck was already loaded for you');
@@ -51,7 +49,7 @@
 					}
 
 					player.deck = deck;
-					player.deckPride = deck.pride;
+					player.deckSize = deck.cards.length;
 					player.cards = [];
 					_.each(deck.cards, function(card) {
 						var publicCard = _.pick(card, 'faction', 'attack', 'health', 'abilities', 'hasImage', 'name', 'story', 'userId', '_id');

@@ -3,6 +3,10 @@
 	overflow: hidden;
 }
 
+.deck h1 {
+	margin-left: 0px;
+}
+
 .deck-list li {
 	float: left;
 	margin: 10px;
@@ -18,12 +22,13 @@
 
 .deck-name {
 	white-space: nowrap;
-	padding-top: 4px;
+	position: relative;
+	top: 2px;
 }
 
-.deck-pride {
+.deck-size {
 	position: relative;
-	top: -10px;
+	top: -8px;
 }
 
 .deck-images {

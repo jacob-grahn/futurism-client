@@ -7,7 +7,8 @@
 		startingPride: 0,
 		turnDuration: 60*1000,
 		prepTime: 30,
-		handSize: 5
+		handSize: 5,
+		deckSize: 3
 	}
 
 }());

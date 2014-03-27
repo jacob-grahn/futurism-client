@@ -320,13 +320,13 @@
 
 
 		/**
-		 * Sort players by their deck pride. Lowest pride goes first
-		 * Shuffle first so that equal pride players will be randomized
+		 * Sort players by their deck size.
+		 * Shuffle before sorting so that equal players with equal deck size will be randomized
 		 */
 		self.sortPlayers = function(players) {
 			_.shuffle(players);
 			players.sort(function(a, b) {
-				return a.deckPride - b.deckPride;
+				return a.deckSize - b.deckSize;
 			});
 			return players;
 		};

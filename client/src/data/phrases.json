@@ -501,23 +501,18 @@
   },
 
 
-  "preDeck": {
-    "maxPride": {
-      "en": "Max Pride",
-      "ko": "자존심",
-      "ct": "meow",
-      "fr": "Valeur maximale",
-      "pi": "Max Rum",
-      "lt": "Maksimali vertė",
-      "ne": "Maximale trots",
-      "sv": "Max stolthet",
-      "es": "Máximo orgullo",
-      "nb": "Maksimal Stolthet",
-      "it": "Valore massimo",
-      "hu": "Max Büszkeség",
-      "pl": "Max. dumy"
+  "loadup": {
+    "maxDeckSize": {
+      "en": "Max Deck Size"
     }
   },
+
+
+	"deck": {
+		"cards": {
+			"en": "cards"
+		}
+	},
 
 
   "lobby": {
@@ -537,20 +532,8 @@
       "pl": "gracze"
     },
 
-    "pride": {
-      "en": "pride",
-      "ko": "자존심",
-      "ct": "meow",
-      "fr": "Valeur",
-      "pi": "Rum",
-      "lt": "Kaladės vertė",
-      "ne": "trots",
-      "sv": "Stolthet",
-      "es": "orgullo",
-      "nb": "stolthet",
-      "it": "Valore",
-      "hu": "büszkeség",
-      "pl": "duma"
+    "deckSize": {
+      "en": "cards"
     },
 
     "join": {

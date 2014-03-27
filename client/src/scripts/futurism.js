@@ -12,7 +12,7 @@ angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', '
 			when('/error', {templateUrl: 'views/error.html', controller: 'ErrorCtrl'}).
 			when('/futures', {templateUrl: 'views/futures.html', controller: 'FuturesCtrl'}).
 			when('/game/:serverId/:gameId', {templateUrl: 'views/game.html', controller: 'GameCtrl'}).
-			when('/loadup/:serverId/:gameId/:maxPride', {templateUrl: 'views/loadup.html', controller: 'LoadupCtrl'}).
+			when('/loadup/:serverId/:gameId/:deckSize', {templateUrl: 'views/loadup.html', controller: 'LoadupCtrl'}).
 			when('/guilds/:guildId', {templateUrl: 'views/guild.html', controller: 'GuildCtrl'}).
 			when('/guild-joiner', {templateUrl: 'views/guild-joiner.html', controller: 'GuildJoinerCtrl'}).
 			when('/instructions', {templateUrl: 'views/instructions.html', controller: 'InstructionsCtrl'}).

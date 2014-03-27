@@ -1,6 +1,6 @@
-<h1 class="inverse">{{lang.preDeck.maxPride}}: {{maxPride}}</h1>
+<h1 class="inverse">{{lang.loadup.maxDeckSize}}: {{maxDeckSize}} {{lang.deck.cards}}</h1>
 <ul class="deck-list">
-	<li ng-repeat="deck in decks | orderBy:'pride':true">
+	<li ng-repeat="deck in decks | orderBy:'cards.length':true">
 		<deck-display ng-click="select(deck)" size="medium" active="{{isAvailable(deck)}}"></deck-display>
 	</li>
 </ul>

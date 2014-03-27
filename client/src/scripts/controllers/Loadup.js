@@ -4,17 +4,17 @@ angular.module('futurism')
 
 		socket.connect($routeParams.serverId);
 		$scope.decks = DeckResource.query(function(){});
-		$scope.maxPride = $routeParams.maxPride;
+		$scope.maxDeckSize = $routeParams.deckSize;
 
 
 		$scope.select = function(deck) {
-			if(deck.pride <= $scope.maxPride) {
+			if(deck.cards.length <= $scope.maxDeckSize) {
 				socket.emit('selectDeck', {gameId: $routeParams.gameId, deckId: deck._id});
 			}
 		};
 
 		$scope.isAvailable = function(deck) {
-			if(deck.pride <= $scope.maxPride) {
+			if(deck.cards.length <= $scope.maxDeckSize) {
 				return 'active';
 			}
 			else {

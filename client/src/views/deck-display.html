@@ -3,5 +3,5 @@
 		<li ng-repeat="cardId in displayIds"><img ng-src="{{staticUrl}}/images/cards/{{size}}_{{cardId}}.jpg"/></li>
 	</ul>
 	<h1 class="deck-name">{{deck.name}}</h1>
-	<h1 class="deck-pride">pride: {{deck.pride}}</h1>
+	<h1 class="deck-size">{{deck.cards.length}} {{lang.deck.cards}}</h1>
 </div>
