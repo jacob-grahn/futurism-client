@@ -11,7 +11,8 @@
 		"sv": "Svenska",
 		"nb": "Norsk Bokmål",
 		"it": "Italiano",
-		"hu": "Magyar"
+		"hu": "Magyar",
+		"pl": "Polish"
 	},
 
 
@@ -27,6 +28,7 @@
 		"sv": "jonswe",
 		"nb": "-Shadowfax-, Tuxi",
 		"it": "DforDerpdetta",
-		"hu": "Whatermelon"
+		"hu": "Whatermelon",
+		"pl": "Ktost"
 	}
 }
