@@ -98,7 +98,7 @@
 					 */
 					self.drawCards(self.players, rules.handSize);
 					effects.hand(self.players);
-					self.broadcastChanges('rlly', effects.rally(self.turnTicker.turnOwners[0], self.board));
+					self.broadcastChanges('prideUp', effects.prideUp(self.turnTicker.turnOwners[0]));
 
 
 					/**

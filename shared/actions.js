@@ -161,7 +161,7 @@
 		/**
 		 * Pride: generate pride
 		 */
-		PRIDE: 'prde',
+		/*PRIDE: 'prde',
 		prde: {
 			free: true,
 			restrict: [
@@ -170,7 +170,7 @@
 			use: function(src) {
 				src.player.pride++;
 			}
-		},
+		},*/
 
 
 		/**
@@ -186,7 +186,7 @@
 			use: function(src, target1, target2) {
 				_.pull(src.player.hand, target1.card);
 				target2.card = target1.card;
-				src.player.pride -= target1.card.pride;
+				//src.player.pride -= target1.card.pride;
 				if(target1.card.hasBeenPlayed) {
 					src.card.moves++;
 					target1.card.moves = 1;
@@ -510,7 +510,7 @@
 				var card = src.card;
 				card.hasBeenPlayed = false;
 				src.card = null;
-				src.player.pride += card.pride;
+				//src.player.pride += card.pride;
 				src.player.hand.push(card);
 			}
 		},

@@ -90,11 +90,20 @@
 
 
 		/**
+		 * increase a player's pride
+		 * @param player
+		 */
+		prideUp: function(player) {
+			player.pride++;
+		}
+
+
+		/**
 		 * Gain pride from your cards in play
 		 * @param {Player} player
 		 * @param {Board} board
 		 */
-		rally: function(player, board) {
+		/*rally: function(player, board) {
 
 			// get a list of cards with action points
 			var targets = board.playerTargets(player._id);
@@ -136,6 +145,6 @@
 
 			return dominantFaction;
 
-		}
+		}*/
 	}
 }());
