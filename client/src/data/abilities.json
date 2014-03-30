@@ -4,13 +4,13 @@
 		"grow": {
 			"name": {
 				"en": "grow",
-				"pl": "wzrost",
+				"pl": "dorastanie",
 				"nb": "voks",
 				"pi": "construct"
 			},
 			"desc": {
 				"en": "Become a lovable clone that is just like mommy or daddy.",
-				"pl": "Staje sie klonem swojego ojca lub matki.",
+				"pl": "Dorasta i z bezbronnego dziecka staje sie klonem swojego ojca lub matki.",
 				"nb": "Bli en elskbar klone som er akkurat som mor eller far.",
 				"pi": "Build a replica ship."
 			}
@@ -19,13 +19,13 @@
 		"smmn": {
 			"name": {
 				"en": "summon",
-				"pl": "wezwanie",
+				"pl": "wyłożenie karty",
 				"nb": "framkall",
 				"pi": "Writ of summons"
 			},
 			"desc": {
 				"en": "Play a card from your hand.",
-				"pl": "Zagraj karta z reki.",
+				"pl": "Wprowadź nową kartę na pole gry.",
 				"nb": "Spill et kort fra hånden din.",
 				"pi": "Send a ship from the shipyard."
 			}
@@ -34,13 +34,13 @@
 		"futr": {
 			"name": {
 				"en": "future",
-				"pl": "przyszlosc",
+				"pl": "przyszlość",
 				"nb": "framtid",
 				"pi": "tomorrow"
 			},
 			"desc": {
 				"en": "Change the future.",
-				"pl": "Zmien przyszlosc!",
+				"pl": "Zmien przyszlość!",
 				"nb": "Forandre framtiden.",
 				"pi": "Change tomorrow."
 			}
@@ -65,7 +65,7 @@
 				"nb": "Produserer stolthet, som kan bli brukt for å spille fler kort.",
 				"pi": "Boosts yar pirate's pride, which lets mor' pirates arrive in the battle.",
 				"it": "Produci valore, che può essere usato per giocare più carte.",
-				"pl": "Prodokuje dume, ktora moze byc uzyta do wezwania wiecej kart."
+				"pl": "Prodokuje dumę, ktora może być użyta do wezwania nowych kart."
 			}
 		},
 
@@ -89,7 +89,7 @@
 				"nb": "Produserer stolthet, som kan bli brukt for å spille fler kort.",
 				"pi": "Boosts yar pirate's pride, which lets mor' pirates arrive in the battle.",
 				"it": "Produci valore, che può essere usato per giocare più carte.",
-				"pl": "Prodokuje dume, ktora moze byc uzyta do wezwania wiecej kart."
+				"pl": "Prodokuje dumę, ktora może być użyta do wezwania nowych kart."
 			}
 		},
 
@@ -102,7 +102,8 @@
 				"nb": "flytt",
 				"pi": "sail",
 				"it": "muovi",
-				"pl": "przemieszczenie"
+				"pl": "ruch"
+				
 			},
 			"desc": {
 				"en": "Reposition this card.",
@@ -112,7 +113,7 @@
 				"nb": "Flytt dette kortet",
 				"pi": "Move your ship",
 				"it": "Riposiziona questa carta.",
-				"pl": "Przemiesc ta karte."
+				"pl": "Przemieść tą kartę."
 			}
 		},
 
@@ -130,7 +131,7 @@
 				"nb": "Helbreding",
 				"it": "cura",
 				"hu": "gyógyulás",
-				"pl": "zdrowie"
+				"pl": "uzdrowienie"
 			},
 			"desc": {
 				"en": "Target card gains 1 health.",
@@ -145,7 +146,7 @@
 				"nb": "Målsatt kort får ett helsepoeng.",
 				"it": "La carta bersaglio ottiene un punto salute.",
 				"hu": "Target card gains 1 health.",
-				"pl": "Wybrana karta dostaje 1 punkt zycia."
+				"pl": "Wybrana karta dostaje 1 punkt życia."
 			}
 		},
 
@@ -211,7 +212,7 @@
 				"nb": "Slå denne enheten sammen med en annen.",
 				"it": "Fondi questa carta con un'altra.",
 				"hu": "Merge this unit with another.",
-				"pl": "Laczy ta karte z wybrana karta."
+				"pl": "Łączy tą kartę z wybraną kartą."
 			}
 		},
 
@@ -235,7 +236,7 @@
 				"nb": "Målsatt fiende kan ikke angripe neste runde.",
 				"it": "L'obiettivo nemico non può attaccare il prossimo turno.",
 				"hu": "Target enemy can not attack next turn.",
-				"pl": "Wybrana karta przeciwnika nie moze atakowac w nastepnej turze."
+				"pl": "Wybrana karta przeciwnika nie może atakować w następnej turze."
 			}
 		},
 
@@ -253,11 +254,11 @@
 				"nb": "bier!",
 				"it": "api!",
 				"hu": "méhek!",
-				"pl": "pszczoly!"
+				"pl": "pszczoły!"
 			},
 			"desc": {
 				"en": "A random enemy loses 1 health. This attack always hits.",
-				"pl": "Losowa karta przeciwnika traci 1 punkt zycia. Zawsze trafia.",
+				"pl": "Losowa karta przeciwnika traci 1 punkt życia. Zawsze trafia.",
 				"nb": "En tilfeldig fiende mister ett liv. Dette angrepet treffer alltid.",
 				"pi": "Bees swarm a random enemy and destroy 1 rum. Bees bee deadly accurate."
 			}
@@ -292,7 +293,7 @@
 				"nb": "Gjenoppliv en død maskin.",
 				"it": "Fai risorgere una macchina morta.",
 				"hu": "Resurrect a dead machine.",
-				"pl": "Odbuduj martwa maszyne."
+				"pl": "Odbuduj zniszczoną maszynę."
 			}
 		},
 
@@ -310,12 +311,13 @@
 				"sv": "T-sköld",
 				"it": "Scudo T",
 				"hu": "t-pajzs",
-				"pl": "t-tarcza"
+				"pl": "tarcza T"
 			},
 			"desc": {
 				"en": "Protect this card from two points of damage.",
 				"pi": "Fog enshrouds a ship and prevents the loss of two rum.",
-				"nb": "Beskytt dette kortet fra to skadepoeng."
+				"nb": "Beskytt dette kortet fra to skadepoeng.",
+				"pl": "Uchroń tą kartę przed 2 punktami obrażeń."
 			}
 		},
 
@@ -348,7 +350,7 @@
 				"nb": "Angrip en fiende av ditt valg uavhengig av defensive formasjoner. Fienden vil gå til motangrep.",
 				"it": "Attacca un nemico di tua scelta senza contare delle formazioni difensive.",
 				"hu": "Attack an enemy of your choice regardless of defensive formations.",
-				"pl": "Atakuje wybrana karte przeciwnika niezaleznie od defensywnych formacji."
+				"pl": "Atakuje wybraną kartę przeciwnika niezależnie od defensywnych formacji. Przeciwnik skontruje."
 			}
 		},
 
@@ -366,7 +368,7 @@
 				"nb": "oppladning",
 				"it": "Stratega",
 				"hu": "stratéga",
-				"pl": "doladowanie"
+				"pl": "doładowanie"
 			},
 			"desc": {
 				"en": "Ally can perform an extra action this turn",
@@ -381,7 +383,7 @@
 				"nb": "En alliert kan utøve en ekstra handling denne runden",
 				"it": "Un alleato può fare un'azione extra in questo turno.",
 				"hu": "Ally can perform an extra action this turn",
-				"pl": "Wybrana karta moze atakowac jeszcze raz w tej turze."
+				"pl": "Wybrana karta może wykonać jeszcze jeden ruch."
 			}
 		},
 
@@ -414,7 +416,7 @@
 				"nb": "Få en allierts egenskaper.",
 				"it": "Ottieni un'abilità di un alleato.",
 				"hu": "Gain an allies abilities.",
-				"pl": "Sklonuj mozliwosci swojej innej karty."
+				"pl": "Sklonuj możliwości swojej innej karty."
 			}
 		},
 
@@ -447,7 +449,7 @@
 				"nb": "Bytt helse- og angrepspoeng.",
 				"it": "Scambia salute e attacco.",
 				"hu": "Swap health and attack.",
-				"pl": "Zamien punkty zycia i ataku."
+				"pl": "Zamień punkty życia i ataku."
 			}
 		},
 
@@ -480,7 +482,7 @@
 				"nb": "Ofre ett helsepoeng for å konvertere en svak fiende til din side.",
 				"it": "Converti un nemico dalla tua parte se la sua salute è 1.",
 				"hu": "Convert an enemy to your side if their health is 1.",
-				"pl": "Poswiec 1 punkt zycia zeby przejac slabego przeciwnika na swoja strone."
+				"pl": "Poświęć 1 punkt życia żeby przejąć słabego przeciwnika na swoją stronę."
 			}
 		},
 
@@ -513,7 +515,7 @@
 				"nb": "Angrip uten noen sjanse for motangrep.",
 				"it": "Attacca senza prendere danno.",
 				"hu": "Attack without taking damage.",
-				"pl": "Atakuj bez wyrzadzania sobie szkód."
+				"pl": "Atakuj bez wyrządzenia sobie szkód."
 			}
 		},
 
@@ -535,7 +537,7 @@
 			},
 			"desc": {
 				"en": "Return this card to your hand, refunding its original pride cost.",
-				"pl": "Zwroc ta karte do reki, refundując jej orginalny koszt dumy.",
+				"pl": "Zwróc tą kartę do ręki, refundując jej orginalny koszt.",
 				"nb": "Returner dette kortet til hånden din, og få tilbake dets opprinnelige stolthetskostnad.",
 				"pi": "Send this ship back to port, gaining back its pride cost."
 			}
@@ -570,7 +572,7 @@
 				"nb": "Målsatt fiende mister ett helsepoeng per runde. 50% sjanse for å mislykkes.",
 				"it": "Il nemico bersaglio perde 1 punto vita a turno.",
 				"hu": "Target enemy loses 1 health per turn.",
-				"pl": "Wybrany przeciwnik traci 1 punkt zycia co ture. 50% szans na niepowodzenie."
+				"pl": "Wybrany przeciwnik traci 1 punkt życia co ture. 50% szans na niepowodzenie."
 			}
 		},
 
@@ -583,7 +585,7 @@
 			},
 			"desc": {
 				"en": "All your cards gain the move ability.",
-				"pl": "Kazda z twoich kard dostaje mozliwosc do poruszania się.",
+				"pl": "Każda z twoich kart dostaje możliwość poruszania się.",
 				"nb": "Alle kortene dine får flytt-egenskapen.",
 				"pi": "All ships may now move about."
 			}
@@ -603,7 +605,7 @@
 				"nb": "fang dem",
 				"it": "impacchettare",
 				"hu": "bag 'em",
-				"pl": "zawrocenie"
+				"pl": "zawrócenie"
 			},
 			"desc": {
 				"en": "Target card is returned to its owner's hand.",
@@ -618,7 +620,7 @@
 				"nb": "Målsatt kort blir retunert til eierens hånd.",
 				"it": "La carta bersaglio ritorna alla mano del suo proprietario.",
 				"hu": "Target card is returned to its owner's hand.",
-				"pl": "Zwroc wybrana karte przeciwnika do reki jej wlasciciela."
+				"pl": "Zwróć wybraną kartę przeciwnika do ręki jej właściciela."
 			}
 		},
 
@@ -636,11 +638,11 @@
 				"nb": "sifon",
 				"it": "sifone",
 				"hu": "szifon",
-				"pl": "atak [syfon]"
+				"pl": "atak [leczniczy]"
 			},
 			"desc": {
 				"en": "Attack an enemy, converting some of the damage into health. The enemy will counter-attack.",
-				"pl": "Zaatakuj przeciwnika, konwertujac niektore obrazenia w punkty zycia. Przeciwnik skontruje.",
+				"pl": "Zaatakuj przeciwnika, konwertując niektóre obrażenia w punkty życia. Przeciwnik skontruje.",
 				"nb": "Angriper en fiende, og konverterer noe av skaden til helsepoeng. Fienden vil gå til motangrep.",
 				"pi": "Shoot an enemy ship. Some of their rum will be stolen, but they'll counter over their lost rum!"
 			}
@@ -660,7 +662,7 @@
 				"nb": "hannkjønn",
 				"it": "maschio",
 				"hu": "férfi",
-				"pl": "mezczyzna"
+				"pl": "mężczyzna"
 			},
 			"desc": {
 				"en": "Can reproduce with females.",
@@ -675,7 +677,7 @@
 				"nb": "Kan reprodusere med hunkjønn.",
 				"it": "Si può riprodurre con le femmine.",
 				"hu": "Can reproduce with females.",
-				"pl": "Moze reprodukowac sie z kobietami."
+				"pl": "Może reprodukować sie z kobietami."
 			}
 		},
 
@@ -708,7 +710,7 @@
 				"nb": "Kan reprodusere med hankjønn.",
 				"it": "Si può riprodurre con i maschi.",
 				"hu": "Can reproduce with males.",
-				"pl": "Moze reprodukowac sie z mezczyznami."
+				"pl": "Może reprodukować sie z mężczyznami."
 			}
 		},
 
@@ -726,10 +728,11 @@
 				"nb": "krigsrop",
 				"it": "Pianto di battaglia",
 				"hu": "harci kiáltás",
-				"pl": "Okrzyk wojenny"
+				"pl": "okrzyk wojenny"
 			},
 			"desc": {
-				"en": "All ally zealots gain 1 attack for 1 turn."
+				"en": "All ally zealots gain 1 attack for 1 turn.",
+				"pl": "Wszyscy twoi zeloci dostają 1 punkt ataku na jedną turę."
 			}
 		},
 
@@ -747,7 +750,7 @@
 				"nb": "heroisk ofring",
 				"it": "sacrificio eroico",
 				"hu": "hősies áldozat",
-				"pl": "heroiczne poswiecenie"
+				"pl": "heroiczne poświęcenie"
 			},
 			"desc": {
 				"en": "All enemy attacks must target this card for one turn.",
@@ -762,7 +765,7 @@
 				"nb": "Alle fiendtlige angrep må målsette dette kortet én runde.",
 				"it": "Tutti gli attacchi del nemico devono essere indirizzati a questa carta per un turno.",
 				"hu": "All enemy attacks must target this card for one turn.",
-				"pl": "Wszystkie karty przeciwnika musza atakowac ta karte w nastepnej turze."
+				"pl": "Wszystkie karty przeciwnika muszą atakować tą kartę w nastepnej turze."
 			}
 		},
 
@@ -784,7 +787,7 @@
 			},
 			"desc": {
 				"en": "Attack is increased by 3, and this card becomes poisoned.",
-				"pl": "Atak powieksza sie o 3, lecz ta karta zostaje zatruta.",
+				"pl": "Atak powieksza sie o 3 kosztem zatrucia tej karty.",
 				"nb": "Kortet får tre angrepspoeng, og blir forgiftet.",
 				"pi": "Ship has 3 more cannons, but its rum supply is poisoned."
 			}
@@ -793,14 +796,15 @@
 		"frvt": {
 			"name": {
 				"en": "attack [fervent]",
-				"pl": "atak [cnotliwy]",
+				"pl": "atak [żarliwy]",
 				"nb": "angrip [rettferdig]",
 				"pi": "righteous"
 			},
 			"desc": {
 				"en": "Attack an enemy without ever missing. The enemy will counter-attack.",
 				"nb": "Angrip en fiende, og konverter skaden til stolthet. Fienden vil gå til motangrep.",
-				"pi": "Shoot an enemy ship; rum will turn into pride. Enemey will counter over the loss of their rum!"
+				"pi": "Shoot an enemy ship; rum will turn into pride. Enemey will counter over the loss of their rum!",
+				"pl": "Zaatakuj przeciwnika bez pudłowania. Przeciwnik skontruje."
 			}
 		}
 	}
