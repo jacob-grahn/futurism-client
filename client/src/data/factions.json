@@ -13,7 +13,8 @@
 				"es": "Ent",
 				"nb": "Ent",
 				"it": "Enti",
-				"hu": "Ent"
+				"hu": "Ent",
+				"pl": "Ent"
 			},
 			"desc": {
 				"en": "Seeking a bond with nature, the Ents tinkered with their own dna. A wild group of nomads, they say you'll never meet the same Ent twice.",
@@ -27,7 +28,8 @@
 				"es": "En la búsqueda de un lazo con la naturaleza, los Ents alteraron su propio ADN. Son un grupo salvaje de nómades, y dicen que nunca verás al mismo Ent dos veces.",
 				"nb": "I sin søknad etter et bånd med naturen tuklet entene med sitt eget DNA. De er en vill gruppe nomader, og det sies at du aldri møter den samme enten to ganger.",
 				"it": "Cercando un legame con la natura, gli Enti hanno modificato il loro DNA. Sono un gruppo di nomadi, e si dice che non si può vedere un Ente più di due volte.",
-				"hu": "Seeking a bond with nature, the Ents tinkered with their own dna. A wild group of nomads, they say you'll never meet the same Ent twice."
+				"hu": "Seeking a bond with nature, the Ents tinkered with their own dna. A wild group of nomads, they say you'll never meet the same Ent twice.",
+				"pl": "Szukając połączenia z naturą, Enty pomajstrowały przy swoim kodzie genetycznym. Dzika grupa nomadów powiada, że nie spotkasz tego samego Enta dwa razy."
 			}
 		},
 
@@ -44,7 +46,8 @@
 				"es": "Máquina",
 				"nb": "Maskin",
 				"it": "Macchina",
-				"hu": "Gépezet"
+				"hu": "Gépezet",
+				"pl": "Robot"
 			},
 			"desc": {
 				"en": "The relentless pursuit of knowledge lead some to improve their minds with metal. They have become far more than humans ever were, and far less.",
@@ -58,7 +61,8 @@
 				"es": "La búsqueda incansable del conocimiento llevó a algunos a mejorar sus mentes con metal. Se han convertido en mucho más que lo que los humanos nunca llegaron a ser, y en mucho menos.",
 				"nb": "Den nådeløse jakten på kunnskap fører noen til å bedre sin mentale tankegang med metall. De har blitt langt mer enn mennesker noen sinne var, men også langt mindre.",
 				"it": "L'incessabile ricerca di conoscenza ha portato alcuni a migliorare i loro cervelli con il metallo. Ora sono diventati molto più di come siano sempre stati gli umani, e molto di meno.",
-				"hu": "The relentless pursuit of knowledge lead some to improve their minds with metal. They have become far more than humans ever were, and far less."
+				"hu": "The relentless pursuit of knowledge lead some to improve their minds with metal. They have become far more than humans ever were, and far less.",
+				"pl": "Nieustępliwy pościg za wiedzą poprowadził do polepszenia wiedzy o metalach. Stały się znacznie potężniejsze niż ludzie kiedykolwiek byli."
 			}
 		},
 
@@ -75,7 +79,8 @@
 				"es": "Élite",
 				"nb": "Elite",
 				"it": "Elite",
-				"hu": "Elit"
+				"hu": "Elit",
+				"pl": "Elita"
 			},
 			"desc": {
 				"en": "Taking delight in the pleasures of this world, Elites have dominated the wealthy ruling class. A beautiful people, as long as you don't dig too deep.",
@@ -89,7 +94,8 @@
 				"es": "Disfrutando de los placeres de este mundo, los Élites han dominado la clase rica y dominante. Personas hermosas, siempre y cuando no hurgues muy profundo en ellas.",
 				"nb": "Elitene har dominert den velstående overklassen, der de tar fryd i denne jordas gleder. Et vakkert folkeslag, så lenge du ikke graver for dypt.",
 				"it": "Deliziando i piaceri di questo mondo, gli Elite hanno dominato la ricca classe dirigente. Sono persone bellissime, fino a quando non scavi troppo in profondità.",
-				"hu": "Taking delight in the pleasures of this world, Elites have dominated the wealthy ruling class. A beautiful people, as long as you don't dig too deep."
+				"hu": "Taking delight in the pleasures of this world, Elites have dominated the wealthy ruling class. A beautiful people, as long as you don't dig too deep.",
+				"pl": "Rozkoszując się przyjemnościami tego świata, Elici zdominowali zamożne klasy społeczeństwa. Piękni ludzie, póki nie kopiesz za głęboko."
 			}
 		},
 
@@ -106,7 +112,8 @@
 				"es": "Fanático",
 				"nb": "Selot",
 				"it": "Fanatico",
-				"hu": "Zelóta"
+				"hu": "Zelóta",
+				"pl": "Zealot"
 			},
 			"desc": {
 				"en": "Always certain of the truth, Zealots are more than willing to fight for it. The fires of constant war have honed their military skills to perfection.",
@@ -120,7 +127,8 @@
 				"es": "Siempre seguros de la verdad, los Fanáticos están más que dispuestos a luchar por ella. Las llamas de la guerra constante han hecho que sus habilidades militares alcancen la perfección.",
 				"nb": "Alltid sikker på sannheten, er Seloter mer enn villig til å kjempe for den. Brannene av konstant krig har finpusset deres militære ferdigheter til perfeksjon.",
 				"it": "Sempre certi della verità, i Fanatici sono più che disposti per combattere per lei. I focolari di guerra costante hanno portato le loro abilità militari alla perfezione.",
-				"hu": "Always certain of the truth, Zealots are more than willing to fight for it. The fires of constant war have honed their military skills to perfection."
+				"hu": "Always certain of the truth, Zealots are more than willing to fight for it. The fires of constant war have honed their military skills to perfection.",
+				"pl": "Zawsze świadomi prawdy, Zealoci bardziej pragną za nią walczyć. Ognie ciągłej wojny wyostrzyły zmysły i zdolności ich żołnierzy do perfekcji."
 			}
 		}
 	}
