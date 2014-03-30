@@ -29,7 +29,7 @@
       "nb": "Logg inn",
       "it": "Entra",
       "hu": "Bejelentkezés",
-      "pl": "Graj"
+      "pl": "Zaloguj sie"
     },
 
     "credits": {
@@ -80,7 +80,7 @@
       "nb": "Lagre og åpne",
       "it": "Salva e Carica",
       "hu": "Mentés és Betöltés",
-      "pl": "Zapisz i Zaladuj"
+      "pl": "Zapisz/Załaduj"
     },
 
     "nameIt": {
@@ -112,7 +112,7 @@
       "nb": "Bildeopplasting",
       "it": "Carica un'immagine",
       "hu": "Képfeltöltés",
-      "pl": "Zaladuj obrazek"
+      "pl": "Obrazek"
     },
 
     "factionAbilities": {
@@ -160,7 +160,7 @@
       "nb": "Åpne",
       "it": "Carica",
       "hu": "Betöltés",
-      "pl": "Zaladuj"
+      "pl": "Załaduj"
     },
 
     "new": {
@@ -192,7 +192,7 @@
       "nb": "Slett",
       "it": "Elimina",
       "hu": "Törlés",
-      "pl": "Usun"
+      "pl": "usuń"
     },
 
     "attack": {
@@ -239,7 +239,7 @@
       "nb": "Avslutt turen",
       "pi": "Hit the bunk",
       "it": "Termina turno",
-      "pl": "Zakoncz ture"
+      "pl": "Zakończ turę"
     },
 
     "pride": {
@@ -275,7 +275,7 @@
       "nb": "Fremtider",
       "pi": "Days after tomorrow",
       "it": "Futures",
-      "pl": "Przyszlosci"
+      "pl": "Przyszłości"
     },
 
     "showFutures": {
@@ -287,7 +287,7 @@
       "nb": "Vis fremtider",
       "pi": "Scry Days after Tomorrow",
       "it": "Mostra Futures",
-      "pl": "Pokaz Przyszlosci"
+      "pl": "Pokaż Przyszłości"
     },
 
     "showHand": {
@@ -299,7 +299,7 @@
       "nb": "Vis hånda",
       "pi": "Show hand",
       "it": "Mostra la mano",
-      "pl": "Pokaz karty"
+      "pl": "Pokaż karty"
     },
 
     "forfeit": {
@@ -330,7 +330,7 @@
       "nb": "si",
       "it": "Invia",
       "hu": "mondd",
-      "pl": "Pisz"
+      "pl": "wyślij"
       },
 
     "placeholder": {
@@ -346,7 +346,7 @@
       "nb": "skriv for å chatte",
       "it": "Scrivi per mandare messaggi",
       "hu": "ide írj!",
-      "pl": "Pisz zeby czatowac"
+      "pl": "pisz, żeby rozmawiać"
     }
   },
 
@@ -365,7 +365,7 @@
       "nb": "Lagre og åpne",
       "it": "Salva e Carica",
       "hu": "Mentés és Betöltés",
-      "pl": "Zapisz i Zaladuj"
+      "pl": "Zapisz/Załaduj"
     },
 
     "save": {
@@ -397,7 +397,7 @@
       "nb": "Åpne",
       "it": "Carica",
       "hu": "Betöltés",
-      "pl": "Zaladuj"
+      "pl": "Załaduj"
     },
 
     "new": {
@@ -429,7 +429,7 @@
       "nb": "Slett",
       "it": "Elimina",
       "hu": "Törlés",
-      "pl": "Usun"
+      "pl": "Usuń"
     },
 
     "nameIt": {
@@ -496,21 +496,23 @@
       "nb": "Error",
       "it": "Errore!",
       "hu": "Hiba!",
-      "pl": "Blad"
+      "pl": "Błąd"
     }
   },
 
 
   "loadup": {
     "maxDeckSize": {
-      "en": "Max Deck Size"
+      "en": "Max Deck Size",
+      "pl": "Max. Wielkość Dumy"
     }
   },
 
 
 	"deck": {
 		"cards": {
-			"en": "cards"
+			"en": "cards",
+			"pl": "karty"
 		}
 	},
 
@@ -533,7 +535,8 @@
     },
 
     "deckSize": {
-      "en": "cards"
+      "en": "cards",
+      "pl": "karty"
     },
 
     "join": {
@@ -611,7 +614,7 @@
       "hu": "jövendők",
       "it": "futures",
       "ne": "toekomsten",
-      "pl": "przyszlosci"
+      "pl": "przyszłosci"
     },
 
     "shortGame": {
@@ -669,7 +672,7 @@
       "it": "Personalizzato",
       "nb": "Egendefinert",
       "hu": "Egyéni",
-      "pl": "Wlasna"
+      "pl": "Batalia"
     },
 
     "custom": {
@@ -685,7 +688,7 @@
       "nb": "Egendefinert",
       "it": "Personalizzato",
       "hu": "egyéni",
-      "pl": "wlasna"
+      "pl": "batalia"
     },
 
     "guild": {
@@ -708,7 +711,8 @@
 
   "nav": {
 		"reports": {
-			"en": "Reports"
+			"en": "Reports",
+			"pl": "Reporty"
 		},
 
     "toggle": {
@@ -820,7 +824,7 @@
       "nb": "Meldinger",
       "it": "Messaggi",
       "hu": "Üzenetek",
-      "pl": "Wiadomosci"
+      "pl": "Wiadomości"
     },
 
     "logout": {
@@ -836,7 +840,7 @@
       "nb": "Logg ut",
       "it": "Esci",
       "hu": "Kijelentkezés",
-      "pl": "Wyloguj sie"
+      "pl": "Wyloguj się"
     },
 
     "language": {
@@ -852,7 +856,7 @@
       "nb": "Språk",
       "it": "Lingua",
       "hu": "Nyelv",
-      "pl": "Zmien jezyk"
+      "pl": "Język"
     },
 
     "futures": {
@@ -866,7 +870,7 @@
       "hu": "Jövendők",
       "it": "Futures",
       "ne": "Toekomsten",
-      "pl": "Przyszlosci"
+      "pl": "Przyszłości"
     },
 
     "guild": {
@@ -894,7 +898,7 @@
       "lt": "Vertė",
       "pi": "pride",
       "it": "valore",
-			"nb": "stolthet",
+      "nb": "stolthet",
       "pl": "duma"
     },
 
@@ -904,8 +908,8 @@
       "lt": "Kortų kiekis",
       "pi": "ships",
       "it": "carte",
-			"nb": "kort",
-      "pl": "ilosc kart"
+      "nb": "kort",
+      "pl": "ilość kart"
     },
 
     "attack": {
@@ -914,7 +918,7 @@
       "lt": "Puolimo taškai",
       "pi": "cannons",
       "it": "attacco",
-			"nb": "angrip",
+      "nb": "angrip",
       "pl": "atak"
     },
 
@@ -923,9 +927,9 @@
       "ne": "levens",
       "lt": "Gyvybių taškai",
       "pi": "rum",
-      "it": "salute",
-			"nb": "helse",
-      "pl": "zycie"
+      "it": "salute",  
+      "nb": "helse",
+      "pl": "życie"
     }
   },
 
@@ -938,7 +942,7 @@
 			"lt": "Stoti į Gildiją",
 			"pi": "Enlist",
 			"nb": "Bli med i lauget",
-			"pl": "Dolacz do gildii"
+			"pl": "Dołacz do gildii"
 		},
 
 		"createGuild": {
@@ -947,7 +951,7 @@
 			"lt": "Sukurti Gildiją",
 			"pi": "Found guild",
 			"nb": "Lag et laug",
-			"pl": "Zaloz gildie"
+			"pl": "Załóz gildie"
 		},
 
 		"joinPolicy": {
@@ -956,7 +960,7 @@
 			"lt": "Įstojimo tipas",
 			"pi": "Enlistment policy",
 			"nb": "Deltagelsesregler",
-			"pl": "Warunki dolaczenia"
+			"pl": "Warunki dołączenia"
 		},
 
 		"banner": {
@@ -972,8 +976,8 @@
       "en": "Join",
       "ne": "Treed toe",
       "lt": "Įstoti",
-			"pi": "Enlist",
-			"pl": "Dolacz",
+      "pi": "Enlist",
+      "pl": "Dołącz",
       "nb": "Bli med"
     },
 
@@ -982,7 +986,7 @@
       "ne": "Leiders",
       "lt": "Vadovai",
       "pi": "Captains",
-      "pl": "Dowodcy",
+      "pl": "Dowódcy",
       "nb": "Ledere"
     },
 
@@ -991,7 +995,7 @@
       "ne": "Leden",
       "lt": "Nariai",
       "pi": "Crewers",
-      "pl": "Czlonkowie",
+      "pl": "Członkowie",
       "nb": "Medlemmer"
     },
 
@@ -1000,7 +1004,7 @@
       "ne": "GP vandaag",
       "lt": "Šiandienos GP",
       "pi": "Gold today",
-      "pl": "GP dzis",
+      "pl": "GP dziś",
       "nb": "GP i dag"
     },
 
@@ -1009,7 +1013,7 @@
       "ne": "Gesticht",
       "lt": "Įkurta",
       "pi": "Founded",
-      "pl": "Zalozona",
+      "pl": "Założona",
       "nb": "Grunnlagt"
     }
   },
@@ -1030,7 +1034,7 @@
 				"ne": "Iedereen kan in deze guild komen",
 				"lt": "Į šią Gildiją gali įstoti visi.",
 				"pi": "Any pirate may join this crew.",
-				"pl": "Kazdy moze dolaczyc do tej gildii.",
+				"pl": "Każdy może dołączyć do tej gildii.",
 				"nb": "Alle kan bli med i dette lauget."
 			}
 		},
@@ -1049,7 +1053,7 @@
 				"ne": "Alleen uitgenodigde speler kunnen in deze gilde komen",
 				"lt": "Tik pakviesti žaidėjai gali įstoti į šią Gildiją",
 				"pi": "Pirates must have a letter to join this guild.",
-				"pl": "Tylko zaproszeni gracze moga dolaczyc do tej gildii.",
+				"pl": "Tylko zaproszeni gracze mogą dołączyć do tej gildii.",
 				"nb": "Bare inviterte spillere kan bli med i dette lauget."
 			}
 		},
@@ -1060,7 +1064,7 @@
 				"ne": "Vraag",
 				"lt": "Tik su užklausa",
 				"pi": "Inquiry only",
-				"pl": "Moderowana",
+				"pl": "Moderatowana",
 				"nb": "Spør"
 			},
 			"desc": {
@@ -1068,7 +1072,7 @@
 				"ne": "Spelers moeten gevraagd hebben of uitgenodigd zijn om deze gilde te betreden",
 				"lt": "Žaidėjai turi atsiusti užklausą arba būti pakviesti kad galėtu įstoti į šią Gildiją",
 				"pi": "Pirates must either have their request approved or have a letter to join this guild.",
-				"pl": "Aby dolaczyc, musisz sie zapytac lub zostac zaproszonym.",
+				"pl": "Aby dołączyć, musisz sie zapytać lub zostać zaproszonym.",
 				"nb": "Spillere må spørre eller være invitert for å bli med i dette lauget."
 			}
 		}
