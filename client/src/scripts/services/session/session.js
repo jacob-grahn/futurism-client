@@ -143,11 +143,11 @@ angular.module('futurism')
 
 
 		var defaultCallback = function(err) {
-			if(err.error) {
+			if(err && err.error) {
 				err = err.error;
 			}
 
-			if(err.ban) {
+			if(err && err.ban) {
 				$location.url('/users/'+err._id+'/bans');
 			}
 		};

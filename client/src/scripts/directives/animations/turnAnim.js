@@ -1,12 +1,14 @@
 angular.module('futurism')
-	.directive('turnAnim', function($, $timeout, players) {
+	.directive('turnAnim', function($, $timeout, players, sound) {
 		'use strict';
 
 		return {
 			restrict: 'E',
 			replace: true,
 			template: '<div ng-if="active" id="turn-anim"><h1>{{name}}\'s turn begins!</h1></div>',
-			link: function(scope, element) {
+			link: function(scope) {
+
+				console.log('turn anim lives');
 
 				scope.active = false;
 				scope.name = '';
@@ -16,7 +18,10 @@ angular.module('futurism')
 					var playerId = changes.turnOwners[0];
 					var player = players.idToPlayer(playerId);
 
+					console.log('post:turn', playerId, player);
+
 					if(player) {
+						sound.play('turn');
 						scope.name = player.name;
 						scope.active = true;
 						$timeout(function() {
