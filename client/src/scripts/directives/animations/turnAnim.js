@@ -21,7 +21,7 @@ angular.module('futurism')
 					console.log('post:turn', playerId, player);
 
 					if(player) {
-						sound.play('turn');
+						sound.play('turn', 0.75);
 						scope.name = player.name;
 						scope.active = true;
 						$timeout(function() {
