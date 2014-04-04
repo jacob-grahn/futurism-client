@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('delegateAnim', function($, animFns) {
+	.directive('delegateAnim', function($, animFns, sound) {
 		'use strict';
 
 
@@ -9,6 +9,7 @@ angular.module('futurism')
 
 
 				scope.$on('pre:delg', function(srcScope, update) {
+					sound.play('delegate');
 					var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
 					var src = animTargets[0];
 					leaveAnim(src, 'I need a vacation!');
@@ -16,6 +17,7 @@ angular.module('futurism')
 
 
 				scope.$on('pre:bagm', function(srcScope, update) {
+					sound.play('bagem');
 					var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
 					var target = animTargets[1];
 					leaveAnim(target, 'Wow! Free candy!');

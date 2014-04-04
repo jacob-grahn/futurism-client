@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('peacePipeAnim', function($, animFns) {
+	.directive('peacePipeAnim', function($, animFns, sound) {
 		'use strict';
 
 
@@ -7,8 +7,9 @@ angular.module('futurism')
 			restrict: 'A',
 			link: function(scope, boardElem) {
 
-
 				scope.$on('post:peap', function(srcScope, update) {
+
+					sound.play('peace', 1);
 
 					var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
 					var src = animTargets[0];

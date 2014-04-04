@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('battleCryAnim', function($, animFns, shared) {
+	.directive('battleCryAnim', function($, animFns, shared, sound) {
 		'use strict';
 
 
@@ -9,6 +9,8 @@ angular.module('futurism')
 
 
 				scope.$on('post:'+shared.actions.BATTLECRY, function(srcScope, update) {
+
+					sound.play('battle-cry');
 
 					var src = animFns.chainedAnimTargets(update, update.data.targetChain)[0];
 					var animTargets = animFns.updatedAnimTargets(update);

@@ -63,7 +63,7 @@ angular.module('futurism')
 		 * @returns {boolean}
 		 */
 		$scope.pickCardFromHand = function(card) {
-			if(card.pride > players.me.pride) {
+			if(card.pride > players.findMe().pride) {
 				errorHandler.show('You do not have enough pride to play this card');
 				return false;
 			}
@@ -73,11 +73,11 @@ angular.module('futurism')
 			}
 
 			if(card.commander) {
-				targeter.selectAction('smmn', {card: card, player: players.me});
+				targeter.selectAction('smmn', {card: card, player: players.findMe()});
 				targeter.onCooldown = false;
 			}
 
-			targeter.selectTarget({card: card, player: players.me});
+			targeter.selectTarget({card: card, player: players.findMe()});
 
 			hand.close();
 

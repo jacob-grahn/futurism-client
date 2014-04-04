@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('gameListeners', function($routeParams, $location, socket, players, turn, board, state, hand, updateDelayer, autoTurnEnder, shared) {
+	.factory('gameListeners', function($routeParams, $location, socket, players, turn, board, state, hand, updateDelayer, autoTurnEnder, shared, sound, me) {
 		'use strict';
 		var self = this;
 
@@ -8,7 +8,6 @@ angular.module('futurism')
 		 */
 		socket.$on('gameStatus', function(data) {
 			players.list = data.players;
-			players.me = players.findMe();
 			board.fullUpdate(data.board);
 			updateDelayer.add('turn', data, function() {
 				self.startTurn(data);
@@ -27,7 +26,6 @@ angular.module('futurism')
 			updateDelayer.add(cause, changes, function() {
 				_.merge(players.list, changes.players);
 				board.partialUpdate(changes.board);
-				players.me = players.findMe();
 				autoTurnEnder.run();
 
 				if(cause === shared.actions.SUMMON) {
@@ -50,8 +48,16 @@ angular.module('futurism')
 		/**
 		 * The game is over
 		 */
-		socket.$on('gameOver', function() {
+		socket.$on('gameOver', function(data) {
 			updateDelayer.add('gameOver', null, function() {
+
+				if(data.winners.indexOf(me.user._id) !== -1) {
+					sound.play('win');
+				}
+				else {
+					sound.play('loose');
+				}
+
 				$location.url('/summary/' + $routeParams.gameId);
 			});
 		});
@@ -66,7 +72,7 @@ angular.module('futurism')
 			if(turn.isMyTurn()) {
 				state.set(state.THINKING);
 				hand.refresh();
-				if(!board.playerHasCommander(players.me._id)) {
+				if(!board.playerHasCommander(players.findMe()._id)) {
 					hand.open();
 					hand.forcePlay();
 				}

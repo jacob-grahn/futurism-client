@@ -155,7 +155,7 @@
 								/**
 								 * That's it, we're done
 								 */
-								self.emit('gameOver', null);
+								self.emit('gameOver', {winners: result.team});
 								self.remove();
 							});
 						});

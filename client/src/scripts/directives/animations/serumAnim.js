@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('serumAnim', function($, animFns, shared) {
+	.directive('serumAnim', function($, animFns, shared, sound) {
 		'use strict';
 
 
@@ -9,6 +9,8 @@ angular.module('futurism')
 
 
 				scope.$on('post:'+shared.actions.SERUM, function(srcScope, update) {
+
+					sound.play('serum');
 
 					var src = animFns.chainedAnimTargets(update, update.data.targetChain)[0];
 

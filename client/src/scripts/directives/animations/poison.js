@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('poisonAnim', function($, animFns) {
+	.directive('poisonAnim', function($, animFns, sound) {
 		'use strict';
 
 
@@ -17,6 +17,8 @@ angular.module('futurism')
 
 					_.each(animTargets, function(animTarget) {
 						_.delay(function() {
+
+							sound.play('hit');
 
 							// skull
 							animFns.animFlasher(boardElem, animTarget.center, 'poison');

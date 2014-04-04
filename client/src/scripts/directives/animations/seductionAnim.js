@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('seductionAnim', function($, animFns) {
+	.directive('seductionAnim', function($, animFns, sound) {
 		'use strict';
 
 
@@ -11,6 +11,9 @@ angular.module('futurism')
 				scope.$on('post:sduc', function(srcScope, update) {
 
 					_.delay(function() {
+
+						sound.play('seduce');
+
 						var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
 						var src = animTargets[0];
 						var target = animTargets[1];

@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('teleporterAnim', function(_, $, board, animFns) {
+	.directive('teleporterAnim', function(_, $, board, animFns, sound) {
 		'use strict';
 
 
@@ -9,6 +9,8 @@ angular.module('futurism')
 
 
 				scope.$on('pre:tlpt', function(srcScope, update) {
+
+					sound.play('teleport');
 
 					var animTarget = animFns.chainedAnimTargets(update, update.data.targetChain)[0];
 

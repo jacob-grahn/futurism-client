@@ -7,7 +7,9 @@ angular.module('futurism')
 		 */
 		socket.$on('hand', function(cards) {
 			self.cards = cards;
-			players.me.hand = cards;
+			if(players.findMe()) {
+				players.findMe().hand = cards;
+			}
 		});
 
 
@@ -55,7 +57,7 @@ angular.module('futurism')
 				self.cards = _.filter(self.cards, function(card) {
 					return card.cid !== cid;
 				});
-				players.me.hand = self.cards;
+				players.findMe().hand = self.cards;
 			},
 
 

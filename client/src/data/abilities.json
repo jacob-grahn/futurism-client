@@ -321,7 +321,7 @@
 
 		"prci": {
 			"name": {
-				"en": "attack [precise]",
+				"en": "attack [flight]",
 				"ko": "정확한",
 				"ct": "mewoowo",
 				"fr": "Précision",
@@ -387,7 +387,7 @@
 
 		"netw": {
 			"name": {
-				"en": "networking",
+				"en": "network",
 				"ko": "네트워킹",
 				"ct": "mewoowo",
 				"fr": "Réseautage",
@@ -420,7 +420,7 @@
 
 		"tran": {
 			"name": {
-				"en": "transformer",
+				"en": "transform",
 				"ko": "변압기",
 				"ct": "mewoowo",
 				"fr": "Transformeur",
@@ -576,7 +576,7 @@
 
 		"tlpt": {
 			"name": {
-				"en": "teleporter",
+				"en": "teleport",
 				"pl": "teleportacja",
 				"nb": "teleportør",
 				"pi": "take up anchor"

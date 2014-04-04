@@ -5,7 +5,6 @@ angular.module('futurism')
 		var players = {
 
 			list: [],
-			me: null,
 
 
 			/**

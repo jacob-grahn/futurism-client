@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('rechargeAnim', function($, maths, animFns) {
+	.directive('rechargeAnim', function($, animFns, sound) {
 		'use strict';
 
 
@@ -9,6 +9,8 @@ angular.module('futurism')
 
 
 				scope.$on('post:rech', function(srcScope, update) {
+
+					sound.play('recharge');
 
 					var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
 					var src = animTargets[0];

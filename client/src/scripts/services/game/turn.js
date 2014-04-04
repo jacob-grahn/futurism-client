@@ -31,10 +31,10 @@ angular.module('futurism')
 			 * @returns {boolean}
 			 */
 			isMyTurn: function() {
-				if(!players.me) {
+				if(!players.findMe()) {
 					return false;
 				}
-				return turn.isTheirTurn(players.me._id);
+				return turn.isTheirTurn(players.findMe()._id);
 			}
 
 		};

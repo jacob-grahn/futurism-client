@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('attackAnim', function($, maths, animFns) {
+	.directive('attackAnim', function($, maths, animFns, sound) {
 		'use strict';
 
 
@@ -38,6 +38,7 @@ angular.module('futurism')
 
 
 				scope.$on('pre:bees', function(srcScope, update) {
+					sound.play('bees');
 					var animTargets = animFns.updatedAnimTargets(update);
 					var attacker;
 					var defender;
@@ -113,6 +114,7 @@ angular.module('futurism')
 
 
 				var animThrow = function(attacker, defender, className, message, callback) {
+					sound.play('attack-launch', 0.25);
 					var srcPoint = attacker.center;
 					var destPoint = defender.center;
 
@@ -122,9 +124,19 @@ angular.module('futurism')
 
 					boardElement.append($('<div class="attack-effect"><div class="attack-effect-inner '+className+'"></div></div>')
 						.css({left: srcPoint.x-10, top: srcPoint.y-75, opacity: 0, transform: 'rotate('+angleDeg+'deg)'})
-						.animate({opacity: 1}, 1000)
+						.animate({opacity: 1}, 1000, function() {
+								sound.play('attack-ready', 0.4);
+							})
 						.animate({left: destPoint.x-10, top: destPoint.y-75}, 300, 'linear', function() {
 							animFns.animNotif(boardElement, destPoint, message, 'danger');
+							if(message !== 'miss!') {
+								if(message === 'poisoned!') {
+									sound.play('poison');
+								}
+								else {
+									sound.play('hit');
+								}
+							}
 							if(defender.shield && defender.shield > 0) {
 								animFns.animFlasher(boardElement, destPoint, 'shield');
 							}

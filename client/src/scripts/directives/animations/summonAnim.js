@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('summonAnim', function(_, $, $timeout, animFns) {
+	.directive('summonAnim', function(_, $, $timeout, animFns, sound) {
 		'use strict';
 
 
@@ -9,26 +9,31 @@ angular.module('futurism')
 
 
 				scope.$on('post:male', function(srcScope, update) {
+					sound.play('mate');
 					anim(update, 'summon-sex');
 				});
 
 
 				scope.$on('post:feml', function(srcScope, update) {
+					sound.play('mate');
 					anim(update, 'summon-sex');
 				});
 
 
 				scope.$on('post:smmn', function(srcScope, update) {
+					sound.play('summon');
 					anim(update, '');
 				});
 
 
 				scope.$on('post:rbld', function(srcScope, update) {
+					sound.play('rebuild');
 					anim(update, 'summon-rebuild');
 				});
 
 
 				scope.$on('post:tree', function(srcScope, update) {
+					sound.play('trees');
 					anim(update, 'summon-trees');
 				});
 

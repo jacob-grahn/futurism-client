@@ -36,9 +36,9 @@ angular.module('futurism')
 		return {
 
 			play: function(soundId, volume) {
-				/*var instance = Sound.play(soundId);
+				var instance = Sound.play(soundId);
 				instance.volume = volume || 1;
-				return instance;*/
+				return instance;
 			}
 
 		}

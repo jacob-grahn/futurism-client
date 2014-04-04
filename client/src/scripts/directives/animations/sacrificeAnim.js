@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('sacrificeAnim', function($, animFns, shared) {
+	.directive('sacrificeAnim', function($, animFns, shared, sound) {
 		'use strict';
 
 
@@ -9,6 +9,8 @@ angular.module('futurism')
 
 
 				scope.$on('post:'+shared.actions.HERO, function(srcScope, update) {
+
+					sound.play('hero');
 
 					var src = animFns.chainedAnimTargets(update, update.data.targetChain)[0];
 					animFns.animFlasher(boardElem, src.center, 'hero');

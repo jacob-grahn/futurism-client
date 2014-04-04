@@ -38,7 +38,7 @@ angular.module('futurism')
 
 				// set the volume constantly, as it doesn't work otherwise
 				widget.bind(SC.Widget.Events.PLAY_PROGRESS, function() {
-					widget.setVolume(66);
+					widget.setVolume(60);
 				});
 
 				// turn off autoplay if pause is clicked

@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('networkingAnim', function($, maths, animFns) {
+	.directive('networkingAnim', function($, animFns, sound) {
 		'use strict';
 
 
@@ -9,6 +9,8 @@ angular.module('futurism')
 
 
 				scope.$on('post:netw', function(srcScope, update) {
+
+					sound.play('network');
 
 					var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
 					var src = animTargets[0];

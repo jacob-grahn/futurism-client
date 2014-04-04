@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('abominationAnim', function($, maths, animFns) {
+	.directive('abominationAnim', function($, maths, animFns, sound) {
 		'use strict';
 
 
@@ -9,6 +9,8 @@ angular.module('futurism')
 
 
 				scope.$on('post:abom', function(srcScope, update) {
+
+					sound.play('abomination');
 
 					var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
 					var abom = animTargets[0];

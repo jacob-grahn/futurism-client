@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('healAnim', function($, animFns) {
+	.directive('healAnim', function($, animFns, sound) {
 		'use strict';
 
 
@@ -9,6 +9,8 @@ angular.module('futurism')
 
 
 				scope.$on('post:heal', function(srcScope, update) {
+
+					sound.play('heal');
 
 					var animChain = animFns.chainedAnimTargets(update, update.data.targetChain);
 					var healer = animChain[0];

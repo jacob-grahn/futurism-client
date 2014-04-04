@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.directive('moveAnim', function($, animFns) {
+	.directive('moveAnim', function($, animFns, sound) {
 		'use strict';
 
 
@@ -9,6 +9,8 @@ angular.module('futurism')
 
 
 				scope.$on('post:move', function(srcScope, update) {
+
+					sound.play('move');
 
 					_.delay(function() {
 						var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);

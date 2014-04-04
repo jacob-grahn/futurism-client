@@ -3,7 +3,7 @@
 	<turn-anim></turn-anim>
 
 	<ul id="board" class="board col-sm-7 inverse" summon-anim attack-anim rally-anim abomination-anim heal-anim move-anim teleporter-anim poison-anim peace-pipe-anim seduction-anim delegate-anim shield-anim recharge-anim networking-anim transformer-anim serum-anim battle-cry-anim sacrifice-anim>
-		<li class="row" ng-repeat="area in board.areas | teamSort:players.me.team">
+		<li class="row" ng-repeat="area in board.areas | teamSort:players.findMe().team">
 			<div class="board-area clearfix">
 
 				<div class="area-header">
@@ -12,14 +12,14 @@
 				</div>
 
 				<ul ng-repeat="column in area.targets" class="player-field-column">
-					<li ng-repeat="target in column | inverseFoes:players.me.team" ng-click="targeter.selectTarget(target)" class="target {{target.player._id}}-{{target.column}}-{{target.row}}" ng-class="{'target-valid': targeter.isValidTarget(target), 'scroll-here': targeter.isValidTarget(target)}">
+					<li ng-repeat="target in column | inverseFoes:players.findMe().team" ng-click="targeter.selectTarget(target)" class="target {{target.player._id}}-{{target.column}}-{{target.row}}" ng-class="{'target-valid': targeter.isValidTarget(target), 'scroll-here': targeter.isValidTarget(target)}">
 						<card-magnify
 								ng-if="target.card"
 								card="target.card"
 								action-fn="targeter.selectAction(abilityId, target)"
 								size="small" magnify="large"
-								use-buttons="{{target.player == players.me}}"
-								ng-class="{'card-disabled': target.card.moves <= 0 || !turn.isMyTurn() && players.me._id == target.player._id}"
+								use-buttons="{{target.player == players.findMe()}}"
+								ng-class="{'card-disabled': target.card.moves <= 0 || !turn.isMyTurn() && players.findMe()._id == target.player._id}"
 								active="{{!targeter.isValidTarget(target)}}">
 						</card-magnify>
 					</li>
@@ -53,11 +53,11 @@
 
 	<div ng-show="hand.show && hand.cards.length > 0" id="hand">
 		<div id="hand-content">
-			<h1>{{lang.game.pride}}: {{players.me.pride}}</h1>
+			<h1>{{lang.game.pride}}: {{players.findMe().pride}}</h1>
 			<a ng-if="!hand.force" class="close-x" ng-click="hand.close()">{{lang.game.close}} [x]</a>
 			<ul class="card-list row">
 				<li ng-repeat="card in hand.cards">
-					<card-display card="card" size="medium" ng-click="pickCardFromHand(card)" ng-class="{'card-disabled': card.pride > players.me.pride}"></card-display>
+					<card-display card="card" size="medium" ng-click="pickCardFromHand(card)" ng-class="{'card-disabled': card.pride > players.findMe().pride}"></card-display>
 				</li>
 			</ul>
 		</div>
