@@ -24,6 +24,7 @@ angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', '
 			when('/messages', {templateUrl: 'views/messages.html', controller: 'MessagesCtrl'}).
 			when('/users/:userId/bans', {templateUrl: 'views/bans.html', controller: 'BansCtrl'}).
 			when('/reports', {templateUrl: 'views/reports.html', controller: 'ReportsCtrl'}).
+			when('/mod-logs', {templateUrl: 'views/mod-log.html', controller: 'ModLogCtrl'}).
 			otherwise({redirectTo: '/title'});
 
 		$locationProvider.html5Mode(true);

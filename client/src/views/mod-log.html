@@ -1,0 +1,16 @@
+<div id="mod-log" class="row">
+	<div class="col-md-12">
+		<div class="well">
+
+			<paginated resource="ModLogResource" results="logs" query="query">
+				<ul class="list-group">
+					<li class="list-group-item" ng-repeat="log in logs">
+						<username user="log.mod"></username> {{log.type}} -> <username user="log.user"></username> {{log.data}}
+					</li>
+				</ul>
+			</paginated>
+
+
+		</div>
+	</div>
+</div>

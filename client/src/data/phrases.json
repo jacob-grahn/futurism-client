@@ -711,6 +711,10 @@
 			"en": "Reports"
 		},
 
+		"modLog": {
+			"en": "Mod Log"
+		},
+
     "toggle": {
       "en": "Toggle Navigation",
       "ko": "토글",
