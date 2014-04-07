@@ -99,6 +99,7 @@
 					self.drawCards(self.players, rules.handSize);
 					effects.hand(self.players);
 					self.broadcastChanges('prideUp', effects.prideUp(self.turnTicker.turnOwners[0]));
+					self.lazyForfeit(self.turnTicker.turnOwners[0]);
 
 
 					/**
@@ -276,6 +277,9 @@
 			self.broadcastChanges(actionId, {result: result, targetChain: targetChain});
 
 			//
+			player.actionsPerformed++;
+
+			//
 			return 'ok';
 		};
 
@@ -351,6 +355,25 @@
 					player.hand.push(player.cards.pop());
 				}
 			});
+		};
+
+
+		/**
+		 * forfeit the game if player makes no moves for 2 turns
+		 */
+		self.lazyForfeit = function(player) {
+			if(player.actionsPerformed === 0) {
+				player.idleTurns++;
+			}
+			else {
+				player.idleTurns = 0;
+			}
+
+			player.actionsPerformed = 0;
+
+			if(player.idleTurns >= 2) {
+				self.forfeit(player);
+			}
 		};
 
 
