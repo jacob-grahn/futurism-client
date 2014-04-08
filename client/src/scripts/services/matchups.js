@@ -86,7 +86,7 @@ angular.module('futurism')
 		self.goIfMember = function(matchup, gameId) {
 			_.each(matchup.accounts, function(user) {
 				if(user._id === me.userId) {
-					self.gotoGamePage(gameId, matchup.rules.deckSize);
+					self.gotoGamePage(gameId, matchup.rules.deckSize, matchup.rules.futures);
 				}
 			});
 		};
@@ -96,10 +96,11 @@ angular.module('futurism')
 		 * Change url
 		 * @param {string} gameId
 		 * @param {number} deckSize
+		 * @param {number} futureCount
 		 */
-		self.gotoGamePage = function(gameId, deckSize) {
+		self.gotoGamePage = function(gameId, deckSize, futureCount) {
 			var serverId = 1;
-			$location.url('/loadup/'+serverId+'/'+gameId+'/'+deckSize);
+			$location.url('/loadup/server/'+serverId+'/game/'+gameId+'/deck-size/'+deckSize+'/futures/'+futureCount);
 		};
 
 

@@ -5,6 +5,8 @@ angular.module('futurism')
 		socket.connect($routeParams.serverId);
 		$scope.decks = DeckResource.query(function(){});
 		$scope.maxDeckSize = $routeParams.deckSize;
+		$scope.futureCount = Number($routeParams.futures);
+		$scope.state = 'selectingDeck';
 
 
 		$scope.select = function(deck) {
@@ -24,7 +26,12 @@ angular.module('futurism')
 
 		socket.$on('selectDeckResult', function(data) {
 			if(data.result === 'success') {
-				$location.url('/game/' + $routeParams.serverId + '/' + $routeParams.gameId);
+				if($scope.futureCount === 0) {
+					$location.url('/game/' + $routeParams.serverId + '/' + $routeParams.gameId);
+				}
+				else {
+					$scope.state = 'selectingFutures';
+				}
 			}
 			else {
 				errorHandler.handle(data.error);

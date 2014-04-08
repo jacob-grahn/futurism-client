@@ -1,6 +1,23 @@
-<h1 class="inverse">{{lang.loadup.maxDeckSize}}: {{maxDeckSize}} {{lang.deck.cards}}</h1>
-<ul class="deck-list">
-	<li ng-repeat="deck in decks | orderBy:'cards.length':true">
-		<deck-display ng-click="select(deck)" size="medium" active="{{isAvailable(deck)}}"></deck-display>
-	</li>
-</ul>
+<div id="loadup">
+
+	<div ng-if="state == 'selectingDeck'" class="deck-selector">
+		<h1 class="inverse">{{lang.loadup.selectDeck}} <br>{{lang.loadup.maxDeckSize}}: {{maxDeckSize}} {{lang.deck.cards}}</h1>
+		<ul class="deck-list">
+			<li ng-repeat="deck in decks | orderBy:'cards.length':true">
+				<deck-display ng-click="select(deck)" size="medium" active="{{isAvailable(deck)}}"></deck-display>
+			</li>
+		</ul>
+	</div>
+
+	<div ng-if="state == 'selectingFutures'" class="future-selector">
+		<h1 ng-if="futureCount > 1" class="inverse">{{lang.loadup.select}} {{futureCount}} {{lang.loadup.futures}}</h1>
+		<h1 ng-if="futureCount == 1" class="inverse">{{lang.loadup.selectFutureSingular}}</h1>
+		<!--<ul class="future-list">
+			<li ng-repeat="future in futures">
+				 <future-display future-id="future.id"></future-display>
+			</li>
+		</ul>-->
+	</div>
+
+
+</div>

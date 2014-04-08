@@ -503,8 +503,20 @@
 
   "loadup": {
     "maxDeckSize": {
-      "en": "Max Deck Size"
-    }
+      "en": "Max Size"
+    },
+		"selectDeck": {
+			"en": "Select a Deck!"
+		},
+		"select": {
+			"en": "Select"
+		},
+		"futures": {
+			"en": "Futures!"
+		},
+		"selectFutureSingular": {
+			"en": "Select a Future!"
+		}
   },
 
 

@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('socketErrors', function($location, me, session) {
+	.factory('socketErrors', function($location, me, session, errorHandler) {
 		'use strict';
 
 		var setup = function(socket) {

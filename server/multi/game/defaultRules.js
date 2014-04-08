@@ -8,7 +8,8 @@
 		turnDuration: 60*1000,
 		prepTime: 30,
 		handSize: 5,
-		deckSize: 3
+		deckSize: 5,
+		futures: 0
 	}
 
 }());
