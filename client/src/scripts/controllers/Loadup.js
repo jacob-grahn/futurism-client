@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('LoadupCtrl', function($scope, $location, $routeParams, DeckResource, socket, errorHandler) {
+	.controller('LoadupCtrl', function($scope, $location, $routeParams, DeckResource, socket, errorHandler, shared) {
 		'use strict';
 
 		socket.connect($routeParams.serverId);
@@ -7,6 +7,7 @@ angular.module('futurism')
 		$scope.maxDeckSize = $routeParams.deckSize;
 		$scope.futureCount = Number($routeParams.futures);
 		$scope.state = 'selectingDeck';
+		$scope.futures = shared.futures;
 
 
 		$scope.select = function(deck) {
@@ -22,6 +23,10 @@ angular.module('futurism')
 			else {
 				return 'inactive';
 			}
+		};
+
+		$scope.selectFuture = function(futureId) {
+			console.log('select future', futureId);
 		};
 
 		socket.$on('selectDeckResult', function(data) {

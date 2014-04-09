@@ -19,6 +19,7 @@
 @import "credits";
 @import "deck";
 @import "deck-selector";
+@import "future-display";
 @import "futures";
 @import "game";
 @import "guild-banner";
@@ -68,6 +69,10 @@ h3.inverse, .inverse h3 {
 }
 
 a {
+	cursor: pointer;
+}
+
+.cursor-pointer {
 	cursor: pointer;
 }
 

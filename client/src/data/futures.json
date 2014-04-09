@@ -42,6 +42,15 @@
 
 	"futures": {
 
+		"capt": {
+			"name": {
+				"en": "Capitalism"
+			},
+			"desc": {
+				"en": "Elite cards cost twice as much to play."
+			}
+		},
+
 		"free": {
 			"name": {
 				"en": "Free Love",

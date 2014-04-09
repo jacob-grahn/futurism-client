@@ -9,14 +9,14 @@
 		</ul>
 	</div>
 
-	<div ng-if="state == 'selectingFutures'" class="future-selector">
+	<div class="future-selector"> <!--ng-if="state == 'selectingFutures'" -->
 		<h1 ng-if="futureCount > 1" class="inverse">{{lang.loadup.select}} {{futureCount}} {{lang.loadup.futures}}</h1>
 		<h1 ng-if="futureCount == 1" class="inverse">{{lang.loadup.selectFutureSingular}}</h1>
-		<!--<ul class="future-list">
+		<ul class="future-list">
 			<li ng-repeat="future in futures">
-				 <future-display future-id="future.id"></future-display>
+				 <future-display ng-click="selectFuture(future)" ng-class="{inactive: false}" class="cursor-pointer" future="{{future}}"></future-display>
 			</li>
-		</ul>-->
+		</ul>
 	</div>
 
 

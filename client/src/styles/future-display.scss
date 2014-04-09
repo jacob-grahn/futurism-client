@@ -1,0 +1,50 @@
+.future-display {
+	position: relative;
+	width: 280px;
+}
+
+.future-display-img {
+	width: 250px;
+	height: 50px;
+	background-color: grey;
+}
+
+.future-display h3 {
+	position: absolute;
+	top: 5px;
+	left: 0px;
+	color: $light-contrast;
+	width: 250px;
+	padding-left: 25px;
+	padding-right: 0px;
+	background-color: rgba(0, 0, 0, 0.66);
+}
+
+.future-display.inactive {
+	opacity: 0.5;
+}
+
+.future-display .future-quantity {
+	position: absolute;
+	left: 255px;
+	top: 30px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.future-arrow {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.future-display .description {
+	padding: 5px;
+	width: 250px;
+}
+
+
+
+.future-display-capt h3 {
+	color: #ffdd83;
+}
