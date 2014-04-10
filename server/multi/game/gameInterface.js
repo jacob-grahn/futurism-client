@@ -62,7 +62,7 @@ module.exports = {
 				if(err) {
 					socket.emitError(err);
 				}
-				socket.emit('selectDeckResult', {result: 'success'});
+				socket.emit('selectDeckResult', {result: 'success', deckId: data.deckId});
 			});
 		});
 

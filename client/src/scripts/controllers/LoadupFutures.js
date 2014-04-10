@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.controller('LoadupCtrl', function($scope, $location, $routeParams, DeckResource, socket, errorHandler, shared) {
+	.controller('LoadupFuturesCtrl', function($scope, $location, $routeParams, DeckResource, socket, errorHandler, shared) {
 		'use strict';
 
 		socket.connect($routeParams.serverId);
@@ -11,9 +11,7 @@ angular.module('futurism')
 
 
 		$scope.select = function(deck) {
-			if(deck.cards.length <= $scope.maxDeckSize) {
-				socket.emit('selectDeck', {gameId: $routeParams.gameId, deckId: deck._id});
-			}
+
 		};
 
 		$scope.isAvailable = function(deck) {

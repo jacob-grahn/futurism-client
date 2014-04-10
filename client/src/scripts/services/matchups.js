@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('matchups', function(socket, $rootScope, $location, me, _) {
+	.factory('matchups', function(socket, $rootScope, $location, me, _, loadup) {
 		'use strict';
 
 		var self = this;
@@ -86,21 +86,10 @@ angular.module('futurism')
 		self.goIfMember = function(matchup, gameId) {
 			_.each(matchup.accounts, function(user) {
 				if(user._id === me.userId) {
-					self.gotoGamePage(gameId, matchup.rules.deckSize, matchup.rules.futures);
+					loadup.startPrep(gameId, 1, matchup.rules);
+					$location.url('/loadup/deck');
 				}
 			});
-		};
-
-
-		/**
-		 * Change url
-		 * @param {string} gameId
-		 * @param {number} deckSize
-		 * @param {number} futureCount
-		 */
-		self.gotoGamePage = function(gameId, deckSize, futureCount) {
-			var serverId = 1;
-			$location.url('/loadup/server/'+serverId+'/game/'+gameId+'/deck-size/'+deckSize+'/futures/'+futureCount);
 		};
 
 
