@@ -1,6 +1,11 @@
 <div id="loadup-futures">
 	<h1 ng-if="futureCount > 1" class="inverse">{{lang.loadup.select}} {{futureCount}} {{lang.loadup.futures}}</h1>
 	<h1 ng-if="futureCount == 1" class="inverse">{{lang.loadup.selectFutureSingular}}</h1>
+	<ul class="selected-future-list">
+		<li ng-repeat="futureObj in selected">
+			<future-display future="{{futureObj.future}}"></future-display>
+		</li>
+	</ul>
 	<ul class="future-list">
 		<li ng-repeat="future in futures">
 			<future-display ng-click="selectFuture(future)" ng-class="{inactive: false}" class="cursor-pointer" future="{{future}}"></future-display>

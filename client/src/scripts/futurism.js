@@ -12,8 +12,8 @@ angular.module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', '
 			when('/error', {templateUrl: 'views/error.html', controller: 'ErrorCtrl'}).
 			when('/futures', {templateUrl: 'views/futures.html', controller: 'FuturesCtrl'}).
 			when('/game/:serverId/:gameId', {templateUrl: 'views/game.html', controller: 'GameCtrl'}).
-			when('/loadup/deck', {templateUrl: 'views/loadup-deck.html', controller: 'LoadupDeckCtrl'}).
-			when('/loadup/futures', {templateUrl: 'views/loadup-futures.html', controller: 'LoadupFuturesCtrl'}).
+			when('/loadup/deck/:serverId/:gameId/:deckSize/:futures', {templateUrl: 'views/loadup-deck.html', controller: 'LoadupDeckCtrl'}).
+			when('/loadup/futures/:serverId/:gameId/:deckSize/:futures', {templateUrl: 'views/loadup-futures.html', controller: 'LoadupFuturesCtrl'}).
 			when('/guilds/:guildId', {templateUrl: 'views/guild.html', controller: 'GuildCtrl'}).
 			when('/guild-joiner', {templateUrl: 'views/guild-joiner.html', controller: 'GuildJoinerCtrl'}).
 			when('/instructions', {templateUrl: 'views/instructions.html', controller: 'InstructionsCtrl'}).

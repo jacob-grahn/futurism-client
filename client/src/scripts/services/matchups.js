@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('matchups', function(socket, $rootScope, $location, me, _, loadup) {
+	.factory('matchups', function(socket, $rootScope, me, _, loadup) {
 		'use strict';
 
 		var self = this;
@@ -87,7 +87,6 @@ angular.module('futurism')
 			_.each(matchup.accounts, function(user) {
 				if(user._id === me.userId) {
 					loadup.startPrep(gameId, 1, matchup.rules);
-					$location.url('/loadup/deck');
 				}
 			});
 		};
