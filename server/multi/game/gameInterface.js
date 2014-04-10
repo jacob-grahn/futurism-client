@@ -68,6 +68,19 @@ module.exports = {
 
 
 		/**
+		 * Send in future selections
+		 */
+		socket.onPlayer('selectFutures', function(data, game, player) {
+			game.loadup.selectFutures(player, data.futures, function(err) {
+				if(err) {
+					return socket.emitError(err);
+				}
+				socket.emit('selectFuturesResult', {result: 'success', futures: data.futures});
+			});
+		});
+
+
+		/**
 		 * Send in a card action
 		 */
 		socket.onPlayer('doAction', function(data, game, player) {

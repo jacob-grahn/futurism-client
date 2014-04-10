@@ -47,9 +47,7 @@ angular.module('futurism')
 			},
 
 			selectFutures: function(futures) {
-				if(futures.length !== rules.futures) {
-					errorHandler.show('Pick ' + rules.futures + 'futures');
-				}
+				socket.emit('selectFutures', {gameId: self.gameId, futures: futures});
 			},
 
 			selectFuture: function(futureId) {

@@ -65,6 +65,18 @@
 
 
 		/**
+		 * Select which futures you can use in this game
+		 * @param {Player} player
+		 * @param {Array} futures
+		 * @param {Function} callback
+		 */
+		self.selectFutures = function(player, futures, callback) {
+			player.futures = futures;
+			return callback(null, futures);
+		};
+
+
+		/**
 		 * Call next if every account has loaded a deck
 		 */
 		self.nextIfDone = function() {
