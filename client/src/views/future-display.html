@@ -1,7 +1,11 @@
 <div class="future-display future-display-{{future}}">
-	<img class="future-display-img" src="images/futures/capitalism.jpg"/>
-	<img class="future-arrow" src="images/futures/future-arrow.png"/>
-	<h3>{{lang.futures[future].name}}</h3>
-	<p class="inverse future-quantity">x 0</p>
-	<p class="inverse description">{{lang.futures[future].desc}}</p>
+	<div ng-if="future">
+		<img class="future-display-img" src="images/futures/capitalism.jpg"/>
+		<img class="future-arrow" src="images/futures/future-arrow.png"/>
+		<h3>{{lang.futures[future].name}}</h3>
+		<p class="inverse description">{{lang.futures[future].desc}}</p>
+	</div>
+	<div ng-if="!future">
+		<div class="future-outline"></div>
+	</div>
 </div>
