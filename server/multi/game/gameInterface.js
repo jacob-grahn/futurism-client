@@ -60,7 +60,7 @@ module.exports = {
 		socket.onPlayer('selectDeck', function(data, game, player) {
 			game.loadup.selectDeck(player, data.deckId, function(err) {
 				if(err) {
-					socket.emitError(err);
+					return socket.emitError(err);
 				}
 				socket.emit('selectDeckResult', {result: 'success', deckId: data.deckId});
 			});

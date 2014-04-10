@@ -37,7 +37,6 @@
 					if(!deck) {
 						return callback('deck id "'+deckId+'" not found');
 					}
-
 					if(deck.cards.length > rules.deckSize) {
 						return callback('this deck has too many cards');
 					}

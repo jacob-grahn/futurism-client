@@ -1,18 +1,18 @@
 angular.module('futurism')
-	.factory('socketErrors', function($location, me, session, errorHandler) {
+	.factory('socketErrors', function($location, me, session, errorHandler, socket) {
 		'use strict';
 
-		var setup = function(socket) {
+		var self = function() {
 
-			socket.on('error', function(data) {
+			socket.$on('error', function(data) {
 				errorHandler.show(data);
 			});
 
-			socket.on('banned', function(data) {
+			socket.$on('banned', function(data) {
 				$location.url('/users/'+me.user._id+'/bans');
 				session.destroy();
 			});
 		};
 		
-		return setup;
+		return self;
 	});

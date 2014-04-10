@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('socket', function(_, io, errorHandler, $rootScope, socketAuthenticator, socketErrors, servers) {
+	.factory('socket', function(_, io, errorHandler, $rootScope, socketAuthenticator, servers) {
 		'use strict';
 
 		var socket;
@@ -81,7 +81,6 @@ angular.module('futurism')
 						}
 						else {
 							socketAuthenticator(socket);
-							socketErrors(socket);
 						}
 
 						applyListeners(socket);
