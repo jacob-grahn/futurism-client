@@ -1,6 +1,6 @@
 describe('game/effectsSpec', function() {
 
-	var effects = require('../../../multi/game/effects');
+	var effects = require('../../../multi/game/effects/effectDefinitions');
 
 
 	beforeEach(function() {
@@ -26,7 +26,7 @@ describe('game/effectsSpec', function() {
 			}
 		];
 
-		effects.death(targets);
+		effectDefinitions.death(targets);
 
 		expect(targets[0].card).toBeFalsy();
 		expect(targets[1].card).toBeFalsy();
@@ -43,7 +43,7 @@ describe('game/effectsSpec', function() {
 			{card: {health:1, poison:-1} }
 		];
 
-		effects.poison(targets);
+		effectDefinitions.poison(targets);
 
 		expect(targets[0].card.health).toBe(-1);
 		expect(targets[1].card.health).toBe(1);
@@ -57,7 +57,7 @@ describe('game/effectsSpec', function() {
 			{card: {hero:1} },
 		];
 
-		effects.deBuf(targets);
+		effectDefinitions.deBuf(targets);
 
 		expect(targets[0].card.shield).toBe(0);
 		expect(targets[0].card.attackBuf).toBe(0);
@@ -72,7 +72,7 @@ describe('game/effectsSpec', function() {
 			{card: {moves: 1} }
 		];
 
-		effects.refresh(targets);
+		effectDefinitions.refresh(targets);
 
 		expect(targets[0].card.moves).toBe(0);
 		expect(targets[1].card.moves).toBe(1);
@@ -107,7 +107,7 @@ describe('game/effectsSpec', function() {
 		};
 		var players = [player1, player2];
 
-		effects.rally(players, board);
+		effectDefinitions.rally(players, board);
 
 		expect(player1.pride).toBe(3);
 		expect(player2.pride).toBe(1);

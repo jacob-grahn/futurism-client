@@ -1,0 +1,33 @@
+'use strict';
+
+var _ = require('lodash');
+
+
+var self = {
+
+
+	activate: function(game) {
+		game.eventEmitter.on(game.END, self.saveRecord);
+	},
+
+
+	deactivate: function(game) {
+		game.eventEmitter.removeListener(game.END, self.saveRecord);
+	},
+
+
+	/**
+	* save a record of this game
+	*/
+	saveRecord: function(game) {
+		game.recorder.users = game.players;
+		game.recorder.save(game.gameId, function(err, doc) {
+			if(err) {
+				game.emit('error', err);
+			}
+	});
+}
+
+};
+
+module.exports = self;
