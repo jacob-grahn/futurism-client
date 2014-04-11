@@ -23,7 +23,8 @@ var self = {
 	victory: function(game) {
 		var result = victoryCondition.commanderRules(game.players, game.board, game.turnTicker.turn);
 		if(result.winner) {
-			game.setWinners(result.team);
+			var winners = _.filter(game.players, {team: result.team});
+			game.setWinners(winners);
 		}
 	}
 

@@ -50,6 +50,7 @@ module.exports = function(accounts, rules, gameId) {
 	/**
 	 * initialize variables and helper classes
 	 */
+	self._id = gameId;
 	self.state = 'loadup';
 	self.rules = _.defaults(rules, defaultRules);
 	self.futureManager = new FutureManager(self);
@@ -127,8 +128,10 @@ module.exports = function(accounts, rules, gameId) {
 		self.state = 'awarding';
 		self.turnTicker.stop();
 		self.eventEmitter.emit(self.END, self);
-		self.emit('gameOver', {winners: winners});
-		self.remove();
+		self.emit('gameOver', {winners: _.map(winners, function(winner) {
+			return winner._id;}
+		)});
+		_.delay(self.remove, 2000);
 	};
 
 

@@ -21,7 +21,7 @@ var self = {
 	*/
 	saveRecord: function(game) {
 		game.recorder.users = game.players;
-		game.recorder.save(game.gameId, function(err, doc) {
+		game.recorder.save(game._id, function(err, doc) {
 			if(err) {
 				game.emit('error', err);
 			}
