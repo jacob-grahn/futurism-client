@@ -242,17 +242,19 @@ module.exports = function(accounts, rules, gameId) {
 		// do the action
 		self.eventEmitter.emit(self.ABILITY_BEFORE, self);
 		var result = actionFns.doAction(self, player, actionId, targetChain);
-		self.eventEmitter.emit(self.ABILITY_DURING, self, result);
 
-		// send a list of changed targets
-		self.broadcastChanges(actionId, {result: result, targetChain: targetChain});
+		if (result !== false) {
+			self.eventEmitter.emit(self.ABILITY_DURING, self, result);
 
-		//
-		player.actionsPerformed++;
-		self.eventEmitter.emit(self.ABILITY_AFTER, self);
+			// send a list of changed targets
+			self.broadcastChanges(actionId, {result: result, targetChain: targetChain});
 
-		//
-		return 'ok';
+			//
+			self.eventEmitter.emit(self.ABILITY_AFTER, self);
+
+			//
+			return 'ok';
+		}
 	};
 
 

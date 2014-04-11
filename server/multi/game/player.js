@@ -17,8 +17,6 @@ var Player = function(account) {
 	self.pride = 0;
 	self.deckSize = 0;
 	self.deck = {};
-	self.idleTurns = 0;
-	self.actionsPerformed = 0;
 };
 
 module.exports = Player;
