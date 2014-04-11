@@ -14,6 +14,7 @@ var Loadup = require('./loadup');
 var TurnTicker = require('./turnTicker');
 var Recorder = require('./recorder');
 var Effects = require('./effects/Effects');
+var FutureManager = require('./FutureManager');
 
 
 /**
@@ -51,6 +52,7 @@ module.exports = function(accounts, rules, gameId) {
 	 */
 	self.state = 'loadup';
 	self.rules = _.defaults(rules, defaultRules);
+	self.futureManager = new FutureManager(self);
 	self.eventEmitter = new events.EventEmitter();
 	self.players = initAccounts(accounts);
 	self.board = new Board(self.players, rules.columns, rules.rows);
@@ -241,7 +243,7 @@ module.exports = function(accounts, rules, gameId) {
 		// do the action
 		self.eventEmitter.emit(self.ABILITY_BEFORE, self);
 		var result = actionFns.doAction(self, player, actionId, targetChain);
-		self.eventEmitter.emit(self.ABILITY_DURING, self);
+		self.eventEmitter.emit(self.ABILITY_DURING, self, result);
 
 		// send a list of changed targets
 		self.broadcastChanges(actionId, {result: result, targetChain: targetChain});
@@ -252,6 +254,15 @@ module.exports = function(accounts, rules, gameId) {
 
 		//
 		return 'ok';
+	};
+
+
+	/**
+	 * set a new future
+	 * @param {string} futureId
+	 */
+	self.setFuture = function(futureId) {
+
 	};
 
 

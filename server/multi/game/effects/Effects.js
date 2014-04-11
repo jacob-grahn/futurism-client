@@ -3,6 +3,7 @@
 var death = require('./death');
 var deBuf = require('./deBuf');
 var drawCards = require('./drawCards');
+var futureChange = require('./futureChange');
 var lazyForfeit = require('./lazyForfeit');
 var poison = require('./poison');
 var prideUp = require('./prideUp');
@@ -15,6 +16,7 @@ module.exports = function(game) {
 	death.activate(game);
 	deBuf.activate(game);
 	drawCards.activate(game);
+	futureChange.activate(game);
 	lazyForfeit.activate(game);
 	poison.activate(game);
 	prideUp.activate(game);

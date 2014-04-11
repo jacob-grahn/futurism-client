@@ -142,6 +142,7 @@
 			}
 		},
 
+
 		/**
 		 * Move: move a card from one place to another
 		 */
@@ -159,22 +160,7 @@
 
 
 		/**
-		 * Pride: generate pride
-		 */
-		/*PRIDE: 'prde',
-		prde: {
-			free: true,
-			restrict: [
-				[filters.owned]
-			],
-			use: function(src) {
-				src.player.pride++;
-			}
-		},*/
-
-
-		/**
-		 * Summon: bring a new card into the game at a pride cost
+		 * Summon: play a card from your hand to the board
 		 */
 		SUMMON: 'smmn',
 		smmn: {
@@ -186,15 +172,7 @@
 			use: function(src, target1, target2) {
 				_.pull(src.player.hand, target1.card);
 				target2.card = target1.card;
-				//src.player.pride -= target1.card.pride;
-				if(target1.card.hasBeenPlayed) {
-					src.card.moves++;
-					target1.card.moves = 1;
-				}
-				else {
-					target1.card.moves = 0;
-					target1.card.hasBeenPlayed = true;
-				}
+				target1.card.moves = 0;
 			}
 		},
 
@@ -205,10 +183,15 @@
 		FUTURE: 'futr',
 		futr: {
 			restrict: [
+				[filters.owned],
 				false
 			],
-			use: function(src) {
-
+			use: function(src, target) {
+				var index = src.player.futures.indexOf(target);
+				if(index !== -1) {
+					src.player.futures.splice(index, 1);
+					return {future: target};
+				}
 			}
 		},
 
@@ -553,8 +536,11 @@
 			use: function(src, target) {
 				var card = target.card;
 				target.card = null;
-				card.pride = 0;
 				target.player.hand.push(card);
+
+				var card2 = src.card;
+				src.card = null;
+				src.player.hand.push(card2);
 			}
 		},
 

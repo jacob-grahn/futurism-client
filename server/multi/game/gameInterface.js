@@ -116,6 +116,14 @@ module.exports = {
 
 
 		/**
+		 * Request a list of futures you can use
+		 */
+		socket.onPlayer('futures', function(data, game, player) {
+			return player.futures;
+		});
+
+
+		/**
 		 * Forfeit a match
 		 */
 		socket.onPlayer('forfeit', function(data, game, player) {
