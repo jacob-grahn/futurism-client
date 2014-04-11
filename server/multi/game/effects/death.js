@@ -29,6 +29,8 @@ var self = {
 				}
 			}
 		});
+
+		game.broadcastChanges('death');
 	}
 
 };

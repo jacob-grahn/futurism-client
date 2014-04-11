@@ -70,7 +70,7 @@ module.exports = function(accounts, rules, gameId) {
 		 * get ready to play
 		 */
 		self.state = 'running';
-		self.eventEmitter.emit(self.STARTUP);
+		self.eventEmitter.emit(self.STARTUP, self);
 		self.turnTicker.populateTurn();
 		self.broadcastChanges();
 
@@ -100,7 +100,7 @@ module.exports = function(accounts, rules, gameId) {
 				 * TURN_BEGIN event
 				 */
 				self.turnOwners = self.turnTicker.turnOwners;
-				self.eventEmitter.emit(self.TURN_BEGIN);
+				self.eventEmitter.emit(self.TURN_BEGIN, self);
 			},
 
 
@@ -114,7 +114,7 @@ module.exports = function(accounts, rules, gameId) {
 				/**
 				 * end of turn effects
 				 */
-				self.eventEmitter.emit(self.TURN_END);
+				self.eventEmitter.emit(self.TURN_END, self);
 			}
 		);
 	});
@@ -128,7 +128,7 @@ module.exports = function(accounts, rules, gameId) {
 		self.winners = winners;
 		self.state = 'awarding';
 		self.turnTicker.stop();
-		self.eventEmitter.emit(self.END);
+		self.eventEmitter.emit(self.END, self);
 		self.emit('gameOver', {winners: winners});
 		self.remove();
 	};
@@ -239,16 +239,16 @@ module.exports = function(accounts, rules, gameId) {
 		}
 
 		// do the action
-		self.eventEmitter.emit(self.ABILITY_BEFORE);
+		self.eventEmitter.emit(self.ABILITY_BEFORE, self);
 		var result = actionFns.doAction(self, player, actionId, targetChain);
-		self.eventEmitter.emit(self.ABILITY_DURING);
+		self.eventEmitter.emit(self.ABILITY_DURING, self);
 
 		// send a list of changed targets
 		self.broadcastChanges(actionId, {result: result, targetChain: targetChain});
 
 		//
 		player.actionsPerformed++;
-		self.eventEmitter.emit(self.ABILITY_AFTER);
+		self.eventEmitter.emit(self.ABILITY_AFTER, self);
 
 		//
 		return 'ok';

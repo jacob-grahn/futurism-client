@@ -43,6 +43,9 @@ var self = {
 				card.hero = 0;
 			});
 		});
+
+		
+		game.broadcastChanges('deBuf');
 	}
 
 };

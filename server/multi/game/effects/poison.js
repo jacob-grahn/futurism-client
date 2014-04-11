@@ -26,6 +26,8 @@ var self = {
 				}
 			});
 		});
+
+		game.broadcastChanges('poison');
 	}
 
 };

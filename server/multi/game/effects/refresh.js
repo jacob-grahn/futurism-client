@@ -39,6 +39,8 @@ var self = {
 				card.moves = 0;
 			});
 		});
+
+		game.broadcastChanges('refresh');
 	}
 
 };
