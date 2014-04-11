@@ -9,9 +9,7 @@ angular.module('futurism')
 		socket.$on('gameStatus', function(data) {
 			players.list = data.players;
 			board.fullUpdate(data.board);
-			updateDelayer.add('turn', data, function() {
-				self.startTurn(data);
-			});
+			self.startTurn(data);
 		});
 
 
@@ -31,16 +29,10 @@ angular.module('futurism')
 				if(cause === shared.actions.SUMMON) {
 					hand.removeCid(changes.data.targetChain[1].cid);
 				}
-			});
-		});
 
-
-		/**
-		 * Receive a new turn
-		 */
-		socket.$on('turn', function(data) {
-			updateDelayer.add('turn', data, function() {
-				self.startTurn(data);
+				if(cause === 'turn') {
+					self.startTurn(changes);
+				}
 			});
 		});
 
@@ -67,8 +59,8 @@ angular.module('futurism')
 		 * Begin a new turn
 		 */
 		self.startTurn = function(data) {
-			turn.turnOwners = data.turnOwners;
-			turn.startTime = data.startTime;
+			turn.turnOwners = data.turnOwners || turn.turnOwners;
+			turn.startTime = data.startTime || turn.startTime;
 			if(turn.isMyTurn()) {
 				state.set(state.THINKING);
 				hand.refresh();

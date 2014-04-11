@@ -1,7 +1,7 @@
 'use strict';
 
 var _ = require('lodash');
-var actions = require('../../../shared/actions');
+var actions = require('../../../../shared/actions');
 
 
 var self = {

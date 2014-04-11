@@ -17,7 +17,7 @@ var self = {
 
 
 	futureChange: function(game, actionId, chain, result) {
-		if(result.future) {
+		if(result && result.future) {
 			game.futureManager.setFuture(result.future);
 		}
 	}

@@ -74,7 +74,6 @@ module.exports = function(accounts, rules, gameId) {
 		self.state = 'running';
 		self.eventEmitter.emit(self.STARTUP, self);
 		self.turnTicker.populateTurn();
-		self.broadcastChanges();
 
 
 		/**
@@ -92,16 +91,13 @@ module.exports = function(accounts, rules, gameId) {
 				/**
 				 * tell the clients to move to the next turn
 				 */
-				self.emit('turn', {
-					startTime: startTime,
-					turnOwners: self.turnTicker.getTurnOwnerIds()
-				});
+				self.turnOwners = self.turnTicker.turnOwners;
+				self.broadcastChanges('turn');
 
 
 				/**
 				 * TURN_BEGIN event
 				 */
-				self.turnOwners = self.turnTicker.turnOwners;
 				self.eventEmitter.emit(self.TURN_BEGIN, self);
 			},
 
@@ -179,9 +175,9 @@ module.exports = function(accounts, rules, gameId) {
 			return _.pick(player, '_id', 'team', 'name', 'site', 'pride', 'futures');
 		}));
 
-		status.turnOwners = self.turnTicker.getTurnOwnerIds();
 		status.board = self.board.compactClone();
 		status.turn = self.turnTicker.turn;
+		status.turnOwners = self.turnTicker.getTurnOwnerIds();
 		status.startTime = self.turnTicker.startTime;
 		status.state = self.state;
 

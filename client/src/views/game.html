@@ -63,4 +63,17 @@
 		</div>
 	</div>
 
+
+	<div ng-show="futureHand.show" id="future-hand">
+		<div id="future-hand-content">
+			<h1>{{lang.game.pride}}: {{players.findMe().pride}}</h1>
+			<a ng-if="!hand.force" class="close-x" ng-click="hand.close()">{{lang.game.close}} [x]</a>
+			<ul class="card-list row">
+				<li ng-repeat="card in hand.cards">
+					<card-display card="card" size="medium" ng-click="pickCardFromHand(card)" ng-class="{'card-disabled': card.pride > players.findMe().pride}"></card-display>
+				</li>
+			</ul>
+		</div>
+	</div>
+
 </div>
