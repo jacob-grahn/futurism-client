@@ -1,4 +1,5 @@
 var poison = require('../../../../../server/multi/game/effects/poison');
+var sinon = require('sinon');
 
 describe('effects/poison', function() {
 
@@ -21,7 +22,8 @@ describe('effects/poison', function() {
 						return targets;
 					}
 				}
-			}
+			},
+			broadcastChanges: sinon.spy()
 		};
 
 		poison.poison(game);
@@ -30,5 +32,6 @@ describe('effects/poison', function() {
 		expect(targets[1].card.health).toBe(5);
 		expect(targets[2].card.health).toBe(5);
 		expect(targets[3].card.health).toBe(0);
+		expect(game.broadcastChanges.callCount).toBe(1);
 	});
 });

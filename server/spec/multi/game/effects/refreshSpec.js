@@ -1,4 +1,5 @@
 var refresh = require('../../../../../server/multi/game/effects/refresh');
+var sinon = require('sinon');
 
 
 describe('effects/refresh', function() {
@@ -22,7 +23,8 @@ describe('effects/refresh', function() {
 						return targets;
 					}
 				}
-			}
+			},
+			broadcastChanges: sinon.spy()
 		};
 
 		refresh.refresh(game);
@@ -30,6 +32,7 @@ describe('effects/refresh', function() {
 		expect(targets[0].card.moves).toBe(0);
 		expect(targets[1].card.moves).toBe(1);
 		expect(targets[2].card.moves).toBe(1);
+		expect(game.broadcastChanges.callCount).toBe(1);
 	});
 });
 

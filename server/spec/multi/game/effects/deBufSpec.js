@@ -1,4 +1,5 @@
 var deBuf = require('../../../../../server/multi/game/effects/deBuf');
+var sinon = require('sinon');
 
 describe('effects/deBuf', function() {
 	it('should clear shield, attackBuf, and hero', function() {
@@ -20,7 +21,8 @@ describe('effects/deBuf', function() {
 						return targets;
 					}
 				}
-			}
+			},
+			broadcastChanges: sinon.spy()
 		};
 
 		deBuf.deBuf(game);
@@ -28,5 +30,6 @@ describe('effects/deBuf', function() {
 		expect(targets[0].card.shield).toBe(0);
 		expect(targets[0].card.attackBuf).toBe(0);
 		expect(targets[1].card.hero).toBe(0);
+		expect(game.broadcastChanges.callCount).toBe(1);
 	});
 });

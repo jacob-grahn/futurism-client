@@ -1,4 +1,5 @@
 var death = require('../../../../../server/multi/game/effects/death');
+var sinon = require('sinon');
 
 describe('effects/death', function() {
 
@@ -27,7 +28,8 @@ describe('effects/death', function() {
 				allTargets: function() {
 					return targets;
 				}
-			}
+			},
+			broadcastChanges: sinon.spy()
 		};
 
 		death.death(game);
@@ -37,6 +39,7 @@ describe('effects/death', function() {
 		expect(targets[2].card).toBeTruthy();
 		expect(player1.graveyard[0].name).toBe('bob');
 		expect(player2.graveyard[0].name).toBe('sue');
+		expect(game.broadcastChanges.callCount).toBe(1);
 	});
 });
 

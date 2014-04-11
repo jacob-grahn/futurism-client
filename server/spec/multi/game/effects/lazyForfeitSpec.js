@@ -48,6 +48,9 @@ describe('effects/lazyForfeit', function() {
 
 		var game = {
 			turnOwners: [player],
+			board: {
+				playerTargets: sinon.stub().returns([])
+			},
 			forfeit: sinon.spy()
 		};
 
@@ -55,5 +58,6 @@ describe('effects/lazyForfeit', function() {
 
 		expect(player.idleTurns).toEqual(2);
 		expect(game.forfeit.getCall(0).args[0]).toEqual(player);
+		expect(game.board.playerTargets.getCall(0).args[0]).toEqual(player._id);
 	});
 });
