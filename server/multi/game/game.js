@@ -99,6 +99,7 @@ module.exports = function(accounts, rules, gameId) {
 				/**
 				 * TURN_BEGIN event
 				 */
+				self.turnOwners = self.turnTicker.turnOwners;
 				self.eventEmitter.emit(self.TURN_BEGIN);
 			},
 
