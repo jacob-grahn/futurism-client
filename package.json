@@ -68,6 +68,7 @@
     "node-sass": "0.6.7",
     "time-grunt": "~0.2.1",
     "grunt-protractor-runner": "~0.2.0",
-		"grunt-htmlrefs": "0.4.2"
+		"grunt-htmlrefs": "0.4.2",
+		"sinon": "~1.9.1"
   }
 }

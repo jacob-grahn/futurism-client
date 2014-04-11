@@ -115,11 +115,11 @@ describe('shared/actions', function() {
 	});
 
 
-	it('pride should generate pride fot that cards owner', function() {
+	/*it('pride should generate pride fot that cards owner', function() {
 		target(1,0,0).card = strongCard;
 		actions.prde.use(target(1,0,0), player1);
 		expect(player1.pride).toBe(1);
-	});
+	});*/
 
 
 	describe('smmn', function() {
@@ -135,7 +135,6 @@ describe('shared/actions', function() {
 			};
 			player1.pride = 9;
 			actions.smmn.use(commanderTarget, handTarget, target(1,0,0));
-			expect(player1.pride).toBe(0);
 			expect(target(1,0,0).card).toBe(strongCard);
 		});
 
@@ -147,7 +146,6 @@ describe('shared/actions', function() {
 			player1.pride = 9;
 			target(1,1,0).card = {commander: true, abilities: ['smmn']}
 			actions.smmn.use(target(1,1,0), handTarget, target(1,0,0));
-			expect(player1.pride).toBe(0);
 			expect(target(1,0,0).card).toBe(strongCard);
 		});
 	});
@@ -328,12 +326,13 @@ describe('shared/actions', function() {
 	});
 
 
-	it('delg should return a card to your hand and reimburse its pride cost', function() {
+	it('delg should return a card to your hand and give your commander another action point', function() {
 		target(1,0,0).card = weakCard;
-		actions.delg.use(target(1,0,0), player1);
+		target(1,1,0).card = {commander: true, moves: 0};
+		actions.delg.use(target(1,0,0), board);
 		expect(player1.hand[0]).toBe(weakCard);
-		expect(player1.pride).toBe(1);
 		expect(target(1,0,0).card).toBeFalsy();
+		expect(target(1,1,0).card.moves).toBe(1);
 	});
 
 

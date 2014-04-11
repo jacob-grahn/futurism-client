@@ -18,14 +18,12 @@ var self = {
 
 	poison: function(game) {
 		_.each(game.turnOwners, function(player) {
-			_.each(game.board.playerTargets(player._id), function(targets) {
-				_.each(targets, function(target) {
-					if(target.card) {
-						if(target.card.poison > 0) {
-							target.card.health -= target.card.poison;
-						}
+			_.each(game.board.playerTargets(player._id), function(target) {
+				if(target.card) {
+					if(target.card.poison > 0) {
+						target.card.health -= target.card.poison;
 					}
-				});
+				}
 			});
 		});
 	}

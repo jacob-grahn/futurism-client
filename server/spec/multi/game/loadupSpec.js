@@ -65,13 +65,13 @@ describe('loadup', function() {
 	});
 
 
-	it('should not be able to load a deck with more pride than is allowed by the rules', function(done) {
-		rules.pride = -5;
+	it('should not be able to load a deck with more cards than is allowed by the rules', function(done) {
+		rules.deckSize = -5;
 		var loadup = new Loadup( players, rules, function(err, loadedplayers) {});
 
 		var deckId = '1-deck';
 		loadup.selectDeck(player1, deckId, function(err, deck) {
-			expect(err).toBe('this deck is too prideful');
+			expect(err).toBe('this deck has too many cards');
 			done();
 		});
 	});

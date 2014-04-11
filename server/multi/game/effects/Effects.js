@@ -6,7 +6,7 @@ var drawCards = require('./drawCards');
 var lazyForfeit = require('./lazyForfeit');
 var poison = require('./poison');
 var prideUp = require('./prideUp');
-var refreshCards = require('./refreshCards');
+var refresh = require('./refresh');
 var shuffleCards = require('./shuffleCards');
 var sortPlayers = require('./sortPlayers');
 
@@ -18,7 +18,7 @@ module.exports = function(game) {
 	lazyForfeit.activate(game);
 	poison.activate(game);
 	prideUp.activate(game);
-	refreshCards.activate(game);
+	refresh.activate(game);
 	shuffleCards.activate(game);
 	sortPlayers.activate(game);
 

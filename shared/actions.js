@@ -245,6 +245,7 @@
 			],
 			use: function(src, target) {
 				target.card.health++;
+				return {newHealth: target.card.health};
 			}
 		},
 
@@ -499,19 +500,23 @@
 		},
 
 		/**
-		 * Delegate: Return this unit to your hand
+		 * Delegate: Return this card to your hand and give your commander an extra move point
 		 */
 		DELEGATE: 'delg',
 		delg: {
 			restrict: [
 				[filters.owned]
 			],
-			use: function(src) {
+			use: function(src, board) {
 				var card = src.card;
 				card.hasBeenPlayed = false;
 				src.card = null;
-				//src.player.pride += card.pride;
 				src.player.hand.push(card);
+				_.each(board.playerTargets(src.player._id), function(target) {
+					if(target.card && target.card.commander) {
+						target.card.moves++;
+					}
+				})
 			}
 		},
 

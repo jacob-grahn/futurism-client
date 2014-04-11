@@ -7,16 +7,16 @@ var self = {
 
 
 	activate: function(game) {
-		game.eventEmitter.on(game.TURN_END, self.sortPlayers);
+		game.eventEmitter.on(game.TURN_END, self.refresh);
 	},
 
 
 	deactivate: function(game) {
-		game.eventEmitter.removeListener(game.TURN_END, self.sortPlayers);
+		game.eventEmitter.removeListener(game.TURN_END, self.refresh);
 	},
 
 
-	sortPlayers: function(game) {
+	refresh: function(game) {
 		_.each(game.turnOwners, function(player) {
 
 			// give cards one the board 1 action point

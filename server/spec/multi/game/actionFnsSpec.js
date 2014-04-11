@@ -33,7 +33,7 @@ describe('actionFns', function() {
 			health: 3
 		};
 		var result = actionFns.doAction(game, player1, 'heal', [{playerId:1, column:0, row:0}, {playerId:1, column:0, row:0}]);
-		expect(result).toBe('ok');
+		expect(result).toEqual({newHealth: 4});
 		expect(board.target(1,0,0).card.health).toBe(4);
 	});
 
@@ -69,17 +69,18 @@ describe('actionFns', function() {
 
 	it('should perform multi-step validations', function() {
 		board.target(1,0,0).card = {
-			abilities: ['male']
+			abilities: ['male'],
+			moves: 1
 		};
 		board.target(1,0,1).card = {
-			abilities: ['feml']
+			abilities: ['feml'],
+			moves: 1
 		};
 		var result = actionFns.doAction(game, player1, 'male', [
 			{playerId:1, column:0, row:0}, //male
 			{playerId:1, column:0, row:1}, //female
 			{playerId:1, column:1, row:0} //empty slot for child
 		]);
-		expect(result).toBe('ok');
 		expect(board.target(1,1,0).card.name).toBe('GROW TUBE');
 	});
 

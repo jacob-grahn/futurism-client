@@ -18,7 +18,8 @@ var self = {
 
 	prideUp: function(game) {
 		_.each(game.turnOwners, function(player) {
-				player.pride++;
+			player.pride = player.pride || 0;
+			player.pride++;
 		});
 	}
 

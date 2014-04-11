@@ -23,11 +23,9 @@ var self = {
 			var targets = game.board.playerTargets(player._id);
 			_.each(targets, function(target) {
 				if(target.card) {
-					if(target.card.moves < 1) {
-						target.card.attackBuf = 0;
-						target.card.shield = 0;
-						target.card.hero = 0;
-					}
+					target.card.attackBuf = 0;
+					target.card.shield = 0;
+					target.card.hero = 0;
 				}
 			});
 
