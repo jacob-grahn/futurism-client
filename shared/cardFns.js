@@ -4,13 +4,7 @@
 	var cardFns = {
 
 		calcPride: function(card) {
-			var ab = card.abilities;
-			var pride = Number(card.attack) + Number(card.health);
-			if(ab) {
-				for(var i=0; i<ab.length; i++) {
-					pride++;
-				}
-			}
+			var pride = Number(card.attack) + Number(card.health) + card.abilities.length;
 			return(pride);
 		},
 

@@ -38,6 +38,42 @@ describe('loadup', function() {
 	});
 
 
+	describe('prepareCard', function() {
+
+		var loadup;
+
+		beforeEach(function() {
+			loadup = new Loadup(players, rules, function(err, loadedplayers) {});
+		});
+
+		it('should remove duplicate abilities', function() {
+			var card = {faction: 'en', abilities: ['siph', 'siph']};
+			var gameCard = loadup.prepareCard(card);
+			expect(gameCard.abilities).toEqual(['siph']);
+		});
+
+		it('should remove abilities that do not belong to that cards faction', function() {
+			var card = {faction: 'en', abilities: ['assn', 'tree']};
+			var gameCard = loadup.prepareCard(card);
+			expect(gameCard.abilities).toEqual(['tree']);
+		});
+
+		it('should give the card a cid', function() {
+			var card = {faction: 'en', abilities: ['assn', 'tree']};
+			var gameCard = loadup.prepareCard(card);
+			expect(gameCard.cid).toBeGreaterThan(0);
+		});
+
+		it('should set the cards pride cost', function() {
+			var card = {faction: 'en', abilities: ['assn', 'tree'], attack: 1, health: 1};
+			var gameCard = loadup.prepareCard(card);
+			console.log('gameCard', gameCard);
+			expect(gameCard.pride).toBe(3);
+		});
+
+	});
+
+
 	it("should not to be able to load someone else's deck", function(done) {
 		var loadup = new Loadup(players, rules, function(err, loadedplayers) {});
 

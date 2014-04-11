@@ -1,6 +1,16 @@
 (function () {
 	'use strict';
 
+	var commander = {
+		id: 'no',
+		abilities: [
+			{id: 'sumn'},
+			{id: 'move'},
+			{id: 'attk'},
+			{id: 'futr'}
+		]
+	};
+
 	var ent = {
 		id: 'en',
 		abilities: [

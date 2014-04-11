@@ -4,16 +4,11 @@ describe('deckFns', function() {
 	var cardFns = require('../../../shared/cardFns');
 
 
-	cardFns.calcPride = function(card) {
-		return 2;
-	};
-
-
 	it('should tally a deck pride', function() {
 		var deck = {
 			cards: [
-				{},
-				{}
+				{attack: 0, health: 1, abilities: []},
+				{attack: 1, health: 1, abilities: ['tree']}
 			]
 		};
 		expect(deckFns.calcPride(deck)).toBe(4);

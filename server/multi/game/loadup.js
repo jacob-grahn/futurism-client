@@ -5,6 +5,7 @@
 	var DeckGoose = require('../../models/deck');
 	var deckFns = require('../../../shared/deckFns');
 	var cardFns = require('../../../shared/cardFns');
+	var factions = require('../../../shared/factions');
 	var nextCid = require('./nextCid');
 
 
@@ -51,16 +52,41 @@
 					player.deckSize = deck.cards.length;
 					player.cards = [];
 					_.each(deck.cards, function(card) {
-						var publicCard = _.pick(card, 'faction', 'attack', 'health', 'abilities', 'hasImage', 'name', 'story', 'userId', '_id');
-						publicCard.cid = nextCid();
-						publicCard.moves = 0;
-						publicCard.pride = cardFns.calcPride(publicCard);
-						player.cards.push(publicCard);
+						var gameCard = self.prepareCard(card);
+						player.cards.push(gameCard);
 					});
 
 					self.nextIfDone();
 					return callback(null, deck);
 				});
+		};
+
+
+		/**
+		 * prepare a card to be used in a game
+		 * @param card
+		 */
+		self.prepareCard = function(card) {
+			var gameCard = _.pick(card, 'faction', 'attack', 'health', 'abilities', 'hasImage', 'name', 'story', 'userId', '_id');
+			gameCard.cid = nextCid();
+			gameCard.moves = 0;
+
+			// remove duplicate abilities
+			gameCard.abilities = _.unique(gameCard.abilities);
+
+			// remove invalid abilities
+			gameCard.abilities = _.filter(gameCard.abilities, function(abilityId) {
+				var factionObj = factions.factionLookup[gameCard.faction];
+				var matches = _.filter(factionObj.abilities, function(abilityObj) {
+					return abilityObj.id === abilityId;
+				});
+				return matches.length > 0;
+			});
+
+			// calc pride cost for this card
+			gameCard.pride = cardFns.calcPride(gameCard);
+
+			return gameCard;
 		};
 
 
