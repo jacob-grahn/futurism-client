@@ -58,9 +58,7 @@ body .card-ze h1 {
 
 
 
-
 .card h1 {
-	white-space: nowrap;
   margin: 0 5px 5px 0;
   text-align: center;
 }
@@ -116,6 +114,23 @@ body .card-ze h1 {
 }
 
 
+.card .popover-src {
+	color: lightgrey;
+	border-bottom: 1px dashed lightgrey;
+	text-decoration: none;
+	position: relative;
+	right: -5px;
+}
+
+.card .popover {
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.card-medium .popover-src {
+	display: none;
+}
+
 
 
 
@@ -125,11 +140,14 @@ body .card-ze h1 {
   padding: 0 5px;
 	font-size: 22px;
   font-weight: bold;
+	position: relative;
+	left: 10px;
 }
 .card-medium ul {
 	font-weight: normal;
 	font-size: 14px;
 	margin: 0;
+	left: 0px;
 }
 
 

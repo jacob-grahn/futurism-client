@@ -20,6 +20,7 @@
 		<li ng-repeat="abilityId in card.abilities">
 			<span ng-if="useButtons != 'true'">{{lang.abilities[abilityId].name}}</span>
 			<button ng-if="useButtons == 'true'" ng-click="actionFn({abilityId: abilityId, card: card})">{{lang.abilities[abilityId].name}}</button>
+			<a class="popover-src" popover="{{lang.abilities[abilityId].desc}}" popover-trigger="mouseenter">?</a>
 		</li>
 	</ul>
 
