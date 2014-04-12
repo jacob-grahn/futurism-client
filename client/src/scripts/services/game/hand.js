@@ -1,5 +1,5 @@
 angular.module('futurism')
-	.factory('hand', function(socket, $routeParams, state, players) {
+	.factory('hand', function(socket, $routeParams, players) {
 		'use strict';
 
 		/**
@@ -18,34 +18,6 @@ angular.module('futurism')
 		 */
 		var self = {
 			cards: [],
-			show: false,
-			force: false,
-
-
-			toggle: function() {
-				if(self.show) {
-					self.close();
-				}
-				else {
-					self.open();
-				}
-			},
-
-
-			close: function() {
-				self.show = false;
-				self.force = false;
-			},
-
-
-			open: function() {
-				self.show = true;
-			},
-
-
-			forcePlay: function() {
-				self.force = true;
-			},
 
 
 			clear: function() {

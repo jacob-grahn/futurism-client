@@ -43,7 +43,9 @@ angular.module('futurism')
 
 			reload: function() {
 				self.stats = StatsResource.save();
-				self.user = UserResource.get({userId: self.userId});
+				self.user = UserResource.get({userId: self.userId}, function() {
+					$rootScope.$broadcast('event:me:user:updated');
+				});
 			},
 
 			clear: function() {

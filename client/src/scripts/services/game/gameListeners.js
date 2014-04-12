@@ -62,12 +62,8 @@ angular.module('futurism')
 			turn.turnOwners = data.turnOwners || turn.turnOwners;
 			turn.startTime = data.startTime || turn.startTime;
 			if(turn.isMyTurn()) {
-				state.set(state.THINKING);
 				hand.refresh();
-				if(!board.playerHasCommander(players.findMe()._id)) {
-					hand.open();
-					hand.forcePlay();
-				}
+				state.set(state.THINKING);
 			}
 			else {
 				state.set(state.WAITING);

@@ -115,6 +115,10 @@ angular.module('futurism')
 		 */
 		self.playerTargets = function(playerId) {
 			var area = self.areas[playerId];
+			if(!area) {
+				return [];
+			}
+
 			var all = [];
 			_.each(area.targets, function(column) {
 				_.each(column, function(target) {

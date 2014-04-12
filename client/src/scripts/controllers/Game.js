@@ -1,11 +1,8 @@
 angular.module('futurism')
-	.controller('GameCtrl', function($scope, $routeParams, $location, socket, _, gameListeners, players, turn, board, state, hand, targeter, errorHandler, shared) {
+	.controller('GameCtrl', function($scope, $routeParams, $location, socket, _, gameListeners, players, turn, board, state, hand, targeter, errorHandler, shared, me) {
 		'use strict';
 
-		socket.connect($routeParams.serverId);
-
-		var actions = shared.actions;
-
+		$scope.actions = shared.actions;
 		$scope.board = board;
 		$scope.players = players;
 		$scope.turn = turn;
@@ -16,7 +13,22 @@ angular.module('futurism')
 		$scope.chatId = $scope.gameId.replace('game', 'chat');
 
 
-		gameListeners.subscribe($scope.gameId);
+		var connectToGame = function() {
+			socket.connect($routeParams.serverId);
+			gameListeners.subscribe($scope.gameId);
+		};
+
+
+		// wait to start the game until after your login has been sorted out
+		if(me.user._id) {
+			connectToGame();
+		}
+		else {
+			var removeListener = $scope.$on('event:me:user:updated', function() {
+				connectToGame();
+				removeListener();
+			});
+		}
 
 
 		/**
@@ -46,18 +58,6 @@ angular.module('futurism')
 
 
 		/**
-		 * open hand when summon is used
-		 */
-		$scope.$watchCollection('state', function() {
-			if(state.name === state.TARGETING) {
-				if(state.data.actionId === actions.SUMMON && state.data.targets.length === 1) {
-					hand.open();
-				}
-			}
-		});
-
-
-		/**
 		 * play a card from your hand
 		 * @param card
 		 * @returns {boolean}
@@ -72,16 +72,45 @@ angular.module('futurism')
 				return false;
 			}
 
+			// a commander can summon itself
 			if(card.commander) {
-				targeter.selectAction('smmn', {card: card, player: players.findMe()});
+				targeter.selectAction(shared.actions.SUMMON, {card: card, player: players.findMe()});
 				targeter.onCooldown = false;
 			}
 
 			targeter.selectTarget({card: card, player: players.findMe()});
 
-			hand.close();
-
 			return true;
 		};
+
+
+		/**
+		 *
+		 */
+		$scope.shouldShowHand = function() {
+			if(turn.isMyTurn()) {
+
+				// show hand if there is no commander on the board
+				if(!board.playerHasCommander(me.user._id) && state.name !== state.TARGETING) {
+					return true;
+				}
+
+				// show hand if summon is being used
+				if(state.name === state.TARGETING && state.data.actionId === shared.actions.SUMMON && state.data.targets.length === 1) {
+					return true;
+				}
+
+			}
+
+			return false;
+		};
+
+
+		/**
+		 *
+		 */
+		$scope.closeHand = function() {
+			state.toDefault();
+		}
 
 	});
