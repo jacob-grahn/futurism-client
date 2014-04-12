@@ -606,7 +606,7 @@
 				"pl": "zawrocenie"
 			},
 			"desc": {
-				"en": "Target card is returned to its owner's hand.",
+				"en": "Return this card to your hand, and return an enemy card to its owner's hand.",
 				"ko": "대상 카드는 그것의 소유자의 손에 반환됩니다.",
 				"ct": "mewoowo",
 				"fr": "La carte cible retourne dans le paquet de son propriétaire.",
