@@ -50,10 +50,10 @@
 		</div>
 	</div>
 
-	<div ng-show="shouldShowHand()" id="hand">
+	<div ng-show="shouldShowHand()" class="hand">
 		<div class="hand-content">
 			<h1>{{lang.game.pride}}: {{players.findMe().pride}}</h1>
-			<a ng-if="!hand.force" class="close-x" ng-click="closeHand()">{{lang.game.close}} [x]</a>
+			<a class="close-x" ng-click="closeHand()">{{lang.game.close}} [x]</a>
 			<ul class="card-list row">
 				<li ng-repeat="card in hand.cards">
 					<card-display card="card" size="medium" ng-click="pickCardFromHand(card)" ng-class="{'card-disabled': card.pride > players.findMe().pride}"></card-display>
@@ -63,16 +63,16 @@
 	</div>
 
 
-	<!--<div ng-show="futureHand.show" id="future-hand">
+	<div ng-show="shouldShowFutures()" class="hand">
 		<div class="hand-content">
-			<h1>{{lang.game.pride}}: {{players.findMe().pride}}</h1>
-			<a class="close-x" ng-click="futureHand.close()">{{lang.game.close}} [x]</a>
-			<ul class="card-list row">
-				<li ng-repeat="card in hand.cards">
-					<card-display card="card" size="medium" ng-click="pickCardFromHand(card)" ng-class="{'card-disabled': card.pride > players.findMe().pride}"></card-display>
+			<h1>{{lang.game.futures}}</h1>
+			<a class="close-x" ng-click="closeHand()">{{lang.game.close}} [x]</a>
+			<ul class="future-list clearfix">
+				<li ng-repeat="future in hand.futures track by $index">
+					<future-display ng-click="pickFutureFromHand(future)" class="cursor-pointer" future="{{future}}"></future-display>
 				</li>
 			</ul>
 		</div>
-	</div>-->
+	</div>
 
 </div>

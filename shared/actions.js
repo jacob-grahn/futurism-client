@@ -184,7 +184,7 @@
 		futr: {
 			restrict: [
 				[filters.owned],
-				false
+				[filters.future]
 			],
 			use: function(src, target) {
 				var index = src.player.futures.indexOf(target);

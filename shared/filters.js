@@ -16,6 +16,13 @@
 	}
 
 
+	filters.future = function(targets, me) {
+		return _.filter(targets, function(target) {
+			return me.futures.indexOf(target.future) !== -1;
+		});
+	};
+
+
 	filters.hero = function(targets, me, board) {
 		var heroes = _.filter(board.allTargets(), function(target) {
 			return target.card && target.card.hero && target.player._id !== me._id;

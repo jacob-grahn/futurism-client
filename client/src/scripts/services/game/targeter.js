@@ -57,12 +57,19 @@ angular.module('futurism')
 				if(state.data.targets.length >= state.data.restrict.length) {
 
 					var targets = _.map(state.data.targets, function(target) {
-						return {
-							column: target.column,
-							row: target.row,
-							playerId: target.player._id,
-							cid: target.card ? target.card.cid : null
-						};
+						if(target.future) {
+							return {
+								future: target.future
+							};
+						}
+						else {
+							return {
+								column: target.column,
+								row: target.row,
+								playerId: target.player._id,
+								cid: target.card ? target.card.cid : null
+							};
+						}
 					});
 
 					socket.emit('doAction', {

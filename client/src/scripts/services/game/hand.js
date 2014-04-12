@@ -5,11 +5,13 @@ angular.module('futurism')
 		/**
 		 * Receive the cards in your hand
 		 */
-		socket.$on('hand', function(cards) {
-			self.cards = cards;
-			if(players.findMe()) {
-				players.findMe().hand = cards;
-			}
+		socket.$on('hand', function(data) {
+			self.cards = data.hand;
+			self.futures = data.futures;
+
+			var myPlayer = players.findMe();
+			myPlayer.hand = self.cards;
+			myPlayer.futures = self.futures;
 		});
 
 
@@ -18,10 +20,12 @@ angular.module('futurism')
 		 */
 		var self = {
 			cards: [],
+			futures: [],
 
 
 			clear: function() {
 				self.cards = [];
+				self.futures = [];
 			},
 
 
@@ -30,6 +34,15 @@ angular.module('futurism')
 					return card.cid !== cid;
 				});
 				players.findMe().hand = self.cards;
+			},
+
+
+			removeFuture: function(future) {
+				var index = self.futures.indexOf(future);
+				if(index !== -1) {
+					self.futures.splice(index, 1);
+				}
+				players.findMe().futures = self.futures;
 			},
 
 

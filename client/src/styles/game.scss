@@ -89,7 +89,7 @@ $outline: rgba(82, 79, 73, .75);
 	top: -5px;
 }
 
-#hand {
+.hand {
 	position: fixed;
 	bottom: 0px; left: 0;
 	background-color: darken($navbar-inverse-bg, 5);
@@ -102,16 +102,16 @@ $outline: rgba(82, 79, 73, .75);
 	z-index: 12;
 }
 
-#hand.ng-hide {
+.hand.ng-hide {
 	bottom: -300px;
 }
 
-#hand.ng-hide-add,
-#hand.ng-hide-remove {
+.hand.ng-hide-add,
+.hand.ng-hide-remove {
 	display: block !important;
 }
 
-#hand .close-x {
+.hand .close-x {
 	position: absolute;
 	right: 10px;
 	top: 7px;

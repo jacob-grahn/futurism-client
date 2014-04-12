@@ -87,6 +87,14 @@ angular.module('futurism')
 		/**
 		 *
 		 */
+		$scope.pickFutureFromHand = function(futureId) {
+			targeter.selectTarget({future: futureId});
+		};
+
+
+		/**
+		 *
+		 */
 		$scope.shouldShowHand = function() {
 			if(turn.isMyTurn()) {
 
@@ -97,6 +105,23 @@ angular.module('futurism')
 
 				// show hand if summon is being used
 				if(state.name === state.TARGETING && state.data.actionId === shared.actions.SUMMON && state.data.targets.length === 1) {
+					return true;
+				}
+
+			}
+
+			return false;
+		};
+
+
+		/**
+		 *
+		 */
+		$scope.shouldShowFutures = function() {
+			if(turn.isMyTurn()) {
+
+				// show hand if future is being used
+				if(state.name === state.TARGETING && state.data.actionId === shared.actions.FUTURE && state.data.targets.length === 1) {
 					return true;
 				}
 

@@ -111,15 +111,10 @@ module.exports = {
 		 * Request a list of cards in your hand
 		 */
 		socket.onPlayer('hand', function(data, game, player) {
-			return player.hand;
-		});
-
-
-		/**
-		 * Request a list of futures you can use
-		 */
-		socket.onPlayer('futures', function(data, game, player) {
-			return player.futures;
+			return {
+				hand: player.hand,
+				futures: player.futures
+			};
 		});
 
 
