@@ -4,7 +4,7 @@ var _ = require('lodash');
 var gameLookup = require('./gameLookup');
 var factions = require('../../../shared/factions');
 var actions = require('../../../shared/actions');
-var Player = require('./player');
+var Player = require('./Player');
 var nextCid = require('./nextCid');
 
 

@@ -7,7 +7,7 @@ describe('loadup', function() {
 	var DeckGoose = require('../../../models/deck');
 	var CardGoose = require('../../../models/card');
 	var Loadup = require('../../../multi/game/loadup');
-	var Player = require('../../../multi/game/player');
+	var Player = require('../../../multi/game/Player');
 
 	var player1;
 	var player2;

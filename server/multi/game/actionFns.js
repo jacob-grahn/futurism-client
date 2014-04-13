@@ -85,6 +85,11 @@ var actionFns = {
 				target = game.board.targetPos(pos);
 			}
 
+			// if the target is a future
+			if(typeof pos.future !== 'undefined') {
+				target = {future: pos.future};
+			}
+
 			targets.push(target);
 		});
 

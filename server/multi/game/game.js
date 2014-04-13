@@ -13,7 +13,7 @@ var initAccounts = require('./initAccounts');
 var Loadup = require('./loadup');
 var TurnTicker = require('./turnTicker');
 var Effects = require('./effects/Effects');
-var FutureManager = require('./FutureManager');
+var FutureManager = require('./futures/FutureManager');
 
 
 /**
@@ -52,8 +52,8 @@ module.exports = function(accounts, rules, gameId) {
 	self._id = gameId;
 	self.state = 'loadup';
 	self.rules = _.defaults(rules, defaultRules);
-	self.futureManager = new FutureManager(self);
 	self.eventEmitter = new events.EventEmitter();
+	self.futureManager = new FutureManager(self);
 	self.players = initAccounts(accounts);
 	self.board = new Board(self.players, rules.columns, rules.rows);
 	self.turnTicker = new TurnTicker(self.players, rules.turnDuration);
@@ -80,24 +80,15 @@ module.exports = function(accounts, rules, gameId) {
 		 */
 		self.turnTicker.start(
 
+
 			/**
 			 * at the start of every turn
 			 * @param {Number} startTime
 			 */
 			function(startTime) {
-
-
-				/**
-				 * tell the clients to move to the next turn
-				 */
 				self.turnOwners = self.turnTicker.turnOwners;
 				self.broadcastChanges('turn');
-
-
-				/**
-				 * TURN_BEGIN event
-				 */
-				self.eventEmitter.emit(self.TURN_BEGIN, self);
+				self.eventEmitter.emit(self.TURN_BEGIN, self, startTime);
 			},
 
 
@@ -106,12 +97,7 @@ module.exports = function(accounts, rules, gameId) {
 			 * @param {Number} elapsed
 			 */
 			function(elapsed) {
-
-
-				/**
-				 * end of turn effects
-				 */
-				self.eventEmitter.emit(self.TURN_END, self);
+				self.eventEmitter.emit(self.TURN_END, self, elapsed);
 			}
 		);
 	});
@@ -173,9 +159,10 @@ module.exports = function(accounts, rules, gameId) {
 		var status = {};
 
 		status.players = _.assign({}, _.map(self.players, function(player) {
-			return _.pick(player, '_id', 'team', 'name', 'site', 'pride', 'futures');
+			return _.pick(player, '_id', 'team', 'name', 'site', 'pride');
 		}));
 
+		status.future = self.futureManager.curFutureId;
 		status.board = self.board.compactClone();
 		status.turn = self.turnTicker.turn;
 		status.turnOwners = self.turnTicker.getTurnOwnerIds();
@@ -241,27 +228,13 @@ module.exports = function(accounts, rules, gameId) {
 		self.eventEmitter.emit(self.ABILITY_BEFORE, self);
 		var result = actionFns.doAction(self, player, actionId, targetChain);
 
+		// proceed if the action was successful
 		if (result !== false) {
-			self.eventEmitter.emit(self.ABILITY_DURING, self, result);
-
-			// send a list of changed targets
+			self.eventEmitter.emit(self.ABILITY_DURING, self, actionId, targetChain, result);
 			self.broadcastChanges(actionId, {result: result, targetChain: targetChain});
-
-			//
 			self.eventEmitter.emit(self.ABILITY_AFTER, self);
-
-			//
 			return 'ok';
 		}
-	};
-
-
-	/**
-	 * set a new future
-	 * @param {string} futureId
-	 */
-	self.setFuture = function(futureId) {
-
 	};
 
 

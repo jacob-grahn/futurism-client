@@ -5,7 +5,7 @@ describe('recorder', function() {
 	mockgoose(mongoose);
 
 	var RecordGoose = require('../../../models/record');
-	var Recorder = require('../../../multi/game/recorder');
+	var Recorder = require('../../../multi/game/Recorder');
 
 	var recorder, gameId;
 

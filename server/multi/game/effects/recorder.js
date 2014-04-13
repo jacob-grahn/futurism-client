@@ -1,15 +1,15 @@
 'use strict';
 
 var _ = require('lodash');
-var Recorder = require('./recorder');
+var Recorder = require('../Recorder');
 
 
 var self = {
 
 
 	activate: function(game) {
-		game.eventEmitter.on(game.END, self.saveRecord);
 		game.recorder = new Recorder();
+		game.eventEmitter.on(game.END, self.saveRecord);
 	},
 
 

@@ -1,6 +1,6 @@
 describe('game/player', function() {
 
-	var Player = require('../../../multi/game/player');
+	var Player = require('../../../multi/game/Player');
 
 	it('should set up some defaults', function() {
 		var account = {

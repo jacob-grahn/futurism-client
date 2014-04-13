@@ -39,7 +39,6 @@
 	 */
 	var Board = function(players, columns, rows) {
 		var self = this;
-		self.future = 'normal';
 		self.areas = {};
 
 

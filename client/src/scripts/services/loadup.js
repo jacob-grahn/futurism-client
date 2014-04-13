@@ -27,7 +27,7 @@ angular.module('futurism')
 				self.gameId = _gameId_;
 				self.serverId = _serverId_;
 				self.rules = _rules_;
-				self.futures = [];
+				self.selectedFutures = [];
 				confirmedDeckId = null;
 				confirmedFutures = null;
 				socket.connect(self.serverId);

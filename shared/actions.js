@@ -187,10 +187,10 @@
 				[filters.future]
 			],
 			use: function(src, target) {
-				var index = src.player.futures.indexOf(target);
+				var index = src.player.futures.indexOf(target.future);
 				if(index !== -1) {
 					src.player.futures.splice(index, 1);
-					return {future: target};
+					return {future: target.future};
 				}
 			}
 		},

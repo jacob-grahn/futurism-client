@@ -16,7 +16,6 @@ angular.module('futurism')
 			 */
 			selectAction: function(actionId, target) {
 				if(state.name !== 'thinking') {
-					console.log('state is not thinking', state.name);
 					return false;
 				}
 				var action = actions[actionId];

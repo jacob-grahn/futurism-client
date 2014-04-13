@@ -9,11 +9,7 @@ angular.module('futurism')
 
 
 				scope.$on('pre:siph', function(srcScope, update) {
-					var animTargets = animAttackAndCounter(update);
-					_.delay(function() {
-						var attacker = animTargets[0];
-						animFns.animNotif(boardElement, attacker.center, '+'+update.data.result.srcHeal+' health', 'good');
-					}, 1500);
+					animAttackAndCounter(update);
 				});
 
 
@@ -23,6 +19,7 @@ angular.module('futurism')
 					var defender = animTargets[1];
 					defender.damage = update.data.result.targetDamage;
 					defender.shield = defender.target.card.shield;
+					attacker.heal = update.data.result.srcHeal;
 					animAttack(attacker, defender);
 				});
 
@@ -85,6 +82,7 @@ angular.module('futurism')
 
 					attacker.damage = result.srcDamage;
 					attacker.shield = attacker.target.card.shield;
+					attacker.heal = result.srcHeal;
 					defender.damage = result.targetDamage;
 					defender.shield = defender.target.card.shield;
 
@@ -108,7 +106,13 @@ angular.module('futurism')
 						message = '-' + defender.damage + ' health';
 					}
 
+
 					animThrow(attacker, defender, 'sword', message, callback);
+					if(attacker.heal) {
+						_.delay(function() {
+							animFns.animNotif(boardElement, attacker.center, '+' + attacker.heal + ' health', 'good');
+						}, 1500);
+					}
 				};
 
 
