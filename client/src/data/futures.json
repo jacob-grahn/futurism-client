@@ -51,6 +51,15 @@
 			}
 		},
 
+		"norm": {
+			"name": {
+				"en": "Normal"
+			},
+			"desc": {
+				"en": "A particularly normal future."
+			}
+		},
+
 		"free": {
 			"name": {
 				"en": "Free Love",

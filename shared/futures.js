@@ -2,7 +2,8 @@
 	'use strict';
 
 	var futures = {
-		CAPITALISM: 'capt'
+		CAPITALISM: 'capt',
+		NORMAL: 'norm'
 	};
 
 	/*var futures = {

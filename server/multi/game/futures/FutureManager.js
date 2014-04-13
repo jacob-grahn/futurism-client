@@ -5,6 +5,7 @@ var futures = require('../../../../shared/futures');
 
 var futureLookup = {};
 futureLookup[futures.CAPITALISM] = require('./capitalism');
+futureLookup[futures.NORMAL] = require('./normal');
 
 
 module.exports = function(game) {
