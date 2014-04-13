@@ -9,7 +9,7 @@ angular.module('futurism')
 		socket.$on('gameStatus', function(data) {
 			players.list = data.players;
 			board.fullUpdate(data.board);
-			board.future = data.future;
+			board.future = data.future || shared.futures.NORMAL;
 			self.startTurn(data);
 		});
 

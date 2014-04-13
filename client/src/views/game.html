@@ -32,9 +32,12 @@
 
 
 	<div class="col-sm-5">
-		<div id="game-panel" class="panel panel-default" match-screen-height resize-element=".auto-size" offset-bottom="100">
+		<div id="game-panel" class="panel panel-default" match-screen-height resize-element=".auto-size" offset-bottom="100" default-height="600">
 			<div class="future-desc panel-segment">
 				<future-display future="{{board.future}}"></future-display>
+			</div>
+			<div class="panel-segment">
+				<music-player></music-player>
 			</div>
 			<ul class="game-buttons panel-segment clearfix">
 				<li>
@@ -44,9 +47,6 @@
 					<button class='btn btn-default' ng-click="forfeit()">{{lang.game.forfeit}}</button>
 				</li>
 			</ul>
-			<div class="panel-segment">
-				<music-player></music-player>
-			</div>
 			<chat-display class="panel-segment" room="{{chatId}}"></chat-display>
 		</div>
 	</div>
