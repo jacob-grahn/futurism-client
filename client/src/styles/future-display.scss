@@ -1,7 +1,7 @@
 .future-display {
 	position: relative;
-	width: 200px;
-	height: 110px;
+	width: 100%;
+	height: 120px;
 }
 
 .future-display.inactive {
@@ -37,7 +37,6 @@
 
 .future-display .description {
 	padding: 5px;
-	width: 200px;
 	height: 45px;
 }
 

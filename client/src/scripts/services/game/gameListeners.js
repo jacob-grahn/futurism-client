@@ -9,6 +9,7 @@ angular.module('futurism')
 		socket.$on('gameStatus', function(data) {
 			players.list = data.players;
 			board.fullUpdate(data.board);
+			board.future = data.future;
 			self.startTurn(data);
 		});
 
@@ -32,6 +33,10 @@ angular.module('futurism')
 
 				if(cause === 'turn') {
 					self.startTurn(changes);
+				}
+
+				if(cause === shared.actions.FUTURE) {
+					board.future = changes.future;
 				}
 			});
 		});

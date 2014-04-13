@@ -2,6 +2,7 @@
 
 	<turn-anim></turn-anim>
 
+
 	<ul id="board" class="board col-sm-7 inverse" summon-anim attack-anim rally-anim abomination-anim heal-anim move-anim teleporter-anim poison-anim peace-pipe-anim seduction-anim delegate-anim shield-anim recharge-anim networking-anim transformer-anim serum-anim battle-cry-anim sacrifice-anim>
 		<li class="row" ng-repeat="area in board.areas | teamSort:players.findMe().team">
 			<div class="board-area clearfix">
@@ -29,11 +30,11 @@
 		</li>
 	</ul>
 
+
 	<div class="col-sm-5">
 		<div id="game-panel" class="panel panel-default" match-screen-height resize-element=".auto-size" offset-bottom="100">
 			<div class="future-desc panel-segment">
-				<h1>Normal</h1>
-				Nothing is especially fancy about this future.
+				<future-display future="{{board.future}}"></future-display>
 			</div>
 			<ul class="game-buttons panel-segment clearfix">
 				<li>
@@ -49,6 +50,7 @@
 			<chat-display class="panel-segment" room="{{chatId}}"></chat-display>
 		</div>
 	</div>
+
 
 	<div ng-show="shouldShowHand()" class="hand">
 		<div class="hand-content">
