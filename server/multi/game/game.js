@@ -12,7 +12,6 @@ var gameLookup = require('./gameLookup');
 var initAccounts = require('./initAccounts');
 var Loadup = require('./loadup');
 var TurnTicker = require('./turnTicker');
-var Recorder = require('./recorder');
 var Effects = require('./effects/Effects');
 var FutureManager = require('./FutureManager');
 
@@ -59,7 +58,6 @@ module.exports = function(accounts, rules, gameId) {
 	self.board = new Board(self.players, rules.columns, rules.rows);
 	self.turnTicker = new TurnTicker(self.players, rules.turnDuration);
 	self.diffTracker = new DiffTracker();
-	self.recorder = new Recorder();
 	self.effects = new Effects(self);
 
 
