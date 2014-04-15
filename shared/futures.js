@@ -3,18 +3,18 @@
 
 	var futures = {
 		CAPITALISM: 'capt',
-		NORMAL: 'norm'
+		FREE_LOVE: 'free',
+		NORMAL: 'norm',
+		Z_VIRUS: 'zvir'
 	};
 
 	/*var futures = {
-		FREE_LOVE: 'free',
 		BLOOD_FUED: 'blod',
 		RENAISSANCE: 'rena',
 		COMMUNISM: 'comm',
 		THUNDERDOME: 'thdr',
 		ANARCHY: 'anar',
 		MIRACLE: 'mira',
-		Z_VIRUS: 'zvir',
 		ARMAGEDDON: 'arma'
 	};*/
 
