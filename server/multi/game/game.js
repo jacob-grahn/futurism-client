@@ -35,6 +35,7 @@ module.exports = function(accounts, rules, gameId) {
 	self.ABILITY_BEFORE = 'abilityBefore';
 	self.ABILITY_DURING = 'abilityDuring';
 	self.ABILITY_AFTER = 'abilityAfter';
+	self.CHANGE = 'change';
 	self.END = 'end';
 
 
@@ -201,11 +202,13 @@ module.exports = function(accounts, rules, gameId) {
 	 * broadcast changes as a partial update
 	 */
 	self.broadcastChanges = function(cause, data) {
+		// todo: this if statement shouldn't be here
 		if(data !== false) {
 			var status = self.getStatus();
 			var changes = self.diffTracker.diff(status, false);
 			if(!_.isEmpty(changes)) {
 				self.emit('gameUpdate', {cause: cause, changes: changes, data: data});
+				self.eventEmitter.emit(self.CHANGE, self, cause, changes, data);
 			}
 		}
 	};
