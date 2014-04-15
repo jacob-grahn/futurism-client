@@ -308,7 +308,7 @@
 					)
 				, src.player, board);
 				if(possibleTargets.length === 0) {
-					return false;
+					return {err: 'no targets'};
 				}
 				var target = _.sample(possibleTargets);
 				takeDamage(target, 1);
@@ -339,7 +339,7 @@
 					}
 				});
 				if(!card) {
-					return false;
+					return {err: 'no dead machines'};
 				}
 
 				//remove the card from the graveyard

@@ -15,7 +15,7 @@ var actionFns = {
 	 */
 	doAction: function(game, player, actionId, targetPositions) {
 		if(targetPositions.length === 0) {
-			return 'no targets';
+			return {err: 'no targets'};
 		}
 
 		var targets = actionFns.lookupTargets(game, targetPositions);
@@ -23,38 +23,45 @@ var actionFns = {
 		var action = actions[actionId];
 
 		if(!src) {
-			return 'invalid target position';
+			return {err: 'invalid target position'};
 		}
 		if(!src.card) {
-			return 'no card at src target';
+			return {err: 'no card at src target'};
 		}
 		if(src.card.moves <= 0) {
-			return 'this card has no moves';
+			return {err: 'this card has no moves'};
 		}
 		if(!action) {
-			return 'action not found';
+			return {err: 'action not found'};
 		}
 		if(!action.free && src.card.abilities.indexOf(actionId) === -1) {
-			return 'card does not have the ability "'+actionId+'".';
+			return {err: 'card does not have the ability "'+actionId+'".'};
 		}
 		if(player !== src.player) {
-			return 'this is not your card';
+			return {err: 'this is not your card'};
 		}
 		if(!actionFns.isValidAction(player, action, targets, game.board)) {
-			return 'target is not allowed';
+			return {err: 'target is not allowed'};
 		}
 
 		src.card.moves--;
 
+		var result;
 		if(targets.length === 1) {
-			return action.use(src, game.board);
+			result = action.use(src, game.board);
 		}
 		if(targets.length === 2) {
-			return action.use(src, targets[1], game.board);
+			result = action.use(src, targets[1], game.board);
 		}
 		if(targets.length === 3) {
-			return action.use(src, targets[1], targets[2], game.board);
+			result = action.use(src, targets[1], targets[2], game.board);
 		}
+
+		if(result && result.err) {
+			src.card.moves++;
+		}
+
+		return result;
 	},
 
 

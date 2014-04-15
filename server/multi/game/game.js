@@ -202,14 +202,11 @@ module.exports = function(accounts, rules, gameId) {
 	 * broadcast changes as a partial update
 	 */
 	self.broadcastChanges = function(cause, data) {
-		// todo: this if statement shouldn't be here
-		if(data !== false) {
-			var status = self.getStatus();
-			var changes = self.diffTracker.diff(status, false);
-			if(!_.isEmpty(changes)) {
-				self.emit('gameUpdate', {cause: cause, changes: changes, data: data});
-				self.eventEmitter.emit(self.CHANGE, self, cause, changes, data);
-			}
+		var status = self.getStatus();
+		var changes = self.diffTracker.diff(status, false);
+		if(!_.isEmpty(changes)) {
+			self.emit('gameUpdate', {cause: cause, changes: changes, data: data});
+			self.eventEmitter.emit(self.CHANGE, self, cause, changes, data);
 		}
 	};
 
@@ -227,17 +224,25 @@ module.exports = function(accounts, rules, gameId) {
 			return 'it is not your turn';
 		}
 
-		// do the action
-		self.eventEmitter.emit(self.ABILITY_BEFORE, self);
-		var result = actionFns.doAction(self, player, actionId, targetChain);
-
-		// proceed if the action was successful
-		if (result !== false) {
-			self.eventEmitter.emit(self.ABILITY_DURING, self, actionId, targetChain, result);
-			self.broadcastChanges(actionId, {result: result, targetChain: targetChain});
-			self.eventEmitter.emit(self.ABILITY_AFTER, self);
-			return 'ok';
+		// pre action
+		self.actionError = null;
+		self.eventEmitter.emit(self.ABILITY_BEFORE, self, player, actionId, targetChain);
+		if(self.actionError) {
+			return {err: self.actionError};
 		}
+
+		// do the action
+		var result = actionFns.doAction(self, player, actionId, targetChain);
+		if(result && result.err) {
+			return result;
+		}
+
+		// broadcast if the action was successful
+		self.eventEmitter.emit(self.ABILITY_DURING, self, actionId, targetChain, result);
+		self.broadcastChanges(actionId, {result: result, targetChain: targetChain});
+		self.eventEmitter.emit(self.ABILITY_AFTER, self);
+		return {success: true};
+
 	};
 
 

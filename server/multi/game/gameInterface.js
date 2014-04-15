@@ -85,8 +85,8 @@ module.exports = {
 		 */
 		socket.onPlayer('doAction', function(data, game, player) {
 			var result = game.doAction(player, data.actionId, data.targets);
-			if(result !== 'ok') {
-				socket.emitError(result);
+			if(result && result.err) {
+				socket.emitError(result.err);
 			}
 		});
 
