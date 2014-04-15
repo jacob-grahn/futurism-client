@@ -43,7 +43,7 @@ var self = {
 			hasImage: true,
 			attack: 2,
 			health: 1,
-			moves: 0,
+			moves: 1,
 			faction: card.faction,
 			abilities: [],
 			zombie: true
