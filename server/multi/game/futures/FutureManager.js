@@ -6,6 +6,9 @@ var futures = require('../../../../shared/futures');
 var futureLookup = {};
 futureLookup[futures.CAPITALISM] = require('./capitalism');
 futureLookup[futures.NORMAL] = require('./normal');
+futureLookup[futures.FREE_LOVE] = require('./freeLove');
+futureLookup[futures.THUNDERDOME] = require('./thunderdome');
+futureLookup[futures.Z_VIRUS] = require('./zVirus');
 
 
 module.exports = function(game) {
