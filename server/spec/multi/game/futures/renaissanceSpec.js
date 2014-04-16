@@ -2,12 +2,10 @@
 
 var renaissance = require('../../../../../server/multi/game/futures/renaissance');
 var futures = require('../../../../../shared/futures');
-var actions = require('../../../../../shared/actions');
 var sinon = require('sinon');
-var _ = require('lodash');
 
 
-describe('futures/nuclearWar', function() {
+describe('futures/renaissance', function() {
 
 	var player1, player2, player1Targets, player2Targets, game;
 
