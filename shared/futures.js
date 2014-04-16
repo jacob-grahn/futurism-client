@@ -9,14 +9,15 @@
 		THUNDERDOME: 'thdr',
 		EDEN: 'eden',
 		ASSIMILATION: 'assm',
-		ARES_RISES: 'ares'
+		ARES_RISES: 'ares',
+		NUCLEAR_WAR: 'nuke',
+		RENAISSANCE: 'rena',
+		ANARCHY: 'anar'
 	};
 
 	/*var futures = {
 		BLOOD_FUED: 'blod',
-		RENAISSANCE: 'rena',
 		COMMUNISM: 'comm',
-		ANARCHY: 'anar',
 		MIRACLE: 'mira',
 		ARMAGEDDON: 'arma'
 	};*/

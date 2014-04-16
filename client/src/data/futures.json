@@ -87,6 +87,15 @@
 			}
 		},
 
+		"nuke": {
+			"name": {
+				"en": "Nuclear War"
+			},
+			"desc": {
+				"en": "All cards receive 1 damage after an attack."
+			}
+		},
+
 		"free": {
 			"name": {
 				"en": "Free Love",
@@ -145,14 +154,7 @@
 				"pl": "Renesans"
 			},
 			"desc": {
-				"en": "Players gain an extra 2 pride per turn.",
-				"ne": "Spelers verdienen 2 extra trots punten per beurt.",
-				"lt": "Žaidėjas gauna 2 vertės taškus kiekvieną ėjimą.",
-				"hu": "Players gain an extra 2 pride per turn.",
-				"nb": "Spillere får to mer stolthet per runde.",
-				"pi": "Captains gain an extra 2 pride per turn",
-				"it": "I giocatori guadagnano 2 valori extra per turno.",
-				"pl": "Gracze zyskuja dodatkowe 2 punkty zycia."
+				"en": "Player cards can perform two actions per turn."
 			}
 		},
 
