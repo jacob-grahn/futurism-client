@@ -60,6 +60,33 @@
 			}
 		},
 
+		"ares": {
+			"name": {
+				"en": "Ares Rising"
+			},
+			"desc": {
+				"en": "Zealots gets +1 attack after killing an enemy."
+			}
+		},
+
+		"eden": {
+			"name": {
+				"en": "Eden"
+			},
+			"desc": {
+				"en": "Trees gain 1 health every turn."
+			}
+		},
+
+		"assm": {
+			"name": {
+				"en": "Assimilation"
+			},
+			"desc": {
+				"en": "All cards become machines."
+			}
+		},
+
 		"free": {
 			"name": {
 				"en": "Free Love",

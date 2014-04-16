@@ -6,7 +6,10 @@
 		FREE_LOVE: 'free',
 		NORMAL: 'norm',
 		Z_VIRUS: 'zvir',
-		THUNDERDOME: 'thdr'
+		THUNDERDOME: 'thdr',
+		EDEN: 'eden',
+		ASSIMILATION: 'assm',
+		ARES_RISES: 'ares'
 	};
 
 	/*var futures = {

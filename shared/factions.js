@@ -93,7 +93,11 @@
 		ent: ent,
 		machine: machine,
 		elite: elite,
-		zealot: zealot
+		zealot: zealot,
+		ENT: ent.id,
+		MACHINE: machine.id,
+		ELITE: elite.id,
+		ZEALOT: zealot.id
 	};
 
 	if (typeof module !== 'undefined') {
