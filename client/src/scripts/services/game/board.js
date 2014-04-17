@@ -20,7 +20,9 @@ angular.module('futurism')
 		 * @param {Object} boardDiff - changes to the board
 		 */
 		self.partialUpdate = function(boardDiff) {
-			_.merge(self.minBoard, boardDiff);
+			_.merge(self.minBoard, boardDiff, function(a, b) {
+				return _.isArray(a) ? b : undefined;
+			});
 			self.inflateStatus(self.minBoard);
 		};
 

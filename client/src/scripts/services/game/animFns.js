@@ -10,22 +10,22 @@ angular.module('futurism')
 
 
 			updatedAnimTargets: function(update) {
-					var animTargets = [];
-					if(update.board && update.board.areas) {
-						_.each(update.board.areas, function(area, index) {
-							var playerId = index;
-							_.each(area.targets, function(targetData, index) {
-								var xy = index.split('-');
-								var column = xy[0];
-								var row = xy[1];
+				var animTargets = [];
+				if(update.board && update.board.areas) {
+					_.each(update.board.areas, function(area, index) {
+						var playerId = index;
+						_.each(area.targets, function(targetData, index) {
+							var xy = index.split('-');
+							var column = xy[0];
+							var row = xy[1];
 
-								var animTarget = self.makeAnimTarget(update, {playerId: playerId, column: column, row: row});
+							var animTarget = self.makeAnimTarget(update, {playerId: playerId, column: column, row: row});
 
-								animTargets.push(animTarget);
-							});
+							animTargets.push(animTarget);
 						});
-					}
-					return animTargets;
+					});
+				}
+				return animTargets;
 			},
 
 
