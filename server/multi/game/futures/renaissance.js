@@ -8,6 +8,7 @@ var self = {
 
 
 	activate: function(game) {
+		self.energizeCommanders(game);
 		game.eventEmitter.on(game.TURN_BEGIN, self.energizeCommanders);
 	},
 
