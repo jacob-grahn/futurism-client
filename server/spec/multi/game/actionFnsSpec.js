@@ -1,7 +1,7 @@
 describe('actionFns', function() {
 
 	var actionFns = require('../../../multi/game/actionFns');
-	var Board = require('../../../multi/game/board');
+	var Board = require('../../../../shared/Board');
 	var game, board, player1, player2;
 
 

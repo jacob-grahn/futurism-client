@@ -20,9 +20,7 @@ var self = {
 	energizeCommanders: function(game) {
 		_.each(game.turnOwners, function(player) {
 			_.each(game.board.playerTargets(player._id), function(target) {
-				console.log('target', target);
 				if(target.card && target.card.commander) {
-					console.log('giving move');
 					target.card.moves++;
 				}
 			});

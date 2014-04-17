@@ -2,7 +2,7 @@ describe('filters', function() {
 	'use strict';
 
 	var filters = require('../../../shared/filters');
-	var Board = require('../../multi/game/board');
+	var Board = require('../../../shared/Board');
 	var _ = require('lodash');
 
 	// players

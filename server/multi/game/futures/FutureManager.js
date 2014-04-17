@@ -4,11 +4,14 @@ var actions = require('../../../../shared/actions');
 var futures = require('../../../../shared/futures');
 
 var futureLookup = {};
+futureLookup[futures.ANARCHY] = require('./anarchy');
 futureLookup[futures.ARES_RISES] = require('./aresRises');
 futureLookup[futures.ASSIMILATION] = require('./assimilation');
 futureLookup[futures.CAPITALISM] = require('./capitalism');
 futureLookup[futures.EDEN] = require('./eden');
 futureLookup[futures.NORMAL] = require('./normal');
+futureLookup[futures.NUCLEAR_WAR] = require('./nuclearWar');
+futureLookup[futures.RENAISSANCE] = require('./renaissance');
 futureLookup[futures.FREE_LOVE] = require('./freeLove');
 futureLookup[futures.THUNDERDOME] = require('./thunderdome');
 futureLookup[futures.Z_VIRUS] = require('./zVirus');

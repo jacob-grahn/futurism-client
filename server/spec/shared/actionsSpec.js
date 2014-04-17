@@ -2,8 +2,8 @@ describe('shared/actions', function() {
 	'use strict';
 
 	var _ = require('lodash');
-	var Board = require('../../multi/game/board');
 	var actions = require('../../../shared/actions');
+	var Board = require('../../../shared/Board');
 	var factions = require('../../../shared/factions');
 	var board, player1, player2, player3, weakCard, strongCard, target;
 

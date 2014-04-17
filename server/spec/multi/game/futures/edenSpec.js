@@ -1,6 +1,5 @@
 var abilities = require('../../../../../shared/actions');
 var eden= require('../../../../multi/game/futures/eden');
-var board = require('../../../../../server/multi/game/board');
 var sinon = require('sinon');
 
 describe('futures/eden', function() {
@@ -14,7 +13,7 @@ describe('futures/eden', function() {
 		targets = [
 			{card: {_id: 'tree'}},
 			{card: {_id: 'tree', health: 3}},
-			{card: {_id: 'pants', health: 1}},
+			{card: {_id: 'pants', health: 1}}
 		];
 
 		game = {

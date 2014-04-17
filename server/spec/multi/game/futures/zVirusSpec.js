@@ -1,6 +1,6 @@
 var zVirus = require('../../../../../server/multi/game/futures/zVirus');
+var Board = require('../../../../../shared/Board');
 var sinon = require('sinon');
-var Board = require('../../../../../server/multi/game/board');
 
 describe('futures/zVirus', function() {
 

@@ -1,6 +1,6 @@
 describe('game/board', function() {
 
-	var Board = require('../../../multi/game/board');
+	var Board = require('../../../../shared/Board');
 	var player1, player2, player3, columns, rows;
 
 

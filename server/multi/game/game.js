@@ -4,9 +4,9 @@ var _ = require('lodash');
 var events = require('events');
 var DiffTracker = require('../../fns/diffTracker');
 var factions = require('../../../shared/factions');
+var Board = require('../../../shared/Board');
 var broadcast = require('../broadcast');
 var actionFns = require('./actionFns');
-var Board = require('./board');
 var defaultRules = require('./defaultRules');
 var gameLookup = require('./gameLookup');
 var initAccounts = require('./initAccounts');
@@ -137,6 +137,42 @@ module.exports = function(accounts, rules, gameId) {
 	};
 
 
+
+
+	// todo move this somewhere better
+	/**
+	 * Create an array of every card in the game
+	 * @returns {Array}
+	 */
+	self.allCards = function() {
+		var cards = [];
+
+		// loop through each player
+		_.each(self.players, function(player) {
+
+			// cards on the board
+			_.each(self.board.playerTargets(player._id), function(target) {
+				if(target.card) {
+					cards.push(target.card);
+				}
+			});
+
+			// cards in hand
+			_.each(player.hand, function(card) {
+				cards.push(card);
+			});
+
+			// cards in graveyard
+			_.each(player.graveyard, function(card) {
+				cards.push(card);
+			});
+		});
+
+		return cards;
+	};
+
+
+
 	/**
 	 * Find a player using their id
 	 * @param {number} id
@@ -164,7 +200,7 @@ module.exports = function(accounts, rules, gameId) {
 		}));
 
 		status.future = self.futureManager.curFutureId;
-		status.board = self.board.compactClone();
+		status.board = self.board.getMini();
 		status.turn = self.turnTicker.turn;
 		status.turnOwners = self.turnTicker.getTurnOwnerIds();
 		status.startTime = self.turnTicker.startTime;

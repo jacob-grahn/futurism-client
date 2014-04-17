@@ -1,9 +1,8 @@
 angular.module('futurism')
-	.factory('board', function(_, players) {
+	.factory('board', function(_, players, shared) {
 		'use strict';
 
-		var self = this;
-		self.areas = {};
+		var self = new shared.Board();
 
 
 		/**
@@ -66,84 +65,9 @@ angular.module('futurism')
 					};
 				});
 			});
-
 		};
 
 
-		/**
-		 * Find a target containing specified cid
-		 * @param {Number} cid
-		 */
-		self.cidToTarget = function(cid) {
-			var matchTarget = null;
-			var targets = self.allTargets();
-			_.each(targets, function(target) {
-				if(target.card && target.card.cid === cid) {
-					matchTarget = target;
-				}
-			});
-			return matchTarget;
-		};
-
-
-		/**
-		 * Return target found at pos
-		 * @param {number} playerId
-		 * @param {number} column
-		 * @param {number} row
-		 * @returns {*}
-		 */
-		self.target = function(playerId, column, row) {
-			return self.areas[playerId].targets[column][row];
-		};
-
-
-		/**
-		 * Return target found at pos
-		 * @param {Object} pos
-		 * @returns {*}
-		 */
-		self.targetPos = function(pos) {
-			return self.target(pos.playerId, pos.column, pos.row);
-		};
-
-
-		/**
-		 * Create a 1d array of all targets owned by a player
-		 * @param {number} playerId
-		 * @returns {Array} targets
-		 */
-		self.playerTargets = function(playerId) {
-			var area = self.areas[playerId];
-			if(!area) {
-				return [];
-			}
-
-			var all = [];
-			_.each(area.targets, function(column) {
-				_.each(column, function(target) {
-					all.push(target);
-				});
-			});
-			return all;
-		};
-
-
-		/**
-		 * Create a 1d array of all targets
-		 * @returns {Array} targets
-		 */
-		self.allTargets = function() {
-			var all = [];
-			_.each(self.areas, function(area) {
-				_.each(area.targets, function(column) {
-					_.each(column, function(target) {
-						all.push(target);
-					});
-				});
-			});
-			return all;
-		};
 
 
 		/**
@@ -162,13 +86,6 @@ angular.module('futurism')
 			return hasCommander;
 		};
 
-
-		/**
-		 * reset the board to a pristine state
-		 */
-		self.clear = function() {
-			self.areas = [];
-		};
 
 
 		/**

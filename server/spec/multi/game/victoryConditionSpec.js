@@ -1,7 +1,7 @@
 describe('game/victoryCondition', function() {
 
 	var VictoryCondition = require('../../../multi/game/victoryCondition');
-	var Board = require('../../../multi/game/board');
+	var Board = require('../../../../shared/Board');
 
 
 	describe('commanderRules', function() {
