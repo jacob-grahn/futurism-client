@@ -228,6 +228,7 @@
 			],
 			use: function(src, target) {
 				target.card.health++;
+				target.card.poison = 0;
 				return {newHealth: target.card.health};
 			}
 		},

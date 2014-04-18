@@ -133,7 +133,7 @@
 				"pl": "zdrowie"
 			},
 			"desc": {
-				"en": "Target card gains 1 health.",
+				"en": "Ally card gains 1 health and is cured of poison.",
 				"ko": "대상 카드는 1 건강을 얻는다.",
 				"ct": "mewoowo",
 				"fr": "La carte cible reçoit 1 point de santé.",

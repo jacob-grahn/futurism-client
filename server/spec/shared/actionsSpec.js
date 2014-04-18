@@ -179,12 +179,21 @@ describe('shared/actions', function() {
 	});
 
 
-	it('heal should increase health', function() {
-		target(1,0,0).card = strongCard;
-		target(1,1,0).card = weakCard;
-		actions.heal.use(target(1,0,0), target(1,1,0));
-		expect(target(1,1,0).card.health).toBe(2);
+	describe('heal', function() {
+
+		it('should increase health', function() {
+			target(1,1,0).card = {health: 1};
+			actions.heal.use(null, target(1,1,0));
+			expect(target(1,1,0).card.health).toBe(2);
+		});
+
+		it('should cure poison', function() {
+			target(1,1,0).card = {health: 1, poison: 1};
+			actions.heal.use(null, target(1,1,0));
+			expect(target(1,1,0).card.poison).toBe(0);
+		});
 	});
+
 
 
 	it('tree should grow a tree', function() {
