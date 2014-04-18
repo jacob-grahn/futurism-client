@@ -576,16 +576,13 @@
 
 		"tlpt": {
 			"name": {
-				"en": "teleport",
+				"en": "teleporter",
 				"pl": "teleportacja",
 				"nb": "teleportør",
 				"pi": "take up anchor"
 			},
 			"desc": {
-				"en": "All your cards gain the move ability.",
-				"pl": "Kazda z twoich kard dostaje mozliwosc do poruszania się.",
-				"nb": "Alle kortene dine får flytt-egenskapen.",
-				"pi": "All ships may now move about."
+				"en": "Move an ally card, curing poison in the process."
 			}
 		},
 

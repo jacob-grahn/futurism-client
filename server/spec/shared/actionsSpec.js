@@ -155,6 +155,30 @@ describe('shared/actions', function() {
 	// ent
 	//////////////////////////////////////////////////////////////////////////////////
 
+	it('siph should suck health from one card and give it to another', function() {
+		var target1 = {
+			card: {
+				health: 1000,
+				attack: 2
+			}
+		};
+		var target2 = {
+			card: {
+				health: 1000,
+				attack: 0
+			}
+		};
+
+		_.times(100, function() {
+			actions.siph.use(target1, target2);
+		});
+
+		var expectedHealth = 1000 + (2 / 2 * 0.66);
+		expect(target1.card.health).toBeGreaterThan(expectedHealth * 0.9);
+		expect(target1.card.health).toBeLessThan(expectedHealth * 1.1);
+	});
+
+
 	it('heal should increase health', function() {
 		target(1,0,0).card = strongCard;
 		target(1,1,0).card = weakCard;
@@ -359,28 +383,22 @@ describe('shared/actions', function() {
 	});
 
 
-	it('siph should suck health from one card and give it to another', function() {
-		var target1 = {
-			card: {
-				health: 1000,
-				attack: 2
-			}
-		};
-		var target2 = {
-			card: {
-				health: 1000,
-				attack: 0
-			}
-		};
+	describe('teleporter', function() {
 
-		_.times(100, function() {
-			actions.siph.use(target1, target2);
+		it('should move target card', function() {
+			target(1,1,0).card = weakCard;
+			actions.tlpt.use({}, target(1,1,0), target(1,1,1));
+			expect(target(1,1,0).card).toBe(null);
+			expect(target(1,1,1).card).toBe(weakCard);
 		});
 
-		var expectedHealth = 1000 + (2 / 2 * 0.66);
-		expect(target1.card.health).toBeGreaterThan(expectedHealth * 0.9);
-		expect(target1.card.health).toBeLessThan(expectedHealth * 1.1);
+		it('should cure target card of poison', function() {
+			target(1,1,0).card = {poison: 3};
+			actions.tlpt.use({}, target(1,1,0), target(1,1,1));
+			expect(target(1,1,1).card.poison).toBe(0);
+		});
 	});
+
 
 
 	/////////////////////////////////////////////////////////////////////////////////////////

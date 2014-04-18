@@ -432,20 +432,19 @@
 		////////////////////////////////////////////////////////////////////////////
 
 		/**
-		 * Teleporter: All allies gain move ability
+		 * Teleporter: Move an ally. Also cures poison.
 		 */
 		TELEPORTER: 'tlpt',
 		tlpt: {
 			restrict: [
-				[filters.owned]
+				[filters.owned],
+				[filters.full, filters.friend],
+				[filters.empty, filters.friend]
 			],
-			use: function(src, board) {
-				var targets = board.playerTargets(src.player._id);
-				_.each(targets, function(target) {
-					if(target.card && target.card.abilities.indexOf('move') === -1) {
-						target.card.abilities.push('move');
-					}
-				});
+			use: function(src, target1, target2) {
+				target2.card = target1.card;
+				target1.card = null;
+				target2.card.poison = 0;
 			}
 		},
 
