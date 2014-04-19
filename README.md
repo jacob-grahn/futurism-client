@@ -1,4 +1,6 @@
-futurism
+futurism html5 client
 ===================
 
-coming soon
+installation
+    npm install -g bower
+    npm install

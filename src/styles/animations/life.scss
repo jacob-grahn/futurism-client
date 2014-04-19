@@ -1,0 +1,20 @@
+.life-effect {
+    position: absolute;
+    z-index: 100;
+    background-color: rgba(0,0,0,.66);
+    font-size: 32px;
+    padding: 5px 15px;
+    pointer-events: none;
+}
+
+.life-effect-inc {
+    color: green;
+}
+
+.life-effect-dec {
+    color: red;
+}
+
+.life-effect-miss {
+    color: blue;
+}

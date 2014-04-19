@@ -1,0 +1,20 @@
+.card-flasher.recharge .card-flasher-inner {
+    left: -50px;
+    top: -25px;
+    width: 100px;
+    height: 50px;
+    animation-duration: 2s;
+    background-image: url('/images/recharge-empty.png');
+}
+
+.card-flasher.recharge-empty .card-flasher-inner {
+    background-image: url('/images/recharge-empty.png');
+}
+
+.card-flasher.recharge-half .card-flasher-inner {
+    background-image: url('/images/recharge-half.png');
+}
+
+.card-flasher.recharge-full .card-flasher-inner {
+    background-image: url('/images/recharge-full.png');
+}

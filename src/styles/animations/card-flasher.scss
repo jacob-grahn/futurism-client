@@ -1,0 +1,67 @@
+.card-flasher {
+    position: absolute;
+    z-index: 49;
+    pointer-events: none;
+}
+
+.card-flasher-inner {
+    left: -50px;
+    top: -50px;
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+    position: absolute;
+    animation-name: fade-in-out;
+    animation-duration: 1.5s;
+}
+
+.card-flasher.poison .card-flasher-inner {
+    left: -100px;
+    top: -100px;
+    width: 200px;
+    height: 200px;
+    background-image: url('/images/poison-200x200.png');
+}
+
+.card-flasher.peace-pipe .card-flasher-inner {
+    background-image: url('/images/peace-pipe.png');
+}
+
+.card-flasher.seduction .card-flasher-inner {
+    background-image: url('/images/seduction.png');
+}
+
+.card-flasher.shield .card-flasher-inner {
+    background-image: url('/images/t-shield.png');
+}
+
+.card-flasher.hero .card-flasher-inner {
+    background-image: url('/images/sacrifice.png');
+}
+
+.card-flasher.serum .card-flasher-inner {
+    width: 46px;
+    height: 125px;
+    left: -23px;
+    top: -70px;
+    background-image: url('/images/super-serum.png');
+}
+
+@keyframes fade-in-out {
+    0% {
+        transform: scale(0.25, 0.25);
+        opacity: 0.25;
+    }
+    25% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    75% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.25, 0.25);
+        opacity: 0;
+    }
+}

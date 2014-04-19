@@ -1,0 +1,41 @@
+<div id="futures" class="row">
+
+    <div class="col-sm-5 panel panel-default">
+        <div class="panel-segment">
+            <h1>{{lang.futureTypes.stable.name}}</h1>
+            <span>{{lang.futureTypes.stable.desc}}</span>
+            <ul>
+                <li ng-repeat="futureId in futures.stable">
+                    <h3>{{lang.futures[futureId].name}}</h3>
+                    <span>{{lang.futures[futureId].desc}}</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="panel-segment">
+            <h1>{{lang.futureTypes.unstable.name}}</h1>
+            <span>{{lang.futureTypes.unstable.desc}}</span>
+            <ul>
+                <li ng-repeat="futureId in futures.unstable">
+                    <h3>{{lang.futures[futureId].name}}</h3>
+                    <span>{{lang.futures[futureId].desc}}</span>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+
+    <div class="col-sm-7 inverse">
+        <h1>{{lang.futureTypes.paradox.name}}</h1>
+        <span>{{lang.futureTypes.paradox.desc}}</span>
+        <ul>
+            <li ng-repeat="futureId in futures.paradox">
+                <h3>{{lang.futures[futureId].name}}</h3>
+                <span>{{lang.futures[futureId].desc}}</span>
+            </li>
+        </ul>
+    </div>
+
+
+</div>

@@ -1,9 +1,0 @@
-.idea
-.tmp
-node_modules
-server/test-server.js
-server/config/env.js
-server/spec
-client/src
-client/test
-client/dist/bower_components

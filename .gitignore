@@ -3,7 +3,5 @@ dist
 .tmp
 .sass-cache
 .idea
-client/src/bower_components
-server/config/env.js
+src/bower_components
 Error.log
-protractor.conf.js

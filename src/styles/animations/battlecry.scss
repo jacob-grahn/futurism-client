@@ -1,0 +1,59 @@
+.battlecry-effect {
+    position: absolute;
+    width: 75px;
+    height: 100px;
+    top: -60px;
+    opacity: 0;
+    background-image: url('/images/trumpet.png');
+    animation-duration: 3s;
+    transform-origin: left center;
+}
+
+.battlecry-effect-left {
+    left: -30px;
+    animation-name: trumpet-anim-left;
+    transform: scaleX(-1);
+}
+
+.battlecry-effect-right {
+    left: 30px;
+    animation-name: trumpet-anim-right;
+}
+
+@keyframes trumpet-anim-right {
+    0% {
+        top: 0px;
+        opacity: 0;
+        transform: rotate(90deg);
+    }
+    33% {
+        top: -60px;
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes trumpet-anim-left {
+    0% {
+        top: 0px;
+        opacity: 0;
+        transform: scaleX(-1) rotate(90deg);
+    }
+    33% {
+        top: -60px;
+        opacity: 1;
+        transform: scaleX(-1) rotate(0deg);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,23 @@
+<div class="deck-analyzer">
+
+    <h3>Pride: {{desc.stats.pride}}</h3>
+    <ul>
+        <li>{{lang.analyzer.cardCount}}: {{desc.stats.cardCount}}</li>
+        <li>{{lang.analyzer.attack}}: {{desc.stats.attack}}</li>
+        <li>{{lang.analyzer.health}}: {{desc.stats.health}}</li>
+    </ul>
+
+    <h3>Abilities</h3>
+    <ul>
+        <li ng-repeat="(abilityId, data) in desc.abilities">
+            {{lang.abilities[abilityId].name}}: {{data.count}}
+        </li>
+    </ul>
+
+    <h3>Factions</h3>
+    <ul>
+        <li ng-repeat="(factionId, data) in desc.factions">
+            {{lang.factions[factionId].name}}: {{data.perc * 100 | number:0}}%
+        </li>
+    </ul>
+</div>

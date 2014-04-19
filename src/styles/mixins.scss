@@ -1,0 +1,83 @@
+/* BORDER RADIUS */
+@mixin border-radius($radius: 5px) {
+  -moz-border-radius:    $radius;
+  -webkit-border-radius: $radius;
+  border-radius:         $radius;
+}
+
+
+/* TRANSFORM  */
+@mixin transform($params) {
+  -webkit-transform: $params;
+  -moz-transform:    $params;
+  transform:         $params;
+}
+
+
+/* BACKGROUND GRADIENT */
+@mixin background-gradient($startColor: #3C3C3C, $endColor: #999999) {
+    background-color: $startColor;
+    background-image: -webkit-gradient(linear, left top, left bottom, from($startColor), to($endColor));
+    background-image: -webkit-linear-gradient(top, $startColor, $endColor);
+    background-image:    -moz-linear-gradient(top, $startColor, $endColor);
+    background-image:     -ms-linear-gradient(top, $startColor, $endColor);
+    background-image:      -o-linear-gradient(top, $startColor, $endColor);
+    background-image:         linear-gradient(top, $startColor, $endColor);
+    filter:            progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$startColor}', endColorStr='#{$endColor}');
+}
+
+
+/* BOX SHADOW */
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $inset: "") {
+    @if ($inset != "") {
+        -webkit-box-shadow: $inset $x $y $blur $color;
+        -moz-box-shadow:    $inset $x $y $blur $color;
+        box-shadow:         $inset $x $y $blur $color;
+    } @else {
+        -webkit-box-shadow: $x $y $blur $color;
+        -moz-box-shadow:    $x $y $blur $color;
+        box-shadow:         $x $y $blur $color;
+    }
+}
+
+
+
+// animate with prefixes
+// @include animation(ANIMATIONNAME LENGTH REPEAT INOUT);
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation: $animations;
+    -o-animation: $animations;
+    animation: $animations;
+}
+
+// animation keyframes
+// @include keyframes(ANIMATIONNAME) {
+//   0% { ATTRIBUTE: VALUE; ATTRIBUTE: VALUE; }
+//   50% { ATTRIBUTE: VALUE; ATTRIBUTE: VALUE; }
+//   100% { ATTRIBUTE: VALUE; ATTRIBUTE: VALUE; }
+// }
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}

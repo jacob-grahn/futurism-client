@@ -1,0 +1,6 @@
+<ul class="convo list-group">
+    <li class="list-group-item" ng-repeat="message in messages">
+        <username user="message.fromUser"></username>
+        <div>{{message.body}} <span class="subtle">{{message.date | date}}</span></div>
+    </li>
+</ul>

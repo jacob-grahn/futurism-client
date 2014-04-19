@@ -1,0 +1,11 @@
+<ul class="chat-log">
+    <li ng-repeat="msg in msgs">
+        <div ng-if="msg.user" class="user-message">
+            <username user="msg.user"></username>
+            <span class="chat-text">- {{filter(msg.txt)}}</span>
+        </div>
+        <div ng-if="!msg.user" class="system-message">
+            <span class="chat-text">[o_o] - {{filter(msg.txt)}}</span>
+        </div>
+    </li>
+</ul>

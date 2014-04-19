@@ -1,0 +1,67 @@
+.heal-effect {
+    position: absolute;
+    z-index: 1010;
+    pointer-events: none;
+    background-color: rgba(255, 255, 255, 0.66);
+    pointer-events: none;
+}
+
+.heal-effect-inner {
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    font-size: 32px;
+    animation-name: heal-effect-lifecycle;
+    animation-duration: 1s;
+}
+
+@keyframes heal-effect-lifecycle {
+    0% {
+        transform: scale(0.25, 0.25);
+        opacity: 0.25;
+    }
+    25% {
+        transform: scale(1, 1);
+        opacity: 1;
+    }
+    100% {
+        top: -100px;
+        opacity: 0;
+    }
+}
+
+
+
+
+.heal-beam {
+    position: absolute;
+    transform-origin: center left;
+}
+
+.heal-beam-inner {
+    position: absolute;
+    opacity: 0;
+    height: 20px;
+    background-color: rgba(255, 255, 255, .66);
+    border-top: 8px solid rgba(255, 255, 255, 1);
+    border-bottom: 8px solid rgba(255, 255, 255, 1);
+    animation-name: heal-beam-lifecycle;
+    animation-duration: 3s;
+}
+
+@keyframes heal-beam-lifecycle {
+    0% {
+        opacity: 0;
+        width: 1%;
+    }
+    50% {
+        opacity: 0.66;
+        width: 100%;
+    }
+    100% {
+        opacity: 0;
+        width: 100%;
+    }
+}

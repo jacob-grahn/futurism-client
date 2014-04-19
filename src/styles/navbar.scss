@@ -1,0 +1,45 @@
+$nav-highlight: $dark-contrast;
+
+#main-navbar {
+    border-color: grey;
+}
+
+#main-navbar .navbar-brand {
+    font-family: "aw-conqueror-carved";
+    color: $nav-highlight;
+    font-size: 24px;
+}
+
+#main-navbar .active > a {
+    color: $nav-highlight;
+}
+
+#main-navbar .username {
+    color: $nav-highlight;
+}
+
+.message-holder {
+  background-color: lightgrey;
+  color: $brand-success;
+    overflow: hidden;
+}
+
+
+.slide-down-animation {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    padding: 5px 5px 5px 20px;
+    max-height: 30px;
+}
+
+.slide-down-animation.ng-hide {
+    padding: 0px 5px 0px 20px;
+    max-height: 1px;
+ }
+
+// This makes the animation visible during the animations
+// Normally display would be none
+.slide-down-animation.ng-hide-add,
+.slide-down-animation.ng-hide-remove {
+    display: block !important;
+}

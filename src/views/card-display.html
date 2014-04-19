@@ -1,0 +1,33 @@
+<div class="card card-{{size}} card-{{card.faction}} cid-{{card.cid}}">
+
+    <div class="greyout"></div>
+
+    <ul class="status">
+        <li ng-if="card.poison" class="poison"></li>
+        <li ng-if="card.shield" class="shield"></li>
+        <li ng-if="card.hero" class="hero"></li>
+        <li ng-if="card.attackBuf" class="attack-buf"></li>
+    </ul>
+
+    <div class="card-image-holder">
+        <img ng-if="card.imageUrl" class="card-image absolute-center" ng-src="{{card.imageUrl}}"/>
+        <img ng-if="card.hasImage" class="card-image absolute-center" ng-src="{{staticContentUrl.futurism}}/images/cards/{{size}}_{{card._id}}.jpg?{{card.version}}"/>
+        <img ng-if="card.commander" class="card-image absolute-center" ng-src="globe/avatars/{{card.userId}}-130x90.gif"/>
+    </div>
+
+    <h1>{{card.name}}</h1>
+    <ul class="abilities">
+        <li ng-repeat="abilityId in card.abilities">
+            <span ng-if="useButtons != 'true'">{{lang.abilities[abilityId].name}}</span>
+            <button ng-if="useButtons == 'true'" ng-click="actionFn({abilityId: abilityId, card: card})">{{lang.abilities[abilityId].name}}</button>
+            <a class="popover-src" popover="{{lang.abilities[abilityId].desc}}" popover-trigger="mouseenter">?</a>
+        </li>
+    </ul>
+
+    <div class="card-story">{{card.story}}</div>
+    <div ng-if="card.shield" class="card-shield good">+{{card.shield}}</div>
+    <div ng-if="card.attackBuf" class="card-attack-buf good">+{{card.attackBuf}}</div>
+    <div class="card-stats">{{card.attack}}/{{card.health}}</div>
+    <div class="card-pride">{{card.pride}} ₱</div>
+
+</div>

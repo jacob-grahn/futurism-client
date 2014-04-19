@@ -1,0 +1,21 @@
+<div id="bans" class="row">
+    <div class="col-md-12">
+        <div class="well">
+
+            <username user="user" size="large"></username>
+
+            <h3>Active Ban</h3>
+            <div id="active-ban">
+                <div ng-if="!user.ban"><span class="subtle">No active ban</span></div>
+                <div ng-if="user.ban"><ban-display ban="user.ban"></ban-display></div>
+            </div>
+
+            <h3>All Bans</h3>
+            <ul id="all-bans">
+                <li ng-repeat="ban in user.bans"><ban-display ban="ban"></ban-display></li>
+            </ul>
+
+
+        </div>
+    </div>
+</div>

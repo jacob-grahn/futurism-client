@@ -1,0 +1,14 @@
+<div class="modal-header">
+    <h1>Ban {{user.name}}</h1>
+</div>
+<div class="modal-body">
+    Note:
+    <form>
+        <textarea ng-model="reason" rows="2" cols="50" maxlength="200"></textarea>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ban(reason)">ban</button>
+    <button class="btn btn-primary" ng-click="silence(reason)">silence</button>
+    <button class="btn btn-primary" ng-click="$dismiss('close')">close</button>
+</div>

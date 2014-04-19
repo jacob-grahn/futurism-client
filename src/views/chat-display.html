@@ -1,0 +1,13 @@
+<div class="chat">
+
+    <chat-log msgs="chat.msgs" class="auto-size"></chat-log>
+
+    <form submit="sendMessage()">
+        <div class="input-group">
+            <input class="form-control" type="text" ng-model="typedMessage" placeholder="{{lang.chat.placeholder}}" maxlength="100">
+            <span class="input-group-btn">
+                <button class='btn btn-default' type="submit" ng-click="sendMessage()">{{lang.chat.say}}</button>
+            </span>
+        </div>
+    </form>
+</div>

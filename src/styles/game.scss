@@ -1,0 +1,131 @@
+$outline: rgba(82, 79, 73, .75);
+
+.future-desc {
+    padding-top: 0px
+}
+
+.players {
+    background-color: white;
+}
+
+.players .name {
+    font-weight: bold;
+}
+
+.panel .game-buttons {
+    padding-bottom: 5px;
+}
+
+.game-buttons li {
+    margin: 0 10px 10px 0;
+    float: left;
+}
+
+.area-header {
+    position: relative;
+}
+
+.area-header > .active-indicator {
+    position: absolute;
+    top: -15px;
+    left: -25px;
+}
+
+.area-title {
+    max-width: 400px;
+    overflow: hidden;
+}
+
+.area-desc {
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    color: lightgrey;
+}
+
+.board {
+    position: relative;
+}
+
+.board .card .card-pride {
+    display: none;
+}
+
+.board-area {
+    margin: 0px auto 20px auto;
+    width: 360px;
+}
+
+.board-area .card-small {
+    margin: -1px;
+}
+
+.player-field-column {
+    float: left;
+}
+
+.target {
+    width: 65px;
+    height: 93px;
+    margin: 0px 12px 12px 12px;
+    border: 1px solid $outline;
+    position: relative;
+}
+
+.target-valid {
+    background-color: rgba(255, 255, 255, .25);
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.target-hidden .card {
+    display: none;
+}
+
+.players .desc {
+    color: grey;
+    font-size: 12px;
+    position: relative;
+    top: -5px;
+}
+
+.hand {
+    position: fixed;
+    bottom: 0px; left: 0;
+    background-color: darken($navbar-inverse-bg, 5);
+    width: 100%;
+    border-top: 1px solid lightgrey;
+    padding: 0 30px 0 30px;
+    @include box-shadow(2px, 2px, 7px, rgba(0,0,0,.8));
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    z-index: 12;
+}
+
+.hand.ng-hide {
+    bottom: -300px;
+}
+
+.hand.ng-hide-add,
+.hand.ng-hide-remove {
+    display: block !important;
+}
+
+.hand .close-x {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+    cursor: pointer;
+    color: lightgrey;
+}
+
+.hand-content {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 750px;
+}
+
+.hand-content > h1 {
+    color: $light-contrast;
+}

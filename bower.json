@@ -1,6 +1,6 @@
 {
-  "name": "futurism",
-  "version": "0.0.0",
+  "name": "futurism-client",
+  "version": "0.1.0",
   "dependencies": {
     "angular": "~1.2.0",
     "angular-resource": "~1.2.0",

@@ -1,0 +1,9 @@
+<div id="instructions" class="inverse">
+    <ul>
+        <li ng-repeat="vid in vids">
+            <h1>{{vid.title}}</h1>
+            <p>{{vid.desc}}</p>
+            <iframe width="560" height="315" ng-src="{{vid.url}}" frameborder="0" allowfullscreen></iframe>
+        </li>
+    </ul>
+</div>

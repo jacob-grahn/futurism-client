@@ -1,0 +1,16 @@
+.card-notif {
+    position: absolute;
+    z-index: 50;
+    background-color: rgba(0,0,0,.66);
+    font-size: 32px;
+    padding: 5px 15px;
+    pointer-events: none;
+}
+
+.card-notif.danger {
+    color: red;
+}
+
+.card-notif.good {
+    color: green;
+}

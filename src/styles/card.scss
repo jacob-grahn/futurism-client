@@ -1,0 +1,326 @@
+body .card-en h1 {
+    color: $ent;
+}
+body .card-mc h1 {
+    color: $machine;
+}
+body .card-el h1 {
+    color: $elite;
+}
+body .card-ze h1 {
+    color: $zealot;
+}
+
+
+.card {
+    color: $dark-blend;
+  position: relative;
+  width: 260px;
+  height: 372px;
+  min-height: 372px;
+  background-color: white;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  padding: 0px;
+    margin: 0px;
+
+    @include border-radius(4px);
+    @include box-shadow(2px, 2px, 7px, rgba(0,0,0,.8));
+}
+.card-medium {
+    width: 130px;
+    height: 186px;
+    min-height: 186px;
+    @include border-radius(2px);
+}
+.card-small {
+    width: 65px;
+    height: 93px;
+    min-height: 93px;
+    @include border-radius(1px);
+}
+
+
+.stretch .card {
+    height: auto;
+}
+
+
+.card-list > li {
+    float: left;
+    margin: 12px;
+}
+
+.card {
+    cursor: pointer;
+}
+
+
+
+
+.card h1 {
+  margin: 0 5px 5px 0;
+  text-align: center;
+}
+.card-medium h1 {
+    font-size: 18px;
+}
+
+
+
+
+.card .status {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    opacity: 0.85;
+}
+
+.card .status li {
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+    margin: 0px;
+    float: left;
+}
+
+.card-small .status li {
+    background-size: 12px 12px;
+    width: 12px;
+    height: 12px;
+}
+
+.card .status .poison {
+    background-color: #afff26;
+    background-image: url('/images/poison-25x25.png');
+}
+
+.card .status .shield {
+    background-color: #AAAAAA;
+    background-image: url('/images/t-shield.png');
+}
+
+.card .status .hero {
+    background-color: red;
+    background-image: url('/images/sacrifice.png');
+}
+
+.card .status .attack-buf {
+    background-color: white;
+    background-image: url('/images/trumpet.png');
+}
+
+
+.card .popover-src {
+    color: lightgrey;
+    border-bottom: 1px dashed lightgrey;
+    text-decoration: none;
+    position: relative;
+    right: -5px;
+}
+
+.card .popover {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.card-medium .popover-src {
+    display: none;
+}
+
+
+
+
+
+.card ul {
+  margin: 10px 0;
+  padding: 0 5px;
+    font-size: 22px;
+  font-weight: bold;
+    position: relative;
+    left: 10px;
+}
+.card-medium ul {
+    font-weight: normal;
+    font-size: 14px;
+    margin: 0;
+    left: 0px;
+}
+
+
+.card-image-holder {
+  width: 260px;
+  height: 180px;
+  background-color: black;
+    position: relative;
+    overflow: hidden;
+}
+.card-medium .card-image-holder {
+    width: 130px;
+    height: 90px;
+}
+.card-small .card-image-holder {
+    width: 65px;
+    height: 45px;
+}
+
+
+.card-story {
+  margin: 0 15px 25px 15px;
+    font-style: italic;
+    text-align: center;
+}
+.card-medium .card-story {
+    display: none;
+}
+
+
+
+.card-shield {
+    position: absolute;
+    right: 10px;
+    bottom: 22px;
+    background-color: white;
+    z-index: 8;
+    font-weight: bold;
+    color: green;
+}
+
+.card-attack-buf {
+    position: absolute;
+    right: 23px;
+    bottom: 22px;
+    background-color: white;
+    z-index: 8;
+    font-weight: bold;
+    color: green;
+}
+
+
+
+.card-stats {
+  position: absolute;
+  right: 10px;
+  bottom: 5px;
+  background-color: white;
+  z-index: 8;
+  font-weight: bold;
+}
+.card-medium .card-stats {
+    right: 6px;
+    bottom: 2px;
+}
+
+
+.card-pride {
+  position: absolute;
+  left: 10px;
+  bottom: 5px;
+  background-color: white;
+  z-index: 8;
+  font-weight: bold;
+}
+.card-medium .card-pride {
+    left: 6px;
+    bottom: 2px;
+}
+
+
+.card .abilities {
+    text-align: center;
+    list-style: none;
+}
+.card-large .abilities {
+    font-size: 18px;
+}
+.card .abilities button {
+    margin: 3px;
+    padding: 0px 5px;
+}
+
+
+.card .greyout {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    display: none;
+}
+
+
+
+.card-disabled .greyout {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.66);
+}
+
+.card-disabled, .card-disabled .card {
+    cursor: default;
+}
+
+
+
+.target-valid .greyout {
+    display: block;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.target-valid .card {
+    border: 1px solid white;
+}
+
+
+
+.card-magnify {
+    position: relative;
+}
+
+
+.card-bigger-medium {
+    margin: auto;
+    position: absolute;
+    top: -45px; left: -35px;
+    z-index: 11;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    opacity: 1;
+}
+
+.card-bigger-medium.ng-hide {
+    transform: scale(.5, .5);
+    opacity: 0;
+}
+
+.card-bigger-medium.ng-hide-add,
+.card-bigger-medium.ng-hide-remove {
+    display: block !important;
+}
+
+
+
+
+
+.card-bigger-large {
+    margin: auto;
+    position: absolute;
+    top: -135px; left: -100px;
+    z-index: 11;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    opacity: 1;
+}
+
+.card-bigger-large.ng-hide {
+    transform: scale(.25, .25);
+    opacity: 0;
+}
+
+.card-bigger-large.ng-hide-add,
+.card-bigger-large.ng-hide-remove {
+    display: block !important;
+}

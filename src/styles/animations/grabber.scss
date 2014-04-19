@@ -1,0 +1,14 @@
+.grabber-effect {
+    position: absolute;
+    background-color: grey;
+    border: 1px solid lightgrey;
+    transform-origin: center left;
+    z-index: 48;
+    height: 10px;
+    pointer-events: none;
+}
+
+.grabber-effect.recharge {
+    background-color: green;
+    border-style: dashed;
+}

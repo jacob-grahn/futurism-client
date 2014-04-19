@@ -1,0 +1,27 @@
+.future-list li {
+    position: relative;
+    float: left;
+    margin: 15px;
+    width: 200px;
+}
+
+.future-list li p {
+    color: white;
+    font-size: 16px;
+}
+
+.selected-future-list {
+    margin: 20px 0px;
+    padding-bottom: 30px;
+}
+
+.future-quantity {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    z-index: 2;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    text-shadow: 2px 2px #000000;
+}

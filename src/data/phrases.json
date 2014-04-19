@@ -1,0 +1,1110 @@
+{
+  "title": {
+    "gameName": {
+      "en": "FUTURISM",
+      "ko": "미래의 배",
+      "ct": "meow",
+      "fr": "FUTURISME",
+      "pi": "Day after Tomorrow",
+      "lt": "FUTURISM",
+      "ne": "FUTURISM",
+      "sv": "Futurism",
+      "es": "FUTURISMO",
+      "nb": "FUTURISME",
+      "it": "Futurismo",
+      "hu": "Futurism",
+      "pl": "FUTURISM"
+    },
+
+    "login": {
+      "en": "LOGIN",
+      "ko": "놀이",
+      "ct": "meow",
+      "fr": "CONNEXION",
+      "pi": "Sail the seven seas!",
+      "lt": "PRISIJUNGIMAS",
+      "ne": "LOG IN",
+      "sv": "Logga in",
+      "es": "Ingresar",
+      "nb": "Logg inn",
+      "it": "Entra",
+      "hu": "Bejelentkezés",
+      "pl": "Graj"
+    },
+
+    "credits": {
+      "en": "CREDITS",
+      "ko": "인정함",
+      "ct": "meow",
+      "fr": "CRÉDITS",
+      "pi": "Captain's Logs",
+      "lt": "KŪRĖJAI",
+      "ne": "CREDITS",
+      "sv": "Medverkande",
+      "es": "Créditos",
+      "nb": "MEDVIRKENDE",
+      "it": "Ringraziamenti",
+      "hu": "Készítők",
+      "pl": "Autorzy"
+    },
+
+    "instructions": {
+      "en": "EDU-VIDS",
+      "ko": "명령",
+      "ct": "meow",
+      "fr": "TUTORIELS",
+      "pi": "Davy Jones' Locker",
+      "lt": "INSTRUKCIJOS",
+      "ne": "Instructiefilmpjes",
+      "sv": "Instruktioner",
+      "es": "Videos educativos",
+      "nb": "INSTRUKSJONSVIDEOER",
+      "it": "Istruzioni",
+      "hu": "Instrukciók",
+      "pl": "Instrukcje"
+    }
+  },
+
+
+  "cardBuilder": {
+    "saveAndLoad": {
+      "en": "Save n Load",
+      "ko": "저장",
+      "ct": "meow",
+      "fr": "Sauvegarder et charger",
+      "pi": "Treasure Map",
+      "lt": "Išsaugojimas ir Užkrovimas",
+      "ne": "Opslaan en Laden",
+      "sv": "Spara och Ladda",
+      "es": "Guardar y cargar",
+      "nb": "Lagre og åpne",
+      "it": "Salva e Carica",
+      "hu": "Mentés és Betöltés",
+      "pl": "Zapisz i Zaladuj"
+    },
+
+    "nameIt": {
+      "en": "Name It",
+      "ko": "이름",
+      "ct": "meow",
+      "fr": "Nommer",
+      "pi": "Name yar booty",
+      "lt": "Pavadinimas",
+      "ne": "Geef een Naam",
+      "sv": "Namnge det",
+      "es": "Nombrar",
+      "nb": "Navngi det",
+      "it": "Nominala",
+      "hu": "Nevezd el",
+      "pl": "Nazwij"
+    },
+
+    "imageUpload": {
+      "en": "Image Upload",
+      "ko": "영상",
+      "ct": "meow",
+      "fr": "Charger une image",
+      "pi": "Enscribe yar map",
+      "lt": "Paveikslėlio įkelimas",
+      "ne": "Upload een Plaatje",
+      "sv": "bilduppladdning",
+      "es": "Cargar imagen",
+      "nb": "Bildeopplasting",
+      "it": "Carica un'immagine",
+      "hu": "Képfeltöltés",
+      "pl": "Zaladuj obrazek"
+    },
+
+    "factionAbilities": {
+      "en": "Faction Abilities",
+      "ko": "능력",
+      "ct": "meow",
+      "fr": "Habiletés de la classe",
+      "pi": "Munitions",
+      "lt": "Frakcijų sugebėjimai",
+      "ne": "Factie Vaardigheden ",
+      "sv": "Fraktionsförmågor",
+      "es": "Habilidades de la facción",
+      "nb": "Klanegenskaper",
+      "it": "Abilità della fazione",
+      "hu": "Képességek",
+      "pl": "Zdolnosci"
+    },
+
+    "save": {
+      "en": "Save",
+      "ko": "저장",
+      "ct": "meow",
+      "fr": "Sauvegarder",
+      "pi": "Bury",
+      "lt": "Išsaugoti",
+      "ne": "Opslaan",
+      "sv": "Spara",
+      "es": "Guardar",
+      "nb": "Lagre",
+      "it": "Salva",
+      "hu": "Mentés",
+      "pl": "Zapisz"
+    },
+
+    "load": {
+      "en": "Load",
+      "ko": "하중",
+      "ct": "meow",
+      "fr": "Charger",
+      "pi": "Dig up booty",
+      "lt": "Užkrauti",
+      "ne": "Laden",
+      "sv": "Ladda",
+      "es": "Cargar",
+      "nb": "Åpne",
+      "it": "Carica",
+      "hu": "Betöltés",
+      "pl": "Zaladuj"
+    },
+
+    "new": {
+      "en": "New",
+      "ko": "새로운",
+      "ct": "meow",
+      "fr": "Nouvelle",
+      "pi": "Plunder new booty",
+      "lt": "Nauja korta",
+      "ne": "Nieuw",
+      "sv": "Nytt",
+      "es": "Nueva",
+      "nb": "Nytt",
+      "it": "Nuova",
+      "hu": "Új",
+      "pl": "Utwórz"
+    },
+
+    "delete": {
+      "en": "Delete",
+      "ko": "삭제",
+      "ct": "meow",
+      "fr": "Supprimer",
+      "pi": "Toss overboard",
+      "lt": "Ištrinti",
+      "ne": "Verwijderen",
+      "sv": "Ta bort",
+      "es": "Eliminar",
+      "nb": "Slett",
+      "it": "Elimina",
+      "hu": "Törlés",
+      "pl": "Usun"
+    },
+
+    "attack": {
+      "en": "Attack",
+      "ko": "공격",
+      "ct": "meow",
+      "fr": "Attaque",
+      "pi": "Number o' Cannons",
+      "lt": "Puolimo taškai",
+      "ne": "Kracht",
+      "sv": "Attackera",
+      "es": "Ataque",
+      "nb": "Angrip",
+      "it": "Attacca",
+      "hu": "Támadás",
+      "pl": "Atak"
+    },
+
+    "health": {
+      "en": "Health",
+      "ko": "건강",
+      "ct": "meow",
+      "fr": "Santé",
+      "pi": "Rum",
+      "lt": "Gyvybės taškai",
+      "ne": "Levens",
+      "sv": "Hälsa",
+      "es": "Vida",
+      "nb": "Helse",
+      "it": "Salute",
+      "hu": "Élet",
+      "pl": "Zdrowie"
+    }
+  },
+
+
+  "game": {
+    "endTurn": {
+      "en": "End Turn",
+      "ct": "meow",
+      "ne": "Beeindig Beurt",
+      "lt": "Užbaigti ėjimą",
+      "hu": "Fordulat vége",
+      "nb": "Avslutt turen",
+      "pi": "Hit the bunk",
+      "it": "Termina turno",
+      "pl": "Zakoncz ture"
+    },
+
+    "pride": {
+      "en": "Pride",
+      "ct": "meow",
+      "ne": "Trots",
+      "lt": "Vertė",
+      "hu": "Büszkeség",
+      "nb": "Stolthet",
+      "pi": "Pride",
+      "it": "Valore",
+      "pl": "Duma"
+    },
+
+    "close": {
+      "en": "close",
+      "ct": "meow",
+      "ne": "Dicht doen",
+      "lt": "Uždaryti",
+      "hu": "bezár",
+      "nb": "lukk",
+      "pi": "Seal",
+      "it": "chiudi",
+      "pl": "Zamknij"
+    },
+
+    "futures": {
+      "en": "Futures",
+      "ct": "meow",
+      "ne": "Toekomsten",
+      "lt": "Futuristikos taškai",
+      "hu": "Jövendők",
+      "nb": "Fremtider",
+      "pi": "Days after tomorrow",
+      "it": "Futures",
+      "pl": "Przyszlosci"
+    },
+
+    "showFutures": {
+      "en": "Show Futures",
+      "ct": "meow",
+      "ne": "Laat Toekomsten zien",
+      "lt": "Rodyti futuristinius sugebėjimus",
+      "hu": "Jövendők Mutatása",
+      "nb": "Vis fremtider",
+      "pi": "Scry Days after Tomorrow",
+      "it": "Mostra Futures",
+      "pl": "Pokaz Przyszlosci"
+    },
+
+    "showHand": {
+      "en": "Show Hand",
+      "ct": "meow",
+      "ne": "Laat Hand zien",
+      "lt": "Kortos rankoje",
+      "hu": "Kezelő Mutatása",
+      "nb": "Vis hånda",
+      "pi": "Show hand",
+      "it": "Mostra la mano",
+      "pl": "Pokaz karty"
+    },
+
+    "forfeit": {
+      "en": "Forfeit",
+      "ct": "meow",
+      "ne": "Opgeven",
+      "lt": "Pasitraukti",
+      "hu": "Felmondás",
+      "nb": "Forlat kampen",
+      "pi": "Abandon ship",
+      "it": "Abbandona",
+      "pl": "Zrezygnuj"
+    }
+  },
+
+
+  "chat": {
+    "say": {
+      "en": "say",
+      "ko": "말하다",
+      "ct": "meow",
+      "fr": "Envoyer",
+      "pi": "Belch",
+      "lt": "Kalbėk",
+      "ne": "Zeggen",
+      "sv": "säg",
+      "es": "Enviar",
+      "nb": "si",
+      "it": "Invia",
+      "hu": "mondd",
+      "pl": "Pisz"
+      },
+
+    "placeholder": {
+      "en": "type to chat",
+      "ko": "말을 입력",
+      "ct": "meow",
+      "fr": "Taper pour bavarder",
+      "pi": "Open ye mouth",
+      "lt": "Įveskite norimą tekstą",
+      "ne": "Type iets in de chat",
+      "sv": "skriv för att chatta",
+      "es": "Escribe para conversar",
+      "nb": "skriv for å chatte",
+      "it": "Scrivi per mandare messaggi",
+      "hu": "ide írj!",
+      "pl": "Pisz zeby czatowac"
+    }
+  },
+
+
+  "deckBuilder": {
+    "saveAndLoad": {
+      "en": "Save n Load",
+      "ko": "저장",
+      "ct": "meow",
+      "fr": "Sauvegarder et charger",
+      "pi": "Check Maps",
+      "lt": "Išsaugojimas ir Užkrovimas",
+      "ne": "Opslaan en Laden",
+      "sv": "Spara och Ladda",
+      "es": "Guardar y cargar",
+      "nb": "Lagre og åpne",
+      "it": "Salva e Carica",
+      "hu": "Mentés és Betöltés",
+      "pl": "Zapisz i Zaladuj"
+    },
+
+    "save": {
+      "en": "Save",
+      "ko": "저장",
+      "ct": "meow",
+      "fr": "Sauvegarder",
+      "pi": "Bury",
+      "lt": "Išsaugoti",
+      "ne": "Opslaan",
+      "sv": "Spara",
+      "es": "Guardar",
+      "nb": "Lagre",
+      "it": "Salva",
+      "hu": "Mentés",
+      "pl": "Zapisz"
+    },
+
+    "load": {
+      "en": "Load",
+      "ko": "하중",
+      "ct": "meow",
+      "fr": "Charger",
+      "pi": "Dig up booty",
+      "lt": "Užkrauti",
+      "ne": "Laden",
+      "sv": "Ladda",
+      "es": "Cargar",
+      "nb": "Åpne",
+      "it": "Carica",
+      "hu": "Betöltés",
+      "pl": "Zaladuj"
+    },
+
+    "new": {
+      "en": "New",
+      "ko": "새로운",
+      "ct": "meow",
+      "fr": "Nouveau",
+      "pi": "Plunder new booty",
+      "lt": "Naujas",
+      "ne": "Nieuw",
+      "sv": "Nytt",
+      "es": "Nuevo",
+      "nb": "Nytt",
+      "it": "Nuova",
+      "hu": "Új",
+      "pl": "Utwórz"
+    },
+
+    "delete": {
+      "en": "Delete",
+      "ko": "삭제",
+      "ct": "meow",
+      "fr": "Supprimer",
+      "pi": "Toss booty overboard",
+      "lt": "Ištrinti",
+      "ne": "Verwijderen",
+      "sv": "Ta bort",
+      "es": "Eliminar",
+      "nb": "Slett",
+      "it": "Elimina",
+      "hu": "Törlés",
+      "pl": "Usun"
+    },
+
+    "nameIt": {
+      "en": "Name It",
+      "ko": "이름",
+      "ct": "meow",
+      "fr": "Nommer",
+      "pi": "Name yar booty",
+      "lt": "Pavadinimas",
+      "ne": "Geef een naam",
+      "sv": "Namnge det",
+      "es": "Nombrar",
+      "nb": "Navngi det",
+      "it": "Nominalo",
+      "hu": "Nevezd el",
+      "pl": "Nazwij"
+    },
+
+    "cards": {
+      "en": "Cards",
+      "ko": "카드",
+      "ct": "meow",
+      "fr": "Cartes",
+      "pi": "Maps",
+      "lt": "Kortos",
+      "ne": "Kaarten",
+      "sv": "Kort",
+      "es": "Cartas",
+      "nb": "Kort",
+      "it": "Carte",
+      "hu": "Kártyák",
+      "pl": "Karty"
+    },
+
+    "deckPride": {
+      "en": "Deck Pride",
+      "ko": "자존심",
+      "ct": "meow",
+      "fr": "Valeur du paquet",
+      "pi": "Map value",
+      "lt": "Kaladės vertė",
+      "ne": "Deck Trots",
+      "sv": "Deckstolthet",
+      "es": "Orgullo del mazo",
+      "nb": "Korstokkens Stolthet",
+      "it": "Valore del mazzo",
+      "hu": "Kártyacsomag Büszkeség",
+      "pl": "Duma talii"
+    }
+  },
+
+
+  "errorPage": {
+    "error": {
+      "en": "Error",
+      "ko": "오류",
+      "ct": "meow",
+      "fr": "Erreur",
+      "pi": "Y'arr!",
+      "lt": "Klaida!",
+      "ne": "Error",
+      "sv": "Error",
+      "es": "Error",
+      "nb": "Error",
+      "it": "Errore!",
+      "hu": "Hiba!",
+      "pl": "Blad"
+    }
+  },
+
+
+  "loadup": {
+    "maxDeckSize": {
+      "en": "Max Size"
+    },
+        "selectDeck": {
+            "en": "Select a Deck!"
+        },
+        "select": {
+            "en": "Select"
+        },
+        "futures": {
+            "en": "Futures!"
+        },
+        "selectFutureSingular": {
+            "en": "Select a Future!"
+        }
+  },
+
+
+    "deck": {
+        "cards": {
+            "en": "cards"
+        }
+    },
+
+
+  "lobby": {
+    "player": {
+      "en": "players",
+      "ko": "플레이어",
+      "ct": "meow",
+      "fr": "Joueur",
+      "pi": "Sailor",
+      "lt": "Žaidėjai",
+      "ne": "Speler",
+      "sv": "spelare",
+      "es": "jugadores",
+      "nb": "spillere",
+      "it": "Giocatori",
+      "hu": "játékosok",
+      "pl": "gracze"
+    },
+
+    "deckSize": {
+      "en": "cards"
+    },
+
+    "join": {
+      "en": "join",
+      "ko": "가입",
+      "ct": "meow",
+      "fr": "Joindre",
+      "pi": "Board",
+      "lt": "Prisijungti",
+      "ne": "meedoen",
+      "sv": "gå med",
+      "es": "unirse",
+      "nb": "bli med",
+      "it": "unisciti",
+      "hu": "csatlakozás",
+      "pl": "graj"
+    },
+
+    "start": {
+      "en": "start",
+      "ko": "스타트",
+      "ct": "meow",
+      "fr": "Commencer",
+      "pi": "Set sail",
+      "lt": "Pradėti",
+      "ne": "start",
+      "sv": "starta",
+      "es": "Iniciar",
+      "nb": "start",
+      "it": "inizia",
+      "hu": "indítás",
+      "pl": "start"
+    },
+
+    "chat": {
+      "en": "chat",
+      "ko": "이야기",
+      "ct": "meow",
+      "fr": "Bavarder",
+      "pi": "Tavern",
+      "lt": "Pokalbiai",
+      "ne": "chat",
+      "sv": "chatt",
+      "es": "chat",
+      "nb": "chatterom",
+      "it": "chat",
+      "hu": "chat",
+      "pl": "czat"
+    },
+
+    "people": {
+      "en": "people",
+      "ko": "사람들",
+      "ne": "mensen",
+      "ct": "meow",
+      "fr": "Joueurs",
+      "pi": "deckhands",
+      "lt": "Žaidėjai",
+      "sv": "personer",
+      "es": "personas",
+      "nb": "personer",
+      "it": "persone",
+      "hu": "emberek",
+      "pl": "gracze"
+    },
+
+    "futures": {
+      "en": "futures",
+      "lt": "Futuristikos taškai",
+      "ct": "meow",
+      "sv": "framtid",
+      "fr": "Futurs",
+      "pi": "Days after tomorrow",
+      "nb": "fremtider",
+      "hu": "jövendők",
+      "it": "futures",
+      "ne": "toekomsten",
+      "pl": "przyszlosci"
+    },
+
+    "shortGame": {
+      "en": "Skirmish",
+      "lt": "Susiremimas",
+      "ct": "meow",
+      "sv": "Skirmish",
+      "fr": "Escarmouche",
+      "pi": "Skirmish",
+      "nb": "Kamp",
+      "hu": "Csetepaté",
+      "it": "Scaramuccia",
+      "ne": "Kort gevecht",
+      "pl": "Potyczka"
+    },
+
+    "mediumGame": {
+      "en": "Battle",
+      "lt": "Kova",
+      "ct": "meow",
+      "sv": "Slag",
+      "fr": "Bataille",
+      "pi": "Raid",
+      "nb": "Slag",
+      "hu": "Csata",
+      "it": "Battaglia",
+      "ne": "Strijd",
+      "pl": "Bitwa"
+    },
+
+    "longGame": {
+      "en": "War",
+      "lt": "Karas",
+      "ct": "meow",
+      "sv": "Krig",
+      "fr": "Guerre",
+      "pi": "War",
+      "nb": "Krig",
+      "hu": "Háború",
+      "it": "Guerra",
+      "ne": "Oorlog",
+      "pl": "Wojna"
+    },
+
+    "customGame": {
+      "en": "Custom",
+      "ko": "관습",
+      "ct": "Meow",
+      "fr": "Personnaliser",
+      "pi": "Blank map",
+      "lt": "Redaguojamas",
+      "ne": "Eigen",
+      "sv": "Anpassad",
+      "es": "Personalizado",
+      "it": "Personalizzato",
+      "nb": "Egendefinert",
+      "hu": "Egyéni",
+      "pl": "Wlasna"
+    },
+
+    "custom": {
+      "en": "custom",
+      "ko": "관습",
+      "ct": "meow",
+      "fr": "Personnaliser",
+      "pi": "Blank map",
+      "lt": "Futuristinis",
+      "ne": "zelfgemaakt",
+      "sv": "Anpassad",
+      "es": "personalizado",
+      "nb": "Egendefinert",
+      "it": "Personalizzato",
+      "hu": "egyéni",
+      "pl": "wlasna"
+    },
+
+    "guild": {
+      "en": "guild",
+      "ko": "대가족",
+      "ct": "meow",
+      "fr": "Guilde",
+      "pi": "crew",
+      "lt": "Gildija",
+      "ne": "gilde",
+      "sv": "klan",
+      "es": "gremio",
+      "nb": "laug",
+      "it": "clan",
+      "hu": "klán",
+      "pl": "gildia"
+    }
+  },
+
+
+  "nav": {
+        "reports": {
+            "en": "Reports"
+        },
+
+        "modLog": {
+            "en": "Mod Log"
+        },
+
+    "toggle": {
+      "en": "Toggle Navigation",
+      "ko": "토글",
+      "ct": "meow",
+      "ne": "Navigatie aanzetten",
+      "fr": "Activer la navigation",
+      "pi": "Toggle Map",
+      "lt": "Navigacijos Perjungimas",
+      "sv": "Växla Navigation",
+      "es": "Habilitar barra de navegación",
+      "nb": "Bytt Navigasjon",
+      "it": "Abilita la navigazione",
+      "hu": "Váltás Navigációra",
+      "pl": "Nawigacja"
+    },
+
+    "futurism": {
+      "en": "Futurism",
+      "ko": "미래의 배",
+      "ct": "meow",
+      "ne": "Futurism",
+      "fr": "Futurisme",
+      "pi": "Day after Tomorrow",
+      "lt": "Futurism",
+      "sv": "Futurism",
+      "es": "Futurismo",
+      "nb": "Futurisme",
+      "it": "Futurismo",
+      "hu": "Futurism",
+      "pl": "Futurism"
+    },
+
+    "deckBuilder": {
+      "en": "Deck Builder",
+      "ko": "갑판",
+      "ct": "meow",
+      "ne": "Deck maker",
+      "fr": "Créateur de paquet",
+      "pi": "Mapbook binder",
+      "lt": "Kaladės Dėliojimas",
+      "sv": "Deckbyggare",
+      "es": "Constructor de mazos",
+      "nb": "Kortstokkbygger",
+      "it": "Creatore dei mazzi",
+      "hu": "Kártyacsomag Készítő",
+      "pl": "Edytor talii"
+    },
+
+    "cardBuilder": {
+      "en": "Card Builder",
+      "ko": "카드",
+      "ct": "meow",
+      "ne": "Kaart maker",
+      "fr": "Créateur de carte",
+      "pi": "Map drawer",
+      "lt": "Kortų kūrimas",
+      "sv": "Korbyggare",
+      "es": "Constructor de cartas",
+      "nb": "Kortbygger",
+      "it": "Creatore delle carte",
+      "hu": "Kártya Készítő",
+      "pl": "Edytor kart"
+    },
+
+    "lobby": {
+      "en": "Lobby",
+      "ko": "로비",
+      "ct": "meow",
+      "ne": "Lobby",
+      "fr": "Hall",
+      "pi": "Tavern",
+      "lt": "Fojė",
+      "sv": "Lobby",
+      "es": "Lobby",
+      "nb": "Lobby",
+      "it": "Lobby",
+      "hu": "Előcsarnok",
+      "pl": "Lobby"
+    },
+
+    "stats": {
+      "en": "My Stats",
+      "ko": "통계",
+      "ct": "meow",
+      "ne": "Mijn statistieken",
+      "fr": "Ma Statistiques",
+      "pi": "Pirate-ness",
+      "lt": "Mano statusai",
+      "sv": "Min Statistik",
+      "es": "Mis estadísticas",
+      "nb": "Min Statistikk",
+      "it": "Le mie statistiche",
+      "hu": "Statisztikáim",
+      "pl": "Statystyki"
+    },
+
+    "messages": {
+      "en": "Messages",
+      "ko": "메시지",
+      "ct": "meow",
+      "ne": "Berichten",
+      "fr": "Messages",
+      "pi": "Messages in bottles",
+      "lt": "Žinutės",
+      "sv": "Meddelanden",
+      "es": "Mensajes",
+      "nb": "Meldinger",
+      "it": "Messaggi",
+      "hu": "Üzenetek",
+      "pl": "Wiadomosci"
+    },
+
+    "logout": {
+      "en": "Logout",
+      "ko": "로그 아웃",
+      "ct": "meow",
+      "ne": "Uitloggen",
+      "fr": "Déconnexion",
+      "pi": "Walk the plank",
+      "lt": "Atsijungti",
+      "sv": "Logga ut",
+      "es": "Cerrar sesión",
+      "nb": "Logg ut",
+      "it": "Esci",
+      "hu": "Kijelentkezés",
+      "pl": "Wyloguj sie"
+    },
+
+    "language": {
+      "en": "Language",
+      "ko": "언어",
+      "ct": "meow",
+      "ne": "Taal",
+      "fr": "Langue",
+      "pi": "Tongues",
+      "lt": "Kalba",
+      "sv": "Språk",
+      "es": "Idioma",
+      "nb": "Språk",
+      "it": "Lingua",
+      "hu": "Nyelv",
+      "pl": "Zmien jezyk"
+    },
+
+    "futures": {
+      "en": "Futures",
+      "ct": "meow",
+      "lt": "Futuristinai sugebėjimai.",
+      "fr": "Futurs",
+      "sv": "Framitid",
+      "pi": "Days after tomorrow",
+      "nb": "Fremtider",
+      "hu": "Jövendők",
+      "it": "Futures",
+      "ne": "Toekomsten",
+      "pl": "Przyszlosci"
+    },
+
+    "guild": {
+      "en": "Guild",
+      "ko": "대가족",
+      "ct": "Meow",
+      "fr": "Guilde",
+      "pi": "Crew",
+      "lt": "Gildija",
+      "ne": "Gilde",
+      "sv": "Klan",
+      "es": "Gremio",
+      "it": "Gilda",
+      "nb": "Laug",
+      "hu": "Klán",
+      "pl": "Gildia"
+    }
+  },
+
+
+  "analyzer": {
+    "pride": {
+      "en": "pride",
+      "ne": "trots",
+      "lt": "Vertė",
+      "pi": "pride",
+      "it": "valore",
+            "nb": "stolthet",
+      "pl": "duma"
+    },
+
+    "cardCount": {
+      "en": "cards",
+      "ne": "kaarten",
+      "lt": "Kortų kiekis",
+      "pi": "ships",
+      "it": "carte",
+            "nb": "kort",
+      "pl": "ilosc kart"
+    },
+
+    "attack": {
+      "en": "attack",
+      "ne": "aanval",
+      "lt": "Puolimo taškai",
+      "pi": "cannons",
+      "it": "attacco",
+            "nb": "angrip",
+      "pl": "atak"
+    },
+
+    "health": {
+      "en": "health",
+      "ne": "levens",
+      "lt": "Gyvybių taškai",
+      "pi": "rum",
+      "it": "salute",
+            "nb": "helse",
+      "pl": "zycie"
+    }
+  },
+
+
+  "guildJoiner": {
+
+        "joinGuild": {
+            "en": "Join Guild",
+            "ne": "Treed toe in de Gilde",
+            "lt": "Stoti į Gildiją",
+            "pi": "Enlist",
+            "nb": "Bli med i lauget",
+            "pl": "Dolacz do gildii"
+        },
+
+        "createGuild": {
+            "en": "Create Guild",
+            "ne": "Maak Gilde",
+            "lt": "Sukurti Gildiją",
+            "pi": "Found guild",
+            "nb": "Lag et laug",
+            "pl": "Zaloz gildie"
+        },
+
+        "joinPolicy": {
+            "en": "Join Policy",
+            "ne": "Treed toe in het overleg",
+            "lt": "Įstojimo tipas",
+            "pi": "Enlistment policy",
+            "nb": "Deltagelsesregler",
+            "pl": "Warunki dolaczenia"
+        },
+
+        "banner": {
+            "en": "Banner",
+            "ne": "Logo",
+            "lt": "Logotipas",
+            "pi": "Flag",
+            "nb": "Banner",
+            "pl": "Banner"
+        },
+
+    "join": {
+      "en": "Join",
+      "ne": "Treed toe",
+      "lt": "Įstoti",
+            "pi": "Enlist",
+            "pl": "Dolacz",
+      "nb": "Bli med"
+    },
+
+    "leaders": {
+      "en": "Leaders",
+      "ne": "Leiders",
+      "lt": "Vadovai",
+      "pi": "Captains",
+      "pl": "Dowodcy",
+      "nb": "Ledere"
+    },
+
+    "members": {
+      "en": "Members",
+      "ne": "Leden",
+      "lt": "Nariai",
+      "pi": "Crewers",
+      "pl": "Czlonkowie",
+      "nb": "Medlemmer"
+    },
+
+    "gpToday": {
+      "en": "GP Today",
+      "ne": "GP vandaag",
+      "lt": "Šiandienos GP",
+      "pi": "Gold today",
+      "pl": "GP dzis",
+      "nb": "GP i dag"
+    },
+
+    "founded": {
+      "en": "Founded",
+      "ne": "Gesticht",
+      "lt": "Įkurta",
+      "pi": "Founded",
+      "pl": "Zalozona",
+      "nb": "Grunnlagt"
+    }
+  },
+
+
+    "guildJoinPolicy": {
+        "open": {
+            "name": {
+                "en": "Open",
+                "ne": "Open",
+                "lt": "Atvira",
+                "pi": "Open doors",
+                "pl": "Otwarta",
+                "nb": "Åpent"
+            },
+            "desc": {
+                "en": "Anyone can join this guild.",
+                "ne": "Iedereen kan in deze guild komen",
+                "lt": "Į šią Gildiją gali įstoti visi.",
+                "pi": "Any pirate may join this crew.",
+                "pl": "Kazdy moze dolaczyc do tej gildii.",
+                "nb": "Alle kan bli med i dette lauget."
+            }
+        },
+
+        "invite": {
+            "name": {
+                "en": "Invite",
+                "ne": "Nodig uit",
+                "lt": "Tik su pakvietimu",
+                "pi": "Private",
+                "pl": "Prywatna",
+                "nb": "Privat"
+            },
+            "desc": {
+                "en": "Only invited players can join this guild.",
+                "ne": "Alleen uitgenodigde speler kunnen in deze gilde komen",
+                "lt": "Tik pakviesti žaidėjai gali įstoti į šią Gildiją",
+                "pi": "Pirates must have a letter to join this guild.",
+                "pl": "Tylko zaproszeni gracze moga dolaczyc do tej gildii.",
+                "nb": "Bare inviterte spillere kan bli med i dette lauget."
+            }
+        },
+
+        "ask": {
+            "name": {
+                "en": "Ask",
+                "ne": "Vraag",
+                "lt": "Tik su užklausa",
+                "pi": "Inquiry only",
+                "pl": "Moderowana",
+                "nb": "Spør"
+            },
+            "desc": {
+                "en": "Players must ask or be invited to join this guild.",
+                "ne": "Spelers moeten gevraagd hebben of uitgenodigd zijn om deze gilde te betreden",
+                "lt": "Žaidėjai turi atsiusti užklausą arba būti pakviesti kad galėtu įstoti į šią Gildiją",
+                "pi": "Pirates must either have their request approved or have a letter to join this guild.",
+                "pl": "Aby dolaczyc, musisz sie zapytac lub zostac zaproszonym.",
+                "nb": "Spillere må spørre eller være invitert for å bli med i dette lauget."
+            }
+        }
+    },
+
+
+    "messages": {
+        "delete": {
+            "en": "delete",
+            "ne": "verwijder",
+            "pl": "usun",
+            "nb": "slett",
+            "pi": "burn message"
+        },
+        "report": {
+            "en": "report",
+            "ne": "rapporteren",
+            "pl": "zreportuj",
+            "nb": "rapporter",
+            "pi": "tip off police"
+        }
+    }
+}

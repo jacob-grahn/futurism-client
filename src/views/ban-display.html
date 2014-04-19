@@ -1,0 +1,6 @@
+<div class="ban-display well">
+    type: {{ban.type}}<br>
+    expires: {{ban.expireDate | date}}<br>
+    reason: {{ban.reason}}<br>
+    <span ng-if="ban.publicData">data: {{ban.publicData}}</span>
+</div>
