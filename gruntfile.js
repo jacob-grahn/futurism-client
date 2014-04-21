@@ -90,7 +90,7 @@
                     {
                         context: '/globe',
                         host: 'localhost',
-                        port: 9002
+                        port: 9001
                     }
                 ],
                 livereload: {
