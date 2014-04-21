@@ -1,5 +1,4 @@
 @import "base";
-
 @import "animations/attack";
 @import "animations/battlecry";
 @import "animations/card-flasher";
@@ -11,7 +10,6 @@
 @import "animations/summon";
 @import "animations/transformer";
 @import "animations/turn-animation";
-
 @import "card";
 @import "card-builder";
 @import "card-selector";
@@ -32,12 +30,12 @@
 @import "you-panel";
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-image: url("/images/futurism-bg-960x540.jpg");
-  background-repeat: no-repeat;
-  background-color: #000000;
-  background-attachment: fixed;
-  color: $dark-blend;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    background-attachment: fixed;
+    color: $dark-blend;
 }
 
 @media all and (min-width: 960px), (min-height: 540px) {
@@ -51,18 +49,23 @@ body {
 }
 
 h1 {
-  font-family: "aw-conqueror-carved";
-  color: $light-blend;
+    font-family: "aw-conqueror-carved";
+    color: $light-blend;
     margin: 15px 0px 10px -5px;
+}
+
+h1 input.form-control {
+    font-size: 32px;
+    height: 48px;
+}
+
+h1.inverse, .inverse h1 {
+    color: $light-contrast;
 }
 
 h3 {
     font-family: "aw-conqueror-carved";
     color: $dark-blend;
-}
-
-h1.inverse, .inverse h1 {
-  color: $light-contrast;
 }
 
 h3.inverse, .inverse h3 {
@@ -78,15 +81,15 @@ a {
 }
 
 .panel {
-  padding: 0px;
+    padding: 0px;
 }
 
 .panel h1 {
-  margin-top: 0px;
+    margin-top: 0px;
 }
 
 .panel-segment {
-  padding: 15px;
+    padding: 15px;
     padding-left: 20px;
 }
 
@@ -99,37 +102,42 @@ a {
 }
 
 ul {
-  list-style: none;
-  padding: 0;
+    list-style: none;
+    padding: 0;
 }
 
 .username {
-  cursor: pointer;
+    cursor: pointer;
 }
 
-.nav, .pagination, .carousel a { cursor: pointer; }
+.nav, .pagination, .carousel a {
+    cursor: pointer;
+}
 
 .logging-in {
-  background-color: white;
-  position: absolute;
-  right: 0;
-  top: 0;
-  color: darkgray;
-  margin: 20px;
-  padding: 20px;
-  font-size: 24px;
-  z-index: 9999;
+    background-color: white;
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: darkgray;
+    margin: 20px;
+    padding: 20px;
+    font-size: 24px;
+    z-index: 9999;
 }
 
 .absolute-center {
-  margin: auto;
-  position: absolute;
-  top: 0; left: 0; bottom: 0; right: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .panel-default {
-  background-color: rgba(255, 255, 255, 0.9);
-  @include box-shadow(2px, 2px, 7px, rgba(0, 0, 0, 0.7));
+    background-color: rgba(255, 255, 255, 0.9);
+    @include box-shadow(2px, 2px, 7px, rgba(0, 0, 0, 0.7));
 }
 
 .subtle {
@@ -137,28 +145,9 @@ ul {
     color: grey;
 }
 
-
-
-
-
-
-
-.modal {
+/*.modal {
     display: block;
     height: 0;
     overflow: visible;
     outline: none;
-}
-
-.modal-body:before,
-.modal-body:after {
-    display: table;
-    content: " ";
-}
-
-.modal-header:before,
-.modal-header:after {
-    display: table;
-    content: " ";
-}
-
+}*/

@@ -9,6 +9,7 @@ angular.module('futurism')
         $scope.CardResource = CardResource;
         $scope.query = {userId: me.user._id, cannon: true};
         $scope.cards = [];
+        $scope.me = me;
 
 
         $scope.saveDeck = function() {

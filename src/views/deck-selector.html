@@ -1,5 +1,14 @@
-<ul class="deck-list">
-    <li class="deck-holder" ng-repeat="deck in decks">
-        <deck-display size="medium" ng-click="select(deck)"></deck-display>
-    </li>
-</ul>
+<div class="row toppy">
+    <username class="inverse" size="large" user="me.user"></username>
+    <button class="new-deck-btn btn btn-default" ng-click="newDeck()">{{lang.deckSelector.newDeck}}</button>
+</div>
+
+<div class="row">
+    <ul class="deck-list">
+        <li class="deck-holder" ng-repeat="deck in decks">
+            <deck-display size="medium" ng-click="select(deck)"></deck-display>
+            <button class="btn btn-default" ng-click="select(deck)">{{lang.deckSelector.edit}}</button>
+            <busy-button ng-show="canDelete(deck)" on-click="deleteDeck(deck)" label="{{lang.messages.delete}}"></busy-button>
+        </li>
+    </ul>
+</div>

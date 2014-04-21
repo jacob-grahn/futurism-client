@@ -20,7 +20,7 @@ angular
                 templateUrl: 'views/deck-builder.html',
                 controller: 'DeckBuilderCtrl'
             }).
-            when('/deck-selector', {
+            when('/deck-selector/:userId', {
                 templateUrl: 'views/deck-selector.html',
                 controller: 'DeckSelectorCtrl'
             }).
