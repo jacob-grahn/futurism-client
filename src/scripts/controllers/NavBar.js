@@ -19,12 +19,12 @@ angular.module('futurism')
 
 
         $scope.atDeckBuilder = function() {
-            return $scope.path === '/deck-builder' || $scope.path === '/deck-selector';
+            return $scope.path.indexOf('/deck-builder') !== -1 || $scope.path.indexOf('/deck-selector') !== -1;
         };
 
 
         $scope.atCardBuilder = function() {
-            return $scope.path === '/card-builder' || $scope.path === '/card-selector';
+            return $scope.path.indexOf('/card-builder') !== -1 || $scope.path.indexOf('/card-selector') !== -1;
         };
 
 

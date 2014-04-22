@@ -4,10 +4,13 @@
         <form role="form" class="panel-segment">
 
             <div class="form-group">
-                <h1><input class="form-control" type="text" ng-model="deck.name" placeholder="Name"></h1>
                 <busy-button class="btn btn-primary" on-click="saveDeck()" label="{{lang.deckBuilder.save}}"></busy-button>
                 <a ng-href="/deck-selector/{{me.user._id}}"><button class='btn btn-default'>{{lang.deckBuilder.load}}</button></a>
                 <button class='btn btn-default' type="submit" ng-click="applyDefaults()">{{lang.deckBuilder.new}}</button>
+            </div>
+
+            <div class="form-group">
+                <input class="form-control form-control-big" type="text" ng-model="deck.name" placeholder="Name">
             </div>
 
             <div class="form-group">

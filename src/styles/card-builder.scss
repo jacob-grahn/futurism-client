@@ -1,5 +1,5 @@
 #card-settings form {
-    max-width: 300px;
+    //max-width: 300px;
 }
 
 #card-settings .form-group {
@@ -8,6 +8,11 @@
 
 #card-settings .form-control {
     margin-bottom: 5px;
+}
+
+#card-settings .control-label {
+    /*position: relative;
+    left: 20px;*/
 }
 
 #card-preview-holder .card {

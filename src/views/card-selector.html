@@ -1,9 +1,13 @@
-<username class="inverse" size="large" user="user"></username>
+<div class="row toppy">
+    <username class="inverse" size="large" user="user"></username>
+    <button ng-if="user._id == me.user._id" class="new-deck-btn btn btn-default" ng-click="newCard()">{{lang.cardSelector.newCard}}</button>
+</div>
 
 <paginated resource="CardResource" results="cards" query="query">
     <ul class="card-list clearfix">
         <li class="card-holder" ng-repeat="card in cards">
             <card-display card="card" ng-click="selectCard(card)" size="medium"></card-display>
+            <button class="btn btn-default" ng-click="selectCard(card)">{{lang.cardSelector.edit}}</button>
             <busy-button ng-show="canDelete(card)" on-click="deleteCard(card)" label="{{lang.messages.delete}}"></busy-button>
             <busy-button ng-show="canReport(card)" on-click="reportCard(card)" label="{{lang.messages.report}}"></busy-button>
         </li>

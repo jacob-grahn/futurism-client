@@ -4,6 +4,7 @@ angular.module('futurism')
 
         var groups = shared.groups;
 
+        $scope.me = me;
         $scope.userId = $routeParams.userId;
         $scope.user = UserResource.get({
             userId: $scope.userId
@@ -14,6 +15,11 @@ angular.module('futurism')
             userId: $scope.userId
         };
         $scope.cards = [];
+
+        $scope.newCard = function() {
+            cardInProgress.reset();
+            $location.url('/card-builder');
+        };
 
         $scope.selectCard = function (card) {
             if ($scope.userId === me.user._id) {

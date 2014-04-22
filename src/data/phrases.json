@@ -360,6 +360,16 @@
     },
 
 
+    "cardSelector": {
+        "edit": {
+            "en": "Edit"
+        },
+        "newCard": {
+            "en": "New Card"
+        }
+    },
+
+
     "deckBuilder": {
         "saveAndLoad": {
             "en": "Save n Load",

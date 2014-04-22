@@ -54,10 +54,12 @@ h1 {
     margin: 15px 0px 10px -5px;
 }
 
-h1 input.form-control {
+.form-control-big {
+    font-family: "aw-conqueror-carved";
     font-size: 32px;
     height: 58px;
     color: $light-blend;
+    margin-left: 0;
 }
 
 h1.inverse, .inverse h1 {
