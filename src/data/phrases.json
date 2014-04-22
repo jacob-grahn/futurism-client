@@ -352,20 +352,24 @@
 
     "deckSelector": {
         "edit": {
-            "en": "Edit"
+            "en": "Edit",
+            "pi": "Change fleet"
         },
         "newDeck": {
-            "en": "New Deck"
+            "en": "New Deck",
+            "pi": "New fleet"
         }
     },
 
 
     "cardSelector": {
         "edit": {
-            "en": "Edit"
+            "en": "Edit",
+            "pi": "Change Crew"
         },
         "newCard": {
-            "en": "New Card"
+            "en": "New Card",
+            "pi": "New Ship"
         }
     },
 
@@ -522,26 +526,32 @@
 
     "loadup": {
         "maxDeckSize": {
-            "en": "Max Size"
+            "en": "Max Size",
+            "pi": "Max Size"
         },
         "selectDeck": {
-            "en": "Select a Deck!"
+            "en": "Select a Deck!",
+            "pi": "Choose your fleet!"
         },
         "select": {
-            "en": "Select"
+            "en": "Select",
+            "pi": "Select"
         },
         "futures": {
-            "en": "Futures!"
+            "en": "Futures!",
+            "pi": "Tomorrows!"
         },
         "selectFutureSingular": {
-            "en": "Select a Future!"
+            "en": "Select a Future!",
+            "pi": "Select the day after tomorrow!"
         }
     },
 
 
     "deck": {
         "cards": {
-            "en": "cards"
+            "en": "cards",
+            "pi": "ships"
         }
     },
 
@@ -564,7 +574,8 @@
         },
 
         "deckSize": {
-            "en": "cards"
+            "en": "cards",
+            "pi": "ships"
         },
 
         "join": {
@@ -739,11 +750,13 @@
 
     "nav": {
         "reports": {
-            "en": "Reports"
+            "en": "Reports",
+            "pi": "Tip-offs"
         },
 
         "modLog": {
-            "en": "Mod Log"
+            "en": "Mod Log",
+            "pi": "Police books"
         },
 
         "toggle": {
