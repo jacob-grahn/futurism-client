@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .controller('DeckSelectorCtrl', function($scope, $location, deckInProgress, DeckResource, me) {
+    .controller('DeckSelectorCtrl', function($scope, $location, deckInProgress, DeckResource, me, _) {
         'use strict';
 
         $scope.decks = DeckResource.query(function(){});
@@ -19,7 +19,7 @@ angular.module('futurism')
         
         
         $scope.canDelete = function(deck) {
-            return true;
+            return deck.user._id === me.user._id;
         };
         
         
