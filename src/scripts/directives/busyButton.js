@@ -12,6 +12,7 @@ angular.module('futurism')
             link: function(scope, element, attr) {
                 scope.defaultLabel = attr.label || 'Save';
                 scope.label = scope.defaultLabel;
+                scope.class = attr.class;
                 scope.startClick = function() {
                     if(!scope.promise) {
                         scope.label = 'working...';

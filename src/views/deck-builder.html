@@ -1,11 +1,11 @@
 <div id="deck-builder" class="row">
 
-    <div id="deck-settings" class="col-sm-5 panel panel-default">
+    <div id="deck-settings" class="col-sm-5 side-panel">
         <form role="form" class="panel-segment">
 
             <div class="form-group">
                 <h1><input class="form-control" type="text" ng-model="deck.name" placeholder="Name"></h1>
-                <busy-button on-click="saveDeck()" label="{{lang.deckBuilder.save}}"></busy-button>
+                <busy-button class="btn btn-primary" on-click="saveDeck()" label="{{lang.deckBuilder.save}}"></busy-button>
                 <a ng-href="/deck-selector/{{me.user._id}}"><button class='btn btn-default'>{{lang.deckBuilder.load}}</button></a>
                 <button class='btn btn-default' type="submit" ng-click="applyDefaults()">{{lang.deckBuilder.new}}</button>
             </div>

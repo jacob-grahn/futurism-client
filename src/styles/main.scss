@@ -57,6 +57,7 @@ h1 {
 h1 input.form-control {
     font-size: 32px;
     height: 58px;
+    color: $light-blend;
 }
 
 h1.inverse, .inverse h1 {
@@ -80,11 +81,12 @@ a {
     cursor: pointer;
 }
 
-.panel {
+.side-panel {
     padding: 0px;
+    background-color: white;
 }
 
-.panel h1 {
+.side-panel h1 {
     margin-top: 0px;
 }
 
@@ -94,7 +96,7 @@ a {
 }
 
 .panel-segment:nth-child(even) {
-    background-color: white;
+    background-color: #eaebff;
 }
 
 .inverse {

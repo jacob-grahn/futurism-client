@@ -37,7 +37,7 @@
 
     <div id="lobby-chat" class="col-sm-5">
 
-        <div id="lobby-chat-panel" class="panel panel-default" match-screen-height resize-element=".auto-size" offset-bottom="100">
+        <div id="lobby-chat-panel" class="side-panel" match-screen-height resize-element=".auto-size" offset-bottom="90">
             <div class="panel-segment">
                 <select class="lobby-select" ng-model="model.lobby" ng-options="lby._id for lby in lobbies"></select>
                 <chat-display id="lobby-chat" room="{{chatId}}"></chat-display>
