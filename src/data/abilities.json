@@ -582,7 +582,8 @@
                 "pi": "take up anchor"
             },
             "desc": {
-                "en": "Move an ally card, curing poison in the process."
+                "en": "Move an ally card, curing poison in the process.",
+                "pi": "Sail a ship, and give it some oranges to cure scurvy."
             }
         },
 
@@ -726,7 +727,8 @@
                 "pl": "Okrzyk wojenny"
             },
             "desc": {
-                "en": "All ally zealots gain 1 attack for 1 turn."
+                "en": "All ally zealots gain 1 attack for 1 turn.",
+                "pi": "All allied priest gain one attack for 1 turn."
             }
         },
 
