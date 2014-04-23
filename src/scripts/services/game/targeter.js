@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .factory('targeter', function($routeParams, state, shared, board, players, socket) {
+    .factory('targeter', function($routeParams, state, shared, board, players, socket, me) {
 
         var actions = shared.actions;
 
@@ -86,6 +86,9 @@ angular.module('futurism')
              * Returns if target is allowed by current filter
              */
             isValidTarget: function(target) {
+                if(state.name === state.THINKING && target.card && target.card.moves > 0 && target.playerId === me.user._id) {
+                    return true;
+                }
                 if(state.name !== state.TARGETING) {
                     return false;
                 }

@@ -1,4 +1,4 @@
-<div id="game" class="row" auto-scroll watch="state" find="scroll-here" target="board-area">
+<div id="game" class="row" auto-scroll watch="state" find="target-valid" target="board-area">
 
     <turn-anim></turn-anim>
 
@@ -13,16 +13,20 @@
                 </div>
 
                 <ul ng-repeat="column in area.targets" class="player-field-column">
-                    <li ng-repeat="target in column | inverseFoes:players.findMe().team" ng-click="targeter.selectTarget(target)" class="target {{target.player._id}}-{{target.column}}-{{target.row}}" ng-class="{'target-valid': targeter.isValidTarget(target), 'scroll-here': targeter.isValidTarget(target)}">
+                    <li ng-repeat="target in column | inverseFoes:players.findMe().team"
+                        ng-click="targeter.selectTarget(target)"
+                        class="target {{target.player._id}}-{{target.column}}-{{target.row}}"
+                        ng-class="{'target-valid': targeter.isValidTarget(target)}">
                         <card-magnify
                                 ng-if="target.card"
                                 card="target.card"
                                 action-fn="targeter.selectAction(abilityId, target)"
                                 size="small" magnify="large"
-                                use-buttons="{{target.player == players.findMe()}}"
-                                ng-class="{'card-disabled': target.card.moves <= 0 || !turn.isMyTurn() && players.findMe()._id == target.player._id}"
-                                active="{{!targeter.isValidTarget(target)}}">
+                                use-buttons="{{target.player._id == me.user._id}}"
+                                ng-class="{'card-disabled': target.card.moves <= 0 || !turn.isMyTurn() && me.user._id == target.player._id}"
+                                active="{{state.name != 'targeting'}}">
                         </card-magnify>
+                        <div class="backing"></div>
                     </li>
                 </ul>
 

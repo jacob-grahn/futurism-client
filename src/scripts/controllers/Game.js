@@ -11,6 +11,7 @@ angular.module('futurism')
         $scope.targeter = targeter;
         $scope.gameId = $routeParams.gameId;
         $scope.chatId = $scope.gameId.replace('game', 'chat');
+        $scope.me = me;
 
 
         var connectToGame = function() {

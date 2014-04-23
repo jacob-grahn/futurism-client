@@ -17,6 +17,10 @@ angular.module('futurism')
             link: function (scope) {
                 scope.lang = lang;
                 scope.staticContentUrl = staticContentUrl;
+
+                scope.doAction = function(abilityId) {
+                    scope.actionFn({abilityId: abilityId, card: scope.card});
+                }
             }
         };
 
