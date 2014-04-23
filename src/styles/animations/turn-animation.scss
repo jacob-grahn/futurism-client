@@ -5,7 +5,7 @@
     z-index: 1010;
     width: 100%;
     left: 0px;
-    top: 50px;
+    top: 0px;
     background-color: darken($dark-grey, 5);
     border-top: 1px solid $grey;
     border-bottom: 1px solid $grey;
@@ -27,12 +27,12 @@
 }
 
 #turn-anim.ng-enter.ng-enter-active {
-    top: 50px;
+    top: 0px;
     opacity: 1;
 }
 
 #turn-anim.ng-leave {
-    top: 50px;
+    top: 0px;
     opacity: 1;
 }
 
