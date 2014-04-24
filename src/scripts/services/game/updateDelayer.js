@@ -32,27 +32,62 @@ angular.module('futurism')
 
 
             /**
-             * apply the next update in the queue
+             * start delaying the next update in the queue
              */
             run: function() {
-
                 if(!running && queue.length > 0) {
                     var task = queue.shift();
                     running = true;
-                    delay = 0;
+                    self.preTask(task);
+                }
+            },
 
-                    $rootScope.$broadcast('pre:'+task.name, task.changes);
-                    task.callback(task);
-                    $rootScope.$broadcast('post:'+task.name, task.changes);
 
+            /**
+             * emit pre task event and wait delay ms
+             * @param task
+             */
+            preTask: function(task) {
+                delay = 0;
+                $rootScope.$broadcast('pre:'+task.name, task.changes);
+
+                if(delay === 0) {
+                    self.postTask(task);
+                }
+                else {
                     $timeout(function() {
-                        running = false;
-                        self.run();
+                        self.postTask(task);
                     }, delay);
                 }
+            },
+
+
+            /**
+             * do the task, emit post task event, and wait delay ms
+             * @param task
+             */
+            postTask: function(task) {
+                task.callback(task);
+
+                delay = 0;
+                $rootScope.$broadcast('post:'+task.name, task.changes);
+
+                if(delay === 0) {
+                    self.finish();
+                }
+                else {
+                    $timeout(self.finish, delay);
+                }
+            },
+
+
+            /**
+             * the delay is complete
+             */
+            finish: function() {
+                running = false;
+                self.run();
             }
-
-
 
         };
 
