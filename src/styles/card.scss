@@ -14,14 +14,14 @@ body .card-ze h1 {
 
 .card {
     color: $dark-blend;
-  position: relative;
-  width: 260px;
-  height: 372px;
-  min-height: 372px;
-  background-color: white;
-  overflow-y: hidden;
-  overflow-x: hidden;
-  padding: 0px;
+    position: relative;
+    width: 260px;
+    height: 372px;
+    min-height: 372px;
+    background-color: white;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    padding: 0px;
     margin: 0px;
 
     @include border-radius(4px);

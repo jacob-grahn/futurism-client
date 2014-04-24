@@ -32,6 +32,8 @@ angular.module('futurism')
         Sound.registerSound('sounds/trees.ogg', 'trees');
         Sound.registerSound('sounds/turn.ogg', 'turn');
         Sound.registerSound('sounds/win.ogg', 'win');
+        Sound.registerSound('sounds/die.ogg', 'die');
+        Sound.registerSound('sounds/future.ogg', 'future');
 
         return {
 

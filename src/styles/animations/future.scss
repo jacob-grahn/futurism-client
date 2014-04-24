@@ -1,0 +1,17 @@
+.future-flash-anim {
+    animation-duration: .5s;
+    //transform-origin: center center;
+    animation-name: future-flash-anim;
+    opacity: 0;
+}
+
+@keyframes future-flash-anim {
+    0% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.5, 1.5);
+    }
+}
