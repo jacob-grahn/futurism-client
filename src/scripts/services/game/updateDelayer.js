@@ -4,7 +4,15 @@ angular.module('futurism')
 
         var queue = [];
         var running = false;
-        var playbackRate = 500;
+        var delay = 0;
+
+
+        /**
+         * listen for animations that request more time
+         */
+        $rootScope.$on('animDelay', function(srcScope, requestedDelay) {
+            delay = requestedDelay;
+        });
 
 
         var self = {
@@ -31,19 +39,21 @@ angular.module('futurism')
                 if(!running && queue.length > 0) {
                     var task = queue.shift();
                     running = true;
+                    delay = 0;
 
                     $rootScope.$broadcast('pre:'+task.name, task.changes);
-
                     task.callback(task);
-
                     $rootScope.$broadcast('post:'+task.name, task.changes);
 
                     $timeout(function() {
                         running = false;
                         self.run();
-                    }, playbackRate);
+                    }, delay);
                 }
             }
+
+
+
         };
 
 
