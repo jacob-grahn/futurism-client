@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",
-    "angular-scenario": "~1.2.0"
+    "angular-scenario": "~1.2.0",
+    "sinon": "http://sinonjs.org/releases/sinon-1.7.1.js"
   }
 }

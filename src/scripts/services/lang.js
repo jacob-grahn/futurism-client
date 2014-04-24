@@ -52,28 +52,33 @@
         lang.setLang = function(languageId) {
             copyPhrases(lang, lang.phrases, languageId);
         };
+        
+        
+        /**
+         * load handler
+         */
+        lang.onLoad = function(phraseData) {
+            _.extend(lang.phrases, phraseData);
+            lang.setLang('en');
+        };
+        
+        
+        /**
+         * error loading handler
+         */
+        lang.onError = function() {
+            errorHandler.handleError('Could not load language file.');
+        };
 
 
         /**
          * Load in the phrases.json file
          */
-        lang.init = function() {
-            var onLoad = function(phraseData) {
-                _.extend(lang.phrases, phraseData);
-                lang.setLang('en');
-            };
-            var onError = function() {
-                errorHandler.handleError('Could not load language file.');
-            };
-
-            $http.get('data/abilities.json').success(onLoad).error(onError);
-            $http.get('data/factions.json').success(onLoad).error(onError);
-            $http.get('data/fractures.json').success(onLoad).error(onError);
-            $http.get('data/futures.json').success(onLoad).error(onError);
-            $http.get('data/goals.json').success(onLoad).error(onError);
-            $http.get('data/languages.json').success(onLoad).error(onError);
-            $http.get('data/notifications.json').success(onLoad).error(onError);
-            $http.get('data/phrases.json').success(onLoad).error(onError);
+        lang.loadData = function(url) {
+            $http
+                .get(url)
+                .success(lang.onLoad)
+                .error(lang.onError);
         };
 
 

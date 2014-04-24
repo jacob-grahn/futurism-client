@@ -1,4 +1,4 @@
-/* global _, errorHandlerMock */
+/* global describe, beforeEach, module, inject, it, expect */
 
 describe('service: lang', function() {
     'use strict';
@@ -51,7 +51,7 @@ describe('service: lang', function() {
             });
 
         //
-        lang.init();
+        lang.loadData('data/phrases.json');
 
         //complete the http request
         http.flush();

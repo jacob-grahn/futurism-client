@@ -6,11 +6,16 @@ angular.module('futurism')
         $scope.me = me;
         $scope.rankCalc = rankCalc;
 
-        $scope.summ = SummaryResource.get({gameId: $scope.gameId}, function() {
-            fillCards($scope.summ.users, $scope.summ.cards);
-        });
+        
+        var makeCardDict = function(cards) {
+            var dict = {};
+            _.each(cards, function(card) {
+                dict[card._id] = card;
+            });
+            return dict;
+        };
 
-
+        
         var fillCards = function(players, cards) {
             var cardDict = makeCardDict(cards);
             _.each(players, function(player) {
@@ -19,13 +24,11 @@ angular.module('futurism')
                 });
             });
         };
+        
+        
+        $scope.summ = SummaryResource.get({gameId: $scope.gameId}, function() {
+            fillCards($scope.summ.users, $scope.summ.cards);
+        });
 
 
-        var makeCardDict = function(cards) {
-            var dict = {};
-            _.each(cards, function(card) {
-                dict[card._id] = card;
-            });
-            return dict;
-        };
     });

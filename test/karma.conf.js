@@ -1,61 +1,65 @@
+/*jslint node: true */
+
 // Karma configuration
 // http://karma-runner.github.io/0.10/config/configuration-file.html
 
-module.exports = function(config) {
-  config.set({
-    // base path, that will be used to resolve files and exclude
-    basePath: '/',
+module.exports = function (config) {
+    'use strict';
 
-    // testing framework to use (jasmine/mocha/qunit/...)
-    frameworks: ['jasmine'],
+    config.set({
+        // base path, that will be used to resolve files and exclude
+        basePath: '../',
 
-    // list of files / patterns to load in the browser
-    files: [
-      'src/bower_components/angular/angular.js',
-      'src/bower_components/angular-animate/angular-animate.js',
-      'src/bower_components/angular-resource/angular-resource.js',
-      'src/bower_components/angular-route/angular-route.js',
-      'src/bower_components/angular-mocks/angular-mocks.js',
+        // testing framework to use (jasmine/mocha/qunit/...)
+        frameworks: ['jasmine'],
+
+        // list of files / patterns to load in the browser
+        files: [
+            'src/bower_components/angular/angular.js',
+            'src/bower_components/angular-animate/angular-animate.js',
+            'src/bower_components/angular-resource/angular-resource.js',
+            'src/bower_components/angular-route/angular-route.js',
+            'src/bower_components/angular-mocks/angular-mocks.js',
             'src/bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-            'src/bower_components/async/lib/async.js',
             'src/bower_components/jquery/jquery.js',
             'src/bower_components/lodash/dist/lodash.js',
             'src/bower_components/angular/angular.js',
             'src/bower_components/socket.io-client/dist/socket.io.js',
+            'src/bower_components/sinon/index.js',
             'src/scripts/futurism.js',
-      'src/scripts/**/*.js',
-      'test/mock/**/*.js',
-         'test/unit/**/*.js'
-    ],
+            'src/scripts/**/*.js',
+            'test/mock/**/*.js',
+            'test/spec/**/*.js'
+        ],
 
-    // list of files / patterns to exclude
-    exclude: ['src/scripts/futurism-run.js'],
+        // list of files / patterns to exclude
+        exclude: ['src/scripts/futurismRun.js'],
 
-    // web server port
-    port: 8080,
+        // web server port
+        port: 8080,
 
-    // level of logging
-    // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel: config.LOG_INFO,
-
-
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: false,
+        // level of logging
+        // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
+        logLevel: config.LOG_INFO,
 
 
-    // Start these browsers, currently available:
-    // - Chrome
-    // - ChromeCanary
-    // - Firefox
-    // - Opera
-    // - Safari (only Mac)
-    // - PhantomJS
-    // - IE (only Windows)
-    browsers: ['Firefox'],
+        // enable / disable watching file and executing tests whenever any file changes
+        autoWatch: false,
 
 
-    // Continuous Integration mode
-    // if true, it capture browsers, run tests and exit
-    singleRun: false
-  });
+        // Start these browsers, currently available:
+        // - Chrome
+        // - ChromeCanary
+        // - Firefox
+        // - Opera
+        // - Safari (only Mac)
+        // - PhantomJS
+        // - IE (only Windows)
+        browsers: ['Firefox'],
+
+
+        // Continuous Integration mode
+        // if true, it capture browsers, run tests and exit
+        singleRun: false
+    });
 };

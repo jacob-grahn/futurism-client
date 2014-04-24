@@ -1,6 +1,10 @@
-describe('GameSummary', function () {
+/* global describe, beforeEach, module, inject, it, expect, sinon, _ */
 
-    var $scope, $httpBackend;
+describe('GameSummary', function () {
+    
+    'use strict';
+
+    var $scope, $httpBackend, SummaryResource;
 
     beforeEach(function() {
 
@@ -8,12 +12,19 @@ describe('GameSummary', function () {
 
         inject(function($injector) {
             $httpBackend = $injector.get('$httpBackend');
-            var mockSumm = $injector.get('SummaryResource');
+            SummaryResource = {get: sinon.stub().returns({})};
             var $rootScope = $injector.get('$rootScope');
             var $controller = $injector.get('$controller');
 
             $scope = $rootScope.$new();
-            $controller('GameSummaryCtrl', {$scope: $scope, $routeParams: {gameId:'123'}, SummaryResource: mockSumm, account: {_id:1}});
+            $controller('GameSummaryCtrl', {
+                $scope: $scope,
+                $routeParams: {gameId:'123'},
+                SummaryResource: SummaryResource,
+                me: {user: {_id:1}},
+                rankCalc: {},
+                _: _
+            });
         });
     });
 
@@ -25,7 +36,7 @@ describe('GameSummary', function () {
         });
 
         it('should add account to scope', function() {
-            expect($scope.account._id).toBe(1);
+            expect($scope.me.user._id).toBe(1);
         });
 
         it('should create a summ object', function() {
@@ -33,10 +44,7 @@ describe('GameSummary', function () {
         });
 
         it('should request data from server', function () {
-            $httpBackend.expectGET('/api/summaries/123').respond({});
-            $httpBackend.flush();
-            $httpBackend.verifyNoOutstandingExpectation();
-            $httpBackend.verifyNoOutstandingRequest();
+            expect(SummaryResource.get.callCount).toBe(1);
         });
     });
 });
