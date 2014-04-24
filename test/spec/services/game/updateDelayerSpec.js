@@ -18,23 +18,17 @@ describe('updateDelayer', function() {
     });
 
     afterEach(function() {
-        /*$rootScope.$$listeners['pre:test'] = [];
-        $rootScope.$$listeners['post:test'] = [];
-        $rootScope.$$listeners['animDelay'] = [];*/
     });
 
 
-    it('should dispatch pre:anim, do the update, then dispatch post:anim event', function(done) {
+    it('should dispatch pre:anim, do the update, then dispatch post:anim event', function() {
         var seq = [];
 
-        var dereg1 = $rootScope.$on('pre:test', function() {
+        $rootScope.$on('pre:test', function() {
             seq.push('first');
         });
-        var dereg2 = $rootScope.$on('post:test', function() {
+        $rootScope.$on('post:test', function() {
             seq.push('third');
-            dereg1();
-            dereg2();
-            done();
         });
         updateDelayer.add('test', {change: 123}, function() {
             seq.push('second');
@@ -54,25 +48,22 @@ describe('updateDelayer', function() {
 
 
 
-    it('should return task in callback', function(done) {
+    it('should return task in callback', function() {
         updateDelayer.add('test', {id: 3}, function(task) {
             expect(task.name).toEqual('test');
             expect(task.changes).toEqual({id: 3});
-            done();
         });
     });
 
 
-    it('should delay 10ms if animDelay is fired during pre:anim event', function(done) {
-        var dereg1 = $rootScope.$on('pre:test', function() {
-            $rootScope.$broadcast('animDelay', 10);
+    it('should delay 10ms if animDelay is fired during pre:anim event', function() {
+        $rootScope.$on('pre:test', function(scope, changes, delayer) {
+            delayer.delay = 10;
         });
 
         var delayed = false;
         updateDelayer.add('test', {}, function() {
             expect(delayed).toBe(true);
-            dereg1();
-            done();
         });
 
         delayed = true;
@@ -80,9 +71,9 @@ describe('updateDelayer', function() {
     });
 
 
-    it('should delay 10ms if animDelay is fired during post:anim event', function(done) {
-        var dereg1 = $rootScope.$on('post:test', function() {
-            $rootScope.$broadcast('animDelay', 10);
+    it('should delay 10ms if animDelay is fired during post:anim event', function() {
+        $rootScope.$on('post:test', function(scope, changes, delayer) {
+            delayer.delay = 10;
         });
 
         var delayed = false;
@@ -91,8 +82,6 @@ describe('updateDelayer', function() {
 
             updateDelayer.add('test2', {}, function() {
                 expect(delayed).toBe(true);
-                dereg1();
-                done();
             });
         });
 
@@ -101,9 +90,9 @@ describe('updateDelayer', function() {
     });
 
 
-    /*it('should queue up multiple updates', function() {
-        var dereg1 = $rootScope.$on('pre:poo', function() {
-            $rootScope.$broadcast('animDelay', 10);
+    it('should queue up multiple updates', function() {
+        $rootScope.$on('pre:poo', function(scope, changes, delayer) {
+            delayer.delay = 10;
         });
 
         var arr = [];
@@ -111,20 +100,20 @@ describe('updateDelayer', function() {
         updateDelayer.add('poo', {}, function() {
             arr.push('first');
         });
-        updateDelayer.add('poo', {}, function() {
+        updateDelayer.add('wiz', {}, function() {
             arr.push('second');
+        });
+        updateDelayer.add('wee', {}, function() {
+            arr.push('third');
         });
 
         expect(arr).toEqual([]);
 
         $timeout.flush();
-        expect(arr).toEqual(['first']);
-
-        $timeout.flush();
-        expect(arr).toEqual(['first', 'second']);
+        expect(arr).toEqual(['first', 'second', 'third']);
 
         $timeout.verifyNoPendingTasks();
-        dereg1();
-    });*/
+
+    });
 
 });

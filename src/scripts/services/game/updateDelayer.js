@@ -4,18 +4,11 @@ angular.module('futurism')
 
         var queue = [];
         var running = false;
-        var delay = 0;
-
-
-        /**
-         * listen for animations that request more time
-         */
-        $rootScope.$on('animDelay', function(srcScope, requestedDelay) {
-            delay = requestedDelay;
-        });
 
 
         var self = {
+
+            delay: 0,
 
 
             /**
@@ -48,16 +41,16 @@ angular.module('futurism')
              * @param task
              */
             preTask: function(task) {
-                delay = 0;
-                $rootScope.$broadcast('pre:'+task.name, task.changes);
+                self.delay = 0;
+                $rootScope.$broadcast('pre:'+task.name, task.changes, self);
 
-                if(delay === 0) {
+                if(self.delay === 0) {
                     self.postTask(task);
                 }
                 else {
                     $timeout(function() {
                         self.postTask(task);
-                    }, delay);
+                    }, self.delay);
                 }
             },
 
@@ -69,20 +62,20 @@ angular.module('futurism')
             postTask: function(task) {
                 task.callback(task);
 
-                delay = 0;
-                $rootScope.$broadcast('post:'+task.name, task.changes);
+                self.delay = 0;
+                $rootScope.$broadcast('post:'+task.name, task.changes, self);
 
-                if(delay === 0) {
+                if(self.delay === 0) {
                     self.finish();
                 }
                 else {
-                    $timeout(self.finish, delay);
+                    $timeout(self.finish, self.delay);
                 }
             },
 
 
             /**
-             * the delay is complete
+             * the delay is complete, move on to the next one
              */
             finish: function() {
                 running = false;
