@@ -81,6 +81,10 @@ a {
     cursor: pointer;
 }
 
+.inverse a, a.inverse {
+    color: $dark-contrast;
+}
+
 .cursor-pointer {
     cursor: pointer;
 }
@@ -150,10 +154,3 @@ ul {
     font-size: 10px;
     color: grey;
 }
-
-/*.modal {
-    display: block;
-    height: 0;
-    overflow: visible;
-    outline: none;
-}*/
