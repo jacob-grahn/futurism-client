@@ -18,7 +18,7 @@ angular.module('futurism')
                     });
 
                     var unusedTargets = _.filter(targets, function(target) {
-                        return target.card && target.card.moves > 0;
+                        return target.card && target.card.moves > 0 && target.card.abilities.length > 0;
                     });
 
                     if(unusedTargets.length === 0 && filledTargets.length > 0) {

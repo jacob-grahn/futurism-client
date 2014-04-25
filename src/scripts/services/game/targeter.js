@@ -15,7 +15,7 @@ angular.module('futurism')
              * @param {Object} target
              */
             selectAction: function(actionId, target) {
-                if(state.name !== 'thinking') {
+                if(state.name !== state.THINKING && state.name !== state.PENDING) {
                     return false;
                 }
                 var action = actions[actionId];
@@ -77,7 +77,8 @@ angular.module('futurism')
                         targets: targets
                     });
 
-                    state.toDefault();
+                    //state.toDefault();
+                    state.set(state.PENDING);
                 }
             },
 

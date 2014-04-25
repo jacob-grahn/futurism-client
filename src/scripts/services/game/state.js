@@ -3,9 +3,10 @@ angular.module('futurism')
         'use strict';
 
         var state = {
-            THINKING: 'thinking',
-            WAITING: 'waiting',
-            TARGETING: 'targeting',
+            WAITING: 'waiting', // it is not your turn
+            THINKING: 'thinking', // the game is not doing anything, you can start an action
+            TARGETING: 'targeting', // you are in the middle of selecting targets for an action
+            PENDING: 'pending', // you have selected an action and are waiting for a response from the server
 
             name: 'none',
             data: null,
