@@ -8,8 +8,9 @@ angular.module('futurism')
             link: function(scope, boardElem) {
 
 
-                scope.$on('post:'+shared.actions.SERUM, function(srcScope, update) {
+                scope.$on('post:'+shared.actions.SERUM, function(srcScope, update, delayer) {
 
+                    delayer.delay = 2000;
                     sound.play('serum');
 
                     var src = animFns.chainedAnimTargets(update, update.data.targetChain)[0];

@@ -8,8 +8,9 @@ angular.module('futurism')
             link: function(scope, boardElem) {
 
 
-                scope.$on('post:netw', function(srcScope, update) {
+                scope.$on('pre:netw', function(srcScope, update, delayer) {
 
+                    delayer.delay = 1000;
                     sound.play('network');
 
                     var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);

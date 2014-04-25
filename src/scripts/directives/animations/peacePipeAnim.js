@@ -7,8 +7,9 @@ angular.module('futurism')
             restrict: 'A',
             link: function(scope, boardElem) {
 
-                scope.$on('post:peap', function(srcScope, update) {
+                scope.$on('post:peap', function(srcScope, update, delayer) {
 
+                    delayer.delay = 2000;
                     sound.play('peace', 1);
 
                     var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
@@ -18,7 +19,7 @@ angular.module('futurism')
                     animFns.animFlasher(boardElem, src.center, 'peace-pipe');
                     _.delay(function() {
                         animFns.animFlasher(boardElem, target.center, 'peace-pipe');
-                    }, 500);
+                    }, 1000);
 
                 });
             }

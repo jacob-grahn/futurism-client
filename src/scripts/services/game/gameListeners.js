@@ -20,7 +20,8 @@ angular.module('futurism')
         socket.$on('gameUpdate', function(data) {
             var cause = data.cause;
             var changes = data.changes;
-            changes.data = data.data;
+            changes.data = data.data
+            changes.cause = data.cause;
 
             updateDelayer.add(cause, changes, function() {
                 _.merge(players.list, changes.players);

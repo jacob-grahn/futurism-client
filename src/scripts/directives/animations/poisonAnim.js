@@ -9,11 +9,12 @@ angular.module('futurism')
 
 
                 // poison effect
-                scope.$on('post:poison', function(srcScope, update) {
+                scope.$on('post:poison', function(srcScope, update, delayer) {
 
                     var waitTime = 0;
 
                     var animTargets = animFns.updatedAnimTargets(update);
+                    delayer.delay = (animTargets.length * 500) + 500;
 
                     _.each(animTargets, function(animTarget) {
                         _.delay(function() {
@@ -27,7 +28,7 @@ angular.module('futurism')
                             animFns.animNotif(boardElem, animTarget.center, '-1 health', 'danger');
 
                         }, waitTime);
-                        waitTime += 100;
+                        waitTime += 500;
                     });
 
                 });

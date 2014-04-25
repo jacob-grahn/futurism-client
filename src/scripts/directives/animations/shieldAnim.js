@@ -7,8 +7,9 @@ angular.module('futurism')
             restrict: 'A',
             link: function(scope, boardElem) {
 
-                scope.$on('post:shld', function(srcScope, update) {
+                scope.$on('pre:shld', function(srcScope, update, delayer) {
 
+                    delayer.delay = 1000;
                     sound.play('shield');
 
                     var animTarget = animFns.chainedAnimTargets(update, update.data.targetChain)[0];

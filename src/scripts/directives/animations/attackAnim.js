@@ -8,34 +8,36 @@ angular.module('futurism')
             link: function(scope, boardElement) {
 
 
-                scope.$on('pre:siph', function(srcScope, update) {
-                    animAttackAndCounter(update);
+                scope.$on('pre:siph', function(srcScope, update, delayer) {
+                    animAttackAndCounter(update, delayer);
                 });
 
 
-                scope.$on('pre:assn', function(srcScope, update) {
+                scope.$on('pre:assn', function(srcScope, update, delayer) {
                     var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
-                    var attacker = animTargets[0];
+                    /*var attacker = animTargets[0];
                     var defender = animTargets[1];
                     defender.damage = update.data.result.targetDamage;
                     defender.shield = defender.target.card.shield;
                     attacker.heal = update.data.result.srcHeal;
-                    animAttack(attacker, defender);
+                    animAttack(attacker, defender);*/
+                    animAttackAndCounter(update, delayer);
                 });
 
 
-                scope.$on('pre:frvt', function(srcScope, update) {
-                    animAttackAndCounter(update);
+                scope.$on('pre:frvt', function(srcScope, update, delayer) {
+                    animAttackAndCounter(update, delayer);
                 });
 
 
-                scope.$on('pre:prci', function(srcScope, update) {
-                    animAttackAndCounter(update);
+                scope.$on('pre:prci', function(srcScope, update, delayer) {
+                    animAttackAndCounter(update, delayer);
                 });
 
 
-                scope.$on('pre:bees', function(srcScope, update) {
+                scope.$on('pre:bees', function(srcScope, update, delayer) {
                     sound.play('bees');
+                    delayer.delay = 2000;
                     var animTargets = animFns.updatedAnimTargets(update);
                     var attacker;
                     var defender;
@@ -55,8 +57,8 @@ angular.module('futurism')
                 });
 
 
-                scope.$on('pre:posn', function(srcScope, update) {
-
+                scope.$on('pre:posn', function(srcScope, update, delayer) {
+                    delayer.delay = 2000;
                     var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
 
                     var attacker = animTargets[0];
@@ -74,7 +76,7 @@ angular.module('futurism')
 
 
 
-                var animAttackAndCounter = function(update) {
+                var animAttackAndCounter = function(update, delayer) {
                     var result = update.data.result;
                     var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
                     var attacker = animTargets[0];
@@ -86,8 +88,17 @@ angular.module('futurism')
                     defender.damage = result.targetDamage;
                     defender.shield = defender.target.card.shield;
 
+                    var counterAttack;
+                    if( (!defender.newData || defender.newData.health > 0) && defender.target.card.attack > 0 && update.cause !== 'assn') {
+                        counterAttack = true;
+                        delayer.delay = 4000;
+                    }
+                    else {
+                        delayer.delay = 2000;
+                    }
+
                     animAttack(attacker, defender, function() {
-                        if( (!defender.newData || defender.newData.health > 0) && defender.target.card.attack > 0) {
+                        if(counterAttack) {
                             animAttack(defender, attacker, function() {});
                         }
                     });

@@ -8,7 +8,7 @@ angular.module('futurism')
             link: function(scope, boardElem) {
 
 
-                scope.$on('post:heal', function(srcScope, update) {
+                scope.$on('pre:heal', function(srcScope, update, delayer) {
 
                     sound.play('heal');
 
@@ -18,6 +18,7 @@ angular.module('futurism')
 
                     // heal beam, then heal effect
                     if(healer.target.card.cid !== healee.target.card.cid) {
+                        delayer.delay = 2000;
                         addBeam(healer, healee);
                         _.delay(function() {
                             addEffects(healee, 0);
@@ -26,6 +27,7 @@ angular.module('futurism')
 
                     // just heal effect
                     else {
+                        delayer.delay = 1000;
                         addEffects(healee, 0);
                     }
                 });

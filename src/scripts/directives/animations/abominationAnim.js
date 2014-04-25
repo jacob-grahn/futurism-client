@@ -8,22 +8,14 @@ angular.module('futurism')
             link: function(scope, boardElem) {
 
 
-                scope.$on('post:abom', function(srcScope, update) {
+                scope.$on('pre:abom', function(srcScope, update, delayer) {
 
+                    delayer.delay = 2000;
                     sound.play('abomination');
 
                     var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
                     var abom = animTargets[0];
                     var victim = animTargets[1];
-
-                    var cloneElem = victim.elem.find('.card-small').clone();
-
-                    cloneElem.css({
-                        position: 'absolute',
-                        top: victim.offset.top,
-                        left: victim.offset.left,
-                        'z-index': 99
-                    });
 
                     makeGrabbers(4, abom.offset, victim.offset, function() {
                         $('.grabber-effect')
@@ -33,19 +25,8 @@ angular.module('futurism')
                                 $('.grabber-effect').remove();
                             });
 
-                        cloneElem
-                            .animate({
-                                top: abom.offset.top,
-                                left: abom.offset.left
-                            }, 'slow')
-                            .animate({
-                                opacity: 0
-                            }, function() {
-                                cloneElem.remove();
-                            });
+                        animFns.animMove(boardElem, victim, abom);
                     });
-
-                    boardElem.append(cloneElem);
                 });
 
 

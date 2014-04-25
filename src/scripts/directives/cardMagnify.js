@@ -45,14 +45,14 @@ angular.module('futurism')
 
                 elem.click(function() {
                     console.log('cardMagnify detects click');
-                    //if(scope.active !== 'false') {
+                    if(scope.active !== 'false' || scope.hovering) {
                         scope.$apply(function() {
                             scope.hovering = !scope.hovering;
                             if(scope.hovering) {
                                 _.delay(scrollIntoView, 400);
                             }
                         });
-                    //}
+                    }
                 });
 
                 elem.mouseleave(function() {

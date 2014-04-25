@@ -8,12 +8,13 @@ angular.module('futurism')
             link: function(scope, boardElem) {
 
 
-                scope.$on('post:'+shared.actions.BATTLECRY, function(srcScope, update) {
+                scope.$on('pre:'+shared.actions.BATTLECRY, function(srcScope, update, delayer) {
 
                     sound.play('battle-cry');
 
                     var src = animFns.chainedAnimTargets(update, update.data.targetChain)[0];
                     var animTargets = animFns.updatedAnimTargets(update);
+                    delayer.delay = (animTargets.length * 250) + 1000;
 
 
                     // trumpets

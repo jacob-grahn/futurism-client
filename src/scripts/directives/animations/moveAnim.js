@@ -8,17 +8,16 @@ angular.module('futurism')
             link: function(scope, boardElem) {
 
 
-                scope.$on('post:move', function(srcScope, update) {
+                scope.$on('pre:move', function(srcScope, update, delayer) {
 
                     sound.play('move');
+                    delayer.delay = 1000;
 
-                    _.delay(function() {
-                        var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
-                        var startPos = animTargets[0];
-                        var endPos = animTargets[1];
+                    var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
+                    var startPos = animTargets[0];
+                    var endPos = animTargets[1];
 
-                        animFns.animMove(boardElem, startPos, endPos, 1);
-                    });
+                    animFns.animMove(boardElem, startPos, endPos);
                 });
 
             }

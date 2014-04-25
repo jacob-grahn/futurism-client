@@ -8,33 +8,29 @@ angular.module('futurism')
             link: function(scope, boardElem) {
 
 
-                scope.$on('post:sduc', function(srcScope, update) {
+                scope.$on('pre:sduc', function(srcScope, update, delayer) {
+
+                    delayer.delay = 3000;
+                    sound.play('seduce');
+
+                    var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
+                    var src = animTargets[0];
+                    var target = animTargets[1];
+                    var dest = animTargets[2];
+
+                    animFns.animFlasher(boardElem, src.center, 'seduction');
 
                     _.delay(function() {
+                        animFns.animFlasher(boardElem, target.center, 'seduction');
+                    }, 500);
 
-                        sound.play('seduce');
+                    _.delay(function() {
+                        animFns.animMove(boardElem, target, dest);
+                    }, 1500);
 
-                        var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
-                        var src = animTargets[0];
-                        var target = animTargets[1];
-                        var dest = animTargets[2];
-
-                        animFns.animMove(boardElem, target, dest, 2000);
-
+                    _.delay(function() {
                         animFns.animNotif(boardElem, src.center, '-1 health', 'danger');
-
-                        _.delay(function() {
-
-                            animFns.animFlasher(boardElem, src.center, 'seduction');
-
-                            _.delay(function() {
-                                animFns.animFlasher(boardElem, target.center, 'seduction');
-                            }, 500);
-
-                        }, 500);
-
-                    });
-
+                    }, 3000);
                 });
             }
         }

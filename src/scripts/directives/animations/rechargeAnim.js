@@ -8,8 +8,9 @@ angular.module('futurism')
             link: function(scope, boardElem) {
 
 
-                scope.$on('post:rech', function(srcScope, update) {
+                scope.$on('pre:rech', function(srcScope, update, delayer) {
 
+                    delayer.delay = 2000;
                     sound.play('recharge');
 
                     var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);

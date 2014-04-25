@@ -104,6 +104,7 @@ angular.module('futurism')
 
 
             animNotif: function(elem, point, txt, classStr) {
+                classStr = classStr || '';
                 var effect = $('<div class="card-notif '+classStr+'">'+txt+'</div>');
 
                 effect.css({left: point.x, top: point.y})
@@ -137,24 +138,27 @@ angular.module('futurism')
             },
 
 
-            animMove: function(holderElem, startPos, endPos, delayTime) {
-                endPos.elem.addClass('target-hidden');
+            animMove: function(holderElem, startPos, endPos) {
+                startPos.elem.removeClass('target-valid');
+                var cardElem = startPos.elem.find('.card-small');
 
-                var cloneElem = self.cloneCardElem(holderElem, endPos);
-                cloneElem.css({
+                cardElem.css({
+                    position: 'absolute',
                     top: startPos.offset.top,
-                    left: startPos.offset.left
+                    left: startPos.offset.left,
+                    'z-index': 50
                 });
 
-                cloneElem
-                    .delay(delayTime)
-                    .animate({
-                        top: endPos.offset.top,
-                        left: endPos.offset.left
-                    }, 'slow', function() {
-                        endPos.elem.removeClass('target-hidden');
-                        cloneElem.remove();
-                    });
+                cardElem.animate({
+                    top: endPos.offset.top,
+                    left: endPos.offset.left
+                }, 600);
+
+                _.delay(function() {
+                    cardElem.remove();
+                }, 1100);
+
+                holderElem.append(cardElem);
             },
 
 

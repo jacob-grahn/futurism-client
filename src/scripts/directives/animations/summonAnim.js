@@ -8,38 +8,40 @@ angular.module('futurism')
             link: function(scope, boardElement) {
 
 
-                scope.$on('post:male', function(srcScope, update) {
+                scope.$on('pre:male', function(srcScope, update, delayer) {
                     sound.play('mate');
-                    anim(update, 'summon-sex');
+                    anim(update, 'summon-sex', delayer);
                 });
 
 
-                scope.$on('post:feml', function(srcScope, update) {
+                scope.$on('pre:feml', function(srcScope, update, delayer) {
                     sound.play('mate');
-                    anim(update, 'summon-sex');
+                    anim(update, 'summon-sex', delayer);
                 });
 
 
-                scope.$on('post:smmn', function(srcScope, update) {
+                scope.$on('pre:smmn', function(srcScope, update, delayer) {
                     sound.play('summon');
-                    anim(update, '');
+                    anim(update, '', delayer);
                 });
 
 
-                scope.$on('post:rbld', function(srcScope, update) {
+                scope.$on('pre:rbld', function(srcScope, update, delayer) {
                     sound.play('rebuild');
-                    anim(update, 'summon-rebuild');
+                    anim(update, 'summon-rebuild', delayer);
                 });
 
 
-                scope.$on('post:tree', function(srcScope, update) {
+                scope.$on('pre:tree', function(srcScope, update, delayer) {
                     sound.play('trees');
-                    anim(update, 'summon-trees');
+                    anim(update, 'summon-trees', delayer);
                 });
 
 
 
-                var anim = function(update, cssClass) {
+                var anim = function(update, cssClass, delayer) {
+
+                    delayer.delay = 1000;
 
 
                     _.delay(function() {
@@ -57,14 +59,6 @@ angular.module('futurism')
                             src = chain[0];
                             dest = chain[1];
                         }
-
-
-
-                        // hide the new card for a bit
-                        dest.elem.addClass('target-hidden');
-                        _.delay(function() {
-                            dest.elem.removeClass('target-hidden');
-                        }, 1000);
 
 
                         // make the swirly animation

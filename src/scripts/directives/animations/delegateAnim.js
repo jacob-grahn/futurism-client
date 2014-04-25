@@ -8,7 +8,8 @@ angular.module('futurism')
             link: function(scope, boardElem) {
 
 
-                scope.$on('pre:delg', function(srcScope, update) {
+                scope.$on('pre:delg', function(srcScope, update, delayer) {
+                    delayer.delay = 2000;
                     sound.play('delegate');
                     var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
                     var src = animTargets[0];
@@ -16,17 +17,31 @@ angular.module('futurism')
                 });
 
 
-                scope.$on('pre:bagm', function(srcScope, update) {
+                scope.$on('pre:bagm', function(srcScope, update, delayer) {
+                    delayer.delay = 2500;
                     sound.play('bagem');
                     var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
+                    var src = animTargets[0];
                     var target = animTargets[1];
-                    leaveAnim(target, 'Wow! Free candy!');
+
+                    animFns.animFlasher(boardElem, src.center, 'seduction');
+
+                    _.delay(function() {
+                        leaveAnim(target, 'Wow! Free candy!');
+                    }, 500);
+
+                    _.delay(function() {
+                        var srcCardElem = src.elem.find('.card-small');
+                        srcCardElem.animate({
+                            opacity: 0
+                        }, 'slow');
+                    }, 1500);
                 });
 
 
                 var leaveAnim = function(animTarget, message) {
-                    var card = animFns.cloneCardElem(boardElem, animTarget);
-
+                    var card = animTarget.elem.find('.card-small');
+                    animTarget.elem.removeClass('target-valid');
                     animFns.animNotif(boardElem, animTarget.center, message);
 
                     _.delay(function() {
