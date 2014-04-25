@@ -48,15 +48,11 @@
                 },
                 tests: {
                     files: ['test/spec/**/*.js'],
-                    tasks: ['newer:jshint:test', 'karma']
+                    tasks: ['karma']
                 },
                 sass: {
                     files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
                     tasks: ['sass']
-                },
-                styles: {
-                    files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
-                    tasks: ['newer:copy:styles', 'autoprefixer']
                 },
                 gruntfile: {
                     files: ['gruntfile.js']
@@ -178,20 +174,6 @@
                 }
             },
 
-            // Renames files for browser caching purposes
-            rev: {
-                dist: {
-                    files: {
-                        src: [
-                            '<%= yeoman.dist %>/scripts/{,*/}*.js',
-                            '<%= yeoman.dist %>/styles/{,*/}*.css',
-                            '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
-                            '<%= yeoman.dist %>/styles/fonts/*'
-                        ]
-                    }
-                }
-            },
-
             // Reads HTML for usemin blocks to enable smart builds that automatically
             // concat, minify and revision files. Creates configurations in memory so
             // additional tasks can operate on them
@@ -218,16 +200,6 @@
                         expand: true,
                         cwd: '<%= yeoman.app %>/images',
                         src: '{,*/}*.{png,jpg,jpeg,gif}',
-                        dest: '<%= yeoman.dist %>/images'
-                    }]
-                }
-            },
-            svgmin: {
-                dist: {
-                    files: [{
-                        expand: true,
-                        cwd: '<%= yeoman.app %>/images',
-                        src: '{,*/}*.svg',
                         dest: '<%= yeoman.dist %>/images'
                     }]
                 }
@@ -293,11 +265,10 @@
                         src: [
                             '*.{ico,png,txt}',
                             '.htaccess',
-                            'bower_components/**/*',
                             'images/{,*/}*.{webp}',
-                            'fonts/*',
                             'data/*',
-                            'sounds/*'
+                            'sounds/*',
+                            'styles/*.css'
                         ]
                     }, {
                         expand: true,
@@ -331,7 +302,6 @@
                     'sass',
                     'copy:styles',
                     'imagemin',
-                    'svgmin',
                     'htmlmin'
                 ]
             },
@@ -417,14 +387,12 @@
             'copy:dist',
             'cssmin',
             'uglify',
-            //'rev',
             'usemin',
             'htmlrefs'
         ]);
 
 
         grunt.registerTask('default', [
-            'newer:jshint',
             'test',
             'build'
         ]);
