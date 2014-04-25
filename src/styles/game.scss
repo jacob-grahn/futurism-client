@@ -19,13 +19,20 @@
     font-weight: bold;
 }
 
-.panel .game-buttons {
-    padding-bottom: 5px;
+.game-buttons {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 .game-buttons li {
-    margin: 0 10px 10px 0;
+    margin: 0 10px 0px 0;
     float: left;
+}
+
+.btn-forfeit {
+    position: absolute;
+    right: 15px;
 }
 
 .area-header {
@@ -40,7 +47,11 @@
 
 .area-title {
     max-width: 400px;
-    overflow: hidden;
+    //overflow: hidden;
+}
+
+.area-title a.inverse {
+    color: $light-contrast;
 }
 
 .area-desc {
@@ -52,6 +63,8 @@
 
 .board {
     position: relative;
+    margin-top: 60px;
+    margin-bottom: 50px;
 }
 
 .board .card .card-pride {
@@ -59,7 +72,7 @@
 }
 
 .board-area {
-    margin: 0px auto 20px auto;
+    margin: 0px auto 25px auto;
     width: 360px;
 }
 

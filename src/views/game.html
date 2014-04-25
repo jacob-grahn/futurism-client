@@ -9,7 +9,7 @@
 
                 <div class="area-header">
                     <h1 ng-show="turn.isTheirTurn(area.playerId)" class="active-indicator">*</h1>
-                    <h1 class="area-title">{{players.idToPlayer(area.playerId).name}}</h1>
+                    <h1 class="area-title"><username size="large" class="inverse" user="players.idToPlayer(area.playerId)"></username></h1>
                 </div>
 
                 <ul ng-repeat="column in area.targets" class="player-field-column">
@@ -37,20 +37,20 @@
 
     <div class="col-sm-5">
         <div id="game-panel" class="side-panel" match-screen-height resize-element=".auto-size" offset-bottom="40" default-height="600">
+            <ul class="game-buttons panel-segment clearfix">
+                <li>
+                    <button class='btn btn-default' ng-click="endTurn(); hand.close();" ng-disabled="!turn.isMyTurn()">{{lang.game.endTurn}}</button>
+                </li>
+                <li>
+                    <button class='btn btn-default btn-forfeit' ng-click="forfeit()">{{lang.game.forfeit}}</button>
+                </li>
+            </ul>
             <div class="future-desc panel-segment">
                 <future-display future="{{board.future}}"></future-display>
             </div>
             <div class="panel-segment">
                 <music-player></music-player>
             </div>
-            <ul class="game-buttons panel-segment clearfix">
-                <li>
-                    <button class='btn btn-default' ng-click="endTurn(); hand.close();" ng-disabled="!turn.isMyTurn()">{{lang.game.endTurn}}</button>
-                </li>
-                <li>
-                    <button class='btn btn-default' ng-click="forfeit()">{{lang.game.forfeit}}</button>
-                </li>
-            </ul>
             <chat-display class="panel-segment" room="{{chatId}}"></chat-display>
         </div>
     </div>

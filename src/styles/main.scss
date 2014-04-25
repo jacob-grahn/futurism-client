@@ -99,13 +99,12 @@ a {
 }
 
 .panel-segment {
-    padding: 15px;
-    padding-left: 20px;
+    padding: 20px 15px;
 }
 
-.panel-segment:nth-child(even) {
+/*.panel-segment:nth-child(even) {
     background-color: #eaebff;
-}
+}*/
 
 .inverse {
     color: white;
