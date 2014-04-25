@@ -1,0 +1,14 @@
+.death-anim {
+    animation-duration: 1s;
+    animation-name: death-anim;
+    opacity: 0;
+}
+
+@keyframes death-anim {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
