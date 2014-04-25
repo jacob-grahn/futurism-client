@@ -69,8 +69,7 @@
                 }
             },
             
-            // serve static files
-            // The actual grunt server settings
+            // serve static files and proxy dynaimic requests to other services
             connect: {
                 options: {
                     port: 9000,
