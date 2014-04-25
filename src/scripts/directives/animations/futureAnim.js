@@ -8,9 +8,9 @@ angular.module('futurism')
             link: function(scope, boardElem) {
 
 
-                scope.$on('post:'+shared.actions.FUTURE, function(srcScope, update, delayer) {
+                scope.$on('pre:'+shared.actions.FUTURE, function(srcScope, update, delayer) {
 
-                    delayer.delay = 2000;
+                    delayer.delay = 1000;
                     sound.play('future');
 
                     var futureDisplay = $('#game-panel .future-display');
