@@ -3,6 +3,15 @@ angular.module('futurism')
         'use strict';
 
         var Sound = window.createjs.Sound;
+        var playWhenLoaded = {};
+        
+        Sound.addEventListener("fileload", function(event) {
+            var soundId = event.id;
+            if(playWhenLoaded[soundId]) {
+                Sound.play(soundId);
+            }
+        });
+                                        
         Sound.alternateExtensions = ['mp3'];
         Sound.registerSound('sounds/abomination.ogg', 'abomination');
         Sound.registerSound('sounds/attack-launch.ogg', 'attack-launch');
@@ -34,12 +43,17 @@ angular.module('futurism')
         Sound.registerSound('sounds/win.ogg', 'win');
         Sound.registerSound('sounds/die.ogg', 'die');
         Sound.registerSound('sounds/future.ogg', 'future');
+        
+        
 
         return {
 
             play: function(soundId, volume) {
                 var instance = Sound.play(soundId);
                 instance.volume = volume || 1;
+                if(instance.playState === 'playFailed') {
+                    playWhenLoaded[soundId] = true;
+                }
                 return instance;
             }
 
