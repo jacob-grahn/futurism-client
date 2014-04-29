@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .directive('chatDisplay', function(chat, lang, window, $) {
+    .directive('chatDisplay', function(chat, lang, window, $, _) {
         'use strict';
 
         return {
@@ -21,7 +21,7 @@ angular.module('futurism')
 
                 var scrollToBottom = _.throttle(function() {
 
-                    if(!logElem) {
+                    if(!logElem || logElem.length === 0) {
                         logElem = elem.find('.chat-log');
                     }
 
