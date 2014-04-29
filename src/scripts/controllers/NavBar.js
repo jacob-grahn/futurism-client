@@ -33,8 +33,8 @@ angular.module('futurism')
         };
 
 
-        $scope.atFutures = function() {
-            return $scope.path === '/futures';
+        $scope.atStore = function() {
+            return $scope.path === '/t-machine';
         };
 
 

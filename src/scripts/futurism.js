@@ -1,8 +1,8 @@
-'use strict';
-
 angular
     .module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', 'ngResource', 'ngAnimate', 'ui.bootstrap'])
     .config(function($routeProvider, $locationProvider) {
+        'use strict';
+        
         $routeProvider.
             when('/card-builder', {
                 templateUrl: 'views/card-builder.html',
@@ -28,9 +28,9 @@ angular
                 templateUrl: 'views/error.html',
                 controller: 'ErrorCtrl'
             }).
-            when('/futures', {
-                templateUrl: 'views/futures.html',
-                controller: 'FuturesCtrl'
+            when('/t-machine', {
+                templateUrl: 'views/store.html',
+                controller: 'StoreCtrl'
             }).
             when('/game/:serverId/:gameId', {
                 templateUrl: 'views/game.html',

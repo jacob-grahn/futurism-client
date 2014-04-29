@@ -1,45 +1,5 @@
 {
 
-    "futureTypes": {
-        "unstable": {
-            "name": {
-                "en": "Stable Futures",
-                "pl": "Stabilne Przyszlosci",
-                "nb": "Stabile fremtider"
-            },
-            "desc": {
-                "en": "These reliable futures can be used any number of times.",
-                "pl": "Te przyszlosci moga zostac uzyte wielokrotnie.",
-                "nb": "Disse pålitelige fremtidene kan brukes et ubegrenset antall ganger."
-            }
-        },
-        "stable": {
-            "name": {
-                "en": "Unstable Futures",
-                "pl": "Niestabilne Przyszlosci",
-                "nb": "Ustabile fremtider"
-            },
-            "desc": {
-                "en": "These futures are powerful, but only last a short while before fading away.",
-                "pl": "Te przyszlosci sa potezne, ale szybko sie rozpadaja.",
-                "nb": "Disse fremtidene er mektige, men varer bare i en liten stund før de visner bort."
-            }
-        },
-        "paradox": {
-            "name": {
-                "en": "Paradoxes",
-                "pl": "Paradoksy",
-                "nb": "Paradokser"
-            },
-            "desc": {
-                "en": "The combined time manipulations of an entire guild are needed to create a paradox. Paradoxes are wildly powerful, but only last a short while.",
-                "pl": "Cala gildia musi zakrzywic czasoprzestrzen aby stworzyc paradoks. Paradoksy sa potezne, ale trwaja tylko krotka chwile.",
-                "nb": "Den kombinerte tidsmanipulasjonen til et helt laug trengs for å lage et paradoks. Paradokser er ekstremt kraftige, men varer bare i en liten stund."
-            }
-        }
-    },
-
-
     "futures": {
 
         "capt": {
