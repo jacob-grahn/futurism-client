@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .directive('deckDisplay', function(staticContentUrl, _) {
+    .directive('deckDisplay', function(_) {
         'use strict';
 
         return {
@@ -10,7 +10,6 @@ angular.module('futurism')
             link: function (scope, elem, attrs) {
                 scope.size = attrs.size || 'large';
                 scope.active = attrs.active || 'active';
-                scope.staticUrl = staticContentUrl.futurism;
                 scope.displayIds = [];
 
                 var deck = scope.deck;

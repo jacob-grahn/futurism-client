@@ -1,8 +1,7 @@
 angular.module('futurism')
-    .controller('GuildJoinerCtrl', function($scope, $location, $rootScope, GuildResource, MemberResource, LobbyResource, dataUrlToBlob, staticContentUrl, me) {
+    .controller('GuildJoinerCtrl', function($scope, $location, $rootScope, GuildResource, MemberResource, LobbyResource, dataUrlToBlob, me) {
         'use strict';
 
-        $scope.static = staticContentUrl;
         $scope.joinOptions = ['invite', 'ask', 'open'];
 
         $scope.GuildResource = GuildResource;

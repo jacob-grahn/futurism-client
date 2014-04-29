@@ -86,6 +86,11 @@
                         context: '/globe',
                         host: 'localhost',
                         port: 9001
+                    },
+                    {
+                        context: '/storage',
+                        host: 'localhost',
+                        port: 9001
                     }
                 ],
                 livereload: {

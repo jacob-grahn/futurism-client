@@ -11,7 +11,7 @@
 
     <div class="card-image-holder">
         <img ng-if="card.imageUrl" class="card-image absolute-center" ng-src="{{card.imageUrl}}"/>
-        <img ng-if="card.hasImage" class="card-image absolute-center" ng-src="{{staticContentUrl.futurism}}/images/cards/{{size}}_{{card._id}}.jpg?{{card.version}}"/>
+        <img ng-if="card.hasImage" class="card-image absolute-center" ng-src="storage/images/cards/{{size}}_{{card._id}}.jpg?{{card.version}}"/>
         <img ng-if="card.commander" class="card-image absolute-center" ng-src="globe/avatars/{{card.userId}}-130x90.gif"/>
     </div>
 

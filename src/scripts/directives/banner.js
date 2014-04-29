@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .directive('banner', function(staticContentUrl) {
+    .directive('banner', function() {
         'use strict';
 
         return {
@@ -8,11 +8,7 @@ angular.module('futurism')
             scope: {
                 guild: '='
             },
-            templateUrl: 'views/banner.html',
-
-            link: function (scope) {
-                scope.staticContentUrl = staticContentUrl;
-            }
+            templateUrl: 'views/banner.html'
         };
 
     });
