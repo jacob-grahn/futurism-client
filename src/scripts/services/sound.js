@@ -57,5 +57,5 @@ angular.module('futurism')
                 return instance;
             }
 
-        }
+        };
     });
