@@ -18,3 +18,7 @@
 .t-machine b {
     color: $light-contrast;
 }
+
+.inactive .future-display {
+    cursor: pointer;
+}

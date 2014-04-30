@@ -7,18 +7,18 @@
                 {{lang.store.compliment}}
             </li>
             <li>
-                {{lang.store.fractureNeedA}} <b>{{fracturesNeeded}}</b> {{lang.store.fractureNeedB}} 
+                {{lang.store.fractureNeedA}} <b>{{me.stats.futures.length+1}}</b> {{lang.store.fractureNeedB}} 
             </li>
             <li>
-                {{lang.store.fractureHaveA}} <b>{{fractures}}</b> {{lang.store.fractureHaveB}}
+                {{lang.store.fractureHaveA}} <b>{{me.stats.fractures}}</b> {{lang.store.fractureHaveB}}
             </li>
         </ul>
     </div>
     
     <h1>{{lang.store.futures}}</h1>
     <ul class="future-list clearfix">
-        <li ng-repeat="future in futures">
-            <future-display ng-click="selectFuture(future)" ng-class="{inactive: false}" class="cursor-pointer" future="{{future}}"></future-display>
+        <li ng-repeat="future in futures" ng-class="{inactive: !iHaveFuture(future)}">
+            <future-display ng-click="buyFuture(future)" future="{{future}}"></future-display>
         </li>
     </ul>
     
