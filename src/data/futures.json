@@ -65,7 +65,7 @@
                 "nb": "Fri kjærlighet",
                 "pi": "Party",
                 "it": "Amore gratis",
-                "pl": "Wolna milosc"
+                "pl": "Panaceum"
             },
             "desc": {
                 "en": "Cards that rest gain 1 health.",
@@ -75,7 +75,7 @@
                 "nb": "Kort som ikke angriper får ett helsepoeng.",
                 "pi": "Ships that don't fight drink 1 rum.",
                 "it": "Le carte che non attaccano guadagnano 1 punto vita.",
-                "pl": "Karty które nie atakuja zyskuja 1 punkt zycia."
+                "pl": "Karty, które nie atakują zyskują 1 punkt życia."
             }
         },
 
@@ -88,7 +88,7 @@
                 "nb": "Blodfeide",
                 "pi": "Rage",
                 "it": "Fiotto di sangue",
-                "pl": "Zadza krwi"
+                "pl": "Żądza krwi"
             },
             "desc": {
                 "en": "All cards must attack.",
@@ -98,7 +98,7 @@
                 "nb": "Alle kort må angripe.",
                 "pi": "All ships must attack.",
                 "it": "Tutte le carte devono attaccare.",
-                "pl": "Wszystkie karty musza atakowac."
+                "pl": "Wszystkie karty muszą atakować."
             }
         },
 
@@ -137,7 +137,7 @@
                 "nb": "Hver handling har en 50% sjangse for å mislykkes.",
                 "pi": "All plots be as likely to succeed as heads on a coin.",
                 "it": "Ogni azione ha una probabilità del 50% di fallire.",
-                "pl": "Kazda akcja ma 50% szansy na niepowodzenie."
+                "pl": "Każda akcja ma 50% szansy na niepowodzenie."
             }
         },
 
@@ -150,7 +150,7 @@
                 "nb": "Tordenskuppel",
                 "pi": "Thunderstorm",
                 "it": "Fulmini",
-                "pl": "Thunderdome"
+                "pl": "Cenzura"
             },
             "desc": {
                 "en": "No new cards can be played.",
@@ -160,7 +160,7 @@
                 "nb": "Ingen nye kort kan spilles.",
                 "pi": "No new cards can enter the battlefield.",
                 "it": "Non possono essere giocate nuove carte.",
-                "pl": "Nie mozna wprowadzic nowych kart na pole gry."
+                "pl": "Nie można wprowadzić nowych kart na pole gry."
             }
         },
 
@@ -181,7 +181,7 @@
                 "hu": "All cards gain the move ability.",
                 "nb": "Alle kort får flytteegenskapen.",
                 "pi": "All ships take up thar anchors and can sail about.",
-                "pl": "Kazda karta moze sie poruszyc."
+                "pl": "Każda karta może się poruszać."
             }
         },
 
@@ -204,7 +204,7 @@
                 "nb": "Kort forblir i live til helsepoengene deres når -10.",
                 "pi": "Ships don't sink until they have -10 rum.",
                 "it": "Le carte possono stare in vita fino a quando la loro salute raggiunge -10.",
-                "pl": "Karty nie umieraja poki ich punkty zycia osiagaja -10."
+                "pl": "Karty nie umierają, póki ich punkty życia nie osiągną -10."
             }
         },
 
@@ -225,7 +225,7 @@
                 "hu": "Cards that would die become zombies instead.",
                 "nb": "Kort som ville dødd blir til zombier i stedet.",
                 "pi": "All ships that sink becomes servants of Davy Jones.",
-                "pl": "Karty ktore umieraja staja sie zombie."
+                "pl": "Karty, które umierają stają sie kartami zombie."
             }
         },
 
@@ -248,7 +248,7 @@
                 "nb": "Alle kort mister 1 helsepoeng i runden.",
                 "pi": "All ships are on fire and lose 1 rum each turn.",
                 "it": "Tutte le carte perdono 1 punto vita per turno.",
-                "pl": "Kazda karta traci co ture 1 punkt zycia"
+                "pl": "Każda karta traci co turę 1 punkt życia"
             }
         }
     }
