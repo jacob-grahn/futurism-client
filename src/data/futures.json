@@ -4,55 +4,67 @@
 
         "capt": {
             "name": {
-                "en": "Capitalism"
+                "en": "Capitalism",
+                "pi": "Alchoholism"
             },
             "desc": {
-                "en": "Elites siphon health when they attack."
+                "en": "Elites siphon health when they attack.",
+                "pi": "Swashbucklers siphon rum from ships when they attack."
             }
         },
 
         "norm": {
             "name": {
-                "en": "Normal"
+                "en": "Normal",
+                "pi": "Sunny seas"
             },
             "desc": {
-                "en": "A perfectly normal future."
+                "en": "A perfectly normal future.",
+                "pi": "Nothing of interest happens. A parrot sneezes."
             }
         },
 
         "ares": {
             "name": {
-                "en": "Ares Rising"
+                "en": "Ares Rising",
+                "pi": "Mars is bright"
             },
             "desc": {
-                "en": "Zealots get +1 attack after killing an enemy."
+                "en": "Zealots get +1 attack after killing an enemy.",
+                "pi": "Priests gain 1 cannon after destroying an enemy ship."
             }
         },
 
         "eden": {
             "name": {
-                "en": "Eden"
+                "en": "Eden",
+                "pi": "Jone's Locker"
             },
             "desc": {
-                "en": "Trees gain 1 health every turn."
+                "en": "Trees gain 1 health every turn.",
+                "pi": "Krakens gain 1 rum per turn."
             }
         },
 
         "assm": {
             "name": {
-                "en": "Assimilation"
+                "en": "Assimilation",
+                "pi": "Assimilation"
             },
             "desc": {
-                "en": "All cards become machines."
+                "en": "All cards become machines.",
+                "pi": "All ships become inventers."
             }
         },
 
         "nuke": {
             "name": {
-                "en": "Nuclear War"
+                "en": "Nuclear War",
+                "pi": "Grapeshot"
             },
             "desc": {
-                "en": "All cards receive 1 damage after an attack."
+                "en": "All cards receive 1 damage after an attack.",
+                "pi": "All ships lose 1 extra rum after attacks"
             }
         },
 
@@ -114,7 +126,8 @@
                 "pl": "Renesans"
             },
             "desc": {
-                "en": "Player cards can perform two actions per turn."
+                "en": "Player cards can perform two actions per turn.",
+                "pi": "Player ships can act twice per turn."
             }
         },
 

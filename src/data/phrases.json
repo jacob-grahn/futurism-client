@@ -352,20 +352,24 @@
 
     "deckSelector": {
         "edit": {
-            "en": "Edit"
+            "en": "Edit",
+            "pi": "Change fleet"
         },
         "newDeck": {
-            "en": "New Deck"
+            "en": "New Deck",
+            "pi": "New fleet"
         }
     },
 
 
     "cardSelector": {
         "edit": {
-            "en": "Edit"
+            "en": "Edit",
+            "pi": "Change Crew"
         },
         "newCard": {
-            "en": "New Card"
+            "en": "New Card",
+            "pi": "New Ship"
         }
     },
 
@@ -523,19 +527,24 @@
     "loadup": {
         "maxDeckSize": {
             "en": "Max Size",
-            "pl": "Max. Wielkość Dumy"
+            "pl": "Max. Wielkość Dumy",
+            "pi": "Max Size"
         },
         "selectDeck": {
-            "en": "Select a Deck!"
+            "en": "Select a Deck!",
+            "pi": "Choose your fleet!"
         },
         "select": {
-            "en": "Select"
+            "en": "Select",
+            "pi": "Select"
         },
         "futures": {
-            "en": "Futures!"
+            "en": "Futures!",
+            "pi": "Tomorrows!"
         },
         "selectFutureSingular": {
-            "en": "Select a Future!"
+            "en": "Select a Future!",
+            "pi": "Select the day after tomorrow!"
         }
     },
 
@@ -543,7 +552,8 @@
     "deck": {
         "cards": {
             "en": "cards",
-            "pl": "karty"
+            "pl": "karty",
+            "pi": "ships"
         }
     },
 
@@ -567,7 +577,8 @@
 
         "deckSize": {
             "en": "cards",
-            "pl": "karty"
+            "pl": "karty",
+            "pi": "ships"
         },
 
         "join": {
@@ -743,11 +754,13 @@
     "nav": {
         "reports": {
             "en": "Reports",
-            "pl": "Reporty"
+            "pl": "Reporty",
+            "pi": "Tip-offs"
         },
 
         "modLog": {
-            "en": "Mod Log"
+            "en": "Mod Log",
+            "pi": "Police books"
         },
 
         "toggle": {
@@ -1167,7 +1180,7 @@
         "u": {
             "en": "Member"
         },
-        "a": {
+        "p": {
             "en": "Apprentice"
         },
         "m": {

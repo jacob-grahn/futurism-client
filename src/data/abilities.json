@@ -583,7 +583,8 @@
                 "pi": "take up anchor"
             },
             "desc": {
-                "en": "Move an ally card, curing poison in the process."
+                "en": "Move an ally card, curing poison in the process.",
+                "pi": "Sail a ship, and give it some oranges to cure scurvy."
             }
         },
 
@@ -728,7 +729,8 @@
             },
             "desc": {
                 "en": "All ally zealots gain 1 attack for 1 turn.",
-                "pl": "Wszyscy twoi zeloci dostają 1 punkt ataku na jedną turę."
+                "pl": "Wszyscy twoi zeloci dostają 1 punkt ataku na jedną turę.",
+                "pi": "All allied priest gain one attack for 1 turn."
             }
         },
 
