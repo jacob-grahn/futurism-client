@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .controller('LoadupFuturesCtrl', function($scope, shared, loadup, _) {
+    .controller('LoadupFuturesCtrl', function($scope, shared, loadup, _, me) {
         'use strict';
 
         loadup.resumePrep();
@@ -10,7 +10,9 @@ angular.module('futurism')
 
 
         $scope.selectFuture = function(futureId) {
-            loadup.selectFuture(futureId);
+            if($scope.iHaveFuture(futureId)) {
+                loadup.selectFuture(futureId);
+            }
         };
 
 
@@ -19,4 +21,14 @@ angular.module('futurism')
                 return {future: $scope.selectedFutures[index]};
             });
         });
+        
+        
+        $scope.iHaveFuture = function(futureId) {
+            if(me.stats && me.stats.futures) {
+                return me.stats.futures.indexOf(futureId) !== -1;
+            }
+            else {
+                return false;
+            }
+        };
     });

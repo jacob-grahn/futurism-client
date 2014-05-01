@@ -9,8 +9,8 @@
     </ul>
 
     <ul class="future-list clearfix">
-        <li ng-repeat="future in futures">
-            <future-display ng-click="selectFuture(future)" ng-class="{inactive: false}" class="cursor-pointer" future="{{future}}"></future-display>
+        <li ng-repeat="future in futures" ng-class="{inactive: !iHaveFuture(future)}">
+            <future-display ng-click="selectFuture(future)" future="{{future}}"></future-display>
         </li>
     </ul>
 
