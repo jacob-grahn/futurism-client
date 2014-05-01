@@ -1172,5 +1172,12 @@
         "a": {
             "en": "Admin"
         }
+    },
+    
+    
+    "fractureModal": {
+        "fractureAquired": {
+            "en": "Fracture Aquired!"
+        }
     }
 }

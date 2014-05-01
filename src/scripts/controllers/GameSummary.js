@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .controller('GameSummaryCtrl', function($scope, $routeParams, SummaryResource, me, rankCalc, _) {
+    .controller('GameSummaryCtrl', function($scope, $routeParams, SummaryResource, me, rankCalc, _, modals) {
         'use strict';
 
         $scope.gameId = $routeParams.gameId;
@@ -26,8 +26,25 @@ angular.module('futurism')
         };
         
         
+        var iWonFracture = function(summary) {
+            var ret = false;
+            _.each(summary.users, function(user) {
+                if(user._id === me.userId && user.fractures > user.oldFractures) {
+                    ret = true;
+                }
+            });
+            return ret;
+        };
+        
+        
         $scope.summ = SummaryResource.get({gameId: $scope.gameId}, function() {
             fillCards($scope.summ.users, $scope.summ.cards);
+            _.delay(function() {
+                if(iWonFracture($scope.summ)) {
+                    console.log('open fracture');
+                    modals.openFracture();
+                }
+            }, 1000);
         });
 
 

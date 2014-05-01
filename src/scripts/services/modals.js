@@ -41,6 +41,14 @@ angular.module('futurism')
                         }
                     }
                 });
+            },
+            
+            
+            openFracture: function() {
+                $modal.open({
+                    templateUrl: 'views/fracture-modal.html',
+                    controller: 'FractureModalCtrl'
+                });
             }
 
         };

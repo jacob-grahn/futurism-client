@@ -11,5 +11,5 @@ angular.module('futurism')
                 MessageResource.save({userId: toUserId, body: body});
                 $scope.$dismiss('send');
             }
-        }
+        };
     });

@@ -19,7 +19,6 @@
         <li>Player Since: <b>{{user.registerDate | date:'mediumDate'}}</b></li>
         <li>Last Login: <b>{{user.loginDate | date:'mediumDate'}}</b></li>
     </ul>
-    {{user.userId}}
 </div>
 <div class="modal-footer">
     <button ng-if="user.bans" class="btn" ng-click="viewBans()">view bans</button>
