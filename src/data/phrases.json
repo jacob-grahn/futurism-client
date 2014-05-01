@@ -1153,5 +1153,24 @@
         "fractureHaveB": {
             "en": "fracture(s)."
         }
+    },
+    
+    
+    "groups": {
+        "g": {
+            "en": "Guest"
+        },
+        "u": {
+            "en": "Member"
+        },
+        "a": {
+            "en": "Apprentice"
+        },
+        "m": {
+            "en": "Moderator"
+        },
+        "a": {
+            "en": "Admin"
+        }
     }
 }

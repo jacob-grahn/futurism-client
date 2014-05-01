@@ -3,12 +3,21 @@
 </div>
 <div class="modal-body">
     <ul>
-        <li>Guild: <a ng-click="openGuild(user.guild)">{{user.guild}}</a></li>
-        <li>Fame: {{stats.fame}}</li>
-        <li>Elo: {{stats.elo}}</li>
-        <li>Group: {{user.group}}</li>
-        <li>Player Since: {{user.registerDate | date:'medium'}}</li>
-        <li>Last Login: {{user.loginDate | date:'medium'}}</li>
+        <li>Guild: 
+            <b>
+                <span ng-if="user.guild">
+                    <a ng-click="openGuild(user.guild)">{{user.guild}}</a>
+                </span>
+                <span ng-if="!user.guild" class="subtle">
+                    none
+                </span>
+            </b>
+        </li>
+        <li>Fame: <b>{{rankCalc.expToRank(stats.fame) | number:0}}</b></li>
+        <li>Futures: <b>{{stats.futures.length | number:0}}</b></li>
+        <li>Group: <b>{{lang.groups[user.group]}}</b></li>
+        <li>Player Since: <b>{{user.registerDate | date:'mediumDate'}}</b></li>
+        <li>Last Login: <b>{{user.loginDate | date:'mediumDate'}}</b></li>
     </ul>
     {{user.userId}}
 </div>

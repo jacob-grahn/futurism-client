@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .controller('navBarCtrl', function($scope, me, $, messager, session, $location, unread, socket) {
+    .controller('navBarCtrl', function($scope, me, $, messager, session, $location, unread, socket, modals) {
         'use strict';
 
         $scope.path = '';
@@ -40,6 +40,11 @@ angular.module('futurism')
 
         $scope.atGuild = function() {
             return $scope.path === '/guild' || $scope.path === '/guild-joiner';
+        };
+        
+        
+        $scope.clickStats = function() {
+            modals.openUser(me.user._id);
         };
 
 

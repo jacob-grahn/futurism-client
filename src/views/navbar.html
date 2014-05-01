@@ -29,7 +29,7 @@
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">{{lang.nav.stats}}</a></li>
+                    <li><a ng-click="clickStats()">{{lang.nav.stats}}</a></li>
                     <li><a href="/messages"><span class="unread" ng-if="unread.count > 0">({{unread.count}}) </span>{{lang.nav.messages}}</a></li>
                     <li ng-if="me.user.group === 'm' || me.user.group === 'a'"><a ng-href="/reports">{{lang.nav.reports}}</a></li>
                     <li ng-if="me.user.group === 'm' || me.user.group === 'a'"><a ng-href="/mod-logs">{{lang.nav.modLog}}</a></li>

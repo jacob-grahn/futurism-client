@@ -1,9 +1,10 @@
 angular.module('futurism')
-    .controller('UserModalCtrl', function($scope, userId, me, $location, UserResource, BanResource, StatsResource, ApprenticeResource, ModeratorResource, GuildModResource, KickResource, modals) {
+    .controller('UserModalCtrl', function($scope, userId, me, $location, UserResource, BanResource, StatsResource, ApprenticeResource, ModeratorResource, GuildModResource, KickResource, modals, rankCalc) {
         'use strict';
 
         var includeBans = me.user.group === 'm' || me.user.group === 'a';
 
+        $scope.rankCalc = rankCalc;
         $scope.user = UserResource.get({userId: userId, bans: includeBans});
         $scope.stats = StatsResource.get({userId: userId});
 
