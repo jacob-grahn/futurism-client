@@ -44,5 +44,5 @@ angular.module('futurism')
             });
 
             return member.$promise;
-        }
+        };
     });

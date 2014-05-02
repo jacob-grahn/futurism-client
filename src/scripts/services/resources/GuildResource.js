@@ -3,6 +3,14 @@ angular.module('futurism')
         'use strict';
 
         return $resource('/globe/guilds/:guildId', {guildId: '@_id'}, {
+            
+            save: {
+                method: 'POST',
+                transformRequest: formTransformer,
+                headers: {
+                    'Content-Type': undefined
+                }
+            },
 
             put: {
                 method: 'PUT',

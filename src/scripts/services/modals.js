@@ -49,7 +49,20 @@ angular.module('futurism')
                     templateUrl: 'views/fracture-modal.html',
                     controller: 'FractureModalCtrl'
                 });
-            }
+            },
+            
+            
+            openEditGuild: function(guildId) {
+                $modal.open({
+                    templateUrl: 'views/edit-guild-modal.html',
+                    controller: 'EditGuildModalCtrl',
+                    resolve: {
+                        guildId: function () {
+                            return guildId;
+                        }
+                    }
+                });
+            },
 
         };
 

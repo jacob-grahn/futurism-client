@@ -1,0 +1,21 @@
+<div class="modal-header">
+    <h1>Edit {{guild._id}}</h1>
+</div>
+<div class="modal-body">
+    <div class="form-group">
+        <textarea class="form-control" rows="2" ng-model="guild.desc" placeholder="Description"></textarea>
+    </div>
+    <div class="form-group">
+        {{lang.guildJoiner.joinPolicy}}: <select ng-model="guild.join" ng-options="lang.guildJoinPolicy[value].name for value in joinOptions"></select><br>
+        <span class="subtle">{{lang.guildJoinPolicy[guild.join].desc}}</span>
+    </div>
+    <div class="form-group">
+        {{lang.guildJoiner.banner}}: <span class="subtle">(300x50)</span> <input type="file" accept="image/*" image="uppedBanner" resize-max-width="300" resize-max-height="50" resize-quality="0.9" resize-type="image/jpg"/>
+        <img ng-if="uppedBanner" ng-src="{{uppedBanner.resized.dataURL}}" width="300" height="50"/>
+        <img ng-if="guild.banner.file && !uppedBanner" ng-src="globe/storage/banners/large_{{guild.banner.file}}?{{guild.banner.updated}}" width="300" height="50">
+    </div>
+</div>
+<div class="modal-footer">
+    <busy-button class="btn btn-primary" on-click="submitChanges(uppedBanner)" label="submit"></busy-button>
+    <button class="btn btn-default" ng-click="$dismiss('close')">close</button>
+</div>
