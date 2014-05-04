@@ -1,10 +1,12 @@
 <div id="title-screen">
-    <div id="title-screen-center" class="absolute-center">
-        <h1 id="title-logo">{{lang.title.gameName}}</h1>
+    <div id="title-screen-center" class="absolute-center inverse">
+        <h1 id="title-logo">
+            <span class="one">F</span><span class="two">U</span><span class="three">T</span><span class="four">U</span><span class="five">R</span><span class="six">I</span><span class="seven">S</span><span class="eight">M</span>
+        </h1>
         <ul id="title-buttons">
-            <li><a ng-click="login()">{{lang.title.login}}</a></li>
-            <li><a ng-href="/instructions">{{lang.title.instructions}}</a></li>
-            <li><a ng-href="/credits">{{lang.title.credits}}</a></li>
+            <li><a class="shake" ng-click="login()">{{lang.title.login}}</a></li>
+            <li><a class="shake" ng-href="/instructions">{{lang.title.instructions}}</a></li>
+            <li><a class="shake" ng-href="/credits">{{lang.title.credits}}</a></li>
         </ul>
     </div>
 </div>

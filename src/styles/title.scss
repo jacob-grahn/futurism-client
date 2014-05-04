@@ -1,30 +1,56 @@
 #title-screen-center {
-  height: 300px;
+    height: 300px;
 }
 
 #title-logo {
-  font-size: 100px;
-  @include transform(skew(-30deg,0deg));
-  color: $light-contrast;
-  width: 550px;
-  text-align: center;
-  margin: 10px auto;
+    font-size: 100px;
+    @include transform(skew(-30deg,0deg));
+    //color: #ffe6b6;
+    width: 550px;
+    text-align: center;
+    margin: 10px auto;
+    display: inherit;
 }
 
 #title-buttons {
-  font-family: "aw-conqueror-carved";
-  font-size: 30px;
-  text-align: center;
+    font-family: "aw-conqueror-carved";
+    font-size: 30px;
+    text-align: center;
 }
 
 #title-buttons a {
-  text-decoration: none;
-  color: $dark-contrast;
-  position: relative;
-  left: -10px;
+    text-decoration: none;
+    color: $dark-contrast;
+    position: relative;
+    left: -10px;
     cursor: pointer;
 }
 
 #title-buttons a:hover {
     color: darken($dark-contrast, 20);
 }
+/*
+#title-logo .one {
+    color: #ff2723;
+}
+#title-logo .two {
+    color: #ff4632;
+}
+#title-logo .three {
+    color: #ff593a;
+}
+#title-logo .four {
+    color: #ff7346;
+}
+#title-logo .five {
+    color: #ff7346;
+}
+#title-logo .six {
+    color: #ff593a;
+}
+#title-logo .seven {
+    color: #ff4632;
+}
+#title-logo .eight {
+    color: #ff2723;
+}*/

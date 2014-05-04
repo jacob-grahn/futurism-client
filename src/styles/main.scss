@@ -35,39 +35,35 @@
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-image: url("/images/futurism-bg-960x540.jpg");
-    background-repeat: no-repeat;
+    background-image: url("/images/bg-960x600.jpg");
     background-color: #000000;
     background-attachment: fixed;
-    color: $dark-blend;
+    background-position: center center;
 }
 
-@media all and (min-width: 960px), (min-height: 540px) {
+@media all and (min-width: 960px), (min-height: 600px) {
     body {
-        background-image: url("/images/futurism-bg-1920x1080.jpg");
+        background-image: url("/images/bg-1920x1200.jpg");
     }
 }
 
 #main-container {
-    padding: 70px 20px 20px 20px;
+    padding: 70px;
 }
 
+
+/////////////////////////////////////
+// headers
+///////////////////////////////////
 h1 {
     font-family: "aw-conqueror-carved";
     color: $light-blend;
     margin: 15px 0px 10px -5px;
 }
 
-.form-control-big {
-    font-family: "aw-conqueror-carved";
-    font-size: 32px;
-    height: 58px;
-    color: $light-blend;
-    margin-left: 0;
-}
-
 h1.inverse, .inverse h1 {
     color: $light-contrast;
+    text-shadow: 2px 2px black;
 }
 
 h3 {
@@ -77,6 +73,24 @@ h3 {
 
 h3.inverse, .inverse h3 {
     color: white;
+    text-shadow: none;
+    text-shadow: 2px 2px black;
+}
+
+
+////////////////////////////////////////////
+//
+//////////////////////////////////////////
+.form-horizontal .control-label {
+    //color: $dark-blend;
+}
+
+.form-control-big {
+    font-family: "aw-conqueror-carved";
+    font-size: 32px;
+    height: 58px;
+    color: $light-blend;
+    margin-left: 0;
 }
 
 a {
@@ -92,8 +106,8 @@ a {
 }
 
 .side-panel {
-    padding: 0px;
-    background-color: white;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .side-panel h1 {
@@ -101,12 +115,8 @@ a {
 }
 
 .panel-segment {
-    padding: 20px 15px;
+    padding: 0 0 15px 0;
 }
-
-/*.panel-segment:nth-child(even) {
-    background-color: #eaebff;
-}*/
 
 .inverse {
     color: white;

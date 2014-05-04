@@ -1,10 +1,13 @@
 $iconSpritePath: "../images/glyphicons-halflings.png";
 $iconWhiteSpritePath: "../images/glyphicons-halflings-white.png";
 
-$light-blend: #13578A;
+//$light-blend: #13578A;
+$light-blend: #2a9fd6;
 $dark-blend: #234259;
-$light-contrast: #FF403C;
-$dark-contrast: desaturate(lighten($light-blend, 50),20);
+//$light-contrast: #FF403C;
+//$light-contrast: #ffb833;
+$light-contrast: #ffd071;
+$dark-contrast: #e6d6a6;
 $highlight: invert($light-blend);
 
 //$dark-contrast: #991715;
@@ -27,5 +30,5 @@ $brand-info:            $light-blend;
 /*$navbar-inverse-link-active-color: $highlight;
 $navbar-inverse-brand-color: $highlight;*/
 
-@import "../bower_components/bootstrap-sass/lib/bootstrap.scss";
+//@import "../bower_components/bootstrap-sass/lib/bootstrap.scss";
 @import "mixins.scss";

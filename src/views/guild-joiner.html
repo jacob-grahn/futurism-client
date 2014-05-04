@@ -1,44 +1,44 @@
-<div class="col-sm-7">
+<div class="col-md-7">
 
     <h1 class="inverse">{{lang.guildJoiner.joinGuild}}</h1>
 
     <paginated resource="GuildResource" results="guilds" query="query">
 
-    <ul class="list-group">
-        <li class="list-group-item" ng-repeat="guild in guilds">
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="guild in guilds">
 
-            <banner guild="guild"></banner>
-            <ul>
-                <li>
-                    {{lang.guildJoiner.leaders}}:
-                    <span ng-repeat="owner in guild.owners">
+                <banner guild="guild"></banner>
+                <ul>
+                    <li>
+                        {{lang.guildJoiner.leaders}}:
+                        <span ng-repeat="owner in guild.owners">
                         <username user="owner"></username>
                     </span>
-                </li>
-                <li>
-                    {{lang.guildJoiner.members}}: <b>{{guild.members.length}}</b>
-                </li>
-                <li>
-                    {{lang.guildJoiner.gpToday}}: <b>{{guild.gpDay}}</b>
-                </li>
-                <li>
-                    {{lang.guildJoiner.founded}}: <b>{{guild.createdDate | date}}</b>
-                </li>
-                <li ng-if="guild.desc">
-                    <p>
-                        -- <br>
-                        {{guild.desc}}
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <busy-button on-click="joinGuild(guild)" label="{{lang.guildJoiner.join}}"></busy-button>
-                    </p>
-                </li>
-            </ul>
+                    </li>
+                    <li>
+                        {{lang.guildJoiner.members}}: <b>{{guild.members.length}}</b>
+                    </li>
+                    <li>
+                        {{lang.guildJoiner.gpToday}}: <b>{{guild.gpDay}}</b>
+                    </li>
+                    <li>
+                        {{lang.guildJoiner.founded}}: <b>{{guild.createdDate | date}}</b>
+                    </li>
+                    <li ng-if="guild.desc">
+                        <p>
+                            --
+                            <br>{{guild.desc}}
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            <busy-button on-click="joinGuild(guild)" label="{{lang.guildJoiner.join}}"></busy-button>
+                        </p>
+                    </li>
+                </ul>
 
-        </li>
-    </ul>
+            </li>
+        </ul>
 
     </paginated>
 
@@ -46,27 +46,49 @@
 
 
 
-<div class="col-sm-5 side-panel">
+<div class="col-md-5 side-panel">
 
-    <div class="panel-segment">
-        <h1>{{lang.guildJoiner.createGuild}}</h1>
-        <div class="form-group">
-            <input class="form-control" type="text" ng-model="newGuild._id" placeholder="Guild Name">
-        </div>
-        <div class="form-group">
-            <textarea class="form-control" rows="2" ng-model="newGuild.desc" placeholder="Description"></textarea>
-        </div>
-        <div class="form-group">
-            {{lang.guildJoiner.joinPolicy}}: <select ng-model="newGuild.join" ng-options="lang.guildJoinPolicy[value].name for value in joinOptions"></select><br>
-            <span class="subtle">{{lang.guildJoinPolicy[newGuild.join].desc}}</span>
-        </div>
-        <div class="form-group">
-            {{lang.guildJoiner.banner}}: <span class="subtle">(300x50)</span> <input type="file" accept="image/*" image="uppedBanner" resize-max-width="300" resize-max-height="50" resize-quality="0.9" resize-type="image/jpg"/>
-            <img ng-if="uppedBanner" ng-src="{{uppedBanner.resized.dataURL}}" width="300" height="50"/>
-        </div>
-        <div class="form-group">
-            <busy-button on-click="createGuild(newGuild)" label="{{lang.guildJoiner.createGuild}}"></busy-button>
-        </div>
-    </div>
+    <form class="form-horizontal">
+        <legend>
+            <h1>{{lang.guildJoiner.createGuild}}</h1>
+        </legend>
+        <fieldset>
+            <div class="form-group">
+                <label for="inputGuildName" class="col-md-2 control-label">Name</label>
+                <div class="col-md-10">
+                    <input id="inputGuildName" class="form-control" type="text" ng-model="newGuild._id" placeholder="My Guild">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputGuildDesc" class="col-md-2 control-label">Desc</label>
+                <div class="col-md-10">
+                    <textarea id="inputGuildDesc" class="form-control" rows="2" ng-model="newGuild.desc" placeholder="We like to read books about time traveling ducks."></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPolicy" class="col-md-2 control-label">{{lang.guildJoiner.joinPolicy}}</label>
+                <div class="col-md-10">
+                    <select id="inputPolicy" class="form-control" ng-model="newGuild.join" ng-options="lang.guildJoinPolicy[value].name for value in joinOptions"></select>
+                    <p>{{lang.guildJoinPolicy[newGuild.join].desc}}</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputBannerFile" class="col-md-2 control-label">{{lang.guildJoiner.banner}} <span class="subtle">(300x50)</span>
+                </label>
+                <div class="col-md-10">
+                    <input id="inputBannerFile" class="form-control" type="file" accept="image/*" image="uppedBanner" resize-max-width="300" resize-max-height="50" resize-quality="0.9" resize-type="image/jpg" />
+                    <br>
+                    <img ng-if="uppedBanner" ng-src="{{uppedBanner.resized.dataURL}}" width="300" height="50" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10 col-md-offset-2">
+                    <busy-button class="btn btn-primary" on-click="createGuild(newGuild)" label="{{lang.guildJoiner.createGuild}}"></busy-button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+
 
 </div>
