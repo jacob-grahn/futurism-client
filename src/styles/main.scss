@@ -68,11 +68,11 @@ h1.inverse, .inverse h1 {
 
 h3 {
     font-family: "aw-conqueror-carved";
-    color: $dark-blend;
+    color: $light-blend;
 }
 
 h3.inverse, .inverse h3 {
-    color: white;
+    color: $dark-contrast;
     text-shadow: none;
     text-shadow: 2px 2px black;
 }
@@ -97,9 +97,9 @@ a {
     cursor: pointer;
 }
 
-.inverse a, a.inverse {
+/*.inverse a, a.inverse {
     color: $dark-contrast;
-}
+}*/
 
 .cursor-pointer {
     cursor: pointer;
@@ -129,6 +129,18 @@ ul {
 
 .username {
     cursor: pointer;
+}
+
+.modal-header, .modal-header h1 {
+    color: $light-contrast;
+}
+
+.navbar-right {
+    padding-right: 20px;
+}
+
+.inverse .username-large {
+    color: $light-contrast;
 }
 
 .nav, .pagination, .carousel a {
@@ -164,4 +176,11 @@ ul {
 .subtle {
     font-size: 10px;
     color: grey;
+}
+
+
+
+.list-group .list-group-item {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 0;
 }

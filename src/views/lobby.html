@@ -6,10 +6,10 @@
             <div class="col-sm-12">
                 <h1 class="inverse">{{lang.lobby.start}}</h1>
                 <ul class="game-starters">
-                    <li><button class='btn btn-default' ng-click="matchups.createMatchup({players: 2, deckSize: 5, futures: 0})">{{lang.lobby.shortGame}}</button></li>
-                    <li><button class='btn btn-default' ng-click="matchups.createMatchup({players: 2, deckSize: 10, futures: 1})">{{lang.lobby.mediumGame}}</button></li>
-                    <li><button class='btn btn-default' ng-click="matchups.createMatchup({players: 2, deckSize: 20, futures: 3})">{{lang.lobby.longGame}}</button></li>
-                    <li><button class='btn btn-default' ng-click="matchups.createMatchup({players: 4, deckSize: 20, futures: 3})">{{lang.lobby.customGame}}</button></li>
+                    <li><button class='btn btn-primary' ng-click="matchups.createMatchup({players: 2, deckSize: 5, futures: 0})">{{lang.lobby.shortGame}}</button></li>
+                    <li><button class='btn btn-primary' ng-click="matchups.createMatchup({players: 2, deckSize: 10, futures: 1})">{{lang.lobby.mediumGame}}</button></li>
+                    <li><button class='btn btn-primary' ng-click="matchups.createMatchup({players: 2, deckSize: 20, futures: 3})">{{lang.lobby.longGame}}</button></li>
+                    <li><button class='btn btn-primary' ng-click="matchups.createMatchup({players: 4, deckSize: 20, futures: 3})">{{lang.lobby.customGame}}</button></li>
                 </ul>
             </div>
         </div>
@@ -17,16 +17,17 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <h1 class="inverse">{{lang.lobby.join}}</h1>
+                <h1 ng-if="matchups.matchups.length" class="inverse">{{lang.lobby.join}}</h1>
                 <ul class="list-group">
-                    <li class="list-group-item matchup" ng-repeat="matchup in matchups.matchups" ng-click="matchups.join(matchup.id)">
+                    <li class="list-group-item matchup" ng-repeat="matchup in matchups.matchups">
                         <h3>{{matchup.rules.players}} {{lang.lobby.player}} / {{matchup.rules.deckSize}} {{lang.lobby.deckSize}} / {{matchup.rules.futures}} {{lang.lobby.futures}}</h3>
                         <ul class="matchup-members">
                             <li ng-repeat="user in matchup.accounts">
                                 <username user="user"></username>
                             </li>
                         </ul>
-                        <button class='btn btn-default'>{{lang.lobby.join}}</button>
+                        <button ng-if="!imInMatchup(matchup)" class='btn btn-primary' ng-click="matchups.join(matchup.id)">{{lang.lobby.join}}</button>
+                        <button ng-if="imInMatchup(matchup)" class='btn btn-default' ng-click="matchups.leave(matchup.id)">leave</button>
                     </li>
                 </ul>
             </div>
@@ -37,11 +38,19 @@
 
     <div id="lobby-chat" class="col-sm-5">
 
-        <div id="lobby-chat-panel" class="side-panel" match-screen-height resize-element=".auto-size" offset-bottom="90">
-            <div class="panel-segment">
-                <select class="lobby-select" ng-model="model.lobby" ng-options="lby._id for lby in lobbies"></select>
-                <chat-display id="lobby-chat" room="{{chatId}}"></chat-display>
+        <div id="lobby-chat-panel" class="side-panel" match-screen-height resize-element=".auto-size" offset-bottom="120">
+            
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    <h1>{{curLobby._id}} <b class="caret"></b></h1>
+                </a>
+                <ul class="dropdown-menu">
+                    <li ng-repeat="lobby in lobbies"><a ng-click="setLobby(lobby)">{{lobby._id}}</a></li>
+                </ul>
             </div>
+            
+            <chat-display id="lobby-chat" room="{{chatId}}"></chat-display>
+            
         </div>
 
     </div>
