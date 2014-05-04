@@ -3,7 +3,7 @@
 
             <paginated resource="ReportResource" results="reports" query="query" refresh-on="event:reportUpdated">
                 <ul class="report-list">
-                    <li class="panel panel-default" ng-repeat="report in reports">
+                    <li class="side-panel" ng-repeat="report in reports">
                         <report-display class="panel-segment" report="report"></report-display>
                     </li>
                 </ul>

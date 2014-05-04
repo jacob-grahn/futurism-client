@@ -1,30 +1,49 @@
 <div id="deck-builder" class="row">
 
     <div id="deck-settings" class="col-sm-5 side-panel">
-        <form role="form" class="panel-segment">
+        
+        <form class="form-horizontal">
+            <legend>
+                <h1>Deck Builder</h1>
+            </legend>
+            <fieldset>
 
-            <div class="form-group">
-                <busy-button class="btn btn-primary" on-click="saveDeck()" label="{{lang.deckBuilder.save}}"></busy-button>
-                <a ng-href="/deck-selector/{{me.user._id}}"><button class='btn btn-default'>{{lang.deckBuilder.load}}</button></a>
-                <button class='btn btn-default' type="submit" ng-click="applyDefaults()">{{lang.deckBuilder.new}}</button>
-            </div>
-
-            <div class="form-group">
-                <input class="form-control form-control-big" type="text" ng-model="deck.name" placeholder="Name">
-            </div>
-
-            <div class="form-group">
-                <ul class="card-list clearfix">
-                    <li class="card-holder" ng-repeat="card in deck.cards">
-                        <card-display card="card" ng-click="removeCard(card)" size="small"></card-display>
-                    </li>
-                </ul>
-                <deck-analyzer deck="deck"></deck-analyzer>
-            </div>
-
+                <div class="form-group">
+                    <label for="inputName" class="col-md-2 control-label">Name</label>
+                    <div class="col-md-10">
+                        <input id="inputName" class="form-control" type="text" ng-model="deck.name" placeholder="Name">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Cards</label>
+                    <div class="col-md-10">
+                        <ul class="card-list clearfix">
+                            <li class="card-holder" ng-repeat="card in deck.cards">
+                                <card-display card="card" ng-click="removeCard(card)" size="small"></card-display>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-md-2 control-label">Stats</label>
+                    <div class="col-md-10">
+                        <deck-analyzer deck="deck"></deck-analyzer>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="col-md-10 col-md-offset-2">
+                        <busy-button class="btn btn-primary" on-click="saveDeck()" label="{{lang.deckBuilder.save}}"></busy-button>
+                        <a ng-href="/deck-selector/{{me.user._id}}"><button class='btn btn-default'>{{lang.deckBuilder.load}}</button></a>
+                        <button class='btn btn-default' type="submit" ng-click="applyDefaults()">{{lang.deckBuilder.new}}</button>
+                    </div>
+                </div>
+        
+            </fieldset>
         </form>
     </div>
-
 
     <div id="cards" class="col-sm-7">
         <paginated resource="CardResource" results="cards" query="query">

@@ -1,6 +1,6 @@
-<div class="row toppy">
-    <username class="inverse" size="large" user="user"></username>
-    <button ng-if="user._id == me.user._id" class="new-deck-btn btn btn-default" ng-click="newCard()">{{lang.cardSelector.newCard}}</button>
+<div class="row toppy inverse">
+    <username size="large" user="user"></username>
+    <button ng-if="user._id == me.user._id" class="new-deck-btn btn btn-primary" ng-click="newCard()">{{lang.cardSelector.newCard}}</button>
 </div>
 
 <paginated resource="CardResource" results="cards" query="query">

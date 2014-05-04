@@ -1,9 +1,9 @@
 <div id="game-summary">
 
-    <ul class="panel panel-default">
-        <li ng-repeat="user in summ.users | meFirst" class="panel-segment">
+    <ul class="side-panel row">
+        <li ng-repeat="user in summ.users | meFirst" class="panel-segment col-md-6">
 
-            <h1><username size="large" user="user"></username></h1>
+            <h1 class="inverse"><username size="large" user="user"></username></h1>
             <div>exp:
                 <b>{{rankCalc.expRemainder(user.fame) | number:0}} / {{rankCalc.expNeeded(rankCalc.expToRank(user.fame)) | number}}</b>
                 <span class="text-success">(+{{user.fame-user.oldFame | number:0}})</span>
@@ -20,7 +20,7 @@
             <h3>Deck: {{user.deck.name}}</h3>
             <ul class="deck-list clearfix">
                 <li ng-repeat="card in user.deck.cards">
-                    <card-display card="card" size="small"></card-display>
+                    <card-magnify card="card" size="small" magnify="large"></card-magnify>
                 </li>
             </ul>
 

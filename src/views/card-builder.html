@@ -1,45 +1,84 @@
 <div id="card-edit" class="row">
 
     <div id="card-settings" class="col-sm-5 side-panel">
-        <form role="form" class="panel-segment">
+        
+        
+        <form class="form-horizontal">
+            <legend>
+                <h1>Card Builder</h1>
+            </legend>
+            <fieldset>
 
-            <div class="form-group">
-                <busy-button class="btn btn-primary" on-click="saveCard()" label="{{lang.cardBuilder.save}}"></busy-button>
-                <a ng-href="/card-selector/{{me.user._id}}"><button class='btn btn-default'>{{lang.cardBuilder.load}}</button></a>
-                <button class='btn btn-default' type="submit" ng-click="applyDefaults()">{{lang.cardBuilder.new}}</button>
-            </div>
+                <div class="form-group">
+                    <label for="inputName" class="col-md-2 control-label">Name</label>
+                    <div class="col-md-10">
+                        <input id="inputName" class="form-control" type="text" ng-model="card.name" placeholder="Name">
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <input class="form-control form-control-big" type="text" ng-model="card.name" placeholder="Name">
-                <textarea class="form-control" rows="1" ng-model="card.story" placeholder="Description"></textarea>
-                <label class="control-label subtle"><input class="form-control" type="text" maxlength="1" size="3" ng-model="card.attack" /> {{lang.cardBuilder.attack}}</label>
-                <label class="control-label subtle"><input class="form-control" type="text" maxlength="1" size="3" ng-model="card.health" /> {{lang.cardBuilder.health}}</label>
-            </div>
+                <div class="form-group">
+                    <label for="inputStory" class="col-md-2 control-label">Story</label>
+                    <div class="col-md-10">
+                        <textarea id="inputStory" class="form-control" rows="2" ng-model="card.story" placeholder=""></textarea>
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <span class="subtle">{{lang.cardBuilder.imageUpload}}</span>
-                <input type="file" accept="image/*" image="uppedImage" resize-max-width="260" resize-max-height="180" resize-quality="0.9" resize-type="image/jpg"/>
-            </div>
+                <div class="form-group">
+                    <label for="inputAttack" class="col-md-2 control-label">{{lang.cardBuilder.attack}}</label>
+                    <div class="col-md-4">
+                        <input id="inputAttack" class="form-control" type="text" maxlength="1" size="3" ng-model="card.attack" />
+                    </div>
+                    <label for="inputHealth" class="col-md-2 control-label">{{lang.cardBuilder.health}}</label>
+                    <div class="col-md-4">
+                        <input id="inputHealth" class="form-control" type="text" maxlength="1" size="3" ng-model="card.health" />
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <span class="subtle">{{lang.cardBuilder.factionAbilities}}</span>
-                <p><select ng-model="card.faction" ng-options="value.id as lang.factions[key].name for (key, value) in factions.factionLookup"></select></p>
-                <p class="faction-desc">{{lang.factions[card.faction].desc}}</p>
-                <ul class="checkbox" id="faction-checkboxes">
-                    <li ng-repeat="ability in factions.factionLookup[card.faction].abilities">
-                        <label><input type="checkbox" ng-model="abilityObj[ability.id]"> {{lang.abilities[ability.id].name}}</label>
-                        <p>{{lang.abilities[ability.id].desc}}</p>
-                    </li>
-                </ul>
-            </div>
+                <div class="form-group">
+                    <label for="inputImage" class="col-md-2 control-label">{{lang.cardBuilder.imageUpload}}</label>
+                    <div class="col-md-10">
+                        <input id="inputImage"  class="btn btn-default" type="file" accept="image/*" image="uppedImage" resize-max-width="260" resize-max-height="180" resize-quality="0.9" resize-type="image/jpg"/>
+                    </div>
+                </div>
 
+                <div class="form-group">
+                    <label for="inputFaction" class="col-md-2 control-label">Faction</label>
+                    <div class="col-md-10">
+                        <select class="form-control" ng-model="card.faction" ng-options="value.id as lang.factions[key].name for (key, value) in factions.factionLookup"></select>
+                        <p class="faction-desc">{{lang.factions[card.faction].desc}}</p>
+                    </div>    
+                </div>
+                
+                <div class="form-group">
+                    <label class="col-md-2 control-label">{{lang.cardBuilder.factionAbilities}}</label>
+                    <div class="col-md-10">
+                        <ul class="checkbox" id="faction-checkboxes">
+                            <li ng-repeat="ability in factions.factionLookup[card.faction].abilities">
+                                <label><input type="checkbox" ng-model="abilityObj[ability.id]"> {{lang.abilities[ability.id].name}}</label>
+                                <p>{{lang.abilities[ability.id].desc}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="col-md-10 col-md-offset-2">
+                        <busy-button class="btn btn-primary" on-click="saveCard()" label="{{lang.cardBuilder.save}}"></busy-button>
+                        <a ng-href="/card-selector/{{me.user._id}}"><button class='btn btn-default'>{{lang.cardBuilder.load}}</button></a>
+                        <button class='btn btn-default' type="submit" ng-click="applyDefaults()">{{lang.cardBuilder.new}}</button>
+                    </div>
+                </div>
+        
+            </fieldset>
         </form>
     </div>
 
 
 
-    <div id="card-preview-holder" class="col-sm-7">
-        <card-display class="stretch" card="card" size="large"></card-display>
+    <div class="col-sm-7">
+        <div id="card-preview-holder" match-screen-height>
+            <card-display class="stretch" card="card" size="large"></card-display>
+        </div>
     </div>
 
 </div>

@@ -1,22 +1,29 @@
 angular.module('futurism')
-    .controller('LobbyCtrl', function($scope, socket, matchups, LobbyResource) {
+    .controller('LobbyCtrl', function($scope, socket, matchups, LobbyResource, _, me) {
         'use strict';
 
         $scope.matchups = matchups;
         $scope.chatId = null;
-
-        $scope.model = {
-            lobby: {}
-        };
+        $scope.curLobby = {};
 
 
         $scope.lobbies = LobbyResource.query({}, function() {
-            $scope.model.lobby = $scope.lobbies[0];
+            $scope.setLobby($scope.lobbies[0]);
         });
+        
+        
+        $scope.imInMatchup = function(matchup) {
+            var ret = false;
+            _.each(matchup.accounts, function(member) {
+                if(member._id === me.userId) {
+                    ret = true;
+                }
+            });
+            return ret;
+        };
 
 
-        $scope.$watch('model.lobby', function() {
-            var lobby = $scope.model.lobby;
+        $scope.setLobby = function(lobby) {
             if(lobby.server) {
                 var type = lobby.open ? 'open' : 'guild';
                 var lobbyId = type + ':lobby:' + lobby._id;
@@ -25,7 +32,8 @@ angular.module('futurism')
                 matchups.subscribe(lobbyId);
                 $scope.chatId = chatId;
             }
-        }, true);
+            $scope.curLobby = lobby;
+        };
 
 
         $scope.$on('$destroy', function() {
