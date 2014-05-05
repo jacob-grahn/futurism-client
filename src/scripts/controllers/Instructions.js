@@ -5,12 +5,12 @@ angular.module('futurism')
             {
                 title: 'Making Cards and Decks',
                 desc: 'by Nedron',
-                url: $sce.trustAsResourceUrl('http://www.youtube.com/embed/oQJWb3dQJ9Q')
+                url: $sce.trustAsResourceUrl('https://www.youtube.com/embed/oQJWb3dQJ9Q')
             },
             {
                 title: 'Basic Gameplay',
                 desc: 'by Nedron',
-                url: $sce.trustAsResourceUrl('http://www.youtube.com/embed/qiZmwdJJFXQ')
+                url: $sce.trustAsResourceUrl('https://www.youtube.com/embed/qiZmwdJJFXQ')
             },
             {
                 title: 'Be Futuristic',
