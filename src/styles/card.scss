@@ -10,6 +10,11 @@ body .card-el h1 {
 body .card-ze h1 {
     color: $zealot;
 }
+body .card-no h1 {
+    //text-shadow: 2px 2px #333333;
+    color: $dark-blend;
+    color: darken($dark-contrast, 50);
+}
 
 
 .card {
@@ -59,8 +64,9 @@ body .card-ze h1 {
 
 
 .card h1 {
-  margin: 0 5px 5px 0;
-  text-align: center;
+    color: $light-blend;
+    margin: 0 5px 5px 0;
+    text-align: center;
 }
 .card-medium h1 {
     font-size: 18px;

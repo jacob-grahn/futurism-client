@@ -3,13 +3,13 @@
     <turn-anim></turn-anim>
 
 
-    <ul id="board" class="board col-sm-7 inverse" summon-anim attack-anim rally-anim abomination-anim heal-anim move-anim teleporter-anim poison-anim peace-pipe-anim seduction-anim delegate-anim shield-anim recharge-anim networking-anim transformer-anim serum-anim battle-cry-anim sacrifice-anim future-anim death-anim>
+    <ul id="board" class="board col-sm-7" summon-anim attack-anim rally-anim abomination-anim heal-anim move-anim teleporter-anim poison-anim peace-pipe-anim seduction-anim delegate-anim shield-anim recharge-anim networking-anim transformer-anim serum-anim battle-cry-anim sacrifice-anim future-anim death-anim>
         <li class="row" ng-repeat="area in board.areas | teamSort:players.findMe().team">
             <div class="board-area clearfix">
 
-                <div class="area-header">
+                <div class="area-header inverse">
                     <h1 ng-show="turn.isTheirTurn(area.playerId)" class="active-indicator">*</h1>
-                    <h1 class="area-title"><username size="large" class="inverse" user="players.idToPlayer(area.playerId)"></username></h1>
+                    <h1 class="area-title"><username size="large" user="players.idToPlayer(area.playerId)"></username></h1>
                 </div>
 
                 <ul ng-repeat="column in area.targets" class="player-field-column">
