@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .directive('cardMagnify', function($, _) {
+    .directive('cardMagnify', function($, _, scrollToElement) {
         'use strict';
 
         return {
@@ -22,23 +22,8 @@ angular.module('futurism')
 
                 var scrollIntoView = function() {
                     if(scope.hovering) {
-
                         var zoomedCard = elem.find('.card-bigger');
-
-                        var cardHeight = zoomedCard.height();
-                        var cardTop = +zoomedCard.offset().top;
-                        var cardBottom = cardTop + cardHeight;
-
-                        var screenHeight = $(window).height();
-                        var screenTop = $(document).scrollTop();
-                        var screenBottom = screenTop + screenHeight;
-
-                        if(cardBottom > screenBottom) {
-                            $('html, body').animate({scrollTop: screenTop + (cardBottom - screenBottom)}, 500);
-                        }
-                        else if(cardTop < screenTop) {
-                            $('html, body').animate({scrollTop: screenTop + (cardTop - screenTop)}, 500);
-                        }
+                        scrollToElement(zoomedCard);
                     }
                 };
 

@@ -1,6 +1,41 @@
 angular.module('futurism')
-    .directive('autoScroll', function($, socket) {
+    .directive('autoScroll', function($, socket, scrollToElement, _) {
         'use strict';
+        
+        
+        var findTaggedElems = function(possibleElems, tag) {
+            var confirmedElems = [];
+            _.each(possibleElems, function(possibleElem) {
+                possibleElem = $(possibleElem);
+                var matches = possibleElem.find('.' + tag);
+                if(matches.length > 0) {
+                    confirmedElems.push(possibleElem);
+                }
+            });
+            return confirmedElems;
+        };
+        
+        
+        var findNearestElem = function(elems) {
+            if(!_.isArray(elems)) {
+                return null;
+            }
+            
+            var screenHeight = $(window).height();
+            var screenTop = $(document).scrollTop();
+            var screenBottom = screenTop + screenHeight;
+            var screenCenterY = (screenTop + screenBottom) / 2;
+            
+            var sorted = _.sortBy(elems, function(elem) {
+                var offset = elem.offset();
+                var elemCenterY = (offset.top + offset.bottom) / 2;
+                Math.abs(screenCenterY - elemCenterY);
+            });
+            
+            return sorted[0];
+        };
+        
+        
 
         return {
             restrict: 'A',
@@ -21,38 +56,17 @@ angular.module('futurism')
                     function() {
                         _.delay(function() {
 
-                            var possibleTargets = element.find('.'+scope.target);
-                            var confirmedTarget = null;
-                            _.each(possibleTargets, function(possibleTarget) {
-                                var matches = $(possibleTarget).find('.'+scope.find);
-                                if(matches.length > 0) {
-                                    confirmedTarget = possibleTarget;
-                                }
-                            });
+                            var possibleElems = element.find('.'+scope.target);
+                            var confirmedElems = findTaggedElems(possibleElems, scope.find);
+                            var nearestElem = findNearestElem(confirmedElems);
 
-                            if(confirmedTarget) {
-                                var trueHeight = $('body').prop('scrollHeight');
-                                var visibleHeight = $(window).height();
-                                var maxY = trueHeight - visibleHeight;
-                                var targetY = +$(confirmedTarget).offset().top;
-
-                                if(targetY > maxY) {
-                                    targetY = maxY;
-                                }
-
-                                $('html, body').animate({
-                                 scrollTop: targetY
-                                }, 1000);
+                            if(nearestElem) {
+                                scrollToElement(nearestElem);
                             }
 
                         }, 100);
                     }
                 );
-
-
-                var onChange = function() {
-
-                }
             }
         };
     });
