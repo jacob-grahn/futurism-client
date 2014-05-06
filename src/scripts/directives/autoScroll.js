@@ -28,8 +28,10 @@ angular.module('futurism')
             
             var sorted = _.sortBy(elems, function(elem) {
                 var offset = elem.offset();
-                var elemCenterY = (offset.top + offset.bottom) / 2;
-                Math.abs(screenCenterY - elemCenterY);
+                var elemTop = offset.top;
+                var elemBottom = offset.top + elem.height();
+                var elemCenterY = (elemTop + elemBottom) / 2;
+                return Math.abs(screenCenterY - elemCenterY);
             });
             
             return sorted[0];
@@ -61,7 +63,7 @@ angular.module('futurism')
                             var nearestElem = findNearestElem(confirmedElems);
 
                             if(nearestElem) {
-                                scrollToElement(nearestElem);
+                                scrollToElement(nearestElem, 1000);
                             }
 
                         }, 100);
