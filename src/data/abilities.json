@@ -370,7 +370,7 @@
                 "pl": "doładowanie"
             },
             "desc": {
-                "en": "Ally can perform an extra action this turn",
+                "en": "Ally machine can perform an extra action this turn",
                 "ko": "앨리 추가 조치에게이 턴을 수행 할 수 있습니다",
                 "ct": "mewoowo",
                 "fr": "Un allié peut utiliser une action de plus pour ce tour.",
@@ -403,7 +403,7 @@
                 "pl": "kooperacja"
             },
             "desc": {
-                "en": "Gain an allies abilities.",
+                "en": "Gain an ally machine's abilities.",
                 "ko": "동맹의 능력을 얻을 수 있습니다.",
                 "ct": "mewoowo",
                 "fr": "Gagner les habiletés d'un allié.",
