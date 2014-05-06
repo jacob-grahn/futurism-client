@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .factory('hand', function(socket, $routeParams, players) {
+    .factory('hand', function(socket, $routeParams, players, _) {
         'use strict';
 
         /**

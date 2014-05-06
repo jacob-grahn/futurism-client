@@ -1,6 +1,7 @@
 angular.module('futurism')
-    .factory('targeter', function($routeParams, state, shared, board, players, socket, me) {
-
+    .factory('targeter', function($routeParams, state, shared, board, players, socket, me, _) {
+        'use strict';
+        
         var actions = shared.actions;
 
         var targeter = {
@@ -100,14 +101,6 @@ angular.module('futurism')
                     targets = filter(targets, players.findMe(), board, targetChain);
                 });
                 return targets.length !== 0;
-            },
-
-
-            /**
-             * Returns if a valid target is in your hand
-             */
-            isValidTargetInHand: function() {
-
             },
 
 

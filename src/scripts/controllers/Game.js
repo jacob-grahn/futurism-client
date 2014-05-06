@@ -83,13 +83,21 @@ angular.module('futurism')
 
             return true;
         };
+        
+        
+        /**
+         *
+         */
+        $scope.canPlayCard = function(card) {
+            return card.commander || targeter.isValidTarget({card: card, player: players.findMe()});
+        };
 
 
         /**
          *
          */
         $scope.pickFutureFromHand = function(futureId) {
-            targeter.selectTarget({future: futureId});
+            return targeter.selectTarget({future: futureId});
         };
 
 
@@ -97,20 +105,21 @@ angular.module('futurism')
          *
          */
         $scope.shouldShowHand = function() {
-            if(turn.isMyTurn()) {
-
-                // show hand if there is no commander on the board
-                if(!board.playerHasCommander(me.user._id) && state.name !== state.TARGETING) {
-                    return true;
-                }
-
-                // show hand if summon is being used
-                if(state.name === state.TARGETING && state.data.actionId === shared.actions.SUMMON && state.data.targets.length === 1) {
-                    return true;
-                }
-
+            if(!turn.isMyTurn()) {
+                return false;
             }
 
+            // show hand if there is no commander on the board
+            if(!board.playerHasCommander(me.user._id) && state.name !== state.TARGETING && state.name !== state.PENDING) {
+                return true;
+            }
+
+            // show hand if summon is being used
+            if(state.name === state.TARGETING && state.data.actionId === shared.actions.SUMMON && state.data.targets.length === 1) {
+                return true;
+            }
+            
+            // default to false
             return false;
         };
 
@@ -137,6 +146,6 @@ angular.module('futurism')
          */
         $scope.closeHand = function() {
             state.toDefault();
-        }
+        };
 
     });

@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .factory('players', function(me) {
+    .factory('players', function(me, _) {
         'use strict';
 
         var players = {
