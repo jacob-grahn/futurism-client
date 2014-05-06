@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .directive('cardMagnify', function($) {
+    .directive('cardMagnify', function($, _) {
         'use strict';
 
         return {
@@ -30,21 +30,20 @@ angular.module('futurism')
                         var cardBottom = cardTop + cardHeight;
 
                         var screenHeight = $(window).height();
-                        var screenTop = $('body').prop('scrollTop');
+                        var screenTop = $(document).scrollTop();
                         var screenBottom = screenTop + screenHeight;
 
-                        if(cardTop < screenTop) {
-                            $('html, body').animate({scrollTop: screenTop-cardTop}, 500);
-                        }
                         if(cardBottom > screenBottom) {
-                            $('html, body').animate({scrollTop: cardBottom - screenBottom}, 500);
+                            $('html, body').animate({scrollTop: screenTop + (cardBottom - screenBottom)}, 500);
+                        }
+                        else if(cardTop < screenTop) {
+                            $('html, body').animate({scrollTop: screenTop + (cardTop - screenTop)}, 500);
                         }
                     }
                 };
 
 
                 elem.click(function() {
-                    console.log('cardMagnify detects click');
                     if(scope.active !== 'false' || scope.hovering) {
                         scope.$apply(function() {
                             scope.hovering = !scope.hovering;
