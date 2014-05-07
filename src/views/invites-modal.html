@@ -1,13 +1,13 @@
 <div class="modal-header inverse">
-    <h1>{{lang.inviteModal.title}}</h1>
+    <h1>{{lang.invitesModal.title}}</h1>
 </div>
-<div class="modal-body">
+<div class="modal-body invites-modal">
     <ul>
         <li ng-repeat="guildId in invites">
-            {{guildId}}
+            <a ng-click="gotoGuild(guildId)">{{guildId}}</a> {{lang.invitesModal.wantYou}} <button class="btn btn-success" ng-click="join(guildId)">{{lang.invitesModal.join}}</button> <button class="btn btn-danger" ng-click="delete(guildId)">{{lang.invitesModal.delete}}</button>
         </li>
     </ul>
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" ng-click="$dismiss('close')">{{lang.inviteModal.close}}</button>
+    <button class="btn btn-primary" ng-click="$dismiss('close')">{{lang.invitesModal.close}}</button>
 </div>

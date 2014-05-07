@@ -937,7 +937,7 @@
             "pl": "Gildia"
         },
         
-        "invitations": {
+        "invites": {
             "en": "Guild Invites"
         }
     },
@@ -1258,12 +1258,21 @@
     },
     
     
-    "inviteModal": {
+    "invitesModal": {
         "title": {
             "en": "Guild Invitations"
         },
         "close": {
             "en": "Close"
+        },
+        "wantYou": {
+            "en": "wants you to join!"
+        },
+        "join": {
+            "en": "Join"
+        },
+        "delete": {
+            "en": "Delete"
         }
     }
 }

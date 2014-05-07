@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .factory('unread', function($timeout, UnreadResource, InvitationResource, UserInvitationResource, session, me) {
+    .factory('unread', function($timeout, UnreadResource, InviteResource, UserInviteResource, session, me) {
         'use strict';
 
 
@@ -21,7 +21,7 @@ angular.module('futurism')
         var unread = {
 
             count: 0,
-            invitationCount: 0,
+            inviteCount: 0,
 
             start: function() {
                 unread.stop();
@@ -37,8 +37,8 @@ angular.module('futurism')
                     var newCount = UnreadResource.get({}, function() {
                         unread.count = Number(newCount[0]);
                     });
-                    var invites = UserInvitationResource.get({userId: me.userId}, function() {
-                        unread.invitationCount = invites.invites.length;
+                    var invites = UserInviteResource.get({userId: me.userId}, function() {
+                        unread.inviteCount = invites.invites.length;
                     });
                 }
             }

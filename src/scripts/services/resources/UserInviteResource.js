@@ -1,8 +1,8 @@
 angular.module('futurism')
-    .factory('UserInvitationResource', function($resource) {
+    .factory('UserInviteResource', function($resource) {
         'use strict';
 
-        return $resource('globe/users/:userId/invitations', {userId: '@userId'}, {
+        return $resource('globe/users/:userId/invites', {userId: '@userId'}, {
             get: {
                 method: 'GET',
                 isArray: false
