@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .controller('UserModalCtrl', function($scope, userId, me, $location, UserResource, BanResource, StatsResource, ApprenticeResource, ModeratorResource, GuildModResource, KickResource, InviteResource, modals, rankCalc) {
+    .controller('UserModalCtrl', function($scope, userId, me, $location, UserResource, BanResource, StatsResource, ApprenticeResource, ModeratorResource, GuildModResource, KickResource, InvitationResource, modals, rankCalc) {
         'use strict';
 
         var includeBans = me.user.group === 'm' || me.user.group === 'a';
@@ -136,7 +136,7 @@ angular.module('futurism')
          * invite user to your guild
          */
         $scope.invite = function() {
-            InviteResource.put({guildId: me.user.guild, userId: userId});
+            InvitationResource.put({guildId: me.user.guild, userId: userId});
             $scope.$dismiss('invite');
         };
         
@@ -145,7 +145,7 @@ angular.module('futurism')
          * remove guild invitation
          */
         $scope.deInvite = function() {
-            InviteResource.delete({guildId: me.user.guild, userId: userId});
+            InvitationResource.delete({guildId: me.user.guild, userId: userId});
             $scope.$dismiss('deInvite');
         };
     });

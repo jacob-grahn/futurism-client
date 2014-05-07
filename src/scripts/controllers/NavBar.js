@@ -56,6 +56,11 @@ angular.module('futurism')
                 $location.url('/guild-joiner');
             }
         };
+        
+        
+        $scope.clickInvites = function() {
+            modals.openInvites();
+        };
 
 
         $scope.shouldShow = function() {

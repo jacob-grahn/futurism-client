@@ -1,5 +1,7 @@
 angular.module('futurism')
-    .run(function(autoLogin, session, $rootScope, lang, unread, notificationListener, socketErrors) {
+    .run(function(autoLogin, session, $rootScope, lang, unread, notificationListener, socketErrors, _) {
+        'use strict';
+        
         autoLogin.activate();
         session.renew();
         
@@ -13,7 +15,10 @@ angular.module('futurism')
         lang.loadData('data/phrases.json');
         $rootScope.lang = lang;
         
-        unread.start();
+        _.delay(function() {
+            unread.start();
+        }, 4000);
+        
         notificationListener.add('Welcome to Futurism!'); // pretty much a pointless command... this is a dirty way to get notificationListener to be created
         socketErrors();
     });

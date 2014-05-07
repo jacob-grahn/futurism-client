@@ -935,6 +935,10 @@
             "nb": "Laug",
             "hu": "Klán",
             "pl": "Gildia"
+        },
+        
+        "invitations": {
+            "en": "Guild Invites"
         }
     },
 
@@ -1247,6 +1251,16 @@
         },
         "cards": {
             "en": "Cards"
+        },
+        "close": {
+            "en": "Close"
+        }
+    },
+    
+    
+    "inviteModal": {
+        "title": {
+            "en": "Guild Invitations"
         },
         "close": {
             "en": "Close"

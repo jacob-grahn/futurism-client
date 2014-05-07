@@ -63,6 +63,14 @@ angular.module('futurism')
                     }
                 });
             },
+            
+            
+            openInvites: function() {
+                $modal.open({
+                    templateUrl: 'views/invites-modal.html',
+                    controller: 'InvitesModalCtrl'
+                });
+            },
 
         };
 

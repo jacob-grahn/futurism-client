@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .factory('InviteResource', function($resource) {
+    .factory('InvitationResource', function($resource) {
         'use strict';
 
         return $resource('globe/guilds/:guildId/invitations/:userId', {guildId: '@guildId', userId: '@userId'}, {

@@ -6,78 +6,8 @@ angular.module('futurism')
         var active = false;
         var sitesToTry = ['j'];
         var tempCredentials;
-
-
-        self.makeNew = _.throttle(function(callback) {
-            if(!callback) {
-                callback = defaultCallback;
-            }
-
-            checkLogins(function(err) {
-                if(err) {
-                    tempCredentials = {site: 'g'};
-                }
-
-                createSession(function(err, data) {
-                    if(err) {
-                        return callback(err);
-                    }
-
-                    active = true;
-                    setToken(data.token);
-                    self.data = data;
-                    $rootScope.$broadcast('event:sessionChanged', self.data);
-                    return callback(null, data);
-                });
-            });
-        }, 5000);
-
-
-        self.destroy = function() {
-            SessionResource.delete({token: self.getToken()});
-            setToken(null);
-            active = false;
-            self._id = null;
-            self.data = {};
-            $rootScope.$broadcast('event:sessionChanged', self.data);
-        };
-
-
-        self.renew = _.throttle(function(callback) {
-            var token = self.getToken();
-
-            if(!callback) {
-                callback = defaultCallback;
-            }
-
-            if(!token) {
-                return self.makeNew(callback);
-            }
-
-            loadSession(token, function(err, data) {
-                if(err) {
-                    return self.makeNew(callback);
-                }
-
-                active = true;
-                self.data = data;
-                $rootScope.$broadcast('event:sessionChanged', self.data);
-
-                return callback(null, data);
-            });
-
-        }, 5000, {leading: true, trailing: false});
-
-
-        self.getToken = function() {
-            var token = memory.short.get('token');
-            if(token === 'null') {
-                token = null;
-            }
-            return token;
-        };
-
-
+        
+        
         var setToken = function(newToken) {
             memory.short.set('token', newToken);
         };
@@ -150,6 +80,76 @@ angular.module('futurism')
             if(err && err.ban) {
                 $location.url('/users/'+err._id+'/bans');
             }
+        };
+
+
+        self.makeNew = _.throttle(function(callback) {
+            if(!callback) {
+                callback = defaultCallback;
+            }
+
+            checkLogins(function(err) {
+                if(err) {
+                    tempCredentials = {site: 'g'};
+                }
+
+                createSession(function(err, data) {
+                    if(err) {
+                        return callback(err);
+                    }
+
+                    active = true;
+                    setToken(data.token);
+                    self.data = data;
+                    $rootScope.$broadcast('event:sessionChanged', self.data);
+                    return callback(null, data);
+                });
+            });
+        }, 5000);
+
+
+        self.destroy = function() {
+            SessionResource.delete({token: self.getToken()});
+            setToken(null);
+            active = false;
+            self._id = null;
+            self.data = {};
+            $rootScope.$broadcast('event:sessionChanged', self.data);
+        };
+
+
+        self.renew = _.throttle(function(callback) {
+            var token = self.getToken();
+
+            if(!callback) {
+                callback = defaultCallback;
+            }
+
+            if(!token) {
+                return self.makeNew(callback);
+            }
+
+            loadSession(token, function(err, data) {
+                if(err) {
+                    return self.makeNew(callback);
+                }
+
+                active = true;
+                self.data = data;
+                $rootScope.$broadcast('event:sessionChanged', self.data);
+
+                return callback(null, data);
+            });
+
+        }, 5000, {leading: true, trailing: false});
+
+
+        self.getToken = function() {
+            var token = memory.short.get('token');
+            if(token === 'null') {
+                token = null;
+            }
+            return token;
         };
 
 
