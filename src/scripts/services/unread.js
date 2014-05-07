@@ -37,9 +37,8 @@ angular.module('futurism')
                     var newCount = UnreadResource.get({}, function() {
                         unread.count = Number(newCount[0]);
                     });
-                    var invitations = UserInvitationResource.get({userId: me.userId}, function() {
-                        console.log(invitations, invitations.length);
-                        unread.invitationCount = invitations.length;
+                    var invites = UserInvitationResource.get({userId: me.userId}, function() {
+                        unread.invitationCount = invites.invites.length;
                     });
                 }
             }
