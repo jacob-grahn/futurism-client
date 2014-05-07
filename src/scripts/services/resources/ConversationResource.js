@@ -9,6 +9,10 @@ angular.module('futurism')
             get: {
                 method: 'GET',
                 isArray: true
+            },
+            post: {
+                method: 'POST',
+                isArray: true
             }
         });
     });

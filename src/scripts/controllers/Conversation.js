@@ -16,11 +16,15 @@ angular.module('futurism')
 
 
         $scope.deleteConversation = function() {
-            ConversationResource.delete({userId: userId});
+            ConversationResource.delete({userId: userId}, function() {
+                $location.url('messages');
+            });
         };
 
 
         $scope.reportConversation = function() {
-            ConversationResource.save({userId: userId, action: 'report'});
+            ConversationResource.post({userId: userId, action: 'report'}, function() {
+                $scope.deleteConversation();
+            });
         };
     });
