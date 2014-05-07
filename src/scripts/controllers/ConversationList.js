@@ -1,11 +1,13 @@
 angular.module('futurism')
-    .controller('MessagesCtrl', function($scope, ConversationResource, MessageResource, me, unread) {
+    .controller('ConversationListCtrl', function($scope, ConversationResource, MessageResource, me, unread) {
         'use strict';
 
         unread.count = 0;
-        $scope.selectedConvo = {};
-        $scope.convos = ConversationResource.query();
         $scope.me = me;
+        
+        $scope.ConversationResource = ConversationResource;
+        $scope.query = {};
+        $scope.convos = [];
 
 
         $scope.selectConvo = function(convo) {
@@ -54,5 +56,5 @@ angular.module('futurism')
         $scope.reportConversation = function(convo) {
             var userId = $scope.getForeignUserId(convo);
             ConversationResource.save({userId: userId, action: 'report'});
-        }
+        };
     });

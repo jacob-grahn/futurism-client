@@ -13,7 +13,8 @@
     "es5-shim": "~2.0.8",
     "socket.io-client": "~0.9.16",
     "lodash": "~2.4.1",
-    "createjs-soundjs": "*"
+    "createjs-soundjs": "*",
+    "angular-truncate": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",

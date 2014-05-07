@@ -1,0 +1,27 @@
+<div id="conversation-list">
+
+    <paginated resource="ConversationResource" results="convos" query="query">
+        
+        <div ng-if="convos.length === 0">No messages here!</div>
+
+        <ul class="list-group">
+            <li class="list-group-item clearfix" ng-repeat="message in convos" ng-click="selectConvo(convo)">
+
+                <div class="col-md-4">
+                    <username user="message.toUser" link="false" ng-if="message.fromUser._id == me.user._id"></username>
+                    <username user="message.fromUser" link="false" ng-if="message.toUser._id == me.user._id"></username>
+                </div>
+
+                <div class="col-md-6">
+                    {{message.body | characters:25:true}}
+                </div>
+
+                <div class="col-md-2">
+                    {{message.date | date}}
+                </div>
+            </li>
+        </ul>
+        
+    </paginated>
+
+</div>

@@ -1,5 +1,5 @@
 angular
-    .module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', 'ngResource', 'ngAnimate', 'ui.bootstrap'])
+    .module('futurism', ['http-auth-interceptor', 'imageupload', 'ngRoute', 'ngResource', 'ngAnimate', 'truncate', 'ui.bootstrap'])
     .config(function($routeProvider, $locationProvider) {
         'use strict';
         
@@ -77,8 +77,12 @@ angular
                 controller: 'GameSummaryCtrl'
             }).
             when('/messages', {
-                templateUrl: 'views/messages.html',
-                controller: 'MessagesCtrl'
+                templateUrl: 'views/conversation-list.html',
+                controller: 'ConversationListCtrl'
+            }).
+            when('/messages/:userId', {
+                templateUrl: 'views/conversation.html',
+                controller: 'ConversationCtrl'
             }).
             when('/users/:userId/bans', {
                 templateUrl: 'views/bans.html',
