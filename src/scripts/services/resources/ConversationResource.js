@@ -4,7 +4,11 @@ angular.module('futurism')
         return $resource('/globe/conversations/:userId', {userId: '@userId'}, {
             query: {
                 method: 'GET',
-                array: false
+                isArray: false
+            },
+            get: {
+                method: 'GET',
+                isArray: true
             }
         });
     });

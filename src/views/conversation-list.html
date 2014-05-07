@@ -5,7 +5,7 @@
         <div ng-if="convos.length === 0">No messages here!</div>
 
         <ul class="list-group">
-            <li class="list-group-item clearfix" ng-repeat="message in convos" ng-click="selectConvo(convo)">
+            <li class="list-group-item clearfix cursor-pointer" ng-repeat="message in convos" ng-click="selectConvo(message)">
 
                 <div class="col-md-4">
                     <username user="message.toUser" link="false" ng-if="message.fromUser._id == me.user._id"></username>

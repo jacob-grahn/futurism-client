@@ -1,17 +1,17 @@
-<div id="conversation" class="col-sm-7">
+<div id="conversation" class="col-sm-12">
 
-    <convo messages="convo"></convo>
+    <p ng-if="convo.length" class="row">
+        <a ng-click="reportConversation()">{{lang.messages.report}}</a> |
+        <a ng-click="deleteConversation()">{{lang.messages.delete}}</a>
+    </p>
+    
+    <convo class="row" messages="convo"></convo>
 
-    <div ng-if="convo.length" class="convo-options inverse">
-        <a class="inverse" ng-click="reportConversation(convo)">{{lang.messages.report}}</a> |
-        <a class="inverse" ng-click="deleteConversation(convo)">{{lang.messages.delete}}</a>
-    </div>
-
-    <form ng-hide="convo" submit="sendMessage()">
+    <form ng-hide="convo" ng-submit="sendMessage()" class="row">
         <div class="input-group">
             <input class="form-control" type="text" ng-model="typedMessage" maxlength="200">
             <span class="input-group-btn">
-                <button class='btn btn-default' type="submit" ng-click="sendMessage()">send</button>
+                <button class='btn btn-primary' type="submit" ng-click="sendMessage()">send</button>
             </span>
         </div>
     </form>
