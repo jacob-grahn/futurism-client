@@ -1,5 +1,5 @@
 .guild-banner {
-    width: 300px;
+    width: 100%;
     height: 50px;
     background-color: black;
     position: relative;
@@ -7,8 +7,10 @@
     margin-bottom: 10px;
 }
 
-.guild-banner img {
-
+.guild-banner-img {
+    background-repeat: repeat-x;
+    height: 50px;
+    width: 100%;
 }
 
 .guild-banner h3 {
