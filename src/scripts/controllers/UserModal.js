@@ -10,7 +10,7 @@ angular.module('futurism')
 
 
         $scope.openGuild = function(guildId) {
-            $location.url('/guilds/' + guildId);
+            modals.openGuild(guildId);
             $scope.$dismiss('openGuild');
         };
 

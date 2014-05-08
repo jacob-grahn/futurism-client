@@ -1274,5 +1274,18 @@
         "delete": {
             "en": "Delete"
         }
+    },
+    
+    
+    "guildModal": {
+        "close": {
+            "en": "Close"
+        },
+        "ask": {
+            "en": "Ask to Join"
+        },
+        "join": {
+            "en": "Join"
+        }
     }
 }

@@ -1,0 +1,35 @@
+<div class="modal-header">
+    <banner guild="guild"></banner>
+</div>
+<div class="modal-body">
+    <ul>
+        <li>
+            {{lang.guildJoiner.leaders}}:
+            <span ng-repeat="owner in guild.owners">
+                <username user="owner"></username>
+            </span>
+        </li>
+        <li>
+            {{lang.guildJoiner.members}}: <b>{{guild.members.length}}</b>
+        </li>
+        <li>
+            {{lang.guildJoiner.gpToday}}: <b>{{guild.gpDay}}</b>
+        </li>
+        <li>
+            {{lang.guildJoiner.founded}}: <b>{{guild.createdDate | date}}</b>
+        </li>
+        <li ng-if="guild.desc">
+            <p>
+                --
+                <br>{{guild.desc}}
+            </p>
+        </li>
+    </ul>
+</div>
+<div class="modal-footer">
+    <button ng-if="!me.user.guild && guild.join !== 'open'" class="btn btn-default" ng-click="askToJoin(guild._id)">{{lang.guildModal.ask}}</button>
+    <button ng-if="!me.user.guild && guild.join === 'open'" class="btn btn-default" ng-click="join(guild._id)">{{lang.guildModal.join}}</button>
+    <button class="btn btn-primary" ng-click="$dismiss()">{{lang.guildModal.close}}</button>
+</div>
+
+                
