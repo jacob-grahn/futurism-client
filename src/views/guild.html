@@ -65,11 +65,11 @@
             Leave This Guild
         </button>
         
-        <button ng-if="!me.user.guild && guild.join !== 'open'" 
+        <busy-button ng-if="!me.user.guild && guild.join !== 'open'" 
                 class="btn btn-primary" 
-                ng-click="askToJoin(guild._id)">
-            {{lang.guildModal.ask}}
-        </button>
+                on-click="askToJoin(guild._id)"
+                label="{{lang.guildModal.ask}}">
+        </busy-button>
         
         <button ng-if="!me.user.guild && guild.join === 'open'" 
                 class="btn btn-primary" 

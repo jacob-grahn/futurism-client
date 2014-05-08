@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .controller('GuildCtrl', function ($scope, $routeParams, $location, $rootScope, GuildResource, MemberResource, me, modals, _) {
+    .controller('GuildCtrl', function ($scope, $routeParams, $location, $rootScope, GuildResource, MemberResource, ApplicantResource, me, modals, _) {
         'use strict';
 
         $scope.guildId = $routeParams.guildId;
@@ -42,7 +42,8 @@ angular.module('futurism')
         
         
         $scope.askToJoin = function(guildId) {
-            // todo
+            var result = ApplicantResource.put({guildId: guildId, userId: me.userId});
+            return result.$promise;
         };
         
         
