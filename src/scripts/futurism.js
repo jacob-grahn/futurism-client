@@ -52,6 +52,10 @@ angular
                 templateUrl: 'views/guild-joiner.html',
                 controller: 'GuildJoinerCtrl'
             }).
+            when('/guild-list', {
+                templateUrl: 'views/guild-list.html',
+                controller: 'GuildListCtrl'
+            }).
             when('/instructions', {
                 templateUrl: 'views/instructions.html',
                 controller: 'InstructionsCtrl'

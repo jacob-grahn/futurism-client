@@ -1,0 +1,24 @@
+<div id="guild-list">
+
+    <div class="col-sm-7">
+        <paginated resource="GuildResource" results="guilds" query="query">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="guild in guilds">
+                    #{{$index + 1}} <a ng-click="selectGuild(guild._id)"><banner guild="guild"></banner></a>
+                </li>
+            </ul>
+        </paginated>
+    </div>
+    
+    <div class="col-sm-5 side-panel">
+        <h1>Perks</h1>
+        <ul>
+            <li>* Top guild unlocks black cards</li>
+            <li>* Top 5 guilds can create fractures once a day</li>
+            <li>* Top 20 guilds earn fame 25% faster</li>
+        </ul>
+        <a href="guild-joiner"><button class="btn btn-primary">Join a Guild</button></a>
+        <button class="btn btn-primary">Create a Guild</button>
+    </div>
+
+</div>
