@@ -1,18 +1,29 @@
 angular.module('futurism')
-    .controller('GuildModalCtrl', function($scope, lang, guildId, GuildResource, me, _, modals) {
+    .controller('GuildModalCtrl', function($scope, $location, lang, guildId, GuildResource, MemberResource, $rootScope, me, _, modals) {
         'use strict';
         
         $scope.lang = lang;
         $scope.guild = GuildResource.get({guildId: guildId});
         $scope.me = me;
         
+        
         $scope.join = function(guildId) {
-            $scope.$dismiss();
+            var data = {guildId: guildId, userId: me.user._id};
+            var member = MemberResource.put(data, function(result) {
+                if(!result.error) {
+                    $rootScope.$broadcast('event:accountChanged');
+                    $scope.$dismiss();
+                    $location.url('/guilds/' + guildId);
+                }
+            });
+            return member.$promise;
         };
+        
         
         $scope.askToJoin = function(guildId) {
             $scope.$dismiss();
         };
+        
         
         $scope.iAmOwner = function (guild) {
             var isOwner = false;
@@ -23,6 +34,7 @@ angular.module('futurism')
             });
             return isOwner;
         };
+        
         
         $scope.edit = function(guildId) {
             modals.openGuildCreate(guildId);
