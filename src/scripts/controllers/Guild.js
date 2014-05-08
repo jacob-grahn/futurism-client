@@ -3,10 +3,8 @@ angular.module('futurism')
         'use strict';
 
         $scope.guildId = $routeParams.guildId;
-        $scope.guild = GuildResource.get({
-            guildId: $routeParams.guildId
-        });
-        $scope.modals = modals;
+        $scope.guild = GuildResource.get({guildId: $scope.guildId});
+        $scope.me = me;
 
 
         $scope.iAmOwner = function () {
@@ -22,12 +20,34 @@ angular.module('futurism')
 
         $scope.leaveGuild = function () {
             MemberResource.delete({
-                guildId: $routeParams.guildId,
+                guildId: $scope.guildId,
                 userId: me.user._id
             }, function () {
                 $rootScope.$broadcast('event:accountChanged');
             });
-            $location.url('/guild-joiner');
+            $location.url('/guild-list');
+        };
+        
+        
+        $scope.join = function(guildId) {
+            var data = {guildId: guildId, userId: me.user._id};
+            var member = MemberResource.put(data, function(result) {
+                if(!result.error) {
+                    $rootScope.$broadcast('event:accountChanged');
+                    $location.url('/guilds/' + guildId + '?newmember');
+                }
+            });
+            return member.$promise;
+        };
+        
+        
+        $scope.askToJoin = function(guildId) {
+            // todo
+        };
+        
+        
+        $scope.edit = function(guildId) {
+            modals.openGuildCreate(guildId);
         };
 
 

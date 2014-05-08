@@ -35,17 +35,54 @@
         <h1>Stats</h1>
         <ul>
             <li>
-                GP: {{guild.gp | number}}
+                {{lang.guildJoiner.leaders}}:
+                <span ng-repeat="owner in guild.owners">
+                    <username user="owner"></username>
+                </span>
             </li>
             <li>
-                GP Today: {{guild.gpDay | number}}
+                Mods:
+                <span ng-repeat="member in guild.members">
+                    <username ng-if="member.mod" user="member"></username>
+                </span>
+            </li>
+            <li>
+                {{lang.guildJoiner.members}}: <b>{{guild.members.length}}</b>
+            </li>
+            <li>
+                {{lang.guildJoiner.gpToday}}: <b>{{guild.gpDay}}</b>
+            </li>
+            <li>
+                {{lang.guildJoiner.founded}}: <b>{{guild.createdDate | date}}</b>
             </li>
         </ul>
     </div>
 
     <div class="panel-segment">
-        <button ng-if="iAmOwner(guild)" ng-click="modals.openGuildCreate(guild._id)" class="btn btn-default">Edit Guild</button>
-        <button ng-click="leaveGuild()" class="btn btn-default">Leave This Guild</button>
+        <button ng-if="me.user.guild === guild._id"
+                ng-click="leaveGuild()" 
+                class="btn btn-default">
+            Leave This Guild
+        </button>
+        
+        <button ng-if="!me.user.guild && guild.join !== 'open'" 
+                class="btn btn-primary" 
+                ng-click="askToJoin(guild._id)">
+            {{lang.guildModal.ask}}
+        </button>
+        
+        <button ng-if="!me.user.guild && guild.join === 'open'" 
+                class="btn btn-primary" 
+                ng-click="join(guild._id)">
+            {{lang.guildModal.join}}
+        </button>
+        
+        <button ng-if="iAmOwner(guild)" 
+                class="btn btn-primary" 
+                ng-click="edit(guild._id)">
+            {{lang.guildModal.edit}}
+        </button>
+        
     </div>
 
 </div>

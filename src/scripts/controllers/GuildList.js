@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .controller('GuildListCtrl', function($scope, GuildResource, modals, me, _, MemberResource, $rootScope) {
+    .controller('GuildListCtrl', function($scope, $location, $rootScope, GuildResource, modals, me, _, MemberResource) {
         'use strict';
         
         $scope.me = me;
@@ -10,7 +10,7 @@ angular.module('futurism')
         };
         
         $scope.selectGuild = function(guildId) {
-            modals.openGuild(guildId);
+            $location.url('guilds/' + guildId);
         };
 
 

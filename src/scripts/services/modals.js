@@ -70,19 +70,6 @@ angular.module('futurism')
                     templateUrl: 'views/invites-modal.html',
                     controller: 'InvitesModalCtrl'
                 });
-            },
-            
-            
-            openGuild: function(guildId) {
-                $modal.open({
-                    templateUrl: 'views/guild-modal.html',
-                    controller: 'GuildModalCtrl',
-                    resolve: {
-                        guildId: function () {
-                            return guildId;
-                        }
-                    }
-                });
             }
 
         };
