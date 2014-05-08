@@ -1,30 +1,26 @@
 angular.module('futurism')
-    .factory('unread', function($timeout, UnreadResource, InviteResource, UserInviteResource, session, me) {
+    .factory('unread', function($timeout, NotificationResource, session) {
         'use strict';
 
 
-        /**
-         * Private
-         */
         var freq = 1000 * 60; // one minute
         var promise;
 
         var doneWaiting = function() {
             promise = $timeout(doneWaiting, freq);
-            unread.refresh();
+            self.refresh();
         };
 
 
-        /**
-         * Public
-         */
-        var unread = {
 
-            count: 0,
+        var self = {
+
+            unreadCount: 0,
             inviteCount: 0,
+            applicantCount: 0,
 
             start: function() {
-                unread.stop();
+                self.stop();
                 doneWaiting();
             },
 
@@ -34,15 +30,18 @@ angular.module('futurism')
 
             refresh: function() {
                 if(session.getToken()) {
-                    var newCount = UnreadResource.get({}, function() {
-                        unread.count = Number(newCount[0]);
-                    });
-                    var invites = UserInviteResource.get({userId: me.userId}, function() {
-                        unread.inviteCount = invites.invites.length;
+                    var data = NotificationResource.get({}, function() {
+                        self.unreadCount = data.unreadCount;
+                        self.inviteCount = data.inviteCount;
+                        self.applicantCount = data.applicantCount;
                     });
                 }
+            },
+            
+            totalCount: function() {
+                return self.unreadCount + self.inviteCount + self.applicantCount;
             }
         };
 
-        return unread;
+        return self;
     });

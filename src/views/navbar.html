@@ -24,13 +24,13 @@
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                    <span class="unread" ng-if="unread.count + unread.inviteCount > 0">({{unread.count + unread.inviteCount}}) </span>
+                    <span class="unread" ng-if="unread.totalCount() > 0">({{unread.totalCount()}}) </span>
                     <username user="me.user" link="false"></username>
                     <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
                     <li><a ng-click="clickStats()">{{lang.nav.stats}}</a></li>
-                    <li><a href="/messages"><span class="unread" ng-if="unread.count > 0">({{unread.count}}) </span>{{lang.nav.messages}}</a></li>
+                    <li><a href="/messages"><span class="unread" ng-if="unread.unreadCount > 0">({{unread.unreadCount}}) </span>{{lang.nav.messages}}</a></li>
                     <li ng-if="unread.inviteCount > 0"><a ng-click="clickInvites()"><span class="unread">({{unread.inviteCount}}) </span>{{lang.nav.invites}}</a></li>
                     <li ng-if="me.user.group === 'm' || me.user.group === 'a'"><a ng-href="/reports">{{lang.nav.reports}}</a></li>
                     <li ng-if="me.user.group === 'm' || me.user.group === 'a'"><a ng-href="/mod-logs">{{lang.nav.modLog}}</a></li>

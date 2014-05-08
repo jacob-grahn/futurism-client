@@ -10,7 +10,7 @@ angular.module('futurism')
 
 
         $scope.selectConvo = function(convo) {
-            unread.count = 0;
+            unread.unreadCount = 0;
             var userId = $scope.getOtherUserId(convo);
             $location.url('messages/' + userId);
         };
