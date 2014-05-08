@@ -52,10 +52,10 @@ angular.module('futurism')
             },
             
             
-            openEditGuild: function(guildId) {
+            openGuildCreate: function(guildId) {
                 $modal.open({
-                    templateUrl: 'views/edit-guild-modal.html',
-                    controller: 'EditGuildModalCtrl',
+                    templateUrl: 'views/guild-create-modal.html',
+                    controller: 'GuildCreateModalCtrl',
                     resolve: {
                         guildId: function () {
                             return guildId;

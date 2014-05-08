@@ -29,5 +29,6 @@
 <div class="modal-footer">
     <button ng-if="!me.user.guild && guild.join !== 'open'" class="btn btn-default" ng-click="askToJoin(guild._id)">{{lang.guildModal.ask}}</button>
     <button ng-if="!me.user.guild && guild.join === 'open'" class="btn btn-default" ng-click="join(guild._id)">{{lang.guildModal.join}}</button>
+    <button ng-if="iAmOwner(guild)" class="btn btn-primary" ng-click="edit(guild._id)">{{lang.guildModal.edit}}</button>
     <button class="btn btn-primary" ng-click="$dismiss()">{{lang.guildModal.close}}</button>
 </div>

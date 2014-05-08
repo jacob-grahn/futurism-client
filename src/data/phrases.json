@@ -922,7 +922,7 @@
         },
 
         "guild": {
-            "en": "Guild",
+            "en": "Guilds",
             "ko": "대가족",
             "ct": "Meow",
             "fr": "Guilde",
@@ -1286,6 +1286,9 @@
         },
         "join": {
             "en": "Join"
+        },
+        "edit": {
+            "en": "Edit"
         }
     }
 }

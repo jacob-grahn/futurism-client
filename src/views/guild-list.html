@@ -17,8 +17,10 @@
             <li>* Top 5 guilds can create fractures once a day</li>
             <li>* Top 20 guilds earn fame 25% faster</li>
         </ul>
-        <a href="guild-joiner"><button class="btn btn-primary">Join a Guild</button></a>
-        <button class="btn btn-primary">Create a Guild</button>
+        <a ng-if="!me.user.guild" href="guild-joiner"><button class="btn btn-primary">Join a Guild</button></a>
+        <button ng-if="!me.user.guild" class="btn btn-primary" ng-click="makeNewGuild()">Create a Guild</button>
+        <button ng-if="me.user.guild" class="btn btn-primary" ng-click="selectGuild(me.user.guild)">My Guild</button>
+        <button ng-if="me.user.guild" class="btn btn-default" ng-click="leaveGuild()">Leave Guild</button>
     </div>
 
 </div>

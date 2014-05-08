@@ -39,7 +39,7 @@ angular.module('futurism')
 
 
         $scope.atGuild = function() {
-            return $scope.path === '/guild' || $scope.path === '/guild-joiner';
+            return $scope.path === '/guild' || $scope.path === '/guild-joiner' || $scope.path === '/guild-list';
         };
         
         
@@ -48,14 +48,14 @@ angular.module('futurism')
         };
 
 
-        $scope.clickGuild = function() {
+        /*$scope.clickGuild = function() {
             if(me.user.guild) {
                 $location.url('/guilds/'+me.user.guild);
             }
             else {
                 $location.url('/guild-joiner');
             }
-        };
+        };*/
         
         
         $scope.clickInvites = function() {

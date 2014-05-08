@@ -16,7 +16,7 @@
     <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav">
             <li ng-class="{active: atLobby()}"><a ng-href="/lobby">{{lang.nav.lobby}}</a></li>
-            <li ng-class="{active: atGuild()}"><a ng-click="clickGuild()">{{lang.nav.guild}}</a></li>
+            <li ng-class="{active: atGuild()}"><a ng-href="/guild-list">{{lang.nav.guild}}</a></li>
             <li ng-class="{active: atDeckBuilder()}"><a ng-href="/deck-selector/{{me.user._id}}">{{lang.nav.deckBuilder}}</a></li>
             <li ng-class="{active: atCardBuilder()}"><a ng-href="/card-selector/{{me.user._id}}">{{lang.nav.cardBuilder}}</a></li>
             <li ng-class="{active: atStore()}"><a ng-href="/t-machine">{{lang.nav.store}}</a></li>
