@@ -56,7 +56,7 @@
                 },
                 sass: {
                     files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-                    tasks: ['sass']
+                    tasks: ['sass', 'autoprefixer']
                 },
                 gruntfile: {
                     files: ['gruntfile.js']
@@ -175,12 +175,8 @@
                     browsers: ['last 1 version']
                 },
                 dist: {
-                    files: [{
-                        expand: true,
-                        cwd: '.tmp/styles/',
-                        src: '{,*/}*.css',
-                        dest: '.tmp/styles/'
-                    }]
+                    src: '.tmp/styles/main-noprefix.css',
+                    dest: '.tmp/styles/main.css'
                 }
             },
 
@@ -188,11 +184,11 @@
             // Compile Sass to CSS
             sass: {
                 dist: {
-                    options: {
+                    /*options: {
                         includePaths: ['<%= yeoman.app %>/bower_components']
-                    },
+                    },*/
                     files: {
-                        '.tmp/styles/main.css': '<%= yeoman.app %>/styles/main.scss'
+                        '.tmp/styles/main-noprefix.css': '<%= yeoman.app %>/styles/main.scss'
                     }
                 }
             },
@@ -379,7 +375,8 @@
             grunt.task.run([
                 'clean:server',
                 'merge-json:tmp-phrases',
-                'concurrent:server',
+                'sass',
+                'copy:styles',
                 'autoprefixer',
                 'configureProxies:server',
                 'connect:livereload',

@@ -48,7 +48,9 @@ angular.module('futurism')
 
             refresh: function() {
                 self.clear();
-                socket.emit('hand', {gameId: $routeParams.gameId});
+                if(players.findMe()) {
+                    socket.emit('hand', {gameId: $routeParams.gameId});
+                }
             }
         };
 
