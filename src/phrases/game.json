@@ -4,7 +4,7 @@
         "endTurn": {
             "en": "End Turn",
             "ct": "meow",
-            "ne": "Beeindig Beurt",
+            "ne": "Eindig Beurt",
             "lt": "Užbaigti ėjimą",
             "hu": "Fordulat vége",
             "nb": "Avslutt turen",
@@ -28,7 +28,7 @@
         "close": {
             "en": "close",
             "ct": "meow",
-            "ne": "Dicht doen",
+            "ne": "sluiten",
             "lt": "Uždaryti",
             "hu": "bezár",
             "nb": "lukk",
