@@ -7,7 +7,7 @@
             "fr": "Joueur",
             "pi": "Sailor",
             "lt": "Žaidėjai",
-            "ne": "Speler",
+            "ne": "spelers",
             "sv": "spelare",
             "es": "jugadores",
             "nb": "spillere",
@@ -19,7 +19,8 @@
         "deckSize": {
             "en": "cards",
             "pl": "karty",
-            "pi": "ships"
+            "pi": "ships",
+            "ne": "kaarten"
         },
 
         "join": {
@@ -110,7 +111,7 @@
             "nb": "Kamp",
             "hu": "Csetepaté",
             "it": "Scaramuccia",
-            "ne": "Kort gevecht",
+            "ne": "Gevecht",
             "pl": "Potyczka"
         },
 
@@ -124,7 +125,7 @@
             "nb": "Slag",
             "hu": "Csata",
             "it": "Battaglia",
-            "ne": "Strijd",
+            "ne": "Veldslag",
             "pl": "Bitwa"
         },
 
@@ -149,7 +150,7 @@
             "fr": "Personnaliser",
             "pi": "Blank map",
             "lt": "Redaguojamas",
-            "ne": "Eigen",
+            "ne": "Aangepast",
             "sv": "Anpassad",
             "es": "Personalizado",
             "it": "Personalizzato",
@@ -165,7 +166,7 @@
             "fr": "Personnaliser",
             "pi": "Blank map",
             "lt": "Futuristinis",
-            "ne": "zelfgemaakt",
+            "ne": "aangepast",
             "sv": "Anpassad",
             "es": "personalizado",
             "nb": "Egendefinert",
