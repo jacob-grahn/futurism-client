@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .controller('GameCtrl', function($scope, $routeParams, $location, socket, _, gameListeners, players, turn, board, state, hand, targeter, errorHandler, shared, me) {
+    .controller('GameCtrl', function($scope, $routeParams, $location, socket, _, gameListeners, players, turn, board, state, hand, targeter, errorHandler, shared, me, timer) {
         'use strict';
 
         $scope.actions = shared.actions;
@@ -12,6 +12,7 @@ angular.module('futurism')
         $scope.gameId = $routeParams.gameId;
         $scope.chatId = $scope.gameId.replace('game', 'chat');
         $scope.me = me;
+        $scope.timer = timer;
 
 
         var connectToGame = function() {

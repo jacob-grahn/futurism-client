@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .factory('gameListeners', function($routeParams, $location, socket, players, turn, board, state, hand, updateDelayer, autoTurnEnder, shared, sound, me) {
+    .factory('gameListeners', function($routeParams, $location, socket, players, turn, board, state, hand, updateDelayer, autoTurnEnder, shared, sound, me, timer, _) {
         'use strict';
         var self = this;
 
@@ -11,6 +11,7 @@ angular.module('futurism')
             board.fullUpdate(data.board);
             board.future = data.future || shared.futures.NORMAL;
             self.startTurn(data);
+            timer.timeLeft = data.timeLeft;
         });
 
 
@@ -22,6 +23,8 @@ angular.module('futurism')
             var changes = data.changes;
             changes.data = data.data;
             changes.cause = data.cause;
+            
+            timer.timeLeft = data.changes.timeLeft || timer.timeLeft;
 
             updateDelayer.add(cause, changes, function() {
                 state.toDefault();

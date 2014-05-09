@@ -41,13 +41,14 @@
 
 .area-header > .active-indicator {
     position: absolute;
-    top: -15px;
-    left: -25px;
+    top: -1px;
+    left: -36px;
+    width: 26px;
+    height: 26px;
 }
 
 .area-title {
     max-width: 400px;
-    //overflow: hidden;
 }
 
 .area-title a.inverse {

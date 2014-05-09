@@ -13,17 +13,20 @@ angular.module('futurism')
             
             link: function (scope) {
                 
-                var dec = Number(scope.perc) / 100;
+                scope.$watch('perc', function() {
+                    
+                    var perc = Number(scope.perc);
+                    
+                    if(perc < 0.5) {
+                        scope.rotate1 = 135;
+                        scope.rotate2 = -45 + (180 * perc * 2);
+                    }
+                    else {
+                        scope.rotate1 = 135 + (180 * (perc - 0.5) * 2);
+                        scope.rotate2 = 135;
+                    }
+                });
                 
-                if(dec < 0.5) {
-                    scope.rotate1 = 135;
-                    scope.rotate2 = -45 + (180 * dec * 2);
-                }
-                else {
-                    scope.rotate1 = 135 + (180 * (dec - 0.5) * 2);
-                    scope.rotate2 = 135;
-                }
             }
         };
-
     });

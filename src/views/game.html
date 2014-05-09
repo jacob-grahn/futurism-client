@@ -8,7 +8,7 @@
             <div class="board-area clearfix">
 
                 <div class="area-header inverse">
-                    <h1 ng-show="turn.isTheirTurn(area.playerId)" class="active-indicator">*</h1>
+                    <progress-display ng-show="turn.isTheirTurn(area.playerId)" class="active-indicator" perc="1 - timer.timeLeft / 60"></progress-display>
                     <h1 class="area-title"><username size="large" user="players.idToPlayer(area.playerId)"></username></h1>
                 </div>
 
