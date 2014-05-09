@@ -5,21 +5,21 @@
         
         <form class="form-horizontal">
             <legend>
-                <h1>Card Builder</h1>
+                <h1>{{lang.cardBuilder.title}}</h1>
             </legend>
             <fieldset>
 
                 <div class="form-group">
-                    <label for="inputName" class="col-md-2 control-label">Name</label>
+                    <label for="inputName" class="col-md-2 control-label">{{lang.cardBuilder.name}}</label>
                     <div class="col-md-10">
-                        <input id="inputName" class="form-control" type="text" ng-model="card.name" placeholder="Name">
+                        <input id="inputName" class="form-control" type="text" ng-model="card.name" placeholder="" maxlength="20">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="inputStory" class="col-md-2 control-label">Story</label>
+                    <label for="inputStory" class="col-md-2 control-label">{{lang.cardBuilder.story}}</label>
                     <div class="col-md-10">
-                        <textarea id="inputStory" class="form-control" rows="2" ng-model="card.story" placeholder=""></textarea>
+                        <textarea id="inputStory" class="form-control" rows="2" ng-model="card.story" placeholder="" maxlength="99"></textarea>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="inputFaction" class="col-md-2 control-label">Faction</label>
+                    <label for="inputFaction" class="col-md-2 control-label">{{lang.cardBuilder.faction}}</label>
                     <div class="col-md-10">
                         <select class="form-control" ng-model="card.faction" ng-options="value.id as lang.factions[key].name for (key, value) in factions.factionLookup"></select>
                         <p class="faction-desc">{{lang.factions[card.faction].desc}}</p>
