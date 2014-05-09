@@ -2,19 +2,23 @@
     "applicantModal": {
         
         "title": {
-            "en": "Applications"
+            "en": "Applications",
+            "fr": "Applications"
         },
         
         "close": {
-            "en": "Close"
+            "en": "Close",
+            "fr": "Fermer"
         },
         
         "accept": {
-            "en": "Accept"
+            "en": "Accept",
+            "fr": "Accepter"
         },
         
         "delete": {
-            "en": "Delete"
+            "en": "Delete",
+            "fr": "Supprimer"
         }
     }
 }
