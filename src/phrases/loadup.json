@@ -1,0 +1,31 @@
+{
+    
+    "loadup": {
+        
+        "maxDeckSize": {
+            "en": "Max Size",
+            "pl": "Max. Wielkość Dumy",
+            "pi": "Max Size"
+        },
+        
+        "selectDeck": {
+            "en": "Select a Deck!",
+            "pi": "Choose your fleet!"
+        },
+        
+        "select": {
+            "en": "Select",
+            "pi": "Select"
+        },
+        
+        "futures": {
+            "en": "Futures!",
+            "pi": "Tomorrows!"
+        },
+        
+        "selectFutureSingular": {
+            "en": "Select a Future!",
+            "pi": "Select the day after tomorrow!"
+        }
+    }
+}

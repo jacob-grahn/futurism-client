@@ -1,0 +1,64 @@
+{
+    "game": {
+        
+        "endTurn": {
+            "en": "End Turn",
+            "ct": "meow",
+            "ne": "Beeindig Beurt",
+            "lt": "Užbaigti ėjimą",
+            "hu": "Fordulat vége",
+            "nb": "Avslutt turen",
+            "pi": "Hit the bunk",
+            "it": "Termina turno",
+            "pl": "Zakończ turę"
+        },
+
+        "pride": {
+            "en": "Pride",
+            "ct": "meow",
+            "ne": "Trots",
+            "lt": "Vertė",
+            "hu": "Büszkeség",
+            "nb": "Stolthet",
+            "pi": "Pride",
+            "it": "Valore",
+            "pl": "Duma"
+        },
+
+        "close": {
+            "en": "close",
+            "ct": "meow",
+            "ne": "Dicht doen",
+            "lt": "Uždaryti",
+            "hu": "bezár",
+            "nb": "lukk",
+            "pi": "Seal",
+            "it": "chiudi",
+            "pl": "Zamknij"
+        },
+
+        "futures": {
+            "en": "Futures",
+            "ct": "meow",
+            "ne": "Toekomsten",
+            "lt": "Futuristikos taškai",
+            "hu": "Jövendők",
+            "nb": "Fremtider",
+            "pi": "Days after tomorrow",
+            "it": "Futures",
+            "pl": "Przyszłości"
+        },
+
+        "forfeit": {
+            "en": "Forfeit",
+            "ct": "meow",
+            "ne": "Opgeven",
+            "lt": "Pasitraukti",
+            "hu": "Felmondás",
+            "nb": "Forlat kampen",
+            "pi": "Abandon ship",
+            "it": "Abbandona",
+            "pl": "Zrezygnuj"
+        }
+    }
+}

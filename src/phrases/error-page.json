@@ -1,0 +1,21 @@
+{
+    
+    "errorPage": {
+        
+        "error": {
+            "en": "Error",
+            "ko": "오류",
+            "ct": "meow",
+            "fr": "Erreur",
+            "pi": "Y'arr!",
+            "lt": "Klaida!",
+            "ne": "Error",
+            "sv": "Error",
+            "es": "Error",
+            "nb": "Error",
+            "it": "Errore!",
+            "hu": "Hiba!",
+            "pl": "Błąd"
+        }
+    }
+}

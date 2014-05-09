@@ -1,0 +1,45 @@
+{
+    
+    "analyzer": {
+        
+        "pride": {
+            "en": "pride",
+            "ne": "trots",
+            "lt": "Vertė",
+            "pi": "pride",
+            "it": "valore",
+            "nb": "stolthet",
+            "pl": "duma"
+        },
+
+        "cardCount": {
+            "en": "cards",
+            "ne": "kaarten",
+            "lt": "Kortų kiekis",
+            "pi": "ships",
+            "it": "carte",
+            "nb": "kort",
+            "pl": "ilość kart"
+        },
+
+        "attack": {
+            "en": "attack",
+            "ne": "aanval",
+            "lt": "Puolimo taškai",
+            "pi": "cannons",
+            "it": "attacco",
+            "nb": "angrip",
+            "pl": "atak"
+        },
+
+        "health": {
+            "en": "health",
+            "ne": "levens",
+            "lt": "Gyvybių taškai",
+            "pi": "rum",
+            "it": "salute",
+            "nb": "helse",
+            "pl": "życie"
+        }
+    }
+}

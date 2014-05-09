@@ -1,0 +1,35 @@
+{
+        "chat": {
+        "say": {
+            "en": "say",
+            "ko": "말하다",
+            "ct": "meow",
+            "fr": "Envoyer",
+            "pi": "Belch",
+            "lt": "Kalbėk",
+            "ne": "Zeggen",
+            "sv": "säg",
+            "es": "Enviar",
+            "nb": "si",
+            "it": "Invia",
+            "hu": "mondd",
+            "pl": "wyślij"
+        },
+
+        "placeholder": {
+            "en": "type to chat",
+            "ko": "말을 입력",
+            "ct": "meow",
+            "fr": "Taper pour bavarder",
+            "pi": "Open ye mouth",
+            "lt": "Įveskite norimą tekstą",
+            "ne": "Type iets in de chat",
+            "sv": "skriv för att chatta",
+            "es": "Escribe para conversar",
+            "nb": "skriv for å chatte",
+            "it": "Scrivi per mandare messaggi",
+            "hu": "ide írj!",
+            "pl": "Zapisz/Załaduj"
+        }
+    }
+}

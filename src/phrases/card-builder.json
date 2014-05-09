@@ -1,0 +1,160 @@
+{
+    "cardBuilder": {
+        
+        "title": {
+            "en": "Card Builder"
+        },
+
+        "name": {
+            "en": "Name",
+            "ko": "이름",
+            "ct": "meow",
+            "fr": "Nommer",
+            "pi": "Name yar booty",
+            "lt": "Pavadinimas",
+            "ne": "Naam",
+            "sv": "Namnge",
+            "es": "Nombrar",
+            "nb": "Navngi",
+            "it": "Nominala",
+            "hu": "Nevezd",
+            "pl": "Nazwij"
+        },
+        
+        "story": {
+            "en": "Story"
+        },
+
+        "imageUpload": {
+            "en": "Image Upload",
+            "ko": "영상",
+            "ct": "meow",
+            "fr": "Charger une image",
+            "pi": "Enscribe yar map",
+            "lt": "Paveikslėlio įkelimas",
+            "ne": "Upload een Plaatje",
+            "sv": "bilduppladdning",
+            "es": "Cargar imagen",
+            "nb": "Bildeopplasting",
+            "it": "Carica un'immagine",
+            "hu": "Képfeltöltés",
+            "pl": "Obrazek"
+        },
+        
+        "faction": {
+            "en": "Faction"
+        },
+
+        "factionAbilities": {
+            "en": "Faction Abilities",
+            "ko": "능력",
+            "ct": "meow",
+            "fr": "Habiletés de la classe",
+            "pi": "Munitions",
+            "lt": "Frakcijų sugebėjimai",
+            "ne": "Factie Vaardigheden ",
+            "sv": "Fraktionsförmågor",
+            "es": "Habilidades de la facción",
+            "nb": "Klanegenskaper",
+            "it": "Abilità della fazione",
+            "hu": "Képességek",
+            "pl": "Zdolnosci"
+        },
+
+        "save": {
+            "en": "Save",
+            "ko": "저장",
+            "ct": "meow",
+            "fr": "Sauvegarder",
+            "pi": "Bury",
+            "lt": "Išsaugoti",
+            "ne": "Opslaan",
+            "sv": "Spara",
+            "es": "Guardar",
+            "nb": "Lagre",
+            "it": "Salva",
+            "hu": "Mentés",
+            "pl": "Zapisz"
+        },
+
+        "load": {
+            "en": "Load",
+            "ko": "하중",
+            "ct": "meow",
+            "fr": "Charger",
+            "pi": "Dig up booty",
+            "lt": "Užkrauti",
+            "ne": "Laden",
+            "sv": "Ladda",
+            "es": "Cargar",
+            "nb": "Åpne",
+            "it": "Carica",
+            "hu": "Betöltés",
+            "pl": "Załaduj"
+        },
+
+        "new": {
+            "en": "New",
+            "ko": "새로운",
+            "ct": "meow",
+            "fr": "Nouvelle",
+            "pi": "Plunder new booty",
+            "lt": "Nauja korta",
+            "ne": "Nieuw",
+            "sv": "Nytt",
+            "es": "Nueva",
+            "nb": "Nytt",
+            "it": "Nuova",
+            "hu": "Új",
+            "pl": "Utwórz"
+        },
+
+        "delete": {
+            "en": "Delete",
+            "ko": "삭제",
+            "ct": "meow",
+            "fr": "Supprimer",
+            "pi": "Toss overboard",
+            "lt": "Ištrinti",
+            "ne": "Verwijderen",
+            "sv": "Ta bort",
+            "es": "Eliminar",
+            "nb": "Slett",
+            "it": "Elimina",
+            "hu": "Törlés",
+            "pl": "usuń"
+        },
+
+        "attack": {
+            "en": "Attack",
+            "ko": "공격",
+            "ct": "meow",
+            "fr": "Attaque",
+            "pi": "Number o' Cannons",
+            "lt": "Puolimo taškai",
+            "ne": "Kracht",
+            "sv": "Attackera",
+            "es": "Ataque",
+            "nb": "Angrip",
+            "it": "Attacca",
+            "hu": "Támadás",
+            "pl": "Atak"
+        },
+
+        "health": {
+            "en": "Health",
+            "ko": "건강",
+            "ct": "meow",
+            "fr": "Santé",
+            "pi": "Rum",
+            "lt": "Gyvybės taškai",
+            "ne": "Levens",
+            "sv": "Hälsa",
+            "es": "Vida",
+            "nb": "Helse",
+            "it": "Salute",
+            "hu": "Élet",
+            "pl": "Zdrowie"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "guildCreateModal": {
+        
+        "createGuild": {
+            "en": "Create Guild",
+            "ne": "Maak Gilde",
+            "lt": "Sukurti Gildiją",
+            "pi": "Found guild",
+            "nb": "Lag et laug",
+            "pl": "Załóz gildie"
+        },
+        
+        "edit": {
+            "en": "Edit"
+        },
+        
+        "name": {
+            "en": "Name"  
+        },
+        
+        "desc": {
+            "en": "Desc"
+        },
+        
+        "joinPolicy": {
+            "en": "Join Policy",
+            "ne": "Treed toe in het overleg",
+            "lt": "Įstojimo tipas",
+            "pi": "Enlistment policy",
+            "nb": "Deltagelsesregler",
+            "pl": "Warunki dołączenia"
+        },
+
+        "banner": {
+            "en": "Banner",
+            "ne": "Logo",
+            "lt": "Logotipas",
+            "pi": "Flag",
+            "nb": "Banner",
+            "pl": "Banner"
+        }
+    }
+}

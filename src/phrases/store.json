@@ -1,0 +1,36 @@
+{
+    "store": {
+        
+        "futures": {
+            "en": "Futures"
+        },
+        
+        "conversions": {
+            "en": "Conversions"
+        },
+        
+        "fantasims": {
+            "en": "Fantasims"
+        },
+        
+        "compliment": {
+            "en": "T-Machine likes your style!"
+        },
+        
+        "fractureNeedA": {
+            "en": "T-Machine needs"
+        },
+        
+        "fractureNeedB": {
+            "en": "fracture(s) to reach a new future."
+        },
+        
+        "fractureHaveA": {
+            "en": "You have"
+        },
+        
+        "fractureHaveB": {
+            "en": "fracture(s)."
+        }
+    },
+}

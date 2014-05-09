@@ -1,0 +1,23 @@
+{
+    
+    "guildJoiner": {
+
+        "title": {
+            "en": "Join a Guild",
+            "ne": "Treed toe in de Gilde",
+            "lt": "Stoti į Gildiją",
+            "pi": "Enlist",
+            "nb": "Bli med i lauget",
+            "pl": "Dołacz do gildii"
+        },
+
+        "join": {
+            "en": "Join",
+            "ne": "Treed toe",
+            "lt": "Įstoti",
+            "pi": "Enlist",
+            "pl": "Dołącz",
+            "nb": "Bli med"
+        }
+    }
+}

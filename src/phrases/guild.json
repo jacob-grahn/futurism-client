@@ -1,0 +1,32 @@
+{
+    "guild": {
+        
+        "ask": {
+            "en": "Ask to Join"
+        },
+        
+        "join": {
+            "en": "Join"
+        },
+        
+        "edit": {
+            "en": "Edit"
+        },
+        
+        "leave": {
+            "en": "Leave This Guild"
+        },
+        
+        "perks": {
+            "en": "Active Perks"
+        },
+        
+        "none": {
+            "en": "None"
+        },
+        
+        "stats": {
+            "en": "Stats"
+        }
+    }
+}

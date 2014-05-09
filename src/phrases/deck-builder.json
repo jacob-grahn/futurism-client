@@ -1,0 +1,92 @@
+{
+    "deckBuilder": {
+        
+        "title": {
+            "en": "Deck Builder"
+        },
+
+        "save": {
+            "en": "Save",
+            "ko": "저장",
+            "ct": "meow",
+            "fr": "Sauvegarder",
+            "pi": "Bury",
+            "lt": "Išsaugoti",
+            "ne": "Opslaan",
+            "sv": "Spara",
+            "es": "Guardar",
+            "nb": "Lagre",
+            "it": "Salva",
+            "hu": "Mentés",
+            "pl": "Zapisz"
+        },
+
+        "load": {
+            "en": "Load",
+            "ko": "하중",
+            "ct": "meow",
+            "fr": "Charger",
+            "pi": "Dig up booty",
+            "lt": "Užkrauti",
+            "ne": "Laden",
+            "sv": "Ladda",
+            "es": "Cargar",
+            "nb": "Åpne",
+            "it": "Carica",
+            "hu": "Betöltés",
+            "pl": "Załaduj"
+        },
+
+        "new": {
+            "en": "New",
+            "ko": "새로운",
+            "ct": "meow",
+            "fr": "Nouveau",
+            "pi": "Plunder new booty",
+            "lt": "Naujas",
+            "ne": "Nieuw",
+            "sv": "Nytt",
+            "es": "Nuevo",
+            "nb": "Nytt",
+            "it": "Nuova",
+            "hu": "Új",
+            "pl": "Utwórz"
+        },
+
+        "name": {
+            "en": "Name",
+            "ko": "이름",
+            "ct": "meow",
+            "fr": "Nommer",
+            "pi": "Name yar booty",
+            "lt": "Pavadinimas",
+            "ne": "Geef een naam",
+            "sv": "Namnge det",
+            "es": "Nombrar",
+            "nb": "Navngi det",
+            "it": "Nominalo",
+            "hu": "Nevezd el",
+            "pl": "Nazwij"
+        },
+
+        "cards": {
+            "en": "Cards",
+            "ko": "카드",
+            "ct": "meow",
+            "fr": "Cartes",
+            "pi": "Maps",
+            "lt": "Kortos",
+            "ne": "Kaarten",
+            "sv": "Kort",
+            "es": "Cartas",
+            "nb": "Kort",
+            "it": "Carte",
+            "hu": "Kártyák",
+            "pl": "Karty"
+        },
+        
+        "stats": {
+            "en": "Stats"
+        }
+    }
+}

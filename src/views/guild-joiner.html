@@ -1,6 +1,6 @@
 <div id="guild-joiner" class="col-md-12">
 
-    <h1 class="inverse">{{lang.guildJoiner.joinGuild}}</h1>
+    <h1 class="inverse">{{lang.guildJoiner.title}}</h1>
 
     <paginated resource="GuildResource" results="guilds" query="query">
 
@@ -10,19 +10,19 @@
                 <banner guild="guild"></banner>
                 <ul>
                     <li>
-                        {{lang.guildJoiner.leaders}}:
+                        {{lang.guildStats.leaders}}:
                         <span ng-repeat="owner in guild.owners">
                         <username user="owner"></username>
                     </span>
                     </li>
                     <li>
-                        {{lang.guildJoiner.members}}: <b>{{guild.members.length}}</b>
+                        {{lang.guildStats.members}}: <b>{{guild.members.length}}</b>
                     </li>
                     <li>
-                        {{lang.guildJoiner.gpToday}}: <b>{{guild.gpDay}}</b>
+                        {{lang.guildStats.gpToday}}: <b>{{guild.gpDay}}</b>
                     </li>
                     <li>
-                        {{lang.guildJoiner.founded}}: <b>{{guild.createdDate | date}}</b>
+                        {{lang.guildStats.founded}}: <b>{{guild.createdDate | date}}</b>
                     </li>
                     <li ng-if="guild.desc">
                         <p>

@@ -1,0 +1,20 @@
+{
+    "messages": {
+        
+        "delete": {
+            "en": "delete",
+            "ne": "verwijder",
+            "pl": "usun",
+            "nb": "slett",
+            "pi": "burn message"
+        },
+        
+        "report": {
+            "en": "report",
+            "ne": "rapporteren",
+            "pl": "zreportuj",
+            "nb": "rapporter",
+            "pi": "tip off police"
+        }
+    }
+}

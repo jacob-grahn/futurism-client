@@ -1,0 +1,20 @@
+{
+    "applicantModal": {
+        
+        "title": {
+            "en": "Applications"
+        },
+        
+        "close": {
+            "en": "Close"
+        },
+        
+        "accept": {
+            "en": "Accept"
+        },
+        
+        "delete": {
+            "en": "Delete"
+        }
+    }
+}

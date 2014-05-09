@@ -1,10 +1,12 @@
 {
     "notify": {
+        
         "incomingFracture": {
             "en": "Sensors detect an incoming FRACTURE. It will intersect with your line at {{time}}.",
             "pi": "Crow's nest has spotted an incoming FRACTURE. It will hit your supply line at {{time}}.",
             "nb": "Sensorer registrerer en innkommende FRAKSJON. Den vil krysse din linje på {{time}}"
         },
+        
         "startFracture": {
             "en": "FRACTURE detected. Attempting to ascertain location relative to your line... Location determined.",
             "pi": "FRACTURE spotted. Plotting location on a map... Location plotted.",

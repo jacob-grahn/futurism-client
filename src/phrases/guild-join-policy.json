@@ -1,0 +1,61 @@
+{
+    "guildJoinPolicy": {
+        
+        "open": {
+            "name": {
+                "en": "Open",
+                "ne": "Open",
+                "lt": "Atvira",
+                "pi": "Open doors",
+                "pl": "Otwarta",
+                "nb": "Åpent"
+            },
+            "desc": {
+                "en": "Anyone can join this guild.",
+                "ne": "Iedereen kan in deze guild komen",
+                "lt": "Į šią Gildiją gali įstoti visi.",
+                "pi": "Any pirate may join this crew.",
+                "pl": "Każdy może dołączyć do tej gildii.",
+                "nb": "Alle kan bli med i dette lauget."
+            }
+        },
+
+        "invite": {
+            "name": {
+                "en": "Invite",
+                "ne": "Nodig uit",
+                "lt": "Tik su pakvietimu",
+                "pi": "Private",
+                "pl": "Prywatna",
+                "nb": "Privat"
+            },
+            "desc": {
+                "en": "Only invited players can join this guild.",
+                "ne": "Alleen uitgenodigde speler kunnen in deze gilde komen",
+                "lt": "Tik pakviesti žaidėjai gali įstoti į šią Gildiją",
+                "pi": "Pirates must have a letter to join this guild.",
+                "pl": "Tylko zaproszeni gracze mogą dołączyć do tej gildii.",
+                "nb": "Bare inviterte spillere kan bli med i dette lauget."
+            }
+        },
+
+        "ask": {
+            "name": {
+                "en": "Ask",
+                "ne": "Vraag",
+                "lt": "Tik su užklausa",
+                "pi": "Inquiry only",
+                "pl": "Moderatowana",
+                "nb": "Spør"
+            },
+            "desc": {
+                "en": "Players must ask or be invited to join this guild.",
+                "ne": "Spelers moeten gevraagd hebben of uitgenodigd zijn om deze gilde te betreden",
+                "lt": "Žaidėjai turi atsiusti užklausą arba būti pakviesti kad galėtu įstoti į šią Gildiją",
+                "pi": "Pirates must either have their request approved or have a letter to join this guild.",
+                "pl": "Aby dołączyć, musisz sie zapytać lub zostać zaproszonym.",
+                "nb": "Spillere må spørre eller være invitert for å bli med i dette lauget."
+            }
+        }
+    }
+}

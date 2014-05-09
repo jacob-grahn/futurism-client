@@ -1,0 +1,197 @@
+{
+    "nav": {
+        "applicants": {
+            "en": "Applications"
+        },
+        
+        "reports": {
+            "en": "Reports",
+            "pl": "Reporty",
+            "pi": "Tip-offs"
+        },
+
+        "modLog": {
+            "en": "Mod Log",
+            "pi": "Police books"
+        },
+
+        "toggle": {
+            "en": "Toggle Navigation",
+            "ko": "토글",
+            "ct": "meow",
+            "ne": "Navigatie aanzetten",
+            "fr": "Activer la navigation",
+            "pi": "Toggle Map",
+            "lt": "Navigacijos Perjungimas",
+            "sv": "Växla Navigation",
+            "es": "Habilitar barra de navegación",
+            "nb": "Bytt Navigasjon",
+            "it": "Abilita la navigazione",
+            "hu": "Váltás Navigációra",
+            "pl": "Nawigacja"
+        },
+
+        "futurism": {
+            "en": "Futurism",
+            "ko": "미래의 배",
+            "ct": "meow",
+            "ne": "Futurism",
+            "fr": "Futurisme",
+            "pi": "Day after Tomorrow",
+            "lt": "Futurism",
+            "sv": "Futurism",
+            "es": "Futurismo",
+            "nb": "Futurisme",
+            "it": "Futurismo",
+            "hu": "Futurism",
+            "pl": "Futurism"
+        },
+
+        "deckBuilder": {
+            "en": "Decks",
+            "ko": "갑판",
+            "ct": "meow",
+            "ne": "Deck maker",
+            "fr": "Créateur de paquet",
+            "pi": "Mapbook binder",
+            "lt": "Kaladės Dėliojimas",
+            "sv": "Deckbyggare",
+            "es": "Constructor de mazos",
+            "nb": "Kortstokkbygger",
+            "it": "Creatore dei mazzi",
+            "hu": "Kártyacsomag Készítő",
+            "pl": "Edytor talii"
+        },
+
+        "cardBuilder": {
+            "en": "Cards",
+            "ko": "카드",
+            "ct": "meow",
+            "ne": "Kaart maker",
+            "fr": "Créateur de carte",
+            "pi": "Map drawer",
+            "lt": "Kortų kūrimas",
+            "sv": "Korbyggare",
+            "es": "Constructor de cartas",
+            "nb": "Kortbygger",
+            "it": "Creatore delle carte",
+            "hu": "Kártya Készítő",
+            "pl": "Edytor kart"
+        },
+
+        "lobby": {
+            "en": "Lobby",
+            "ko": "로비",
+            "ct": "meow",
+            "ne": "Lobby",
+            "fr": "Hall",
+            "pi": "Tavern",
+            "lt": "Fojė",
+            "sv": "Lobby",
+            "es": "Lobby",
+            "nb": "Lobby",
+            "it": "Lobby",
+            "hu": "Előcsarnok",
+            "pl": "Lobby"
+        },
+
+        "stats": {
+            "en": "My Stats",
+            "ko": "통계",
+            "ct": "meow",
+            "ne": "Mijn statistieken",
+            "fr": "Ma Statistiques",
+            "pi": "Pirate-ness",
+            "lt": "Mano statusai",
+            "sv": "Min Statistik",
+            "es": "Mis estadísticas",
+            "nb": "Min Statistikk",
+            "it": "Le mie statistiche",
+            "hu": "Statisztikáim",
+            "pl": "Statystyki"
+        },
+
+        "messages": {
+            "en": "Messages",
+            "ko": "메시지",
+            "ct": "meow",
+            "ne": "Berichten",
+            "fr": "Messages",
+            "pi": "Messages in bottles",
+            "lt": "Žinutės",
+            "sv": "Meddelanden",
+            "es": "Mensajes",
+            "nb": "Meldinger",
+            "it": "Messaggi",
+            "hu": "Üzenetek",
+            "pl": "Wiadomości"
+        },
+
+        "logout": {
+            "en": "Logout",
+            "ko": "로그 아웃",
+            "ct": "meow",
+            "ne": "Uitloggen",
+            "fr": "Déconnexion",
+            "pi": "Walk the plank",
+            "lt": "Atsijungti",
+            "sv": "Logga ut",
+            "es": "Cerrar sesión",
+            "nb": "Logg ut",
+            "it": "Esci",
+            "hu": "Kijelentkezés",
+            "pl": "Wyloguj się"
+        },
+
+        "language": {
+            "en": "Language",
+            "ko": "언어",
+            "ct": "meow",
+            "ne": "Taal",
+            "fr": "Langue",
+            "pi": "Tongues",
+            "lt": "Kalba",
+            "sv": "Språk",
+            "es": "Idioma",
+            "nb": "Språk",
+            "it": "Lingua",
+            "hu": "Nyelv",
+            "pl": "Język"
+        },
+
+        "store": {
+            "en": "T-Machine",
+            "ct": "meow",
+            "lt": "Futuristinai sugebėjimai.",
+            "fr": "Futurs",
+            "sv": "Framitid",
+            "pi": "Days after tomorrow",
+            "nb": "Fremtider",
+            "hu": "Jövendők",
+            "it": "Futures",
+            "ne": "Toekomsten",
+            "pl": "Przyszłości"
+        },
+
+        "guild": {
+            "en": "Guilds",
+            "ko": "대가족",
+            "ct": "Meow",
+            "fr": "Guilde",
+            "pi": "Crew",
+            "lt": "Gildija",
+            "ne": "Gilde",
+            "sv": "Klan",
+            "es": "Gremio",
+            "it": "Gilda",
+            "nb": "Laug",
+            "hu": "Klán",
+            "pl": "Gildia"
+        },
+        
+        "invites": {
+            "en": "Guild Invites"
+        }
+    }
+
+}

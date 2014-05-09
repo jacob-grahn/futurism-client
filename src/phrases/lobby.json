@@ -1,0 +1,193 @@
+{
+    "lobby": {
+        "player": {
+            "en": "players",
+            "ko": "플레이어",
+            "ct": "meow",
+            "fr": "Joueur",
+            "pi": "Sailor",
+            "lt": "Žaidėjai",
+            "ne": "Speler",
+            "sv": "spelare",
+            "es": "jugadores",
+            "nb": "spillere",
+            "it": "Giocatori",
+            "hu": "játékosok",
+            "pl": "gracze"
+        },
+
+        "deckSize": {
+            "en": "cards",
+            "pl": "karty",
+            "pi": "ships"
+        },
+
+        "join": {
+            "en": "join",
+            "ko": "가입",
+            "ct": "meow",
+            "fr": "Joindre",
+            "pi": "Board",
+            "lt": "Prisijungti",
+            "ne": "meedoen",
+            "sv": "gå med",
+            "es": "unirse",
+            "nb": "bli med",
+            "it": "unisciti",
+            "hu": "csatlakozás",
+            "pl": "graj"
+        },
+
+        "start": {
+            "en": "start",
+            "ko": "스타트",
+            "ct": "meow",
+            "fr": "Commencer",
+            "pi": "Set sail",
+            "lt": "Pradėti",
+            "ne": "start",
+            "sv": "starta",
+            "es": "Iniciar",
+            "nb": "start",
+            "it": "inizia",
+            "hu": "indítás",
+            "pl": "start"
+        },
+
+        "chat": {
+            "en": "chat",
+            "ko": "이야기",
+            "ct": "meow",
+            "fr": "Bavarder",
+            "pi": "Tavern",
+            "lt": "Pokalbiai",
+            "ne": "chat",
+            "sv": "chatt",
+            "es": "chat",
+            "nb": "chatterom",
+            "it": "chat",
+            "hu": "chat",
+            "pl": "czat"
+        },
+
+        "people": {
+            "en": "people",
+            "ko": "사람들",
+            "ne": "mensen",
+            "ct": "meow",
+            "fr": "Joueurs",
+            "pi": "deckhands",
+            "lt": "Žaidėjai",
+            "sv": "personer",
+            "es": "personas",
+            "nb": "personer",
+            "it": "persone",
+            "hu": "emberek",
+            "pl": "gracze"
+        },
+
+        "futures": {
+            "en": "futures",
+            "lt": "Futuristikos taškai",
+            "ct": "meow",
+            "sv": "framtid",
+            "fr": "Futurs",
+            "pi": "Days after tomorrow",
+            "nb": "fremtider",
+            "hu": "jövendők",
+            "it": "futures",
+            "ne": "toekomsten",
+            "pl": "przyszłosci"
+        },
+
+        "shortGame": {
+            "en": "Skirmish",
+            "lt": "Susiremimas",
+            "ct": "meow",
+            "sv": "Skirmish",
+            "fr": "Escarmouche",
+            "pi": "Skirmish",
+            "nb": "Kamp",
+            "hu": "Csetepaté",
+            "it": "Scaramuccia",
+            "ne": "Kort gevecht",
+            "pl": "Potyczka"
+        },
+
+        "mediumGame": {
+            "en": "Battle",
+            "lt": "Kova",
+            "ct": "meow",
+            "sv": "Slag",
+            "fr": "Bataille",
+            "pi": "Raid",
+            "nb": "Slag",
+            "hu": "Csata",
+            "it": "Battaglia",
+            "ne": "Strijd",
+            "pl": "Bitwa"
+        },
+
+        "longGame": {
+            "en": "War",
+            "lt": "Karas",
+            "ct": "meow",
+            "sv": "Krig",
+            "fr": "Guerre",
+            "pi": "War",
+            "nb": "Krig",
+            "hu": "Háború",
+            "it": "Guerra",
+            "ne": "Oorlog",
+            "pl": "Wojna"
+        },
+
+        "customGame": {
+            "en": "Custom",
+            "ko": "관습",
+            "ct": "Meow",
+            "fr": "Personnaliser",
+            "pi": "Blank map",
+            "lt": "Redaguojamas",
+            "ne": "Eigen",
+            "sv": "Anpassad",
+            "es": "Personalizado",
+            "it": "Personalizzato",
+            "nb": "Egendefinert",
+            "hu": "Egyéni",
+            "pl": "Batalia"
+        },
+
+        "custom": {
+            "en": "custom",
+            "ko": "관습",
+            "ct": "meow",
+            "fr": "Personnaliser",
+            "pi": "Blank map",
+            "lt": "Futuristinis",
+            "ne": "zelfgemaakt",
+            "sv": "Anpassad",
+            "es": "personalizado",
+            "nb": "Egendefinert",
+            "it": "Personalizzato",
+            "hu": "egyéni",
+            "pl": "batalia"
+        },
+
+        "guild": {
+            "en": "guild",
+            "ko": "대가족",
+            "ct": "meow",
+            "fr": "Guilde",
+            "pi": "crew",
+            "lt": "Gildija",
+            "ne": "gilde",
+            "sv": "klan",
+            "es": "gremio",
+            "nb": "laug",
+            "it": "clan",
+            "hu": "klán",
+            "pl": "gildia"
+        }
+    }
+}

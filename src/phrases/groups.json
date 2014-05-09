@@ -1,0 +1,24 @@
+{
+    "groups": {
+        
+        "g": {
+            "en": "Guest"
+        },
+        
+        "u": {
+            "en": "Member"
+        },
+        
+        "p": {
+            "en": "Apprentice"
+        },
+        
+        "m": {
+            "en": "Moderator"
+        },
+        
+        "a": {
+            "en": "Admin"
+        }
+    }
+}

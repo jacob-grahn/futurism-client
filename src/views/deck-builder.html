@@ -4,19 +4,19 @@
         
         <form class="form-horizontal">
             <legend>
-                <h1>Deck Builder</h1>
+                <h1>{{lang.deckBuilder.title}}</h1>
             </legend>
             <fieldset>
 
                 <div class="form-group">
-                    <label for="inputName" class="col-md-2 control-label">Name</label>
+                    <label for="inputName" class="col-md-2 control-label">{{lang.deckBuilder.name}}</label>
                     <div class="col-md-10">
                         <input id="inputName" class="form-control" type="text" ng-model="deck.name" placeholder="Name">
                     </div>
                 </div>
                 
                 <div class="form-group">
-                    <label class="col-md-2 control-label">Cards</label>
+                    <label class="col-md-2 control-label">{{lang.deckBuilder.cards}}</label>
                     <div class="col-md-10">
                         <ul class="card-list clearfix">
                             <li class="card-holder" ng-repeat="card in deck.cards">
@@ -27,7 +27,7 @@
                 </div>
                 
                 <div class="form-group">
-                    <label class="col-md-2 control-label">Stats</label>
+                    <label class="col-md-2 control-label">{{lang.deckBuilder.stats}}</label>
                     <div class="col-md-10">
                         <deck-analyzer deck="deck"></deck-analyzer>
                     </div>

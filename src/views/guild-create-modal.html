@@ -1,32 +1,32 @@
 <div class="modal-header">
-    <h1 ng-if="!guildId">Create Guild</h1>
-    <h1 ng-if="guildId">Edit {{guildId}}</h1>
+    <h1 ng-if="!guildId">{{lang.guildCreateModal.createGuild}}</h1>
+    <h1 ng-if="guildId">{{lang.guildCreateModal.edit}} {{guildId}}</h1>
 </div>
 <div class="modal-body">
     
     <form class="form-horizontal">
         <fieldset>
             <div class="form-group" ng-if="!guildId">
-                <label for="inputGuildName" class="col-md-2 control-label">Name</label>
+                <label for="inputGuildName" class="col-md-2 control-label">{{lang.guildCreateModal.name}}</label>
                 <div class="col-md-10">
                     <input id="inputGuildName" class="form-control" type="text" ng-model="guild._id" placeholder="My Guild">
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputGuildDesc" class="col-md-2 control-label">Desc</label>
+                <label for="inputGuildDesc" class="col-md-2 control-label">{{lang.guildCreateModal.desc}}</label>
                 <div class="col-md-10">
                     <textarea id="inputGuildDesc" class="form-control" rows="2" ng-model="guild.desc"></textarea>
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputPolicy" class="col-md-2 control-label">{{lang.guildJoiner.joinPolicy}}</label>
+                <label for="inputPolicy" class="col-md-2 control-label">{{lang.guildCreateModal.joinPolicy}}</label>
                 <div class="col-md-10">
                     <select id="inputPolicy" class="form-control" ng-model="guild.join" ng-options="lang.guildJoinPolicy[value].name for value in joinOptions"></select>
                     <p>{{lang.guildJoinPolicy[guild.join].desc}}</p>
                 </div>
             </div>
             <div class="form-group">
-                <label for="inputBannerFile" class="col-md-2 control-label">{{lang.guildJoiner.banner}} <span class="subtle">(300x50)</span>
+                <label for="inputBannerFile" class="col-md-2 control-label">{{lang.guildCreateModal.banner}} <span class="subtle">(300x50)</span>
                 </label>
                 <div class="col-md-10">
                     <input id="inputBannerFile" class="btn btn-default" type="file" accept="image/*" image="uppedBanner" resize-max-width="300" resize-max-height="50" resize-quality="0.9" resize-type="image/jpg">

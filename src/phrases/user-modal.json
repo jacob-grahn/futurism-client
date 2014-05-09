@@ -1,0 +1,72 @@
+{
+    "userModal": {
+        
+        "viewBans": {
+            "en": "View Bans"
+        },
+        
+        "invite": {
+            "en": "Invite to Guild"
+        },
+        
+        "deInvite": {
+            "en": "Un-Invite"
+        },
+        
+        "report": {
+            "en": "Report"
+        },
+        
+        "mod": {
+            "en": "Grant Mod"
+        },
+        
+        "deMod": {
+            "en": "Revoke Mod"
+        },
+        
+        "apprentice": {
+            "en": "Grant Apprentice"
+        },
+        
+        "deApprentice": {
+            "en": "Revoke Apprentice"
+        },
+        
+        "ban": {
+            "en": "Ban"
+        },
+        
+        "deBan": {
+            "en": "Lift Ban"
+        },
+        
+        "guildMod": {
+            "en": "Grant Guild Mod"
+        },
+        
+        "deGuildMod": {
+            "en": "Revoke Guild Mod"
+        },
+        
+        "kick": {
+            "en": "Kick from Guild"
+        },
+        
+        "deKick": {
+            "en": "Revoke Kick"
+        },
+        
+        "message": {
+            "en": "Message"
+        },
+        
+        "cards": {
+            "en": "Cards"
+        },
+        
+        "close": {
+            "en": "Close"
+        }
+    }
+}

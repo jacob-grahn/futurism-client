@@ -1,0 +1,14 @@
+{
+    "deckSelector": {
+        
+        "edit": {
+            "en": "Edit",
+            "pi": "Change fleet"
+        },
+        
+        "newDeck": {
+            "en": "New Deck",
+            "pi": "New fleet"
+        }
+    }
+}

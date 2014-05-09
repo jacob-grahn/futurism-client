@@ -1,0 +1,44 @@
+{
+    "guildStats": {
+        
+        "leaders": {
+            "en": "Leaders",
+            "ne": "Leiders",
+            "lt": "Vadovai",
+            "pi": "Captains",
+            "pl": "Dowódcy",
+            "nb": "Ledere"
+        },
+        
+        "mods": {
+            "en": "Mods"
+        },
+
+        "members": {
+            "en": "Members",
+            "ne": "Leden",
+            "lt": "Nariai",
+            "pi": "Crewers",
+            "pl": "Członkowie",
+            "nb": "Medlemmer"
+        },
+
+        "gpToday": {
+            "en": "GP Today",
+            "ne": "GP vandaag",
+            "lt": "Šiandienos GP",
+            "pi": "Gold today",
+            "pl": "GP dziś",
+            "nb": "GP i dag"
+        },
+
+        "founded": {
+            "en": "Founded",
+            "ne": "Gesticht",
+            "lt": "Įkurta",
+            "pi": "Founded",
+            "pl": "Założona",
+            "nb": "Grunnlagt"
+        }
+    }
+}

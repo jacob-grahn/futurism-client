@@ -1,0 +1,14 @@
+{
+    "cardSelector": {
+        
+        "edit": {
+            "en": "Edit",
+            "pi": "Change Crew"
+        },
+        
+        "newCard": {
+            "en": "New Card",
+            "pi": "New Ship"
+        }
+    }
+}
