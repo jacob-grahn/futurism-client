@@ -57,7 +57,7 @@
             "en": "Name",
             "ko": "이름",
             "ct": "meow",
-            "fr": "Nommer",
+            "fr": "Nom",
             "pi": "Name yar booty",
             "lt": "Pavadinimas",
             "ne": "Geef een naam",
@@ -86,7 +86,8 @@
         },
         
         "stats": {
-            "en": "Stats"
+            "en": "Stats",
+            "fr": "Statistiques"
         }
     }
 }
