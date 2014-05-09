@@ -6,13 +6,15 @@
                 "en": "grow",
                 "pl": "dorastanie",
                 "nb": "voks",
-                "pi": "construct"
+                "pi": "construct",
+                "ne": "groei"
             },
             "desc": {
                 "en": "Become a lovable clone that is just like mommy or daddy.",
                 "pl": "Dorasta i z bezbronnego dziecka staje sie klonem swojego ojca lub matki.",
                 "nb": "Bli en elskbar klone som er akkurat som mor eller far.",
-                "pi": "Build a replica ship."
+                "pi": "Build a replica ship.",
+                "ne": "Wordt een schattige kloon die er net zo uit ziet als mama en papa."
             }
         },
 
@@ -21,13 +23,15 @@
                 "en": "summon",
                 "pl": "wyłożenie karty",
                 "nb": "framkall",
-                "pi": "Writ of summons"
+                "pi": "Writ of summons",
+                "ne": "oproepen"
             },
             "desc": {
                 "en": "Play a card from your hand.",
                 "pl": "Wprowadź nową kartę na pole gry.",
                 "nb": "Spill et kort fra hånden din.",
-                "pi": "Send a ship from the shipyard."
+                "pi": "Send a ship from the shipyard.",
+                "ne": "Speel een kaart in je hand."
             }
         },
 
@@ -36,13 +40,15 @@
                 "en": "future",
                 "pl": "przyszlość",
                 "nb": "framtid",
-                "pi": "tomorrow"
+                "pi": "tomorrow",
+                "ne": "toekomst"
             },
             "desc": {
                 "en": "Change the future.",
                 "pl": "Zmien przyszlość!",
                 "nb": "Forandre framtiden.",
-                "pi": "Change tomorrow."
+                "pi": "Change tomorrow.",
+                "ne": "Verander de toekomst."
             }
         },
 
@@ -59,7 +65,7 @@
             },
             "desc": {
                 "en": "Produce pride, which can be use to play more cards.",
-                "ne": "Produceer de Trots, zodat je meer kaarten kunt gebruiken.",
+                "ne": "Produceer trots, om meer kaarten te spelen.",
                 "lt": "Vertės generavimas, kuri leidžia naudoti daugiau kortų.",
                 "hu": "Produce pride, which can be use to play more cards.",
                 "nb": "Produserer stolthet, som kan bli brukt for å spille fler kort.",
@@ -73,7 +79,7 @@
             "name": {
                 "en": "pride",
                 "ct": "meow",
-                "ne": "Trots",
+                "ne": "trots",
                 "lt": "Vertė",
                 "hu": "Büszkeség",
                 "nb": "Stolthet",
@@ -83,7 +89,7 @@
             },
             "desc": {
                 "en": "Produce pride, which can be use to play more cards.",
-                "ne": "Produceer de Trots, zodat je meer kaarten kunt gebruiken.",
+                "ne": "Produceer trots, om meer kaarten te spelen.",
                 "lt": "Vertės generavimas, kuri leidžia naudoti daugiau kortų.",
                 "hu": "Produce pride, which can be use to play more cards.",
                 "nb": "Produserer stolthet, som kan bli brukt for å spille fler kort.",
@@ -96,7 +102,7 @@
         "move": {
             "name": {
                 "en": "move",
-                "ne": "zet",
+                "ne": "verplaats",
                 "lt": "Judėmimas",
                 "hu": "mozgás",
                 "nb": "flytt",
@@ -106,7 +112,7 @@
             },
             "desc": {
                 "en": "Reposition this card.",
-                "ne": "Deze kaart een nieuwe positie geven.",
+                "ne": "Verplaats deze kaart.",
                 "lt": "Kortos repozicionavimas.",
                 "hu": "Reposition this card.",
                 "nb": "Flytt dette kortet",
@@ -124,7 +130,7 @@
                 "fr": "Guérir",
                 "pi": "Rum drinker",
                 "lt": "Gydimas",
-                "ne": "Genezen",
+                "ne": "genezing",
                 "sv": "Helande",
                 "es": "Curación",
                 "nb": "Helbreding",
@@ -139,7 +145,7 @@
                 "fr": "La carte cible reçoit 1 point de santé.",
                 "pi": "Target pirate drinks 1 bottle o' rum",
                 "lt": "Pasirinkta korta gauna  1 gyvybės tašką.",
-                "ne": "Doel krijgt 1 leven erbij.",
+                "ne": "De kaart die je kiest krijgt 1 leven erbij, en wordt genezen van vergif.",
                 "sv": "Det valda kortet får ett hälsopoäng",
                 "es": "La carta objetivo gana 1 de vida.",
                 "nb": "Målsatt kort får ett helsepoeng.",
@@ -157,7 +163,7 @@
                 "fr": "Mauvaises herbes",
                 "pi": "Seaweed",
                 "lt": "Žolinis medis",
-                "ne": "onkruid bomen",
+                "ne": "bomen!",
                 "sv": "ogrästräd",
                 "es": "árboles de hierbas",
                 "nb": "trær!",
@@ -220,7 +226,8 @@
                 "en": "peace pipe",
                 "pl": "fajka pokoju",
                 "nb": "fredspipe",
-                "pi": "leaky pipe"
+                "pi": "leaky pipe",
+                "ne": "vredespijp"
             },
             "desc": {
                 "en": "Target enemy can not attack next turn.",
@@ -229,7 +236,7 @@
                 "fr": "La cible ennemie ne peut attaquer au prochain tour.",
                 "pi": "Target boat is busy fixin' leaks until next turn",
                 "lt": "Uždraudžia priešininko kortai pulti vienam ėjimui.",
-                "ne": "Het doel kan de volgende beurt niet aanvallen.",
+                "ne": "De doelkaart kan de volgende beurt niet aanvallen.",
                 "sv": "Den valda enheten kan inte attackera nästa omgång",
                 "es": "El enemigo objetivo no puede atacar el próximo turno.",
                 "nb": "Målsatt fiende kan ikke angripe neste runde.",
@@ -247,7 +254,7 @@
                 "fr": "Abeilles",
                 "pi": "Abeeminations",
                 "lt": "Bitės!",
-                "ne": "Bijen",
+                "ne": "bijen!",
                 "sv": "Bin!",
                 "es": "¡abejas!",
                 "nb": "bier!",
@@ -259,7 +266,8 @@
                 "en": "A random enemy loses 1 health. This attack always hits.",
                 "pl": "Losowa karta przeciwnika traci 1 punkt życia. Zawsze trafia.",
                 "nb": "En tilfeldig fiende mister ett liv. Dette angrepet treffer alltid.",
-                "pi": "Bees swarm a random enemy and destroy 1 rum. Bees bee deadly accurate."
+                "pi": "Bees swarm a random enemy and destroy 1 rum. Bees bee deadly accurate.",
+                "ne": "Een zwerm bijen valt een willekeurige vijand aan. Deze aanval mist nooit."
             }
         },
 
@@ -271,7 +279,7 @@
                 "fr": "Reconstruire",
                 "pi": "rebuild",
                 "lt": "Atstatymas",
-                "ne": "herbouwen",
+                "ne": "herbouw",
                 "sv": "omkonstruera",
                 "es": "reconstruir",
                 "nb": "gjenoppbygg",
@@ -316,7 +324,8 @@
                 "en": "Protect this card from two points of damage.",
                 "pi": "Fog enshrouds a ship and prevents the loss of two rum.",
                 "nb": "Beskytt dette kortet fra to skadepoeng.",
-                "pl": "Uchroń tą kartę przed 2 punktami obrażeń."
+                "pl": "Uchroń tą kartę przed 2 punktami obrażeń.",
+                "ne": "Bescherm deze kaart van twee punten schade."
             }
         },
 
@@ -328,7 +337,7 @@
                 "fr": "Précision",
                 "pi": "spyglass",
                 "lt": "Taiklumas",
-                "ne": "nauwkeurig",
+                "ne": "aanval [vlucht]",
                 "sv": "presis",
                 "es": "preciso",
                 "nb": "presis",
@@ -343,7 +352,7 @@
                 "fr": "Attaquer l'ennemi de votre choix peu importe les défenses en place.",
                 "pi": "Fire upon an enemy of your choice, no matter where they be.",
                 "lt": "Užpuola priešininką neatsižvelgiant į gynybos formaciją.",
-                "ne": "Val een vijand van je keuze aan, ongeacht de verdedigingsformatie.",
+                "ne": "Val een vijand van je keuze aan, waar die zich ook bevindt.",
                 "sv": "Attackera en fiende av ditt val oavsett´av defensiva former",
                 "es": "Ataca un enemigo a tu elección sin importar las formaciones defensivas.",
                 "nb": "Angrip en fiende av ditt valg uavhengig av defensive formasjoner. Fienden vil gå til motangrep.",
@@ -361,7 +370,7 @@
                 "fr": "Stratège",
                 "pi": "captain",
                 "lt": "Strategistas",
-                "ne": "strateeg",
+                "ne": "opladen",
                 "sv": "strateg",
                 "es": "estratega",
                 "nb": "oppladning",
@@ -376,7 +385,7 @@
                 "fr": "Un allié peut utiliser une action de plus pour ce tour.",
                 "pi": "Unit gets more orders this turn",
                 "lt": "Papildomas veiksmas šio ėjimo metu.",
-                "ne": "De bondgenoot kan deze beurt een extra actie uitvoeren",
+                "ne": "Een van je machines kan een extra actie uitvoeren deze beurt.",
                 "sv": "Allierade kan utföra en extra åtgärd den här omgången",
                 "es": "Un aliado puede realizar una acción más en este turno",
                 "nb": "En alliert kan utøve en ekstra handling denne runden",
@@ -409,7 +418,7 @@
                 "fr": "Gagner les habiletés d'un allié.",
                 "pi": "Gain cargo from an ally.",
                 "lt": "Savos kortos sugebėjimų įgavimas",
-                "ne": "Krijg de vaardigheden van een andere speler.",
+                "ne": "Neem de mogelijkheden van een andere machine over.",
                 "sv": "Få en allierads förmågor",
                 "es": "Obtiene las habilidades de un aliado.",
                 "nb": "Få en allierts egenskaper.",
@@ -427,7 +436,7 @@
                 "fr": "Transformeur",
                 "pi": "illusionist",
                 "lt": "Apkeitimas",
-                "ne": "transformer",
+                "ne": "transformatie",
                 "sv": "transformator",
                 "es": "transformista",
                 "nb": "transformator",
@@ -442,7 +451,7 @@
                 "fr": "Échanger les points de santé et d'attaque.",
                 "pi": "Swap rum and cannons",
                 "lt": "Apkeičia puolimo ir gyvybių taškus.",
-                "ne": "Verwissel levens en kracht.",
+                "ne": "Verwissel je levens en aanvalspunten.",
                 "sv": "Byt hälsa och attack",
                 "es": "Intercambia ataque y vida.",
                 "nb": "Bytt helse- og angrepspoeng.",
@@ -493,7 +502,7 @@
                 "fr": "Assassin",
                 "pi": "frigate",
                 "lt": "Žmogžudys",
-                "ne": "moordenaar ",
+                "ne": "aanval [assassijn]",
                 "sv": "mördare",
                 "es": "asesino",
                 "nb": "angrip [snikmorder]",
@@ -508,7 +517,7 @@
                 "fr": "Attaquer sans subir de dégâts.",
                 "pi": "Attack without reciving fire.",
                 "lt": "Korta puoldama nepraranda gyvybės taškų.",
-                "ne": "Val aan zonder zelf schaden te ondervinden.",
+                "ne": "Val aan zonder dat de tegenstander terug aanvalt.",
                 "sv": "Attackera utan att ta skada",
                 "es": "Ataca sin recibir daño.",
                 "nb": "Angrip uten noen sjanse for motangrep.",
@@ -538,7 +547,8 @@
                 "en": "Return this card to your hand, giving an extra action point to your commander card.",
                 "pl": "Zwróc tą kartę do ręki, refundując jej orginalny koszt.",
                 "nb": "Returner dette kortet til hånden din, og få tilbake dets opprinnelige stolthetskostnad.",
-                "pi": "Send this ship back to port, gaining back its pride cost."
+                "pi": "Send this ship back to port, gaining back its pride cost.",
+                "ne": "Breng deze kaart terug naar je hand, zodat je aanvoerder een extra actie uit kan voeren."
             }
         },
 
@@ -565,7 +575,7 @@
                 "fr": "La cible ennemie perd 1 point de santé par tour.",
                 "pi": "Target ship loses 1 rum per turn.",
                 "lt": "Kiekvieną ėjimą, priešininko korta praranda 1 gyvybės tašką..",
-                "ne": "Het vijandelijke doel verliest 1 leven per beurt.",
+                "ne": "Het doel wordt vergiftigd voor 1 leven per beurt. 50% kans om te missen.",
                 "sv": "Den valda fienden förlorar ett hälsopoäng per omgång",
                 "es": "El enemigo objetivo pierde 1 de vida por turno.",
                 "nb": "Målsatt fiende mister ett helsepoeng per runde. 50% sjanse for å mislykkes.",
@@ -581,10 +591,12 @@
                 "pl": "teleportacja",
                 "nb": "teleportør",
                 "pi": "take up anchor"
+                "ne": "teleportatie"
             },
             "desc": {
                 "en": "Move an ally card, curing poison in the process.",
-                "pi": "Sail a ship, and give it some oranges to cure scurvy."
+                "pi": "Sail a ship, and give it some oranges to cure scurvy.",
+                "ne": "Verplaats een kaart van jezelf, en genees tegelijk vergif."
             }
         },
 
@@ -611,7 +623,7 @@
                 "fr": "La carte cible retourne dans le paquet de son propriétaire.",
                 "pi": "Target ship is blown back to port.",
                 "lt": "Sugražina priešininko kortą į savininko rankas.",
-                "ne": "Het doel gaat terug naar de hand van de eigenaar.",
+                "ne": "Breng deze kaart terug naar je hand, en de doelkaart van de tegenstander.",
                 "sv": "Kortet du valde är tillbakadraget till ägarens hand",
                 "es": "La carta objetivo retorna a la mano de su dueño.",
                 "nb": "Målsatt kort blir retunert til eierens hånd.",
@@ -629,7 +641,7 @@
                 "fr": "Siphon",
                 "pi": "siphon",
                 "lt": "Vampyrizmas",
-                "ne": "dief",
+                "ne": "aanval [aftappen]",
                 "sv": "sifon",
                 "es": "sifón",
                 "nb": "sifon",
@@ -641,7 +653,8 @@
                 "en": "Attack an enemy, converting some of the damage into health. The enemy will counter-attack.",
                 "pl": "Zaatakuj przeciwnika, konwertując niektóre obrażenia w punkty życia. Przeciwnik skontruje.",
                 "nb": "Angriper en fiende, og konverterer noe av skaden til helsepoeng. Fienden vil gå til motangrep.",
-                "pi": "Shoot an enemy ship. Some of their rum will be stolen, but they'll counter over their lost rum!"
+                "pi": "Shoot an enemy ship. Some of their rum will be stolen, but they'll counter over their lost rum!",
+                "ne": "Val een tegenstander aan, en zet wat van hun schade om in levens. De tegenstander valt terug aan."
             }
         },
 
@@ -668,7 +681,7 @@
                 "fr": "Peut se reproduire avec les cartes femelles.",
                 "pi": "Can make wee ones with women.",
                 "lt": "Gali daugintis su moterimis.",
-                "ne": "Kan reproduceren met een vrouwelijke kaard.",
+                "ne": "Kan voortplanten met een vrouwelijke kaard.",
                 "sv": "Kan ompruduceras med kvinnor",
                 "es": "Puede reproducirse con hembras.",
                 "nb": "Kan reprodusere med hunkjønn.",
@@ -701,7 +714,7 @@
                 "fr": "Peut se reproduire avec les cartes mâles",
                 "pi": "Can make wee ones with men.",
                 "lt": "Gali daugintis su vyrais.",
-                "ne": "Kan reproduceren met een mannelijke kaard.",
+                "ne": "Kan voortplanten met een mannelijke kaard.",
                 "sv": "Kan omproduceras med män",
                 "es": "Puede reproducirse con machos.",
                 "nb": "Kan reprodusere med hankjønn.",
@@ -719,7 +732,7 @@
                 "fr": "Cri de guerre",
                 "pi": "Yarr!",
                 "lt": "Mūšio giesmė",
-                "ne": "Strijdkreet",
+                "ne": "strijdkreet",
                 "sv": "krigs gråt",
                 "es": "Grito de batalla",
                 "nb": "krigsrop",
@@ -730,7 +743,8 @@
             "desc": {
                 "en": "All ally zealots gain 1 attack for 1 turn.",
                 "pl": "Wszyscy twoi zeloci dostają 1 punkt ataku na jedną turę.",
-                "pi": "All allied priest gain one attack for 1 turn."
+                "pi": "All allied priest gain one attack for 1 turn.",
+                "ne": "Al je zeloten krijgen 1 aanvalspunt erbij voor 1 beurt."
             }
         },
 
@@ -742,7 +756,7 @@
                 "fr": "Sacrifice héroïque",
                 "pi": "raise flags",
                 "lt": "Didviriškas pasiaukojimas",
-                "ne": "Heldhaftig offer",
+                "ne": "heldhaftig offer",
                 "sv": "hjältligt offer",
                 "es": "sacrificio heroico",
                 "nb": "heroisk ofring",
@@ -787,7 +801,8 @@
                 "en": "Attack is increased by 3, and this card becomes poisoned.",
                 "pl": "Atak powieksza sie o 3 kosztem zatrucia tej karty.",
                 "nb": "Kortet får tre angrepspoeng, og blir forgiftet.",
-                "pi": "Ship has 3 more cannons, but its rum supply is poisoned."
+                "pi": "Ship has 3 more cannons, but its rum supply is poisoned.",
+                "ne": "Deze kaart krijgt er 3 aanvalspunten bij, en wordt vergiftigd."
             }
         },
 
@@ -796,13 +811,15 @@
                 "en": "attack [fervent]",
                 "pl": "atak [żarliwy]",
                 "nb": "angrip [rettferdig]",
-                "pi": "righteous"
+                "pi": "righteous",
+                "ne": "aanval [vastberaden]"
             },
             "desc": {
                 "en": "Attack an enemy without ever missing. The enemy will counter-attack.",
                 "nb": "Angrip en fiende, og konverter skaden til stolthet. Fienden vil gå til motangrep.",
                 "pi": "Shoot an enemy ship; rum will turn into pride. Enemey will counter over the loss of their rum!",
                 "pl": "Zaatakuj przeciwnika bez pudłowania. Przeciwnik skontruje."
+                "ne": "Val een tegenstander aan zonder te missen. De tegenstander valt terug aan."
             }
         }
     }
