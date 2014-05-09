@@ -3,11 +3,13 @@
         
         "edit": {
             "en": "Edit",
+            "fr": "Modifier",
             "pi": "Change fleet"
         },
         
         "newDeck": {
             "en": "New Deck",
+            "fr": "Nouveau paquet",
             "pi": "New fleet"
         }
     }
