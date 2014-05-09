@@ -1,0 +1,40 @@
+.progress-display	{
+    width: 26px; 
+    height: 26px;
+    margin: 0 auto;
+    //padding: 2.5%;
+}
+
+.progress-display div.pd-one, .progress-display div.pd-two	{
+    margin: 0;
+    padding: 0;
+    float: left;
+    background: transparent;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-display div span	{
+    display:  block;
+    width: 200%;
+    height: 100%;
+    box-sizing: border-box;
+    float: left;
+    background: transparent;
+    border: 5px solid rgba(0,0,0,.5);
+    border-radius: 200%;
+    border-left-color: transparent;
+    border-top-color: transparent;
+    position: absolute;
+    opacity: 1;
+}
+
+.progress-display div.pd-two span	{
+	margin-left: -100%;
+}
+
+.progress-display:hover div.pd-one span, .progress-display:hover div.pd-two span	{
+ 	 animation-play-state: paused;
+}
