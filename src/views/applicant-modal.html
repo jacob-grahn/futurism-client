@@ -1,0 +1,17 @@
+<div class="modal-header inverse">
+    <h1>{{lang.applicantModal.title}}</h1>
+</div>
+
+<div class="modal-body">
+    <ul>
+        <li ng-repeat="user in applicants">
+            <username user="user"></username>
+            <button class="btn btn-success" ng-click="accept(user._id)">{{lang.applicantModal.accept}}</button>
+            <button class="btn btn-danger" ng-click="delete(user._id)">{{lang.applicantModal.delete}}</button>
+        </li>
+    </ul>
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="$dismiss()">{{lang.applicantModal.close}}</button>
+</div>

@@ -70,6 +70,14 @@ angular.module('futurism')
                     templateUrl: 'views/invites-modal.html',
                     controller: 'InvitesModalCtrl'
                 });
+            },
+            
+            
+            openApplicants: function() {
+                $modal.open({
+                    templateUrl: 'views/applicant-modal.html',
+                    controller: 'ApplicantModalCtrl'
+                });
             }
 
         };

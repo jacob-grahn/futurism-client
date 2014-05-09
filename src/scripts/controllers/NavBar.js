@@ -46,20 +46,15 @@ angular.module('futurism')
         $scope.clickStats = function() {
             modals.openUser(me.user._id);
         };
-
-
-        /*$scope.clickGuild = function() {
-            if(me.user.guild) {
-                $location.url('/guilds/'+me.user.guild);
-            }
-            else {
-                $location.url('/guild-joiner');
-            }
-        };*/
         
         
         $scope.clickInvites = function() {
             modals.openInvites();
+        };
+        
+        
+        $scope.clickApplicants = function() {
+            modals.openApplicants();
         };
 
 

@@ -752,6 +752,10 @@
 
 
     "nav": {
+        "applicants": {
+            "en": "Applications"
+        },
+        
         "reports": {
             "en": "Reports",
             "pl": "Reporty",
@@ -1289,6 +1293,22 @@
         },
         "edit": {
             "en": "Edit"
+        }
+    },
+    
+    
+    "applicantModal": {
+        "title": {
+            "en": "Applications"
+        },
+        "close": {
+            "en": "Close"
+        },
+        "accept": {
+            "en": "Accept"
+        },
+        "delete": {
+            "en": "Delete"
         }
     }
 }
