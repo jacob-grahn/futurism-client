@@ -45,6 +45,7 @@
     "sinon": "~1.9.1",
     "grunt-contrib-livereload": "~0.1.2",
     "connect-modrewrite": "~0.5.11",
-    "grunt-karma": "~0.8.2"
+    "grunt-karma": "~0.8.2",
+    "grunt-merge-json": "~0.9.4"
   }
 }

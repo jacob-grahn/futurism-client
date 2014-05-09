@@ -5,13 +5,6 @@ angular.module('futurism')
         autoLogin.activate();
         session.renew();
         
-        lang.loadData('data/abilities.json');
-        lang.loadData('data/factions.json');
-        lang.loadData('data/fractures.json');
-        lang.loadData('data/futures.json');
-        lang.loadData('data/goals.json');
-        lang.loadData('data/languages.json');
-        lang.loadData('data/notifications.json');
         lang.loadData('data/phrases.json');
         $rootScope.lang = lang;
         

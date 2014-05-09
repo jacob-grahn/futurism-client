@@ -43,6 +43,10 @@
                 data: {
                     files: ['{.tmp,<%= yeoman.app %>}/data/*']
                 },
+                phrases: {
+                    files: ['<%= yeoman.app %>/phrases'],
+                    tasks: ['merge-json']
+                },
                 js: {
                     files: ['{.tmp,<%= yeoman.app %>}/scripts/**/*.js']
                 },
@@ -68,6 +72,21 @@
                     ]
                 }
             },
+            
+            
+            // merge phrase files togoether
+            "merge-json": {
+                "phrases": {
+                    src: [ "src/phrases/*.json" ],
+                    dest: "<%= yeoman.dist %>/data/phrases.json"
+                },
+                "tmp-phrases": {
+                    src: [ "src/phrases/*.json" ],
+                    dest: ".tmp/data/phrases.json"
+                }
+            },
+            
+            
             
             // serve static files and proxy dynaimic requests to other services
             connect: {
@@ -359,6 +378,7 @@
 
             grunt.task.run([
                 'clean:server',
+                'merge-json:tmp-phrases',
                 'concurrent:server',
                 'autoprefixer',
                 'configureProxies:server',
@@ -382,6 +402,7 @@
 
         grunt.registerTask('build', [
             'clean:dist',
+            'merge-json',
             'useminPrepare',
             'concurrent:dist',
             'autoprefixer',
