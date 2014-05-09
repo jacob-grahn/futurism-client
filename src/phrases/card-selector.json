@@ -3,11 +3,13 @@
         
         "edit": {
             "en": "Edit",
+            "fr": "Modifier",
             "pi": "Change Crew"
         },
         
         "newCard": {
             "en": "New Card",
+            "fr": "Nouvelle Carte",
             "pi": "New Ship"
         }
     }
