@@ -2,7 +2,8 @@
     "fractureModal": {
         
         "fractureAquired": {
-            "en": "Fracture Aquired!"
+            "en": "Fracture Aquired!",
+            "ne": "Breuk bemachtigd!"
         }
     }
 }
