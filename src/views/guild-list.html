@@ -4,7 +4,7 @@
         <paginated resource="GuildResource" results="guilds" query="query">
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="guild in guilds">
-                    #{{$index + 1}} <a ng-click="selectGuild(guild._id)"><banner guild="guild"></banner></a>
+                    #{{($index + 1) + ((query.page - 1) * query.count)}} <a ng-click="selectGuild(guild._id)"><banner guild="guild"></banner></a>
                 </li>
             </ul>
         </paginated>
@@ -13,14 +13,13 @@
     <div class="col-sm-5 side-panel">
         <h1>Perks</h1>
         <ul>
-            <li>* Top guild unlocks black cards</li>
-            <li>* Top 5 guilds can create fractures once a day</li>
-            <li>* Top 20 guilds earn fame 25% faster</li>
+            <li>* {{lang.guildList.perk1}}</li>
+            <li>* {{lang.guildList.perk2}}</li>
+            <li>* {{lang.guildList.perk3}}</li>
         </ul>
-        <a ng-if="!me.user.guild" href="guild-joiner"><button class="btn btn-primary">Join a Guild</button></a>
-        <button ng-if="!me.user.guild" class="btn btn-primary" ng-click="makeNewGuild()">Create a Guild</button>
-        <button ng-if="me.user.guild" class="btn btn-primary" ng-click="selectGuild(me.user.guild)">My Guild</button>
-        <button ng-if="me.user.guild" class="btn btn-default" ng-click="leaveGuild()">Leave Guild</button>
+        <a ng-if="!me.user.guild" href="guild-joiner"><button class="btn btn-primary">{{lang.guildList.join}}</button></a>
+        <button ng-if="!me.user.guild" class="btn btn-primary" ng-click="makeNewGuild()">{{lang.guildList.create}}</button>
+        <button ng-if="me.user.guild" class="btn btn-primary" ng-click="selectGuild(me.user.guild)">{{lang.guildList.myGuild}}</button>
     </div>
 
 </div>

@@ -6,8 +6,10 @@ angular.module('futurism')
         
         $scope.GuildResource = GuildResource;
         $scope.query = {
-            sort: {gpWeek: -1}
+            sort: {gpWeek: -1},
+            count: 20
         };
+        
         
         $scope.selectGuild = function(guildId) {
             $location.url('guilds/' + guildId);

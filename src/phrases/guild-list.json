@@ -1,0 +1,28 @@
+{
+    "guildList": {
+        
+        "perk1": {
+            "en": "Top guild unlocks black cards"
+        },
+        
+        "perk2": {
+            "en": "Top 5 guilds can create fractures once a day"
+        },
+        
+        "perk3": {
+            "en": "Top 20 guilds earn fame 25% faster"
+        },
+        
+        "join": {
+            "en": "Join a Guild"
+        },
+        
+        "create": {
+            "en": "Create a Guild"
+        },
+        
+        "myGuild": {
+            "en": "My Guild"
+        }
+    }
+}
