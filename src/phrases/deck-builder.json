@@ -2,7 +2,8 @@
     "deckBuilder": {
         
         "title": {
-            "en": "Deck Builder"
+            "en": "Deck Builder",
+            "ne": "Deckbouwer"
         },
 
         "save": {
@@ -86,7 +87,8 @@
         },
         
         "stats": {
-            "en": "Stats"
+            "en": "Stats",
+            "en": "Statistieken"
         }
     }
 }
