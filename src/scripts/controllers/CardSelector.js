@@ -6,14 +6,10 @@ angular.module('futurism')
 
         $scope.me = me;
         $scope.userId = $routeParams.userId;
-        $scope.user = UserResource.get({
-            userId: $scope.userId
-        });
+        $scope.user = UserResource.get({userId: $scope.userId});
 
         $scope.CardResource = CardResource;
-        $scope.query = {
-            userId: $scope.userId
-        };
+        $scope.query = {userId: $scope.userId};
         $scope.cards = [];
 
         $scope.newCard = function() {

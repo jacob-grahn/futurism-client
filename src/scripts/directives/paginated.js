@@ -24,7 +24,7 @@ angular.module('futurism')
                     scope.page = page;
                     scope.query.page = page;
                     
-                    var data = {};
+                    /*var data = {};
                     
                     if(scope.query.page) {
                         data.page = scope.query.page;
@@ -37,9 +37,9 @@ angular.module('futurism')
                     }
                     if(scope.query.sort) {
                         data.sort = JSON.stringify(scope.query.sort);
-                    }
+                    }*/
                     
-                    scope.resource.query(data, function(data) {
+                    scope.resource.query(scope.query, function(data) {
                         scope.results = data.results;
                         scope.pageCount = data.pageCount;
                     });
