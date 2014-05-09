@@ -11,7 +11,8 @@
         },
         
         "mods": {
-            "en": "Mods"
+            "en": "Mods",
+            "ne": "Mods"
         },
 
         "members": {
@@ -25,7 +26,7 @@
 
         "gpToday": {
             "en": "GP Today",
-            "ne": "GP vandaag",
+            "ne": "GP Vandaag",
             "lt": "Šiandienos GP",
             "pi": "Gold today",
             "pl": "GP dziś",
