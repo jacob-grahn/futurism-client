@@ -3,12 +3,14 @@
         
         "edit": {
             "en": "Edit",
-            "pi": "Change Crew"
+            "pi": "Change Crew",
+            "ne": "Bewerken"
         },
         
         "newCard": {
             "en": "New Card",
-            "pi": "New Ship"
+            "pi": "New Ship",
+            "ne": "Nieuwe kaart"
         }
     }
 }
