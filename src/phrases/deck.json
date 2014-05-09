@@ -3,6 +3,7 @@
         "cards": {
             "en": "cards",
             "pl": "karty",
+            "fr": "Cartes",
             "pi": "ships"
         }
     }
