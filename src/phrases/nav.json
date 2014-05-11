@@ -1,25 +1,28 @@
 {
     "nav": {
         "applicants": {
-            "en": "Applications"
+            "en": "Applications",
+            "ne": "Aanmeldingen"
         },
         
         "reports": {
             "en": "Reports",
             "pl": "Reporty",
-            "pi": "Tip-offs"
+            "pi": "Tip-offs",
+            "ne": "Gereporteerd misbruik"
         },
 
         "modLog": {
             "en": "Mod Log",
-            "pi": "Police books"
+            "pi": "Police books",
+            "ne": "Mod Log"
         },
 
         "toggle": {
             "en": "Toggle Navigation",
             "ko": "토글",
             "ct": "meow",
-            "ne": "Navigatie aanzetten",
+            "ne": "Navigatie aan/uitzetten",
             "fr": "Activer la navigation",
             "pi": "Toggle Map",
             "lt": "Navigacijos Perjungimas",
@@ -51,7 +54,7 @@
             "en": "Decks",
             "ko": "갑판",
             "ct": "meow",
-            "ne": "Deck maker",
+            "ne": "Deckbouwer",
             "fr": "Créateur de paquet",
             "pi": "Mapbook binder",
             "lt": "Kaladės Dėliojimas",
@@ -67,7 +70,7 @@
             "en": "Cards",
             "ko": "카드",
             "ct": "meow",
-            "ne": "Kaart maker",
+            "ne": "Kaartbouwer",
             "fr": "Créateur de carte",
             "pi": "Map drawer",
             "lt": "Kortų kūrimas",
@@ -170,7 +173,8 @@
             "hu": "Jövendők",
             "it": "Futures",
             "ne": "Toekomsten",
-            "pl": "Przyszłości"
+            "pl": "Przyszłości",
+            "ne": "Toekomsten"
         },
 
         "guild": {
@@ -190,7 +194,8 @@
         },
         
         "invites": {
-            "en": "Guild Invites"
+            "en": "Guild Invites",
+            "ne": "Gilde Uitnodigingen"
         }
     }
 
