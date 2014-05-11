@@ -2,19 +2,23 @@
     "applicantModal": {
         
         "title": {
-            "en": "Applications"
+            "en": "Applications",
+            "ne": "Toepassingen"
         },
         
         "close": {
-            "en": "Close"
+            "en": "Close",
+            "ne": "Sluiten"
         },
         
         "accept": {
-            "en": "Accept"
+            "en": "Accept",
+            "ne": "Accepteren"
         },
         
         "delete": {
-            "en": "Delete"
+            "en": "Delete",
+            "ne": "Verwijderen"
         }
     }
 }
