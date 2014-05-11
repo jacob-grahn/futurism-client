@@ -4,7 +4,7 @@
             "en": "players",
             "ko": "플레이어",
             "ct": "meow",
-            "fr": "Joueur",
+            "fr": "Joueurs",
             "pi": "Sailor",
             "lt": "Žaidėjai",
             "ne": "Speler",
@@ -19,6 +19,7 @@
         "deckSize": {
             "en": "cards",
             "pl": "karty",
+            "fr": "Cartes",
             "pi": "ships"
         },
 
@@ -26,7 +27,7 @@
             "en": "join",
             "ko": "가입",
             "ct": "meow",
-            "fr": "Joindre",
+            "fr": "Rejoindre",
             "pi": "Board",
             "lt": "Prisijungti",
             "ne": "meedoen",
@@ -58,7 +59,7 @@
             "en": "chat",
             "ko": "이야기",
             "ct": "meow",
-            "fr": "Bavarder",
+            "fr": "Bavardage",
             "pi": "Tavern",
             "lt": "Pokalbiai",
             "ne": "chat",
