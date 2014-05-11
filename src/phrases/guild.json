@@ -2,31 +2,38 @@
     "guild": {
         
         "ask": {
-            "en": "Ask to Join"
+            "en": "Ask to Join",
+            "fr": "Demander à rejoindre"
         },
         
         "join": {
-            "en": "Join"
+            "en": "Join",
+            "fr": "Rejoindre"
         },
         
         "edit": {
-            "en": "Edit"
+            "en": "Edit",
+            "fr": "Modifier"
         },
         
         "leave": {
-            "en": "Leave This Guild"
+            "en": "Leave This Guild",
+            "fr": "Quitter la guilde"
         },
         
         "perks": {
-            "en": "Active Perks"
+            "en": "Active Perks",
+            "fr": "Avantages actifs"
         },
         
         "none": {
-            "en": "None"
+            "en": "None",
+            "fr": "Aucun"
         },
         
         "stats": {
-            "en": "Stats"
+            "en": "Stats",
+            "fr": "Statistiques"
         }
     }
 }
