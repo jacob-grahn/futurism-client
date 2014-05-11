@@ -3,36 +3,42 @@
         
         "perk1": {
             "en": "Top guild unlocks black cards",
+            "hu": "A legjobb klán megszerzi a fekete kártyákat",
             "ne": "Het hoogste gilde krijgt zwarte kaarten",
             "fr": "La meilleure guilde débloque les cartes noires"
         },
         
         "perk2": {
             "en": "Top 5 guilds can create fractures once a day",
+            "hu": "A legjobb 5 klán készíthet saját töréseket napi egyszer",
             "ne": "De top 5 van gildes kan eens per dag breuken maken",
             "fr": "Les 5 meilleures guildes peuvent générer des fractures une fois par jour"
         },
         
         "perk3": {
             "en": "Top 20 guilds earn fame 25% faster",
+            "hu": "A legjonn 20 klán 25%-kal gyorsabban ér el hírnevet",
             "ne": "De top 20 van gildes krijgt 25% sneller roem",
             "fr": "Les 20 meilleures guildes gagnent de la réputation 25% plus vite"
         },
         
         "join": {
             "en": "Join a Guild",
+            "hu": "Csatlakozás egy Klánhoz",
             "ne": "Tot een gilde toetreden",
             "fr": "Rejoindre une guilde"
         },
         
         "create": {
             "en": "Create a Guild",
+            "hu": "Készíts egy Klánt",
             "ne": "Een gilde maken",
             "fr": "Créer une guilde"
         },
         
         "myGuild": {
             "en": "My Guild",
+            "hu": "A Klánom",
             "ne": "Mijn gilde",
             "fr": "Ma guilde"
         }
