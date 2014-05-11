@@ -6,31 +6,36 @@
             "en": "Max Size",
             "pl": "Max. Wielkość Dumy",
             "pi": "Max Size",
-            "ne": "Max Grootte"
+            "ne": "Max Grootte",
+            "fr": "Taille maximale"
         },
         
         "selectDeck": {
             "en": "Select a Deck!",
             "pi": "Choose your fleet!",
-            "ne": "Kies je Deck!"
+            "ne": "Kies je Deck!",
+            "fr": "Choisir un paquet"
         },
         
         "select": {
             "en": "Select",
             "pi": "Select",
-            "ne": "Selecteren"
+            "ne": "Selecteren",
+            "fr": "Choisir"
         },
         
         "futures": {
             "en": "Futures!",
             "pi": "Tomorrows!",
-            "ne": "Toekomsten!"
+            "ne": "Toekomsten!",
+            "fr": "Futurs"
         },
         
         "selectFutureSingular": {
             "en": "Select a Future!",
             "pi": "Select the day after tomorrow!",
-            "ne": "Selecteer een Toekomst!"
+            "ne": "Selecteer een Toekomst!",
+            "fr": "Choisir un futur"
         }
     }
 }
