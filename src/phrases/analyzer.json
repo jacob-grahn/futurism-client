@@ -9,6 +9,7 @@
             "pi": "pride",
             "it": "valore",
             "nb": "stolthet",
+            "fr": "Valeur",
             "pl": "duma"
         },
 
@@ -19,6 +20,7 @@
             "pi": "ships",
             "it": "carte",
             "nb": "kort",
+            "fr": "Cartes",
             "pl": "ilość kart"
         },
 
@@ -29,6 +31,7 @@
             "pi": "cannons",
             "it": "attacco",
             "nb": "angrip",
+            "fr": "Attaque",
             "pl": "atak"
         },
 
@@ -39,6 +42,7 @@
             "pi": "rum",
             "it": "salute",
             "nb": "helse",
+            "fr": "Santé",
             "pl": "życie"
         }
     }
