@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('futurism').factory('lang', function($http, _, errorHandler) {
+    angular.module('futurism').factory('lang', function($http, _, errorHandler, memory) {
 
         var lang = {};
         lang.phrases = {};
@@ -50,6 +50,11 @@
          * @param {string} languageId
          */
         lang.setLang = function(languageId) {
+            memory.long.set('lang', languageId);
+            lang._setLang(languageId);
+        };
+        
+        lang._setLang = function(languageId) {
             copyPhrases(lang, lang.phrases, languageId);
         };
         
@@ -59,7 +64,12 @@
          */
         lang.onLoad = function(phraseData) {
             _.extend(lang.phrases, phraseData);
-            lang.setLang('en');
+            lang._setLang('en');
+            
+            var rememberedLang = memory.long.get('lang');
+            if(rememberedLang) {
+                lang._setLang(rememberedLang);
+            }
         };
         
         
