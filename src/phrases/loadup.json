@@ -5,26 +5,31 @@
         "maxDeckSize": {
             "en": "Max Size",
             "pl": "Max. Wielkość Dumy",
+            "fr": "Taille maximale",
             "pi": "Max Size"
         },
         
         "selectDeck": {
             "en": "Select a Deck!",
+            "fr": "Choisir un paquet",
             "pi": "Choose your fleet!"
         },
         
         "select": {
             "en": "Select",
+            "fr": "Choisir",
             "pi": "Select"
         },
         
         "futures": {
             "en": "Futures!",
+            "fr": "Futurs",
             "pi": "Tomorrows!"
         },
         
         "selectFutureSingular": {
             "en": "Select a Future!",
+            "fr": "Choisir un futur",
             "pi": "Select the day after tomorrow!"
         }
     }
