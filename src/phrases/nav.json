@@ -2,20 +2,23 @@
     "nav": {
         "applicants": {
             "en": "Applications",
-            "ne": "Aanmeldingen"
+            "ne": "Aanmeldingen",
+            "fr": "Applications"
         },
         
         "reports": {
             "en": "Reports",
             "pl": "Reporty",
             "pi": "Tip-offs",
-            "ne": "Gereporteerd misbruik"
+            "ne": "Gereporteerd misbruik",
+            "fr": "Signalement"
         },
 
         "modLog": {
             "en": "Mod Log",
             "pi": "Police books",
-            "ne": "Mod Log"
+            "ne": "Mod Log",
+            "fr": "Journal des mods"
         },
 
         "toggle": {
@@ -55,7 +58,7 @@
             "ko": "갑판",
             "ct": "meow",
             "ne": "Deckbouwer",
-            "fr": "Créateur de paquet",
+            "fr": "Paquets",
             "pi": "Mapbook binder",
             "lt": "Kaladės Dėliojimas",
             "sv": "Deckbyggare",
@@ -71,7 +74,7 @@
             "ko": "카드",
             "ct": "meow",
             "ne": "Kaartbouwer",
-            "fr": "Créateur de carte",
+            "fr": "Cartes",
             "pi": "Map drawer",
             "lt": "Kortų kūrimas",
             "sv": "Korbyggare",
@@ -103,7 +106,7 @@
             "ko": "통계",
             "ct": "meow",
             "ne": "Mijn statistieken",
-            "fr": "Ma Statistiques",
+            "fr": "Mes statistiques",
             "pi": "Pirate-ness",
             "lt": "Mano statusai",
             "sv": "Min Statistik",
@@ -173,8 +176,7 @@
             "hu": "Jövendők",
             "it": "Futures",
             "ne": "Toekomsten",
-            "pl": "Przyszłości",
-            "ne": "Toekomsten"
+            "pl": "Przyszłości"
         },
 
         "guild": {
@@ -195,7 +197,8 @@
         
         "invites": {
             "en": "Guild Invites",
-            "ne": "Gilde Uitnodigingen"
+            "ne": "Gilde Uitnodigingen",
+            "fr": "Invitations de guilde"
         }
     }
 
