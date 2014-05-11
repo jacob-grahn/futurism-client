@@ -3,32 +3,38 @@
         
         "perk1": {
             "en": "Top guild unlocks black cards",
-            "ne": "Het hoogste gilde krijgt zwarte kaarten"
+            "ne": "Het hoogste gilde krijgt zwarte kaarten",
+            "fr": "La meilleure guilde débloque les cartes noires"
         },
         
         "perk2": {
             "en": "Top 5 guilds can create fractures once a day",
-            "ne": "De top 5 van gildes kan eens per dag breuken maken"
+            "ne": "De top 5 van gildes kan eens per dag breuken maken",
+            "fr": "Les 5 meilleures guildes peuvent générer des fractures une fois par jour"
         },
         
         "perk3": {
             "en": "Top 20 guilds earn fame 25% faster",
-            "ne": "De top 20 van gildes krijgt 25% sneller roem"
+            "ne": "De top 20 van gildes krijgt 25% sneller roem",
+            "fr": "Les 20 meilleures guildes gagnent de la réputation 25% plus vite"
         },
         
         "join": {
             "en": "Join a Guild",
-            "ne": "Tot een gilde toetreden"
+            "ne": "Tot een gilde toetreden",
+            "fr": "Rejoindre une guilde"
         },
         
         "create": {
             "en": "Create a Guild",
-            "ne": "Een gilde maken"
+            "ne": "Een gilde maken",
+            "fr": "Créer une guilde"
         },
         
         "myGuild": {
             "en": "My Guild",
-            "ne": "Mijn gilde"
+            "ne": "Mijn gilde",
+            "fr": "Ma guilde"
         }
     }
 }
