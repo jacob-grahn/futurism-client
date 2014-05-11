@@ -10,7 +10,7 @@
             "en": "Name",
             "ko": "이름",
             "ct": "meow",
-            "fr": "Nommer",
+            "fr": "Nom",
             "pi": "Name yar booty",
             "lt": "Pavadinimas",
             "ne": "Naam",
@@ -24,7 +24,8 @@
         
         "story": {
             "en": "Story",
-            "ne": "Verhaal"
+            "ne": "Verhaal",
+            "fr": "Description"
         },
 
         "imageUpload": {
@@ -45,7 +46,8 @@
         
         "faction": {
             "en": "Faction",
-            "ne": "Factie"
+            "ne": "Factie",
+            "fr": "Classe"
         },
 
         "factionAbilities": {
