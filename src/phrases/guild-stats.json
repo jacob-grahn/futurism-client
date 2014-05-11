@@ -7,12 +7,14 @@
             "lt": "Vadovai",
             "pi": "Captains",
             "pl": "Dowódcy",
+            "fr": "Chefs",
             "nb": "Ledere"
         },
         
         "mods": {
             "en": "Mods",
-            "ne": "Mods"
+            "ne": "Mods",
+            "fr": "Mods"
         },
 
         "members": {
@@ -21,6 +23,7 @@
             "lt": "Nariai",
             "pi": "Crewers",
             "pl": "Członkowie",
+            "fr": "Membres",
             "nb": "Medlemmer"
         },
 
@@ -30,6 +33,7 @@
             "lt": "Šiandienos GP",
             "pi": "Gold today",
             "pl": "GP dziś",
+            "fr": "PG aujourd'hui",
             "nb": "GP i dag"
         },
 
@@ -39,6 +43,7 @@
             "lt": "Įkurta",
             "pi": "Founded",
             "pl": "Założona",
+            "fr": "Fondée",
             "nb": "Grunnlagt"
         }
     }
