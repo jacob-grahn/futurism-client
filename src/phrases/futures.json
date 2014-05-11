@@ -5,66 +5,78 @@
         "capt": {
             "name": {
                 "en": "Capitalism",
-                "pi": "Alchoholism"
+                "pi": "Alchoholism",
+                "ne": "Kapitalisme"
             },
             "desc": {
                 "en": "Elites siphon health when they attack.",
-                "pi": "Swashbucklers siphon rum from ships when they attack."
+                "pi": "Swashbucklers siphon rum from ships when they attack.",
+                "ne": "Als Elites aanvallen, stelen ze levens."
             }
         },
 
         "norm": {
             "name": {
                 "en": "Normal",
-                "pi": "Sunny seas"
+                "pi": "Sunny seas",
+                "ne": "Normaal"
             },
             "desc": {
                 "en": "A perfectly normal future.",
-                "pi": "Nothing of interest happens. A parrot sneezes."
+                "pi": "Nothing of interest happens. A parrot sneezes.",
+                "ne": "Een volkomen normale toekomst."
             }
         },
 
         "ares": {
             "name": {
                 "en": "Ares Rising",
-                "pi": "Mars is bright"
+                "pi": "Mars is bright",
+                "ne": "Mars komt op",
             },
             "desc": {
                 "en": "Zealots get +1 attack after killing an enemy.",
-                "pi": "Priests gain 1 cannon after destroying an enemy ship."
+                "pi": "Priests gain 1 cannon after destroying an enemy ship.",
+                "ne": "Zeloten krijgen +1 aanval na het doden van een vijand."
             }
         },
 
         "eden": {
             "name": {
                 "en": "Eden",
-                "pi": "Jone's Locker"
+                "pi": "Jone's Locker",
+                "ne": "Eden"
             },
             "desc": {
                 "en": "Trees gain 1 health every turn.",
-                "pi": "Krakens gain 1 rum per turn."
+                "pi": "Krakens gain 1 rum per turn.",
+                "ne": "Bomen krijgen elke beurt 1 leven erbij."
             }
         },
 
         "assm": {
             "name": {
                 "en": "Assimilation",
-                "pi": "Assimilation"
+                "pi": "Assimilation",
+                "ne": "Assimilatie"
             },
             "desc": {
                 "en": "All cards become machines.",
-                "pi": "All ships become inventers."
+                "pi": "All ships become inventers.",
+                "ne": "Alle kaarten worden machines."
             }
         },
 
         "nuke": {
             "name": {
                 "en": "Nuclear War",
-                "pi": "Grapeshot"
+                "pi": "Grapeshot",
+                "ne": "Kernoorlog"
             },
             "desc": {
                 "en": "All cards receive 1 damage after an attack.",
-                "pi": "All ships lose 1 extra rum after attacks"
+                "pi": "All ships lose 1 extra rum after attacks",
+                "ne": "Telkens als iemand aanvalt verliezen alle kaarten 1 leven."
             }
         },
 
@@ -81,7 +93,7 @@
             },
             "desc": {
                 "en": "Cards that rest gain 1 health.",
-                "ne": "Kaarten die niet aanvallen verdienen levens punt.",
+                "ne": "Kaarten die niets doen krijgen 1 leven.",
                 "lt": "Nepuolanti korta, gauna 1 papildomą gyvybės tašką.",
                 "hu": "Cards that do not attack gain 1 point of health.",
                 "nb": "Kort som ikke angriper får ett helsepoeng.",
@@ -94,7 +106,7 @@
         "blod": {
             "name": {
                 "en": "Blood Feud",
-                "ne": "Bloed vijandschap",
+                "ne": "Bloedvete",
                 "lt": "Kraujo praliejimas",
                 "hu": "Vérbosszú",
                 "nb": "Blodfeide",
@@ -117,7 +129,7 @@
         "rena": {
             "name": {
                 "en": "Renaissance",
-                "ne": "Wedergeboorte",
+                "ne": "Renaissance",
                 "lt": "Renesansas",
                 "hu": "Reneszánsz",
                 "nb": "Rennesanse",
@@ -127,14 +139,15 @@
             },
             "desc": {
                 "en": "Player cards can perform two actions per turn.",
-                "pi": "Player ships can act twice per turn."
+                "pi": "Player ships can act twice per turn.",
+                "ne": "Aanvoerders kunnen twee acties per beurt uitvoeren."
             }
         },
 
         "comm": {
             "name": {
                 "en": "Communism",
-                "ne": "Communist",
+                "ne": "Communisme",
                 "lt": "Komunizmas",
                 "hu": "Kommunizmus",
                 "nb": "Kommunisme",
@@ -144,7 +157,7 @@
             },
             "desc": {
                 "en": "Every action has a 50% chance to fail.",
-                "ne": "Elke actie heeft 50% kans om te valen.",
+                "ne": "Elke actie heeft 50% kans om te falen.",
                 "lt": "Kiekvienam veiksmui yra 50% galimybė susimauti.",
                 "hu": "Every action has a 50% chance to fail.",
                 "nb": "Hver handling har en 50% sjangse for å mislykkes.",
@@ -157,7 +170,7 @@
         "thdr": {
             "name": {
                 "en": "Thunderdome",
-                "ne": "Donderkoepel",
+                "ne": "Koepel",
                 "lt": "Cenzas",
                 "hu": "Thunderdome",
                 "nb": "Tordenskuppel",
@@ -167,7 +180,7 @@
             },
             "desc": {
                 "en": "No new cards can be played.",
-                "ne": "Er kan niet met nieuwe kaarten worden gespeeld",
+                "ne": "Er kunnen geen nieuwe kaarten meer worden gespeeld.",
                 "lt": "Kovos lauke nebegalima padėti naujų kortų.",
                 "hu": "No new cards can be played.",
                 "nb": "Ingen nye kort kan spilles.",
@@ -189,7 +202,7 @@
             },
             "desc": {
                 "en": "All cards gain the move ability.",
-                "ne": "Alle kaarten krijgen de verplaats kracht.",
+                "ne": "Alle kaarten kunnen zich verplaatsen.",
                 "lt": "Visos kortos įgauna judėjimo sugebėjimą.",
                 "hu": "All cards gain the move ability.",
                 "nb": "Alle kort får flytteegenskapen.",
@@ -211,7 +224,7 @@
             },
             "desc": {
                 "en": "Cards stay alive until their health reaches -10.",
-                "ne": "Kaarten blijven levend todat hun levens -10 halen.",
+                "ne": "Kaarten blijven in leven tot ze -10 levens hebben.",
                 "lt": "Visos kortos išlieka gyvos iki kol jų gyvybių taškai pasiekia -10.",
                 "hu": "Cards stay alive until their health reaches -10.",
                 "nb": "Kort forblir i live til helsepoengene deres når -10.",
@@ -245,7 +258,7 @@
         "arma": {
             "name": {
                 "en": "Armageddon",
-                "ne": "Armageddon",
+                "ne": "Einde der tijden",
                 "lt": "Armagėdonas",
                 "hu": "Armageddon",
                 "nb": "Armageddon",
