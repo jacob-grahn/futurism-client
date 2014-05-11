@@ -4,13 +4,15 @@
         "edit": {
             "en": "Edit",
             "pi": "Change fleet",
-            "ne": "Bewerken"
+            "ne": "Bewerken",
+            "fr": "Modifier"
         },
         
         "newDeck": {
             "en": "New Deck",
             "pi": "New fleet",
-            "ne": "Nieuwe Deck"
+            "ne": "Nieuwe Deck",
+            "fr": "Nouveau paquet"
         }
     }
 }
