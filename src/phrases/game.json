@@ -10,6 +10,7 @@
             "nb": "Avslutt turen",
             "pi": "Hit the bunk",
             "it": "Termina turno",
+            "fr": "Fin du tour",
             "pl": "Zakończ turę"
         },
 
@@ -22,6 +23,7 @@
             "nb": "Stolthet",
             "pi": "Pride",
             "it": "Valore",
+            "fr": "Valeur",
             "pl": "Duma"
         },
 
@@ -34,6 +36,7 @@
             "nb": "lukk",
             "pi": "Seal",
             "it": "chiudi",
+            "fr": "Fermer",
             "pl": "Zamknij"
         },
 
@@ -46,6 +49,7 @@
             "nb": "Fremtider",
             "pi": "Days after tomorrow",
             "it": "Futures",
+            "fr": "Futurs",
             "pl": "Przyszłości"
         },
 
@@ -58,6 +62,7 @@
             "nb": "Forlat kampen",
             "pi": "Abandon ship",
             "it": "Abbandona",
+            "fr": "Abandonner",
             "pl": "Zrezygnuj"
         }
     }
