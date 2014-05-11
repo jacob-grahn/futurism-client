@@ -3,22 +3,26 @@
         
         "title": {
             "en": "Applications",
-            "ne": "Toepassingen"
+            "ne": "Toepassingen",
+            "fr": "Applications"
         },
         
         "close": {
             "en": "Close",
-            "ne": "Sluiten"
+            "ne": "Sluiten",
+            "fr": "Fermer"
         },
         
         "accept": {
             "en": "Accept",
-            "ne": "Accepteren"
+            "ne": "Accepteren",
+            "fr": "Accepter"
         },
         
         "delete": {
             "en": "Delete",
-            "ne": "Verwijderen"
+            "ne": "Verwijderen",
+            "fr": "Supprimer"
         }
     }
 }
