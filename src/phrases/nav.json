@@ -1,17 +1,20 @@
 {
     "nav": {
         "applicants": {
-            "en": "Applications"
+            "en": "Applications",
+            "fr": "Applications"
         },
         
         "reports": {
             "en": "Reports",
             "pl": "Reporty",
+            "fr": "Signalement",
             "pi": "Tip-offs"
         },
 
         "modLog": {
             "en": "Mod Log",
+            "fr": "Journal des mods",
             "pi": "Police books"
         },
 
@@ -52,7 +55,7 @@
             "ko": "갑판",
             "ct": "meow",
             "ne": "Deck maker",
-            "fr": "Créateur de paquet",
+            "fr": "Paquets",
             "pi": "Mapbook binder",
             "lt": "Kaladės Dėliojimas",
             "sv": "Deckbyggare",
@@ -68,7 +71,7 @@
             "ko": "카드",
             "ct": "meow",
             "ne": "Kaart maker",
-            "fr": "Créateur de carte",
+            "fr": "Cartes",
             "pi": "Map drawer",
             "lt": "Kortų kūrimas",
             "sv": "Korbyggare",
@@ -100,7 +103,7 @@
             "ko": "통계",
             "ct": "meow",
             "ne": "Mijn statistieken",
-            "fr": "Ma Statistiques",
+            "fr": "Mes statistiques",
             "pi": "Pirate-ness",
             "lt": "Mano statusai",
             "sv": "Min Statistik",
@@ -190,7 +193,8 @@
         },
         
         "invites": {
-            "en": "Guild Invites"
+            "en": "Guild Invites",
+            "fr": "Invitations de guilde"
         }
     }
 
