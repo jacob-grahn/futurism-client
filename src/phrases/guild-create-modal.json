@@ -7,22 +7,26 @@
             "lt": "Sukurti Gildiją",
             "pi": "Found guild",
             "nb": "Lag et laug",
+            "fr": "Créer une guilde",
             "pl": "Załóz gildie"
         },
         
         "edit": {
             "en": "Edit",
-            "ne": "Bewerken"
+            "ne": "Bewerken",
+            "fr": "Modifier"
         },
         
         "name": {
             "en": "Name",
-            "ne": "Naam"
+            "ne": "Naam",
+            "fr": "Nom"
         },
         
         "desc": {
             "en": "Desc",
-            "ne": "Beschrijving"
+            "ne": "Beschrijving",
+            "fr": "Description"
         },
         
         "joinPolicy": {
@@ -31,6 +35,7 @@
             "lt": "Įstojimo tipas",
             "pi": "Enlistment policy",
             "nb": "Deltagelsesregler",
+            "fr": "Politique d'adhésion",
             "pl": "Warunki dołączenia"
         },
 
@@ -40,6 +45,7 @@
             "lt": "Logotipas",
             "pi": "Flag",
             "nb": "Banner",
+            "fr": "Bannière",
             "pl": "Banner"
         }
     }
