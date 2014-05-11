@@ -11,20 +11,23 @@
         },
         
         "edit": {
-            "en": "Edit"
+            "en": "Edit",
+            "ne": "Bewerken"
         },
         
         "name": {
-            "en": "Name"  
+            "en": "Name",
+            "ne": "Naam"
         },
         
         "desc": {
-            "en": "Desc"
+            "en": "Desc",
+            "ne": "Beschrijving"
         },
         
         "joinPolicy": {
             "en": "Join Policy",
-            "ne": "Treed toe in het overleg",
+            "ne": "Regels voor nieuwe leden",
             "lt": "Įstojimo tipas",
             "pi": "Enlistment policy",
             "nb": "Deltagelsesregler",
