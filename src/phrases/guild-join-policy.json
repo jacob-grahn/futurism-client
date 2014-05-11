@@ -8,6 +8,7 @@
                 "lt": "Atvira",
                 "pi": "Open doors",
                 "pl": "Otwarta",
+                "fr": "Libre",
                 "nb": "Åpent"
             },
             "desc": {
@@ -16,6 +17,7 @@
                 "lt": "Į šią Gildiją gali įstoti visi.",
                 "pi": "Any pirate may join this crew.",
                 "pl": "Każdy może dołączyć do tej gildii.",
+                "fr": "N'importe qui peut rejoindre la guilde",
                 "nb": "Alle kan bli med i dette lauget."
             }
         },
@@ -27,6 +29,7 @@
                 "lt": "Tik su pakvietimu",
                 "pi": "Private",
                 "pl": "Prywatna",
+                "fr": "Invitation",
                 "nb": "Privat"
             },
             "desc": {
@@ -35,6 +38,7 @@
                 "lt": "Tik pakviesti žaidėjai gali įstoti į šią Gildiją",
                 "pi": "Pirates must have a letter to join this guild.",
                 "pl": "Tylko zaproszeni gracze mogą dołączyć do tej gildii.",
+                "fr": "Seuls les joueurs invités peuvent rejoindre la guilde",
                 "nb": "Bare inviterte spillere kan bli med i dette lauget."
             }
         },
@@ -46,6 +50,7 @@
                 "lt": "Tik su užklausa",
                 "pi": "Inquiry only",
                 "pl": "Moderatowana",
+                "fr": "Demande",
                 "nb": "Spør"
             },
             "desc": {
@@ -54,6 +59,7 @@
                 "lt": "Žaidėjai turi atsiusti užklausą arba būti pakviesti kad galėtu įstoti į šią Gildiją",
                 "pi": "Pirates must either have their request approved or have a letter to join this guild.",
                 "pl": "Aby dołączyć, musisz sie zapytać lub zostać zaproszonym.",
+                "fr": "Les joueurs doivent demander ou êtres invités pour rejoindre la guilde",
                 "nb": "Spillere må spørre eller være invitert for å bli med i dette lauget."
             }
         }
