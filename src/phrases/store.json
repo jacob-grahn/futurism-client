@@ -2,35 +2,43 @@
     "store": {
         
         "futures": {
-            "en": "Futures"
+            "en": "Futures",
+            "fr": "Futures"
         },
         
         "conversions": {
-            "en": "Conversions"
+            "en": "Conversions",
+            "fr": "Conversions"
         },
         
         "fantasims": {
-            "en": "Fantasims"
+            "en": "Fantasims",
+            "fr": "Fanatismes"
         },
         
         "compliment": {
-            "en": "T-Machine likes your style!"
+            "en": "T-Machine likes your style!",
+            "fr": "T-Machine aime votre style !"
         },
         
         "fractureNeedA": {
-            "en": "T-Machine needs"
+            "en": "T-Machine needs",
+            "fr": "T-Machine a besoin de"
         },
         
         "fractureNeedB": {
-            "en": "fracture(s) to reach a new future."
+            "en": "fracture(s) to reach a new future.",
+            "fr": "fracture(s) pour atteindre un nouveau futur"
         },
         
         "fractureHaveA": {
-            "en": "You have"
+            "en": "You have",
+            "fr": "Vous avez"
         },
         
         "fractureHaveB": {
-            "en": "fracture(s)."
+            "en": "fracture(s).",
+            "fr": "fracture(s)"
         }
     }
 }
