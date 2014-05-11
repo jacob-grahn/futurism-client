@@ -3,87 +3,104 @@
         
         "viewBans": {
             "en": "View Bans",
-            "ne": "Bekijk Bans"
+            "ne": "Bekijk Bans",
+            "fr": "Voir bannissements"
         },
         
         "invite": {
             "en": "Invite to Guild",
-            "ne": "Uitnodigen in Gilde"
+            "ne": "Uitnodigen in Gilde",
+            "fr": "Inviter dans la guilde"
         },
         
         "deInvite": {
             "en": "Un-Invite",
-            "ne": "Uitnodiging annuleren"
+            "ne": "Uitnodiging annuleren",
+            "fr": "Désinviter"
         },
         
         "report": {
             "en": "Report",
-            "ne": "Overtreding melden"
+            "ne": "Overtreding melden",
+            "fr": "Signaler"
         },
         
         "mod": {
             "en": "Grant Mod",
-            "ne": "Maak Mod"
+            "ne": "Maak Mod",
+            "fr": "Promouvoir mod"
         },
         
         "deMod": {
             "en": "Revoke Mod",
-            "ne": "Ontneem Mod"
+            "ne": "Ontneem Mod",
+            "fr": "Retirer mod"
         },
         
         "apprentice": {
             "en": "Grant Apprentice",
-            "ne": "Maak Leerling"
+            "ne": "Maak Leerling",
+            "fr": "Promouvoir apprenti"
         },
         
         "deApprentice": {
             "en": "Revoke Apprentice",
-            "ne": "Ontneem Leerling"
+            "ne": "Ontneem Leerling",
+            "fr": "Retirer apprenti"
         },
         
         "ban": {
             "en": "Ban",
-            "ne": "Ban"
+            "ne": "Ban",
+            "fr": "Bannir"
         },
         
         "deBan": {
             "en": "Lift Ban",
-            "ne": "Hef Ban op"
+            "ne": "Hef Ban op",
+            "fr": "Lever le bannissement"
         },
         
         "guildMod": {
             "en": "Grant Guild Mod",
-            "ne": "Maak Gilde Mod"
+            "ne": "Maak Gilde Mod",
+            "fr": "Promouvoir mod de guilde"
         },
         
         "deGuildMod": {
             "en": "Revoke Guild Mod",
-            "ne": "Ontneem Gilde Mod
+            "ne": "Ontneem Gilde Mod,
+            "fr": "Retirer mod de guilde"
         },
         
         "kick": {
             "en": "Kick from Guild",
-            "ne": "Uit Gilde verbannen"
+            "ne": "Uit Gilde verbannen",
+            "fr": "Renvoyer de la guilde"
         },
         
         "deKick": {
             "en": "Revoke Kick",
-            "ne": "Verbanning herroepen"
+            "ne": "Verbanning herroepen",
+            "fr": "Retirer le renvoi"
         },
         
         "message": {
             "en": "Message",
-            "ne": "Bericht"
+            "ne": "Bericht",
+            "fr": "Message"
         },
         
         "cards": {
             "en": "Cards",
-            "ne": "Kaarten"
+            "ne": "Kaarten",
+            "fr": "Cartes"
         },
         
         "close": {
             "en": "Close",
-            "ne": "Sluiten"
+            "ne": "Sluiten",
+            "fr": "Fermer"
         }
     }
 }
