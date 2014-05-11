@@ -2,27 +2,33 @@
     "guildList": {
         
         "perk1": {
-            "en": "Top guild unlocks black cards"
+            "en": "Top guild unlocks black cards",
+            "fr": "La meilleure guilde débloque les cartes noires"
         },
         
         "perk2": {
-            "en": "Top 5 guilds can create fractures once a day"
+            "en": "Top 5 guilds can create fractures once a day",
+            "fr": "Les 5 meilleures guildes peuvent générer des fractures une fois par jour"
         },
         
         "perk3": {
-            "en": "Top 20 guilds earn fame 25% faster"
+            "en": "Top 20 guilds earn fame 25% faster",
+            "fr": "Les 20 meilleures guildes gagnent de la réputation 25% plus vite"
         },
         
         "join": {
-            "en": "Join a Guild"
+            "en": "Join a Guild",
+            "fr": "Rejoindre une guilde"
         },
         
         "create": {
-            "en": "Create a Guild"
+            "en": "Create a Guild",
+            "fr": "Créer une guilde"
         },
         
         "myGuild": {
-            "en": "My Guild"
+            "en": "My Guild",
+            "fr": "Ma guilde"
         }
     }
 }
