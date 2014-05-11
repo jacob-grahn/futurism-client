@@ -3,30 +3,35 @@
         
         "title": {
             "en": "Guild Invitations",
+            "hu": "Klán Meghívások",
             "ne": "Gilde uitnodigingen",
             "fr": "Invitations de guilde"
         },
         
         "close": {
             "en": "Close",
+            "hu": "Bezárás",
             "ne": "Sluiten",
             "fr": "Fermer"
         },
         
         "wantYou": {
             "en": "wants you to join!",
+            "hu": "csatlakozni szeretne!",
             "ne": "wil dat je toetreedt!",
             "fr": "veut que vous les rejoignez !"
         },
         
         "join": {
             "en": "Join",
+            "hu": "Csatlakozás",
             "ne": "Toetreden",
             "fr": "Rejoindre"
         },
         
         "delete": {
             "en": "Delete",
+            "hu": "Törlés",
             "ne": "Verwijderen",
             "fr": "Supprimer"
         }
