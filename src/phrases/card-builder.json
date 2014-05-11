@@ -3,7 +3,8 @@
         
         "title": {
             "en": "Card Builder",
-            "ne": "Kaartenbouwer"
+            "ne": "Kaartenbouwer",
+            "hu": "Kártya Készítő",
         },
 
         "name": {
@@ -18,12 +19,13 @@
             "es": "Nombrar",
             "nb": "Navngi",
             "it": "Nominala",
-            "hu": "Nevezd",
+            "hu": "Név",
             "pl": "Nazwij"
         },
         
         "story": {
             "en": "Story",
+            "hu": "Sztori",
             "ne": "Verhaal",
             "fr": "Description"
         },
@@ -46,6 +48,7 @@
         
         "faction": {
             "en": "Faction",
+            "hu": "Faction",
             "ne": "Factie",
             "fr": "Classe"
         },
