@@ -3,27 +3,32 @@
         
         "g": {
             "en": "Guest",
-            "ne": "Gast"
+            "ne": "Gast",
+            "fr": "Invité"
         },
         
         "u": {
             "en": "Member",
-            "ne": "Lid"
+            "ne": "Lid",
+            "fr": "Membre"
         },
         
         "p": {
             "en": "Apprentice",
-            "ne": "Leerling"
+            "ne": "Leerling",
+            "fr": "Apprenti"
         },
         
         "m": {
             "en": "Moderator",
-            "ne": "Moderator"
+            "ne": "Moderator",
+            "fr": "Modérateur"
         },
         
         "a": {
             "en": "Admin",
-            "en": "Admin"
+            "ne": "Admin",
+            "fr": "Admin"
         }
     }
 }
