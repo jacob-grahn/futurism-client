@@ -1,5 +1,5 @@
 {
-        "chat": {
+    "chat": {
         "say": {
             "en": "say",
             "ko": "말하다",
@@ -12,7 +12,7 @@
             "es": "Enviar",
             "nb": "si",
             "it": "Invia",
-            "hu": "mondd",
+            "hu": "küld",
             "pl": "wyślij"
         },
 

@@ -36,7 +36,8 @@
             "pi": "Enlistment policy",
             "nb": "Deltagelsesregler",
             "fr": "Politique d'adhésion",
-            "pl": "Warunki dołączenia"
+            "pl": "Warunki dołączenia",
+            "hu": "Csatlakozási Beállítás"
         },
 
         "banner": {
@@ -46,7 +47,8 @@
             "pi": "Flag",
             "nb": "Banner",
             "fr": "Bannière",
-            "pl": "Banner"
+            "pl": "Banner",
+            "hu": "Logó"
         }
     }
 }

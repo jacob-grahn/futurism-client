@@ -4,31 +4,36 @@
         "g": {
             "en": "Guest",
             "ne": "Gast",
-            "fr": "Invité"
+            "fr": "Invité",
+            "hu": "Guest"
         },
         
         "u": {
             "en": "Member",
             "ne": "Lid",
-            "fr": "Membre"
+            "fr": "Membre",
+            "hu": "Member"
         },
         
         "p": {
             "en": "Apprentice",
             "ne": "Leerling",
-            "fr": "Apprenti"
+            "fr": "Apprenti",
+            "hu": "Apprentice"
         },
         
         "m": {
             "en": "Moderator",
             "ne": "Moderator",
-            "fr": "Modérateur"
+            "fr": "Modérateur",
+            "hu": "Moderátor"
         },
         
         "a": {
             "en": "Admin",
             "ne": "Admin",
-            "fr": "Admin"
+            "fr": "Admin",
+            "hu": "Admin"
         }
     }
 }

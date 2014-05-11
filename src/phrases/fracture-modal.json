@@ -3,7 +3,8 @@
         
         "fractureAquired": {
             "en": "Fracture Aquired!",
-            "ne": "Breuk bemachtigd!"
+            "ne": "Breuk bemachtigd!",
+            "hu": "Törés Szerzett!"
         }
     }
 }

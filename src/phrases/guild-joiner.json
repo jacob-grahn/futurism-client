@@ -9,7 +9,8 @@
             "pi": "Enlist",
             "nb": "Bli med i lauget",
             "fr": "Rejoindre une guilde",
-            "pl": "Dołacz do gildii"
+            "pl": "Dołacz do gildii",
+            "hu": "Csatlakozás Klánhoz"
         },
 
         "join": {
@@ -19,7 +20,8 @@
             "pi": "Enlist",
             "pl": "Dołącz",
             "fr": "Rejoindre",
-            "nb": "Bli med"
+            "nb": "Bli med",
+            "hu": "Csatlakozás"
         }
     }
 }

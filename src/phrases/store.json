@@ -4,50 +4,57 @@
         "futures": {
             "en": "Futures",
             "ne": "Toekomsten",
-            "fr": "Futures"
+            "fr": "Futures",
+            "hu": "Jövendők"
         },
         
         "conversions": {
             "en": "Conversions",
             "ne": "Omzettingen",
-            "fr": "Conversions"
+            "fr": "Conversions",
+            "hu": "Konverziók"
         },
         
         "fantasims": {
             "en": "Fantasims",
             "ne": "Fantasmes",
-            "fr": "Fanatismes"
+            "fr": "Fanatismes",
+            "hu": "Fantasims"
         },
         
         "compliment": {
             "en": "T-Machine likes your style!",
             "ne": "T-Machine houdt wel van jouw stijl!",
-            "fr": "T-Machine aime votre style !"
+            "fr": "T-Machine aime votre style !",
+            "hu": "T-Gépezet-nak tetszik a stílusod!"
         },
         
         "fractureNeedA": {
             "en": "T-Machine needs",
             "ne": "T-Machine heeft nodig",
-            "fr": "T-Machine a besoin de"
+            "fr": "T-Machine a besoin de",
+            "hu": "T-Gépezet szükséges"
         },
         
         "fractureNeedB": {
             "en": "fracture(s) to reach a new future.",
             "ne": "breuk(en) om een nieuwe toekomst te bereiken.",
-            "fr": "fracture(s) pour atteindre un nouveau futur"
+            "fr": "fracture(s) pour atteindre un nouveau futur",
+            "hu": "Törés(ek) hogy elérj egy új jövendőt."
         },
         
         "fractureHaveA": {
             "en": "You have",
             "ne": "Je hebt",
-            "fr": "Vous avez"
+            "fr": "Vous avez",
+            "hu": "Neked van"
         },
         
         "fractureHaveB": {
             "en": "fracture(s).",
             "ne": "breuk(en).",
-            "fr": "fracture(s)"
-
+            "fr": "fracture(s)",
+            "hu": "törés(ek)"
         }
     }
 }

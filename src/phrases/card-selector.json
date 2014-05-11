@@ -5,14 +5,16 @@
             "en": "Edit",
             "pi": "Change Crew",
             "ne": "Bewerken",
-            "fr": "Modifier"
+            "fr": "Modifier",
+            "hu": "Módosít"
         },
         
         "newCard": {
             "en": "New Card",
             "pi": "New Ship",
             "ne": "Nieuwe kaart",
-            "fr": "Nouvelle Carte"
+            "fr": "Nouvelle Carte",
+            "hu": "Új Kártya"
         }
     }
 }

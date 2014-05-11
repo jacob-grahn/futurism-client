@@ -9,7 +9,8 @@
                 "pi": "Open doors",
                 "pl": "Otwarta",
                 "fr": "Libre",
-                "nb": "Åpent"
+                "nb": "Åpent",
+                "hu": "Megnyitás"
             },
             "desc": {
                 "en": "Anyone can join this guild.",
@@ -18,7 +19,8 @@
                 "pi": "Any pirate may join this crew.",
                 "pl": "Każdy może dołączyć do tej gildii.",
                 "fr": "N'importe qui peut rejoindre la guilde",
-                "nb": "Alle kan bli med i dette lauget."
+                "nb": "Alle kan bli med i dette lauget.",
+                "hu": "Bárki csatlakozhat ehhez a klánhoz."
             }
         },
 
@@ -30,7 +32,8 @@
                 "pi": "Private",
                 "pl": "Prywatna",
                 "fr": "Invitation",
-                "nb": "Privat"
+                "nb": "Privat",
+                "hu": "Meghívás"
             },
             "desc": {
                 "en": "Only invited players can join this guild.",
@@ -39,7 +42,8 @@
                 "pi": "Pirates must have a letter to join this guild.",
                 "pl": "Tylko zaproszeni gracze mogą dołączyć do tej gildii.",
                 "fr": "Seuls les joueurs invités peuvent rejoindre la guilde",
-                "nb": "Bare inviterte spillere kan bli med i dette lauget."
+                "nb": "Bare inviterte spillere kan bli med i dette lauget.",
+                "hu": "Csak meghívott játékosok csatlakozhatnak ehhez a klánhoz."
             }
         },
 
@@ -51,7 +55,8 @@
                 "pi": "Inquiry only",
                 "pl": "Moderatowana",
                 "fr": "Demande",
-                "nb": "Spør"
+                "nb": "Spør",
+                "hu": "Kérelem"
             },
             "desc": {
                 "en": "Players must ask or be invited to join this guild.",
@@ -60,7 +65,8 @@
                 "pi": "Pirates must either have their request approved or have a letter to join this guild.",
                 "pl": "Aby dołączyć, musisz sie zapytać lub zostać zaproszonym.",
                 "fr": "Les joueurs doivent demander ou êtres invités pour rejoindre la guilde",
-                "nb": "Spillere må spørre eller være invitert for å bli med i dette lauget."
+                "nb": "Spillere må spørre eller være invitert for å bli med i dette lauget.",
+                "hu": "A játékosoknak kérniük kell vagy meghívottnak kell lenniük hogy csatlakozhassanak."
             }
         }
     }

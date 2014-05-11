@@ -7,7 +7,8 @@
             "pl": "usun",
             "nb": "slett",
             "fr": "Supprimer",
-            "pi": "burn message"
+            "pi": "burn message",
+            "hu": "törlés"
         },
         
         "report": {
@@ -16,7 +17,8 @@
             "pl": "zreportuj",
             "nb": "rapporter",
             "fr": "Signaler",
-            "pi": "tip off police"
+            "pi": "tip off police",
+            "hu": "jelentés"
         }
     }
 }

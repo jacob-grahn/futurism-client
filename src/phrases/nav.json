@@ -11,14 +11,16 @@
             "pl": "Reporty",
             "pi": "Tip-offs",
             "ne": "Gereporteerd misbruik",
-            "fr": "Signalement"
+            "fr": "Signalement",
+            "hu": "Jelentések"
         },
 
         "modLog": {
             "en": "Mod Log",
             "pi": "Police books",
             "ne": "Mod Log",
-            "fr": "Journal des mods"
+            "fr": "Journal des mods",
+            "hu": "Moderátor Log"
         },
 
         "toggle": {
@@ -173,7 +175,7 @@
             "sv": "Framitid",
             "pi": "Days after tomorrow",
             "nb": "Fremtider",
-            "hu": "Jövendők",
+            "hu": "T-Gépezet",
             "it": "Futures",
             "ne": "Toekomsten",
             "pl": "Przyszłości"

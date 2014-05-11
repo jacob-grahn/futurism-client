@@ -5,14 +5,16 @@
             "en": "Edit",
             "pi": "Change fleet",
             "ne": "Bewerken",
-            "fr": "Modifier"
+            "fr": "Modifier",
+            "hu": "Módosít"
         },
         
         "newDeck": {
             "en": "New Deck",
             "pi": "New fleet",
             "ne": "Nieuwe Deck",
-            "fr": "Nouveau paquet"
+            "fr": "Nouveau paquet",
+            "hu": "Új Kártyacsomag"
         }
     }
 }

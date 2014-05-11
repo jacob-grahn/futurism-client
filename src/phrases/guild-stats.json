@@ -8,7 +8,8 @@
             "pi": "Captains",
             "pl": "Dowódcy",
             "fr": "Chefs",
-            "nb": "Ledere"
+            "nb": "Ledere",
+            "hu": "Vezetők"
         },
         
         "mods": {
@@ -24,7 +25,8 @@
             "pi": "Crewers",
             "pl": "Członkowie",
             "fr": "Membres",
-            "nb": "Medlemmer"
+            "nb": "Medlemmer",
+            "hu": "Tagok"
         },
 
         "gpToday": {
@@ -34,7 +36,8 @@
             "pi": "Gold today",
             "pl": "GP dziś",
             "fr": "PG aujourd'hui",
-            "nb": "GP i dag"
+            "nb": "GP i dag",
+            "hu": "GP Ma"
         },
 
         "founded": {
@@ -44,7 +47,8 @@
             "pi": "Founded",
             "pl": "Założona",
             "fr": "Fondée",
-            "nb": "Grunnlagt"
+            "nb": "Grunnlagt",
+            "hu": "Alapított"
         }
     }
 }

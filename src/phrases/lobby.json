@@ -21,7 +21,8 @@
             "pl": "karty",
             "pi": "ships",
             "ne": "kaarten",
-            "fr": "Cartes"
+            "fr": "Cartes",
+            "hu": "kártyák"
         },
 
         "join": {

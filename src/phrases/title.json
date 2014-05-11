@@ -12,7 +12,7 @@
             "es": "FUTURISMO",
             "nb": "FUTURISME",
             "it": "Futurismo",
-            "hu": "Futurism",
+            "hu": "FUTURISM",
             "pl": "FUTURISM"
         },
 
@@ -28,7 +28,7 @@
             "es": "Ingresar",
             "nb": "Logg inn",
             "it": "Entra",
-            "hu": "Bejelentkezés",
+            "hu": "BELÉPÉS",
             "pl": "Zaloguj sie"
         },
 
@@ -44,7 +44,7 @@
             "es": "Créditos",
             "nb": "MEDVIRKENDE",
             "it": "Ringraziamenti",
-            "hu": "Készítők",
+            "hu": "KÉSZÍTŐK",
             "pl": "Autorzy"
         },
 
@@ -60,7 +60,7 @@
             "es": "Videos educativos",
             "nb": "INSTRUKSJONSVIDEOER",
             "it": "Istruzioni",
-            "hu": "Instrukciók",
+            "hu": "INSTRUKCIÓK",
             "pl": "Instrukcje"
         }
     }

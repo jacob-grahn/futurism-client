@@ -10,7 +10,8 @@
         "join": {
             "en": "Join",
             "ne": "Toetreden",
-            "fr": "Rejoindre"
+            "fr": "Rejoindre",
+            "hu": "Csatlakozás"
         },
         
         "edit": {

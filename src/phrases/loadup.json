@@ -7,35 +7,40 @@
             "pl": "Max. Wielkość Dumy",
             "pi": "Max Size",
             "ne": "Max Grootte",
-            "fr": "Taille maximale"
+            "fr": "Taille maximale",
+            "hu": "Max Méret"
         },
         
         "selectDeck": {
             "en": "Select a Deck!",
             "pi": "Choose your fleet!",
             "ne": "Kies je Deck!",
-            "fr": "Choisir un paquet"
+            "fr": "Choisir un paquet",
+            "hu": "Válassz egy Kártyacsomagot!"
         },
         
         "select": {
             "en": "Select",
             "pi": "Select",
             "ne": "Selecteren",
-            "fr": "Choisir"
+            "fr": "Choisir",
+            "hu": "Választ"
         },
         
         "futures": {
             "en": "Futures!",
             "pi": "Tomorrows!",
             "ne": "Toekomsten!",
-            "fr": "Futurs"
+            "fr": "Futurs",
+            "hu": "Jövendők!"
         },
         
         "selectFutureSingular": {
             "en": "Select a Future!",
             "pi": "Select the day after tomorrow!",
             "ne": "Selecteer een Toekomst!",
-            "fr": "Choisir un futur"
+            "fr": "Choisir un futur",
+            "hu": "Válassz egy Jövendőt!"
         }
     }
 }
