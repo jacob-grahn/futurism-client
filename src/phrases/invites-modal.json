@@ -2,23 +2,28 @@
     "invitesModal": {
         
         "title": {
-            "en": "Guild Invitations"
+            "en": "Guild Invitations",
+            "ne": "Gilde uitnodigingen"
         },
         
         "close": {
-            "en": "Close"
+            "en": "Close",
+            "ne": "Sluiten"
         },
         
         "wantYou": {
-            "en": "wants you to join!"
+            "en": "wants you to join!",
+            "ne": "wil dat je toetreedt!"
         },
         
         "join": {
-            "en": "Join"
+            "en": "Join",
+            "ne": "Toetreden"
         },
         
         "delete": {
-            "en": "Delete"
+            "en": "Delete",
+            "ne": "Verwijderen"
         }
     }
 }
