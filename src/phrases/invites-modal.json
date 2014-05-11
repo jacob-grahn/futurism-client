@@ -3,27 +3,32 @@
         
         "title": {
             "en": "Guild Invitations",
-            "ne": "Gilde uitnodigingen"
+            "ne": "Gilde uitnodigingen",
+            "fr": "Invitations de guilde"
         },
         
         "close": {
             "en": "Close",
-            "ne": "Sluiten"
+            "ne": "Sluiten",
+            "fr": "Fermer"
         },
         
         "wantYou": {
             "en": "wants you to join!",
-            "ne": "wil dat je toetreedt!"
+            "ne": "wil dat je toetreedt!",
+            "fr": "veut que vous les rejoignez !"
         },
         
         "join": {
             "en": "Join",
-            "ne": "Toetreden"
+            "ne": "Toetreden",
+            "fr": "Rejoindre"
         },
         
         "delete": {
             "en": "Delete",
-            "ne": "Verwijderen"
+            "ne": "Verwijderen",
+            "fr": "Supprimer"
         }
     }
 }
