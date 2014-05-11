@@ -6,6 +6,7 @@
             "ne": "verwijder",
             "pl": "usun",
             "nb": "slett",
+            "fr": "Supprimer",
             "pi": "burn message"
         },
         
@@ -14,6 +15,7 @@
             "ne": "overtreding melden",
             "pl": "zreportuj",
             "nb": "rapporter",
+            "fr": "Signaler",
             "pi": "tip off police"
         }
     }
