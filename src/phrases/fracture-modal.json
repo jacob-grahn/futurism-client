@@ -4,7 +4,8 @@
         "fractureAquired": {
             "en": "Fracture Aquired!",
             "ne": "Breuk bemachtigd!",
-            "hu": "Törés Szerzett!"
+            "hu": "Törés Szerzett!",
+            "fr": "Fracture obtenue !"
         }
     }
 }
