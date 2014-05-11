@@ -2,71 +2,88 @@
     "userModal": {
         
         "viewBans": {
-            "en": "View Bans"
+            "en": "View Bans",
+            "fr": "Voir bannissements"
         },
         
         "invite": {
-            "en": "Invite to Guild"
+            "en": "Invite to Guild",
+            "fr": "Inviter dans la guilde"
         },
         
         "deInvite": {
-            "en": "Un-Invite"
+            "en": "Un-Invite",
+            "fr": "Désinviter"
         },
         
         "report": {
-            "en": "Report"
+            "en": "Report",
+            "fr": "Signaler"
         },
         
         "mod": {
-            "en": "Grant Mod"
+            "en": "Grant Mod",
+            "fr": "Promouvoir mod"
         },
         
         "deMod": {
-            "en": "Revoke Mod"
+            "en": "Revoke Mod",
+            "fr": "Retirer mod"
         },
         
         "apprentice": {
-            "en": "Grant Apprentice"
+            "en": "Grant Apprentice",
+            "fr": "Promouvoir apprenti"
         },
         
         "deApprentice": {
-            "en": "Revoke Apprentice"
+            "en": "Revoke Apprentice",
+            "fr": "Retirer apprenti"
         },
         
         "ban": {
-            "en": "Ban"
+            "en": "Ban",
+            "fr": "Bannir"
         },
         
         "deBan": {
-            "en": "Lift Ban"
+            "en": "Lift Ban",
+            "fr": "Lever le bannissement"
         },
         
         "guildMod": {
-            "en": "Grant Guild Mod"
+            "en": "Grant Guild Mod",
+            "fr": "Promouvoir mod de guilde"
         },
         
         "deGuildMod": {
-            "en": "Revoke Guild Mod"
+            "en": "Revoke Guild Mod",
+            "fr": "Retirer mod de guilde"
         },
         
         "kick": {
-            "en": "Kick from Guild"
+            "en": "Kick from Guild",
+            "fr": "Renvoyer de la guilde"
         },
         
         "deKick": {
-            "en": "Revoke Kick"
+            "en": "Revoke Kick",
+            "fr": "Retirer le renvoi"
         },
         
         "message": {
-            "en": "Message"
+            "en": "Message",
+            "fr": "Message"
         },
         
         "cards": {
-            "en": "Cards"
+            "en": "Cards",
+            "fr": "Cartes"
         },
         
         "close": {
-            "en": "Close"
+            "en": "Close",
+            "fr": "Fermer"
         }
     }
 }
