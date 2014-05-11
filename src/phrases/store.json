@@ -3,42 +3,51 @@
         
         "futures": {
             "en": "Futures",
-            "ne": "Toekomsten"
+            "ne": "Toekomsten",
+            "fr": "Futures"
         },
         
         "conversions": {
             "en": "Conversions",
-            "ne": "Omzettingen"
+            "ne": "Omzettingen",
+            "fr": "Conversions"
         },
         
         "fantasims": {
             "en": "Fantasims",
-            "ne": "Fantasmes"
+            "ne": "Fantasmes",
+            "fr": "Fanatismes"
         },
         
         "compliment": {
             "en": "T-Machine likes your style!",
-            "ne": "T-Machine houdt wel van jouw stijl!"
+            "ne": "T-Machine houdt wel van jouw stijl!",
+            "fr": "T-Machine aime votre style !"
         },
         
         "fractureNeedA": {
             "en": "T-Machine needs",
-            "ne": "T-Machine heeft nodig"
+            "ne": "T-Machine heeft nodig",
+            "fr": "T-Machine a besoin de"
         },
         
         "fractureNeedB": {
             "en": "fracture(s) to reach a new future.",
-            "ne": "breuk(en) om een nieuwe toekomst te bereiken."
+            "ne": "breuk(en) om een nieuwe toekomst te bereiken.",
+            "fr": "fracture(s) pour atteindre un nouveau futur"
         },
         
         "fractureHaveA": {
-            "en": "You have"
-            "ne": "Je hebt"
+            "en": "You have",
+            "ne": "Je hebt",
+            "fr": "Vous avez"
         },
         
         "fractureHaveB": {
-            "en": "fracture(s)."
-            "ne": "breuk(en)."
+            "en": "fracture(s).",
+            "ne": "breuk(en).",
+            "fr": "fracture(s)"
+
         }
     }
 }
