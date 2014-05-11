@@ -2,22 +2,27 @@
     "groups": {
         
         "g": {
-            "en": "Guest"
+            "en": "Guest",
+            "ne": "Gast"
         },
         
         "u": {
-            "en": "Member"
+            "en": "Member",
+            "ne": "Lid"
         },
         
         "p": {
-            "en": "Apprentice"
+            "en": "Apprentice",
+            "ne": "Leerling"
         },
         
         "m": {
-            "en": "Moderator"
+            "en": "Moderator",
+            "ne": "Moderator"
         },
         
         "a": {
+            "en": "Admin",
             "en": "Admin"
         }
     }
