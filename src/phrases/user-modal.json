@@ -2,71 +2,88 @@
     "userModal": {
         
         "viewBans": {
-            "en": "View Bans"
+            "en": "View Bans",
+            "ne": "Bekijk Bans"
         },
         
         "invite": {
-            "en": "Invite to Guild"
+            "en": "Invite to Guild",
+            "ne": "Uitnodigen in Gilde"
         },
         
         "deInvite": {
-            "en": "Un-Invite"
+            "en": "Un-Invite",
+            "ne": "Uitnodiging annuleren"
         },
         
         "report": {
-            "en": "Report"
+            "en": "Report",
+            "ne": "Overtreding melden"
         },
         
         "mod": {
-            "en": "Grant Mod"
+            "en": "Grant Mod",
+            "ne": "Maak Mod"
         },
         
         "deMod": {
-            "en": "Revoke Mod"
+            "en": "Revoke Mod",
+            "ne": "Ontneem Mod"
         },
         
         "apprentice": {
-            "en": "Grant Apprentice"
+            "en": "Grant Apprentice",
+            "ne": "Maak Leerling"
         },
         
         "deApprentice": {
-            "en": "Revoke Apprentice"
+            "en": "Revoke Apprentice",
+            "ne": "Ontneem Leerling"
         },
         
         "ban": {
-            "en": "Ban"
+            "en": "Ban",
+            "ne": "Ban"
         },
         
         "deBan": {
-            "en": "Lift Ban"
+            "en": "Lift Ban",
+            "ne": "Hef Ban op"
         },
         
         "guildMod": {
-            "en": "Grant Guild Mod"
+            "en": "Grant Guild Mod",
+            "ne": "Maak Gilde Mod"
         },
         
         "deGuildMod": {
-            "en": "Revoke Guild Mod"
+            "en": "Revoke Guild Mod",
+            "ne": "Ontneem Gilde Mod
         },
         
         "kick": {
-            "en": "Kick from Guild"
+            "en": "Kick from Guild",
+            "ne": "Uit Gilde verbannen"
         },
         
         "deKick": {
-            "en": "Revoke Kick"
+            "en": "Revoke Kick",
+            "ne": "Verbanning herroepen"
         },
         
         "message": {
-            "en": "Message"
+            "en": "Message",
+            "ne": "Bericht"
         },
         
         "cards": {
-            "en": "Cards"
+            "en": "Cards",
+            "ne": "Kaarten"
         },
         
         "close": {
-            "en": "Close"
+            "en": "Close",
+            "ne": "Sluiten"
         }
     }
 }
