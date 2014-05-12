@@ -5,35 +5,40 @@
             "en": "Guest",
             "ne": "Gast",
             "fr": "Invité",
-            "hu": "Guest"
+            "hu": "Guest",
+            "pi": "Deckhand"
         },
         
         "u": {
             "en": "Member",
             "ne": "Lid",
             "fr": "Membre",
-            "hu": "Member"
+            "hu": "Member",
+            "pi": "Sailor"
         },
         
         "p": {
             "en": "Apprentice",
             "ne": "Leerling",
             "fr": "Apprenti",
-            "hu": "Apprentice"
+            "hu": "Apprentice",
+            "pi": "Pirate"
         },
         
         "m": {
             "en": "Moderator",
             "ne": "Moderator",
             "fr": "Modérateur",
-            "hu": "Moderátor"
+            "hu": "Moderátor",
+            "pi": "First mate"
         },
         
         "a": {
             "en": "Admin",
             "ne": "Admin",
             "fr": "Admin",
-            "hu": "Admin"
+            "hu": "Admin",
+            "pi": "Cap'n"""
         }
     }
 }
