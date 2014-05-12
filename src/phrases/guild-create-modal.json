@@ -14,19 +14,22 @@
         "edit": {
             "en": "Edit",
             "ne": "Bewerken",
-            "fr": "Modifier"
+            "fr": "Modifier",
+            "pi": "Fix"
         },
         
         "name": {
             "en": "Name",
             "ne": "Naam",
-            "fr": "Nom"
+            "fr": "Nom",
+            "pi": "Name"
         },
         
         "desc": {
             "en": "Desc",
             "ne": "Beschrijving",
-            "fr": "Description"
+            "fr": "Description",
+            "pi": "Reputation"
         },
         
         "joinPolicy": {
