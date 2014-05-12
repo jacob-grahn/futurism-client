@@ -3,7 +3,8 @@
         
         "title": {
             "en": "Deck Builder",
-            "ne": "Deckbouwer"
+            "ne": "Deckbouwer",
+            "pi": "Fleet assembler"
         },
 
         "save": {
@@ -75,7 +76,7 @@
             "ko": "카드",
             "ct": "meow",
             "fr": "Cartes",
-            "pi": "Maps",
+            "pi": "Ships",
             "lt": "Kortos",
             "ne": "Kaarten",
             "sv": "Kort",
@@ -89,7 +90,8 @@
         "stats": {
             "en": "Stats",
             "ne": "Statistieken",
-            "fr": "Statistiques"
+            "fr": "Statistiques",
+            "pi": "Bounty"
         }
     }
 }

@@ -5,7 +5,8 @@
             "en": "Card Builder",
             "ne": "Kaartenbouwer",
             "hu": "Kártya Készítő",
-        },
+            "pi": "Ship builder"
+        }
 
         "name": {
             "en": "Name",
@@ -27,7 +28,8 @@
             "en": "Story",
             "hu": "Sztori",
             "ne": "Verhaal",
-            "fr": "Description"
+            "fr": "Description",
+            "pi": "Warrent"
         },
 
         "imageUpload": {
@@ -35,7 +37,7 @@
             "ko": "영상",
             "ct": "meow",
             "fr": "Charger une image",
-            "pi": "Enscribe yar map",
+            "pi": "Change yer flag",
             "lt": "Paveikslėlio įkelimas",
             "ne": "Kies een afbeelding",
             "sv": "bilduppladdning",
@@ -50,7 +52,8 @@
             "en": "Faction",
             "hu": "Faction",
             "ne": "Factie",
-            "fr": "Classe"
+            "fr": "Classe",
+            "pi": "Alignment"
         },
 
         "factionAbilities": {

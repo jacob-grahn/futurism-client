@@ -4,44 +4,51 @@
         "ask": {
             "en": "Ask to Join",
             "ne": "Vragen om toe te treden",
-            "fr": "Demander à rejoindre"
+            "fr": "Demander à rejoindre",
+            "pi": "Inquire within"
         },
         
         "join": {
             "en": "Join",
             "ne": "Toetreden",
             "fr": "Rejoindre",
-            "hu": "Csatlakozás"
+            "hu": "Csatlakozás",
+            "pi": "Enlist"
         },
         
         "edit": {
             "en": "Edit",
             "ne": "Bewerken",
-            "fr": "Modifier"
+            "fr": "Modifier",
+            "pi": "Fix"
         },
         
         "leave": {
             "en": "Leave This Guild",
             "ne": "Het gilde verlaten",
-            "fr": "Quitter la guilde"
+            "fr": "Quitter la guilde",
+            "pi": "Turn coat"
         },
         
         "perks": {
             "en": "Active Perks",
             "ne": "Actieve Bonussen",
-            "fr": "Avantages actifs"
+            "fr": "Avantages actifs",
+            "pi": "Extra rum"
         },
         
         "none": {
             "en": "None",
             "ne": "Geen",
-            "fr": "Aucun"
+            "fr": "Aucun",
+            "pi": "None"
         },
         
         "stats": {
             "en": "Stats",
             "ne": "Statistieken",
-            "fr": "Statistiques"
+            "fr": "Statistiques",
+            "pi": "History"
         }
     }
 }

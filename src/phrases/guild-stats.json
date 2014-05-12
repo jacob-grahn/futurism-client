@@ -5,7 +5,7 @@
             "en": "Leaders",
             "ne": "Leiders",
             "lt": "Vadovai",
-            "pi": "Captains",
+            "pi": "Cap'ns",
             "pl": "Dowódcy",
             "fr": "Chefs",
             "nb": "Ledere",
@@ -15,14 +15,15 @@
         "mods": {
             "en": "Mods",
             "ne": "Mods",
-            "fr": "Mods"
+            "fr": "Mods",
+            "pi": "First mates"
         },
 
         "members": {
             "en": "Members",
             "ne": "Leden",
             "lt": "Nariai",
-            "pi": "Crewers",
+            "pi": "Sailors",
             "pl": "Członkowie",
             "fr": "Membres",
             "nb": "Medlemmer",

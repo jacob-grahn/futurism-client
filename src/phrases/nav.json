@@ -3,7 +3,8 @@
         "applicants": {
             "en": "Applications",
             "ne": "Aanmeldingen",
-            "fr": "Applications"
+            "fr": "Applications",
+            "pi": "Wannabe sailors"
         },
         
         "reports": {
@@ -200,7 +201,8 @@
         "invites": {
             "en": "Guild Invites",
             "ne": "Gilde Uitnodigingen",
-            "fr": "Invitations de guilde"
+            "fr": "Invitations de guilde",
+            "pi": "Guild Invites"
         }
     }
 
