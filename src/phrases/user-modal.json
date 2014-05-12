@@ -4,103 +4,120 @@
         "viewBans": {
             "en": "View Bans",
             "ne": "Bekijk Bans",
-            "fr": "Voir bannissements"
+            "fr": "Voir bannissements",
+            "pi": "View arrests"
         },
         
         "invite": {
             "en": "Invite to Guild",
             "ne": "Uitnodigen in Gilde",
-            "fr": "Inviter dans la guilde"
+            "fr": "Inviter dans la guilde",
+            "pi": "Invite to Guild"
         },
         
         "deInvite": {
             "en": "Un-Invite",
             "ne": "Uitnodiging annuleren",
-            "fr": "Désinviter"
+            "fr": "Désinviter",
+            "pi": "Burn invitation"
         },
         
         "report": {
             "en": "Report",
             "ne": "Overtreding melden",
-            "fr": "Signaler"
+            "fr": "Signaler",
+            "pi": "Tip off coppers"
         },
         
         "mod": {
             "en": "Grant Mod",
             "ne": "Maak Mod",
-            "fr": "Promouvoir mod"
+            "fr": "Promouvoir mod",
+            "pi": "Promote (First Mate)"
         },
         
         "deMod": {
             "en": "Revoke Mod",
             "ne": "Ontneem Mod",
-            "fr": "Retirer mod"
+            "fr": "Retirer mod",
+            "pi": "Demote (from First Mate)"
         },
         
         "apprentice": {
             "en": "Grant Apprentice",
             "ne": "Maak Leerling",
-            "fr": "Promouvoir apprenti"
+            "fr": "Promouvoir apprenti",
+            "pi": "Promote (pirate)"
         },
         
         "deApprentice": {
             "en": "Revoke Apprentice",
             "ne": "Ontneem Leerling",
-            "fr": "Retirer apprenti"
+            "fr": "Retirer apprenti",
+            "pi": "Demote (from apprentice)"
         },
         
         "ban": {
             "en": "Ban",
             "ne": "Ban",
-            "fr": "Bannir"
+            "fr": "Bannir",
+            "pi": "Kick off ship"
         },
         
         "deBan": {
             "en": "Lift Ban",
             "ne": "Hef Ban op",
-            "fr": "Lever le bannissement"
+            "fr": "Lever le bannissement",
+            "pi": "Extend gangplank"
         },
         
         "guildMod": {
             "en": "Grant Guild Mod",
             "ne": "Maak Gilde Mod",
-            "fr": "Promouvoir mod de guilde"
+            "fr": "Promouvoir mod de guilde",
+            "pi": "Make First Mate of Guild"
         },
         
         "deGuildMod": {
             "en": "Revoke Guild Mod",
             "ne": "Ontneem Gilde Mod",
-            "fr": "Retirer mod de guilde"
+            "fr": "Retirer mod de guilde",
+            "pi": "Demote from First Mate of Guild"
         },
         
         "kick": {
             "en": "Kick from Guild",
             "ne": "Uit Gilde verbannen",
-            "fr": "Renvoyer de la guilde"
+            "fr": "Renvoyer de la guilde",
+            "pi": "Kick from Guild"
         },
         
         "deKick": {
             "en": "Revoke Kick",
             "ne": "Verbanning herroepen",
-            "fr": "Retirer le renvoi"
+            "fr": "Retirer le renvoi",
+            "pi": "Undo kick"
         },
         
         "message": {
             "en": "Message",
             "ne": "Bericht",
-            "fr": "Message"
+            "fr": "Message",
+            "pi": "Message in a bottle"
         },
         
         "cards": {
             "en": "Cards",
             "ne": "Kaarten",
-            "fr": "Cartes"
+            "fr": "Cartes",
+            "pi": "Ships"
         },
         
         "close": {
             "en": "Close",
             "ne": "Sluiten",
-            "fr": "Fermer"
+            "fr": "Fermer",
+            "pi": "Seal"
         }
     }
 }
