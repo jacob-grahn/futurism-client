@@ -5,56 +5,64 @@
             "en": "Futures",
             "ne": "Toekomsten",
             "fr": "Futures",
-            "hu": "Jövendők"
+            "hu": "Jövendők",
+            "pi": "Tomorrows"
         },
         
         "conversions": {
             "en": "Conversions",
             "ne": "Omzettingen",
             "fr": "Conversions",
-            "hu": "Konverziók"
+            "hu": "Konverziók",
+            "pi": "Currency exchangin'"
         },
         
         "fantasims": {
             "en": "Fantasims",
             "ne": "Fantasmes",
             "fr": "Fanatismes",
-            "hu": "Fantasims"
+            "hu": "Fantasims",
+            "pi": "Fantasims"
         },
         
         "compliment": {
             "en": "T-Machine likes your style!",
             "ne": "T-Machine houdt wel van jouw stijl!",
             "fr": "T-Machine aime votre style !",
-            "hu": "T-Gépezet-nak tetszik a stílusod!"
+            "hu": "T-Gépezet-nak tetszik a stílusod!",
+            "pi": "Bartender likes your style!"
         },
         
         "fractureNeedA": {
             "en": "T-Machine needs",
             "ne": "T-Machine heeft nodig",
             "fr": "T-Machine a besoin de",
-            "hu": "T-Gépezet szükséges"
+            "hu": "T-Gépezet szükséges",
+            "pi": "Bartender wants"
         },
         
         "fractureNeedB": {
             "en": "fracture(s) to reach a new future.",
             "ne": "breuk(en) om een nieuwe toekomst te bereiken.",
-            "fr": "fracture(s) pour atteindre un nouveau futur",
-            "hu": "Törés(ek) hogy elérj egy új jövendőt."
+            "fr": "fracture(s) pour atteindre un nouveau futur.",
+            "hu": "Törés(ek) hogy elérj egy új jövendőt.",
+            "pi": "fractarrr(s) to reach a new tomorrow."
         },
         
         "fractureHaveA": {
             "en": "You have",
             "ne": "Je hebt",
             "fr": "Vous avez",
-            "hu": "Neked van"
+            "hu": "Neked van",
+            "pi": "Ye have"
         },
         
         "fractureHaveB": {
             "en": "fracture(s).",
             "ne": "breuk(en).",
-            "fr": "fracture(s)",
-            "hu": "törés(ek)"
+            "fr": "fracture(s).",
+            "hu": "törés(ek).",
+            "pi": "fractarrr(s)."
         }
     }
 }
