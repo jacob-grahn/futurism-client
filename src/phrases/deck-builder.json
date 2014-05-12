@@ -3,7 +3,8 @@
         
         "title": {
             "en": "Deck Builder",
-            "ne": "Deckbouwer"
+            "ne": "Deckbouwer",
+            "pi": "Fleet assembler"
         },
 
         "save": {
@@ -89,7 +90,8 @@
         "stats": {
             "en": "Stats",
             "ne": "Statistieken",
-            "fr": "Statistiques"
+            "fr": "Statistiques",
+            "pi": "Bounty"
         }
     }
 }
