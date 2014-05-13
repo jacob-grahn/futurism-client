@@ -58,7 +58,13 @@
     </div>
 
     <div id="cards" class="col-sm-7">
-        <div class="clearfix">
+        <tabset>
+            <tab ng-repeat="tab in tabs" heading="test heading">
+                woop
+            </tab>
+        </tabset>
+        
+        <!-- <div class="clearfix">
             <h3>{{lang.deckBuilder.myCards}}</h3>
             <paginated resource="CardResource" results="myCards" query="myCardsQuery">
             <ul class="card-list clearfix">
@@ -89,7 +95,7 @@
                 </li>
             </ul>
             </paginated>
-        </div>
+        </div> -->
     </div>
 
 </div>

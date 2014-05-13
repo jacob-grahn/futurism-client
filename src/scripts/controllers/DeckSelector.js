@@ -53,16 +53,16 @@ angular.module('futurism')
         
         
         $scope.canDelete = function(deck) {
-            return me.user.group === shared.groups.MOD || me.user.group === shared.groups.ADMIN || deck.user._id === me.user._id;
+            return me.user.group === shared.groups.MOD || me.user.group === shared.groups.ADMIN || deck.userId === me.userId;
         };
         
         
         $scope.canAddFavorite = function(deck) {
-            return me.stats.favDecks.indexOf(deck._id) === -1;
+            return me.stats.favDecks && me.stats.favDecks.indexOf(deck._id) === -1;
         };
         
         
         $scope.canRemoveFavorite = function(deck) {
-            return me.stats.favDecks.indexOf(deck._id) !== -1;
+            return me.stats.favDecks && me.stats.favDecks.indexOf(deck._id) !== -1;
         };
     });

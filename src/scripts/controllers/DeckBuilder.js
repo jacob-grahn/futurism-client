@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .controller('DeckBuilderCtrl', function($scope, CardResource, FavoriteCardResource, PublicCardResource, DeckResource, deckInProgress, shared, me, _) {
+    .controller('DeckBuilderCtrl', function($scope, CardResource, FavoriteCardResource, PublicCardResource, DeckResource, deckInProgress, shared, me, _, lang) {
         'use strict';
 
         var deck = deckInProgress.deck;
@@ -17,6 +17,12 @@ angular.module('futurism')
         $scope.PublicCardResource = PublicCardResource;
         $scope.popularCardsQuery = {};
         $scope.popularCards = [];
+        
+        $scope.tabs = [
+            {heading: lang.deckBuilder.myCards},
+            {heading: lang.deckBuilder.favoriteCards},
+            {heading: lang.deckBuilder.popularCards}
+        ];
         
         $scope.me = me;
 
