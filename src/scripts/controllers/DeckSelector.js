@@ -1,13 +1,16 @@
 angular.module('futurism')
-    .controller('DeckSelectorCtrl', function($scope, $location, deckInProgress, DeckResource, me, _) {
+    .controller('DeckSelectorCtrl', function($scope, $location, $routeParams, deckInProgress, DeckResource, me, _) {
         'use strict';
 
-        $scope.decks = DeckResource.query(function(){});
+        $scope.DeckResource = DeckResource;
+        $scope.query = {userId: $routeParams.userId};
+        $scope.decks = [];
+
         $scope.me = me;
 
         
         $scope.select = function(deck) {
-            deckInProgress.deck = DeckResource.get({deckId: deck._id});
+            deckInProgress.deck = DeckResource.get({deckId: deck._id, userId: $routeParams.userId});
             $location.url('/deck-builder');
         };
         

@@ -5,12 +5,16 @@ angular.module('futurism')
         loadup.resumePrep();
 
         $scope.DeckResource = DeckResource;
-        $scope.FavoriteDeckResource = FavoriteDeckResource;
-        $scope.PublicDeckResource = PublicDeckResource;
-        
         $scope.myDecksQuery = {userId: me.userId};
+        $scope.myDecks = [];
+        
+        $scope.FavoriteDeckResource = FavoriteDeckResource;
         $scope.favoriteDecksQuery = {userId: me.userId};
-        $scope.hotDecksQuery = {sort: 'hot', maxCards: loadup.rules.deckSize};
+        $scope.favoriteDecks = [];
+        
+        $scope.PublicDeckResource = PublicDeckResource;
+        $scope.hotDecksQuery = {maxCards: loadup.rules.deckSize};
+        $scope.hotDecks = [];
         
         $scope.rules = loadup.rules;
 

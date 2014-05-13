@@ -22,7 +22,8 @@ angular.module('futurism')
             var params = {
                 name: deck.name,
                 cards: cardIds,
-                share: deck.share
+                share: deck.share,
+                userId: me.userId
             };
             
             var promise = DeckResource.save(params, function(storedDeck) {
