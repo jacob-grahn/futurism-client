@@ -9,6 +9,24 @@
             "hu": "Módosít"
         },
         
+        "addFavorite": {
+            "en": "+ Favorite"
+        },
+        
+        "removeFavorite": {
+            "en": "- Favorite"
+        },
+        
+        "delete": {
+            "en": "Delete",
+            "ne": "Verwijder",
+            "pl": "Usun",
+            "nb": "Slett",
+            "fr": "Supprimer",
+            "pi": "Burn message",
+            "hu": "Törlés"
+        },
+        
         "newDeck": {
             "en": "New Deck",
             "pi": "New fleet",

@@ -2,7 +2,7 @@
     "messages": {
         
         "delete": {
-            "en": "delete",
+            "en": "Delete",
             "ne": "verwijder",
             "pl": "usun",
             "nb": "slett",
@@ -12,7 +12,7 @@
         },
         
         "report": {
-            "en": "report",
+            "en": "Report",
             "ne": "overtreding melden",
             "pl": "zreportuj",
             "nb": "rapporter",

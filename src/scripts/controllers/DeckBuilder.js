@@ -7,7 +7,7 @@ angular.module('futurism')
         $scope.deckFns = shared.deckFns;
 
         $scope.CardResource = CardResource;
-        $scope.query = {userId: me.user._id, cannon: true};
+        $scope.query = {userId: me.user._id};
         $scope.cards = [];
         $scope.me = me;
 
