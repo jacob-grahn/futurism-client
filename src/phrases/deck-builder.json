@@ -5,7 +5,19 @@
             "en": "Deck Builder",
             "ne": "Deckbouwer"
         },
-
+        
+        "none": {
+            "en": "None"
+        },
+        
+        "share": {
+            "en": "Share"
+        },
+        
+        "shareDesc": {
+            "en": "Let other players use this deck"
+        },
+        
         "save": {
             "en": "Save",
             "ko": "저장",

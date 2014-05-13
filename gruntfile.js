@@ -44,7 +44,7 @@
                     files: ['{.tmp,<%= yeoman.app %>}/data/*']
                 },
                 phrases: {
-                    files: ['<%= yeoman.app %>/phrases'],
+                    files: ['<%= yeoman.app %>/phrases/*.json'],
                     tasks: ['merge-json']
                 },
                 js: {

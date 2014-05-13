@@ -22,7 +22,7 @@ angular.module('futurism')
             var params = {
                 name: deck.name,
                 cards: cardIds,
-                pride: shared.deckFns.calcPride(deck)
+                share: deck.share
             };
             
             var promise = DeckResource.save(params, function(storedDeck) {

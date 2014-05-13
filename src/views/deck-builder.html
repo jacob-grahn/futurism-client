@@ -11,18 +11,21 @@
                 <div class="form-group">
                     <label for="inputName" class="col-md-2 control-label">{{lang.deckBuilder.name}}</label>
                     <div class="col-md-10">
-                        <input id="inputName" class="form-control" type="text" ng-model="deck.name" placeholder="Name">
+                        <input id="inputName" class="form-control" type="text" ng-model="deck.name">
                     </div>
                 </div>
                 
                 <div class="form-group">
                     <label class="col-md-2 control-label">{{lang.deckBuilder.cards}}</label>
                     <div class="col-md-10">
-                        <ul class="card-list clearfix">
+                        <ul class="card-list clearfix" ng-if="deck.cards.length > 0">
                             <li class="card-holder" ng-repeat="card in deck.cards">
                                 <card-display card="card" ng-click="removeCard(card)" size="small"></card-display>
                             </li>
                         </ul>
+                        <span class="subtle" ng-if="deck.cards.length === 0">
+                            {{lang.deckBuilder.none}}
+                        </span>
                     </div>
                 </div>
                 
@@ -30,6 +33,15 @@
                     <label class="col-md-2 control-label">{{lang.deckBuilder.stats}}</label>
                     <div class="col-md-10">
                         <deck-analyzer deck="deck"></deck-analyzer>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="share-box" class="col-md-2 control-label">{{lang.deckBuilder.share}}</label>
+                    <div class="col-md-10">
+                        <div class="checkbox">
+                            <label><input id="share-box" type="checkbox" ng-model="deck.share"> {{lang.deckBuilder.shareDesc}}</label>
+                        </div>
                     </div>
                 </div>
                 

@@ -4,7 +4,15 @@
         "title": {
             "en": "Card Builder",
             "ne": "Kaartenbouwer",
-            "hu": "Kártya Készítő",
+            "hu": "Kártya Készítő"
+        },
+        
+        "share": {
+            "en": "Share"
+        },
+        
+        "shareDesc": {
+            "en": "Let other players use this card in their decks"
         },
 
         "name": {
