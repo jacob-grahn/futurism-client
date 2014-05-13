@@ -58,7 +58,7 @@ angular.module('futurism')
         
         
         $scope.canAddFavorite = function(deck) {
-            return me.stats.favDecks && me.stats.favDecks.indexOf(deck._id) === -1;
+            return me.stats.favDecks && me.stats.favDecks.indexOf(deck._id) === -1 && me.userId !== deck.userId && deck.share;
         };
         
         
