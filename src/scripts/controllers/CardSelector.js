@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .controller('CardSelectorCtrl', function ($scope, $location, $routeParams, CardResource, UserResource, cardInProgress, me, shared, _) {
+    .controller('CardSelectorCtrl', function ($scope, $location, $routeParams, CardResource, FavoriteCardResource, UserResource, cardInProgress, me, shared, _) {
         'use strict';
 
         var groups = shared.groups;
@@ -12,11 +12,13 @@ angular.module('futurism')
         $scope.query = {userId: $scope.userId};
         $scope.cards = [];
 
+        
         $scope.newCard = function() {
             cardInProgress.reset();
             $location.url('/card-builder');
         };
 
+        
         $scope.selectCard = function (card) {
             if ($scope.userId === me.user._id) {
                 cardInProgress.card = card;
@@ -24,6 +26,7 @@ angular.module('futurism')
             }
         };
 
+        
         $scope.reportCard = function (card) {
             var r = CardResource.save({
                 userId: card.userId,
@@ -35,6 +38,7 @@ angular.module('futurism')
             return r.$promise;
         };
 
+        
         $scope.deleteCard = function (card) {
             var r = CardResource.delete({
                 userId: card.userId,
@@ -45,16 +49,44 @@ angular.module('futurism')
             return r.$promise;
         };
         
+        
+        $scope.addFavorite = function(card) {
+            FavoriteCardResource.put({userId: me.userId, cardId: card._id}, function() {
+                me.stats.favCards.push(card._id);
+                me.stats.favCards = _.unique(me.stats.favCards);
+            });
+        };
+        
+        
+        $scope.removeFavorite = function(card) {
+            FavoriteCardResource.delete({userId: me.userId, cardId: card._id}, function() {
+                _.pull(me.stats.favCards, card._id);
+            });
+        };
+        
+        
+        $scope.canAddFavorite = function(card) {
+            return me.stats.favCards && me.stats.favCards.indexOf(card._id) === -1;
+        };
+        
+        
+        $scope.canRemoveFavorite = function(card) {
+            return me.stats.favCards && me.stats.favCards.indexOf(card._id) !== -1;
+        };
+        
+        
         $scope.canEdit = function(card) {
             return me.userId === card.userId;
         };
 
+        
         $scope.canReport = function () {
             if (me.user.group === groups.APPRENTICE || me.user.group === groups.MOD || me.user.group === groups.ADMIN) {
                 return true;
             }
         };
 
+        
         $scope.canDelete = function (card) {
             if (card.userId === me.user._id) {
                 return true;

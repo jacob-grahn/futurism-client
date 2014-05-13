@@ -18,6 +18,18 @@
             "en": "Let other players use this deck"
         },
         
+        "myCards": {
+            "en": "My Cards"
+        },
+        
+        "favoriteCards": {
+            "en": "Favorites"
+        },
+        
+        "popularCards": {
+            "en": "Popular"
+        },
+        
         "save": {
             "en": "Save",
             "ko": "저장",

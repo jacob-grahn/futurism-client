@@ -58,13 +58,38 @@
     </div>
 
     <div id="cards" class="col-sm-7">
-        <paginated resource="CardResource" results="cards" query="query">
-        <ul class="card-list clearfix">
-            <li class="card-holder" ng-repeat="card in cards">
-                <card-display card="card" ng-click="addCard(card)" size="medium"></card-display>
-            </li>
-        </ul>
-        </paginated>
+        <div class="clearfix">
+            <h3>{{lang.deckBuilder.myCards}}</h3>
+            <paginated resource="CardResource" results="myCards" query="myCardsQuery">
+            <ul class="card-list clearfix">
+                <li class="card-holder" ng-repeat="card in myCards">
+                    <card-display card="card" ng-click="addCard(card)" size="medium"></card-display>
+                </li>
+            </ul>
+            </paginated>
+        </div>
+        
+        <div class="clearfix">
+            <h3>{{lang.deckBuilder.favoriteCards}}</h3>
+            <paginated resource="FavoriteCardResource" results="favoriteCards" query="favoriteCardsQuery">
+            <ul class="card-list clearfix">
+                <li class="card-holder" ng-repeat="card in favoriteCards">
+                    <card-display card="card" ng-click="addCard(card)" size="medium"></card-display>
+                </li>
+            </ul>
+            </paginated>
+        </div>
+        
+        <div class="clearfix">
+            <h3>{{lang.deckBuilder.popularCards}}</h3>
+            <paginated resource="PublicCardResource" results="popularCards" query="popularCardsQuery">
+            <ul class="card-list clearfix">
+                <li class="card-holder" ng-repeat="card in popularCards">
+                    <card-display card="card" ng-click="addCard(card)" size="medium"></card-display>
+                </li>
+            </ul>
+            </paginated>
+        </div>
     </div>
 
 </div>

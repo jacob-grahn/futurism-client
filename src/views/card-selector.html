@@ -10,6 +10,8 @@
             <button ng-if="canEdit(card)" class="btn btn-default" ng-click="selectCard(card)">{{lang.cardSelector.edit}}</button>
             <busy-button ng-if="canDelete(card)" on-click="deleteCard(card)" label="{{lang.cardSelector.delete}}"></busy-button>
             <busy-button ng-if="canReport(card)" on-click="reportCard(card)" label="{{lang.cardSelector.report}}"></busy-button>
+            <button ng-if="canAddFavorite(card)" class="btn btn-default" ng-click="addFavorite(card)">{{lang.deckSelector.addFavorite}}</button>
+            <button ng-if="canRemoveFavorite(card)" class="btn btn-default" ng-click="removeFavorite(card)">{{lang.deckSelector.removeFavorite}}</button>
         </li>
     </ul>
 </paginated>
