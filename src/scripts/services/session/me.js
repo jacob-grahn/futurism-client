@@ -29,6 +29,7 @@ angular.module('futurism')
          * Public interface
          */
         var self = {
+            UPDATED: 'event:me:user:updated',
             targetSite: 'j',
             loggedIn: false,
             userId: '',
@@ -44,7 +45,7 @@ angular.module('futurism')
             reload: function() {
                 self.stats = StatsResource.save();
                 self.user = UserResource.get({userId: self.userId}, function() {
-                    $rootScope.$broadcast('event:me:user:updated');
+                    $rootScope.$broadcast(self.UPDATED);
                 });
             },
 

@@ -30,6 +30,14 @@
             "en": "Popular"
         },
         
+        "add": {
+            "en": "Add"
+        },
+        
+        "remove": {
+            "en": "X"
+        },
+        
         "save": {
             "en": "Save",
             "ko": "저장",

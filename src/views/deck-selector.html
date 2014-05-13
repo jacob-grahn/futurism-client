@@ -8,10 +8,12 @@
         <ul class="deck-list">
             <li class="deck-holder" ng-repeat="deck in decks">
                 <deck-display size="medium" ng-click="select(deck)"></deck-display>
-                <button ng-if="canEdit(deck)" class="btn btn-default" ng-click="select(deck)">{{lang.deckSelector.edit}}</button>
-                <button ng-if="canAddFavorite(deck)" class="btn btn-default" ng-click="addFavorite(deck)">{{lang.deckSelector.addFavorite}}</button>
-                <button ng-if="canRemoveFavorite(deck)" class="btn btn-default" ng-click="removeFavorite(deck)">{{lang.deckSelector.removeFavorite}}</button>
-                <busy-button ng-if="canDelete(deck)" on-click="deleteDeck(deck)" label="{{lang.messages.delete}}"></busy-button>
+                <ul class="card-options">
+                    <li ng-if="canEdit(deck)"><button class="btn btn-primary" ng-click="select(deck)">{{lang.deckSelector.edit}}</button></li>
+                    <li ng-if="canAddFavorite(deck)"><button class="btn btn-primary" ng-click="addFavorite(deck)">{{lang.deckSelector.addFavorite}}</button></li>
+                    <li ng-if="canRemoveFavorite(deck)"><button class="btn btn-default" ng-click="removeFavorite(deck)">{{lang.deckSelector.removeFavorite}}</button></li>
+                    <li ng-if="canDelete(deck)"><busy-button class="btn btn-danger" on-click="deleteDeck(deck)" label="{{lang.messages.delete}}"></busy-button></li>
+                </ul>
             </li>
         </ul>
     </div>

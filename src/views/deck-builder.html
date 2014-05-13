@@ -20,7 +20,12 @@
                     <div class="col-md-10">
                         <ul class="card-list clearfix" ng-if="deck.cards.length > 0">
                             <li class="card-holder" ng-repeat="card in deck.cards">
-                                <card-display card="card" ng-click="removeCard(card)" size="small"></card-display>
+                                <card-magnify card="card" size="small" magnify="large"></card-magnify>
+                                <ul class="card-options">
+                                    <li>
+                                        <button class="btn btn-default" ng-click="removeCard(card)">{{lang.deckBuilder.remove}}</button>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                         <span class="subtle" ng-if="deck.cards.length === 0">
@@ -57,45 +62,23 @@
         </form>
     </div>
 
-    <div id="cards" class="col-sm-7">
-        <tabset>
-            <tab ng-repeat="tab in tabs" heading="test heading">
-                woop
-            </tab>
-        </tabset>
-        
-        <!-- <div class="clearfix">
-            <h3>{{lang.deckBuilder.myCards}}</h3>
-            <paginated resource="CardResource" results="myCards" query="myCardsQuery">
-            <ul class="card-list clearfix">
-                <li class="card-holder" ng-repeat="card in myCards">
-                    <card-display card="card" ng-click="addCard(card)" size="medium"></card-display>
-                </li>
-            </ul>
+    <tabset id="cards" class="col-sm-7">
+        <tab ng-repeat="tab in tabs" heading="{{lang.deckBuilder[tab.heading]}}">
+
+            <paginated resource="tab.resource" results="tab.results" query="tab.query" refresh-on="event:sessionChanged">
+                <ul class="card-list clearfix">
+                    <li class="card-holder" ng-repeat="card in tab.results">
+                        <card-magnify card="card" size="medium" magnify="large"></card-magnify>
+                        <ul class="card-options">
+                            <li>
+                                <button class="btn btn-primary" ng-click="addCard(card)">{{lang.deckBuilder.add}}</button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </paginated>
-        </div>
-        
-        <div class="clearfix">
-            <h3>{{lang.deckBuilder.favoriteCards}}</h3>
-            <paginated resource="FavoriteCardResource" results="favoriteCards" query="favoriteCardsQuery">
-            <ul class="card-list clearfix">
-                <li class="card-holder" ng-repeat="card in favoriteCards">
-                    <card-display card="card" ng-click="addCard(card)" size="medium"></card-display>
-                </li>
-            </ul>
-            </paginated>
-        </div>
-        
-        <div class="clearfix">
-            <h3>{{lang.deckBuilder.popularCards}}</h3>
-            <paginated resource="PublicCardResource" results="popularCards" query="popularCardsQuery">
-            <ul class="card-list clearfix">
-                <li class="card-holder" ng-repeat="card in popularCards">
-                    <card-display card="card" ng-click="addCard(card)" size="medium"></card-display>
-                </li>
-            </ul>
-            </paginated>
-        </div> -->
-    </div>
+
+        </tab>
+    </tabset>
 
 </div>

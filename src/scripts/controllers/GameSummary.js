@@ -41,7 +41,6 @@ angular.module('futurism')
             fillCards($scope.summ.users, $scope.summ.cards);
             _.delay(function() {
                 if(iWonFracture($scope.summ)) {
-                    console.log('open fracture');
                     modals.openFracture();
                 }
             }, 1000);

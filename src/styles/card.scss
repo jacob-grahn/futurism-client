@@ -71,6 +71,12 @@ body .card-no h1 {
 .card-medium h1 {
     font-size: 18px;
 }
+.card-small h1 {
+    font-size: 18px;
+}
+.card-small .abilities {
+    display: none;
+}
 
 
 
@@ -147,10 +153,10 @@ body .card-no h1 {
 
 
 .card ul {
-  margin: 10px 0;
-  padding: 0 5px;
+    margin: 10px 0;
+    padding: 0 5px;
     font-size: 22px;
-  font-weight: bold;
+    font-weight: bold;
     position: relative;
     left: 10px;
 }
@@ -163,9 +169,9 @@ body .card-no h1 {
 
 
 .card-image-holder {
-  width: 260px;
-  height: 180px;
-  background-color: black;
+    width: 260px;
+    height: 180px;
+    background-color: black;
     position: relative;
     overflow: hidden;
 }
@@ -180,7 +186,7 @@ body .card-no h1 {
 
 
 .card-story {
-  margin: 0 15px 25px 15px;
+    margin: 0 15px 25px 15px;
     font-style: italic;
     text-align: center;
 }
@@ -213,12 +219,12 @@ body .card-no h1 {
 
 
 .card-stats {
-  position: absolute;
-  right: 10px;
-  bottom: 5px;
-  background-color: white;
-  z-index: 8;
-  font-weight: bold;
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    background-color: white;
+    z-index: 8;
+    font-weight: bold;
 }
 .card-medium .card-stats {
     right: 6px;
@@ -227,12 +233,12 @@ body .card-no h1 {
 
 
 .card-pride {
-  position: absolute;
-  left: 10px;
-  bottom: 5px;
-  background-color: white;
-  z-index: 8;
-  font-weight: bold;
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
+    background-color: white;
+    z-index: 8;
+    font-weight: bold;
 }
 .card-medium .card-pride {
     left: 6px;
@@ -321,9 +327,13 @@ body .card-no h1 {
     position: absolute;
     top: -135px; left: -100px;
     z-index: 11;
-    -webkit-transition: 0.25s;
     transition: 0.25s;
     opacity: 1;
+}
+
+.card-magnify-medium .card-bigger-large {
+    top: -100px;
+    left: -70px;
 }
 
 .card-bigger-large.ng-hide {
@@ -334,4 +344,14 @@ body .card-no h1 {
 .card-bigger-large.ng-hide-add,
 .card-bigger-large.ng-hide-remove {
     display: block !important;
+}
+
+
+
+.card-options {
+    margin-top: 5px;
+}
+
+.card-options li {
+    padding: 0 0 5px 0;
 }

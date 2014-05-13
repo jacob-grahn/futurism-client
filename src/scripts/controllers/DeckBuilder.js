@@ -1,30 +1,38 @@
 angular.module('futurism')
-    .controller('DeckBuilderCtrl', function($scope, CardResource, FavoriteCardResource, PublicCardResource, DeckResource, deckInProgress, shared, me, _, lang) {
+    .controller('DeckBuilderCtrl', function($scope, CardResource, FavoriteCardResource, PublicCardResource, DeckResource, deckInProgress, shared, me, _) {
         'use strict';
 
         var deck = deckInProgress.deck;
         $scope.deck = deck;
         $scope.deckFns = shared.deckFns;
-
-        $scope.CardResource = CardResource;
-        $scope.myCardsQuery = {userId: me.user._id};
-        $scope.myCards = [];
-        
-        $scope.FavoriteCardResource = FavoriteCardResource;
-        $scope.favoriteCardsQuery = {userId: me.user._id};
-        $scope.favoriteCards = [];
-        
-        $scope.PublicCardResource = PublicCardResource;
-        $scope.popularCardsQuery = {};
-        $scope.popularCards = [];
+        $scope.me = me;
         
         $scope.tabs = [
-            {heading: lang.deckBuilder.myCards},
-            {heading: lang.deckBuilder.favoriteCards},
-            {heading: lang.deckBuilder.popularCards}
+            {
+                heading: 'myCards',
+                resource: CardResource,
+                query: {userId: me.userId},
+                results: []
+            },
+            {
+                heading: 'favoriteCards',
+                resource: FavoriteCardResource,
+                query: {userId: me.userId},
+                results: []
+            },
+            {
+                heading: 'popularCards',
+                resource: PublicCardResource,
+                query: {},
+                results: []
+            }
         ];
         
-        $scope.me = me;
+        
+        $scope.$on('event:sessionChanged', function(srcScope, session) {
+            $scope.tabs[0].query.userId = session._id;
+            $scope.tabs[1].query.userId = session._id;
+        });
 
 
         $scope.saveDeck = function() {
