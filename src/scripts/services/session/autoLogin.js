@@ -2,6 +2,15 @@ angular.module('futurism')
     .factory('autoLogin', function($location, $rootScope, authService, session) {
         'use strict';
 
+        var loginRequiredHandler = function() {
+            session.renew(function(error) {
+                if(error) {
+                    return $location.path('/error');
+                }
+                return authService.loginConfirmed(null);
+            });
+        };
+        
         var self = this;
         var removeListener;
 
@@ -16,15 +25,6 @@ angular.module('futurism')
                 removeListener();
                 removeListener = null;
             }
-        };
-
-        var loginRequiredHandler = function() {
-            session.renew(function(error) {
-                if(error) {
-                    return $location.path('/error');
-                }
-                return authService.loginConfirmed(null);
-            });
         };
 
         return self;
