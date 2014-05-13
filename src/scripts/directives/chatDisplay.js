@@ -67,7 +67,7 @@ angular.module('futurism')
                 scope.$on('$destroy', function() {
                     $(window).off('resize', scrollToBottom);
                     if(scope.chat) {
-                        scope.chat.unsubscribe();
+                        scope.chat.unsubscribe(scope.room);
                     }
                 });
             }

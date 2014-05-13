@@ -55,6 +55,7 @@ angular.module('futurism')
 
 
         var self = {
+            
 
             /**
              * connect to a game server

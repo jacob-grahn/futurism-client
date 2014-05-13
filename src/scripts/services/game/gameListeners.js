@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .factory('gameListeners', function($routeParams, $location, socket, players, turn, board, state, hand, updateDelayer, autoTurnEnder, shared, sound, me, timer, _) {
+    .factory('gameListeners', function($routeParams, $location, socket, players, turn, board, state, hand, updateDelayer, autoTurnEnder, shared, sound, me, timer, _, subscriber) {
         'use strict';
         var self = this;
 
@@ -87,7 +87,7 @@ angular.module('futurism')
          * @param {string} gameId
          */
         self.subscribe = function(gameId) {
-            socket.emit('subscribe', gameId);
+            subscriber.subscribe(gameId);
             socket.emit('gameStatus', {gameId: gameId});
         };
 
@@ -97,7 +97,7 @@ angular.module('futurism')
          * @param {string} gameId
          */
         self.unsubscribe = function(gameId) {
-            socket.emit('unsubscribe', gameId);
+            subscriber.unsubscribe(gameId);
         };
 
 

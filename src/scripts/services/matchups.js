@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .factory('matchups', function(socket, $rootScope, me, _, loadup) {
+    .factory('matchups', function(socket, $rootScope, me, _, loadup, subscriber) {
         'use strict';
 
         var self = this;
@@ -14,7 +14,7 @@ angular.module('futurism')
             self.unsubscribe();
             self.lobbyName = lobbyName;
             socket.emit('allMatchups', {lobbyName: self.lobbyName});
-            socket.emit('subscribe', self.lobbyName);
+            subscriber.subscribe(self.lobbyName);
         };
 
 
@@ -23,7 +23,7 @@ angular.module('futurism')
          */
         self.unsubscribe = function() {
             if(self.lobbyName) {
-                socket.emit('unsubscribe', self.lobbyName);
+                subscriber.unsubscribe(self.lobbyName);
                 self.leave();
                 self.lobbyName = null;
             }

@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .factory('chat', function(socket) {
+    .factory('chat', function(socket, subscriber) {
         'use strict';
 
         var roomName;
@@ -67,7 +67,7 @@ angular.module('futurism')
              * Start listening room
              */
             subscribe: function(roomName) {
-                socket.emit('subscribe', roomName);
+                subscriber.subscribe(roomName);
                 socket.emit('chatHistory', {roomName: roomName});
             },
 
@@ -76,7 +76,7 @@ angular.module('futurism')
              * Stop listening room
              */
             unsubscribe: function(roomName) {
-                socket.emit('unsubscribe', roomName);
+                subscriber.unsubscribe(roomName);
             },
 
 
