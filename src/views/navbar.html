@@ -3,7 +3,7 @@
 
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+        <button type="button" class="navbar-toggle btn navbar-btn" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
             <span class="sr-only">{{lang.nav.toggle}}</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -13,14 +13,16 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-        <ul class="nav navbar-nav">
+    <div class="collapse navbar-collapse" collapse="navCollapsed">
+        
+        <ul class="nav navbar-nav" ng-click="navCollapsed=true">
             <li ng-class="{active: atLobby()}"><a ng-href="/lobby">{{lang.nav.lobby}}</a></li>
             <li ng-class="{active: atGuild()}"><a ng-href="/guild-list">{{lang.nav.guild}}</a></li>
             <li ng-class="{active: atDeckBuilder()}"><a ng-href="/deck-selector/{{me.user._id}}">{{lang.nav.deckBuilder}}</a></li>
             <li ng-class="{active: atCardBuilder()}"><a ng-href="/card-selector/{{me.user._id}}">{{lang.nav.cardBuilder}}</a></li>
             <li ng-class="{active: atStore()}"><a ng-href="/t-machine">{{lang.nav.store}}</a></li>
         </ul>
+        
         <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -28,7 +30,7 @@
                     <username user="me.user" link="false"></username>
                     <b class="caret"></b>
                 </a>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu" ng-click="navCollapsed=true">
                     <li><a ng-click="clickStats()">{{lang.nav.stats}}</a></li>
                     <li><a href="/messages"><span class="unread" ng-if="unread.unreadCount > 0">({{unread.unreadCount}}) </span>{{lang.nav.messages}}</a></li>
                     <li ng-if="unread.inviteCount > 0"><a ng-click="clickInvites()"><span class="unread">({{unread.inviteCount}}) </span>{{lang.nav.invites}}</a></li>
@@ -36,10 +38,12 @@
                     <li ng-if="me.user.group === 'm' || me.user.group === 'a'"><a ng-href="/reports">{{lang.nav.reports}}</a></li>
                     <li ng-if="me.user.group === 'm' || me.user.group === 'a'"><a ng-href="/mod-logs">{{lang.nav.modLog}}</a></li>
                     <li><a ng-href="/language">{{lang.nav.language}}</a></li>
+                    <li class="divider"></li>
                     <li><a ng-click="logout()">{{lang.nav.logout}}</a></li>
                 </ul>
             </li>
         </ul>
+        
     </div><!-- /.navbar-collapse -->
 
     <div ng-show="messager.cur" class="message-holder slide-down-animation" style="clear:both">
