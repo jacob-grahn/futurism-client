@@ -41,6 +41,22 @@
             "ne": "Selecteer een Toekomst!",
             "fr": "Choisir un futur",
             "hu": "Válassz egy Jövendőt!"
+        },
+        
+        "myDecks": {
+            "en": "My Decks"
+        },
+        
+        "favoriteDecks": {
+            "en": "Favorite Decks"
+        },
+        
+        "hotDecks": {
+            "en": "Popular Decks"
+        },
+        
+        "none": {
+            "en": "None"
         }
     }
 }

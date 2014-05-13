@@ -2,11 +2,49 @@
 
     <div class="deck-selector">
         <h1 class="inverse">{{lang.loadup.selectDeck}} <br>{{lang.loadup.maxDeckSize}}: {{rules.deckSize}} {{lang.deck.cards}}</h1>
-        <ul class="deck-list">
-            <li ng-repeat="deck in decks | orderBy:'cards.length':true">
-                <deck-display ng-click="select(deck)" size="medium" active="{{deck.cards.length <= rules.deckSize ? 'active' : 'inactive'}}"></deck-display>
-            </li>
-        </ul>
+        
+        <div class="col-md-6">
+            <h3 class="inverse">{{lang.loadup.myDecks}}</h3>
+            <paginated resource="DeckResource" query="myDecksQuery" results="myDecks">
+                <span ng-if="myDecks.length === 0" class="subtle">{{lang.loadup.none}}</span>
+                <ul class="deck-list">
+                    <li ng-repeat="deck in myDecks | orderBy:'cards.length':true">
+                        <deck-display 
+                            ng-click="select(deck)" 
+                            size="medium" 
+                            active="{{deck.cards.length <= rules.deckSize ? 'active' : 'inactive'}}">
+                        </deck-display>
+                    </li>
+                </ul>
+            </paginated>
+
+            <h3 class="inverse">{{lang.loadup.favoriteDecks}}</h3>
+            <paginated resource="FavoriteDeckResource" query="favoriteDecksQuery" results="favoriteDecks">
+                <span ng-if="favoriteDecks.length === 0" class="subtle">{{lang.loadup.none}}</span>
+                <ul class="deck-list">
+                    <li ng-repeat="deck in favoriteDecks | orderBy:'cards.length':true">
+                        <deck-display 
+                            ng-click="select(deck)" 
+                            size="medium" 
+                            active="{{deck.cards.length <= rules.deckSize ? 'active' : 'inactive'}}">
+                        </deck-display>
+                    </li>
+                </ul>
+            </paginated>
+        </div>
+
+        <div class="col-md-6">
+            <h3 class="inverse">{{lang.loadup.hotDecks}}</h3>
+            <paginated resource="PublicDeckResource" query="hotDecksQuery" results="hotDecks">
+                <span ng-if="hotDecks.length === 0" class="subtle">{{lang.loadup.none}}</span>
+                <ul class="deck-list">
+                    <li ng-repeat="deck in hotDecks">
+                        <deck-display ng-click="select(deck)" size="medium"></deck-display>
+                    </li>
+                </ul>
+            </paginated>
+        </div>
+        
     </div>
 
 </div>
