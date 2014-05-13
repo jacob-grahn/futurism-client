@@ -7,27 +7,33 @@
         },
         
         "none": {
-            "en": "None"
+            "en": "None",
+            "ne": "Geen"
         },
         
         "share": {
-            "en": "Share"
+            "en": "Share",
+            "ne": "Delen"
         },
         
         "shareDesc": {
-            "en": "Let other players use this deck"
+            "en": "Let other players use this deck",
+            "ne": "Laat andere spelers deze deck gebruiken"
         },
         
         "myCards": {
-            "en": "My Cards"
+            "en": "My Cards",
+            "ne": "Mijn kaarten"
         },
         
         "favoriteCards": {
-            "en": "Favorites"
+            "en": "Favorites",
+            "ne": "Favorieten"
         },
         
         "popularCards": {
-            "en": "Popular"
+            "en": "Popular",
+            "ne": "Populair"
         },
         
         "save": {
@@ -85,7 +91,7 @@
             "fr": "Nom",
             "pi": "Name yar booty",
             "lt": "Pavadinimas",
-            "ne": "Geef een naam",
+            "ne": "Naam",
             "sv": "Namnge det",
             "es": "Nombrar",
             "nb": "Navngi det",
