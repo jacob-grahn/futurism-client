@@ -44,6 +44,10 @@ angular.module('futurism')
             });
             return r.$promise;
         };
+        
+        $scope.canEdit = function(card) {
+            return me.userId === card.userId;
+        };
 
         $scope.canReport = function () {
             if (me.user.group === groups.APPRENTICE || me.user.group === groups.MOD || me.user.group === groups.ADMIN) {

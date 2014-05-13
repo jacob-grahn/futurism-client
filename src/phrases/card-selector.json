@@ -15,6 +15,26 @@
             "ne": "Nieuwe kaart",
             "fr": "Nouvelle Carte",
             "hu": "Új Kártya"
+        },
+        
+        "delete": {
+            "en": "Delete",
+            "ne": "verwijder",
+            "pl": "usun",
+            "nb": "slett",
+            "fr": "Supprimer",
+            "pi": "burn message",
+            "hu": "törlés"
+        },
+        
+        "report": {
+            "en": "Report",
+            "ne": "overtreding melden",
+            "pl": "zreportuj",
+            "nb": "rapporter",
+            "fr": "Signaler",
+            "pi": "tip off police",
+            "hu": "jelentés"
         }
     }
 }

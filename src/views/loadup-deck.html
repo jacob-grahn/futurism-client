@@ -44,7 +44,11 @@
                     <span ng-if="hotDecks.length === 0" class="subtle">{{lang.loadup.none}}</span>
                     <ul class="deck-list clearfix">
                         <li ng-repeat="deck in hotDecks">
-                            <deck-display ng-click="select(deck)" size="medium"></deck-display>
+                            <deck-display 
+                                ng-click="select(deck)" 
+                                size="medium" 
+                                active="{{deck.cards.length <= rules.deckSize ? 'active' : 'inactive'}}">
+                            </deck-display>
                         </li>
                     </ul>
                 </paginated>

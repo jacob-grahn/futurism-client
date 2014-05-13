@@ -7,9 +7,9 @@
     <ul class="card-list clearfix">
         <li class="card-holder" ng-repeat="card in cards">
             <card-display card="card" ng-click="selectCard(card)" size="medium"></card-display>
-            <button class="btn btn-default" ng-click="selectCard(card)">{{lang.cardSelector.edit}}</button>
-            <busy-button ng-show="canDelete(card)" on-click="deleteCard(card)" label="{{lang.messages.delete}}"></busy-button>
-            <busy-button ng-show="canReport(card)" on-click="reportCard(card)" label="{{lang.messages.report}}"></busy-button>
+            <button ng-if="canEdit(card)" class="btn btn-default" ng-click="selectCard(card)">{{lang.cardSelector.edit}}</button>
+            <busy-button ng-if="canDelete(card)" on-click="deleteCard(card)" label="{{lang.cardSelector.delete}}"></busy-button>
+            <busy-button ng-if="canReport(card)" on-click="reportCard(card)" label="{{lang.cardSelector.report}}"></busy-button>
         </li>
     </ul>
 </paginated>
