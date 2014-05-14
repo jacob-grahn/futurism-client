@@ -1,8 +1,6 @@
 angular.module('futurism')
-    .controller('TitleCtrl', function($scope, $location, session, sound) {
+    .controller('TitleCtrl', function($scope, $location, session) {
         'use strict';
-
-        sound.play('win');
         
         $scope.login = function() {
             if(!session.active) {

@@ -4,4 +4,6 @@ dist
 .sass-cache
 .idea
 src/bower_components
+src/sounds
+src/images
 Error.log

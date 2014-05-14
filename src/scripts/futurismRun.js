@@ -1,10 +1,11 @@
 angular.module('futurism')
-    .run(function(autoLogin, session, $rootScope, lang, unread, notificationListener, socketErrors, _, langUrl) {
+    .run(function(autoLogin, session, $rootScope, lang, unread, notificationListener, socketErrors, _, langUrl, musicLooper) {
         'use strict';
         
         autoLogin.activate();
         session.renew();
         langUrl.init();
+        musicLooper.init();
         
         lang.loadData('data/phrases.json');
         $rootScope.lang = lang;
