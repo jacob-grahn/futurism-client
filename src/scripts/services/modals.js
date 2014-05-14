@@ -78,6 +78,14 @@ angular.module('futurism')
                     templateUrl: 'views/applicant-modal.html',
                     controller: 'ApplicantModalCtrl'
                 });
+            },
+            
+            
+            openCustomGame: function() {
+                $modal.open({
+                    templateUrl: 'views/custom-game-modal.html',
+                    controller: 'CustomGameModalCtrl'
+                });
             }
 
         };

@@ -9,7 +9,7 @@
                     <li><button class='btn btn-primary' ng-click="matchups.createMatchup({players: 2, deckSize: 5, futures: 0})">{{lang.lobby.shortGame}}</button></li>
                     <li><button class='btn btn-primary' ng-click="matchups.createMatchup({players: 2, deckSize: 10, futures: 1})">{{lang.lobby.mediumGame}}</button></li>
                     <li><button class='btn btn-primary' ng-click="matchups.createMatchup({players: 2, deckSize: 20, futures: 3})">{{lang.lobby.longGame}}</button></li>
-                    <li><button class='btn btn-primary' ng-click="matchups.createMatchup({players: 4, deckSize: 20, futures: 3})">{{lang.lobby.customGame}}</button></li>
+                    <li><button class='btn btn-primary' ng-click="modals.openCustomGame()">{{lang.lobby.customGame}}</button></li>
                 </ul>
             </div>
         </div>

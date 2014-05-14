@@ -1,0 +1,51 @@
+<div class="modal-header">
+    <h1>{{lang.customGameModal.title}}</h1>
+</div>
+<div class="modal-body">
+    
+    <form class="form-horizontal row">
+        <fieldset>
+            <div class="form-group">
+                <label for="inputRows" class="col-sm-3 control-label">{{lang.customGameModal.rows}}</label>
+                <div class="col-sm-2">
+                    <input id="inputRows" class="form-control" type="text" ng-model="rules.rows">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputColumns" class="col-sm-3 control-label">{{lang.customGameModal.columns}}</label>
+                <div class="col-sm-2">
+                    <input id="inputColumns" class="form-control" rows="2" ng-model="rules.columns">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputStartPride" class="col-sm-3 control-label">{{lang.customGameModal.startPride}}</label>
+                <div class="col-sm-2">
+                    <input id="inputStartPride" class="form-control" rows="2" ng-model="rules.startPride">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputFutures" class="col-sm-3 control-label">{{lang.customGameModal.futures}}</label>
+                <div class="col-sm-2">
+                    <input id="inputColumns" class="form-control" rows="2" ng-model="rules.futures">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputDeckSize" class="col-sm-3 control-label">{{lang.customGameModal.deckSize}}</label>
+                <div class="col-sm-2">
+                    <input id="inputDeckSize" class="form-control" rows="2" ng-model="rules.deckSize">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputPlayers" class="col-sm-3 control-label">{{lang.customGameModal.players}}</label>
+                <div class="col-sm-2">
+                    <input id="inputPlayers" class="form-control" rows="2" ng-model="rules.players">
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="start(rules)">{{lang.customGameModal.start}}</button>
+    <button class="btn btn-default" ng-click="$dismiss()">{{lang.customGameModal.close}}</button>
+</div>

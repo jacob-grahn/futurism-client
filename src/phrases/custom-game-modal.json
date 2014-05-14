@@ -1,0 +1,40 @@
+{
+    "customGameModal": {
+        
+        "title": {
+            "en": "Game Builder"
+        },
+        
+        "rows": {
+            "en": "Rows"
+        },
+        
+        "columns": {
+            "en": "Columns"
+        },
+        
+        "deckSize": {
+            "en": "Deck Size"
+        },
+        
+        "futures": {
+            "en": "Futures"
+        },
+        
+        "players": {
+            "en": "Players"
+        },
+        
+        "startPride": {
+            "en": "Start Pride"
+        },
+        
+        "start": {
+            "en": "Start Game"
+        },
+        
+        "close": {
+            "en": "Close"
+        }
+    }
+}

@@ -1,133 +1,15 @@
 angular.module('futurism')
-    .directive('attackAnim', function($, maths, animFns, sound) {
+    .directive('attackAnim', function($, maths, animFns, sound, _) {
         'use strict';
-
+        
+    
 
         return {
             restrict: 'A',
             link: function(scope, boardElement) {
+                
 
-
-                scope.$on('pre:siph', function(srcScope, update, delayer) {
-                    animAttackAndCounter(update, delayer);
-                });
-
-
-                scope.$on('pre:assn', function(srcScope, update, delayer) {
-                    var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
-                    /*var attacker = animTargets[0];
-                    var defender = animTargets[1];
-                    defender.damage = update.data.result.targetDamage;
-                    defender.shield = defender.target.card.shield;
-                    attacker.heal = update.data.result.srcHeal;
-                    animAttack(attacker, defender);*/
-                    animAttackAndCounter(update, delayer);
-                });
-
-
-                scope.$on('pre:frvt', function(srcScope, update, delayer) {
-                    animAttackAndCounter(update, delayer);
-                });
-
-
-                scope.$on('pre:prci', function(srcScope, update, delayer) {
-                    animAttackAndCounter(update, delayer);
-                });
-
-
-                scope.$on('pre:bees', function(srcScope, update, delayer) {
-                    sound.play('bees');
-                    delayer.delay = 2000;
-                    var animTargets = animFns.updatedAnimTargets(update);
-                    var attacker;
-                    var defender;
-
-                    _.each(animTargets, function(animTarget) {
-                        if(animTarget.newData.health !== undefined) {
-                            defender = animTarget;
-                        }
-                        else {
-                            attacker = animTarget;
-                        }
-                    });
-
-                    defender.shield = defender.target.card.shield;
-
-                    animThrow(attacker, defender, 'bees', 'omg bees!')
-                });
-
-
-                scope.$on('pre:posn', function(srcScope, update, delayer) {
-                    delayer.delay = 2000;
-                    var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
-
-                    var attacker = animTargets[0];
-                    var defender = animTargets[1];
-                    var message = 'miss!';
-
-                    var oldPoison = defender.target.card.poison || 0;
-
-                    if(defender.newData && defender.newData.poison > oldPoison) {
-                        message = 'poisoned!';
-                    }
-
-                    animThrow(attacker, defender, 'poison-sword', message);
-                });
-
-
-
-                var animAttackAndCounter = function(update, delayer) {
-                    var result = update.data.result;
-                    var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
-                    var attacker = animTargets[0];
-                    var defender = animTargets[1];
-
-                    attacker.damage = result.srcDamage;
-                    attacker.shield = attacker.target.card.shield;
-                    attacker.heal = result.srcHeal;
-                    defender.damage = result.targetDamage;
-                    defender.shield = defender.target.card.shield;
-
-                    var counterAttack;
-                    if( (!defender.newData || defender.newData.health > 0) && defender.target.card.attack > 0 && update.cause !== 'assn') {
-                        counterAttack = true;
-                        delayer.delay = 4000;
-                    }
-                    else {
-                        delayer.delay = 2000;
-                    }
-
-                    animAttack(attacker, defender, function() {
-                        if(counterAttack) {
-                            animAttack(defender, attacker, function() {});
-                        }
-                    });
-
-                    return animTargets;
-                };
-
-
-
-                var animAttack = function(attacker, defender, callback) {
-                    var message;
-                    if(defender.damage === 0 || isNaN(defender.damage)) {
-                        message = 'miss!';
-                    }
-                    else {
-                        message = '-' + defender.damage + ' health';
-                    }
-
-
-                    animThrow(attacker, defender, 'sword', message, callback);
-                    if(attacker.heal) {
-                        _.delay(function() {
-                            animFns.animNotif(boardElement, attacker.center, '+' + attacker.heal + ' health', 'good');
-                        }, 1500);
-                    }
-                };
-
-
-
+                
                 var animThrow = function(attacker, defender, className, message, callback) {
                     sound.play('attack-launch', 0.25);
                     var srcPoint = attacker.center;
@@ -163,6 +45,125 @@ angular.module('futurism')
                             }
                         }));
                 };
+
+
+                
+                var animAttack = function(attacker, defender, callback) {
+                    var message;
+                    if(defender.damage === 0 || isNaN(defender.damage)) {
+                        message = 'miss!';
+                    }
+                    else {
+                        message = '-' + defender.damage + ' health';
+                    }
+
+
+                    animThrow(attacker, defender, 'sword', message, callback);
+                    if(attacker.heal) {
+                        _.delay(function() {
+                            animFns.animNotif(boardElement, attacker.center, '+' + attacker.heal + ' health', 'good');
+                        }, 1500);
+                    }
+                };
+                
+                
+                
+                var animAttackAndCounter = function(update, delayer) {
+                    var result = update.data.result;
+                    var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
+                    var attacker = animTargets[0];
+                    var defender = animTargets[1];
+
+                    attacker.damage = result.srcDamage;
+                    attacker.shield = attacker.target.card.shield;
+                    attacker.heal = result.srcHeal;
+                    defender.damage = result.targetDamage;
+                    defender.shield = defender.target.card.shield;
+
+                    var counterAttack;
+                    if( (!defender.newData || defender.newData.health > 0) && defender.target.card.attack > 0 && update.cause !== 'assn') {
+                        counterAttack = true;
+                        delayer.delay = 4000;
+                    }
+                    else {
+                        delayer.delay = 2000;
+                    }
+
+                    animAttack(attacker, defender, function() {
+                        if(counterAttack) {
+                            animAttack(defender, attacker, function() {});
+                        }
+                    });
+
+                    return animTargets;
+                };
+                
+                  
+                
+                
+                scope.$on('pre:attk', function(srcScope, update, delayer) {
+                    animAttackAndCounter(update, delayer);
+                });
+                
+
+                scope.$on('pre:siph', function(srcScope, update, delayer) {
+                    animAttackAndCounter(update, delayer);
+                });
+
+
+                scope.$on('pre:assn', function(srcScope, update, delayer) {
+                    animAttackAndCounter(update, delayer);
+                });
+
+
+                scope.$on('pre:frvt', function(srcScope, update, delayer) {
+                    animAttackAndCounter(update, delayer);
+                });
+
+
+                scope.$on('pre:prci', function(srcScope, update, delayer) {
+                    animAttackAndCounter(update, delayer);
+                });
+
+
+                scope.$on('pre:bees', function(srcScope, update, delayer) {
+                    sound.play('bees');
+                    delayer.delay = 2000;
+                    var animTargets = animFns.updatedAnimTargets(update);
+                    var attacker;
+                    var defender;
+
+                    _.each(animTargets, function(animTarget) {
+                        if(animTarget.newData.health !== undefined) {
+                            defender = animTarget;
+                        }
+                        else {
+                            attacker = animTarget;
+                        }
+                    });
+
+                    defender.shield = defender.target.card.shield;
+
+                    animThrow(attacker, defender, 'bees', 'omg bees!');
+                });
+
+
+                scope.$on('pre:posn', function(srcScope, update, delayer) {
+                    delayer.delay = 2000;
+                    var animTargets = animFns.chainedAnimTargets(update, update.data.targetChain);
+
+                    var attacker = animTargets[0];
+                    var defender = animTargets[1];
+                    var message = 'miss!';
+
+                    var oldPoison = defender.target.card.poison || 0;
+
+                    if(defender.newData && defender.newData.poison > oldPoison) {
+                        message = 'poisoned!';
+                    }
+
+                    animThrow(attacker, defender, 'poison-sword', message);
+                });
 
             }
         };

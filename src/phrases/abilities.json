@@ -1,5 +1,26 @@
 {
     "abilities": {
+        
+        "attk": {
+            "name": {
+                "en": "attack",
+                "ko": "암살자",
+                "ct": "mewoowo",
+                "fr": "Attaque",
+                "pi": "frigate",
+                "lt": "Žmogžudys",
+                "ne": "aanval",
+                "sv": "mördare",
+                "es": "asesino",
+                "nb": "angrip",
+                "it": "assassino",
+                "hu": "támadás",
+                "pl": "atak"
+            },
+            "desc": {
+                "en": "Attack with a 66% chance to hit. Enemy will counter-attack."
+            }
+        },
 
         "grow": {
             "name": {

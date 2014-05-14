@@ -1,10 +1,11 @@
 angular.module('futurism')
-    .controller('LobbyCtrl', function($scope, socket, matchups, LobbyResource, _, me) {
+    .controller('LobbyCtrl', function($scope, socket, matchups, LobbyResource, _, me, modals) {
         'use strict';
 
         $scope.matchups = matchups;
         $scope.chatId = null;
         $scope.curLobby = {};
+        $scope.modals = modals;
 
 
         $scope.lobbies = LobbyResource.query({}, function() {
