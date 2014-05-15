@@ -54,7 +54,7 @@
                     <div class="col-md-10">
                         <ul class="checkbox" id="faction-checkboxes">
                             <li ng-repeat="ability in factions.factionLookup[card.faction].abilities">
-                                <label><input type="checkbox" ng-model="abilityObj[ability.id]"> {{ability.id}} {{abilityObj[ability.id]}} {{lang.abilities[ability.id].name}}</label>
+                                <label><input type="checkbox" ng-model="abilityObj[ability.id]"> {{lang.abilities[ability.id].name}}</label>
                                 <p>{{lang.abilities[ability.id].desc}}</p>
                             </li>
                         </ul>
