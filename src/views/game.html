@@ -21,9 +21,10 @@
                                 ng-if="target.card"
                                 card="target.card"
                                 action-fn="targeter.selectAction(abilityId, target)"
-                                size="small" magnify="large"
-                                use-buttons="{{target.player._id == me.user._id}}"
-                                ng-class="{'card-disabled': target.card.moves <= 0 || !turn.isMyTurn() && me.user._id == target.player._id}"
+                                size="small" 
+                                magnify="large"
+                                use-buttons="{{target.player._id === me.userId}}"
+                                class="{{target.card.moves <= 0 || (!turn.isMyTurn() && me.userId === target.player._id) ? 'card-disabled' : ''}}"
                                 active="{{state.name != 'targeting'}}">
                         </card-magnify>
                         <div class="backing"></div>

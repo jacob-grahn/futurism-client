@@ -6,7 +6,7 @@ angular.module('futurism')
         var playing = false;
         var titleVolume = 1;
         var menuVolume = 0.33;
-        var fadeMs = 3000;
+        var fadeMs = 2000;
         var soundId;
         
         
@@ -18,7 +18,7 @@ angular.module('futurism')
         
         var considerLocation = function() {
             var url = $location.url();
-            if(url.indexOf('/title') !== -1) {
+            if(url === '/' || url === '' || url.indexOf('/title') !== -1) {
                 self.start(titleVolume);
             }
             else if(url.indexOf('/game') !== -1) {

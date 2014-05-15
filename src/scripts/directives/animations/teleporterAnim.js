@@ -45,7 +45,13 @@ angular.module('futurism')
                             opacity: 1
                         });
                     }, 1000);
-
+                    
+                    
+                    // remove copy
+                    _.delay(function() {
+                        card.remove();
+                    }, 2000);
+                    
                 });
             }
         };

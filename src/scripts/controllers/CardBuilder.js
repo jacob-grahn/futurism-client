@@ -66,7 +66,7 @@ angular.module('futurism')
         $scope.$watch('card.faction', function() {
             _.each($scope.abilityObj, function(value, key) {
                 var abil = factions.abilityLookup[key];
-                if(abil.faction !== $scope.card.faction) {
+                if(abil.id !== 'move' && abil.faction !== $scope.card.faction) {
                     $scope.abilityObj[key] = false;
                 }
             });
