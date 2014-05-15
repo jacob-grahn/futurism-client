@@ -4,7 +4,12 @@ angular.module('futurism')
 
         $scope.software = [];
         $scope.testers = [];
+        $scope.languages = {};
 
+        $http.get('data/languages.json').success(function(res) {
+            $scope.languages = res;
+        });
+        
         $http.get('data/betaTesters.json').success(function(res) {
             $scope.testers = res;
         });
