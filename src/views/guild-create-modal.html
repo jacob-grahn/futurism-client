@@ -29,7 +29,7 @@
                 <label for="inputBannerFile" class="col-md-2 control-label">{{lang.guildCreateModal.banner}} <span class="subtle">(300x50)</span>
                 </label>
                 <div class="col-md-10">
-                    <input id="inputBannerFile" class="btn btn-default" type="file" accept="image/*" image="uppedBanner" resize-max-width="300" resize-max-height="50" resize-quality="0.9" resize-type="image/jpg">
+                    <input id="inputBannerFile" class="form-control" type="file" accept="image/*" image="uppedBanner" resize-max-width="300" resize-max-height="50" resize-quality="0.9" resize-type="image/jpg">
                     <br>
                     <img ng-if="uppedBanner" ng-src="{{uppedBanner.resized.dataURL}}" width="300" height="50">
                 </div>
