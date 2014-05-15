@@ -1,0 +1,53 @@
+
+.card-magnify {
+    position: relative;
+}
+
+
+.card-bigger-medium {
+    margin: auto;
+    position: absolute;
+    top: -45px; left: -35px;
+    z-index: 11;
+    -webkit-transition: 0.25s;
+    transition: 0.25s;
+    opacity: 1;
+}
+
+.card-bigger-medium.ng-hide {
+    transform: scale(.5, .5);
+    opacity: 0;
+}
+
+.card-bigger-medium.ng-hide-add,
+.card-bigger-medium.ng-hide-remove {
+    display: block !important;
+}
+
+
+
+
+
+.card-bigger-large {
+    margin: auto;
+    position: absolute;
+    top: -135px; left: -100px;
+    z-index: 11;
+    transition: 0.25s;
+    opacity: 1;
+}
+
+.card-magnify-medium .card-bigger-large {
+    top: -100px;
+    left: -70px;
+}
+
+.card-bigger-large.ng-hide {
+    transform: scale(.25, .25);
+    opacity: 0;
+}
+
+.card-bigger-large.ng-hide-add,
+.card-bigger-large.ng-hide-remove {
+    display: block !important;
+}
