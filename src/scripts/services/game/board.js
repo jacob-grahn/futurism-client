@@ -10,6 +10,7 @@ angular.module('futurism')
          * @param {Object} minBoard - compact board data
          */
         self.fullUpdate = function(minBoard) {
+            self.clear();
             self.minBoard = minBoard;
             self.inflateStatus(self.minBoard);
         };
