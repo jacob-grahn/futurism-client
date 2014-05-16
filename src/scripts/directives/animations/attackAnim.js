@@ -20,10 +20,15 @@ angular.module('futurism')
 
 
                     boardElement.append($('<div class="attack-effect"><div class="attack-effect-inner '+className+'"></div></div>')
-                        .css({left: srcPoint.x-10, top: srcPoint.y-75, opacity: 0, transform: 'rotate('+angleDeg+'deg)'})
+                        .css({
+                            left: srcPoint.x-10,
+                            top: srcPoint.y-75,
+                            opacity: 0,
+                            transform: 'rotate('+angleDeg+'deg)'
+                        })
                         .animate({opacity: 1}, 1000, function() {
-                                sound.play('attack-ready', 0.4);
-                            })
+                            sound.play('attack-ready', 0.4);
+                        })
                         .animate({left: destPoint.x-10, top: destPoint.y-75}, 300, 'linear', function() {
                             animFns.animNotif(boardElement, destPoint, message, 'danger');
                             if(message !== 'miss!') {
