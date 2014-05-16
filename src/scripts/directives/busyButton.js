@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .directive('busyButton', function() {
+    .directive('busyButton', function($timeout) {
         'use strict';
 
         return {
@@ -15,15 +15,21 @@ angular.module('futurism')
                 scope.class = attr.class;
                 scope.startClick = function() {
                     if(!scope.promise) {
-                        scope.label = 'working...';
+                        scope.label = 'Working...';
                         scope.promise = scope.onClick();
                         scope.promise.then(
-                            function(result) {
-                                scope.label = scope.defaultLabel;
+                            function() {
+                                scope.label = 'Success!';
+                                $timeout(function() {
+                                    scope.label = scope.defaultLabel;
+                                }, 1000);
                                 delete scope.promise;
                             },
-                            function(error) {
-                                scope.label = 'error';
+                            function() {
+                                scope.label = 'Error!';
+                                $timeout(function() {
+                                    scope.label = scope.defaultLabel;
+                                }, 1000);
                                 delete scope.promise;
                             }
                         );
