@@ -4,25 +4,29 @@
         "title": {
             "en": "Applications",
             "ne": "Toepassingen",
-            "fr": "Applications"
+            "fr": "Applications",
+            "pi": "Potentials"
         },
         
         "close": {
             "en": "Close",
             "ne": "Sluiten",
-            "fr": "Fermer"
+            "fr": "Fermer",
+            "pi": "Seal"
         },
         
         "accept": {
             "en": "Accept",
             "ne": "Accepteren",
-            "fr": "Accepter"
+            "fr": "Accepter",
+            "pi": "Accept"
         },
         
         "delete": {
             "en": "Delete",
             "ne": "Verwijderen",
-            "fr": "Supprimer"
+            "fr": "Supprimer",
+            "pi": "Burn"
         }
     }
 }

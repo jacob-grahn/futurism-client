@@ -3,7 +3,7 @@
         
         "incomingFracture": {
             "en": "Sensors detect an incoming FRACTURE. It will intersect with your line at {{time}}.",
-            "pi": "Crow's nest has spotted an incoming FRACTURE. It will hit your supply line at {{time}}.",
+            "pi": "Crow's nest has spotted an incoming FRACTARRR. It will hit your supply line at {{time}}.",
             "nb": "Sensorer registrerer en innkommende FRAKSJON. Den vil krysse din linje på {{time}}",
             "ne": "Er is een aankomende BREUK gedetecteerd. Hij snijdt met jouw tijdlijn op {{time}}.",
             "fr": "Les capteurs ont détecté l'approche d'une FRACTURE. Elle croisera votre ligne à {{time}}",
@@ -12,7 +12,7 @@
         
         "startFracture": {
             "en": "FRACTURE detected. Attempting to ascertain location relative to your line... Location determined.",
-            "pi": "FRACTURE spotted. Plotting location on a map... Location plotted.",
+            "pi": "FRACTARRR spotted. Plotting location on a map... Location plotted.",
             "nb": "FRAKJON oppdaget. Forsøker å fastslå posisjon relativ til din linje... Posisjon fastslått.",
             "ne": "BREUK gedetecteerd. Proberen locatie ten opzichte van jouw tijdlijn te bepalen... Locatie bepaald.",
             "fr": "FRACTURE repérée. Tentative de localisation sur votre ligne... Position déterminée",
