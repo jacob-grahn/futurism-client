@@ -29,11 +29,10 @@ angular.module('futurism')
 
         /**
          * Apply a compressed game status from the server
+         * This function is careful to reuse old objects where possible so angular doesn't redraw everything
          * @param {Object} minBoard
          */
         self.inflateStatus = function(minBoard) {
-            //self.clear();
-            //self.areas = {};
 
             _.each(minBoard.areas, function(minArea, playerId) {
 
@@ -42,13 +41,15 @@ angular.module('futurism')
                     return;
                 }
 
-                self.areas[playerId] = self.areas[playerId] || {targets: []};
+                self.areas[playerId] = self.areas[playerId] || {
+                    targets: [],
+                    playerId: playerId,
+                    player: players.idToPlayer(playerId),
+                    team: players.idToPlayer(playerId).team
+                };
                 
                 var area = self.areas[playerId];
                 var targets = area.targets;
-                area.playerId = playerId;
-                area.player = players.idToPlayer(playerId);
-                area.team = area.player.team;
 
                 _.each(minArea.targets, function(card, xy) {
                     var xyArr = xy.split('-');

@@ -27,7 +27,9 @@ angular.module('futurism')
             timer.timeLeft = data.changes.timeLeft || timer.timeLeft;
 
             updateDelayer.add(cause, changes, function() {
-                state.toDefault();
+                if(state.name !== state.TARGETING) {
+                    state.toDefault();
+                }
 
                 _.merge(players.list, changes.players);
                 board.partialUpdate(changes.board);
