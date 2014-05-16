@@ -191,6 +191,10 @@
             "it": "clan",
             "hu": "klán",
             "pl": "gildia"
+        },
+        
+        "fracture": {
+            "en": "Fracture"
         }
     }
 }

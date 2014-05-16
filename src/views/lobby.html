@@ -20,7 +20,15 @@
                 <h1 ng-if="matchups.matchups.length" class="inverse">{{lang.lobby.join}}</h1>
                 <ul class="list-group">
                     <li class="list-group-item matchup" ng-repeat="matchup in matchups.matchups">
-                        <h3>{{matchup.rules.players}} {{lang.lobby.player}} / {{matchup.rules.deckSize}} {{lang.lobby.deckSize}} / {{matchup.rules.futures}} {{lang.lobby.futures}}</h3>
+                        <span ng-if="!matchup.rules.fracture">
+                            <h3>{{matchup.rules.players}} {{lang.lobby.player}} / {{matchup.rules.deckSize}} {{lang.lobby.deckSize}} / {{matchup.rules.futures}} {{lang.lobby.futures}}</h3>
+                            <span ng-if="matchup.rules.rows !== 2"> / {{matchup.rules.rows}} {{lang.customGameModal.rows}}</span>
+                            <span ng-if="matchup.rules.columns !== 4"> / {{matchup.rules.columns}} {{lang.customGameModal.columns}}</span>
+                            <span ng-if="matchup.rules.startPride !== 4"> / {{matchup.rules.startPride}} {{lang.customGameModal.startPride}}</span>
+                        </span>
+                        <span ng-if="matchup.rules.fracture">
+                            <h1>// {{lang.lobby.fracture}} //</h1>
+                        </span>
                         <ul class="matchup-members">
                             <li ng-repeat="user in matchup.accounts">
                                 <username user="user"></username>

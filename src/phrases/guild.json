@@ -49,6 +49,10 @@
             "ne": "Statistieken",
             "fr": "Statistiques",
             "pi": "History"
+        },
+        
+        "gpWeek": {
+            "en": "GP This Week"
         }
     }
 }

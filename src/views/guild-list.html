@@ -4,7 +4,7 @@
         <paginated resource="GuildResource" results="guilds" query="query">
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="guild in guilds">
-                    #{{($index + 1) + ((query.page - 1) * query.count)}} <span class="pull-right">{{guild.gpWeek}} gp</span><a ng-click="selectGuild(guild._id)"><banner guild="guild"></banner></a>
+                    #{{($index + 1) + ((query.page - 1) * query.count)}} <span class="pull-right">{{guild.gpWeek}} {{lang.guild.gpWeek}}</span><a ng-click="selectGuild(guild._id)"><banner guild="guild"></banner></a>
                 </li>
             </ul>
         </paginated>
