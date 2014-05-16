@@ -21,7 +21,7 @@ angular.module('futurism')
             if(url === '/' || url === '' || url.indexOf('/title') !== -1) {
                 self.start(titleVolume);
             }
-            else if(url.indexOf('/game') !== -1) {
+            else if(url.indexOf('/game') !== -1 || url.indexOf('/vids') !== -1) {
                 self.stop();
             }
             else {

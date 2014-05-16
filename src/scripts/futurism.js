@@ -56,7 +56,7 @@ angular
                 templateUrl: 'views/guild-list.html',
                 controller: 'GuildListCtrl'
             }).
-            when('/instructions', {
+            when('/vids', {
                 templateUrl: 'views/instructions.html',
                 controller: 'InstructionsCtrl'
             }).
