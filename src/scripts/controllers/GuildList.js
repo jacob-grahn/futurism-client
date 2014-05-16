@@ -6,7 +6,6 @@ angular.module('futurism')
         
         $scope.GuildResource = GuildResource;
         $scope.query = {
-            sort: {gpWeek: -1},
             count: 20
         };
         
