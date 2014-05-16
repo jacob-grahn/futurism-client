@@ -40,25 +40,13 @@ angular.module('futurism')
                 });
 
                 elem.mouseleave(function() {
-                    scope.$apply(function() {
-                        scope.hovering = false;
-                    });
-                });
-
-                /*elem.hover(
-                    function() {
-                        scope.$apply(function() {
-                            scope.hovering = true;
-                        });
-                    },
-                    function() {
+                    if(scope.hovering) {
                         scope.$apply(function() {
                             scope.hovering = false;
                         });
                     }
-                );*/
-
+                });
             }
+            
         };
-
     });

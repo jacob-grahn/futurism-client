@@ -7,7 +7,8 @@
     </card-display>
     
     <card-display 
-        ng-if="hovering"
+        style="opacity: 0.4"
+        ng-show="hovering"
         size="{{magnify}}"
         card="card" 
         action-fn="actionFn({abilityId: abilityId, card: card})"

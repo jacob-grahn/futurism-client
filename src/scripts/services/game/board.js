@@ -32,8 +32,8 @@ angular.module('futurism')
          * @param {Object} minBoard
          */
         self.inflateStatus = function(minBoard) {
-            self.clear();
-            self.areas = {};
+            //self.clear();
+            //self.areas = {};
 
             _.each(minBoard.areas, function(minArea, playerId) {
 
@@ -42,29 +42,34 @@ angular.module('futurism')
                     return;
                 }
 
-                var area = {};
-                var targets = [];
+                self.areas[playerId] = self.areas[playerId] || {targets: []};
+                
+                var area = self.areas[playerId];
+                var targets = area.targets;
                 area.playerId = playerId;
                 area.player = players.idToPlayer(playerId);
                 area.team = area.player.team;
-                area.targets = targets;
-                self.areas[playerId] = area;
 
                 _.each(minArea.targets, function(card, xy) {
                     var xyArr = xy.split('-');
                     var x = Number(xyArr[0]);
                     var y = Number(xyArr[1]);
+                    
                     if(!targets[x]) {
                         targets[x] = [];
                     }
-
-                    area.targets[x][y] = {
-                        column: x,
-                        row: y,
-                        playerId: area.playerId,
-                        player: area.player,
-                        card: card
-                    };
+                    
+                    if(!targets[x][y]) {
+                        targets[x][y] = {
+                            column: x,
+                            row: y,
+                            playerId: area.playerId,
+                            player: area.player,
+                            card: null
+                        };
+                    }
+                    
+                    targets[x][y].card = card;
                 });
             });
         };
