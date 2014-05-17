@@ -2,39 +2,48 @@
     "customGameModal": {
         
         "title": {
-            "en": "Game Builder"
+            "en": "Game Builder",
+            "fr": "Éditeur de partie"
         },
         
         "rows": {
-            "en": "Rows"
+            "en": "Rows",
+            "fr": "Rangées"
         },
         
         "columns": {
-            "en": "Columns"
+            "en": "Columns",
+            "fr": "Colonnes"
         },
         
         "deckSize": {
-            "en": "Deck Size"
+            "en": "Deck Size",
+            "fr": "Taille du paquet"
         },
         
         "futures": {
-            "en": "Futures"
+            "en": "Futures",
+            "fr": "Futurs"
         },
         
         "players": {
-            "en": "Players"
+            "en": "Players",
+            "fr": "Joueurs"
         },
         
         "startPride": {
-            "en": "Start Pride"
+            "en": "Start Pride",
+            "fr": "Valeur de départ"
         },
         
         "start": {
-            "en": "Start Game"
+            "en": "Start Game",
+            "fr": "Commencer la partie"
         },
         
         "close": {
-            "en": "Close"
+            "en": "Close",
+            "fr": "Fermer"
         }
     }
 }
