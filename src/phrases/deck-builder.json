@@ -4,45 +4,54 @@
         "title": {
             "en": "Deck Builder",
             "ne": "Deckbouwer",
+            "fr": "Créateur de paquet",
             "pi": "Fleet assembler"
         },
         
         "none": {
             "en": "None",
+            "fr": "Aucun",
             "ne": "Geen"
         },
         
         "share": {
             "en": "Share",
+            "fr": "Partager",
             "ne": "Delen"
         },
         
         "shareDesc": {
             "en": "Let other players use this deck",
+            "fr": "Laisser les autres joueurs utiliser ce paquet",
             "ne": "Laat andere spelers deze deck gebruiken"
         },
         
         "myCards": {
             "en": "My Cards",
+            "fr": "Mes cartes",
             "ne": "Mijn kaarten"
         },
         
         "favoriteCards": {
             "en": "Favorites",
+            "fr": "Favorites",
             "ne": "Favorieten"
         },
         
         "popularCards": {
             "en": "Popular",
+            "fr": "Populaires",
             "ne": "Populair"
         },
         
         "add": {
-            "en": "Add"
+            "en": "Add",
+            "fr": "Ajouter"
         },
         
         "remove": {
-            "en": "X"
+            "en": "X",
+            "fr": "X",
         },
         
         "save": {
