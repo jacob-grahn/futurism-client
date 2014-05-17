@@ -11,7 +11,8 @@
             "nb": "stolthet",
             "fr": "Valeur",
             "pl": "duma",
-            "hu": "büszkeség"
+            "hu": "büszkeség",
+            "ru": "гордость"
         },
 
         "cardCount": {
@@ -23,7 +24,8 @@
             "nb": "kort",
             "fr": "Cartes",
             "pl": "ilość kart",
-            "hu": "kártyák"
+            "hu": "kártyák",
+            "ru": "карты"
         },
 
         "attack": {
@@ -35,7 +37,8 @@
             "nb": "angrip",
             "fr": "Attaque",
             "pl": "atak",
-            "hu": "támadás"
+            "hu": "támadás",
+            "ru": "атак"
         },
 
         "health": {
@@ -47,7 +50,8 @@
             "nb": "helse",
             "fr": "Santé",
             "pl": "życie",
-            "hu": "élet"
+            "hu": "élet",
+            "ru": "здоровье"
         }
     }
 }
