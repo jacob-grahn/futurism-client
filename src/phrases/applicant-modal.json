@@ -5,28 +5,32 @@
             "en": "Applications",
             "ne": "Toepassingen",
             "fr": "Applications",
-            "pi": "Potentials"
+            "pi": "Potentials",
+            "ru": "Заявки"
         },
         
         "close": {
             "en": "Close",
             "ne": "Sluiten",
             "fr": "Fermer",
-            "pi": "Seal"
+            "pi": "Seal",
+            "ru": "Закрывай"
         },
         
         "accept": {
             "en": "Accept",
             "ne": "Accepteren",
             "fr": "Accepter",
-            "pi": "Accept"
+            "pi": "Accept",
+            "ru": "Принимай"
         },
         
         "delete": {
             "en": "Delete",
             "ne": "Verwijderen",
             "fr": "Supprimer",
-            "pi": "Burn"
+            "pi": "Burn",
+            "ru": "Стирай"
         }
     }
 }
