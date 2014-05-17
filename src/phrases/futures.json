@@ -13,7 +13,7 @@
                 "en": "Elites siphon health when they attack.",
                 "pi": "Swashbucklers siphon rum from ships when they attack.",
                 "ne": "Als Elites aanvallen, stelen ze levens.",
-                "fr": "Les élites siphonnent des points de snaté lors d'une attaque"
+                "fr": "Les élites siphonnent des points de santé lors d'une attaque"
             }
         },
 
@@ -82,13 +82,13 @@
                 "en": "Nuclear War",
                 "pi": "Grapeshot",
                 "ne": "Kernoorlog",
-                "fr": "Guerre nucléaires"
+                "fr": "Guerre nucléaire"
             },
             "desc": {
                 "en": "All cards receive 1 damage after an attack.",
                 "pi": "All ships lose 1 extra rum after attacks",
                 "ne": "Telkens als iemand aanvalt verliezen alle kaarten 1 leven.",
-                "fr": "Totues les cartes reçoivent 1 dommage parès une attauqe"
+                "fr": "Totues les cartes reçoivent 1 dommage après une attaque"
             }
         },
 
@@ -183,7 +183,7 @@
                 "nb": "Hver handling har en 50% sjangse for å mislykkes.",
                 "pi": "All plots be as likely to succeed as heads on a coin.",
                 "it": "Ogni azione ha una probabilità del 50% di fallire.",
-                "fr": "Chaque action à 50% des chances d'échouer",
+                "fr": "Chaque action a 50% des chances d'échouer",
                 "pl": "Każda akcja ma 50% szansy na niepowodzenie."
             }
         },
