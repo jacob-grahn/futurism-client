@@ -12,7 +12,8 @@
         "nb": "Norsk Bokmål",
         "it": "Italiano",
         "hu": "Magyar",
-        "pl": "Polski"
+        "pl": "Polski",
+        "ru": "Русски"
     },
 
 
@@ -27,6 +28,7 @@
         "nb": "-Shadowfax-, Tuxi",
         "it": "DforDerpdetta",
         "hu": "Tulyita",
-        "pl": "Ktost"
+        "pl": "Ktost",
+        "ru": "Nedron"
     }
 }
