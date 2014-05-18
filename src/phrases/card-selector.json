@@ -6,7 +6,8 @@
             "pi": "Change Crew",
             "ne": "Bewerken",
             "fr": "Modifier",
-            "hu": "Módosít"
+            "hu": "Módosít",
+            "ru": "Редактировай"
         },
         
         "newCard": {
@@ -14,7 +15,8 @@
             "pi": "New Ship",
             "ne": "Nieuwe kaart",
             "fr": "Nouvelle Carte",
-            "hu": "Új Kártya"
+            "hu": "Új Kártya",
+            "ru": "Новый Карта"
         },
         
         "delete": {
@@ -24,7 +26,8 @@
             "nb": "slett",
             "fr": "Supprimer",
             "pi": "burn message",
-            "hu": "törlés"
+            "hu": "törlés",
+            "ru": "Стирай"
         },
         
         "report": {
@@ -34,7 +37,8 @@
             "nb": "rapporter",
             "fr": "Signaler",
             "pi": "tip off police",
-            "hu": "jelentés"
+            "hu": "jelentés",
+            "ru": "Сообщи"
         }
     }
 }
