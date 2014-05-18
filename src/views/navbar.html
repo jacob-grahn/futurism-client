@@ -9,7 +9,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">{{lang.nav.futurism}}</a>
+        <a class="navbar-brand" ng-href="/">{{lang.nav.futurism}}</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,7 +32,7 @@
                 </a>
                 <ul class="dropdown-menu" ng-click="navCollapsed=true">
                     <li><a ng-click="clickStats()">{{lang.nav.stats}}</a></li>
-                    <li><a href="/messages"><span class="unread" ng-if="unread.unreadCount > 0">({{unread.unreadCount}}) </span>{{lang.nav.messages}}</a></li>
+                    <li><a ng-href="/messages"><span class="unread" ng-if="unread.unreadCount > 0">({{unread.unreadCount}}) </span>{{lang.nav.messages}}</a></li>
                     <li ng-if="unread.inviteCount > 0"><a ng-click="clickInvites()"><span class="unread">({{unread.inviteCount}}) </span>{{lang.nav.invites}}</a></li>
                     <li ng-if="unread.applicantCount > 0"><a ng-click="clickApplicants()"><span class="unread">({{unread.applicantCount}}) </span>{{lang.nav.applicants}}</a></li>
                     <li ng-if="me.user.group === 'm' || me.user.group === 'a'"><a ng-href="/reports">{{lang.nav.reports}}</a></li>

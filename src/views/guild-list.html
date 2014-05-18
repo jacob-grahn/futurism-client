@@ -17,7 +17,7 @@
             <li>* {{lang.guildList.perk2}}</li>
             <li>* {{lang.guildList.perk3}}</li>
         </ul>
-        <a ng-if="!me.user.guild" href="guild-joiner"><button class="btn btn-primary">{{lang.guildList.join}}</button></a>
+        <a ng-if="!me.user.guild" ng-href="/guild-joiner"><button class="btn btn-primary">{{lang.guildList.join}}</button></a>
         <button ng-if="!me.user.guild" class="btn btn-primary" ng-click="makeNewGuild()">{{lang.guildList.create}}</button>
         <button ng-if="me.user.guild" class="btn btn-primary" ng-click="selectGuild(me.user.guild)">{{lang.guildList.myGuild}}</button>
     </div>

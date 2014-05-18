@@ -4,7 +4,7 @@ angular.module('futurism')
 
 
         var checkJiggLogin = function(callback) {
-            $.ajax('//jiggmin.com/-who-am-i.php', {
+            $.ajax('https://jiggmin.com/-who-am-i.php', {
                 type: 'GET',
                 dataType: 'jsonp',
                 xhrFields: {
