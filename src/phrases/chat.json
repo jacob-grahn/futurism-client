@@ -13,7 +13,8 @@
             "nb": "si",
             "it": "Invia",
             "hu": "küld",
-            "pl": "wyślij"
+            "pl": "wyślij",
+            "ru": "скажи"
         },
 
         "placeholder": {
@@ -29,7 +30,8 @@
             "nb": "skriv for å chatte",
             "it": "Scrivi per mandare messaggi",
             "hu": "ide írj!",
-            "pl": "Zapisz/Załaduj"
+            "pl": "Zapisz/Załaduj",
+            "ru": "печатай для чат"
         }
     }
 }
