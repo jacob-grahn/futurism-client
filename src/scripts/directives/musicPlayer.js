@@ -21,31 +21,19 @@ angular.module('futurism')
                     var widget = SC.Widget('soundcloud-player');
                     
                     var playNextSong = function() {
-                        
-                        if(memory.long.get('playmusic') !== 'no') {
-                            
-                            widget.isPaused(function(paused) {
-                                if(paused) {
-                                    
-                                    widget.getSounds(function(sounds) {
-                                        var nextIndex = Math.floor(Math.random() * sounds.length);
-                                        widget.skip(nextIndex);
-                                        
-                                        _.delay(function() {
-                                            
-                                            widget.play();
-                                        }, 1000);
-                                    });
-                                }
-                            });
-                        }
+                        widget.getSounds(function(sounds) {
+                            var nextIndex = Math.floor(Math.random() * sounds.length);
+                            widget.skip(nextIndex);
+                            widget.play();
+                        });
                     };
 
 
                     // autoplay on load
                     widget.bind(SC.Widget.Events.READY, function() {
-                        playNextSong();
-                        _.delay(playNextSong, 10000);
+                        if(memory.long.get('playmusic') !== 'no') {
+                            playNextSong();
+                        }
                     });
 
                     // play next song on finish
