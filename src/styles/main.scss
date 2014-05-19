@@ -59,7 +59,6 @@ body {
 // headers
 ///////////////////////////////////
 h1 {
-    font-family: "aw-conqueror-carved";
     color: $light-blend;
     margin: 15px 0px 10px -5px;
 }
@@ -70,7 +69,6 @@ h1.inverse, .inverse h1 {
 }
 
 h3 {
-    font-family: "aw-conqueror-carved";
     color: $light-blend;
 }
 
@@ -84,12 +82,7 @@ h3.inverse, .inverse h3 {
 ////////////////////////////////////////////
 //
 //////////////////////////////////////////
-.form-horizontal .control-label {
-    //color: $dark-blend;
-}
-
 .form-control-big {
-    font-family: "aw-conqueror-carved";
     font-size: 32px;
     height: 58px;
     color: $light-blend;
@@ -99,10 +92,6 @@ h3.inverse, .inverse h3 {
 a {
     cursor: pointer;
 }
-
-/*.inverse a, a.inverse {
-    color: $dark-contrast;
-}*/
 
 .cursor-pointer {
     cursor: pointer;
