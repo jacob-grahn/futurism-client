@@ -6,6 +6,8 @@ angular.module('futurism')
         session.renew();
         langUrl.init();
         
+        musicLooper.init();
+        
         sound.setupSounds([
             'dissolve',
             'abomination',
@@ -39,8 +41,6 @@ angular.module('futurism')
             'die',
             'future'
         ]);
-        
-        musicLooper.init();
         
         lang.loadData('data/phrases.json');
         $rootScope.lang = lang;
