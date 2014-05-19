@@ -1,10 +1,45 @@
 angular.module('futurism')
-    .run(function(autoLogin, session, $rootScope, lang, unread, notificationListener, socketErrors, _, langUrl, musicLooper) {
+    .run(function(autoLogin, session, $rootScope, lang, unread, notificationListener, socketErrors, _, langUrl, sound, musicLooper) {
         'use strict';
         
         autoLogin.activate();
         session.renew();
         langUrl.init();
+        
+        sound.setupSounds([
+            'dissolve',
+            'abomination',
+            'attack-launch',
+            'attack-ready',
+            'bagem',
+            'battle-cry',
+            'bees',
+            'delegate',
+            'heal',
+            'hero',
+            'hit',
+            'loose',
+            'mate',
+            'move',
+            'network',
+            'notif',
+            'peace',
+            'poison',
+            'rebuild',
+            'recharge',
+            'seduce',
+            'serum',
+            'shield',
+            'summon',
+            'teleport',
+            'transform',
+            'trees',
+            'turn',
+            'win',
+            'die',
+            'future'
+        ]);
+        
         musicLooper.init();
         
         lang.loadData('data/phrases.json');
@@ -14,6 +49,6 @@ angular.module('futurism')
             unread.start();
         }, 4000);
         
-        notificationListener.add('Welcome to Futurism!'); // pretty much a pointless command... this is a dirty way to get notificationListener to be created
+        notificationListener.add('Welcome to Futurism!');
         socketErrors();
     });

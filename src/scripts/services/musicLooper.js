@@ -1,8 +1,7 @@
 angular.module('futurism')
-    .factory('musicLooper', function(window, $rootScope, $location) {
+    .factory('musicLooper', function($rootScope, $location, sound) {
         'use strict';
         
-        var Howl = window.Howl;
         var playing = false;
         var titleVolume = 1;
         var menuVolume = 0.33;
@@ -10,10 +9,7 @@ angular.module('futurism')
         var soundId;
         
         
-        var song = new Howl({
-            urls: ['sounds/dissolve.ogg', 'sounds/dissolve.mp3'],
-            loop: true
-        });
+        var song = sound.get('dissolve');
         
         
         var considerLocation = function() {
