@@ -19,11 +19,28 @@
 
         var LIVERELOAD_PORT = 35729;
 
-        // Load grunt tasks automatically
-        require('load-grunt-tasks')(grunt);
+        grunt.loadNpmTasks('grunt-autoprefixer');
+        grunt.loadNpmTasks('grunt-concurrent');
+        grunt.loadNpmTasks('grunt-contrib-clean');
+        grunt.loadNpmTasks('grunt-contrib-concat');
+        grunt.loadNpmTasks('grunt-contrib-copy');
+        grunt.loadNpmTasks('grunt-contrib-cssmin');
+        grunt.loadNpmTasks('grunt-contrib-htmlmin');
+        grunt.loadNpmTasks('grunt-contrib-imagemin');
+        grunt.loadNpmTasks('grunt-contrib-jshint');
+        grunt.loadNpmTasks('grunt-contrib-uglify');
+        grunt.loadNpmTasks('grunt-contrib-watch');
+        grunt.loadNpmTasks('grunt-contrib-connect');
+        grunt.loadNpmTasks('grunt-connect-proxy');
+        grunt.loadNpmTasks('grunt-ngmin');
+        grunt.loadNpmTasks('grunt-open');
+        grunt.loadNpmTasks('grunt-usemin');
+        grunt.loadNpmTasks('grunt-sass');
+        grunt.loadNpmTasks('grunt-htmlrefs');
+        grunt.loadNpmTasks('grunt-contrib-livereload');
+        grunt.loadNpmTasks('grunt-merge-json');
 
-        // Time how long tasks take. Can help when optimizing build times
-        require('time-grunt')(grunt);
+    
 
         // Define the configuration for all the tasks
         grunt.initConfig({
@@ -49,10 +66,6 @@
                 },
                 js: {
                     files: ['{.tmp,<%= yeoman.app %>}/scripts/**/*.js']
-                },
-                tests: {
-                    files: ['test/spec/**/*.js'],
-                    tasks: ['karma']
                 },
                 sass: {
                     files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
@@ -325,44 +338,6 @@
                 ]
             },
 
-
-            // Test settings
-            karma: {
-                unit: {
-                    configFile: 'test/karma.conf.js',
-                    singleRun: true
-                },
-                watch: {
-                    configFile: 'test/karma.conf.js',
-                    autoWatch: true
-                }
-            },
-
-
-
-            // Postpone whatever tasks come after this one
-            wait: {
-                options: {
-                    delay: 2500
-                },
-                after: function () {
-                    return 'wait does not seem to work unless this function exists';
-                }
-            },
-
-
-            // e2e test runner
-            protractor: {
-                options: {
-                    configFile: 'protractor.conf.js',
-                    keepAlive: true, // If false, the grunt process stops when the test fails.
-                    noColor: false, // If true, protractor will not use colors in its output.
-                    args: {
-                        // Arguments passed to the command
-                    }
-                }
-            }
-
         });
 
 
@@ -387,13 +362,7 @@
 
         grunt.registerTask('test', [
             'concurrent:test',
-            'autoprefixer',
-            'karma'
-        ]);
-
-
-        grunt.registerTask('watch-tests', [
-            'karma:watch'
+            'autoprefixer'
         ]);
 
 
