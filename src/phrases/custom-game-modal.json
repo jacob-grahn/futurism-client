@@ -2,39 +2,48 @@
     "customGameModal": {
         
         "title": {
-            "en": "Game Builder"
+            "en": "Game Builder",
+            "ru": "Матч Производителя"
         },
         
         "rows": {
-            "en": "Rows"
+            "en": "Rows",
+            "ru": "Строки"
         },
         
         "columns": {
-            "en": "Columns"
+            "en": "Columns",
+            "ru": "Колонны"
         },
         
         "deckSize": {
             "en": "Deck Size"
+            "ru": "Размер Колоды"
         },
         
         "futures": {
             "en": "Futures"
+            "ru": "Фьючерсы"
         },
         
         "players": {
             "en": "Players"
+            "ru": "Игроки"
         },
         
         "startPride": {
             "en": "Start Pride"
+            "ru": "Начиная Гордость"
         },
         
         "start": {
             "en": "Start Game"
+            "ru": "Начинай"
         },
         
         "close": {
             "en": "Close"
+            "ru": "Закрой"
         }
     }
 }
