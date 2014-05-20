@@ -1,12 +1,16 @@
 <div id="title-screen">
     <div id="title-screen-center" class="absolute-center inverse">
+        
         <h1 id="title-logo" fader-waver>
             <span>F</span><span>U</span><span>T</span><span>U</span><span>R</span><span>I</span><span>S</span><span>M</span>
         </h1>
+        
         <ul id="title-buttons">
-            <li><a class="shake" ng-click="login()">{{lang.title.login}}</a></li>
-            <li><a class="shake" ng-href="/vids">{{lang.title.instructions}}</a></li>
-            <li><a class="shake" ng-href="/credits">{{lang.title.credits}}</a></li>
-        </ul>
+            
+            <li ng-if="true">
+                <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" onlogin=""></div>
+            </li>
+            
+        </ul>        
     </div>
 </div>

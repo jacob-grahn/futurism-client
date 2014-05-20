@@ -272,6 +272,22 @@
     <script src="scripts/services/unread.js"></script>
     <script src="scripts/services/websites.js"></script>
     <!-- endbuild -->
+    
+    
+    
+    <div ng-if="!forceSite || forceSite === 'f'">
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1419200781687475&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+    </div>
+    
+    <div ng-if="!forceSite || forceSite === 'k'">
+    </div>
 
 
 </body>
