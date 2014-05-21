@@ -51,4 +51,6 @@ angular.module('futurism')
         
         notificationListener.add('Welcome to Futurism!');
         socketErrors();
+        
+        FastClick.attach(document.body);
     });
