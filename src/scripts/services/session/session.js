@@ -62,7 +62,7 @@ angular.module('futurism')
         self.destroy = function() {
             SessionResource.delete({token: self.getToken()});
             self.setToken(null);
-            self.data = {};
+            self.data = null;
             $rootScope.$broadcast('event:sessionChanged', self.data);
         };
 

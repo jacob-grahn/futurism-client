@@ -1,12 +1,17 @@
 angular.module('futurism')
-    .factory('jiggmin', function($) {
+    .factory('jiggmin', function($, memory) {
         'use strict';
         
         return {
             
+            id: 'j',
             name: 'Jiggmin',
             
             checkLogin: function(callback) {
+                if(memory.long.get('site') !== 'j') {
+                    return callback('Jiggmin is not the selected site');
+                }
+                
                 $.ajax('https://jiggmin.com/-who-am-i.php', {
                     type: 'GET',
                     dataType: 'jsonp',

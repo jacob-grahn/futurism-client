@@ -29,7 +29,7 @@ angular.module('futurism')
             },
 
             refresh: function() {
-                if(session.getToken()) {
+                if(session.data) {
                     var data = NotificationResource.get({}, function() {
                         self.unreadCount = data.unreadCount;
                         self.inviteCount = data.inviteCount;

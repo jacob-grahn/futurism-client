@@ -4,6 +4,7 @@ angular.module('futurism')
         
         return {
             
+            id: 'g',
             name: 'Guestville',
             
             checkLogin: function(callback) {

@@ -7,7 +7,10 @@
         .factory('tokenInserter', function(memory) {
             return {
                 request: function(config) {
-                    config.headers['Session-Token'] = memory.short.get('token');;
+                    var token = memory.short.get('token');
+                    if(token) {
+                        config.headers['Session-Token'] = memory.short.get('token');
+                    }
                     return config;
                 }
             };

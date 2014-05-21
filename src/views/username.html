@@ -1,3 +1,3 @@
-<a ng-if="user._id" class="username username-{{user.group}} username-{{displaySize}}" ng-click="showUser(user._id)">
-    <img class="avatar" ng-src="/globe/avatars/{{user._id}}-{{avatarWidth}}x{{avatarHeight}}.gif"/><img class="site-icon" ng-src="/images/sites/{{user.site}}.png"/><span class="name">{{user.name}}</span>
+<a class="username username-{{user.group}} username-{{displaySize}}" ng-click="showUser(user._id)">
+    <img class="avatar" ng-if="user._id" ng-src="/globe/avatars/{{user._id}}-{{avatarWidth}}x{{avatarHeight}}.gif"/><img class="site-icon" ng-if="user._id" ng-src="/images/sites/{{user.site}}.png"/><span class="name">{{user.name}}</span>
 </a>

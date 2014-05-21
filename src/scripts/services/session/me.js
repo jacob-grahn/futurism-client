@@ -4,33 +4,12 @@ angular.module('futurism')
         'use strict';
 
 
-        /**
-         * Reload my info whenever my session changes (login/logout)
-         */
-        $rootScope.$on('event:sessionChanged', function(srcScope, session) {
-            if(session && session._id) {
-                self.setUserId(session._id);
-            }
-            else {
-                self.clear();
-            }
-        });
-
-
-        /**
-         * Reload my info whenever it changes
-         */
-        $rootScope.$on('event:accountChanged', function() {
-            self.reload();
-        });
-
 
         /**
          * Public interface
          */
         var self = {
             UPDATED: 'event:me:user:updated',
-            targetSite: 'j',
             loggedIn: false,
             userId: '',
             stats: {},
@@ -51,11 +30,13 @@ angular.module('futurism')
 
             clear: function() {
                 self.loggedIn = false;
+                self.userId = null;
                 self.stats = {};
                 self.user = {};
             }
         };
 
+        
 
         /**
          * The session may already be set up
@@ -63,7 +44,31 @@ angular.module('futurism')
         if(session.active) {
             self.setUserId(session.data._id);
         }
+        
+        
 
+        /**
+         * Reload my info whenever my session changes (login/logout)
+         */
+        $rootScope.$on('event:sessionChanged', function() {
+            if(session.data) {
+                self.setUserId(session.data._id);
+            }
+            else {
+                self.clear();
+            }
+        });
+
+        
+
+        /**
+         * Reload my info whenever it changes
+         */
+        $rootScope.$on('event:accountChanged', function() {
+            self.reload();
+        });
+
+        
 
         /**
          *

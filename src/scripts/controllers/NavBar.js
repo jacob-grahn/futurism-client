@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .controller('navBarCtrl', function($scope, me, $, messager, session, $location, unread, socket, modals) {
+    .controller('navBarCtrl', function($scope, me, $, messager, session, $location, unread, socket, modals, websites) {
         'use strict';
 
         $scope.path = '';
@@ -59,14 +59,14 @@ angular.module('futurism')
 
 
         $scope.shouldShow = function() {
-            return $scope.path !== '/title' && $scope.path.indexOf('/game') !== 0;
-            //return $scope.path !== '/title';
+            return $scope.path !== '/title' && $scope.path.indexOf('/game') !== 0 && $scope.path !== '/';
         };
 
 
         $scope.logout = function() {
             socket.disconnect();
             session.destroy();
+            websites.logout();
             $location.url('/');
         };
 

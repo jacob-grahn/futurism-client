@@ -10,20 +10,20 @@
                 <button class="btn btn-primary" ng-click="facebookLogin()">Facebook Login</button>
             </li>
             <li ng-if="websites.forceSite === null || websites.forceSite === websites.JIGGMIN">
-                <button class="btn btn-primary">Jiggmin.com Login</button>
+                <button class="btn btn-primary" ng-click="jiggminLogin()">Jiggmin.com Login</button>
             </li>
             <li>
-                <button class="btn btn-default">Log In as a Guest</button>
+                <button class="btn btn-default" ng-click="guestLogin()">Log In as a Guest</button>
             </li>
         </ul>
         
         <ul id="title-buttons" ng-if="me.userId">
             <li>
-                Logged in as {{me.user}} {{me.userId}}<username user="me.user"></username><br>
-                <button class="btn btn-primary">Play</button>
+                Logged in as <br><username user="me.user" size="large"></username><br>
+                <a ng-href="/lobby"><button class="btn btn-primary">Play</button></a>
             </li>
             <li>
-                <button class="btn btn-default">Log Out</button>
+                <button class="btn btn-default" ng-click="logout()">Log Out</button>
             </li>
         </ul>
     </div>

@@ -43,7 +43,8 @@ angular.module('futurism')
                     sitesToCheck = [facebook, jiggmin];
                 }
                 
-                var checkNext = function(sitesToCheck) {
+                
+                var checkNext = function() {
                     if(sitesToCheck.length === 0) {
                         return callback(null, null);
                     }
@@ -54,12 +55,20 @@ angular.module('futurism')
                             return checkNext();
                         }
                         else {
-                            return callback(null, site);
+                            return callback(null, login, site);
                         }
                     });
                 };
                 
-                checkNext(sitesToCheck);
+                checkNext();
+            },
+            
+            
+            logout: function() {
+                self.setSite(null);
+                facebook.logout();
+                jiggmin.logout();
+                guestville.logout();
             }
         };
         
