@@ -72,6 +72,10 @@ angular
                 templateUrl: 'views/title.html',
                 controller: 'TitleCtrl'
             }).
+            when('/', {
+                templateUrl: 'views/title.html',
+                controller: 'TitleCtrl'
+            }).
             when('/record/:gameId', {
                 templateUrl: 'views/game-record.html',
                 controller: 'GameRecordCtrl'

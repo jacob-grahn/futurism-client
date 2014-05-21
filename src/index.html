@@ -42,6 +42,39 @@
 
 
 <body ng-app="futurism" class="">
+    
+    
+    <!-- facebook api -->
+    <div id="fb-root"></div>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1419200781687475',
+          xfbml      : true,
+          version    : 'v2.0',
+          status     : true
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
     <!-- navbar -->
     <ng-include src="'views/navbar.html'"></ng-include>
@@ -247,6 +280,11 @@
     <script src="scripts/services/socket/socket.js"></script>
     <script src="scripts/services/socket/socketAuthenticator.js"></script>
     <script src="scripts/services/socket/socketErrors.js"></script>
+    
+    <script src="scripts/services/websites/facebook.js"></script>
+    <script src="scripts/services/websites/guestville.js"></script>
+    <script src="scripts/services/websites/jiggmin.js"></script>
+    <script src="scripts/services/websites/websites.js"></script>
 
     <script src="scripts/services/cardInProgress.js"></script>
     <script src="scripts/services/chat.js"></script>
@@ -270,24 +308,7 @@
     <script src="scripts/services/shared.js"></script>
     <script src="scripts/services/sound.js"></script>
     <script src="scripts/services/unread.js"></script>
-    <script src="scripts/services/websites.js"></script>
     <!-- endbuild -->
-    
-    
-    
-    <div ng-if="!forceSite || forceSite === 'f'">
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=1419200781687475&version=v2.0";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
-    </div>
-    
-    <div ng-if="!forceSite || forceSite === 'k'">
-    </div>
 
 
 </body>

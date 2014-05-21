@@ -5,12 +5,26 @@
             <span>F</span><span>U</span><span>T</span><span>U</span><span>R</span><span>I</span><span>S</span><span>M</span>
         </h1>
         
-        <ul id="title-buttons">
-            
-            <li ng-if="true">
-                <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true" onlogin=""></div>
+        <ul id="title-buttons" ng-if="!me.userId">
+            <li ng-if="websites.forceSite === null || websites.forceSite === websites.FACEBOOK">
+                <button class="btn btn-primary" ng-click="facebookLogin()">Facebook Login</button>
             </li>
-            
-        </ul>        
+            <li ng-if="websites.forceSite === null || websites.forceSite === websites.JIGGMIN">
+                <button class="btn btn-primary">Jiggmin.com Login</button>
+            </li>
+            <li>
+                <button class="btn btn-default">Log In as a Guest</button>
+            </li>
+        </ul>
+        
+        <ul id="title-buttons" ng-if="me.userId">
+            <li>
+                Logged in as {{me.user}} {{me.userId}}<username user="me.user"></username><br>
+                <button class="btn btn-primary">Play</button>
+            </li>
+            <li>
+                <button class="btn btn-default">Log Out</button>
+            </li>
+        </ul>
     </div>
 </div>
