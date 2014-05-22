@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .controller('TitleCtrl', function($scope, $location, me, session, websites, window, errorHandler, socket) {
+    .controller('TitleCtrl', function($scope, $location, me, session, websites, window, errorHandler, socket, memory) {
         'use strict';
         
         $scope.me = me;
@@ -30,20 +30,26 @@ angular.module('futurism')
         };
         
         
-        $scope.facebookLogin = function() {
-            window.FB.login(function() {
-                startLogin(websites.FACEBOOK);
-            });
+        $scope.login = function() {
+            var siteId = $scope.defaultSite();
+            if(siteId === websites.FACEBOOK) {
+                window.FB.login(function() {
+                    startLogin(websites.FACEBOOK);
+                });
+            }
+            else {
+                startLogin(siteId);
+            }
         };
         
         
-        $scope.jiggminLogin = function() {
-            startLogin(websites.JIGGMIN);
+        $scope.selectSite = function(siteId) {
+            memory.short.set('selectedSite', siteId);
         };
         
         
-        $scope.guestLogin = function() {
-            startLogin(websites.GUESTVILLE);
+        $scope.defaultSite = function() {
+            return websites.forceSite || memory.short.get('selectedSite') || websites.FACEBOOK;
         };
         
         

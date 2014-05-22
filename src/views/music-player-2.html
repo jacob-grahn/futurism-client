@@ -1,0 +1,8 @@
+<div class="music-player-2">
+    <a ng-href="{{model.track.user.permalink_url}}">{{model.track.user.username}}</a>
+    <a ng-href="{{model.track.user.permalink_url}}/{{model.track.permalink}}">{{model.track.title}}</a>
+    <a ng-if="model.track.purchase_url" ng-href="{{model.track.purchase_url}}">{{model.track.purchase_title}}</a>
+    <button ng-if="!getPlaying()" ng-click="play()" class="btn btn-default">Play</button>
+    <button ng-if="getPlaying()" ng-click="pause()" class="btn btn-default">Pause</button>
+    <img src="/images/soundcloud-logo-white.png">
+</div>

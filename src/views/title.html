@@ -5,26 +5,42 @@
             <span>F</span><span>U</span><span>T</span><span>U</span><span>R</span><span>I</span><span>S</span><span>M</span>
         </h1>
         
+        <h1 id="title-logo-2" fader-waver>
+            <span>F</span><span>U</span><span>T</span><span>U</span><span>R</span><span>I</span><span>S</span><span>M</span>
+        </h1>
+        
         <ul id="title-buttons" ng-if="!me.userId">
-            <li ng-if="websites.forceSite === null || websites.forceSite === websites.FACEBOOK">
-                <button class="btn btn-primary" ng-click="facebookLogin()">Facebook Login</button>
-            </li>
-            <li ng-if="websites.forceSite === null || websites.forceSite === websites.JIGGMIN">
-                <button class="btn btn-primary" ng-click="jiggminLogin()">Jiggmin.com Login</button>
+            <li>
+                <button class="btn btn-big" ng-click="login()"><img class="site-logo" src="/images/sites/{{defaultSite()}}-29x29.png"/>{{lang.title.login}}</button>
             </li>
             <li>
-                <button class="btn btn-default" ng-click="guestLogin()">Log In as a Guest</button>
+                <div id="more-sites" class="dropdown" is-open="isopen">
+                    <a class="dropdown-toggle">Use a Different Account <b class="caret"></b></a>
+                    <ul class="dropdown-menu" ng-click="isopen=false">
+                        <li ng-repeat="site in websites.getAllowedSites()" ng-click="selectSite(site.id)">
+                            <a>
+                                <img class="site-logo" src="/images/sites/{{site.id}}.png"/>
+                                {{site.name}}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
         </ul>
         
         <ul id="title-buttons" ng-if="me.userId">
             <li>
-                Logged in as <br><username user="me.user" size="large"></username><br>
-                <a ng-href="/lobby"><button class="btn btn-primary">Play</button></a>
+                <a ng-href="/lobby"><button class="btn btn-big">Play</button></a>
             </li>
             <li>
-                <button class="btn btn-default" ng-click="logout()">Log Out</button>
+                <div id="title-logout">
+                    <a ng-click="logout()">Log Out</a>
+                </div>
             </li>
         </ul>
+        
+        <div class="login-indicator">
+            <username user="me.user" size="large"></username>
+        </div>
     </div>
 </div>

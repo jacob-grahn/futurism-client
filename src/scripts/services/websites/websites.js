@@ -34,15 +34,21 @@ angular.module('futurism')
             },
             
             
-            pollLogins: function(callback) {
-                var sitesToCheck;
+            getAllowedSites: function() {
+                var allowed;
                 if(self.forceSite) {
-                    sitesToCheck = [self.forceSite];
+                    allowed = [self.lookup[self.forceSite], guestville];
                 }
                 else {
-                    sitesToCheck = [facebook, jiggmin];
+                    allowed = [facebook, jiggmin, guestville];
                 }
-                
+                return allowed;
+            },
+            
+            
+            pollLogins: function(callback) {
+                var sitesToCheck = self.getAllowedSites();
+                _.pull(sitesToCheck, guestville);
                 
                 var checkNext = function() {
                     if(sitesToCheck.length === 0) {
