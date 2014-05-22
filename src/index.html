@@ -41,38 +41,7 @@
 </head>
 
 
-<body ng-app="futurism" class="">
-    
-    
-    <!-- facebook api -->
-    <div id="fb-root"></div>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1419195961687957',
-          xfbml      : false,
-          version    : 'v2.0',
-          status     : true
-        });
-      };
-
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
-    
-    
-    
-    
-    
-    
-    
-    
-    
+<body ng-app="futurism" class="">    
     
     
 
@@ -216,6 +185,7 @@
     <script src="scripts/directives/imageupload.js"></script>
     <script src="scripts/directives/matchScreenHeight.js"></script>
     <script src="scripts/directives/musicPlayer.js"></script>
+    <script src="scripts/directives/musicPlayer2.js"></script>
     <script src="scripts/directives/paginated.js"></script>
     <script src="scripts/directives/progressDisplay.js"></script>
     <script src="scripts/directives/reportDisplay.js"></script>
@@ -313,6 +283,39 @@
     <script src="scripts/services/sound.js"></script>
     <script src="scripts/services/unread.js"></script>
     <!-- endbuild -->
+    
+    
+    
+    <!-- facebook api -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1419195961687957',
+                xfbml      : false,
+                version    : 'v2.0',
+                status     : true
+            });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    
+    
+    
+    <!-- soundcloud api -->
+    <script src="https://connect.soundcloud.com/sdk.js"></script>
+    <script>
+        SC.initialize({
+          client_id: 'd9edd5597f8e1cc0c1d209bf16878d33'
+        });
+    </script>
 
 
 </body>

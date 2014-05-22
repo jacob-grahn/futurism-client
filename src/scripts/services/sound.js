@@ -29,6 +29,10 @@ angular.module('futurism')
                         sound._fadeChangePerStep = 0;
                         sound._fadeTo = 0;
                         sound._fadeInterval = 100;
+                        
+                        sound.pause = function() {
+                            sound.stop();
+                        };
 
                         sound.volume = function(vol) {
                             if(_.isNumber(vol)) {
@@ -75,6 +79,36 @@ angular.module('futurism')
                         sounds[name] = sound;
                     });
                 }
+            },
+            
+            
+            streamUrl: function(url) {
+                var sound;
+                
+                if(Media) {
+                    if(url.url) {
+                        url = url.url;
+                    }
+                    sound = new Media(url);
+                }
+                
+                else {
+                    if(url.url) {
+                        sound = new Howl({
+                            urls: [url.url],
+                            format: url.format
+                        });
+                    }
+                    else {
+                        sound = new Howl({
+                            urls: [url]
+                        });
+                    }
+                }
+                
+                var instance = sound.play();
+                console.log(url, instance);
+                return instance;
             },
             
             
