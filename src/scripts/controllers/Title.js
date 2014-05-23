@@ -17,7 +17,7 @@ angular.module('futurism')
         
         var startLogin = function(siteId) {
             websites.setSite(siteId);
-            websites.lookup[siteId].checkLogin(function(err, siteLogin) {
+            websites.lookup[siteId].tryLogin(function(err, siteLogin) {
                 if(err) {
                     $scope.logout();
                     return errorHandler.show(err);
@@ -32,19 +32,13 @@ angular.module('futurism')
         
         $scope.login = function() {
             var siteId = $scope.defaultSite();
-            if(siteId === websites.FACEBOOK) {
-                window.FB.login(function() {
-                    startLogin(websites.FACEBOOK);
-                });
-            }
-            else {
-                startLogin(siteId);
-            }
+            startLogin(siteId);
         };
         
         
         $scope.selectSite = function(siteId) {
             memory.short.set('selectedSite', siteId);
+            startLogin(siteId);
         };
         
         
@@ -60,7 +54,7 @@ angular.module('futurism')
         };
         
         
-        if(!session.data) {
+        /*if(!session.data) {
             websites.pollLogins(function(err, siteLogin) {
                 if(err) {
                     return false;
@@ -70,5 +64,5 @@ angular.module('futurism')
                     session.makeNew(siteLogin, function(){});
                 }
             });
-        }
+        }*/
     });

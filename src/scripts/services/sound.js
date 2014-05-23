@@ -49,21 +49,16 @@ angular.module('futurism')
                     }
                 };
 
-                sound._pause = sound.pause;
-                sound.pause = function() {
-                    console.log('sound.pause', sound);
-                    return sound._pause();
-                };
-
                 sound._stop = sound.stop;
                 sound.stop = function() {
-                    console.log('sound.stop', sound);
+                    sound._manuallyStopped = true;
                     return sound._stop();
                 };
 
                 sound._play = sound.play;
                 sound.play = function() {
                     sound._play();
+                    sound._manuallyStopped = false;
                     return sound;
                 };
                 
@@ -103,7 +98,7 @@ angular.module('futurism')
                         sound = self.createMediaSound(url.urls[0], null, null, function(status) {
                             console.log('media event', url, status);
                             if(status === Media.MEDIA_STOPPED) {
-                                if(url.onend) {
+                                if(url.onend && !sound._manuallyStopped) {
                                     url.onend();
                                 }
                                 sound.release();

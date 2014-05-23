@@ -11,26 +11,30 @@
         
         <ul id="title-buttons" ng-if="!me.userId">
             <li>
-                <button class="btn btn-big" ng-click="login()"><img class="site-logo" src="/images/sites/{{defaultSite()}}-29x29.png"/>{{lang.title.login}}</button>
+                <button class="btn btn-big" ng-click="login()"><img class="site-logo" src="/images/sites/{{defaultSite()}}-32x32.png"/>{{lang.title.login}}</button>
             </li>
             <li>
-                <div id="more-sites" class="dropdown" is-open="isopen">
+                <div ng-if="!websites.forceSite" id="more-sites" class="dropdown" is-open="isopen">
                     <a class="dropdown-toggle">Use a Different Account <b class="caret"></b></a>
                     <ul class="dropdown-menu" ng-click="isopen=false">
-                        <li ng-repeat="site in websites.getAllowedSites()" ng-click="selectSite(site.id)">
+                        <li ng-repeat="site in websites.getAllowedSites()" ng-if="site.id !== defaultSite()" ng-click="selectSite(site.id)">
                             <a>
-                                <img class="site-logo" src="/images/sites/{{site.id}}.png"/>
-                                {{site.name}}
+                                <img class="small-site-logo" src="/images/sites/{{site.id}}.png"/>{{site.name}}
                             </a>
                         </li>
                     </ul>
+                </div>
+                <div ng-if="websites.forceSite" id="more-sites">
+                    <a ng-click="selectSite('g')">Play as Guest</a>
                 </div>
             </li>
         </ul>
         
         <ul id="title-buttons" ng-if="me.userId">
             <li>
-                <a ng-href="/lobby"><button class="btn btn-big">Play</button></a>
+                <a ng-href="/lobby"><button class="btn btn-big">
+                    <img class="site-logo" ng-if="me.user._id" ng-src="/globe/avatars/{{me.user._id}}-32x32.gif"/>Play
+                </button></a>
             </li>
             <li>
                 <div id="title-logout">
@@ -38,9 +42,7 @@
                 </div>
             </li>
         </ul>
-        
-        <div class="login-indicator">
-            <username user="me.user" size="large"></username>
-        </div>
     </div>
+    
+    <a ng-href="/game/1/lala"><button class="btn btn-big">Shortcut</button></a>
 </div>

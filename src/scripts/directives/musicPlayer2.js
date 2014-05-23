@@ -105,7 +105,6 @@ angular.module('futurism')
                 scope.pause = function() {
                     memory.long.set('playmusic', 'no');
                     if(curSound) {
-                        console.log('musicPlayer.pause', curSound);
                         curSound.pause();
                     }
                 };

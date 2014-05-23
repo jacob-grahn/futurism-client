@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .factory('websites', function($, $rootScope, $routeParams, memory, facebook, jiggmin, guestville) {
+    .factory('websites', function($, $rootScope, $routeParams, memory, facebook, jiggmin, guestville, _) {
         'use strict';
         
         
@@ -47,6 +47,7 @@ angular.module('futurism')
             
             
             pollLogins: function(callback) {
+                console.log('pollLogins');
                 var sitesToCheck = self.getAllowedSites();
                 _.pull(sitesToCheck, guestville);
                 

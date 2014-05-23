@@ -2,10 +2,14 @@ angular.module('futurism')
     .factory('jiggmin', function($, memory) {
         'use strict';
         
-        return {
+        var self = {
             
             id: 'j',
             name: 'Jiggmin',
+            
+            tryLogin: function(callback) {
+                return self.checkLogin(callback);
+            },
             
             checkLogin: function(callback) {
                 if(memory.long.get('site') !== 'j') {
@@ -35,4 +39,6 @@ angular.module('futurism')
                 
             }
         };
+        
+        return self;
     });

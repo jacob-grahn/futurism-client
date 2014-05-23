@@ -51,30 +51,16 @@
     margin: 0 auto;
 }
 
-#more-sites .site-logo {
-    position: relative;
-    top: -3px;
-}
-
 .login-indicator {
     position: fixed;
     top: 20px;
     right: 20px;
 }
 
-.btn-big {
-    font-size: 30px;
-    background-color: darken($dark-contrast, 20);
-    color: white;
-    font-weight: bold;
-    border: 1px solid white;
-}
-
-.btn-big:hover {
-    background-color: darken($dark-contrast, 30);
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
-}
-
 .btn-big .site-logo {
     margin: -5px 10px 0px 0px;
+}
+
+.small-site-logo {
+    margin: -3px 5px 0px 0px;
 }

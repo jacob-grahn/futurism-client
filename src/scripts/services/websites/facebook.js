@@ -6,6 +6,22 @@ angular.module('futurism')
 
             id: 'f',
             name: 'Facebook',
+            
+            tryLogin: function(callback) {
+                if(!window.FB) {
+                    return callback('Facebook API not ready');
+                }
+                
+                window.FB.login(function(response) {
+                    if (response.status === 'connected') {
+                        response.authResponse.site = 'f';
+                        callback(null, response.authResponse);
+                    }
+                    else {
+                        callback(null, null);
+                    }
+                });
+            },
 
             checkLogin: function (callback) {
                 if(!window.FB) {
@@ -13,7 +29,6 @@ angular.module('futurism')
                 }
                 
                 window.FB.getLoginStatus(function (response) {
-                    console.log('response', response);
                     if (response.status === 'connected') {
                         response.authResponse.site = 'f';
                         callback(null, response.authResponse);
@@ -25,10 +40,10 @@ angular.module('futurism')
             },
 
             logout: function () {
-                if(!window.FB) {
+                /*if(!window.FB) {
                     return 'Facebook API not ready';
                 }
-                window.FB.logout();
+                window.FB.logout();*/
             }
         };
     });

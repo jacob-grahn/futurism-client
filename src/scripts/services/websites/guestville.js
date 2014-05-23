@@ -2,10 +2,14 @@ angular.module('futurism')
     .factory('guestville', function(_) {
         'use strict';
         
-        return {
+        var self = {
             
             id: 'g',
             name: 'Guestville',
+            
+            tryLogin: function(callback) {
+                return self.checkLogin(callback);
+            },
             
             checkLogin: function(callback) {
                 _.delay(function() {
@@ -17,4 +21,6 @@ angular.module('futurism')
                 
             }
         };
+        
+        return self;
     });

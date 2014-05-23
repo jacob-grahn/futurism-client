@@ -176,3 +176,28 @@ ul {
     background-color: rgba(0, 0, 0, .5);
     border-radius: 0;
 }
+
+
+.btn-big {
+    font-size: 32px;
+    background-color: darken($dark-contrast, 20);
+    color: white;
+    font-weight: bold;
+    border: 1px solid white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.33);
+}
+
+.btn-big:hover {
+    background-color: darken($dark-contrast, 30);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+.dropdown-menu li a {
+    padding: 10px;
+}
+
+@media (max-width: 767px) {
+    .navbar-nav .open .dropdown-menu>li>a, .navbar-nav .open .dropdown-menu .dropdown-header {
+        padding: 10px 15px 10px 25px;
+    }
+}
