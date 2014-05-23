@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .directive('musicPlayer2', function($http, memory, sound, window) {
+    .directive('musicPlayer2', function($http, $rootScope, memory, sound) {
         'use strict';
         
         var model = {};
@@ -14,25 +14,48 @@ angular.module('futurism')
         };
         
         
-        var playTrack = function(track) {
+        var stop = function() {
             if(curSound) {
+                curSound.onend = function(){};
                 curSound.stop();
             }
-            curSound = sound.streamUrl({url: track.stream_url + '?client_id=' + clientId, format: 'ogg'});
+            curSound = null;
         };
         
         
-        var playNextTrack = function() {
+        var fadeStop = function() {
+            if(curSound) {
+                curSound.fade(curSound.volume(), 0, 2000, function() {
+                    stop();
+                });
+            }
+        };
+        
+        
+        var playTrack = function(track) {
+            curSound = sound.streamUrl({
+                urls: [track.stream_url + '?client_id=' + clientId], 
+                format: 'ogg',
+                onend: function() {
+                    $rootScope.$apply(function() {
+                        playRandomTrack();
+                    });
+                }
+            });
+        };
+        
+        
+        var playRandomTrack = function() {
             if(!model.playlist) {
                 return false;
             }
-            var selectedTrack = pickRandomTrack(model.playlist.tracks);
-            playTrack(selectedTrack);
-            return selectedTrack;
+            model.track = pickRandomTrack(model.playlist.tracks);
+            playTrack(model.track);
+            return model.track;
         };
         
         
-        $http.get('https://api.soundcloud.com/playlists/27086694.json?client_id=' + clientId).success(function(res) {
+        $http.jsonp('https://api.soundcloud.com/playlists/27086694.json?client_id=' + clientId + '&callback=JSON_CALLBACK').success(function(res) {
             model.playlist = res;
             model.track = pickRandomTrack(model.playlist.tracks);
         });
@@ -62,7 +85,7 @@ angular.module('futurism')
                 
                 scope.autoPlay = function() {
                     if(!curSound && scope.getPlaying()) {
-                        scope.model.track = playNextTrack();
+                        playRandomTrack();
                     }
                 };
                 
@@ -82,6 +105,7 @@ angular.module('futurism')
                 scope.pause = function() {
                     memory.long.set('playmusic', 'no');
                     if(curSound) {
+                        console.log('musicPlayer.pause', curSound);
                         curSound.pause();
                     }
                 };
@@ -93,14 +117,7 @@ angular.module('futurism')
                 });
                 
                 
-                scope.$on('$destroy', function() {
-                    if(curSound) {
-                        curSound.fade(curSound.volume(), 0, 2000, function() {
-                            curSound.stop();
-                            curSound = null;
-                        });
-                    }
-                });
+                scope.$on('$destroy', fadeStop);
             }
         };
         
