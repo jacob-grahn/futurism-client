@@ -10,7 +10,7 @@
                 "pi": "frigate",
                 "lt": "Žmogžudys",
                 "ne": "aanval",
-                "sv": "mördare",
+                "sv": "attack",
                 "es": "asesino",
                 "nb": "angrip",
                 "it": "assassino",
@@ -31,6 +31,7 @@
                 "ne": "groei",
                 "fr": "Croissance",
                 "hu": "növendék"
+                "sv": "Växa"
             },
             "desc": {
                 "en": "Become a lovable clone that is just like mommy or daddy.",
@@ -40,6 +41,7 @@
                 "ne": "Wordt een schattige kloon die er net zo uit ziet als mama en papa.",
                 "fr": "Devenir un clone d'une carte parente",
                 "hu": "Legyél egy kedves anyához, apához hasonlító klón."
+                "sv": "Bli en älskbar klon som är exakt som din mamma eller pappa"
             }
         },
 
@@ -52,6 +54,7 @@
                 "ne": "oproepen",
                 "fr": "Invoquer",
                 "hu": "idéző"
+                "sv": "tillkalla"
             },
             "desc": {
                 "en": "Play a card from your hand.",
@@ -61,6 +64,7 @@
                 "ne": "Speel een kaart in je hand.",
                 "fr": "Jouer une carte de votre main",
                 "hu": "Játsz a kezedből egy kártyával."
+                "sv": "Spela ett kort från din hand"
             }
         },
 
@@ -73,6 +77,7 @@
                 "ne": "toekomst",
                 "fr": "Futur",
                 "hu": "jővő"
+                "sv": "framtid"
             },
             "desc": {
                 "en": "Change the future.",
@@ -82,6 +87,7 @@
                 "ne": "Verander de toekomst.",
                 "fr": "Changer le futur",
                 "hu": "Változtasd meg a jővőt."
+                "sv": "Förändra framtiden"
             }
         },
 
@@ -96,6 +102,7 @@
                 "fr": "Ralliement",
                 "pl": "triumf",
                 "hu": "verseny"
+                "sv": "rally"
             },
             "desc": {
                 "en": "Produce pride, which can be use to play more cards.",
@@ -107,6 +114,7 @@
                 "it": "Produci valore, che può essere usato per giocare più carte.",
                 "fr": "Produire de la valeur pour jouer plus de cartes",
                 "pl": "Prodokuje dume, ktora moze byc uzyta do wezwania wiecej kart."
+                "sv": "Skapa pride, som kan användas till att spela fler kort"
             }
         },
 
@@ -122,6 +130,7 @@
                 "it": "Valore",
                 "fr": "Valeur",
                 "pl": "duma"
+                "sv": "pride"
             },
             "desc": {
                 "en": "Produce pride, which can be use to play more cards.",
@@ -133,6 +142,7 @@
                 "it": "Produci valore, che può essere usato per giocare più carte.",
                 "fr": "Produire de la valeur pour jouer plus de cartes",
                 "pl": "Prodokuje dumę, ktora może być użyta do wezwania nowych kart."
+                "sv": "Skapa pride, som kan användas till att spela fler kort"
             }
         },
 
@@ -147,6 +157,7 @@
                 "it": "muovi",
                 "fr": "Bouger",
                 "pl": "ruch"
+                "sv": "flytta"
             },
             "desc": {
                 "en": "Reposition this card.",
@@ -158,6 +169,7 @@
                 "it": "Riposiziona questa carta.",
                 "fr": "Repositionner cette carte",
                 "pl": "Przemieść tą kartę."
+                "sv": "Förflytta det här kortet"
             }
         },
 
@@ -176,6 +188,7 @@
                 "it": "cura",
                 "hu": "gyógyít",
                 "pl": "uzdrowienie"
+                "sv": "helande"
             },
             "desc": {
                 "en": "Ally card gains 1 health and is cured of poison.",
@@ -191,6 +204,7 @@
                 "it": "La carta bersaglio ottiene un punto salute.",
                 "hu": "Az adott kártya visszanyeri 1 életét.",
                 "pl": "Wybrana karta dostaje 1 punkt życia."
+                "sv": "Ett allierat kort får 1 liv och det är skyddat ifrån gift"
             }
         },
 
