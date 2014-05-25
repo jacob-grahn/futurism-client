@@ -12,6 +12,7 @@
             "fr": "Valeur",
             "pl": "duma",
             "hu": "büszkeség"
+            "sv": "pride"
         },
 
         "cardCount": {
@@ -24,6 +25,7 @@
             "fr": "Cartes",
             "pl": "ilość kart",
             "hu": "kártyák"
+            "sv": "kort"
         },
 
         "attack": {
@@ -36,6 +38,7 @@
             "fr": "Attaque",
             "pl": "atak",
             "hu": "támadás"
+            "sv": "attackera"
         },
 
         "health": {
@@ -48,6 +51,7 @@
             "fr": "Santé",
             "pl": "życie",
             "hu": "élet"
+            "sv": "hälsa"
         }
     }
 }
