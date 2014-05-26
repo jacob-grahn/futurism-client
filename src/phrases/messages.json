@@ -9,6 +9,7 @@
             "fr": "Supprimer",
             "pi": "burn message",
             "hu": "törlés"
+            "sv": "Ta bort"
         },
         
         "report": {
@@ -19,6 +20,7 @@
             "fr": "Signaler",
             "pi": "tip off police",
             "hu": "jelentés"
+            "sv": "Rapportera"
         }
     }
 }
