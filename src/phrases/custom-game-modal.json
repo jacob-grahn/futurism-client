@@ -3,38 +3,47 @@
         
         "title": {
             "en": "Game Builder"
+            "sv": "Spel Skapare"
         },
         
         "rows": {
             "en": "Rows"
+            "sv": "Rader"
         },
         
         "columns": {
             "en": "Columns"
+            "sv": "Kolummer"
         },
         
         "deckSize": {
             "en": "Deck Size"
+            "sv": "Deckstorlek"
         },
         
         "futures": {
             "en": "Futures"
+            "sv": "Framtid"
         },
         
         "players": {
             "en": "Players"
+            "sv": "Spelare"
         },
         
         "startPride": {
             "en": "Start Pride"
+            "sv": "Startpride"
         },
         
         "start": {
             "en": "Start Game"
+            "sv": "Starta Spel"
         },
         
         "close": {
             "en": "Close"
+            "sv": "Stäng"
         }
     }
 }
