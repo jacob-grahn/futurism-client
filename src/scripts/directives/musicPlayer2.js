@@ -110,6 +110,40 @@ angular.module('futurism')
                 };
                 
                 
+                scope.togglePlay = function() {
+                    if(scope.getPlaying()) {
+                        scope.pause();
+                    }
+                    else {
+                        scope.play();
+                    }
+                };
+                
+                
+                scope.prev = function() {
+                    if(curSound) {
+                        if(curSound.getPos() < 3000) {
+                            scope.next();
+                        }
+                        else {
+                            curSound.pos(0);
+                        }
+                    }
+                    else {
+                        scope.next();
+                    }
+                };
+                
+                
+                scope.next = function() {
+                    stop();
+                    model.track = pickRandomTrack(model.playlist.tracks);
+                    if(scope.getPlaying()) {
+                        scope.play();
+                    }
+                };
+                
+                
                 scope.autoPlay();
                 scope.$watch('model.playlist', function() {
                     scope.autoPlay();

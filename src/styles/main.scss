@@ -28,6 +28,7 @@
 @import "invites-modal";
 @import "loadup-futures";
 @import "lobby";
+@import "music-player-2";
 @import "navbar";
 @import "progress-display";
 @import "store";
@@ -38,17 +39,18 @@
 
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    background-image: url("/images/bg-960x600.jpg");
+    //background-image: url("/images/bg-960x600.jpg");
+    background-image: url("/images/bg-1920x1200.jpg");
     background-color: #000000;
     background-attachment: fixed;
     background-position: center center;
 }
 
-@media all and (min-width: 960px), (min-height: 600px) {
+/*@media (min-width: 960px) and (min-height: 600px) {
     body {
         background-image: url("/images/bg-1920x1200.jpg");
     }
-}
+}*/
 
 #main-container {
     padding: 70px;

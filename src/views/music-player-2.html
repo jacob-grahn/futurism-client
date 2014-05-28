@@ -1,8 +1,29 @@
-<div class="music-player-2">
-    <a ng-href="{{model.track.user.permalink_url}}">{{model.track.user.username}}</a>
-    <a ng-href="{{model.track.user.permalink_url}}/{{model.track.permalink}}">{{model.track.title}}</a>
-    <a ng-if="model.track.purchase_url" ng-href="{{model.track.purchase_url}}">{{model.track.purchase_title}}</a>
-    <button ng-if="!getPlaying()" ng-click="play()" class="btn btn-default">Play</button>
-    <button ng-if="getPlaying()" ng-click="pause()" class="btn btn-default">Pause</button>
-    <img src="/images/soundcloud-logo-white.png">
+<div class="music-player-2 clearfix">
+    
+    <div class="artwork">
+        <img src="{{model.track.artwork_url}}"/>
+    </div>
+    
+    <div class="play-button" ng-click="togglePlay()">
+        <span class="arrow glyphicon glyphicon-play" ng-if="!getPlaying()"></span>
+        <span class="arrow glyphicon glyphicon-pause" ng-if="getPlaying()"></span>
+    </div>
+    
+    <div class="controls">
+        <span ng-click="prev()" class="prev glyphicon glyphicon-backward"></span>
+        <span ng-click="next()" class="next glyphicon glyphicon-forward"></span>
+    </div>
+    
+    <ul class="info">
+        <li class="username">
+            <a ng-href="{{model.track.user.permalink_url}}" target="_blank">{{model.track.user.username}}</a>
+            &nbsp;<a ng-if="model.track.purchase_url" ng-href="{{model.track.purchase_url}}" target="_blank"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+        </li>
+        <li class="title"><a ng-href="{{model.track.user.permalink_url}}/{{model.track.permalink}}" target="_blank">{{model.track.title}}</a></li>
+    </ul>
+    
+    <div class="soundcloud">
+        <a href="https://soundcloud.com" target="_blank"><img src="/images/soundcloud-logo-white.png"></a>
+    </div>
+    
 </div>

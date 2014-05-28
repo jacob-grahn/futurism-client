@@ -1,0 +1,87 @@
+.music-player-2 {
+    position: relative;
+    overflow: hidden;
+}
+
+.artwork {
+    margin-right: 10px;
+    width: 100px;
+    height: 100px;
+}
+
+.play-button {
+    cursor: pointer;
+    font-size: 32px;
+    background-color: $light-blend;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 110px;
+    top: 0px;
+}
+
+.play-button:hover {
+    background-color: $dark-contrast;
+}
+
+.play-button .arrow {
+    color: black;
+    position: relative;
+    top: 7px;
+    left: 10px;
+}
+
+.play-button:hover {
+    color: $light-contrast;
+}
+
+.music-player-2 .info {
+    position: absolute;
+    left: 170px;
+    top: 0px;
+    white-space: nowrap;
+}
+
+.music-player-2 .info .title {
+    font-size: 18px;
+}
+
+.music-player-2 .info .cart {
+    float: left;
+}
+
+.music-player-2 .soundcloud {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.music-player-2 .controls {
+    position: absolute;
+    top: 60px;
+    left: 110px;
+    color: $light-blend;
+    font-size: 24px;
+}
+
+.music-player-2 .controls > * {
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.music-player-2 .controls > *:hover {
+    color: $dark-contrast;
+}
+
+@media (min-width: 767px) and (max-width: 992px) {
+    .music-player-2 .artwork {
+        visibility: hidden;
+    }
+    .play-button, .music-player-2 .controls {
+        left: 0px;
+    }
+    .music-player-2 .info {
+        left: 60px;
+    }
+}

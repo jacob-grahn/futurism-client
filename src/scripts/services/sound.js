@@ -62,6 +62,38 @@ angular.module('futurism')
                     return sound;
                 };
                 
+                sound.pos = function(val) {
+                    if(val) {
+                        sound.seekTo(val);
+                        return val;
+                    }
+                    else {
+                        //should be async...
+                        sound.getCurrentPosition();
+                        return sound.position;
+                    }
+                };
+                
+                return sound;
+            },
+            
+            
+            createWebSound: function(input) {
+                var sound;
+                if(_.isArray(input)) {
+                    sound = new Howl({urls: input});
+                }
+                if(_.isObject(input)) {
+                    sound = new Howl(input);
+                }
+                if(_.isString(input)) {
+                    sound = new Howl({urls: [input]});
+                }
+                
+                sound.getPos = function() {
+                    return sound.pos() * 1000;
+                };
+                
                 return sound;
             },
             
@@ -82,9 +114,7 @@ angular.module('futurism')
 
                     // Howl is avilable on the website
                     else {
-                        sounds[name] = new Howl({
-                            urls: ['/sounds/' + name + '.ogg', '/sounds/'+ name + '.mp3']
-                        });
+                        sounds[name] = self.createWebSound(['/sounds/' + name + '.ogg', '/sounds/'+ name + '.mp3']);
                     }
                 });
             },
@@ -96,7 +126,6 @@ angular.module('futurism')
                 if(Media) {
                     if(_.isObject(url)) {
                         sound = self.createMediaSound(url.urls[0], null, null, function(status) {
-                            console.log('media event', url, status);
                             if(status === Media.MEDIA_STOPPED) {
                                 if(url.onend && !sound._manuallyStopped) {
                                     url.onend();
@@ -111,14 +140,7 @@ angular.module('futurism')
                 }
                 
                 else {
-                    if(_.isObject(url)) {
-                        sound = new Howl(url);
-                    }
-                    else {
-                        sound = new Howl({
-                            urls: [url]
-                        });
-                    }
+                    sound = self.createWebSound(url);
                 }
                 
                 var instance = sound.play();
