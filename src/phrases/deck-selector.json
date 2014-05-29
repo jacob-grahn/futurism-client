@@ -10,11 +10,13 @@
         },
         
         "addFavorite": {
-            "en": "+ Favorite"
+            "en": "+ Favorite",
+            "fr": "+ Favoris"
         },
         
         "removeFavorite": {
-            "en": "- Favorite"
+            "en": "- Favorite",
+            "fr": "- Favoris",
         },
         
         "delete": {
