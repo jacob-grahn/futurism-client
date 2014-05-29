@@ -194,7 +194,8 @@
         },
         
         "fracture": {
-            "en": "Fracture"
+            "en": "Fracture",
+            "fr": "Fracture"
         }
     }
 }
