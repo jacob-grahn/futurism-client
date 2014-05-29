@@ -44,19 +44,23 @@
         },
         
         "myDecks": {
-            "en": "My Decks"
+            "en": "My Decks",
+            "fr": "Mes paquets"
         },
         
         "favoriteDecks": {
-            "en": "Favorite Decks"
+            "en": "Favorite Decks",
+            "fr": "Paquets favoris"
         },
         
         "hotDecks": {
-            "en": "Popular Decks"
+            "en": "Popular Decks",
+            "fr": "Paquets polulaires"
         },
         
         "none": {
-            "en": "None"
+            "en": "None",
+            "fr": "Aucun"
         }
     }
 }
