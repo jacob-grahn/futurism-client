@@ -6,17 +6,20 @@
             "ne": "Kaartenbouwer",
             "hu": "Kártya Készítő",
             "fr": "Créatuer de carte",
-            "pi": "Ship builder"
+            "pi": "Ship builder",
+            "ru": "Карточка Производителя"
         },
         
         "share": {
             "en": "Share",
-            "fr": "Partager"
+            "fr": "Partager",
+            "ru": "Дели"
         },
         
         "shareDesc": {
             "en": "Let other players use this card in their decks",
-            "fr": "Laisser les autres joueurs utiliser cette carte dans leurs paquets"
+            "fr": "Laisser les autres joueurs utiliser cette carte dans leurs paquets",
+            "ru": "Дай другие люди использовать эта карта в их колоды"
         },
 
         "name": {
@@ -32,7 +35,8 @@
             "nb": "Navngi",
             "it": "Nominala",
             "hu": "Név",
-            "pl": "Nazwij"
+            "pl": "Nazwij",
+            "ru": "Имя"
         },
         
         "story": {
@@ -40,7 +44,8 @@
             "hu": "Sztori",
             "ne": "Verhaal",
             "fr": "Description",
-            "pi": "Warrent"
+            "pi": "Warrent",
+            "ru": "Описание"
         },
 
         "imageUpload": {
@@ -56,7 +61,8 @@
             "nb": "Bildeopplasting",
             "it": "Carica un'immagine",
             "hu": "Képfeltöltés",
-            "pl": "Obrazek"
+            "pl": "Obrazek",
+            "ru": "Загрузите изображение"
         },
         
         "faction": {
@@ -64,7 +70,8 @@
             "hu": "Faction",
             "ne": "Factie",
             "fr": "Classe",
-            "pi": "Alignment"
+            "pi": "Alignment",
+            "ru": "Фракция"
         },
 
         "factionAbilities": {
@@ -80,7 +87,8 @@
             "nb": "Klanegenskaper",
             "it": "Abilità della fazione",
             "hu": "Képességek",
-            "pl": "Zdolnosci"
+            "pl": "Zdolnosci",
+            "ru": "Фракция Умения"
         },
 
         "save": {
@@ -96,7 +104,8 @@
             "nb": "Lagre",
             "it": "Salva",
             "hu": "Mentés",
-            "pl": "Zapisz"
+            "pl": "Zapisz",
+            "ru": "Записай"
         },
 
         "load": {
@@ -112,7 +121,8 @@
             "nb": "Åpne",
             "it": "Carica",
             "hu": "Betöltés",
-            "pl": "Załaduj"
+            "pl": "Załaduj",
+            "ru": "Открывай"
         },
 
         "new": {
@@ -128,7 +138,8 @@
             "nb": "Nytt",
             "it": "Nuova",
             "hu": "Új",
-            "pl": "Utwórz"
+            "pl": "Utwórz",
+            "ru": "Новый"
         },
 
         "delete": {
@@ -144,7 +155,8 @@
             "nb": "Slett",
             "it": "Elimina",
             "hu": "Törlés",
-            "pl": "usuń"
+            "pl": "usuń",
+            "ru": "Стирай"
         },
 
         "attack": {
@@ -160,7 +172,8 @@
             "nb": "Angrip",
             "it": "Attacca",
             "hu": "Támadás",
-            "pl": "Atak"
+            "pl": "Atak",
+            "ru": "Атак"
         },
 
         "health": {
@@ -176,7 +189,8 @@
             "nb": "Helse",
             "it": "Salute",
             "hu": "Élet",
-            "pl": "Zdrowie"
+            "pl": "Zdrowie",
+            "ru": "Здоровье"
         }
     }
 }
