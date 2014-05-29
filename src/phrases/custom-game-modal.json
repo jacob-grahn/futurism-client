@@ -4,55 +4,64 @@
         "title": {
             "en": "Game Builder",
             "fr": "Éditeur de partie",
-            "ru": "Матч Производителя"
+            "ru": "Матч Производителя",
+            "sv": "Spel Skapare"
         },
         
         "rows": {
             "en": "Rows",
             "fr": "Rangées",
-            "ru": "Строки"
+            "ru": "Строки",
+            "sv": "Rader"
         },
         
         "columns": {
             "en": "Columns",
             "fr": "Colonnes",
-            "ru": "Колонны"
+            "ru": "Колонны",
+            "sv": "Kolummer"
         },
         
         "deckSize": {
             "en": "Deck Size",
             "fr": "Taille du paquet",
-            "ru": "Размер Колоды"
+            "ru": "Размер Колоды",
+            "sv": "Deckstorlek"
         },
         
         "futures": {
             "en": "Futures",
             "fr": "Futurs",
-            "ru": "Фьючерсы"
+            "ru": "Фьючерсы",
+            "sv": "Framtid"
         },
         
         "players": {
             "en": "Players",
             "fr": "Joueurs",
-            "ru": "Игроки"
+            "ru": "Игроки",
+            "sv": "Spelare"
         },
         
         "startPride": {
             "en": "Start Pride",
             "fr": "Valeur de départ",
-            "ru": "Начиная Гордость"
+            "ru": "Начиная Гордость",
+            "sv": "Startpride"
         },
         
         "start": {
             "en": "Start Game",
             "fr": "Commencer la partie",
-            "ru": "Начинай"
+            "ru": "Начинай",
+            "sv": "Starta Spel"
         },
         
         "close": {
             "en": "Close",
             "fr": "Fermer",
-            "ru": "Закрой"
+            "ru": "Закрой",
+            "sv": "Stäng"
         }
     }
 }
