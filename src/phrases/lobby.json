@@ -22,7 +22,8 @@
             "pi": "ships",
             "ne": "kaarten",
             "fr": "Cartes",
-            "hu": "kártyák"
+            "hu": "kártyák",
+            "sv": "kort"
         },
 
         "join": {
@@ -33,7 +34,7 @@
             "pi": "Board",
             "lt": "Prisijungti",
             "ne": "meedoen",
-            "sv": "gå med",
+            "sv": "bli med",
             "es": "unirse",
             "nb": "bli med",
             "it": "unisciti",
@@ -93,7 +94,7 @@
             "en": "futures",
             "lt": "Futuristikos taškai",
             "ct": "meow",
-            "sv": "framtid",
+            "sv": "framtider",
             "fr": "Futurs",
             "pi": "Days after tomorrow",
             "nb": "fremtider",
@@ -107,7 +108,7 @@
             "en": "Skirmish",
             "lt": "Susiremimas",
             "ct": "meow",
-            "sv": "Skirmish",
+            "sv": "Kamp",
             "fr": "Escarmouche",
             "pi": "Skirmish",
             "nb": "Kamp",
@@ -153,7 +154,7 @@
             "pi": "Blank map",
             "lt": "Redaguojamas",
             "ne": "Aangepast",
-            "sv": "Anpassad",
+            "sv": "Anpassat",
             "es": "Personalizado",
             "it": "Personalizzato",
             "nb": "Egendefinert",
@@ -169,7 +170,7 @@
             "pi": "Blank map",
             "lt": "Futuristinis",
             "ne": "aangepast",
-            "sv": "Anpassad",
+            "sv": "Anpassat",
             "es": "personalizado",
             "nb": "Egendefinert",
             "it": "Personalizzato",
@@ -195,7 +196,8 @@
         
         "fracture": {
             "en": "Fracture",
-            "fr": "Fracture"
+            "fr": "Fracture",
+            "sv": "Fraktur"
         }
     }
 }
