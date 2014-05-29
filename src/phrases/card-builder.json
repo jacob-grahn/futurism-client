@@ -5,15 +5,18 @@
             "en": "Card Builder",
             "ne": "Kaartenbouwer",
             "hu": "Kártya Készítő",
+            "fr": "Créatuer de carte",
             "pi": "Ship builder"
         },
         
         "share": {
-            "en": "Share"
+            "en": "Share",
+            "fr": "Partager"
         },
         
         "shareDesc": {
-            "en": "Let other players use this card in their decks"
+            "en": "Let other players use this card in their decks",
+            "fr": "Laisser les autres joueurs utiliser cette carte dans leurs paquets"
         },
 
         "name": {
