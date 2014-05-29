@@ -3,47 +3,56 @@
         
         "title": {
             "en": "Game Builder",
-            "fr": "Éditeur de partie"
+            "fr": "Éditeur de partie",
+            "ru": "Матч Производителя"
         },
         
         "rows": {
             "en": "Rows",
-            "fr": "Rangées"
+            "fr": "Rangées",
+            "ru": "Строки"
         },
         
         "columns": {
             "en": "Columns",
-            "fr": "Colonnes"
+            "fr": "Colonnes",
+            "ru": "Колонны"
         },
         
         "deckSize": {
             "en": "Deck Size",
-            "fr": "Taille du paquet"
+            "fr": "Taille du paquet",
+            "ru": "Размер Колоды"
         },
         
         "futures": {
             "en": "Futures",
-            "fr": "Futurs"
+            "fr": "Futurs",
+            "ru": "Фьючерсы"
         },
         
         "players": {
             "en": "Players",
-            "fr": "Joueurs"
+            "fr": "Joueurs",
+            "ru": "Игроки"
         },
         
         "startPride": {
             "en": "Start Pride",
-            "fr": "Valeur de départ"
+            "fr": "Valeur de départ",
+            "ru": "Начиная Гордость"
         },
         
         "start": {
             "en": "Start Game",
-            "fr": "Commencer la partie"
+            "fr": "Commencer la partie",
+            "ru": "Начинай"
         },
         
         "close": {
             "en": "Close",
-            "fr": "Fermer"
+            "fr": "Fermer",
+            "ru": "Закрой"
         }
     }
 }
