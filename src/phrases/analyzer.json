@@ -12,7 +12,8 @@
             "fr": "Valeur",
             "pl": "duma",
             "hu": "büszkeség",
-            "ru": "гордость"
+            "ru": "гордость",
+            "sv": "pride"
         },
 
         "cardCount": {
@@ -25,7 +26,8 @@
             "fr": "Cartes",
             "pl": "ilość kart",
             "hu": "kártyák",
-            "ru": "карты"
+            "ru": "карты",
+            "sv": "kort"
         },
 
         "attack": {
@@ -38,7 +40,8 @@
             "fr": "Attaque",
             "pl": "atak",
             "hu": "támadás",
-            "ru": "атак"
+            "ru": "атак",
+            "sv": "attackera"
         },
 
         "health": {
@@ -51,7 +54,8 @@
             "fr": "Santé",
             "pl": "życie",
             "hu": "élet",
-            "ru": "здоровье"
+            "ru": "здоровье",
+            "sv": "hälsa"
         }
     }
 }
