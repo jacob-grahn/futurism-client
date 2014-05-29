@@ -10,7 +10,7 @@
                 "pi": "frigate",
                 "lt": "Žmogžudys",
                 "ne": "aanval",
-                "sv": "mördare",
+                "sv": "attack",
                 "es": "asesino",
                 "nb": "angrip",
                 "it": "assassino",
@@ -33,7 +33,8 @@
                 "ne": "groei",
                 "fr": "Croissance",
                 "hu": "növendék",
-                "ru": "расти"
+                "ru": "расти",
+                "sv": "Växa"
             },
             "desc": {
                 "en": "Become a lovable clone that is just like mommy or daddy.",
@@ -43,7 +44,8 @@
                 "ne": "Wordt een schattige kloon die er net zo uit ziet als mama en papa.",
                 "fr": "Devenir un clone d'une carte parente",
                 "hu": "Legyél egy kedves anyához, apához hasonlító klón.",
-                "ru": "Стать клон, который так же, как мама или папа."
+                "ru": "Стать клон, который так же, как мама или папа.",
+                "sv": "Bli en älskbar klon som är exakt som din mamma eller pappa"
             }
         },
 
@@ -56,7 +58,8 @@
                 "ne": "oproepen",
                 "fr": "Invoquer",
                 "hu": "idéző",
-                "ru": "вызывать"
+                "ru": "вызывать",
+                "sv": "tillkalla"
             },
             "desc": {
                 "en": "Play a card from your hand.",
@@ -65,8 +68,9 @@
                 "pi": "Send a ship from the shipyard.",
                 "ne": "Speel een kaart in je hand.",
                 "fr": "Jouer une carte de votre main",
-                "hu": "Játsz a kezedből egy kártyával."
-                "ru": "Положи карт."
+                "hu": "Játsz a kezedből egy kártyával.",
+                "ru": "Положи карт.",
+                "sv": "Spela ett kort från din hand"
             }
         },
 
@@ -78,7 +82,8 @@
                 "pi": "tomorrow",
                 "ne": "toekomst",
                 "fr": "Futur",
-                "hu": "jővő"
+                "hu": "jővő",
+                "sv": "framtid"
             },
             "desc": {
                 "en": "Change the future.",
@@ -88,7 +93,8 @@
                 "ne": "Verander de toekomst.",
                 "fr": "Changer le futur",
                 "hu": "Változtasd meg a jővőt.",
-                "ru": "Изменяй будущее."
+                "ru": "Изменяй будущее.",
+                "sv": "Förändra framtiden"
             }
         },
 
@@ -102,7 +108,8 @@
                 "it": "rally",
                 "fr": "Ralliement",
                 "pl": "triumf",
-                "hu": "verseny"
+                "hu": "verseny",
+                "sv": "rally"
             },
             "desc": {
                 "en": "Produce pride, which can be use to play more cards.",
@@ -113,7 +120,8 @@
                 "pi": "Boosts yar pirate's pride, which lets mor' pirates arrive in the battle.",
                 "it": "Produci valore, che può essere usato per giocare più carte.",
                 "fr": "Produire de la valeur pour jouer plus de cartes",
-                "pl": "Prodokuje dume, ktora moze byc uzyta do wezwania wiecej kart."
+                "pl": "Prodokuje dume, ktora moze byc uzyta do wezwania wiecej kart.",
+                "sv": "Skapa pride, som kan användas till att spela fler kort"
             }
         },
 
@@ -128,7 +136,8 @@
                 "pi": "Pride",
                 "it": "Valore",
                 "fr": "Valeur",
-                "pl": "duma"
+                "pl": "duma",
+                "sv": "pride"
             },
             "desc": {
                 "en": "Produce pride, which can be use to play more cards.",
@@ -139,7 +148,8 @@
                 "pi": "Boosts yar pirate's pride, which lets mor' pirates arrive in the battle.",
                 "it": "Produci valore, che può essere usato per giocare più carte.",
                 "fr": "Produire de la valeur pour jouer plus de cartes",
-                "pl": "Prodokuje dumę, ktora może być użyta do wezwania nowych kart."
+                "pl": "Prodokuje dumę, ktora może być użyta do wezwania nowych kart.",
+                "sv": "Skapa pride, som kan användas till att spela fler kort"
             }
         },
 
@@ -155,7 +165,7 @@
                 "fr": "Bouger",
                 "pl": "ruch",
                 "ru": "двиги",
-                
+                "sv": "flytta"
             },
             "desc": {
                 "en": "Reposition this card.",
@@ -166,8 +176,9 @@
                 "pi": "Move your ship",
                 "it": "Riposiziona questa carta.",
                 "fr": "Repositionner cette carte",
-                "pl": "Przemieść tą kartę."
-                "ru": "Перемести эту карту."
+                "pl": "Przemieść tą kartę.",
+                "ru": "Перемести эту карту.",
+                "sv": "Förflytta det här kortet"
             }
         },
 
@@ -186,7 +197,8 @@
                 "it": "cura",
                 "hu": "gyógyít",
                 "pl": "uzdrowienie",
-                "ru": "лечить"
+                "ru": "лечить",
+                "sv": "helande"
             },
             "desc": {
                 "en": "Ally card gains 1 health and is cured of poison.",
@@ -201,7 +213,8 @@
                 "nb": "Målsatt kort får ett helsepoeng.",
                 "it": "La carta bersaglio ottiene un punto salute.",
                 "hu": "Az adott kártya visszanyeri 1 életét.",
-                "pl": "Wybrana karta dostaje 1 punkt życia."
+                "pl": "Wybrana karta dostaje 1 punkt życia.",
+                "sv": "Ett allierat kort får 1 liv och det är skyddat ifrån gift"
             }
         },
 
