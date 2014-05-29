@@ -1,15 +1,13 @@
 angular.module('futurism')
-    .factory('musicLooper', function($rootScope, $location, sound) {
+    .factory('musicLooper', function($rootScope, $location, sound, fader) {
         'use strict';
         
+        var song;
         var playing = false;
         var titleVolume = 1;
         var menuVolume = 0.33;
         var fadeMs = 2000;
         var soundId;
-        
-        
-        var song = sound.get('dissolve');
         
         
         var considerLocation = function() {
@@ -29,16 +27,25 @@ angular.module('futurism')
         var self = {
             
             start: function(targetVolume) {
+                if(!song) {
+                    song = sound.streamUrl('/sounds/dissolve.ogg');
+                    song.setVolume(0);
+                    song.onfinish = function() {
+                        if(playing) {
+                            song.play();
+                        }
+                    };
+                }
                 if(!playing) {
                     playing = true;
                     soundId = song.play();
                 }
-                song.fade(song.volume(), targetVolume, fadeMs);
+                fader.fade(song, targetVolume, fadeMs);
             },
             
             stop: function() {
                 if(playing) {
-                    song.fade(song.volume(), 0, fadeMs, function() {
+                    fader.fade(song, 0, fadeMs, function() {
                         playing = false;
                         song.pause();
                     });

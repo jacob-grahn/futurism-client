@@ -14,7 +14,7 @@
     "socket.io-client": "~0.9.16",
     "lodash": "~2.4.1",
     "angular-truncate": "*",
-    "howler": "~1.1.20"
+    "soundmanager": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.0",

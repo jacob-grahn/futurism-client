@@ -47,7 +47,6 @@ angular.module('futurism')
             
             
             pollLogins: function(callback) {
-                console.log('pollLogins');
                 var sitesToCheck = self.getAllowedSites();
                 _.pull(sitesToCheck, guestville);
                 

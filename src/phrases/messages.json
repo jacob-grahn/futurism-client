@@ -8,7 +8,7 @@
             "nb": "slett",
             "fr": "Supprimer",
             "pi": "burn message",
-            "hu": "törlés"
+            "hu": "törlés",
             "sv": "Ta bort"
         },
         
@@ -19,7 +19,7 @@
             "nb": "rapporter",
             "fr": "Signaler",
             "pi": "tip off police",
-            "hu": "jelentés"
+            "hu": "jelentés",
             "sv": "Rapportera"
         }
     }

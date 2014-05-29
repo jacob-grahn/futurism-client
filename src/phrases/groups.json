@@ -6,8 +6,8 @@
             "ne": "Gast",
             "fr": "Invité",
             "hu": "Guest",
-            "pi": "Deckhand"
-            "sv": "Gäst
+            "pi": "Deckhand",
+            "sv": "Gäst"
         },
         
         "u": {
@@ -15,7 +15,7 @@
             "ne": "Lid",
             "fr": "Membre",
             "hu": "Member",
-            "pi": "Sailor"
+            "pi": "Sailor",
             "sv": "Medlem"
         },
         
@@ -24,7 +24,7 @@
             "ne": "Leerling",
             "fr": "Apprenti",
             "hu": "Apprentice",
-            "pi": "Pirate"
+            "pi": "Pirate",
             "sv": "Lärling"
         },
         
@@ -33,7 +33,7 @@
             "ne": "Moderator",
             "fr": "Modérateur",
             "hu": "Moderátor",
-            "pi": "First mate"
+            "pi": "First mate",
             "sv": "Moderator"
         },
         
@@ -42,7 +42,7 @@
             "ne": "Admin",
             "fr": "Admin",
             "hu": "Admin",
-            "pi": "Cap'n"
+            "pi": "Cap'n",
             "sv": "Admin"
         }
     }

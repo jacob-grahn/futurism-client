@@ -12,29 +12,24 @@ angular.module('futurism')
                 name: 'Facebook',
 
                 tryLogin: function(callback) {
-                    console.log('fcp: tryLogin');
                     
                     fcp.login(
                         ["basic_info"],
                               
                         function(response) {
-                            console.log('fcp: tryLogin response', response);
                             response.authResponse.site = 'f';
                             return callback(null, response.authResponse);
                         },
 
                         function(err) {
-                            console.log('fcp: tryLogin error', err);
                             callback(err);
                         }
                     );
                 },
 
                 checkLogin: function (callback) {
-                    console.log('fcp: checkLogin');
                     fcp.getLoginStatus(
                         function (status) { 
-                            console.log("current status: ", status);
                             return callback(null, status);
                         },
                         function(err) {
@@ -44,7 +39,6 @@ angular.module('futurism')
                 },
 
                 logout: function () {
-                    console.log('fcp: logout');
                     fcp.logout();
                 }
             };

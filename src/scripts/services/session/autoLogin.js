@@ -13,8 +13,6 @@ angular.module('futurism')
          */
         var loginAtAllCosts = function() {
             
-            console.log('loginAtAllCosts');
-            
             // don't have more than one thread going at a time
             if(autologinInProgress) {
                 return 'already trying to autologin';

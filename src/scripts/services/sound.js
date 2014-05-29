@@ -3,66 +3,34 @@ angular.module('futurism')
         'use strict';
         
         var Media = window.Media;
-        var Howl = window.Howl;
+        var soundManager = window.soundManager;
         var sounds = {};
         
 
         var self = {
             
             
+            init: function(callback) {
+                if(Media) {
+                    _.delay(callback);
+                }
+                else {
+                    soundManager.setup({
+                        url: 'https://cdn.jsdelivr.net/soundmanager2/2.97a.20131201/cors',
+                        flashVersion: 9,
+                        preferFlash: false,
+                        onready: callback
+                    });
+                }
+            },
+            
+            
             createMediaSound: function(url, mediaSuccess, mediaError, mediaStatus) {
                 var sound;
 
                 sound = new Media(url, mediaSuccess, mediaError, mediaStatus);
-                sound._curVolume = 1;
-                sound._fadeSteps = 0;
-                sound._fadeChangePerStep = 0;
-                sound._fadeTo = 0;
-                sound._fadeInterval = 100;
-
-                sound.volume = function(vol) {
-                    if(_.isNumber(vol)) {
-                        sound._curVolume = vol;
-                        sound.setVolume(vol);
-                    }
-                    return sound._curVolume;
-                };
-
-                sound.fade = function(startVol, endVol, time, callback) {
-                    sound._fadeTo = endVol;
-                    sound._fadeSteps = time / sound._fadeInterval;
-                    sound._fadeChangePerStep = (endVol - startVol) / sound._fadeSteps;
-                    sound._fadeStep();
-                    if(callback) {
-                        _.delay(callback, time);
-                    }
-                };
-
-                sound._fadeStep = function() {
-                    sound._fadeSteps--;
-                    if(sound._fadeSteps <= 0) {
-                        sound.volume(sound._fadeTo);
-                    }
-                    else {
-                        sound.volume(sound.volume() + sound._fadeChangePerStep);
-                        _.delay(sound._fadeStep, sound._fadeInterval);
-                    }
-                };
-
-                sound._stop = sound.stop;
-                sound.stop = function() {
-                    sound._manuallyStopped = true;
-                    return sound._stop();
-                };
-
-                sound._play = sound.play;
-                sound.play = function() {
-                    sound._play();
-                    sound._manuallyStopped = false;
-                    return sound;
-                };
                 
-                sound.pos = function(val) {
+                /*sound.pos = function(val) {
                     if(val) {
                         sound.seekTo(val);
                         return val;
@@ -72,26 +40,26 @@ angular.module('futurism')
                         sound.getCurrentPosition();
                         return sound.position;
                     }
-                };
+                };*/
                 
                 return sound;
             },
             
             
-            createWebSound: function(input) {
-                var sound;
-                if(_.isArray(input)) {
-                    sound = new Howl({urls: input});
-                }
-                if(_.isObject(input)) {
-                    sound = new Howl(input);
-                }
-                if(_.isString(input)) {
-                    sound = new Howl({urls: [input]});
-                }
+            createWebSound: function(input) {                
+                var sound = soundManager.createSound(input);
                 
-                sound.getPos = function() {
-                    return sound.pos() * 1000;
+                sound.getVolume = function() {
+                    return sound.volume / 100;
+                };
+                
+                sound._setVolume = sound.setVolume;
+                sound.setVolume = function(vol) {
+                    sound._setVolume(vol * 100);
+                };
+                
+                sound.getPosition = function() {
+                    return sound.position;
                 };
                 
                 return sound;
@@ -107,40 +75,48 @@ angular.module('futurism')
                     }
 
                     // Media is avialble in android app
-                    // set it up to mimic the api of Howl
                     if(Media) {
                         sounds[name] = self.createMediaSound('/sounds/' + name + '.mp3');
                     }
 
-                    // Howl is avilable on the website
+                    // soundManager is avilable on the web
                     else {
-                        sounds[name] = self.createWebSound(['/sounds/' + name + '.ogg', '/sounds/'+ name + '.mp3']);
+                        sounds[name] = self.createWebSound({id: name, url: '/sounds/' + name + '.ogg'});
                     }
                 });
             },
             
             
-            streamUrl: function(url) {
+            
+            streamUrl: function(url, loop, onFinish) {
                 var sound;
                 
                 if(Media) {
-                    if(_.isObject(url)) {
-                        sound = self.createMediaSound(url.urls[0], null, null, function(status) {
-                            if(status === Media.MEDIA_STOPPED) {
-                                if(url.onend && !sound._manuallyStopped) {
-                                    url.onend();
-                                }
+                    sound = self.createMediaSound(url, null, null, function(status) {
+                        if(status === Media.MEDIA_STOPPED) {
+                            if(onFinish) {
+                                onFinish();
+                            }
+                            if(loop) {
+                                sound.play();
+                            }
+                            else {
                                 sound.release();
                             }
-                        });
-                    }
-                    else {
-                        sound = new Media(url);
-                    }
+                        }
+                    });
                 }
                 
                 else {
-                    sound = self.createWebSound(url);
+                    sound = self.createWebSound({
+                        url: url,
+                        autoPlay: true,
+                        autoLoad: true,
+                        multiShot: false,
+                        stream: true,
+                        loops: loop ? 99 : 0,
+                        onfinish: onFinish
+                    });
                 }
                 
                 var instance = sound.play();
@@ -159,7 +135,7 @@ angular.module('futurism')
             play: function(soundId, vol) {
                 var sound = self.get(soundId);
                 var instance = sound.play();
-                instance.volume(vol || 1);
+                instance.setVolume(vol || 1);
                 return instance;
             }
 

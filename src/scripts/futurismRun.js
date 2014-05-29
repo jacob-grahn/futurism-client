@@ -6,41 +6,42 @@ angular.module('futurism')
         session.renew();
         langUrl.init();
         
-        musicLooper.init();
+        sound.init(function() {
+            musicLooper.init();
+            sound.setupSounds([
+                'abomination',
+                'attack-launch',
+                'attack-ready',
+                'bagem',
+                'battle-cry',
+                'bees',
+                'delegate',
+                'heal',
+                'hero',
+                'hit',
+                'loose',
+                'mate',
+                'move',
+                'network',
+                'notif',
+                'peace',
+                'poison',
+                'rebuild',
+                'recharge',
+                'seduce',
+                'serum',
+                'shield',
+                'summon',
+                'teleport',
+                'transform',
+                'trees',
+                'turn',
+                'win',
+                'die',
+                'future'
+            ]);
+        });
         
-        sound.setupSounds([
-            'dissolve',
-            'abomination',
-            'attack-launch',
-            'attack-ready',
-            'bagem',
-            'battle-cry',
-            'bees',
-            'delegate',
-            'heal',
-            'hero',
-            'hit',
-            'loose',
-            'mate',
-            'move',
-            'network',
-            'notif',
-            'peace',
-            'poison',
-            'rebuild',
-            'recharge',
-            'seduce',
-            'serum',
-            'shield',
-            'summon',
-            'teleport',
-            'transform',
-            'trees',
-            'turn',
-            'win',
-            'die',
-            'future'
-        ]);
         
         lang.loadData('data/phrases.json');
         $rootScope.lang = lang;

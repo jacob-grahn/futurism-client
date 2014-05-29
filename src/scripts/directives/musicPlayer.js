@@ -24,9 +24,7 @@ angular.module('futurism')
 
 
                 var onClick = function () {
-                    console.log('super force play');
                     if (shouldPlay) {
-                        console.log('yup going for it');
                         widget.play();
                     } 
                     else {

@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .directive('musicPlayer2', function($http, $rootScope, memory, sound) {
+    .directive('musicPlayer2', function($http, $rootScope, memory, sound, fader) {
         'use strict';
         
         var model = {};
@@ -25,7 +25,7 @@ angular.module('futurism')
         
         var fadeStop = function() {
             if(curSound) {
-                curSound.fade(curSound.volume(), 0, 2000, function() {
+                fader.fade(curSound, 0, 2000, function() {
                     stop();
                 });
             }
@@ -33,14 +33,10 @@ angular.module('futurism')
         
         
         var playTrack = function(track) {
-            curSound = sound.streamUrl({
-                urls: [track.stream_url + '?client_id=' + clientId], 
-                format: 'ogg',
-                onend: function() {
-                    $rootScope.$apply(function() {
-                        playRandomTrack();
-                    });
-                }
+            curSound = sound.streamUrl(track.stream_url + '?client_id=' + clientId, false, function() {
+                $rootScope.$apply(function() {
+                    playRandomTrack();
+                });
             });
         };
         
@@ -97,7 +93,7 @@ angular.module('futurism')
                     }
                     else {
                         curSound.play();
-                        curSound.volume(volume);
+                        curSound.setVolume(volume);
                     }
                 };
                     
@@ -122,11 +118,11 @@ angular.module('futurism')
                 
                 scope.prev = function() {
                     if(curSound) {
-                        if(curSound.getPos() < 3000) {
+                        if(curSound.getPosition() < 3000) {
                             scope.next();
                         }
                         else {
-                            curSound.pos(0);
+                            curSound.setPosition(0);
                         }
                     }
                     else {
