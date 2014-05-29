@@ -15,10 +15,12 @@
                 "nb": "angrip",
                 "it": "assassino",
                 "hu": "támadás",
-                "pl": "atak"
+                "pl": "atak",
+                "ru": "атака"
             },
             "desc": {
-                "en": "Attack with a 66% chance to hit. Enemy will counter-attack."
+                "en": "Attack with a 66% chance to hit. Enemy will counter-attack.",
+                "ru": "Нападай с 66% шанс попасть. Мишень нападёт обратно."
             }
         },
 
@@ -30,7 +32,8 @@
                 "pi": "construct",
                 "ne": "groei",
                 "fr": "Croissance",
-                "hu": "növendék"
+                "hu": "növendék",
+                "ru": "расти"
             },
             "desc": {
                 "en": "Become a lovable clone that is just like mommy or daddy.",
@@ -39,7 +42,8 @@
                 "pi": "Build a replica ship.",
                 "ne": "Wordt een schattige kloon die er net zo uit ziet als mama en papa.",
                 "fr": "Devenir un clone d'une carte parente",
-                "hu": "Legyél egy kedves anyához, apához hasonlító klón."
+                "hu": "Legyél egy kedves anyához, apához hasonlító klón.",
+                "ru": "Стать клон, который так же, как мама или папа."
             }
         },
 
@@ -51,7 +55,8 @@
                 "pi": "Writ of summons",
                 "ne": "oproepen",
                 "fr": "Invoquer",
-                "hu": "idéző"
+                "hu": "idéző",
+                "ru": "вызывать"
             },
             "desc": {
                 "en": "Play a card from your hand.",
@@ -61,6 +66,7 @@
                 "ne": "Speel een kaart in je hand.",
                 "fr": "Jouer une carte de votre main",
                 "hu": "Játsz a kezedből egy kártyával."
+                "ru": "Положи карт."
             }
         },
 
@@ -81,7 +87,8 @@
                 "pi": "Change tomorrow.",
                 "ne": "Verander de toekomst.",
                 "fr": "Changer le futur",
-                "hu": "Változtasd meg a jővőt."
+                "hu": "Változtasd meg a jővőt.",
+                "ru": "Изменяй будущее."
             }
         },
 
@@ -146,7 +153,9 @@
                 "pi": "sail",
                 "it": "muovi",
                 "fr": "Bouger",
-                "pl": "ruch"
+                "pl": "ruch",
+                "ru": "двиги",
+                
             },
             "desc": {
                 "en": "Reposition this card.",
@@ -158,6 +167,7 @@
                 "it": "Riposiziona questa carta.",
                 "fr": "Repositionner cette carte",
                 "pl": "Przemieść tą kartę."
+                "ru": "Перемести эту карту."
             }
         },
 
@@ -175,7 +185,8 @@
                 "nb": "Helbreding",
                 "it": "cura",
                 "hu": "gyógyít",
-                "pl": "uzdrowienie"
+                "pl": "uzdrowienie",
+                "ru": "лечить"
             },
             "desc": {
                 "en": "Ally card gains 1 health and is cured of poison.",
@@ -208,7 +219,8 @@
                 "nb": "trær!",
                 "it": "Albero di Erba",
                 "hu": "fák!",
-                "pl": "drzewa!"
+                "pl": "drzewa!",
+                "ru": "деревья!"
             },
             "desc": {
                 "en": "A 0/1 tree is created",
@@ -223,7 +235,8 @@
                 "nb": "Et 0/1-tre blir lagd",
                 "it": "Viene creato un albero 0x1",
                 "hu": "Egy 0/1 fa készült",
-                "pl": "Tworzy drzewo 0/1."
+                "pl": "Tworzy drzewo 0/1.",
+                "ru": "0/1 Дерево создается."
             }
         },
 
@@ -241,7 +254,8 @@
                 "nb": "styggedom",
                 "it": "Abominio",
                 "hu": "utálat",
-                "pl": "fuzja"
+                "pl": "fuzja",
+                "ru": "мерзость"
             },
             "desc": {
                 "en": "Merge this unit with another.",
