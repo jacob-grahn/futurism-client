@@ -24,17 +24,21 @@ angular.module('futurism')
         };
         
         
+        var createSong = function() {
+            song = sound.streamUrl('/sounds/dissolve.ogg', true, function() {
+                if(playing) {
+                    song.play();
+                }
+            });
+            song.setVolume(0);
+        };
+        
+        
         var self = {
             
             start: function(targetVolume) {
                 if(!song) {
-                    song = sound.streamUrl('/sounds/dissolve.ogg');
-                    song.setVolume(0);
-                    song.onfinish = function() {
-                        if(playing) {
-                            song.play();
-                        }
-                    };
+                    createSong();
                 }
                 if(!playing) {
                     playing = true;

@@ -1,11 +1,12 @@
 angular.module('futurism')
-    .controller('navBarCtrl', function($scope, me, $, messager, session, $location, unread, socket, modals, websites) {
+    .controller('navBarCtrl', function($scope, me, $, messager, session, $location, unread, socket, modals, websites, sound) {
         'use strict';
 
         $scope.path = '';
         $scope.me = me;
         $scope.messager = messager;
         $scope.unread = unread;
+        $scope.sound = sound;
 
 
         $scope.$on('$routeChangeSuccess', function(event, current) {

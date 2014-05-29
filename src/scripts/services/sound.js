@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .factory('sound', function(window, _) {
+    .factory('sound', function(window, _, memory) {
         'use strict';
         
         var Media = window.Media;
@@ -12,15 +12,54 @@ angular.module('futurism')
             
             init: function(callback) {
                 if(Media) {
-                    _.delay(callback);
+                    _.delay(function() {
+                        self.applyMute();
+                        callback();
+                    });
                 }
                 else {
                     soundManager.setup({
                         url: 'https://cdn.jsdelivr.net/soundmanager2/2.97a.20131201/cors',
                         flashVersion: 9,
                         preferFlash: false,
-                        onready: callback
+                        onready: function() {
+                            self.applyMute();
+                            callback();
+                        }
                     });
+                }
+            },
+            
+            
+            isMuted: function() {
+                return memory.long.get('muted') === 'true';
+            },
+            
+            
+            toggleMute: function() {
+                console.log('toggleMute', memory.long.get('muted'));
+                memory.long.set('muted', !self.isMuted());
+                console.log('toggleMute', memory.long.get('muted'));
+                self.applyMute();
+            },
+            
+            
+            applyMute: function() {
+                if(self.isMuted()) {
+                    if(Media) {
+                        
+                    }
+                    else {
+                        soundManager.mute();
+                    }
+                }
+                else {
+                    if(Media) {
+                        
+                    }
+                    else {
+                        soundManager.unmute();
+                    }
                 }
             },
             

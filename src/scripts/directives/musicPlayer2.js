@@ -74,13 +74,23 @@ angular.module('futurism')
                 
                 
                 scope.getPlaying = function() {
-                    var playmusic = memory.long.get('playmusic');
-                    return playmusic !== 'no';
+                    return !sound.isMuted();
+                };
+                
+                
+                scope.togglePlay = function() {
+                    sound.toggleMute();
+                    if(sound.isMuted()) {
+                        scope.pause();
+                    }
+                    else {
+                        scope.play();
+                    }
                 };
                 
                 
                 scope.autoPlay = function() {
-                    if(!curSound && scope.getPlaying()) {
+                    if(!curSound && !sound.isMuted()) {
                         playRandomTrack();
                     }
                 };
@@ -106,16 +116,6 @@ angular.module('futurism')
                 };
                 
                 
-                scope.togglePlay = function() {
-                    if(scope.getPlaying()) {
-                        scope.pause();
-                    }
-                    else {
-                        scope.play();
-                    }
-                };
-                
-                
                 scope.prev = function() {
                     if(curSound) {
                         if(curSound.getPosition() < 3000) {
@@ -134,7 +134,7 @@ angular.module('futurism')
                 scope.next = function() {
                     stop();
                     model.track = pickRandomTrack(model.playlist.tracks);
-                    if(scope.getPlaying()) {
+                    if(!sound.isMuted()) {
                         scope.play();
                     }
                 };

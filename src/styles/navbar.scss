@@ -16,3 +16,18 @@
 .slide-down-animation.ng-hide-remove {
     display: block !important;
 }
+
+
+.mute-button {
+    float: right;
+    color: lightgray;
+    font-size: 24px;
+    padding: 12px 15px;
+    border-left: 1px solid black;
+    background-color: #111111;
+    height: 49px;
+}
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: -20px;
+}
