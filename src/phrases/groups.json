@@ -7,6 +7,7 @@
             "fr": "Invité",
             "hu": "Guest",
             "pi": "Deckhand"
+            "sv": "Gäst
         },
         
         "u": {
@@ -15,6 +16,7 @@
             "fr": "Membre",
             "hu": "Member",
             "pi": "Sailor"
+            "sv": "Medlem"
         },
         
         "p": {
@@ -23,6 +25,7 @@
             "fr": "Apprenti",
             "hu": "Apprentice",
             "pi": "Pirate"
+            "sv": "Lärling"
         },
         
         "m": {
@@ -31,6 +34,7 @@
             "fr": "Modérateur",
             "hu": "Moderátor",
             "pi": "First mate"
+            "sv": "Moderator"
         },
         
         "a": {
@@ -39,6 +43,7 @@
             "fr": "Admin",
             "hu": "Admin",
             "pi": "Cap'n"
+            "sv": "Admin"
         }
     }
 }
