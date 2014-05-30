@@ -1,5 +1,6 @@
 angular.module('futurism')
     .factory('animFns', function($, _, board) {
+        'use strict';
 
         var self = {
 
@@ -98,7 +99,7 @@ angular.module('futurism')
 
 
             targetElem: function(pos) {
-                var selector = self.targetSelector(pos)
+                var selector = self.targetSelector(pos);
                 return $(selector);
             },
 
@@ -107,8 +108,8 @@ angular.module('futurism')
                 classStr = classStr || '';
                 var effect = $('<div class="card-notif '+classStr+'">'+txt+'</div>');
 
-                effect.css({left: point.x, top: point.y})
-                    .animate({top: point.y-100}, 'slow')
+                effect.css({left: point.x, top: point.y - 100})
+                    .delay(600)
                     .animate({opacity: 0}, 'slow', function() {
                         this.remove();
                     });

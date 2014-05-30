@@ -5,9 +5,7 @@
 }
 
 .attack-effect-inner {
-    transform: rotate(360deg);
-    animation-name: attack-rotate;
-    animation-duration: 1s;
+    animation: attack-spinner 1s;
 }
 
 .attack-effect-inner.sword {
@@ -31,13 +29,11 @@
     background-image: url("/images/bees.png");
 }
 
-@keyframes attack-rotate {
-    from {
-        transform: rotate(1deg);
-        //transform-origin: 10px 100px;
+@keyframes attack-spinner {
+    0% {
+        transform: rotate3d(0, 1, 1, -180deg); 
     }
-    to {
-        transform: rotate(360deg);
-        //transform-origin: 27px 150px;
+    100% {
+        transform: rotate3d(0, 1, 1, 360deg);
     }
 }

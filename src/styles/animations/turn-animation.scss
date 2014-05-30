@@ -10,8 +10,6 @@
     border-top: 1px solid $grey;
     border-bottom: 1px solid $grey;
     pointer-events: none;
-
-    -webkit-transition: 0.66s;
     transition: 0.66s;
 }
 
@@ -22,21 +20,21 @@
 }
 
 #turn-anim.ng-enter {
-    top: 600px;
+    transform: translate3d(0, -50px, 0);
     opacity: 0;
 }
 
 #turn-anim.ng-enter.ng-enter-active {
-    top: 0px;
+    transform: translate3d(0, 0, 0);
     opacity: 1;
 }
 
 #turn-anim.ng-leave {
-    top: 0px;
+    transform: translate3d(0, 0, 0);
     opacity: 1;
 }
 
 #turn-anim.ng-leave.ng-leave-active {
-    top: -50px;
+    transform: translate3d(0, -50px, 0);
     opacity: 0;
 }

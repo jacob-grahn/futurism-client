@@ -68,19 +68,25 @@
 }
 
 @keyframes summon-rotate1 {
-    from {
-        transform: scale(0.5, 0.5) rotate(0deg);
+    0% {
+        transform: scale(0.5, 0.5) rotate3d(0, 0, 1, 1deg);
     }
-    to {
-        transform: scale(0.5, 0.5) rotate(360deg);
+    50% {
+        transform: scale(1, 1) rotate3d(0, 0, 1, 180deg);
+    }
+    100% {
+        transform: scale(0.5, 0.5) rotate3d(0, 0, 1, 360deg);
     }
 }
 
 @keyframes summon-rotate2 {
-    from {
-        transform: rotate(180deg);
+    0% {
+        transform: scale(1, 1) rotate3d(0, 0, 1, 182deg);
     }
-    to {
-        transform: rotate(540deg);
+    50% {
+        transform: scale(0.5, 0.5) rotate3d(0, 0, 1, 361deg);
+    }
+    100% {
+        transform: scale(0.25, 0.25) rotate3d(0, 0, 1, 540deg);
     }
 }

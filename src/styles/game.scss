@@ -135,13 +135,12 @@
     border-top: 1px solid lightgrey;
     padding: 0 30px 0 30px;
     @include box-shadow(2px, 2px, 7px, rgba(0,0,0,.8));
-    -webkit-transition: 0.5s;
     transition: 0.5s;
     z-index: 12;
 }
 
 .hand.ng-hide {
-    bottom: -300px;
+    transform: translate3d(0px, 300px, 0px);
 }
 
 .hand.ng-hide-add,

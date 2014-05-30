@@ -3,16 +3,16 @@
     z-index: 100;
     pointer-events: none;
     transform: rotate(180deg);
-    animation-name: attack-rotate;
+    animation-name: transform-rotate;
     animation-duration: 1s;
 }
 
 .transformer-effect-reverse {
     transform: rotate(-180deg);
-    animation-name: attack-rotate-reverse;
+    animation-name: transform-rotate-reverse;
 }
 
-@keyframes attack-rotate {
+@keyframes transform-rotate {
      from {
          transform: rotate(1deg);
      }
@@ -21,7 +21,7 @@
      }
  }
 
-@keyframes attack-rotate-reverse {
+@keyframes transform-rotate-reverse {
     from {
         transform: rotate(-1deg);
     }
