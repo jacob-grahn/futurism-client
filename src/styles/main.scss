@@ -95,6 +95,10 @@ a {
     cursor: pointer;
 }
 
+.side-panel a:hover {
+    color: $dark-contrast;
+}
+
 .cursor-pointer {
     cursor: pointer;
 }

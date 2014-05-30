@@ -37,9 +37,7 @@ angular.module('futurism')
             
             
             toggleMute: function() {
-                console.log('toggleMute', memory.long.get('muted'));
                 memory.long.set('muted', !self.isMuted());
-                console.log('toggleMute', memory.long.get('muted'));
                 self.applyMute();
             },
             
@@ -69,17 +67,17 @@ angular.module('futurism')
 
                 sound = new Media(url, mediaSuccess, mediaError, mediaStatus);
                 
-                /*sound.pos = function(val) {
-                    if(val) {
-                        sound.seekTo(val);
-                        return val;
-                    }
-                    else {
-                        //should be async...
-                        sound.getCurrentPosition();
-                        return sound.position;
-                    }
-                };*/
+                sound._curVolume = 1;
+                
+                sound._setVolume = sound.setVolume;
+                sound.setVolume = function(vol) {
+                    sound._curVolume = vol;
+                    sound._setVolume(vol);
+                };
+                
+                sound.getVolume = function() {
+                    return sound._curVolume;
+                };
                 
                 return sound;
             },
@@ -97,8 +95,8 @@ angular.module('futurism')
                     sound._setVolume(vol * 100);
                 };
                 
-                sound.getPosition = function() {
-                    return sound.position;
+                sound.getCurrentPosition = function(callback) {
+                    return callback(sound.position);
                 };
                 
                 return sound;

@@ -136,7 +136,7 @@
                             return [
                                 require('grunt-connect-proxy/lib/utils').proxyRequest,
                                 modRewrite([
-                                    '!\\.html|\\.js|\\.css|\\.swf|\\.json|\\.mp3|\\.ogg|\\.png|\\.jpg$ /index.html'
+                                    '!\\.html|\\.js|\\.css|\\.swf|\\.json|\\.mp3|\\.ogg|\\.png|\\.jpg|\\.eot|\\.svg|\\.ttf|\\.woff$ /index.html'
                                 ]),
                                 lrSnippet,
                                 mountFolder(connect, '.tmp'),
@@ -300,7 +300,8 @@
                             'images/{,*/}*.{webp}',
                             'data/*',
                             'sounds/*',
-                            'styles/*.css'
+                            'styles/*.css',
+                            'fonts/*'
                         ]
                     }, {
                         expand: true,

@@ -118,12 +118,15 @@ angular.module('futurism')
                 
                 scope.prev = function() {
                     if(curSound) {
-                        if(curSound.getPosition() < 3000) {
-                            scope.next();
-                        }
-                        else {
-                            curSound.setPosition(0);
-                        }
+                        curSound.getCurrentPosition(function(pos) {
+                            if(pos < 3000) {
+                                scope.next();
+                            }
+                            else {
+                                curSound.setPosition(0);
+                            }
+                        });
+
                     }
                     else {
                         scope.next();

@@ -12,7 +12,7 @@
         
         <ul id="title-buttons" ng-if="!me.userId">
             <li>
-                <button class="btn btn-big" ng-click="login()"><img class="site-logo" src="/images/sites/{{defaultSite()}}-32x32.png"/>{{lang.title.login}}</button>
+                <button class="btn btn-big" ng-click="login()"><img class="site-logo" ng-src="/images/sites/{{defaultSite()}}-32x32.png"/>{{lang.title.login}}</button>
             </li>
             <li>
                 <div ng-if="!websites.forceSite" id="more-sites" class="dropdown" is-open="isopen">
@@ -20,7 +20,7 @@
                     <ul class="dropdown-menu" ng-click="isopen=false">
                         <li ng-repeat="site in websites.getAllowedSites()" ng-if="site.id !== defaultSite()" ng-click="selectSite(site.id)">
                             <a>
-                                <img class="small-site-logo" src="/images/sites/{{site.id}}.png"/>{{site.name}}
+                                <img class="small-site-logo" ng-src="/images/sites/{{site.id}}.png"/>{{site.name}}
                             </a>
                         </li>
                     </ul>
@@ -45,5 +45,5 @@
         </ul>
     </div>
     
-    <a ng-href="/game/1/lala"><button class="btn btn-big">Shortcut</button></a>
+    <!--<a ng-href="/game/1/lala"><button class="btn btn-big">Shortcut</button></a>-->
 </div>
