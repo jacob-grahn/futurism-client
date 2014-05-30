@@ -79,6 +79,30 @@ angular.module('futurism')
                     return sound._curVolume;
                 };
                 
+                sound._getCurrentPosition = sound.getCurrentPosition;
+                sound.getCurrentPosition = function(callback) {
+                    sound._getCurrentPosition(function(pos) {
+                        return callback(pos * 1000);
+                    });
+                };
+                
+                sound.setPosition = function(pos) {
+                    sound.seekTo(pos);
+                };
+                
+                sound._stop = sound.stop;
+                sound.stop = function() {
+                    sound._manuallyStopped = true;
+                    sound._stop();
+                };
+                
+                sound._play = sound.play;
+                sound.play = function() {
+                    sound._manuallyStopped = false;
+                    sound._play();
+                    return sound;
+                };
+                
                 return sound;
             },
             
@@ -113,7 +137,7 @@ angular.module('futurism')
 
                     // Media is avialble in android app
                     if(Media) {
-                        sounds[name] = self.createMediaSound('/sounds/' + name + '.mp3');
+                        sounds[name] = self.createMediaSound('/sounds/' + name + '.ogg');
                     }
 
                     // soundManager is avilable on the web
@@ -131,13 +155,13 @@ angular.module('futurism')
                 if(Media) {
                     sound = self.createMediaSound(url, null, null, function(status) {
                         if(status === Media.MEDIA_STOPPED) {
-                            if(onFinish) {
+                            if(onFinish && !sound._manuallyStopped) {
                                 onFinish();
                             }
-                            if(loop) {
+                            if(loop && !sound._manuallyStopped) {
                                 sound.play();
                             }
-                            else {
+                            if(!loop) {
                                 sound.release();
                             }
                         }

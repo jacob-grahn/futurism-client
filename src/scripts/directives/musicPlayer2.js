@@ -33,6 +33,7 @@ angular.module('futurism')
         
         
         var playTrack = function(track) {
+            stop();
             curSound = sound.streamUrl(track.stream_url + '?client_id=' + clientId, false, function() {
                 $rootScope.$apply(function() {
                     playRandomTrack();
@@ -74,23 +75,25 @@ angular.module('futurism')
                 
                 
                 scope.getPlaying = function() {
-                    return !sound.isMuted();
+                    return !sound.isMuted() && memory.long.get('playmusic') !== 'no';
                 };
                 
                 
                 scope.togglePlay = function() {
-                    sound.toggleMute();
-                    if(sound.isMuted()) {
+                    if(memory.long.get('playmusic') !== 'no') {
                         scope.pause();
                     }
                     else {
+                        if(sound.isMuted()) {
+                            sound.toggleMute();
+                        }
                         scope.play();
                     }
                 };
                 
                 
                 scope.autoPlay = function() {
-                    if(!curSound && !sound.isMuted()) {
+                    if(!curSound && scope.getPlaying()) {
                         playRandomTrack();
                     }
                 };
@@ -137,7 +140,7 @@ angular.module('futurism')
                 scope.next = function() {
                     stop();
                     model.track = pickRandomTrack(model.playlist.tracks);
-                    if(!sound.isMuted()) {
+                    if(scope.getPlaying()) {
                         scope.play();
                     }
                 };
