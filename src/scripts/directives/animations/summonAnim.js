@@ -62,10 +62,14 @@ angular.module('futurism')
 
 
                         // make the swirly animation
-                        var effect = $('<div class="summon-effect '+cssClass+'"><div class="effect"></div><div class="effect"></div></div>');
-                        effect.css({left: src.center.x, top: src.center.y});
-                        effect.animate({left: dest.center.x, top: dest.center.y});
+                        var effect = $('<div class="summon-holder"><div class="summon-effect '+cssClass+'"><div class="effect"></div><div class="effect"></div></div></div>');
+                        
                         boardElement.append(effect);
+                        
+                        effect.css({transform: 'translate3d(' + (src.center.x) + 'px, ' + (src.center.y) + 'px, 0)'});
+                        _.delay(function() {
+                            effect.css({transform: 'translate3d(' + (dest.center.x) + 'px, ' + (dest.center.y) + 'px, 0)'});
+                        });
 
                         $timeout(function() {
                             effect.remove();

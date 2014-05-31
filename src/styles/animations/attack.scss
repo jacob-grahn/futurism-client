@@ -1,7 +1,10 @@
 .attack-effect {
     position: absolute;
+    left: 0;
+    top: 0;
     z-index: 100;
     pointer-events: none;
+    transition: transform 0.25s linear;
 }
 
 .attack-effect-inner {

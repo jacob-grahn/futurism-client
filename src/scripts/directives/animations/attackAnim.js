@@ -19,36 +19,46 @@ angular.module('futurism')
                     var angleDeg = (angleRad * maths.RAD_DEG) + 90;
 
 
-                    boardElement.append($('<div class="attack-effect"><div class="attack-effect-inner '+className+'"></div></div>')
-                        .css({
-                            left: srcPoint.x-10,
-                            top: srcPoint.y-75,
-                            opacity: 0,
-                            transform: 'rotate('+angleDeg+'deg)'
+                    var effect = $('<div class="attack-effect"><div class="attack-effect-inner '+className+'"></div></div>');
+                    boardElement.append(effect);
+                    
+                        effect.css({
+                            transform: 'translate3d(' + (srcPoint.x-10) + 'px, ' + (srcPoint.y-75) + 'px, 0) rotate(' + angleDeg + 'deg) ',
+                            opacity: 0
                         })
                         .animate({opacity: 1}, 1000, function() {
-                            sound.play('attack-ready', 0.4);
-                        })
-                        .animate({left: destPoint.x-10, top: destPoint.y-75}, 300, 'linear', function() {
-                            animFns.animNotif(boardElement, destPoint, message, 'danger');
-                            if(message !== 'miss!') {
-                                if(message === 'poisoned!') {
-                                    sound.play('poison');
+                            sound.play('attack-ready', 0.3);
+                            
+                            effect.css({
+                                transform: 'translate3d(' + (destPoint.x-10) + 'px, ' + (destPoint.y-75) + 'px, 0) rotate(' + angleDeg + 'deg)'
+                            });
+                            
+                            _.delay(function() {
+                                
+                                animFns.animNotif(boardElement, destPoint, message, 'danger');
+                                
+                                if(message !== 'miss!') {
+                                    if(message === 'poisoned!') {
+                                        sound.play('poison');
+                                    }
+                                    else {
+                                        sound.play('hit');
+                                    }
                                 }
-                                else {
-                                    sound.play('hit');
+                                
+                                if(defender.shield && defender.shield > 0) {
+                                    animFns.animFlasher(boardElement, destPoint, 'shield');
                                 }
-                            }
-                            if(defender.shield && defender.shield > 0) {
-                                animFns.animFlasher(boardElement, destPoint, 'shield');
-                            }
-                        })
-                        .animate({opacity: 0}, 500, function() {
-                            this.remove();
-                            if(callback) {
-                                callback();
-                            }
-                        }));
+
+                                effect.animate({opacity: 0}, 500, function() {
+                                    effect.remove();
+                                    if(callback) {
+                                        callback();
+                                    }
+                                });
+                                
+                            }, 300);
+                        });
                 };
 
 
