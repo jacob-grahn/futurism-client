@@ -28,7 +28,6 @@ body .card-no h1 {
     overflow-x: hidden;
     padding: 0px;
     margin: 0px;
-
     @include border-radius(4px);
     @include box-shadow(2px, 2px, 7px, rgba(0,0,0,.8));
 }
@@ -44,6 +43,9 @@ body .card-no h1 {
     min-height: 93px;
     @include border-radius(1px);
 }
+.card-small .card-name {
+    white-space: nowrap;
+}
 
 
 .stretch .card {
@@ -58,6 +60,21 @@ body .card-no h1 {
 
 .card {
     cursor: pointer;
+}
+
+
+
+
+.ability-desc {
+    display: none;
+}
+
+.card-large .abilities .ability-desc {
+    display: block;
+    color: grey;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: italic;
 }
 
 
@@ -131,9 +148,9 @@ body .card-no h1 {
 }
 
 
-.card .popover-src {
-    color: lightgrey;
-    border-bottom: 1px dashed lightgrey;
+/*.card .popover-src {
+    color: lightgray;
+    border-bottom: 1px dashed lightgray;
     text-decoration: none;
     position: relative;
     right: -5px;
@@ -146,7 +163,7 @@ body .card-no h1 {
 
 .card-medium .popover-src {
     display: none;
-}
+}*/
 
 
 
@@ -157,14 +174,16 @@ body .card-no h1 {
     padding: 0 5px;
     font-size: 22px;
     font-weight: bold;
-    position: relative;
-    left: 10px;
 }
 .card-medium ul {
     font-weight: normal;
     font-size: 14px;
     margin: 0;
     left: 0px;
+}
+
+.card-large ul>li {
+    padding: 5px 0;
 }
 
 
@@ -253,10 +272,10 @@ body .card-no h1 {
 .card-large .abilities {
     font-size: 18px;
 }
-.card .abilities button {
+/*.card .abilities button {
     margin: 3px;
     padding: 0px 5px;
-}
+}*/
 
 
 .card .greyout {

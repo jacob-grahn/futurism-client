@@ -16,12 +16,14 @@
         <img ng-if="card.commander" class="card-image absolute-center" ng-src="/globe/avatars/{{card.userId}}-130x90.gif"/>
     </div>
 
-    <h1>{{card.name}}</h1>
+    <h1 class="card-name">{{card.name}}</h1>
     <ul class="abilities">
         <li ng-repeat="abilityId in card.abilities">
             <span ng-if="useButtons != 'true'">{{lang.abilities[abilityId].name}}</span>
-            <button ng-if="useButtons == 'true'" ng-click="doAction(abilityId)">{{lang.abilities[abilityId].name}}</button>
-            <a class="popover-src" popover="{{lang.abilities[abilityId].desc}}" popover-trigger="mouseenter">?</a>
+            <span ng-if="useButtons == 'true'">
+                <button class="btn btn-primary" ng-click="doAction(abilityId)">{{lang.abilities[abilityId].name}}</button>
+            </span>
+            <span class="ability-desc">{{lang.abilities[abilityId].desc}}</span>
         </li>
     </ul>
 

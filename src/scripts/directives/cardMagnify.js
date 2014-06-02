@@ -17,6 +17,7 @@ angular.module('futurism')
             },
 
             link: function (scope, elem) {
+                
                 scope.hovering = false;
 
 
@@ -26,25 +27,48 @@ angular.module('futurism')
                         scrollToElement(zoomedCard);
                     }
                 };
-
-
-                elem.click(function() {
-                    if(scope.active !== 'false' || scope.hovering) {
-                        scope.$apply(function() {
-                            scope.hovering = !scope.hovering;
-                            if(scope.hovering) {
-                                _.delay(scrollIntoView, 400);
-                            }
-                        });
-                    }
-                });
-
-                elem.mouseleave(function() {
+                
+                
+                var deZoom = function() {
                     if(scope.hovering) {
                         scope.$apply(function() {
                             scope.hovering = false;
+                            $('body').off('click', deZoom);
+                            elem.off('mouseleave', deZoom);
                         });
                     }
+                };
+                
+                
+                var zoom = function() {
+                    if(!scope.hovering) {
+                        _.delay(function() {
+                            scope.$apply(function() {
+                                scope.hovering = true;
+                                _.delay(scrollIntoView, 400);
+                                $('body').on('click', deZoom);
+                                elem.on('mouseleave', deZoom);
+                            });
+                        });
+                    }
+                };
+
+
+                elem.on('click', function() {
+                    if(scope.active !== 'false') {
+                        if(scope.hovering) {
+                            deZoom();
+                        }
+                        else {
+                            zoom();
+                        }
+                    }
+                });
+                
+                
+                scope.$on('$destory', function() {
+                    $('body').off('click', deZoom);
+                    elem.off('mouseleave', deZoom);
                 });
             }
             
