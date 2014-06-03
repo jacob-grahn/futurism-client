@@ -137,6 +137,8 @@
     @include box-shadow(2px, 2px, 7px, rgba(0,0,0,.8));
     transition: 0.5s;
     z-index: 12;
+    max-height: 500px;
+    overflow-y: auto;
 }
 
 .hand.ng-hide {
