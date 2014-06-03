@@ -7,6 +7,7 @@
             "fr": "Futures",
             "hu": "Jövendők",
             "pi": "Tomorrows"
+            "sv": "Framtid"
         },
         
         "conversions": {
@@ -15,6 +16,7 @@
             "fr": "Conversions",
             "hu": "Konverziók",
             "pi": "Currency exchangin'"
+            "sv": "Omvandlingar"
         },
         
         "fantasims": {
@@ -23,6 +25,7 @@
             "fr": "Fanatismes",
             "hu": "Fantasims",
             "pi": "Fantasims"
+            "sv": "fantasims"
         },
         
         "compliment": {
@@ -31,6 +34,7 @@
             "fr": "T-Machine aime votre style !",
             "hu": "T-Gépezet-nak tetszik a stílusod!",
             "pi": "Bartender likes your style!"
+            "sv": "T-Machine gillar din stil!"
         },
         
         "fractureNeedA": {
@@ -39,6 +43,7 @@
             "fr": "T-Machine a besoin de",
             "hu": "T-Gépezet szükséges",
             "pi": "Bartender wants"
+            "sv": "T-machine behöver"
         },
         
         "fractureNeedB": {
@@ -47,6 +52,7 @@
             "fr": "fracture(s) pour atteindre un nouveau futur.",
             "hu": "Törés(ek) hogy elérj egy új jövendőt.",
             "pi": "fractarrr(s) to reach a new tomorrow."
+            "sv": "Fraktur(er) som når en ny framtid"
         },
         
         "fractureHaveA": {
@@ -55,6 +61,7 @@
             "fr": "Vous avez",
             "hu": "Neked van",
             "pi": "Ye have"
+            "sv": "Du har"
         },
         
         "fractureHaveB": {
@@ -63,6 +70,7 @@
             "fr": "fracture(s).",
             "hu": "törés(ek).",
             "pi": "fractarrr(s)."
+            "sv": "fraktur(er)"
         }
     }
 }
