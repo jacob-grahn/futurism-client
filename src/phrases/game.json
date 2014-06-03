@@ -12,6 +12,7 @@
             "it": "Termina turno",
             "fr": "Fin du tour",
             "pl": "Zakończ turę"
+            "sv": "Avsluta rundan"
         },
 
         "pride": {
@@ -25,6 +26,7 @@
             "it": "Valore",
             "fr": "Valeur",
             "pl": "Duma"
+            "sv": "Pride"
         },
 
         "close": {
@@ -38,6 +40,7 @@
             "it": "chiudi",
             "fr": "Fermer",
             "pl": "Zamknij"
+            "sv": "sluta"
         },
 
         "futures": {
@@ -51,6 +54,7 @@
             "it": "Futures",
             "fr": "Futurs",
             "pl": "Przyszłości"
+            "sv": "Framtid"
         },
 
         "forfeit": {
@@ -64,6 +68,7 @@
             "it": "Abbandona",
             "fr": "Abandonner",
             "pl": "Zrezygnuj"
+            "sv": "Abdonnera"
         }
     }
 }
