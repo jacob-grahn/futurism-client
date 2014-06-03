@@ -9,6 +9,7 @@
             "nb": "Lag et laug",
             "fr": "Créer une guilde",
             "pl": "Załóz gildie"
+            "sv": "Skapa ett Guild"
         },
         
         "edit": {
@@ -16,6 +17,7 @@
             "ne": "Bewerken",
             "fr": "Modifier",
             "pi": "Fix"
+            "sv": "Modifiera"
         },
         
         "name": {
@@ -23,6 +25,7 @@
             "ne": "Naam",
             "fr": "Nom",
             "pi": "Name"
+            "sv": "Namn"
         },
         
         "desc": {
@@ -30,6 +33,7 @@
             "ne": "Beschrijving",
             "fr": "Description",
             "pi": "Reputation"
+            "sv": "Beskrivning"
         },
         
         "joinPolicy": {
@@ -41,6 +45,7 @@
             "fr": "Politique d'adhésion",
             "pl": "Warunki dołączenia",
             "hu": "Csatlakozási Beállítás"
+            "sv": "Medlemsregler"
         },
 
         "banner": {
@@ -52,6 +57,7 @@
             "fr": "Bannière",
             "pl": "Banner",
             "hu": "Logó"
+            "sv": "Banner"
         }
     }
 }
