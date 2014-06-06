@@ -17,8 +17,8 @@ angular.module('futurism')
                         ["basic_info"],
                               
                         function(response) {
-                            response.authResponse.site = 'f';
-                            return callback(null, response.authResponse);
+                            response.site = 'f';
+                            return callback(null, response);
                         },
 
                         function(err) {

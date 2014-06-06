@@ -67,7 +67,7 @@ angular.module('futurism')
         };
 
 
-        self.renew = _.throttle(function(callback) {
+        self.renew = function(callback) {
             var token = self.getToken();
             
             if(!callback) {
@@ -89,7 +89,7 @@ angular.module('futurism')
                 return callback(null, data);
             });
 
-        }, 5000, {leading: true, trailing: false});
+        };
 
 
         return self;

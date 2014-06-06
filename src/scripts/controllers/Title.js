@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .controller('TitleCtrl', function($scope, $location, me, session, websites, window, errorHandler, socket, memory) {
+    .controller('TitleCtrl', function($scope, $location, me, session, websites, window, errorHandler, socket) {
         'use strict';
         
         $scope.me = me;
@@ -37,13 +37,12 @@ angular.module('futurism')
         
         
         $scope.selectSite = function(siteId) {
-            memory.short.set('selectedSite', siteId);
             startLogin(siteId);
         };
         
         
         $scope.defaultSite = function() {
-            return websites.forceSite || memory.short.get('selectedSite') || websites.FACEBOOK;
+            return websites.forceSite || websites.getSite() || websites.FACEBOOK;
         };
         
         

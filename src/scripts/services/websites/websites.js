@@ -21,34 +21,46 @@ angular.module('futurism')
             },
             
             
-            getSite: function() {
-                memory.long.get('site');
+            setSite: function(siteId) {
+                if(self.forceSite && (siteId !== self.forceSite) && (siteId !== 'g')) {
+                    return 'site not allowed';
+                }
+                return memory.long.set('site', siteId);
             },
             
             
-            setSite: function(site) {
-                if(self.forceSite && site !== self.forceSite && site !== 'g') {
-                    return 'site not allowed';
-                }
-                memory.long.set('site', site);
+            getSite: function() {
+                return memory.long.get('site');
             },
             
             
             getAllowedSites: function() {
                 var allowed;
                 if(self.forceSite) {
-                    allowed = [self.lookup[self.forceSite], guestville];
+                    allowed = [self.forceSite, guestville];
                 }
                 else {
                     allowed = [facebook, jiggmin, guestville];
+                }
+                return _.unique(allowed);
+            },
+            
+            
+            getSitesToPoll: function() {
+                var allowed;
+                var siteId = self.forceSite || self.getSite();
+                if(siteId) {
+                    allowed = [self.lookup[siteId]];
+                }
+                else {
+                    allowed = [facebook, jiggmin];
                 }
                 return allowed;
             },
             
             
             pollLogins: function(callback) {
-                var sitesToCheck = self.getAllowedSites();
-                _.pull(sitesToCheck, guestville);
+                var sitesToCheck = self.getSitesToPoll();
                 
                 var checkNext = function() {
                     if(sitesToCheck.length === 0) {
@@ -71,7 +83,7 @@ angular.module('futurism')
             
             
             logout: function() {
-                self.setSite(null);
+                //self.setSite(null);
                 facebook.logout();
                 jiggmin.logout();
                 guestville.logout();

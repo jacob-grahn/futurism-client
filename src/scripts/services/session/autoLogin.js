@@ -41,14 +41,14 @@ angular.module('futurism')
                             }
                             
                             // creating a new session worked
-                            autologinInProgress = true;
+                            autologinInProgress = false;
                             return authService.loginConfirmed(null);
                         });
                     });
                 }
                 
                 // renewing the session worked
-                autologinInProgress = true;
+                autologinInProgress = false;
                 return authService.loginConfirmed(null);
             });
         };
@@ -61,6 +61,7 @@ angular.module('futurism')
             if(!removeListener) {
                 removeListener = $rootScope.$on('event:auth-loginRequired', loginAtAllCosts);
             }
+            loginAtAllCosts();
         };
 
         

@@ -1,9 +1,9 @@
 angular.module('futurism')
-    .run(function(autoLogin, session, $rootScope, lang, unread, notificationListener, socketErrors, _, langUrl, sound, musicLooper) {
+    .run(function(autoLogin, $rootScope, lang, unread, notificationListener, socketErrors, _, langUrl, sound, musicLooper) {
         'use strict';
         
         autoLogin.activate();
-        session.renew();
+        //session.renew();
         langUrl.init();
         
         sound.init(function() {
