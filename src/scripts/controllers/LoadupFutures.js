@@ -24,8 +24,8 @@ angular.module('futurism')
         
         
         $scope.iHaveFuture = function(futureId) {
-            if(me.stats && me.stats.futures) {
-                return me.stats.futures.indexOf(futureId) !== -1;
+            if(me.progress && me.progress.futures) {
+                return me.progress.futures.indexOf(futureId) !== -1;
             }
             else {
                 return false;

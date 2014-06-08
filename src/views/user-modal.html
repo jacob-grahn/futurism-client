@@ -13,8 +13,8 @@
                 </span>
             </b>
         </li>
-        <li>Fame: <b>{{rankCalc.expToRank(stats.fame) | number:0}}</b></li>
-        <li>Futures: <b>{{stats.futures.length | number:0}}</b></li>
+        <li>Fame: <b>{{rankCalc.expToRank(progress.fame) | number:0}}</b></li>
+        <li>Futures: <b>{{progress.futures.length | number:0}}</b></li>
         <li>Group: <b>{{lang.groups[user.group]}}</b></li>
         <li>Player Since: <b>{{user.registerDate | date:'mediumDate'}}</b></li>
         <li>Last Login: <b>{{user.loginDate | date:'mediumDate'}}</b></li>

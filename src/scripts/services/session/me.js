@@ -1,6 +1,6 @@
 angular.module('futurism')
 
-    .factory('me', function($rootScope, session, UserResource, StatsResource) {
+    .factory('me', function($rootScope, session, UserResource, ProgressResource) {
         'use strict';
 
 
@@ -12,7 +12,7 @@ angular.module('futurism')
             UPDATED: 'event:me:user:updated',
             loggedIn: false,
             userId: '',
-            stats: {},
+            progress: {},
             user: {},
 
             setUserId: function(userId) {
@@ -22,7 +22,7 @@ angular.module('futurism')
             },
 
             reload: function() {
-                self.stats = StatsResource.save();
+                self.progress = ProgressResource.save();
                 self.user = UserResource.get({userId: self.userId}, function() {
                     $rootScope.$broadcast(self.UPDATED);
                 });
@@ -31,7 +31,7 @@ angular.module('futurism')
             clear: function() {
                 self.loggedIn = false;
                 self.userId = null;
-                self.stats = {};
+                self.progress = {};
                 self.user = {};
             }
         };

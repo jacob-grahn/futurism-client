@@ -52,26 +52,26 @@ angular.module('futurism')
         
         $scope.addFavorite = function(card) {
             FavoriteCardResource.put({userId: me.userId, cardId: card._id}, function() {
-                me.stats.favCards.push(card._id);
-                me.stats.favCards = _.unique(me.stats.favCards);
+                me.progress.favCards.push(card._id);
+                me.progress.favCards = _.unique(me.progress.favCards);
             });
         };
         
         
         $scope.removeFavorite = function(card) {
             FavoriteCardResource.delete({userId: me.userId, cardId: card._id}, function() {
-                _.pull(me.stats.favCards, card._id);
+                _.pull(me.progress.favCards, card._id);
             });
         };
         
         
         $scope.canAddFavorite = function(card) {
-            return me.stats.favCards && me.stats.favCards.indexOf(card._id) === -1 && card.share && card.userId !== me.userId;
+            return me.progress.favCards && me.progress.favCards.indexOf(card._id) === -1 && card.share && card.userId !== me.userId;
         };
         
         
         $scope.canRemoveFavorite = function(card) {
-            return me.stats.favCards && me.stats.favCards.indexOf(card._id) !== -1;
+            return me.progress.favCards && me.progress.favCards.indexOf(card._id) !== -1;
         };
         
         

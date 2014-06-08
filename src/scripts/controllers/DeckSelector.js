@@ -34,15 +34,15 @@ angular.module('futurism')
         
         $scope.addFavorite = function(deck) {
             FavoriteDeckResource.put({userId: me.userId, deckId: deck._id}, function() {
-                me.stats.favDecks.push(deck._id);
-                me.stats.favDecks = _.unique(me.stats.favDecks);
+                me.progress.favDecks.push(deck._id);
+                me.progress.favDecks = _.unique(me.progress.favDecks);
             });
         };
         
         
         $scope.removeFavorite = function(deck) {
             FavoriteDeckResource.delete({userId: me.userId, deckId: deck._id}, function() {
-                _.pull(me.stats.favDecks, deck._id);
+                _.pull(me.progress.favDecks, deck._id);
             });
         };
         
@@ -58,11 +58,11 @@ angular.module('futurism')
         
         
         $scope.canAddFavorite = function(deck) {
-            return me.stats.favDecks && me.stats.favDecks.indexOf(deck._id) === -1 && me.userId !== deck.userId && deck.share;
+            return me.progress.favDecks && me.progress.favDecks.indexOf(deck._id) === -1 && me.userId !== deck.userId && deck.share;
         };
         
         
         $scope.canRemoveFavorite = function(deck) {
-            return me.stats.favDecks && me.stats.favDecks.indexOf(deck._id) !== -1;
+            return me.progress.favDecks && me.progress.favDecks.indexOf(deck._id) !== -1;
         };
     });

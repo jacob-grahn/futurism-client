@@ -11,7 +11,7 @@
             "pi": "Hit the bunk",
             "it": "Termina turno",
             "fr": "Fin du tour",
-            "pl": "Zakończ turę"
+            "pl": "Zakończ turę",
             "sv": "Avsluta rundan"
         },
 
@@ -25,7 +25,7 @@
             "pi": "Pride",
             "it": "Valore",
             "fr": "Valeur",
-            "pl": "Duma"
+            "pl": "Duma",
             "sv": "Pride"
         },
 
@@ -39,7 +39,7 @@
             "pi": "Seal",
             "it": "chiudi",
             "fr": "Fermer",
-            "pl": "Zamknij"
+            "pl": "Zamknij",
             "sv": "sluta"
         },
 
@@ -53,7 +53,7 @@
             "pi": "Days after tomorrow",
             "it": "Futures",
             "fr": "Futurs",
-            "pl": "Przyszłości"
+            "pl": "Przyszłości",
             "sv": "Framtid"
         },
 
@@ -67,7 +67,7 @@
             "pi": "Abandon ship",
             "it": "Abbandona",
             "fr": "Abandonner",
-            "pl": "Zrezygnuj"
+            "pl": "Zrezygnuj",
             "sv": "Abdonnera"
         }
     }
