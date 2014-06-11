@@ -86,7 +86,20 @@ angular.module('futurism')
                     templateUrl: 'views/custom-game-modal.html',
                     controller: 'CustomGameModalCtrl'
                 });
-            }
+            },
+            
+            
+            openGameEnd: function(gameId) {
+                $modal.open({
+                    templateUrl: 'views/game-end-modal.html',
+                    controller: 'GameEndModalCtrl',
+                    resolve: {
+                        guildId: function () {
+                            return gameId;
+                        }
+                    }
+                });
+            },
 
         };
 

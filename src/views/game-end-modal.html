@@ -1,0 +1,28 @@
+<div class="modal-header">
+    <h1>{{lang.gameEndModal[status]}}</h1>
+</div>
+
+<div class="modal-body">
+    
+    <div ng-if="status !== 'uninvolved'" class="exp">
+        <progressbar value="myResults.exp / myResults.expNeede" type="success"></progressbar>
+        <div class="exp-words">{{myResults.exp | number}} / {{myResults.expNeeded | number}}</div>
+    </div>
+    
+    <div class="social">
+        <h3>{{lang.gameEndModal.shareMatch}}</h3>
+        <div class="well">
+            {{shareUrl}}
+        </div>
+        <ul class="share-icons">
+            <li class="share-btn share-btn-twitter" ng-click="shareTwitter()">{{lang.gameEndModal.tweet}}</li>
+            <li class="share-btn share-btn-fb" ng-click="shareFacebook()">{{lang.gameEndModal.share}}</li>
+        </ul>
+    </div>
+    
+</div>
+
+<div class="modal-footer">
+    <button class="btn btn-default" ng-href="/game/gameId/summary">{{lang.gameEndModal.summary}}</button>
+    <button class="btn btn-primary" ng-href="/lobby">{{lang.gameEndModal.continue}}</button>
+</div>

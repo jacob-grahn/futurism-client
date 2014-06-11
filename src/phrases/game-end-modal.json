@@ -1,0 +1,28 @@
+{
+    "gameEndModal": {
+        "victory": {
+            "en": "Victory"
+        },
+        "defeat": {
+            "en": "Timeline Disrupted"
+        },
+        "uninvolved": {
+            "en": "Match Complete"
+        },
+        "tweet": {
+            "en": "Tweet"
+        },
+        "share": {
+            "en": "Share"
+        },
+        "summary": {
+            "en": "Summary"
+        },
+        "continue": {
+            "en": "Continue"
+        },
+        "shareMatch": {
+            "en": "Share your match"
+        }
+    }
+}

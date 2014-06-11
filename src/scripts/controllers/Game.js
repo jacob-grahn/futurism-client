@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .controller('GameCtrl', function($scope, $routeParams, $location, socket, _, gameListeners, players, turn, board, state, hand, targeter, errorHandler, shared, me, timer) {
+    .controller('GameCtrl', function($scope, $routeParams, socket, gameListeners, players, turn, board, state, hand, targeter, errorHandler, shared, me, timer) {
         'use strict';
 
         $scope.actions = shared.actions;
@@ -46,7 +46,6 @@ angular.module('futurism')
          */
         $scope.forfeit = function() {
             socket.emit('forfeit', {gameId: $scope.gameId});
-            $location.url('/lobby');
         };
 
 

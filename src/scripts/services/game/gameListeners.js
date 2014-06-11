@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .factory('gameListeners', function($routeParams, $location, socket, players, turn, board, state, hand, updateDelayer, autoTurnEnder, shared, sound, me, timer, _, subscriber) {
+    .factory('gameListeners', function($routeParams, socket, players, turn, board, state, hand, updateDelayer, autoTurnEnder, shared, sound, me, timer, _, subscriber, modals) {
         'use strict';
         var self = this;
 
@@ -59,11 +59,13 @@ angular.module('futurism')
                 if(data.winners.indexOf(me.user._id) !== -1) {
                     sound.play('win');
                 }
-                else {
+                /*else {
                     sound.play('loose');
-                }
+                }*/
 
-                $location.url('/summary/' + $routeParams.gameId);
+                //$location.url('/summary/' + $routeParams.gameId);
+                
+                modals.openGameEnd($routeParams.gameId);
             });
         });
 
