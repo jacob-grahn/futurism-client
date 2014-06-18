@@ -38,14 +38,6 @@
 
     <div class="col-sm-5">
         <div id="game-panel" class="side-panel" match-screen-height resize-element=".auto-size" offset-bottom="70" default-height="600">
-            <ul class="game-buttons panel-segment clearfix">
-                <li>
-                    <button class='btn btn-default' ng-click="endTurn(); hand.close();" ng-disabled="!turn.isMyTurn()">{{lang.game.endTurn}}</button>
-                </li>
-                <li>
-                    <button class='btn btn-default btn-forfeit' ng-click="forfeit()">{{lang.game.forfeit}}</button>
-                </li>
-            </ul>
             <div class="future-desc panel-segment">
                 <future-display future="{{board.future}}"></future-display>
             </div>

@@ -1,21 +1,16 @@
 angular.module('futurism')
-    .controller('navBarCtrl', function($scope, me, $, messager, session, $location, unread, socket, modals, websites, sound) {
+    .controller('navBarCtrl', function($scope, $rootScope, me, $, messager, session, $location, unread, socket, modals, websites, sound, turn, hand) {
         'use strict';
 
-        $scope.path = '';
+        $scope.path = '/';
         $scope.me = me;
         $scope.messager = messager;
         $scope.unread = unread;
         $scope.sound = sound;
-
-
-        $scope.$on('$routeChangeSuccess', function(event, current) {
-            if(current.$$route) {
-                $scope.path = current.$$route.originalPath;
-            }
-            else {
-                $scope.path = '/';
-            }
+        
+        
+        $rootScope.$on('$routeChangeSuccess', function() {
+            $scope.path = $location.url();
         });
 
 
@@ -44,6 +39,11 @@ angular.module('futurism')
         };
         
         
+        $scope.atGame = function() {
+            return $scope.path.indexOf('/game') !== -1;
+        };
+        
+        
         $scope.clickStats = function() {
             modals.openUser(me.user._id);
         };
@@ -60,7 +60,7 @@ angular.module('futurism')
 
 
         $scope.shouldShow = function() {
-            return $scope.path !== '/title' && $scope.path.indexOf('/game') !== 0 && $scope.path !== '/';
+            return $scope.path !== '/title' && $scope.path !== '/';
         };
 
 
@@ -70,6 +70,20 @@ angular.module('futurism')
             websites.logout();
             $location.url('/');
         };
+        
+        
+        $scope.forfeit = function() {
+            socket.emit('forfeit', {gameId: $scope.gameId});
+        };
+        
+        
+        $scope.endTurn = function() {
+            hand.close();
+            socket.emit('endTurn', {gameId: $scope.gameId});
+        };
+        
+
+        $scope.isMyTurn = turn.isMyTurn;
 
 
         /**

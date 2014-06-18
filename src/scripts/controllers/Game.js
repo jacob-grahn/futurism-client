@@ -7,7 +7,6 @@ angular.module('futurism')
         $scope.players = players;
         $scope.turn = turn;
         $scope.state = state;
-        $scope.hand = hand;
         $scope.targeter = targeter;
         $scope.gameId = $routeParams.gameId;
         $scope.chatId = $scope.gameId.replace('game', 'chat');
@@ -31,22 +30,6 @@ angular.module('futurism')
                 removeListener();
             });
         }
-
-
-        /**
-         * End your turn
-         */
-        $scope.endTurn = function() {
-            socket.emit('endTurn', {gameId: $scope.gameId});
-        };
-
-
-        /**
-         * Remove yourself from the game
-         */
-        $scope.forfeit = function() {
-            socket.emit('forfeit', {gameId: $scope.gameId});
-        };
 
 
         /**

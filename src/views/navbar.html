@@ -14,11 +14,20 @@
             </button>
             <a class="navbar-brand" ng-href="/">{{lang.nav.futurism}}</a>
         </div>
+        
+        <ul ng-show="atGame()" class="nav navbar-nav">
+            <li>
+                <a ng-click="forfeit()">{{lang.game.forfeit}}</a>
+            </li>
+            <li>
+                <a ng-click="endTurn()" ng-disabled="!game.isMyTurn()">{{lang.game.endTurn}}</a>
+            </li>
+        </ul>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" collapse="navCollapsed">
 
-            <ul class="nav navbar-nav" ng-click="navCollapsed=true">
+            <ul class="nav navbar-nav" ng-click="navCollapsed=true" ng-show="!atGame()">
                 <li ng-class="{active: atLobby()}"><a ng-href="/lobby">{{lang.nav.lobby}}</a></li>
                 <li ng-class="{active: atGuild()}"><a ng-href="/guild-list">{{lang.nav.guild}}</a></li>
                 <li ng-class="{active: atDeckBuilder()}"><a ng-href="/deck-selector/{{me.user._id}}">{{lang.nav.deckBuilder}}</a></li>
