@@ -1,5 +1,5 @@
 angular.module('futurism')
-    .controller('navBarCtrl', function($scope, $rootScope, me, $, messager, session, $location, unread, socket, modals, websites, sound, turn, hand) {
+    .controller('navBarCtrl', function($scope, $rootScope, me, $, messager, session, $location, unread, socket, modals, websites, sound) {
         'use strict';
 
         $scope.path = '/';
@@ -70,20 +70,6 @@ angular.module('futurism')
             websites.logout();
             $location.url('/');
         };
-        
-        
-        $scope.forfeit = function() {
-            socket.emit('forfeit', {gameId: $scope.gameId});
-        };
-        
-        
-        $scope.endTurn = function() {
-            hand.close();
-            socket.emit('endTurn', {gameId: $scope.gameId});
-        };
-        
-
-        $scope.isMyTurn = turn.isMyTurn;
 
 
         /**

@@ -94,7 +94,7 @@ angular.module('futurism')
                     templateUrl: 'views/game-end-modal.html',
                     controller: 'GameEndModalCtrl',
                     resolve: {
-                        guildId: function () {
+                        gameId: function () {
                             return gameId;
                         }
                     }

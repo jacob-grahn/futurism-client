@@ -30,6 +30,16 @@ angular.module('futurism')
                 removeListener();
             });
         }
+        
+        
+        $scope.forfeit = function() {
+            socket.emit('forfeit', {gameId: $scope.gameId});
+        };
+        
+        
+        $scope.endTurn = function() {
+            socket.emit('endTurn', {gameId: $scope.gameId});
+        };
 
 
         /**

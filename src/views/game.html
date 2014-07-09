@@ -38,12 +38,24 @@
 
     <div class="col-sm-5">
         <div id="game-panel" class="side-panel" match-screen-height resize-element=".auto-size" offset-bottom="70" default-height="600">
+            
             <div class="future-desc panel-segment">
                 <future-display future="{{board.future}}"></future-display>
             </div>
+            
             <div class="panel-segment">
                 <music-player-2/>
             </div>
+            
+            <ul class="panel-segment options">
+                <li>
+                    <a ng-click="forfeit()">{{lang.game.forfeit}}</a>
+                </li>
+                <li>
+                    <a ng-click="endTurn()" ng-disabled="!game.isMyTurn()">{{lang.game.endTurn}}</a>
+                </li>
+            </ul>
+            
             <chat-display room="{{chatId}}"></chat-display>
         </div>
     </div>
