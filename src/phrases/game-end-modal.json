@@ -1,28 +1,36 @@
 {
     "gameEndModal": {
         "victory": {
-            "en": "Victory"
+            "en": "Victory",
+            "fr": "Victoire"
         },
         "defeat": {
-            "en": "Timeline Disrupted"
+            "en": "Timeline Disrupted",
+            "fr": "Ligne perturbée"
         },
         "uninvolved": {
-            "en": "Match Complete"
+            "en": "Match Complete",
+            "fr": "Partie terminée"
         },
         "tweet": {
-            "en": "Tweet"
+            "en": "Tweet",
+            "fr": "Tweeter"
         },
         "share": {
-            "en": "Share"
+            "en": "Share",
+            "fr": "Partager"
         },
         "summary": {
-            "en": "Summary"
+            "en": "Summary",
+            "fr": "Résumé"
         },
         "continue": {
-            "en": "Continue"
+            "en": "Continue",
+            "fr": "Continuer"
         },
         "shareMatch": {
-            "en": "Share your match"
+            "en": "Share your match",
+            "fr": "Partager la partie"
         }
     }
 }
